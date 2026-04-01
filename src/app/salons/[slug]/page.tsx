@@ -10,7 +10,6 @@ import {
 import { formatDateRange, formatNumber } from "@/lib/format";
 import { SectorBadge } from "@/components/sector-badge";
 import { StatBlock } from "@/components/stat-block";
-import { PlaceholderImage } from "@/components/placeholder-image";
 import { SalonCard } from "@/components/salon-card";
 import { JsonLd } from "@/components/json-ld";
 import {
@@ -185,20 +184,7 @@ export default async function SalonPage({ params }: Props) {
         </section>
       )}
 
-      {/* 3. Bloc visuel */}
-      <section className="mt-10 overflow-hidden rounded-lg">
-        {salon.cover_image_url ? (
-          <img
-            src={salon.cover_image_url}
-            alt={salon.name}
-            className="h-64 w-full object-cover sm:h-80"
-          />
-        ) : (
-          <PlaceholderImage name={salon.name} className="h-64 w-full sm:h-80" />
-        )}
-      </section>
-
-      {/* 4. Essentiel */}
+      {/* 3. Essentiel */}
       <section className="mt-10">
         <h2 className="font-serif text-2xl font-bold tracking-tight">
           L&apos;essentiel
@@ -263,7 +249,18 @@ export default async function SalonPage({ params }: Props) {
         </p>
       </section>
 
-      {/* 6. Salons similaires */}
+      {/* 6. Bloc visuel */}
+      {salon.cover_image_url && (
+        <section className="mt-10 overflow-hidden rounded-lg">
+          <img
+            src={salon.cover_image_url}
+            alt={salon.name}
+            className="h-64 w-full object-cover sm:h-80"
+          />
+        </section>
+      )}
+
+      {/* 7. Salons similaires */}
       {similarSalons.length > 0 && (
         <section className="mt-16">
           <h2 className="font-serif text-2xl font-bold tracking-tight">
