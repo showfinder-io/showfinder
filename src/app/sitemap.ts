@@ -7,16 +7,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const supabase = createStaticClient();
 
   // Requetes en parallele
-  const [salonsResult, sectorsResult] = await Promise.all([
+  const [salonsResult, sectorsResult, providersResult] = await Promise.all([
     supabase
       .from("salons")
       .select("slug, updated_at")
       .eq("status", "published"),
     supabase.from("sectors").select("slug"),
+    supabase.from("providers").select("slug"),
   ]);
 
   const salons = salonsResult.data ?? [];
   const sectors = sectorsResult.data ?? [];
+  const providers = providersResult.data ?? [];
 
   const now = new Date();
 
@@ -57,6 +59,23 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${siteConfig.url}/secteurs/${sector.slug}`,
       lastModified: now,
       changeFrequency: "weekly",
+      priority: 0.6,
+    });
+  }
+
+  // Pages prestataires
+  entries.push({
+    url: `${siteConfig.url}/prestataires`,
+    lastModified: now,
+    changeFrequency: "weekly",
+    priority: 0.8,
+  });
+
+  for (const provider of providers) {
+    entries.push({
+      url: `${siteConfig.url}/prestataires/${provider.slug}`,
+      lastModified: now,
+      changeFrequency: "monthly",
       priority: 0.6,
     });
   }

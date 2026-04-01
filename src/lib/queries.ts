@@ -314,6 +314,106 @@ export async function getAllSalonSlugs() {
   return (data ?? []).map((s) => s.slug);
 }
 
+// ============================================================
+// Prestataires
+// ============================================================
+
+export type ProviderRow = {
+  id: string;
+  slug: string;
+  company_name: string;
+  category: string;
+  description: string | null;
+  city: string | null;
+  coverage_radius_km: number | null;
+  website_url: string | null;
+  phone: string | null;
+  email: string | null;
+  logo_url: string | null;
+  is_verified: boolean;
+  subscription_tier: string;
+  avg_rating: number;
+  review_count: number;
+};
+
+export const PROVIDER_CATEGORY_LABELS: Record<string, string> = {
+  standiste: "Standiste",
+  traiteur: "Traiteur",
+  av_technique: "Audiovisuel",
+  photographe: "Photographe",
+  transport: "Transport",
+  hebergement: "Hébergement",
+  autre: "Autre",
+};
+
+export type ProviderFilters = {
+  category?: string;
+  city?: string;
+};
+
+export async function getProviders(filters: ProviderFilters = {}) {
+  const supabase = await createClient();
+  let query = supabase
+    .from("providers")
+    .select("*")
+    .order("is_verified", { ascending: false })
+    .order("company_name");
+  if (filters.category) query = query.eq("category", filters.category as never);
+  if (filters.city) query = query.eq("city", filters.city);
+  const { data, error } = await query;
+  if (error) throw error;
+  return (data ?? []) as ProviderRow[];
+}
+
+export async function getProviderBySlug(slug: string) {
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from("providers")
+    .select("*, salon_providers(salon_id, is_featured, salons(id, slug, name, city, start_date))")
+    .eq("slug", slug)
+    .single();
+  if (error || !data) return null;
+  type SalonJoin = { salons: { id: string; slug: string; name: string; city: string | null; start_date: string | null }; is_featured: boolean };
+  const salons = (data.salon_providers as SalonJoin[])
+    .map((sp) => ({ ...sp.salons, is_featured: sp.is_featured }))
+    .filter(Boolean);
+  const { salon_providers: _, ...rest } = data;
+  return { ...rest, salons } as ProviderRow & { salons: Array<{ id: string; slug: string; name: string; city: string | null; start_date: string | null; is_featured: boolean }> };
+}
+
+export async function getProvidersBySalon(salonId: string) {
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from("salon_providers")
+    .select("is_featured, providers(*)")
+    .eq("salon_id", salonId)
+    .order("is_featured", { ascending: false });
+  if (error) throw error;
+  return (data ?? []).map((sp) => ({
+    ...(sp.providers as unknown as ProviderRow),
+    is_featured: sp.is_featured,
+  }));
+}
+
+export async function getAllProviderSlugs() {
+  const supabase = createStaticClient();
+  const { data, error } = await supabase.from("providers").select("slug");
+  if (error) throw error;
+  return (data ?? []).map((p) => p.slug);
+}
+
+export async function getProviderCities() {
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from("providers")
+    .select("city")
+    .not("city", "is", null)
+    .order("city");
+  if (error) throw error;
+  const cities = [...new Set((data ?? []).map((p) => p.city).filter(Boolean))];
+  return cities as string[];
+}
+
 // Tous les slugs de secteurs (pour generateStaticParams)
 export async function getAllSectorSlugs() {
   const supabase = createStaticClient();

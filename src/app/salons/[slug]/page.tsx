@@ -11,6 +11,7 @@ import { formatDateRange, formatNumber } from "@/lib/format";
 import { SectorBadge } from "@/components/sector-badge";
 import { StatBlock } from "@/components/stat-block";
 import { SalonCard } from "@/components/salon-card";
+import { ProviderDrawer } from "@/components/provider-drawer";
 import { JsonLd } from "@/components/json-ld";
 import {
   MapPin,
@@ -235,19 +236,8 @@ export default async function SalonPage({ params }: Props) {
         </div>
       </section>
 
-      {/* 5. CTA Prestataires (placeholder) */}
-      <section className="mt-10 rounded-lg border border-accent/20 bg-accent/5 p-8 text-center">
-        <h2 className="font-serif text-xl font-bold tracking-tight">
-          Organiser mon stand
-        </h2>
-        <p className="mt-2 text-sm text-muted">
-          Trouvez les prestataires recommandés pour ce salon : standistes,
-          traiteurs, photographes...
-        </p>
-        <p className="mt-4 text-sm font-medium text-accent">
-          Bientôt disponible
-        </p>
-      </section>
+      {/* 5. Drawer Prestataires */}
+      <ProviderDrawer salonId={salon.id} salonName={salon.name} />
 
       {/* 6. Bloc visuel */}
       {salon.cover_image_url && (
