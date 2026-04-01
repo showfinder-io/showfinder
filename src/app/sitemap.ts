@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/lib/config";
 import { createStaticClient } from "@/lib/supabase/static";
+import { getAllPosts } from "@/lib/blog";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const supabase = createStaticClient();
@@ -56,6 +57,25 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${siteConfig.url}/secteurs/${sector.slug}`,
       lastModified: now,
       changeFrequency: "weekly",
+      priority: 0.6,
+    });
+  }
+
+  // Blog
+  const posts = getAllPosts();
+
+  entries.push({
+    url: `${siteConfig.url}/blog`,
+    lastModified: now,
+    changeFrequency: "weekly",
+    priority: 0.7,
+  });
+
+  for (const post of posts) {
+    entries.push({
+      url: `${siteConfig.url}/blog/${post.slug}`,
+      lastModified: new Date(post.frontmatter.date),
+      changeFrequency: "monthly",
       priority: 0.6,
     });
   }

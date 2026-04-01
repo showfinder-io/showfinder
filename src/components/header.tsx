@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { siteConfig } from "@/lib/config";
+import { AuthButton } from "@/components/auth-button";
 
 export function Header() {
   return (
@@ -15,6 +16,13 @@ export function Header() {
           >
             Salons
           </Link>
+          <Link
+            href="/blog"
+            className="text-muted transition-colors hover:text-ink"
+          >
+            Blog
+          </Link>
+          <AuthButton />
         </nav>
       </div>
     </header>
