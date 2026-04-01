@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAllPosts, getPostBySlug } from "@/lib/blog";
 import { siteConfig } from "@/lib/config";
+import { compileMdxContent } from "@/lib/mdx";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -43,10 +44,8 @@ export default async function BlogPostPage({ params }: PageProps) {
 
   if (!post) notFound();
 
-  // Import dynamique du fichier MDX
-  const { default: PostContent } = await import(
-    `../../../../content/blog/${slug}.mdx`
-  );
+  // Compiler le MDX (sans le frontmatter)
+  const PostContent = await compileMdxContent(post.content);
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-16">
