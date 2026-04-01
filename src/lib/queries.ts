@@ -313,3 +313,67 @@ export async function getAllSalonSlugs() {
   if (error) throw error;
   return (data ?? []).map((s) => s.slug);
 }
+
+// Tous les slugs de secteurs (pour generateStaticParams)
+export async function getAllSectorSlugs() {
+  const supabase = createStaticClient();
+
+  const { data, error } = await supabase
+    .from("sectors")
+    .select("slug");
+
+  if (error) throw error;
+  return (data ?? []).map((s) => s.slug);
+}
+
+// Recuperer un secteur par slug
+export async function getSectorBySlug(slug: string) {
+  const supabase = await createClient();
+
+  const { data, error } = await supabase
+    .from("sectors")
+    .select("id, slug, name, description")
+    .eq("slug", slug)
+    .single();
+
+  if (error || !data) return null;
+  return data as SectorRow;
+}
+
+// Salons filtres par ville
+export async function getSalonsByCity(city: string) {
+  const supabase = await createClient();
+
+  const { data, error } = await supabase
+    .from("salons")
+    .select("*, salon_sectors(sector_id, sectors(id, slug, name))")
+    .eq("status", "published")
+    .eq("city", city)
+    .order("start_date", { ascending: true, nullsFirst: false });
+
+  if (error) throw error;
+
+  return (data ?? []).map((salon) => {
+    const sectors = (salon.salon_sectors as Array<{ sectors: SectorSummary }>)
+      .map((ss) => ss.sectors)
+      .filter(Boolean);
+    const { salon_sectors: _, ...rest } = salon;
+    return { ...rest, sectors } as SalonWithSectors;
+  });
+}
+
+// Toutes les villes uniques avec leurs slugs (pour generateStaticParams)
+export async function getAllCitySlugs() {
+  const supabase = createStaticClient();
+
+  const { data, error } = await supabase
+    .from("salons")
+    .select("city")
+    .eq("status", "published")
+    .not("city", "is", null);
+
+  if (error) throw error;
+
+  const cities = [...new Set((data ?? []).map((s) => s.city).filter(Boolean))];
+  return cities as string[];
+}

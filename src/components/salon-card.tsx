@@ -12,15 +12,24 @@ export function SalonCard({ salon }: SalonCardProps) {
   return (
     <article className="group rounded-lg border border-border bg-white p-6 transition-shadow hover:shadow-md">
       <div className="flex flex-col gap-4">
-        {/* Nom */}
-        <h3 className="font-serif text-lg font-bold tracking-tight">
-          <Link
-            href={`/salons/${salon.slug}`}
-            className="hover:text-accent transition-colors"
-          >
-            {salon.name}
-          </Link>
-        </h3>
+        {/* Nom + logo */}
+        <div className="flex items-start gap-3">
+          {salon.logo_url && (
+            <img
+              src={salon.logo_url}
+              alt=""
+              className="h-8 w-8 shrink-0 rounded"
+            />
+          )}
+          <h3 className="font-serif text-lg font-bold tracking-tight">
+            <Link
+              href={`/salons/${salon.slug}`}
+              className="hover:text-accent transition-colors"
+            >
+              {salon.name}
+            </Link>
+          </h3>
+        </div>
 
         {/* Secteurs */}
         {salon.sectors.length > 0 && (

@@ -12,6 +12,7 @@ import { SectorBadge } from "@/components/sector-badge";
 import { StatBlock } from "@/components/stat-block";
 import { PlaceholderImage } from "@/components/placeholder-image";
 import { SalonCard } from "@/components/salon-card";
+import { JsonLd } from "@/components/json-ld";
 import {
   MapPin,
   Calendar,
@@ -82,8 +83,33 @@ export default async function SalonPage({ params }: Props) {
       : null,
   ].filter(Boolean) as { value: number; label: string }[];
 
+  // Schema.org Event
+  const eventJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    name: salon.name,
+    description: salon.description,
+    startDate: salon.start_date,
+    endDate: salon.end_date,
+    location: {
+      "@type": "Place",
+      name: salon.venue,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: salon.city,
+        addressCountry: salon.country,
+      },
+    },
+    organizer: salon.organizer_name
+      ? { "@type": "Organization", name: salon.organizer_name }
+      : undefined,
+    eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+    url: salon.website_url,
+  };
+
   return (
     <div className="mx-auto max-w-4xl px-4 py-10">
+      <JsonLd data={eventJsonLd} />
       {/* Breadcrumb */}
       <nav className="mb-8 text-sm text-muted">
         <Link href="/salons" className="hover:text-ink transition-colors">
@@ -104,9 +130,18 @@ export default async function SalonPage({ params }: Props) {
             />
           ))}
         </div>
-        <h1 className="mt-4 font-serif text-3xl font-bold tracking-tight sm:text-4xl">
-          {salon.name}
-        </h1>
+        <div className="mt-4 flex items-center gap-4">
+          {salon.logo_url && (
+            <img
+              src={salon.logo_url}
+              alt=""
+              className="h-10 w-10 shrink-0 rounded"
+            />
+          )}
+          <h1 className="font-serif text-3xl font-bold tracking-tight sm:text-4xl">
+            {salon.name}
+          </h1>
+        </div>
 
         {/* Meta inline */}
         <div className="mt-4 flex flex-wrap gap-6 text-muted">

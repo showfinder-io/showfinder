@@ -47,3 +47,16 @@ export function formatNumber(n: number | null): string {
   if (n === null || n === undefined) return "";
   return new Intl.NumberFormat("fr-FR").format(n);
 }
+
+// Transforme un nom de ville en slug URL
+// "Bourg-lès-Valence" -> "bourg-les-valence"
+export function slugifyCity(city: string): string {
+  return city
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "") // supprime les accents
+    .toLowerCase()
+    .replace(/\s+/g, "-") // espaces -> tirets
+    .replace(/[^a-z0-9-]/g, "") // supprime les caracteres speciaux sauf tirets
+    .replace(/-+/g, "-") // fusionne les tirets multiples
+    .replace(/^-|-$/g, ""); // supprime les tirets en debut/fin
+}
