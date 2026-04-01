@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
-import { Inter, Lora, Geist } from "next/font/google";
+import { Inter, Lora } from "next/font/google";
 import { siteConfig } from "@/lib/config";
 import { GoogleAnalytics } from "@/components/google-analytics";
-import "./globals.css";
 import { cn } from "@/lib/utils";
-
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+import "./globals.css";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -33,7 +31,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className={cn(inter.variable, lora.variable, "font-sans", geist.variable)}>
+    <html lang="fr" className={cn(inter.variable, lora.variable)}>
       <body className="bg-paper text-ink font-sans antialiased">
         {children}
         <GoogleAnalytics />
