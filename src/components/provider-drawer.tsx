@@ -110,12 +110,14 @@ export function ProviderDrawer({ salonId, salonName }: ProviderDrawerProps) {
                   </h3>
                   <div className="space-y-3">
                     {catProviders.map((p) => (
-                      <Link
+                      <div
                         key={p.id}
-                        href={`/prestataires/${p.slug}`}
                         className="flex items-center justify-between rounded-lg border border-border p-3 transition-shadow hover:shadow-sm"
                       >
-                        <div>
+                        <Link
+                          href={`/prestataires/${p.slug}`}
+                          className="flex-1"
+                        >
                           <div className="flex items-center gap-2">
                             <span className="font-medium">
                               {p.company_name}
@@ -135,8 +137,14 @@ export function ProviderDrawer({ salonId, salonName }: ProviderDrawerProps) {
                               {p.city}
                             </div>
                           )}
-                        </div>
-                      </Link>
+                        </Link>
+                        <Link
+                          href={`/prestataires/${p.slug}`}
+                          className="ml-3 shrink-0 rounded-md bg-accent/10 px-2.5 py-1 text-xs font-medium text-accent transition-colors hover:bg-accent/20"
+                        >
+                          Devis
+                        </Link>
+                      </div>
                     ))}
                   </div>
                 </div>

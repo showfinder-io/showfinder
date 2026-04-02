@@ -14,6 +14,36 @@ export type Database = {
   }
   public: {
     Tables: {
+      provider_venues: {
+        Row: {
+          provider_id: string
+          venue_id: string
+        }
+        Insert: {
+          provider_id: string
+          venue_id: string
+        }
+        Update: {
+          provider_id?: string
+          venue_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "provider_venues_provider_id_fkey"
+            columns: ["provider_id"]
+            isOneToOne: false
+            referencedRelation: "providers"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "provider_venues_venue_id_fkey"
+            columns: ["venue_id"]
+            isOneToOne: false
+            referencedRelation: "venues"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       providers: {
         Row: {
           avg_rating: number
@@ -33,6 +63,7 @@ export type Database = {
           subscription_tier: Database["public"]["Enums"]["provider_tier"]
           updated_at: string
           website_url: string | null
+          zone_intervention: string | null
         }
         Insert: {
           avg_rating?: number
@@ -52,6 +83,7 @@ export type Database = {
           subscription_tier?: Database["public"]["Enums"]["provider_tier"]
           updated_at?: string
           website_url?: string | null
+          zone_intervention?: string | null
         }
         Update: {
           avg_rating?: number
@@ -71,8 +103,50 @@ export type Database = {
           subscription_tier?: Database["public"]["Enums"]["provider_tier"]
           updated_at?: string
           website_url?: string | null
+          zone_intervention?: string | null
         }
         Relationships: []
+      }
+      quotes: {
+        Row: {
+          company_name: string
+          created_at: string
+          email: string
+          id: string
+          message: string
+          provider_id: string
+          salon_name: string | null
+          status: string
+        }
+        Insert: {
+          company_name: string
+          created_at?: string
+          email: string
+          id?: string
+          message: string
+          provider_id: string
+          salon_name?: string | null
+          status?: string
+        }
+        Update: {
+          company_name?: string
+          created_at?: string
+          email?: string
+          id?: string
+          message?: string
+          provider_id?: string
+          salon_name?: string | null
+          status?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "quotes_provider_id_fkey"
+            columns: ["provider_id"]
+            isOneToOne: false
+            referencedRelation: "providers"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       reports: {
         Row: {

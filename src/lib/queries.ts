@@ -332,6 +332,7 @@ export type ProviderRow = {
   description: string | null;
   city: string | null;
   coverage_radius_km: number | null;
+  zone_intervention: string | null;
   website_url: string | null;
   phone: string | null;
   email: string | null;
@@ -375,7 +376,7 @@ export async function getProviderBySlug(slug: string) {
   const supabase = await createClient();
   const { data, error } = await supabase
     .from("providers")
-    .select("*, salon_providers(salon_id, is_featured, salons(id, slug, name, city, start_date))")
+    .select("*, salon_providers(salon_id, is_featured, salons(id, slug, name, city, start_date)), provider_venues(venue_id, venues(id, slug, name, city))")
     .eq("slug", slug)
     .single();
   if (error || !data) return null;
@@ -383,8 +384,15 @@ export async function getProviderBySlug(slug: string) {
   const salons = (data.salon_providers as SalonJoin[])
     .map((sp) => ({ ...sp.salons, is_featured: sp.is_featured }))
     .filter(Boolean);
-  const { salon_providers: _, ...rest } = data;
-  return { ...rest, salons } as ProviderRow & { salons: Array<{ id: string; slug: string; name: string; city: string | null; start_date: string | null; is_featured: boolean }> };
+  type VenueJoin = { venues: { id: string; slug: string; name: string; city: string } };
+  const venues = (data.provider_venues as VenueJoin[])
+    .map((pv) => pv.venues)
+    .filter(Boolean);
+  const { salon_providers: _, provider_venues: __, ...rest } = data;
+  return { ...rest, salons, venues } as ProviderRow & {
+    salons: Array<{ id: string; slug: string; name: string; city: string | null; start_date: string | null; is_featured: boolean }>;
+    venues: Array<{ id: string; slug: string; name: string; city: string }>;
+  };
 }
 
 export async function getProvidersBySalon(salonId: string) {

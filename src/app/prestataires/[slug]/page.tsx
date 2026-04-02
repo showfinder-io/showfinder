@@ -9,6 +9,7 @@ import {
 } from "@/lib/queries";
 import { CategoryBadge } from "@/components/category-badge";
 import { formatDateRange } from "@/lib/format";
+import { QuoteRequest } from "@/components/quote-request";
 import {
   MapPin,
   Globe,
@@ -17,6 +18,7 @@ import {
   BadgeCheck,
   ExternalLink,
   Radius,
+  Map,
 } from "lucide-react";
 
 type Props = {
@@ -99,6 +101,15 @@ export default async function ProviderPage({ params }: Props) {
               </div>
             </div>
           )}
+          {provider.zone_intervention && (
+            <div className="flex items-start gap-3">
+              <Map className="mt-0.5 h-4 w-4 text-muted" />
+              <div>
+                <p className="text-sm font-medium">Zone d&apos;intervention</p>
+                <p className="text-sm text-muted">{provider.zone_intervention}</p>
+              </div>
+            </div>
+          )}
           {provider.website_url && (
             <div className="flex items-start gap-3">
               <Globe className="mt-0.5 h-4 w-4 text-muted" />
@@ -139,6 +150,36 @@ export default async function ProviderPage({ params }: Props) {
           )}
         </div>
       </section>
+
+      {/* Demander un devis */}
+      <section className="mt-10">
+        <QuoteRequest providerId={provider.id} providerName={provider.company_name} />
+      </section>
+
+      {/* Lieux couverts */}
+      {provider.venues.length > 0 && (
+        <section className="mt-12">
+          <h2 className="font-serif text-2xl font-bold tracking-tight">
+            Lieux couverts
+          </h2>
+          <div className="mt-6 grid gap-4">
+            {provider.venues.map((venue) => (
+              <Link
+                key={venue.id}
+                href={`/lieux/${venue.slug}`}
+                className="flex items-center justify-between rounded-lg border border-border bg-white p-4 transition-shadow hover:shadow-md"
+              >
+                <div>
+                  <p className="font-medium">{venue.name}</p>
+                  {venue.city && (
+                    <p className="mt-1 text-sm text-muted">{venue.city}</p>
+                  )}
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Salons couverts */}
       {provider.salons.length > 0 && (
