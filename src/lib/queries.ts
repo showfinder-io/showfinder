@@ -483,3 +483,82 @@ export async function getAllCitySlugs() {
   const cities = [...new Set((data ?? []).map((s) => s.city).filter(Boolean))];
   return cities as string[];
 }
+
+// ============================================================
+// Venues (lieux d'exposition)
+// ============================================================
+
+export type VenueRow = {
+  id: string;
+  slug: string;
+  name: string;
+  city: string;
+  address: string | null;
+  postal_code: string | null;
+  country: string;
+  lat: number | null;
+  lng: number | null;
+  total_surface_sqm: number | null;
+  website_url: string | null;
+  description: string | null;
+  photo_url: string | null;
+  google_maps_url: string | null;
+  created_at: string;
+};
+
+export async function getVenues() {
+  const supabase = await createClient();
+
+  const { data, error } = await supabase
+    .from("venues")
+    .select("*")
+    .order("name");
+
+  if (error) throw error;
+  return (data ?? []) as VenueRow[];
+}
+
+export async function getVenueBySlug(slug: string) {
+  const supabase = await createClient();
+
+  const { data, error } = await supabase
+    .from("venues")
+    .select("*")
+    .eq("slug", slug)
+    .single();
+
+  if (error || !data) return null;
+  return data as VenueRow;
+}
+
+export async function getSalonsByVenue(venueId: string) {
+  const supabase = await createClient();
+
+  const { data, error } = await supabase
+    .from("salons")
+    .select("*, salon_sectors(sector_id, sectors(id, slug, name))")
+    .eq("status", "published")
+    .eq("venue_id", venueId)
+    .order("start_date", { ascending: true, nullsFirst: false });
+
+  if (error) throw error;
+
+  return (data ?? []).map((salon) => {
+    const sectors = (salon.salon_sectors as Array<{ sectors: SectorSummary }>)
+      .map((ss) => ss.sectors)
+      .filter(Boolean);
+    const { salon_sectors: _, ...rest } = salon;
+    return { ...rest, sectors } as SalonWithSectors;
+  });
+}
+
+export async function getAllVenueSlugs() {
+  const supabase = createStaticClient();
+
+  const { data, error } = await supabase
+    .from("venues")
+    .select("slug");
+
+  if (error) throw error;
+  return (data ?? []).map((v) => v.slug);
+}

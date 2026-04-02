@@ -7,18 +7,20 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const supabase = createStaticClient();
 
   // Requetes en parallele
-  const [salonsResult, sectorsResult, providersResult] = await Promise.all([
+  const [salonsResult, sectorsResult, providersResult, venuesResult] = await Promise.all([
     supabase
       .from("salons")
       .select("slug, updated_at")
       .eq("status", "published"),
     supabase.from("sectors").select("slug"),
     supabase.from("providers").select("slug"),
+    supabase.from("venues").select("slug"),
   ]);
 
   const salons = salonsResult.data ?? [];
   const sectors = sectorsResult.data ?? [];
   const providers = providersResult.data ?? [];
+  const venues = venuesResult.data ?? [];
 
   const now = new Date();
 
@@ -57,6 +59,24 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   for (const sector of sectors) {
     entries.push({
       url: `${siteConfig.url}/secteurs/${sector.slug}`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.6,
+    });
+  }
+
+  // Page index lieux
+  entries.push({
+    url: `${siteConfig.url}/lieux`,
+    lastModified: now,
+    changeFrequency: "weekly",
+    priority: 0.8,
+  });
+
+  // Pages lieu
+  for (const venue of venues) {
+    entries.push({
+      url: `${siteConfig.url}/lieux/${venue.slug}`,
       lastModified: now,
       changeFrequency: "weekly",
       priority: 0.6,

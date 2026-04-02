@@ -174,6 +174,13 @@ export type Database = {
             referencedRelation: "salons"
             referencedColumns: ["id"]
           },
+          {
+            foreignKeyName: "salon_providers_salon_id_fkey"
+            columns: ["salon_id"]
+            isOneToOne: false
+            referencedRelation: "upcoming_salons"
+            referencedColumns: ["id"]
+          },
         ]
       }
       salon_sectors: {
@@ -195,6 +202,13 @@ export type Database = {
             columns: ["salon_id"]
             isOneToOne: false
             referencedRelation: "salons"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "salon_sectors_salon_id_fkey"
+            columns: ["salon_id"]
+            isOneToOne: false
+            referencedRelation: "upcoming_salons"
             referencedColumns: ["id"]
           },
           {
@@ -239,6 +253,13 @@ export type Database = {
             referencedRelation: "salons"
             referencedColumns: ["id"]
           },
+          {
+            foreignKeyName: "salon_tags_salon_id_fkey"
+            columns: ["salon_id"]
+            isOneToOne: false
+            referencedRelation: "upcoming_salons"
+            referencedColumns: ["id"]
+          },
         ]
       }
       salons: {
@@ -254,6 +275,7 @@ export type Database = {
           estimated_visitors: number | null
           frequency: Database["public"]["Enums"]["salon_frequency"] | null
           id: string
+          is_locked: boolean
           is_premium: boolean
           logo_url: string | null
           name: string
@@ -266,6 +288,7 @@ export type Database = {
           status: Database["public"]["Enums"]["salon_status"]
           updated_at: string
           venue: string | null
+          venue_id: string | null
           venue_lat: number | null
           venue_lng: number | null
           website_url: string | null
@@ -282,6 +305,7 @@ export type Database = {
           estimated_visitors?: number | null
           frequency?: Database["public"]["Enums"]["salon_frequency"] | null
           id?: string
+          is_locked?: boolean
           is_premium?: boolean
           logo_url?: string | null
           name: string
@@ -294,6 +318,7 @@ export type Database = {
           status?: Database["public"]["Enums"]["salon_status"]
           updated_at?: string
           venue?: string | null
+          venue_id?: string | null
           venue_lat?: number | null
           venue_lng?: number | null
           website_url?: string | null
@@ -310,6 +335,7 @@ export type Database = {
           estimated_visitors?: number | null
           frequency?: Database["public"]["Enums"]["salon_frequency"] | null
           id?: string
+          is_locked?: boolean
           is_premium?: boolean
           logo_url?: string | null
           name?: string
@@ -322,11 +348,20 @@ export type Database = {
           status?: Database["public"]["Enums"]["salon_status"]
           updated_at?: string
           venue?: string | null
+          venue_id?: string | null
           venue_lat?: number | null
           venue_lng?: number | null
           website_url?: string | null
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "salons_venue_id_fkey"
+            columns: ["venue_id"]
+            isOneToOne: false
+            referencedRelation: "venues"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       sectors: {
         Row: {
@@ -361,9 +396,167 @@ export type Database = {
         }
         Relationships: []
       }
+      user_roles: {
+        Row: {
+          created_at: string
+          role: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          role?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          role?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      venues: {
+        Row: {
+          address: string | null
+          city: string
+          country: string
+          created_at: string
+          description: string | null
+          google_maps_url: string | null
+          id: string
+          lat: number | null
+          lng: number | null
+          name: string
+          photo_url: string | null
+          postal_code: string | null
+          slug: string
+          total_surface_sqm: number | null
+          website_url: string | null
+        }
+        Insert: {
+          address?: string | null
+          city: string
+          country?: string
+          created_at?: string
+          description?: string | null
+          google_maps_url?: string | null
+          id?: string
+          lat?: number | null
+          lng?: number | null
+          name: string
+          photo_url?: string | null
+          postal_code?: string | null
+          slug: string
+          total_surface_sqm?: number | null
+          website_url?: string | null
+        }
+        Update: {
+          address?: string | null
+          city?: string
+          country?: string
+          created_at?: string
+          description?: string | null
+          google_maps_url?: string | null
+          id?: string
+          lat?: number | null
+          lng?: number | null
+          name?: string
+          photo_url?: string | null
+          postal_code?: string | null
+          slug?: string
+          total_surface_sqm?: number | null
+          website_url?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
-      [_ in never]: never
+      upcoming_salons: {
+        Row: {
+          city: string | null
+          country: string | null
+          cover_image_url: string | null
+          created_at: string | null
+          description: string | null
+          edition_year: number | null
+          end_date: string | null
+          estimated_exhibitors: number | null
+          estimated_visitors: number | null
+          frequency: Database["public"]["Enums"]["salon_frequency"] | null
+          id: string | null
+          is_premium: boolean | null
+          logo_url: string | null
+          name: string | null
+          organizer_email: string | null
+          organizer_name: string | null
+          seo_description: string | null
+          seo_title: string | null
+          slug: string | null
+          start_date: string | null
+          status: Database["public"]["Enums"]["salon_status"] | null
+          updated_at: string | null
+          venue: string | null
+          venue_lat: number | null
+          venue_lng: number | null
+          website_url: string | null
+        }
+        Insert: {
+          city?: string | null
+          country?: string | null
+          cover_image_url?: string | null
+          created_at?: string | null
+          description?: string | null
+          edition_year?: number | null
+          end_date?: string | null
+          estimated_exhibitors?: number | null
+          estimated_visitors?: number | null
+          frequency?: Database["public"]["Enums"]["salon_frequency"] | null
+          id?: string | null
+          is_premium?: boolean | null
+          logo_url?: string | null
+          name?: string | null
+          organizer_email?: string | null
+          organizer_name?: string | null
+          seo_description?: string | null
+          seo_title?: string | null
+          slug?: string | null
+          start_date?: string | null
+          status?: Database["public"]["Enums"]["salon_status"] | null
+          updated_at?: string | null
+          venue?: string | null
+          venue_lat?: number | null
+          venue_lng?: number | null
+          website_url?: string | null
+        }
+        Update: {
+          city?: string | null
+          country?: string | null
+          cover_image_url?: string | null
+          created_at?: string | null
+          description?: string | null
+          edition_year?: number | null
+          end_date?: string | null
+          estimated_exhibitors?: number | null
+          estimated_visitors?: number | null
+          frequency?: Database["public"]["Enums"]["salon_frequency"] | null
+          id?: string | null
+          is_premium?: boolean | null
+          logo_url?: string | null
+          name?: string | null
+          organizer_email?: string | null
+          organizer_name?: string | null
+          seo_description?: string | null
+          seo_title?: string | null
+          slug?: string | null
+          start_date?: string | null
+          status?: Database["public"]["Enums"]["salon_status"] | null
+          updated_at?: string | null
+          venue?: string | null
+          venue_lat?: number | null
+          venue_lng?: number | null
+          website_url?: string | null
+        }
+        Relationships: []
+      }
     }
     Functions: {
       [_ in never]: never

@@ -26,6 +26,12 @@ export function Header() {
             Prestataires
           </Link>
           <Link
+            href="/lieux"
+            className="text-muted transition-colors hover:text-ink"
+          >
+            Lieux
+          </Link>
+          <Link
             href="/blog"
             className="text-muted transition-colors hover:text-ink"
           >
