@@ -9,9 +9,22 @@ type SalonCardProps = {
 };
 
 export function SalonCard({ salon }: SalonCardProps) {
+  const isPast =
+    !!salon.start_date &&
+    new Date(salon.start_date) < new Date(new Date().toDateString());
+
   return (
-    <article className="group rounded-lg border border-border bg-white p-6 transition-shadow hover:shadow-md">
+    <article
+      className={`group rounded-lg border border-border bg-white p-6 transition-shadow hover:shadow-md${isPast ? " opacity-60" : ""}`}
+    >
       <div className="flex flex-col gap-4">
+        {/* Badge edition passee */}
+        {isPast && (
+          <span className="inline-block self-start rounded bg-gray-200 px-2 py-0.5 text-xs font-medium text-gray-500">
+            Édition passée
+          </span>
+        )}
+
         {/* Nom + logo */}
         <div className="flex items-start gap-3">
           {salon.logo_url && (

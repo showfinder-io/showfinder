@@ -63,6 +63,7 @@ export type SalonFilters = {
   page?: number;
   pageSize?: number;
   sort?: "date" | "name";
+  upcoming?: boolean;
 };
 
 // Requetes
@@ -80,6 +81,11 @@ export async function getSalons(filters: SalonFilters = {}) {
       count: "exact",
     })
     .eq("status", "published");
+
+  // Filtre salons a venir uniquement
+  if (filters.upcoming) {
+    query = query.gte("start_date", new Date().toISOString().split("T")[0]);
+  }
 
   // Recherche texte
   if (filters.search) {

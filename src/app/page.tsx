@@ -6,7 +6,7 @@ import { SectorBadge } from "@/components/sector-badge";
 
 export default async function Home() {
   const [{ salons: upcomingSalons }, sectors] = await Promise.all([
-    getSalons({ pageSize: 6, sort: "date" }),
+    getSalons({ pageSize: 6, sort: "date", upcoming: true }),
     getSectors(),
   ]);
 
