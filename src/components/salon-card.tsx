@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { formatDateRange, formatNumber } from "@/lib/format";
-import { SectorBadge } from "@/components/sector-badge";
+import { SectorBadge, getSectorBorderColor } from "@/components/sector-badge";
 import type { SalonWithSectors } from "@/lib/queries";
 import { MapPin, Calendar, Users } from "lucide-react";
 
@@ -13,9 +13,14 @@ export function SalonCard({ salon }: SalonCardProps) {
     !!salon.start_date &&
     new Date(salon.start_date) < new Date(new Date().toDateString());
 
+  const borderColorClass =
+    salon.sectors.length > 0
+      ? getSectorBorderColor(salon.sectors[0].slug)
+      : "border-l-border";
+
   return (
     <article
-      className={`group rounded-lg border border-border bg-white p-6 transition-shadow hover:shadow-md${isPast ? " opacity-60" : ""}`}
+      className={`group rounded-lg border border-border border-l-2 ${borderColorClass} bg-white p-6 transition-shadow hover:shadow-md${isPast ? " opacity-60" : ""}`}
     >
       <div className="flex flex-col gap-4">
         {/* Badge edition passee */}

@@ -13,7 +13,7 @@ export default async function Home() {
   return (
     <div>
       {/* Hero */}
-      <section className="py-20 text-center">
+      <section className="bg-gradient-to-b from-paper to-white py-20 text-center">
         <div className="mx-auto max-w-3xl px-4">
           <h1 className="font-serif text-4xl font-bold tracking-tight sm:text-5xl">
             Trouvez les salons professionnels qui comptent
