@@ -4,6 +4,7 @@ export const metadata: Metadata = {
   title: "Créer un compte",
   description:
     "Créez votre compte pour découvrir et suivre les salons professionnels en France.",
+  robots: { index: false, follow: false },
 };
 
 export default function InscriptionLayout({

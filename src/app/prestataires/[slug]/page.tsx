@@ -40,6 +40,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${provider.company_name} - ${label}`,
     description: provider.description || `${provider.company_name}, ${label} pour salons professionnels sur ${siteConfig.name}.`,
+    alternates: {
+      canonical: `${siteConfig.url}/prestataires/${slug}`,
+    },
   };
 }
 

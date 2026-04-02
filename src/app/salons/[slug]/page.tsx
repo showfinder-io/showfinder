@@ -14,6 +14,8 @@ import { SalonCard } from "@/components/salon-card";
 import { ProviderDrawer } from "@/components/provider-drawer";
 import { ReportError } from "@/components/report-error";
 import { AlertSubscribe } from "@/components/alert-subscribe";
+import { ReviewList } from "@/components/review-list";
+import { ReviewForm } from "@/components/review-form";
 import { JsonLd } from "@/components/json-ld";
 import {
   MapPin,
@@ -50,6 +52,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title,
     description,
+    alternates: {
+      canonical: `${siteConfig.url}/salons/${slug}`,
+    },
     openGraph: {
       title,
       description,
@@ -256,6 +261,19 @@ export default async function SalonPage({ params }: Props) {
           />
         </section>
       )}
+
+      {/* Avis */}
+      <section className="mt-16">
+        <h2 className="font-serif text-2xl font-bold tracking-tight">
+          Avis
+        </h2>
+        <div className="mt-6">
+          <ReviewList targetType="salon" targetId={salon.id} />
+        </div>
+        <div className="mt-6">
+          <ReviewForm targetType="salon" targetId={salon.id} />
+        </div>
+      </section>
 
       {/* Signaler une erreur */}
       <ReportError salonSlug={slug} />

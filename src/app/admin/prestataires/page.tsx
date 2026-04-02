@@ -1,7 +1,15 @@
 "use client";
 
 import { useEffect, useState, useCallback } from "react";
-import { PROVIDER_CATEGORY_LABELS } from "@/lib/queries";
+const PROVIDER_CATEGORY_LABELS: Record<string, string> = {
+  standiste: "Standiste",
+  traiteur: "Traiteur",
+  av_technique: "Audiovisuel",
+  photographe: "Photographe",
+  transport: "Transport",
+  hebergement: "Hébergement",
+  autre: "Autre",
+};
 
 type Provider = {
   id: string;

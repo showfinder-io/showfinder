@@ -6,6 +6,9 @@ import { getSectors } from "@/lib/queries";
 export const metadata: Metadata = {
   title: "Tous les secteurs",
   description: `Parcourez les salons professionnels par secteur d'activité sur ${siteConfig.name}.`,
+  alternates: {
+    canonical: `${siteConfig.url}/secteurs`,
+  },
 };
 
 export default async function SecteursPage() {

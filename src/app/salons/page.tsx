@@ -8,6 +8,9 @@ import { SalonListLoadMore } from "@/components/salon-list-loadmore";
 export const metadata: Metadata = {
   title: "Tous les salons professionnels",
   description: `Découvrez tous les salons professionnels en France sur ${siteConfig.name}. Filtrez par secteur, ville et date.`,
+  alternates: {
+    canonical: `${siteConfig.url}/salons`,
+  },
 };
 
 type Props = {

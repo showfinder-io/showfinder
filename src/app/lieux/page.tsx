@@ -8,6 +8,9 @@ import { MapPin, Maximize2 } from "lucide-react";
 export const metadata: Metadata = {
   title: "Lieux d'exposition en France",
   description: `Découvrez les principaux lieux d'exposition et parcs des expositions en France sur ${siteConfig.name}. Trouvez les salons par lieu.`,
+  alternates: {
+    canonical: `${siteConfig.url}/lieux`,
+  },
 };
 
 export default async function LieuxPage() {

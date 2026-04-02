@@ -1,8 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { siteConfig } from "@/lib/config";
 import { getSalons, getSectors } from "@/lib/queries";
 import { SalonCard } from "@/components/salon-card";
 import { SectorBadge } from "@/components/sector-badge";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: `${siteConfig.url}/`,
+  },
+};
 
 export default async function Home() {
   const [{ salons: upcomingSalons }, sectors] = await Promise.all([

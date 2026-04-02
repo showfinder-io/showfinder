@@ -11,6 +11,9 @@ import { ProviderCard } from "@/components/provider-card";
 export const metadata: Metadata = {
   title: "Prestataires pour salons professionnels",
   description: `Trouvez les meilleurs prestataires pour votre salon professionnel sur ${siteConfig.name} : standistes, traiteurs, audiovisuel, photographes.`,
+  alternates: {
+    canonical: `${siteConfig.url}/prestataires`,
+  },
 };
 
 type Props = {

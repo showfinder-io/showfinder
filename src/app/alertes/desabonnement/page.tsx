@@ -4,6 +4,7 @@ import { UnsubscribeForm } from "./unsubscribe-form";
 export const metadata: Metadata = {
   title: "Gérer mes alertes",
   description: "Gérez et désactivez vos alertes email.",
+  robots: { index: false, follow: false },
 };
 
 export default function DesabonnementPage() {

@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "Blog",
   description:
     "Conseils, guides et actualités pour réussir votre participation aux salons professionnels en France.",
+  alternates: {
+    canonical: `${siteConfig.url}/blog`,
+  },
 };
 
 export default function BlogPage() {

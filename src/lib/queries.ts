@@ -627,3 +627,58 @@ export async function getAllVenueSlugs() {
   if (error) throw error;
   return (data ?? []).map((v) => v.slug);
 }
+
+// ============================================================
+// Reviews (avis)
+// ============================================================
+
+export type ReviewRow = {
+  id: string;
+  target_type: "salon" | "provider";
+  target_id: string;
+  user_id: string | null;
+  rating: number;
+  title: string | null;
+  body: string | null;
+  role: string | null;
+  is_verified: boolean;
+  created_at: string;
+};
+
+export async function getReviewsByTarget(
+  targetType: "salon" | "provider",
+  targetId: string
+) {
+  const supabase = await createClient();
+
+  const { data, error } = await supabase
+    .from("reviews")
+    .select("*")
+    .eq("target_type", targetType)
+    .eq("target_id", targetId)
+    .order("created_at", { ascending: false });
+
+  if (error) throw error;
+  return (data ?? []) as ReviewRow[];
+}
+
+export async function getAverageRating(
+  targetType: "salon" | "provider",
+  targetId: string
+): Promise<{ average: number; count: number }> {
+  const supabase = await createClient();
+
+  const { data, error } = await supabase
+    .from("reviews")
+    .select("rating")
+    .eq("target_type", targetType)
+    .eq("target_id", targetId);
+
+  if (error) throw error;
+
+  const reviews = data ?? [];
+  if (reviews.length === 0) return { average: 0, count: 0 };
+
+  const sum = reviews.reduce((acc, r) => acc + r.rating, 0);
+  return { average: sum / reviews.length, count: reviews.length };
+}
