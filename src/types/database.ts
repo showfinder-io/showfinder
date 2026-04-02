@@ -74,6 +74,36 @@ export type Database = {
         }
         Relationships: []
       }
+      reports: {
+        Row: {
+          correction: string
+          created_at: string
+          field: string
+          id: string
+          reporter_email: string | null
+          salon_slug: string
+          status: string
+        }
+        Insert: {
+          correction: string
+          created_at?: string
+          field: string
+          id?: string
+          reporter_email?: string | null
+          salon_slug: string
+          status?: string
+        }
+        Update: {
+          correction?: string
+          created_at?: string
+          field?: string
+          id?: string
+          reporter_email?: string | null
+          salon_slug?: string
+          status?: string
+        }
+        Relationships: []
+      }
       reviews: {
         Row: {
           body: string | null

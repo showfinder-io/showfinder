@@ -12,6 +12,7 @@ import { SectorBadge } from "@/components/sector-badge";
 import { StatBlock } from "@/components/stat-block";
 import { SalonCard } from "@/components/salon-card";
 import { ProviderDrawer } from "@/components/provider-drawer";
+import { ReportError } from "@/components/report-error";
 import { JsonLd } from "@/components/json-ld";
 import {
   MapPin,
@@ -249,6 +250,9 @@ export default async function SalonPage({ params }: Props) {
           />
         </section>
       )}
+
+      {/* Signaler une erreur */}
+      <ReportError salonSlug={slug} />
 
       {/* 7. Salons similaires */}
       {similarSalons.length > 0 && (
