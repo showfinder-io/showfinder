@@ -252,7 +252,6 @@ UPDATE salons SET name = REPLACE(name, 'Hopital Expo', 'Hôpital Expo') WHERE na
 UPDATE salons SET name = REPLACE(name, 'Les Assises de la Securite', 'Les Assises de la Sécurité') WHERE name LIKE '%Les Assises de la Securite%';
 UPDATE salons SET name = REPLACE(name, 'JFR - Journees Francophones', 'JFR - Journées Francophones') WHERE name LIKE '%JFR - Journees Francophones%';
 UPDATE salons SET name = REPLACE(name, 'l''Aeronautique', 'l''Aéronautique') WHERE name LIKE '%Aeronautique%';
-UPDATE salons SET name = REPLACE(name, 'Salon de la Copropriete', 'Salon de la Copropriété') WHERE name LIKE '%Copropriete%';
 -- Note: 'Energaia' is a brand name, kept as-is
 
 -- ============================================================
