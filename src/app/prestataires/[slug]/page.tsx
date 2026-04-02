@@ -19,6 +19,7 @@ import {
   ExternalLink,
   Radius,
   Map,
+  Star,
 } from "lucide-react";
 
 type Props = {
@@ -48,9 +49,15 @@ export default async function ProviderPage({ params }: Props) {
   if (!provider) notFound();
 
   const label = PROVIDER_CATEGORY_LABELS[provider.category] ?? provider.category;
+  const isPremium = provider.subscription_tier === "premium";
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-10">
+      {/* Barre d'accent premium */}
+      {isPremium && (
+        <div className="mb-6 h-1 rounded-full bg-gradient-to-r from-amber-300 via-amber-400 to-amber-300" />
+      )}
+
       {/* Breadcrumb */}
       <nav className="mb-8 text-sm text-muted">
         <Link href="/prestataires" className="hover:text-ink transition-colors">
@@ -68,6 +75,12 @@ export default async function ProviderPage({ params }: Props) {
             <span className="inline-flex items-center gap-1 rounded-full bg-accent/10 px-3 py-1 text-xs font-medium text-accent">
               <BadgeCheck className="h-3 w-3" />
               Vérifié
+            </span>
+          )}
+          {isPremium && (
+            <span className="inline-flex items-center gap-1 rounded-full border border-amber-200 bg-amber-50 px-3 py-1 text-xs font-medium text-amber-700">
+              <Star className="h-3 w-3 fill-amber-400 text-amber-400" />
+              Premium
             </span>
           )}
         </div>
@@ -208,6 +221,21 @@ export default async function ProviderPage({ params }: Props) {
               </Link>
             ))}
           </div>
+        </section>
+      )}
+      {/* CTA pour prestataires non-premium */}
+      {!isPremium && (
+        <section className="mt-12 rounded-lg border border-border bg-paper p-6 text-center">
+          <p className="text-sm text-muted">
+            Vous êtes ce prestataire ? {" "}
+            <Link
+              href="/contact"
+              className="font-medium text-accent hover:text-accent-hover transition-colors"
+            >
+              Passez en Premium
+            </Link>{" "}
+            pour être mis en avant sur les fiches salons.
+          </p>
         </section>
       )}
     </div>

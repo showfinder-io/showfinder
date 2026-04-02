@@ -13,6 +13,7 @@ import { StatBlock } from "@/components/stat-block";
 import { SalonCard } from "@/components/salon-card";
 import { ProviderDrawer } from "@/components/provider-drawer";
 import { ReportError } from "@/components/report-error";
+import { AlertSubscribe } from "@/components/alert-subscribe";
 import { JsonLd } from "@/components/json-ld";
 import {
   MapPin,
@@ -174,6 +175,11 @@ export default async function SalonPage({ params }: Props) {
           </div>
         )}
       </header>
+
+      {/* Alerte dates */}
+      <div className="mt-6">
+        <AlertSubscribe type="salon" slug={slug} label={salon.name} />
+      </div>
 
       {/* 2. Quick Stats */}
       {stats.length > 0 && (

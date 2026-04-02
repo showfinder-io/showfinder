@@ -8,6 +8,7 @@ import {
   getSalonsBySector,
 } from "@/lib/queries";
 import { SalonCard } from "@/components/salon-card";
+import { AlertSubscribe } from "@/components/alert-subscribe";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -69,6 +70,11 @@ export default async function SecteurPage({ params }: Props) {
       {sector.description && (
         <p className="mt-4 leading-relaxed text-muted">{sector.description}</p>
       )}
+
+      {/* Alerte nouveaux salons */}
+      <div className="mt-6">
+        <AlertSubscribe type="sector" slug={slug} label={sector.name} />
+      </div>
 
       <p className="mt-4 text-sm text-muted">
         {result.total} salon{result.total > 1 ? "s" : ""} dans ce secteur

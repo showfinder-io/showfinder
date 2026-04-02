@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { siteConfig } from "@/lib/config";
 import {
   getProviders,
@@ -36,6 +37,27 @@ export default async function PrestatairesPage({ searchParams }: Props) {
       <p className="mt-2 text-muted">
         {providers.length} prestataire{providers.length > 1 ? "s" : ""}
       </p>
+
+      {/* Bannière prestataire */}
+      <div className="mt-6 rounded-lg border border-amber-200 bg-amber-50/50 px-6 py-4">
+        <p className="text-sm text-amber-900">
+          Vous êtes prestataire pour salons professionnels ? Référencez-vous gratuitement ou passez Premium pour plus de visibilité.
+        </p>
+        <div className="mt-3 flex flex-wrap gap-3">
+          <Link
+            href="/contact"
+            className="inline-flex items-center rounded-md border border-border bg-white px-4 py-2 text-sm font-medium text-ink hover:bg-paper transition-colors"
+          >
+            S&apos;inscrire gratuitement
+          </Link>
+          <Link
+            href="/contact"
+            className="inline-flex items-center rounded-md border border-amber-300 bg-amber-100 px-4 py-2 text-sm font-medium text-amber-800 hover:bg-amber-200 transition-colors"
+          >
+            Découvrir Premium
+          </Link>
+        </div>
+      </div>
 
       {/* Filtres */}
       <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">

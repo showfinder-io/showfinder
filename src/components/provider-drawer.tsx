@@ -9,7 +9,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { BadgeCheck, MapPin } from "lucide-react";
+import { BadgeCheck, MapPin, Star } from "lucide-react";
 
 type Provider = {
   id: string;
@@ -19,6 +19,7 @@ type Provider = {
   city: string | null;
   is_verified: boolean;
   is_featured: boolean;
+  subscription_tier: string;
 };
 
 const CATEGORY_LABELS: Record<string, string> = {
@@ -56,13 +57,22 @@ export function ProviderDrawer({ salonId, salonName }: ProviderDrawerProps) {
     }
   }
 
-  // Grouper par catégorie
+  // Grouper par catégorie, premium en premier dans chaque groupe
   const grouped = providers.reduce<Record<string, Provider[]>>((acc, p) => {
     const cat = p.category;
     if (!acc[cat]) acc[cat] = [];
     acc[cat].push(p);
     return acc;
   }, {});
+
+  // Trier premium en premier dans chaque catégorie
+  for (const cat of Object.keys(grouped)) {
+    grouped[cat].sort((a, b) => {
+      if (a.subscription_tier === "premium" && b.subscription_tier !== "premium") return -1;
+      if (a.subscription_tier !== "premium" && b.subscription_tier === "premium") return 1;
+      return 0;
+    });
+  }
 
   return (
     <section className="mt-10">
@@ -109,10 +119,14 @@ export function ProviderDrawer({ salonId, salonName }: ProviderDrawerProps) {
                     {CATEGORY_LABELS[category] ?? category}
                   </h3>
                   <div className="space-y-3">
-                    {catProviders.map((p) => (
+                    {catProviders.map((p) => {
+                      const isPremium = p.subscription_tier === "premium";
+                      return (
                       <div
                         key={p.id}
-                        className="flex items-center justify-between rounded-lg border border-border p-3 transition-shadow hover:shadow-sm"
+                        className={`flex items-center justify-between rounded-lg border p-3 transition-shadow hover:shadow-sm ${
+                          isPremium ? "border-amber-200 bg-amber-50/30" : "border-border"
+                        }`}
                       >
                         <Link
                           href={`/prestataires/${p.slug}`}
@@ -125,7 +139,13 @@ export function ProviderDrawer({ salonId, salonName }: ProviderDrawerProps) {
                             {p.is_verified && (
                               <BadgeCheck className="h-3.5 w-3.5 text-accent" />
                             )}
-                            {p.is_featured && (
+                            {isPremium && (
+                              <span className="inline-flex items-center gap-0.5 rounded border border-amber-200 bg-amber-50 px-1.5 py-0.5 text-[10px] font-medium text-amber-700">
+                                <Star className="h-2.5 w-2.5 fill-amber-400 text-amber-400" />
+                                Recommandé
+                              </span>
+                            )}
+                            {!isPremium && p.is_featured && (
                               <span className="rounded bg-accent/10 px-1.5 py-0.5 text-[10px] font-medium text-accent">
                                 Recommandé
                               </span>
@@ -145,7 +165,8 @@ export function ProviderDrawer({ salonId, salonName }: ProviderDrawerProps) {
                           Devis
                         </Link>
                       </div>
-                    ))}
+                    );
+                    })}
                   </div>
                 </div>
               ))}

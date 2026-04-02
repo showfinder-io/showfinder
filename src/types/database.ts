@@ -14,6 +14,36 @@ export type Database = {
   }
   public: {
     Tables: {
+      alerts: {
+        Row: {
+          alert_type: string
+          created_at: string
+          email: string
+          id: string
+          is_active: boolean
+          salon_slug: string | null
+          sector_slug: string | null
+        }
+        Insert: {
+          alert_type: string
+          created_at?: string
+          email: string
+          id?: string
+          is_active?: boolean
+          salon_slug?: string | null
+          sector_slug?: string | null
+        }
+        Update: {
+          alert_type?: string
+          created_at?: string
+          email?: string
+          id?: string
+          is_active?: boolean
+          salon_slug?: string | null
+          sector_slug?: string | null
+        }
+        Relationships: []
+      }
       provider_venues: {
         Row: {
           provider_id: string

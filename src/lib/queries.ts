@@ -419,6 +419,7 @@ export async function getProviders(filters: ProviderFilters = {}) {
   let query = supabase
     .from("providers")
     .select("*")
+    .order("subscription_tier", { ascending: false })
     .order("is_verified", { ascending: false })
     .order("company_name");
   if (filters.category) query = query.eq("category", filters.category as never);
