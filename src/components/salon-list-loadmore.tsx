@@ -38,7 +38,7 @@ export function SalonListLoadMore({
 
   return (
     <>
-      <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {salons.map((salon) => (
           <SalonCard key={salon.id} salon={salon} />
         ))}

@@ -60,6 +60,7 @@ export type SalonFilters = {
   sector?: string;
   city?: string;
   month?: string; // format "2026-03"
+  period?: string; // "this-month" | "next-quarter" | "2026" | "2027"
   page?: number;
   pageSize?: number;
   sort?: "date" | "name";
@@ -109,6 +110,33 @@ export async function getSalons(filters: SalonFilters = {}) {
     query = query.gte("start_date", startOfMonth).lte("start_date", endOfMonth);
   }
 
+  // Filtre période
+  if (filters.period) {
+    const now = new Date();
+    if (filters.period === "this-month") {
+      const y = now.getFullYear();
+      const m = String(now.getMonth() + 1).padStart(2, "0");
+      const startOfMonth = `${y}-${m}-01`;
+      const endOfMonth = new Date(y, now.getMonth() + 1, 0)
+        .toISOString()
+        .split("T")[0];
+      query = query
+        .gte("start_date", startOfMonth)
+        .lte("start_date", endOfMonth);
+    } else if (filters.period === "next-quarter") {
+      const today = now.toISOString().split("T")[0];
+      const threeMonthsLater = new Date(now);
+      threeMonthsLater.setMonth(threeMonthsLater.getMonth() + 3);
+      const endDate = threeMonthsLater.toISOString().split("T")[0];
+      query = query.gte("start_date", today).lte("start_date", endDate);
+    } else if (/^\d{4}$/.test(filters.period)) {
+      // Filtre par année (ex: "2026", "2027")
+      query = query
+        .gte("start_date", `${filters.period}-01-01`)
+        .lte("start_date", `${filters.period}-12-31`);
+    }
+  }
+
   // Tri
   if (filters.sort === "name") {
     query = query.order("name", { ascending: true });
@@ -135,27 +163,29 @@ export async function getSalons(filters: SalonFilters = {}) {
   return { salons, total: count ?? 0, page, pageSize };
 }
 
-// Filtre par secteur : necessite une sous-requete
+// Filtre par secteur (multi-slug, séparés par virgule)
 export async function getSalonsBySector(
   sectorSlug: string,
   filters: Omit<SalonFilters, "sector"> = {}
 ) {
+  const slugs = sectorSlug.split(",").map((s) => s.trim()).filter(Boolean);
+  if (slugs.length === 0) return { salons: [], total: 0, page: 1, pageSize: 20 };
   const supabase = await createClient();
 
-  // Recuperer l'ID du secteur
-  const { data: sector } = await supabase
+  // Recuperer les IDs des secteurs
+  const { data: sectorRows } = await supabase
     .from("sectors")
     .select("id")
-    .eq("slug", sectorSlug)
-    .single();
+    .in("slug", slugs);
 
-  if (!sector) return { salons: [], total: 0, page: 1, pageSize: 20 };
+  const sectorIds = (sectorRows ?? []).map((s) => s.id);
+  if (sectorIds.length === 0) return { salons: [], total: 0, page: 1, pageSize: 20 };
 
   // Recuperer les salon_ids associes
   const { data: salonSectors } = await supabase
     .from("salon_sectors")
     .select("salon_id")
-    .eq("sector_id", sector.id);
+    .in("sector_id", sectorIds);
 
   const salonIds = (salonSectors ?? []).map((ss) => ss.salon_id);
   if (salonIds.length === 0)
@@ -192,9 +222,35 @@ async function getSalonsById(
     query = query.eq("city", filters.city);
   }
 
-  query = query
-    .order("start_date", { ascending: true, nullsFirst: false })
-    .range(offset, offset + pageSize - 1);
+  // Filtre période
+  if (filters.period) {
+    const now = new Date();
+    if (filters.period === "this-month") {
+      const y = now.getFullYear();
+      const m = String(now.getMonth() + 1).padStart(2, "0");
+      query = query
+        .gte("start_date", `${y}-${m}-01`)
+        .lte("start_date", new Date(y, now.getMonth() + 1, 0).toISOString().split("T")[0]);
+    } else if (filters.period === "next-quarter") {
+      const today = now.toISOString().split("T")[0];
+      const later = new Date(now);
+      later.setMonth(later.getMonth() + 3);
+      query = query.gte("start_date", today).lte("start_date", later.toISOString().split("T")[0]);
+    } else if (/^\d{4}$/.test(filters.period)) {
+      query = query
+        .gte("start_date", `${filters.period}-01-01`)
+        .lte("start_date", `${filters.period}-12-31`);
+    }
+  }
+
+  // Tri
+  if (filters.sort === "name") {
+    query = query.order("name", { ascending: true });
+  } else {
+    query = query.order("start_date", { ascending: true, nullsFirst: false });
+  }
+
+  query = query.range(offset, offset + pageSize - 1);
 
   const { data, count, error } = await query;
   if (error) throw error;

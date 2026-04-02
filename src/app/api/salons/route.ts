@@ -7,12 +7,14 @@ export async function GET(request: NextRequest) {
   const search = params.get("search") ?? "";
   const sector = params.get("sector") ?? "";
   const city = params.get("city") ?? "";
+  const period = params.get("period") ?? "";
+  const sort = (params.get("sort") as "date" | "name") || "date";
   const page = Number(params.get("page") ?? "1");
 
   try {
     const result = sector
-      ? await getSalonsBySector(sector, { search, city, page })
-      : await getSalons({ search, city, page, sort: "date" });
+      ? await getSalonsBySector(sector, { search, city, period, page, sort })
+      : await getSalons({ search, city, period, page, sort });
 
     return NextResponse.json(result);
   } catch {
