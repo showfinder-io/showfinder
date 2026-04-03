@@ -5,9 +5,15 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 
 const navItems = [
+  { href: "/admin", label: "Dashboard", exact: true },
   { href: "/admin/salons", label: "Salons" },
+  { href: "/admin/venues", label: "Venues" },
+  { href: "/admin/secteurs", label: "Secteurs" },
   { href: "/admin/prestataires", label: "Prestataires" },
   { href: "/admin/reports", label: "Signalements" },
+  { href: "/admin/avis", label: "Avis" },
+  { href: "/admin/alertes", label: "Alertes" },
+  { href: "/admin/devis", label: "Devis" },
 ];
 
 export function AdminSidebar() {
@@ -20,7 +26,9 @@ export function AdminSidebar() {
       </h2>
       <nav className="space-y-1">
         {navItems.map((item) => {
-          const active = pathname.startsWith(item.href);
+          const active = item.exact
+            ? pathname === item.href
+            : pathname.startsWith(item.href);
           return (
             <Link
               key={item.href}
