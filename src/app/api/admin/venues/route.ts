@@ -29,7 +29,7 @@ export async function GET(request: NextRequest) {
 
   // Compter les salons par venue
   const venueIds = (data ?? []).map((v) => v.id);
-  let salonCounts: Record<string, number> = {};
+  const salonCounts: Record<string, number> = {};
 
   if (venueIds.length > 0) {
     const { data: salons } = await supabase

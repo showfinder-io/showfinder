@@ -185,7 +185,7 @@ export default function InscriptionPage() {
               fill="#EA4335"
             />
           </svg>
-          S'inscrire avec Google
+          S&apos;inscrire avec Google
         </Button>
 
         <p className="text-center text-sm text-muted">

@@ -149,7 +149,7 @@ export function SalonForm({
           <input name="end_date" type="date" defaultValue={field(d, "end_date")} className={inputClass} />
         </div>
         <div>
-          <label className={labelClass}>Année d'édition</label>
+          <label className={labelClass}>Année d&apos;édition</label>
           <input name="edition_year" type="number" defaultValue={field(d, "edition_year")} className={inputClass} />
         </div>
       </div>

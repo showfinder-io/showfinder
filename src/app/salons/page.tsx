@@ -55,7 +55,7 @@ export default async function SalonsPage({ searchParams }: Props) {
       </div>
 
       {/* Layout : sidebar + contenu */}
-      <div className="flex gap-10">
+      <div className="flex flex-col gap-8 md:flex-row md:gap-10">
         {/* Sidebar filtres */}
         <Suspense>
           <SalonFiltersSidebar sectors={sectors} cities={cities} />

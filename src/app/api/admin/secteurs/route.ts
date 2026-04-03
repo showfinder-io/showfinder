@@ -29,7 +29,7 @@ export async function GET(request: NextRequest) {
 
   // Compter les salons par secteur
   const sectorIds = (data ?? []).map((s) => s.id);
-  let salonCounts: Record<string, number> = {};
+  const salonCounts: Record<string, number> = {};
 
   if (sectorIds.length > 0) {
     const { data: links } = await supabase

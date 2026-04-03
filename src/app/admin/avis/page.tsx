@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 type Review = {
   id: string;
@@ -18,19 +18,18 @@ export default function AdminAvisPage() {
   const [reviews, setReviews] = useState<Review[]>([]);
   const [loading, setLoading] = useState(true);
 
-  const fetchReviews = useCallback(async () => {
-    setLoading(true);
-    const res = await fetch("/api/admin/reviews");
-    if (res.ok) {
-      const data = await res.json();
-      setReviews(data.reviews);
-    }
-    setLoading(false);
-  }, []);
-
   useEffect(() => {
+    async function fetchReviews() {
+      setLoading(true);
+      const res = await fetch("/api/admin/reviews");
+      if (res.ok) {
+        const data = await res.json();
+        setReviews(data.reviews);
+      }
+      setLoading(false);
+    }
     fetchReviews();
-  }, [fetchReviews]);
+  }, []);
 
   async function handleVerify(id: string) {
     const res = await fetch(`/api/admin/reviews/${id}`, {

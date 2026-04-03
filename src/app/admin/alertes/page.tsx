@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 type Alert = {
   id: string;
@@ -22,19 +22,18 @@ export default function AdminAlertesPage() {
   const [alerts, setAlerts] = useState<Alert[]>([]);
   const [loading, setLoading] = useState(true);
 
-  const fetchAlerts = useCallback(async () => {
-    setLoading(true);
-    const res = await fetch("/api/admin/alertes");
-    if (res.ok) {
-      const data = await res.json();
-      setAlerts(data.alerts);
-    }
-    setLoading(false);
-  }, []);
-
   useEffect(() => {
+    async function fetchAlerts() {
+      setLoading(true);
+      const res = await fetch("/api/admin/alertes");
+      if (res.ok) {
+        const data = await res.json();
+        setAlerts(data.alerts);
+      }
+      setLoading(false);
+    }
     fetchAlerts();
-  }, [fetchAlerts]);
+  }, []);
 
   const totalActive = alerts.filter((a) => a.is_active).length;
   const byType: Record<string, number> = {};

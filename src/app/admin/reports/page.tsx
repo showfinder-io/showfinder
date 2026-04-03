@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 type Report = {
   id: string;
@@ -23,19 +23,18 @@ export default function AdminReportsPage() {
   const [reports, setReports] = useState<Report[]>([]);
   const [loading, setLoading] = useState(true);
 
-  const fetchReports = useCallback(async () => {
-    setLoading(true);
-    const res = await fetch("/api/admin/reports");
-    if (res.ok) {
-      const data = await res.json();
-      setReports(data.reports);
-    }
-    setLoading(false);
-  }, []);
-
   useEffect(() => {
+    async function fetchReports() {
+      setLoading(true);
+      const res = await fetch("/api/admin/reports");
+      if (res.ok) {
+        const data = await res.json();
+        setReports(data.reports);
+      }
+      setLoading(false);
+    }
     fetchReports();
-  }, [fetchReports]);
+  }, []);
 
   async function updateStatus(id: string, status: string) {
     const res = await fetch(`/api/admin/reports/${id}`, {

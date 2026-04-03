@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 type Quote = {
   id: string;
@@ -23,19 +23,18 @@ export default function AdminDevisPage() {
   const [quotes, setQuotes] = useState<Quote[]>([]);
   const [loading, setLoading] = useState(true);
 
-  const fetchQuotes = useCallback(async () => {
-    setLoading(true);
-    const res = await fetch("/api/admin/quotes");
-    if (res.ok) {
-      const data = await res.json();
-      setQuotes(data.quotes);
-    }
-    setLoading(false);
-  }, []);
-
   useEffect(() => {
+    async function fetchQuotes() {
+      setLoading(true);
+      const res = await fetch("/api/admin/quotes");
+      if (res.ok) {
+        const data = await res.json();
+        setQuotes(data.quotes);
+      }
+      setLoading(false);
+    }
     fetchQuotes();
-  }, [fetchQuotes]);
+  }, []);
 
   async function updateStatus(id: string, status: string) {
     const res = await fetch(`/api/admin/quotes/${id}`, {
