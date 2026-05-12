@@ -1,7 +1,14 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { siteConfig } from "@/lib/config";
-import { getSalons, getSalonsBySector, getSectors, getCities } from "@/lib/queries";
+import {
+  getSalons,
+  getSalonsBySector,
+  getSectors,
+  getCities,
+  SALON_CATEGORY_LABELS,
+  type SalonCategory,
+} from "@/lib/queries";
 import { SalonFiltersSidebar } from "@/components/salon-filters-sidebar";
 import { SalonListLoadMore } from "@/components/salon-list-loadmore";
 
@@ -25,13 +32,17 @@ export default async function SalonsPage({ searchParams }: Props) {
   const city = params.city ?? "";
   const period = params.period ?? "";
   const sort = (params.sort as "date" | "name") || "date";
+  const category =
+    params.category && params.category in SALON_CATEGORY_LABELS
+      ? (params.category as SalonCategory)
+      : undefined;
 
   const [sectors, cities, result] = await Promise.all([
     getSectors(),
     getCities(),
     sector
-      ? getSalonsBySector(sector, { search, city, period, page: 1, sort })
-      : getSalons({ search, city, period, page: 1, sort }),
+      ? getSalonsBySector(sector, { search, city, period, category, page: 1, sort })
+      : getSalons({ search, city, period, category, page: 1, sort }),
   ]);
 
   const currentParams: Record<string, string> = {};
@@ -39,6 +50,7 @@ export default async function SalonsPage({ searchParams }: Props) {
   if (sector) currentParams.sector = sector;
   if (city) currentParams.city = city;
   if (period) currentParams.period = period;
+  if (category) currentParams.category = category;
   if (sort && sort !== "date") currentParams.sort = sort;
 
   return (

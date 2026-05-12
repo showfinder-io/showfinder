@@ -1,6 +1,6 @@
 @AGENTS.md
 
-# Showfinder
+# Agoris
 
 > Nom de travail, susceptible de changer. Nom centralisé dans `src/lib/config.ts`.
 
@@ -19,7 +19,7 @@ Annuaire intelligent des salons professionnels B2B en France. Co-construit par J
 
 ## Conventions
 
-- Le nom de l'app est centralisé dans `src/lib/config.ts` : ne jamais hardcoder "Showfinder"
+- Le nom de l'app est centralisé dans `src/lib/config.ts` : ne jamais hardcoder "Agoris"
 - Clients Supabase : `src/lib/supabase/client.ts` (browser), `src/lib/supabase/server.ts` (server)
 - Types DB : `src/types/database.ts` (auto-généré, ne pas éditer)
 - Pages dans `src/app/` (App Router)

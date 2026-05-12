@@ -41,18 +41,13 @@ export function ProviderCard({ provider }: ProviderCardProps) {
         {/* Catégorie */}
         <CategoryBadge category={provider.category} />
 
-        {/* Ville + couverture */}
-        <div className="flex flex-wrap gap-4 text-sm text-muted">
-          {provider.city && (
-            <div className="flex items-center gap-1.5">
-              <MapPin className="h-4 w-4" />
-              <span>{provider.city}</span>
-            </div>
-          )}
-          {provider.coverage_radius_km && (
-            <span>Rayon : {provider.coverage_radius_km} km</span>
-          )}
-        </div>
+        {/* Ville */}
+        {provider.city && (
+          <div className="flex items-center gap-1.5 text-sm text-muted">
+            <MapPin className="h-4 w-4" />
+            <span>{provider.city}</span>
+          </div>
+        )}
 
         {/* Description (tronquée) */}
         {provider.description && (

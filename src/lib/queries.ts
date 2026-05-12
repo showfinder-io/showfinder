@@ -2,6 +2,19 @@ import { createClient } from "@/lib/supabase/server";
 import { createStaticClient } from "@/lib/supabase/static";
 
 // Types helpers
+export type SalonCategory =
+  | "salon_professionnel"
+  | "salon_grand_public"
+  | "congres"
+  | "autres";
+
+export const SALON_CATEGORY_LABELS: Record<SalonCategory, string> = {
+  salon_professionnel: "Salon professionnel",
+  salon_grand_public: "Salon grand public",
+  congres: "Congrès",
+  autres: "Autres",
+};
+
 export type SalonRow = {
   id: string;
   slug: string;
@@ -26,6 +39,10 @@ export type SalonRow = {
   cover_image_url: string | null;
   seo_title: string | null;
   seo_description: string | null;
+  // Optionnels jusqu'à regen des types Supabase post-migrations 20260512000002 + 20260512000003
+  category?: SalonCategory | null;
+  category_to_confirm?: boolean;
+  dates_confirmed?: boolean;
   created_at: string;
 };
 
@@ -61,6 +78,7 @@ export type SalonFilters = {
   city?: string;
   month?: string; // format "2026-03"
   period?: string; // "this-month" | "next-quarter" | "2026" | "2027"
+  category?: SalonCategory;
   page?: number;
   pageSize?: number;
   sort?: "date" | "name";
@@ -76,8 +94,9 @@ export async function getSalons(filters: SalonFilters = {}) {
   const pageSize = filters.pageSize ?? 20;
   const offset = (page - 1) * pageSize;
 
+  // View salons_ordered : expose un sort_key qui encode "upcoming ASC puis past DESC"
   let query = supabase
-    .from("salons")
+    .from("salons_ordered" as unknown as "salons")
     .select("*, salon_sectors(sector_id, sectors(id, slug, name))", {
       count: "exact",
     })
@@ -98,6 +117,11 @@ export async function getSalons(filters: SalonFilters = {}) {
   // Filtre ville
   if (filters.city) {
     query = query.eq("city", filters.city);
+  }
+
+  // Filtre catégorie
+  if (filters.category) {
+    query = query.eq("category" as never, filters.category as never);
   }
 
   // Filtre mois (format "2026-03")
@@ -137,11 +161,11 @@ export async function getSalons(filters: SalonFilters = {}) {
     }
   }
 
-  // Tri
+  // Tri : par défaut sort_key (à venir croissant, puis passés décroissants), sinon par nom
   if (filters.sort === "name") {
     query = query.order("name", { ascending: true });
   } else {
-    query = query.order("start_date", { ascending: true, nullsFirst: false });
+    query = query.order("sort_key" as never, { ascending: true });
   }
 
   // Pagination
@@ -205,7 +229,7 @@ async function getSalonsById(
   const offset = (page - 1) * pageSize;
 
   let query = supabase
-    .from("salons")
+    .from("salons_ordered" as unknown as "salons")
     .select("*, salon_sectors(sector_id, sectors(id, slug, name))", {
       count: "exact",
     })
@@ -220,6 +244,10 @@ async function getSalonsById(
 
   if (filters.city) {
     query = query.eq("city", filters.city);
+  }
+
+  if (filters.category) {
+    query = query.eq("category" as never, filters.category as never);
   }
 
   // Filtre période
@@ -243,11 +271,11 @@ async function getSalonsById(
     }
   }
 
-  // Tri
+  // Tri : par défaut sort_key (à venir croissant, puis passés décroissants), sinon par nom
   if (filters.sort === "name") {
     query = query.order("name", { ascending: true });
   } else {
-    query = query.order("start_date", { ascending: true, nullsFirst: false });
+    query = query.order("sort_key" as never, { ascending: true });
   }
 
   query = query.range(offset, offset + pageSize - 1);
@@ -345,11 +373,11 @@ export async function getSimilarSalons(
   if (salonIds.length === 0) return [];
 
   const { data, error } = await supabase
-    .from("salons")
+    .from("salons_ordered" as unknown as "salons")
     .select("*, salon_sectors(sector_id, sectors(id, slug, name))")
     .eq("status", "published")
     .in("id", salonIds)
-    .order("start_date", { ascending: true, nullsFirst: false })
+    .order("sort_key" as never, { ascending: true })
     .limit(limit);
 
   if (error) throw error;
@@ -387,8 +415,6 @@ export type ProviderRow = {
   category: string;
   description: string | null;
   city: string | null;
-  coverage_radius_km: number | null;
-  zone_intervention: string | null;
   website_url: string | null;
   phone: string | null;
   email: string | null;
@@ -433,23 +459,11 @@ export async function getProviderBySlug(slug: string) {
   const supabase = await createClient();
   const { data, error } = await supabase
     .from("providers")
-    .select("*, salon_providers(salon_id, is_featured, salons(id, slug, name, city, start_date)), provider_venues(venue_id, venues(id, slug, name, city))")
+    .select("*")
     .eq("slug", slug)
     .single();
   if (error || !data) return null;
-  type SalonJoin = { salons: { id: string; slug: string; name: string; city: string | null; start_date: string | null }; is_featured: boolean };
-  const salons = (data.salon_providers as SalonJoin[])
-    .map((sp) => ({ ...sp.salons, is_featured: sp.is_featured }))
-    .filter(Boolean);
-  type VenueJoin = { venues: { id: string; slug: string; name: string; city: string } };
-  const venues = (data.provider_venues as VenueJoin[])
-    .map((pv) => pv.venues)
-    .filter(Boolean);
-  const { salon_providers: _, provider_venues: __, ...rest } = data;
-  return { ...rest, salons, venues } as ProviderRow & {
-    salons: Array<{ id: string; slug: string; name: string; city: string | null; start_date: string | null; is_featured: boolean }>;
-    venues: Array<{ id: string; slug: string; name: string; city: string }>;
-  };
+  return data as ProviderRow;
 }
 
 export async function getProvidersBySalon(salonId: string) {
@@ -516,11 +530,11 @@ export async function getSalonsByCity(city: string) {
   const supabase = await createClient();
 
   const { data, error } = await supabase
-    .from("salons")
+    .from("salons_ordered" as unknown as "salons")
     .select("*, salon_sectors(sector_id, sectors(id, slug, name))")
     .eq("status", "published")
     .eq("city", city)
-    .order("start_date", { ascending: true, nullsFirst: false });
+    .order("sort_key" as never, { ascending: true });
 
   if (error) throw error;
 
@@ -600,11 +614,11 @@ export async function getSalonsByVenue(venueId: string) {
   const supabase = await createClient();
 
   const { data, error } = await supabase
-    .from("salons")
+    .from("salons_ordered" as unknown as "salons")
     .select("*, salon_sectors(sector_id, sectors(id, slug, name))")
     .eq("status", "published")
     .eq("venue_id", venueId)
-    .order("start_date", { ascending: true, nullsFirst: false });
+    .order("sort_key" as never, { ascending: true });
 
   if (error) throw error;
 

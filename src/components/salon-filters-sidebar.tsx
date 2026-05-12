@@ -19,6 +19,14 @@ const PERIOD_OPTIONS = [
   { value: "2027", label: "2027" },
 ];
 
+const CATEGORY_OPTIONS = [
+  { value: "", label: "Toutes catégories" },
+  { value: "salon_professionnel", label: "Salon professionnel" },
+  { value: "salon_grand_public", label: "Salon grand public" },
+  { value: "congres", label: "Congrès" },
+  { value: "autres", label: "Autres" },
+];
+
 // Contenu des filtres (partagé entre sidebar desktop et panel mobile)
 function FilterContent({
   sectors,
@@ -27,6 +35,7 @@ function FilterContent({
   selectedSectors,
   currentCity,
   currentPeriod,
+  currentCategory,
   currentSort,
   onSearchSubmit,
   onToggleSector,
@@ -38,6 +47,7 @@ function FilterContent({
   selectedSectors: string[];
   currentCity: string;
   currentPeriod: string;
+  currentCategory: string;
   currentSort: string;
   onSearchSubmit: (value: string) => void;
   onToggleSector: (slug: string) => void;
@@ -48,6 +58,7 @@ function FilterContent({
     selectedSectors.length > 0 ||
     currentCity ||
     currentPeriod ||
+    currentCategory ||
     currentSort !== "date";
 
   return (
@@ -137,6 +148,24 @@ function FilterContent({
         </select>
       </div>
 
+      {/* Catégorie */}
+      <div>
+        <label className="mb-2 block text-xs font-semibold uppercase tracking-wider text-muted">
+          Catégorie
+        </label>
+        <select
+          value={currentCategory}
+          onChange={(e) => onUpdateParam("category", e.target.value)}
+          className="w-full rounded-lg border border-border bg-white px-4 py-2.5 text-sm outline-none transition-colors focus:border-accent focus:ring-1 focus:ring-accent/20"
+        >
+          {CATEGORY_OPTIONS.map((opt) => (
+            <option key={opt.value} value={opt.value}>
+              {opt.label}
+            </option>
+          ))}
+        </select>
+      </div>
+
       {/* Trier par */}
       <div>
         <label className="mb-3 block text-xs font-semibold uppercase tracking-wider text-muted">
@@ -196,6 +225,7 @@ export function SalonFiltersSidebar({
     : [];
   const currentCity = searchParams.get("city") ?? "";
   const currentPeriod = searchParams.get("period") ?? "";
+  const currentCategory = searchParams.get("category") ?? "";
   const currentSort = searchParams.get("sort") ?? "date";
 
   const navigate = useCallback(
@@ -259,6 +289,7 @@ export function SalonFiltersSidebar({
     selectedSectors.length +
     (currentCity ? 1 : 0) +
     (currentPeriod ? 1 : 0) +
+    (currentCategory ? 1 : 0) +
     (currentSort !== "date" ? 1 : 0);
 
   return (
@@ -315,6 +346,7 @@ export function SalonFiltersSidebar({
               selectedSectors={selectedSectors}
               currentCity={currentCity}
               currentPeriod={currentPeriod}
+              currentCategory={currentCategory}
               currentSort={currentSort}
               onSearchSubmit={(val) => {
                 handleSearchSubmit(val);
@@ -348,6 +380,7 @@ export function SalonFiltersSidebar({
             selectedSectors={selectedSectors}
             currentCity={currentCity}
             currentPeriod={currentPeriod}
+            currentCategory={currentCategory}
             currentSort={currentSort}
             onSearchSubmit={handleSearchSubmit}
             onToggleSector={toggleSector}

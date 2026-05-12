@@ -1,4 +1,4 @@
-# Contribuer a Showfinder
+# Contribuer a Agoris
 
 ## Demarrage rapide
 

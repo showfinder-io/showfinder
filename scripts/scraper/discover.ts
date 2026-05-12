@@ -17,7 +17,7 @@ async function fetchWithTimeout(url: string, timeout = 10000): Promise<string | 
     const res = await fetch(url, {
       signal: controller.signal,
       headers: {
-        "User-Agent": "Mozilla/5.0 (compatible; Showfinder/1.0; +https://showfinder-amber.vercel.app)",
+        "User-Agent": "Mozilla/5.0 (compatible; Agoris/1.0; +https://agoris.io)",
         Accept: "text/html,application/xhtml+xml",
       },
       redirect: "follow",

@@ -36,19 +36,23 @@ const statusConfig: Record<string, { label: string; className: string }> = {
 export default function AdminSalonsPage() {
   const [salons, setSalons] = useState<Salon[]>([]);
   const [search, setSearch] = useState("");
+  const [lockedFilter, setLockedFilter] = useState<"all" | "true" | "false">("all");
+  const [lockedCount, setLockedCount] = useState<number>(0);
   const [loading, setLoading] = useState(true);
 
   const fetchSalons = useCallback(async () => {
     setLoading(true);
     const params = new URLSearchParams();
     if (search) params.set("search", search);
+    if (lockedFilter !== "all") params.set("locked", lockedFilter);
     const res = await fetch(`/api/admin/salons?${params}`);
     if (res.ok) {
       const data = await res.json();
       setSalons(data.salons);
+      setLockedCount(data.lockedCount ?? 0);
     }
     setLoading(false);
-  }, [search]);
+  }, [search, lockedFilter]);
 
   useEffect(() => {
     const timer = setTimeout(fetchSalons, 300);
@@ -68,7 +72,12 @@ export default function AdminSalonsPage() {
   return (
     <div>
       <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <h1 className="font-serif text-2xl font-bold">Salons</h1>
+        <div>
+          <h1 className="font-serif text-2xl font-bold">Salons</h1>
+          <p className="mt-1 text-sm text-muted">
+            <span className="font-medium text-ink">{lockedCount}</span> fiche{lockedCount > 1 ? "s" : ""} verrouillée{lockedCount > 1 ? "s" : ""} (exclues du scraping auto)
+          </p>
+        </div>
         <Link
           href="/admin/salons/nouveau"
           className="inline-flex items-center rounded-md bg-accent px-4 py-2 text-sm font-medium text-white hover:bg-accent-hover transition-colors"
@@ -77,13 +86,24 @@ export default function AdminSalonsPage() {
         </Link>
       </div>
 
-      <input
-        type="text"
-        placeholder="Rechercher un salon..."
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-        className="mb-4 w-full max-w-md rounded-md border border-border px-3 py-2 text-sm focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
-      />
+      <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center">
+        <input
+          type="text"
+          placeholder="Rechercher un salon..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          className="w-full max-w-md rounded-md border border-border px-3 py-2 text-sm focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+        />
+        <select
+          value={lockedFilter}
+          onChange={(e) => setLockedFilter(e.target.value as "all" | "true" | "false")}
+          className="rounded-md border border-border bg-white px-3 py-2 text-sm focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+        >
+          <option value="all">Tous les salons</option>
+          <option value="true">Verrouillés uniquement</option>
+          <option value="false">Non verrouillés</option>
+        </select>
+      </div>
 
       {loading ? (
         <p className="text-muted text-sm">Chargement...</p>

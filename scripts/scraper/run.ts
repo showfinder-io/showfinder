@@ -20,7 +20,7 @@ function run(script: string) {
 async function main() {
   const start = Date.now();
 
-  console.log("🚀 Pipeline scraper Showfinder\n");
+  console.log("🚀 Pipeline scraper Agoris\n");
 
   run("discover.ts");
   run("enrich.ts");

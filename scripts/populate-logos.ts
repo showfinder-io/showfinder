@@ -38,7 +38,7 @@ async function scrapeOgImage(url: string): Promise<string | null> {
       signal: controller.signal,
       headers: {
         "User-Agent":
-          "Mozilla/5.0 (compatible; Showfinder/1.0; +https://showfinder-amber.vercel.app)",
+          "Mozilla/5.0 (compatible; Agoris/1.0; +https://agoris.io)",
       },
       redirect: "follow",
     });

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, useCallback } from "react";
+import Link from "next/link";
 const PROVIDER_CATEGORY_LABELS: Record<string, string> = {
   standiste: "Standiste",
   traiteur: "Traiteur",
@@ -89,6 +90,12 @@ export default function AdminPrestatairesPage() {
     <div>
       <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <h1 className="font-serif text-2xl font-bold">Prestataires</h1>
+        <Link
+          href="/admin/prestataires/nouveau"
+          className="rounded-md bg-accent px-4 py-2 text-sm font-medium text-white hover:bg-accent-hover transition-colors"
+        >
+          Nouveau prestataire
+        </Link>
       </div>
 
       <input
@@ -143,7 +150,13 @@ export default function AdminPrestatairesPage() {
                     <td className="px-3 py-2">
                       {provider.is_verified ? "Oui" : "Non"}
                     </td>
-                    <td className="px-3 py-2 space-x-2 whitespace-nowrap">
+                    <td className="px-3 py-2 space-x-3 whitespace-nowrap">
+                      <Link
+                        href={`/admin/prestataires/${provider.id}`}
+                        className="text-accent hover:underline"
+                      >
+                        Modifier
+                      </Link>
                       <button
                         onClick={() =>
                           toggleTier(provider.id, provider.subscription_tier)

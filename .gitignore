@@ -40,3 +40,13 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 .env*.local
+
+# script outputs (CSV reviews, etc.)
+/scripts/output/
+/scripts/scraper/output/
+
+# handoff notes (briefs transmis à Nicolas / collaborateurs)
+/handoff/
+
+# Claude Code worktrees (agents temporaires)
+.claude/worktrees/

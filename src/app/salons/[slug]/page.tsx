@@ -6,6 +6,7 @@ import {
   getSalonBySlug,
   getAllSalonSlugs,
   getSimilarSalons,
+  SALON_CATEGORY_LABELS,
 } from "@/lib/queries";
 import { formatDateRange, formatNumber } from "@/lib/format";
 import { SectorBadge } from "@/components/sector-badge";
@@ -128,7 +129,12 @@ export default async function SalonPage({ params }: Props) {
 
       {/* 1. Header - Le Pitch */}
       <header>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap items-center gap-2">
+          {salon.category && (
+            <span className="inline-block rounded-full border border-border bg-paper px-3 py-1 text-xs font-medium text-ink">
+              {SALON_CATEGORY_LABELS[salon.category]}
+            </span>
+          )}
           {salon.sectors.map((sector) => (
             <SectorBadge
               key={sector.id}
@@ -181,10 +187,12 @@ export default async function SalonPage({ params }: Props) {
         )}
       </header>
 
-      {/* Alerte dates */}
-      <div className="mt-6">
-        <AlertSubscribe type="salon" slug={slug} label={salon.name} />
-      </div>
+      {/* Alerte dates : visible seulement si l'admin a marqué les dates comme non confirmées */}
+      {salon.dates_confirmed === false && (
+        <div className="mt-6">
+          <AlertSubscribe type="salon" slug={slug} label={salon.name} />
+        </div>
+      )}
 
       {/* 2. Quick Stats */}
       {stats.length > 0 && (

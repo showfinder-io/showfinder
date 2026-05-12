@@ -8,7 +8,6 @@ import {
   PROVIDER_CATEGORY_LABELS,
 } from "@/lib/queries";
 import { CategoryBadge } from "@/components/category-badge";
-import { formatDateRange } from "@/lib/format";
 import { QuoteRequest } from "@/components/quote-request";
 import {
   MapPin,
@@ -17,8 +16,6 @@ import {
   Phone,
   BadgeCheck,
   ExternalLink,
-  Radius,
-  Map,
   Star,
 } from "lucide-react";
 
@@ -108,24 +105,6 @@ export default async function ProviderPage({ params }: Props) {
               </div>
             </div>
           )}
-          {provider.coverage_radius_km && (
-            <div className="flex items-start gap-3">
-              <Radius className="mt-0.5 h-4 w-4 text-muted" />
-              <div>
-                <p className="text-sm font-medium">Rayon d&apos;intervention</p>
-                <p className="text-sm text-muted">{provider.coverage_radius_km} km</p>
-              </div>
-            </div>
-          )}
-          {provider.zone_intervention && (
-            <div className="flex items-start gap-3">
-              <Map className="mt-0.5 h-4 w-4 text-muted" />
-              <div>
-                <p className="text-sm font-medium">Zone d&apos;intervention</p>
-                <p className="text-sm text-muted">{provider.zone_intervention}</p>
-              </div>
-            </div>
-          )}
           {provider.website_url && (
             <div className="flex items-start gap-3">
               <Globe className="mt-0.5 h-4 w-4 text-muted" />
@@ -172,60 +151,6 @@ export default async function ProviderPage({ params }: Props) {
         <QuoteRequest providerId={provider.id} providerName={provider.company_name} />
       </section>
 
-      {/* Lieux couverts */}
-      {provider.venues.length > 0 && (
-        <section className="mt-12">
-          <h2 className="font-serif text-2xl font-bold tracking-tight">
-            Lieux couverts
-          </h2>
-          <div className="mt-6 grid gap-4">
-            {provider.venues.map((venue) => (
-              <Link
-                key={venue.id}
-                href={`/lieux/${venue.slug}`}
-                className="flex items-center justify-between rounded-lg border border-border bg-white p-4 transition-shadow hover:shadow-md"
-              >
-                <div>
-                  <p className="font-medium">{venue.name}</p>
-                  {venue.city && (
-                    <p className="mt-1 text-sm text-muted">{venue.city}</p>
-                  )}
-                </div>
-              </Link>
-            ))}
-          </div>
-        </section>
-      )}
-
-      {/* Salons couverts */}
-      {provider.salons.length > 0 && (
-        <section className="mt-12">
-          <h2 className="font-serif text-2xl font-bold tracking-tight">
-            Salons couverts
-          </h2>
-          <div className="mt-6 grid gap-4">
-            {provider.salons.map((salon) => (
-              <Link
-                key={salon.id}
-                href={`/salons/${salon.slug}`}
-                className="flex items-center justify-between rounded-lg border border-border bg-white p-4 transition-shadow hover:shadow-md"
-              >
-                <div>
-                  <p className="font-medium">{salon.name}</p>
-                  {salon.city && (
-                    <p className="mt-1 text-sm text-muted">{salon.city}</p>
-                  )}
-                </div>
-                {salon.start_date && (
-                  <p className="text-sm text-muted">
-                    {formatDateRange(salon.start_date, null)}
-                  </p>
-                )}
-              </Link>
-            ))}
-          </div>
-        </section>
-      )}
       {/* CTA pour prestataires non-premium */}
       {!isPremium && (
         <section className="mt-12 rounded-lg border border-border bg-paper p-6 text-center">

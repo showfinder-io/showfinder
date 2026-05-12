@@ -8,6 +8,7 @@ export async function GET(request: NextRequest) {
   }
 
   const search = request.nextUrl.searchParams.get("search") ?? "";
+  const lockedParam = request.nextUrl.searchParams.get("locked") ?? "all";
   const supabase = await createClient();
 
   let query = supabase
@@ -19,15 +20,29 @@ export async function GET(request: NextRequest) {
   if (search) {
     query = query.ilike("name", `%${search}%`);
   }
+  if (lockedParam === "true") {
+    query = query.eq("is_locked", true);
+  } else if (lockedParam === "false") {
+    query = query.eq("is_locked", false);
+  }
 
-  const { data, error } = await query;
+  const [{ data, error }, lockedCountRes] = await Promise.all([
+    query,
+    supabase
+      .from("salons")
+      .select("*", { count: "exact", head: true })
+      .eq("is_locked", true),
+  ]);
 
   if (error) {
     console.error("Admin salons GET:", error);
     return NextResponse.json({ error: "Erreur serveur" }, { status: 500 });
   }
 
-  return NextResponse.json({ salons: data });
+  return NextResponse.json({
+    salons: data,
+    lockedCount: lockedCountRes.count ?? 0,
+  });
 }
 
 export async function POST(request: NextRequest) {
