@@ -27,14 +27,25 @@
   --color-error: #A8362C;   /* Terracotta sombre, pas rouge pompier */
   --color-info: #4A5A6B;    /* Bleu ardoise neutre */
 
-  /* Palette sectorielle MVP — pills / dots / filtres UNIQUEMENT.
-   * Règles : jamais en CTA, jamais en fond large, jamais en accent narratif.
+  /* Palette sectorielle Agoris — 15 filières + default.
+   * Pills / dots / filtres UNIQUEMENT. Jamais en CTA, jamais en fond large.
    * Texte des pills sur fond couleur = Ivoire (#F7F2E6). */
-  --color-sector-agriculture: #6B7548; /* Vert kaki / olive sec — la terre, pas le bio festif */
-  --color-sector-sante: #7A5C6B;       /* Mauve cendré — clinique sans froideur */
-  --color-sector-tech: #2E4A5C;        /* Bleu nuit — autorité numérique, jamais cyan */
-  --color-sector-tourisme: #A8745A;    /* Terre cuite désaturée — chaleur méditerranéenne sourde */
-  --color-sector-default: #5E4854;     /* Prune muted — secteurs non figés MVP */
+  --color-sector-agriculture: #6B7548;     /* Vert kaki / olive sec — la terre, pas le bio festif */
+  --color-sector-agroalimentaire: #8C7245; /* Sienne sourd — céréales / minéral */
+  --color-sector-btp: #6B6B62;             /* Béton brut désaturé */
+  --color-sector-cosmetique: #A37880;      /* Rose poudré chaud */
+  --color-sector-decoration: #8A6B4A;      /* Noyer désaturé — matière domestique */
+  --color-sector-defense: #3E4A3A;         /* Vert kaki militaire profond */
+  --color-sector-energie: #4A6660;         /* Bleu-vert sapin — sobriété */
+  --color-sector-franchise: #6B5340;       /* Brun cuir clair */
+  --color-sector-industrie: #4D5560;       /* Acier mat */
+  --color-sector-logistique: #5E5448;      /* Brun cargo */
+  --color-sector-mode: #7D3E4A;            /* Bordeaux sourd */
+  --color-sector-rh: #5C5879;              /* Ardoise mauve — institutionnel */
+  --color-sector-sante: #7A5C6B;           /* Mauve cendré — clinique sans froideur */
+  --color-sector-tech: #2E4A5C;            /* Bleu nuit — autorité numérique, jamais cyan */
+  --color-sector-tourisme: #A8745A;        /* Terre cuite désaturée — chaleur méditerranéenne sourde */
+  --color-sector-default: #5E4854;         /* Prune muted — secteur inconnu / fallback */
 
   /* Legacy tokens — remappés vers la nouvelle palette pour ne pas casser les 58 fichiers existants.
    * À supprimer progressivement au fil des refontes de composants (S2 → S5). */
