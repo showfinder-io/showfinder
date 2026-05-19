@@ -193,10 +193,21 @@
 
   /* Focus visible institutionnel (cf. CLAUDE.md #4 États système).
    * Outline Ocre 2px + offset → AA et signature de marque.
-   * Appliqué uniquement aux éléments focus-visible (keyboard), pas au click souris. */
-  *:focus-visible {
+   * Appliqué aux contrôles de formulaire et boutons interactifs principaux.
+   * Les liens (a) ont un focus-visible plus discret (subtle ring sable+prune)
+   * pour ne pas encadrer le wordmark et autres liens éditoriaux d'un rectangle ocre. */
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible,
+  [role="button"]:focus-visible {
     outline: 2px solid var(--color-ocre);
     outline-offset: 2px;
+    border-radius: 3px;
+  }
+  a:focus-visible {
+    outline: 2px solid rgba(59, 31, 51, 0.35);
+    outline-offset: 3px;
     border-radius: 3px;
   }
 }

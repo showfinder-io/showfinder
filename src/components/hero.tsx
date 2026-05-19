@@ -1,5 +1,3 @@
-import { AgorisMark } from "@/components/agoris-mark";
-
 type HeroProps = {
   /** Total de salons indexés (récupéré côté serveur, ex: count de getSalons). */
   totalSalons: number;
@@ -21,14 +19,24 @@ type HeroProps = {
 export function Hero({ totalSalons }: HeroProps) {
   return (
     <section className="relative overflow-hidden border-b border-border bg-sable">
-      {/* Watermark symbole, à droite, opacité très basse. Pointer-events none pour ne pas voler les clics. */}
-      <div
+      {/* Watermark symbole — SVG inline EXACT selon brief V1 :
+       *  6 cercles, tous en Prune #3B1F33, viewBox 100×100.
+       *  680×680px positionné right:-80px, opacity 0.07, pointer-events none.
+       *  Volontairement inline (pas via AgorisMark composant) pour garantir
+       *  le rendu pixel-perfect du brief sans dépendance d'autres props. */}
+      <svg
         aria-hidden="true"
+        viewBox="0 0 100 100"
         className="pointer-events-none absolute top-1/2 -translate-y-1/2 opacity-[0.07]"
-        style={{ right: "-80px", width: "680px", height: "680px" }}
+        style={{ right: "-80px", width: "680px", height: "680px", zIndex: 0 }}
       >
-        <AgorisMark variant="mono" className="h-full w-full text-prune" />
-      </div>
+        <circle cx="50" cy="28" r="5.5" fill="#3B1F33" />
+        <circle cx="71" cy="43" r="5" fill="#3B1F33" />
+        <circle cx="29" cy="43" r="5" fill="#3B1F33" />
+        <circle cx="63" cy="68" r="5" fill="#3B1F33" />
+        <circle cx="37" cy="68" r="5" fill="#3B1F33" />
+        <circle cx="50" cy="51" r="3" fill="#3B1F33" />
+      </svg>
 
       <div className="relative z-10 mx-auto max-w-[1440px] px-6 pb-24 pt-22 md:px-14 md:pb-24">
         <p
