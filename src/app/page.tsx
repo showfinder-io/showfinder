@@ -5,7 +5,7 @@ import { getSalons, getSectors } from "@/lib/queries";
 import { SalonCard } from "@/components/salon-card";
 import { SectorBadge } from "@/components/sector-badge";
 import { SectionTitle } from "@/components/section-title";
-import { Search, ArrowRight } from "lucide-react";
+import { Hero } from "@/components/hero";
 
 export const metadata: Metadata = {
   alternates: {
@@ -14,69 +14,56 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
-  const [{ salons: upcomingSalons }, sectors] = await Promise.all([
+  // 1 seul appel = 1 round-trip : on récupère les 6 prochains salons + le count total
+  //    publiés (toutes éditions). Le count est utilisé dans le Hero ("196 salons indexés")
+  //    et dans le CTA "Voir les N salons".
+  // Note : getSalons retourne `total` = count(*) FILTRÉ par les conditions appliquées,
+  // donc ici "published" + "upcoming". Pour avoir le total brut indexé (incluant les
+  // éditions passées), on fait un appel séparé sans `upcoming`.
+  const [
+    { salons: upcomingSalons },
+    { total: totalPublished },
+    sectors,
+  ] = await Promise.all([
     getSalons({ pageSize: 6, sort: "date", upcoming: true }),
+    getSalons({ pageSize: 1, sort: "date" }),
     getSectors(),
   ]);
 
   return (
     <div>
-      {/* HERO — Calm tech : fond sable, typo Fraunces large, search proéminente */}
-      <section className="border-b border-border bg-sable">
-        <div className="mx-auto max-w-3xl px-4 py-20 text-center md:py-28">
-          <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-muted">
-            Le forum des salons
-          </p>
-          <h1 className="mt-5 font-serif text-5xl font-normal leading-[1.05] tracking-[-0.015em] text-prune md:text-6xl">
-            Là où les industries
-            <br />
-            <span className="text-prune/70">se retrouvent</span>
-            <em className="not-italic text-[1.1em] leading-none text-ocre">.</em>
-          </h1>
-          <p className="mx-auto mt-7 max-w-xl text-base leading-relaxed text-prune/80 md:text-lg">
-            {siteConfig.description}
-          </p>
-
-          {/* Barre de recherche */}
-          <form action="/salons" className="mt-12">
-            <div className="mx-auto flex max-w-xl items-stretch overflow-hidden rounded-lg border border-prune/20 bg-papier shadow-sm focus-within:border-prune/50 focus-within:shadow-md transition-all">
-              <span className="flex shrink-0 items-center pl-4 text-muted">
-                <Search className="h-4 w-4" aria-hidden="true" />
-              </span>
-              <input
-                type="text"
-                name="search"
-                placeholder="Rechercher un salon, un secteur..."
-                className="flex-1 bg-transparent px-3 py-4 text-sm text-prune outline-none placeholder:text-muted"
-                aria-label="Rechercher un salon ou un secteur"
-              />
-              <button
-                type="submit"
-                className="shrink-0 bg-prune px-6 py-4 text-sm font-medium text-papier transition-opacity hover:opacity-90"
-              >
-                Rechercher
-              </button>
-            </div>
-          </form>
-        </div>
-      </section>
+      {/* HERO V1 refondu — éditorial, watermark symbole, search underline */}
+      <Hero totalSalons={totalPublished} />
 
       {/* PROCHAINS SALONS */}
-      <section className="bg-sable py-20 md:py-24">
-        <div className="mx-auto max-w-6xl px-4">
-          <div className="flex flex-wrap items-end justify-between gap-4">
-            <SectionTitle eyebrow="À l'agenda" size="lg">
+      <section className="border-b border-border bg-sable py-22 md:py-24">
+        <div className="mx-auto max-w-[1440px] px-6 md:px-14">
+          <div className="flex flex-wrap items-end justify-between gap-6">
+            <SectionTitle eyebrow="À l'agenda" size="xl">
               Prochains salons
             </SectionTitle>
+            {/* CTA Fraunces italic souligné ocre — pattern "section-cta" du mockup */}
             <Link
               href="/salons"
-              className="inline-flex items-center gap-1 text-sm font-medium text-prune underline decoration-prune/30 underline-offset-4 transition-colors hover:decoration-prune"
+              className="font-serif italic text-prune transition-colors hover:text-[var(--color-warning)]"
+              style={{
+                fontSize: "18px",
+                borderBottom: "1px solid var(--color-ocre)",
+                paddingBottom: "2px",
+                lineHeight: "1.2",
+              }}
             >
-              Voir tous les salons
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              Voir les{" "}
+              <span
+                className="not-italic font-serif text-ocre"
+                style={{ fontStyle: "normal" }}
+              >
+                {totalPublished}
+              </span>{" "}
+              salons
             </Link>
           </div>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {upcomingSalons.map((salon) => (
               <SalonCard key={salon.id} salon={salon} />
             ))}
@@ -85,8 +72,8 @@ export default async function Home() {
       </section>
 
       {/* EXPLORER PAR SECTEUR */}
-      <section className="border-t border-border bg-sable py-20 md:py-24">
-        <div className="mx-auto max-w-6xl px-4">
+      <section className="border-b border-border bg-sable py-20 md:py-24">
+        <div className="mx-auto max-w-[1440px] px-6 md:px-14">
           <SectionTitle eyebrow="Par filière" size="lg">
             Explorer par secteur
           </SectionTitle>
@@ -146,7 +133,8 @@ function Argument({
   return (
     <li className="flex flex-col">
       <span className="font-mono text-sm font-semibold uppercase tracking-[0.15em] text-ocre">
-        {number}<span aria-hidden="true">.</span>
+        {number}
+        <span aria-hidden="true">.</span>
       </span>
       <h3 className="mt-4 font-serif text-[28px] font-normal leading-tight tracking-[-0.015em] text-papier">
         {title}

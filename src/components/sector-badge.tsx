@@ -4,6 +4,13 @@ type SectorBadgeProps = {
   slug: string;
   name: string;
   linked?: boolean;
+  /**
+   * Variante visuelle :
+   *  - "filled" (défaut) : couleur sectorielle saturée + texte Ivoire (MVP).
+   *  - "outline" : bordure Prune + texte Prune, fond transparent.
+   *    Utilisé sur les cards Hero V1 — design plus éditorial, moins saturé.
+   */
+  variant?: "filled" | "outline";
 };
 
 /**
@@ -41,9 +48,20 @@ export function getSectorBorderColor(slug: string): string {
   return map[slug] ?? "border-l-sector-default";
 }
 
-export function SectorBadge({ slug, name, linked = true }: SectorBadgeProps) {
-  const colorClasses = getSectorColorClasses(slug);
-  const className = `inline-block rounded-full border px-3 py-1 text-xs font-medium transition-opacity hover:opacity-90 ${colorClasses}`;
+export function SectorBadge({
+  slug,
+  name,
+  linked = true,
+  variant = "filled",
+}: SectorBadgeProps) {
+  const className =
+    variant === "outline"
+      ? // Outline éditorial : bordure + texte Prune, fond transparent, typo mono uppercase.
+        // Utilisé sur les cards Hero V1 pour un rendu moins saturé que le filled MVP.
+        "inline-block rounded-full border border-prune bg-transparent px-2.5 py-1 font-mono text-[10px] font-medium uppercase tracking-[0.14em] text-prune transition-colors hover:bg-prune/5"
+      : `inline-block rounded-full border px-3 py-1 text-xs font-medium transition-opacity hover:opacity-90 ${getSectorColorClasses(
+          slug
+        )}`;
 
   if (linked) {
     return (
