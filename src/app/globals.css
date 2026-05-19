@@ -27,6 +27,15 @@
   --color-error: #A8362C;   /* Terracotta sombre, pas rouge pompier */
   --color-info: #4A5A6B;    /* Bleu ardoise neutre */
 
+  /* Palette sectorielle MVP — pills / dots / filtres UNIQUEMENT.
+   * Règles : jamais en CTA, jamais en fond large, jamais en accent narratif.
+   * Texte des pills sur fond couleur = Ivoire (#F7F2E6). */
+  --color-sector-agriculture: #6B7548; /* Vert kaki / olive sec — la terre, pas le bio festif */
+  --color-sector-sante: #7A5C6B;       /* Mauve cendré — clinique sans froideur */
+  --color-sector-tech: #2E4A5C;        /* Bleu nuit — autorité numérique, jamais cyan */
+  --color-sector-tourisme: #A8745A;    /* Terre cuite désaturée — chaleur méditerranéenne sourde */
+  --color-sector-default: #5E4854;     /* Prune muted — secteurs non figés MVP */
+
   /* Legacy tokens — remappés vers la nouvelle palette pour ne pas casser les 58 fichiers existants.
    * À supprimer progressivement au fil des refontes de composants (S2 → S5). */
   --color-paper: var(--color-papier);
