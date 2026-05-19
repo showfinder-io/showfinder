@@ -13,10 +13,19 @@
    *   - Papier (#FFFFFF) : cartes, fiches, surfaces de contenu
    */
   --color-sable: #EEE7D4;
+  --color-ivoire: #F7F2E6;
   --color-prune: #3B1F33;
   --color-ocre: #E2A02E;
   --color-ocre-hover: #C8881F;
   --color-papier: #FFFFFF;
+
+  /* Couleurs d'état — palette désaturée alignée Agoris.
+   * Réservées aux états système (toasts, validation, badges statut).
+   * Jamais utilisées pour les accents visuels narratifs (ceux-ci restent Ocre). */
+  --color-success: #5C7A4F; /* Vert mousse sourd */
+  --color-warning: #C8801F; /* Ocre désaturé, cousin direct */
+  --color-error: #A8362C;   /* Terracotta sombre, pas rouge pompier */
+  --color-info: #4A5A6B;    /* Bleu ardoise neutre */
 
   /* Legacy tokens — remappés vers la nouvelle palette pour ne pas casser les 58 fichiers existants.
    * À supprimer progressivement au fil des refontes de composants (S2 → S5). */

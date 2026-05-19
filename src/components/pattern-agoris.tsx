@@ -1,50 +1,32 @@
 import { cn } from "@/lib/utils";
+import { AgorisMark } from "@/components/agoris-mark";
 
 type PatternAgorisProps = {
   className?: string;
-  showWordmark?: boolean;
   label?: string;
+  showLabel?: boolean;
 };
 
 /**
- * Placeholder visuel utilisé quand une fiche salon n'a pas d'image de couverture.
- * Fond Sable + grille de points Prune translucide + wordmark "Agoris" optionnel.
- * Conçu pour s'adapter à tout container : passer une hauteur via className.
+ * Placeholder visuel quand une fiche n'a pas d'image de couverture.
+ * Fond Sable + symbole Agoris central (duo Prune/Ocre) + label optionnel.
  */
 export function PatternAgoris({
   className,
-  showWordmark = true,
-  label = "Agoris",
+  label,
+  showLabel = true,
 }: PatternAgorisProps) {
   return (
     <div
       className={cn(
-        "relative flex h-full w-full items-center justify-center overflow-hidden bg-sable",
+        "relative flex h-full w-full flex-col items-center justify-center gap-4 overflow-hidden bg-sable px-6 py-8",
         className
       )}
       aria-hidden="true"
     >
-      <svg
-        className="absolute inset-0 h-full w-full text-prune/10"
-        xmlns="http://www.w3.org/2000/svg"
-        aria-hidden="true"
-      >
-        <defs>
-          <pattern
-            id="pattern-agoris-dots"
-            x="0"
-            y="0"
-            width="24"
-            height="24"
-            patternUnits="userSpaceOnUse"
-          >
-            <circle cx="2" cy="2" r="1.2" fill="currentColor" />
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#pattern-agoris-dots)" />
-      </svg>
-      {showWordmark && (
-        <span className="relative font-serif text-2xl font-semibold tracking-tight text-prune/60 sm:text-3xl">
+      <AgorisMark className="h-20 w-20 sm:h-24 sm:w-24" />
+      {showLabel && label && (
+        <span className="text-center font-serif text-lg font-medium tracking-tight text-prune/70 sm:text-xl">
           {label}
         </span>
       )}

@@ -26,10 +26,11 @@ export default async function Home() {
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">
             Le forum des salons
           </p>
-          <h1 className="mt-5 font-serif text-5xl font-semibold leading-[1.05] tracking-tight text-prune md:text-6xl">
-            Le bon salon ne se trouve pas.
+          <h1 className="mt-5 font-serif text-5xl font-normal leading-[1.05] tracking-[-0.015em] text-prune md:text-6xl">
+            Là où les industries
             <br />
-            <span className="text-prune/70">Il se reconnaît.</span>
+            <span className="text-prune/70">se retrouvent</span>
+            <em className="not-italic text-[1.1em] leading-none text-ocre">.</em>
           </h1>
           <p className="mx-auto mt-7 max-w-xl text-base leading-relaxed text-prune/80 md:text-lg">
             {siteConfig.description}

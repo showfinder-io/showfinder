@@ -105,7 +105,7 @@ export function ProviderDrawer({ salonId, salonName }: ProviderDrawerProps) {
             )}
 
             {!loading && providers.length === 0 && (
-              <div className="rounded-lg border border-border bg-papier py-10 px-6 text-center">
+              <div className="rounded-lg border border-border bg-ivoire py-10 px-6 text-center">
                 <p className="text-sm text-muted">
                   Pas encore de prestataires référencés pour ce salon.
                 </p>
@@ -136,7 +136,7 @@ export function ProviderDrawer({ salonId, salonName }: ProviderDrawerProps) {
                           className={`flex items-center justify-between rounded-lg border p-3 transition-shadow hover:shadow-sm ${
                             isPremium
                               ? "border-ocre/40 bg-ocre/10"
-                              : "border-border bg-papier"
+                              : "border-border bg-ivoire"
                           }`}
                         >
                           <Link
