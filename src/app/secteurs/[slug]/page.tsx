@@ -9,6 +9,7 @@ import {
 } from "@/lib/queries";
 import { SalonCard } from "@/components/salon-card";
 import { AlertSubscribe } from "@/components/alert-subscribe";
+import { SectionTitle } from "@/components/section-title";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -68,19 +69,19 @@ export default async function SecteurPage({ params }: Props) {
 
       {/* Header éditorial */}
       <header className="max-w-3xl">
-        <p className="text-xs font-semibold uppercase tracking-wider text-muted">
-          Filière
-        </p>
-        <h1 className="mt-3 font-serif text-4xl font-semibold tracking-tight text-prune md:text-5xl">
+        <SectionTitle as="h1" size="xl" eyebrow="Filière">
           Salons {sector.name}
-        </h1>
+        </SectionTitle>
         {sector.description && (
           <p className="mt-5 text-base leading-relaxed text-prune/85 md:text-lg">
             {sector.description}
           </p>
         )}
         <p className="mt-6 text-sm text-muted">
-          {result.total} salon{result.total > 1 ? "s" : ""} référencé
+          <span className="font-serif text-[22px] font-normal text-ocre tabular-nums">
+            {result.total}
+          </span>{" "}
+          salon{result.total > 1 ? "s" : ""} référencé
           {result.total > 1 ? "s" : ""} dans cette filière.
         </p>
       </header>
@@ -98,9 +99,10 @@ export default async function SecteurPage({ params }: Props) {
           ))}
         </div>
       ) : (
-        <div className="mt-16 rounded-lg border border-border bg-papier p-12 text-center">
-          <p className="text-base text-muted">
-            Aucun salon dans cette filière pour le moment.
+        <div className="mt-16 rounded-lg border border-border bg-ivoire p-12 text-center">
+          <p className="font-serif text-xl italic leading-relaxed text-prune/85">
+            Aucun salon dans cette filière pour le moment
+            <em className="not-italic text-ocre">.</em>
           </p>
         </div>
       )}

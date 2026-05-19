@@ -11,6 +11,7 @@ import {
 } from "@/lib/queries";
 import { SalonFiltersSidebar } from "@/components/salon-filters-sidebar";
 import { SalonListLoadMore } from "@/components/salon-list-loadmore";
+import { SectionTitle } from "@/components/section-title";
 
 export const metadata: Metadata = {
   title: "Tous les salons professionnels",
@@ -57,12 +58,17 @@ export default async function SalonsPage({ searchParams }: Props) {
     <div className="mx-auto max-w-7xl px-4 py-12 md:py-16">
       {/* En-tete */}
       <header className="mb-10 md:mb-14">
-        <h1 className="font-serif text-4xl font-semibold tracking-tight text-prune md:text-5xl">
+        <SectionTitle as="h1" size="xl">
           Salons professionnels
-        </h1>
-        <p className="mt-3 max-w-2xl text-base text-muted">
-          {result.total} salon{result.total > 1 ? "s" : ""} référencé
-          {result.total > 1 ? "s" : ""} en France, audités et classés par filière.
+        </SectionTitle>
+        <p className="mt-4 max-w-2xl text-base text-muted">
+          <span className="font-serif text-[22px] font-normal text-ocre tabular-nums">
+            {result.total}
+          </span>{" "}
+          salon{result.total > 1 ? "s" : ""} référencé
+          {result.total > 1 ? "s" : ""} en France, audité
+          {result.total > 1 ? "s" : ""} et classé
+          {result.total > 1 ? "s" : ""} par filière.
         </p>
       </header>
 
@@ -86,9 +92,12 @@ export default async function SalonsPage({ searchParams }: Props) {
               searchParams={currentParams}
             />
           ) : (
-            <div className="mt-16 text-center">
-              <p className="text-lg text-muted">
-                Aucun salon ne correspond à vos critères.
+            <div className="mt-16 rounded-lg border border-border bg-ivoire p-12 text-center">
+              <p className="font-serif text-xl italic leading-relaxed text-prune/85">
+                Rien ne correspond à votre recherche.
+                <br />
+                Essayez un secteur ou une ville
+                <em className="not-italic text-ocre">.</em>
               </p>
             </div>
           )}
