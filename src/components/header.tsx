@@ -5,9 +5,12 @@ import { MobileNav } from "@/components/mobile-nav";
 
 export function Header() {
   return (
-    <header className="border-b border-border bg-paper">
+    <header className="border-b border-border bg-sable">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
-        <Link href="/" className="font-serif text-xl font-bold tracking-tight">
+        <Link
+          href="/"
+          className="font-serif text-2xl font-bold tracking-tight text-prune"
+        >
           {siteConfig.name}
         </Link>
 
