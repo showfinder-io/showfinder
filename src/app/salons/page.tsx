@@ -12,6 +12,7 @@ import {
 import { SalonFiltersSidebar } from "@/components/salon-filters-sidebar";
 import { SalonListLoadMore } from "@/components/salon-list-loadmore";
 import { SectionTitle } from "@/components/section-title";
+import { SortBar } from "@/components/sort-bar";
 
 export const metadata: Metadata = {
   title: "Tous les salons professionnels",
@@ -32,7 +33,13 @@ export default async function SalonsPage({ searchParams }: Props) {
   const sector = params.sector ?? "";
   const city = params.city ?? "";
   const period = params.period ?? "";
-  const sort = (params.sort as "date" | "name") || "date";
+  const rawSort = params.sort ?? "date";
+  const sort: "date" | "date-desc" | "visitors" | "name" =
+    rawSort === "date-desc" ||
+    rawSort === "visitors" ||
+    rawSort === "name"
+      ? rawSort
+      : "date";
   const category =
     params.category && params.category in SALON_CATEGORY_LABELS
       ? (params.category as SalonCategory)
@@ -72,15 +79,19 @@ export default async function SalonsPage({ searchParams }: Props) {
         </p>
       </header>
 
-      {/* Layout : sidebar + contenu */}
-      <div className="flex flex-col gap-10 md:flex-row md:gap-12">
-        {/* Sidebar filtres */}
+      {/* Layout : sidebar (filières) + contenu (sortbar + grille) */}
+      <div className="flex flex-col gap-10 lg:flex-row lg:gap-12">
+        {/* Rail latéral filières (desktop) + bouton bottom sheet (mobile) */}
         <Suspense>
           <SalonFiltersSidebar sectors={sectors} cities={cities} />
         </Suspense>
 
         {/* Contenu principal */}
         <div className="min-w-0 flex-1">
+          <Suspense>
+            <SortBar total={result.total} cities={cities} />
+          </Suspense>
+
           {result.salons.length > 0 ? (
             <SalonListLoadMore
               // `key` change quand les filtres changent → force le remount du
@@ -92,7 +103,7 @@ export default async function SalonsPage({ searchParams }: Props) {
               searchParams={currentParams}
             />
           ) : (
-            <div className="mt-16 rounded-lg border border-border bg-ivoire p-12 text-center">
+            <div className="mt-16 rounded-lg border border-prune/10 bg-ivoire p-12 text-center">
               <p className="font-serif text-xl italic leading-relaxed text-prune/85">
                 Rien ne correspond à votre recherche.
                 <br />

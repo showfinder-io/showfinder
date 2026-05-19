@@ -13,7 +13,12 @@ export async function GET(request: NextRequest) {
   const sector = params.get("sector") ?? "";
   const city = params.get("city") ?? "";
   const period = params.get("period") ?? "";
-  const sort = (params.get("sort") as "date" | "name") || "date";
+  const rawSort = params.get("sort") ?? "date";
+  const sort = (
+    ["date", "date-desc", "visitors", "name"].includes(rawSort)
+      ? rawSort
+      : "date"
+  ) as "date" | "date-desc" | "visitors" | "name";
   const page = Number(params.get("page") ?? "1");
   const rawCategory = params.get("category") ?? "";
   const category =

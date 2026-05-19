@@ -83,7 +83,7 @@ export type SalonFilters = {
   category?: SalonCategory;
   page?: number;
   pageSize?: number;
-  sort?: "date" | "name";
+  sort?: "date" | "date-desc" | "visitors" | "name";
   upcoming?: boolean;
 };
 
@@ -181,9 +181,20 @@ export async function getSalons(filters: SalonFilters = {}) {
     }
   }
 
-  // Tri : par défaut sort_key (à venir croissant, puis passés décroissants), sinon par nom
+  // Tri :
+  //  - "date" (défaut) : sort_key (à venir ASC + passés DESC) via la view salons_ordered
+  //  - "date-desc"     : start_date DESC, nulls last → contourne sort_key
+  //  - "visitors"      : estimated_visitors DESC, nulls last
+  //  - "name"          : name ASC (A-Z)
   if (filters.sort === "name") {
     query = query.order("name", { ascending: true });
+  } else if (filters.sort === "date-desc") {
+    query = query.order("start_date", { ascending: false, nullsFirst: false });
+  } else if (filters.sort === "visitors") {
+    query = query.order("estimated_visitors", {
+      ascending: false,
+      nullsFirst: false,
+    });
   } else {
     query = query.order("sort_key" as never, { ascending: true });
   }
@@ -296,9 +307,16 @@ async function getSalonsById(
     }
   }
 
-  // Tri : par défaut sort_key (à venir croissant, puis passés décroissants), sinon par nom
+  // Tri : aligné sur getSalons (date / date-desc / visitors / name)
   if (filters.sort === "name") {
     query = query.order("name", { ascending: true });
+  } else if (filters.sort === "date-desc") {
+    query = query.order("start_date", { ascending: false, nullsFirst: false });
+  } else if (filters.sort === "visitors") {
+    query = query.order("estimated_visitors", {
+      ascending: false,
+      nullsFirst: false,
+    });
   } else {
     query = query.order("sort_key" as never, { ascending: true });
   }
