@@ -3,7 +3,8 @@ import { siteConfig } from "@/lib/config";
 import { MobileNav } from "@/components/mobile-nav";
 import { AgorisMark } from "@/components/agoris-mark";
 import { AuthButton } from "@/components/auth-button";
-import { SignOutButton } from "@/components/sign-out-button";
+import { NavLinks } from "@/components/nav-links";
+import { UserChip } from "@/components/user-chip";
 import { createClient } from "@/lib/supabase/server";
 
 const NAV_LINKS = [
@@ -97,18 +98,8 @@ export async function Header() {
           </span>
         </Link>
 
-        {/* NAV CENTER — caché sur mobile */}
-        <nav className="hidden items-center justify-center gap-10 md:flex">
-          {NAV_LINKS.map(({ href, label }) => (
-            <Link
-              key={href}
-              href={href}
-              className="relative py-1.5 text-[14px] font-medium tracking-[0.01em] text-muted transition-colors hover:text-prune"
-            >
-              {label}
-            </Link>
-          ))}
-        </nav>
+        {/* NAV CENTER — caché sur mobile, active state via composant client */}
+        <NavLinks links={NAV_LINKS} />
 
         {/* NAV RIGHT — admin-pill + user-chip OU connexion (mobile : MobileNav) */}
         <div className="flex items-center justify-end gap-4">
@@ -124,21 +115,11 @@ export async function Header() {
                     Admin
                   </Link>
                 )}
-                <div
-                  className="flex items-center gap-2.5 rounded-3xl py-1.5 pl-1.5 pr-3 transition-colors hover:bg-prune/[0.06]"
-                  aria-label={`Compte ${displayName}`}
-                >
-                  <span
-                    aria-hidden="true"
-                    className="flex h-8 w-8 items-center justify-center rounded-full bg-prune text-[12px] font-semibold tracking-[0.04em] text-sable"
-                  >
-                    {initials}
-                  </span>
-                  <span className="text-[13px] font-medium text-prune">
-                    {displayName}
-                  </span>
-                  <SignOutButton />
-                </div>
+                <UserChip
+                  initials={initials}
+                  displayName={displayName}
+                  email={user.email ?? ""}
+                />
               </>
             ) : (
               <Link
