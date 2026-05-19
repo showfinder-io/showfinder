@@ -10,10 +10,10 @@ export function StatBlock({ value, label }: StatBlockProps) {
 
   return (
     <div className="text-center">
-      <p className="text-2xl font-semibold tracking-tight">
+      <p className="font-serif text-3xl font-semibold tracking-tight text-prune sm:text-4xl">
         {formatNumber(value)}
       </p>
-      <p className="mt-1 text-sm text-muted">{label}</p>
+      <p className="mt-2 text-xs uppercase tracking-wider text-muted">{label}</p>
     </div>
   );
 }

@@ -8,7 +8,7 @@ import {
   getSimilarSalons,
   SALON_CATEGORY_LABELS,
 } from "@/lib/queries";
-import { formatDateRange, formatNumber } from "@/lib/format";
+import { formatDateRange } from "@/lib/format";
 import { SectorBadge } from "@/components/sector-badge";
 import { StatBlock } from "@/components/stat-block";
 import { SalonCard } from "@/components/salon-card";
@@ -18,6 +18,8 @@ import { AlertSubscribe } from "@/components/alert-subscribe";
 import { ReviewList } from "@/components/review-list";
 import { ReviewForm } from "@/components/review-form";
 import { JsonLd } from "@/components/json-ld";
+import { AgorisVerifiedBadge } from "@/components/agoris-verified-badge";
+import { PatternAgoris } from "@/components/pattern-agoris";
 import {
   MapPin,
   Calendar,
@@ -72,6 +74,16 @@ const frequencyLabels: Record<string, string> = {
   ponctuel: "Ponctuel",
 };
 
+/** Extrait une phrase d'accroche de 140-180 chars max depuis la description. */
+function pitchFrom(description: string | null): string | null {
+  if (!description) return null;
+  const trimmed = description.trim();
+  // Tente de couper sur la 1re ponctuation forte si la phrase est courte
+  const firstSentence = trimmed.split(/[.!?]\s+/)[0];
+  const candidate = firstSentence && firstSentence.length <= 200 ? firstSentence : trimmed;
+  return candidate.length > 180 ? candidate.slice(0, 177).trim() + "..." : candidate;
+}
+
 export default async function SalonPage({ params }: Props) {
   const { slug } = await params;
   const salon = await getSalonBySlug(slug);
@@ -81,7 +93,7 @@ export default async function SalonPage({ params }: Props) {
   const sectorIds = salon.sectors.map((s) => s.id);
   const similarSalons = await getSimilarSalons(salon.id, sectorIds, 3);
 
-  // Compter les stats affichables (uniquement les verifiables)
+  // Quick Stats : uniquement les chiffres vérifiables. Pas de placeholder.
   const stats = [
     salon.estimated_exhibitors
       ? { value: salon.estimated_exhibitors, label: "Exposants" }
@@ -90,6 +102,9 @@ export default async function SalonPage({ params }: Props) {
       ? { value: salon.estimated_visitors, label: "Visiteurs" }
       : null,
   ].filter(Boolean) as { value: number; label: string }[];
+
+  const pitch = pitchFrom(salon.description);
+  const verified = salon.is_agoris_verified === true;
 
   // Schema.org Event
   const eventJsonLd = {
@@ -116,22 +131,24 @@ export default async function SalonPage({ params }: Props) {
   };
 
   return (
-    <div className="mx-auto max-w-4xl px-4 py-10">
+    <article className="mx-auto max-w-4xl px-4 py-10 md:py-16">
       <JsonLd data={eventJsonLd} />
+
       {/* Breadcrumb */}
-      <nav className="mb-8 text-sm text-muted">
-        <Link href="/salons" className="hover:text-ink transition-colors">
+      <nav className="mb-10 text-sm text-muted">
+        <Link href="/salons" className="hover:text-prune transition-colors">
           Salons
         </Link>
         <span className="mx-2">/</span>
-        <span className="text-ink">{salon.name}</span>
+        <span className="text-prune">{salon.name}</span>
       </nav>
 
-      {/* 1. Header - Le Pitch */}
+      {/* 1. HEADER — Le Pitch */}
       <header>
+        {/* Tags : catégorie + secteurs + verified */}
         <div className="flex flex-wrap items-center gap-2">
           {salon.category && (
-            <span className="inline-block rounded-full border border-border bg-paper px-3 py-1 text-xs font-medium text-ink">
+            <span className="inline-block rounded-full border border-border bg-papier px-3 py-1 text-xs font-medium uppercase tracking-wider text-prune">
               {SALON_CATEGORY_LABELS[salon.category]}
             </span>
           )}
@@ -142,43 +159,58 @@ export default async function SalonPage({ params }: Props) {
               name={sector.name}
             />
           ))}
+          {verified && <AgorisVerifiedBadge size="md" />}
         </div>
-        <div className="mt-4 flex items-center gap-4">
+
+        {/* Titre + logo */}
+        <div className="mt-6 flex items-start gap-4">
           {salon.logo_url && (
+            // eslint-disable-next-line @next/next/no-img-element
             <img
               src={salon.logo_url}
               alt=""
-              className="h-10 w-10 shrink-0 rounded"
+              className="h-12 w-12 shrink-0 rounded"
             />
           )}
-          <h1 className="font-serif text-3xl font-bold tracking-tight sm:text-4xl">
+          <h1 className="font-serif text-4xl font-semibold leading-tight tracking-tight text-prune sm:text-5xl">
             {salon.name}
+            {salon.edition_year && (
+              <span className="text-muted"> · {salon.edition_year}</span>
+            )}
           </h1>
         </div>
 
-        {/* Meta inline */}
-        <div className="mt-4 flex flex-wrap gap-6 text-muted">
+        {/* Pitch éditorial (1re phrase de description) */}
+        {pitch && (
+          <p className="mt-5 max-w-2xl font-serif text-lg leading-relaxed text-prune/90">
+            {pitch}
+          </p>
+        )}
+
+        {/* Meta : dates + lieu */}
+        <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted">
           <div className="flex items-center gap-2">
-            <Calendar className="h-4 w-4" />
+            <Calendar className="h-4 w-4" aria-hidden="true" />
             <span>{formatDateRange(salon.start_date, salon.end_date)}</span>
           </div>
           {salon.venue && (
             <div className="flex items-center gap-2">
-              <MapPin className="h-4 w-4" />
+              <MapPin className="h-4 w-4" aria-hidden="true" />
               <span>
-                {salon.venue}, {salon.city}
+                {salon.venue}
+                {salon.city ? `, ${salon.city}` : ""}
               </span>
             </div>
           )}
         </div>
 
-        {/* Tags editoriaux */}
+        {/* Tags editoriaux (curation Agoris) */}
         {salon.tags.length > 0 && (
-          <div className="mt-4 flex flex-wrap gap-2">
+          <div className="mt-5 flex flex-wrap gap-2">
             {salon.tags.map((tag) => (
               <span
                 key={tag.id}
-                className="rounded-full bg-accent/10 px-3 py-1 text-xs font-medium text-accent"
+                className="rounded-full border border-prune/15 bg-papier px-3 py-1 text-xs font-medium text-prune"
               >
                 {tag.label}
               </span>
@@ -187,17 +219,17 @@ export default async function SalonPage({ params }: Props) {
         )}
       </header>
 
-      {/* Alerte dates : visible seulement si l'admin a marqué les dates comme non confirmées */}
+      {/* Alerte dates : visible uniquement si non confirmées */}
       {salon.dates_confirmed === false && (
-        <div className="mt-6">
+        <div className="mt-8">
           <AlertSubscribe type="salon" slug={slug} label={salon.name} />
         </div>
       )}
 
-      {/* 2. Quick Stats */}
+      {/* 2. QUICK STATS — fond Sable, chiffres Fraunces */}
       {stats.length > 0 && (
-        <section className="mt-10 rounded-lg border border-border bg-white p-8">
-          <div className="flex items-center justify-center gap-12">
+        <section className="mt-12 rounded-lg border border-border bg-sable p-8 md:p-10">
+          <div className="grid grid-cols-2 gap-8 md:flex md:items-center md:justify-around md:gap-12">
             {stats.map((stat, i) => (
               <StatBlock key={i} value={stat.value} label={stat.label} />
             ))}
@@ -205,100 +237,111 @@ export default async function SalonPage({ params }: Props) {
         </section>
       )}
 
-      {/* 3. Essentiel */}
-      <section className="mt-10">
-        <h2 className="font-serif text-2xl font-bold tracking-tight">
+      {/* 3. BLOC VISUEL — cover ou placeholder PatternAgoris */}
+      <section className="mt-12 overflow-hidden rounded-lg border border-border">
+        {salon.cover_image_url ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={salon.cover_image_url}
+            alt={`${salon.name} - vue du salon`}
+            className="h-64 w-full object-cover sm:h-96"
+          />
+        ) : (
+          <PatternAgoris className="h-64 sm:h-80" label={salon.name} />
+        )}
+      </section>
+
+      {/* 4. ESSENTIEL */}
+      <section className="mt-12">
+        <h2 className="font-serif text-2xl font-semibold tracking-tight text-prune md:text-3xl">
           L&apos;essentiel
         </h2>
 
         {salon.description && (
-          <p className="mt-4 leading-relaxed text-muted">{salon.description}</p>
+          <p className="mt-5 leading-relaxed text-prune/85">
+            {salon.description}
+          </p>
         )}
 
-        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+        <dl className="mt-8 grid gap-5 sm:grid-cols-2">
           {salon.organizer_name && (
-            <div className="flex items-start gap-3">
-              <Building2 className="mt-0.5 h-4 w-4 text-muted" />
-              <div>
-                <p className="text-sm font-medium">Organisateur</p>
-                <p className="text-sm text-muted">{salon.organizer_name}</p>
-              </div>
-            </div>
+            <Detail icon={<Building2 className="h-4 w-4" />} label="Organisateur">
+              {salon.organizer_name}
+            </Detail>
           )}
           {salon.frequency && (
-            <div className="flex items-start gap-3">
-              <RotateCcw className="mt-0.5 h-4 w-4 text-muted" />
-              <div>
-                <p className="text-sm font-medium">Fréquence</p>
-                <p className="text-sm text-muted">
-                  {frequencyLabels[salon.frequency] ?? salon.frequency}
-                </p>
-              </div>
-            </div>
+            <Detail icon={<RotateCcw className="h-4 w-4" />} label="Fréquence">
+              {frequencyLabels[salon.frequency] ?? salon.frequency}
+            </Detail>
           )}
           {salon.website_url && (
-            <div className="flex items-start gap-3">
-              <Globe className="mt-0.5 h-4 w-4 text-muted" />
-              <div>
-                <p className="text-sm font-medium">Site officiel</p>
-                <a
-                  href={salon.website_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-sm text-accent hover:text-accent-hover transition-colors"
-                >
-                  Visiter le site
-                  <ExternalLink className="h-3 w-3" />
-                </a>
-              </div>
-            </div>
+            <Detail icon={<Globe className="h-4 w-4" />} label="Site officiel">
+              <a
+                href={salon.website_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-prune underline decoration-prune/30 underline-offset-2 transition-colors hover:decoration-prune"
+              >
+                Visiter le site
+                <ExternalLink className="h-3 w-3" aria-hidden="true" />
+              </a>
+            </Detail>
           )}
-        </div>
+        </dl>
       </section>
 
-      {/* 5. Drawer Prestataires */}
+      {/* 5. DRAWER PRESTATAIRES — point de monétisation */}
       <ProviderDrawer salonId={salon.id} salonName={salon.name} />
 
-      {/* 6. Bloc visuel */}
-      {salon.cover_image_url && (
-        <section className="mt-10 overflow-hidden rounded-lg">
-          <img
-            src={salon.cover_image_url}
-            alt={salon.name}
-            className="h-64 w-full object-cover sm:h-80"
-          />
-        </section>
-      )}
-
-      {/* Avis */}
+      {/* 6. AVIS d'exposants */}
       <section className="mt-16">
-        <h2 className="font-serif text-2xl font-bold tracking-tight">
-          Avis
+        <h2 className="font-serif text-2xl font-semibold tracking-tight text-prune md:text-3xl">
+          Avis d&apos;exposants
         </h2>
         <div className="mt-6">
           <ReviewList targetType="salon" targetId={salon.id} />
         </div>
-        <div className="mt-6">
+        <div className="mt-8">
           <ReviewForm targetType="salon" targetId={salon.id} />
         </div>
       </section>
 
-      {/* Signaler une erreur */}
+      {/* Signaler une erreur (rendu via composant) */}
       <ReportError salonSlug={slug} />
 
-      {/* 7. Salons similaires */}
+      {/* 7. SALONS SIMILAIRES */}
       {similarSalons.length > 0 && (
         <section className="mt-16">
-          <h2 className="font-serif text-2xl font-bold tracking-tight">
+          <h2 className="font-serif text-2xl font-semibold tracking-tight text-prune md:text-3xl">
             Salons similaires
           </h2>
-          <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {similarSalons.map((s) => (
               <SalonCard key={s.id} salon={s} />
             ))}
           </div>
         </section>
       )}
+    </article>
+  );
+}
+
+function Detail({
+  icon,
+  label,
+  children,
+}: {
+  icon: React.ReactNode;
+  label: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="flex items-start gap-3">
+      <span className="mt-0.5 text-muted">{icon}</span>
+      <div>
+        <dt className="text-xs uppercase tracking-wider text-muted">{label}</dt>
+        <dd className="mt-1 text-sm text-prune">{children}</dd>
+      </div>
     </div>
   );
 }
