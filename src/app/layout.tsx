@@ -5,6 +5,7 @@ import { GoogleAnalytics } from "@/components/google-analytics";
 import { cn } from "@/lib/utils";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { Toaster } from "sonner";
 import "./globals.css";
 
 const inter = Inter({
@@ -44,6 +45,21 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
         <Footer />
         <GoogleAnalytics />
+        <Toaster
+          position="bottom-right"
+          toastOptions={{
+            style: {
+              background: "#F7F2E6",
+              color: "#3B1F33",
+              border: "1px solid rgba(59,31,51,0.10)",
+              borderLeft: "3px solid var(--state-color, #3B1F33)",
+              fontFamily: "Inter, sans-serif",
+              fontSize: "14px",
+              borderRadius: "4px",
+            },
+            className: "agoris-toast",
+          }}
+        />
       </body>
     </html>
   );

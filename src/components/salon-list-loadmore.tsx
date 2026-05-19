@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { SalonCard } from "@/components/salon-card";
+import { AgorisSpinner } from "@/components/agoris-spinner";
 import type { SalonWithSectors } from "@/lib/queries";
 
 type SalonListLoadMoreProps = {
@@ -45,15 +46,22 @@ export function SalonListLoadMore({
       </div>
 
       {hasMore && (
-        <div className="mt-12 text-center">
+        <div className="mt-12 flex flex-col items-center gap-3">
           <button
             onClick={loadMore}
             disabled={loading}
-            className="rounded-lg border border-prune bg-prune px-8 py-3 text-sm font-medium text-papier transition-opacity hover:opacity-90 disabled:opacity-50"
+            className="inline-flex items-center gap-2 rounded-lg border border-prune bg-prune px-8 py-3 text-sm font-medium text-papier transition-opacity hover:opacity-90 disabled:opacity-50"
           >
-            {loading ? "Chargement..." : "Afficher plus de salons"}
+            {loading ? (
+              <>
+                <AgorisSpinner size={18} />
+                <span>Chargement…</span>
+              </>
+            ) : (
+              "Afficher plus de salons"
+            )}
           </button>
-          <p className="mt-3 text-xs text-muted">
+          <p className="text-xs text-muted">
             {salons.length} sur {total} salons
           </p>
         </div>

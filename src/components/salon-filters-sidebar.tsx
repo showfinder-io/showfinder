@@ -3,6 +3,13 @@
 import { useRouter, useSearchParams } from "next/navigation";
 import { useCallback, useState, useTransition } from "react";
 import { getSectorColorClasses } from "@/components/sector-badge";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetHeader,
+  SheetTitle,
+} from "@/components/ui/sheet";
 
 type Sector = { slug: string; name: string };
 
@@ -27,8 +34,83 @@ const CATEGORY_OPTIONS = [
   { value: "autres", label: "Autres" },
 ];
 
-// Contenu des filtres (partagé entre sidebar desktop et panel mobile)
-function FilterContent({
+const SORT_OPTIONS = [
+  { value: "date", label: "Date (croissant)" },
+  { value: "date-desc", label: "Date (décroissant)" },
+  { value: "visitors", label: "Visiteurs (décroissant)" },
+  { value: "name", label: "Nom (A-Z)" },
+];
+
+/**
+ * Grille de chips sectorielles 2 colonnes.
+ * Réutilisable desktop (rail) + mobile (bottom sheet).
+ */
+function SectorChipsGrid({
+  sectors,
+  selectedSectors,
+  onToggleSector,
+}: {
+  sectors: Sector[];
+  selectedSectors: string[];
+  onToggleSector: (slug: string) => void;
+}) {
+  return (
+    <div className="grid grid-cols-2 gap-2">
+      {sectors.map((sector) => {
+        const isSelected = selectedSectors.includes(sector.slug);
+        const colorClasses = getSectorColorClasses(sector.slug);
+        return (
+          <button
+            key={sector.slug}
+            type="button"
+            onClick={() => onToggleSector(sector.slug)}
+            className={`min-w-0 truncate rounded-full border px-3 py-1.5 text-left text-xs font-medium transition-all ${
+              isSelected
+                ? `${colorClasses} shadow-sm`
+                : "border-prune/15 bg-papier text-prune/70 hover:border-prune/30 hover:text-prune"
+            }`}
+          >
+            {sector.name}
+          </button>
+        );
+      })}
+    </div>
+  );
+}
+
+/**
+ * Input recherche éditorial (style hero) — underline prune, italic Fraunces 16px.
+ */
+function EditorialSearchInput({
+  defaultValue,
+  onSubmit,
+}: {
+  defaultValue: string;
+  onSubmit: (value: string) => void;
+}) {
+  return (
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        const formData = new FormData(e.currentTarget);
+        onSubmit(formData.get("search") as string);
+      }}
+    >
+      <input
+        type="text"
+        name="search"
+        defaultValue={defaultValue}
+        placeholder="Rechercher un salon…"
+        className="w-full border-0 border-b border-prune/30 bg-transparent px-0 py-2 font-serif text-[16px] italic text-prune outline-none transition-colors placeholder:italic placeholder:text-prune/40 focus:border-prune"
+      />
+    </form>
+  );
+}
+
+/**
+ * Contenu complet du bottom sheet mobile (secteurs + ville + période + catégorie + tri).
+ */
+function MobileFilterPanel({
   sectors,
   cities,
   currentSearch,
@@ -40,6 +122,7 @@ function FilterContent({
   onSearchSubmit,
   onToggleSector,
   onUpdateParam,
+  onClose,
 }: {
   sectors: Sector[];
   cities: string[];
@@ -52,6 +135,7 @@ function FilterContent({
   onSearchSubmit: (value: string) => void;
   onToggleSector: (slug: string) => void;
   onUpdateParam: (key: string, value: string) => void;
+  onClose: () => void;
 }) {
   const hasActiveFilters =
     currentSearch ||
@@ -62,64 +146,39 @@ function FilterContent({
     currentSort !== "date";
 
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-7 overflow-y-auto px-5 pb-6 pt-2">
       {/* Recherche */}
       <div>
-        <label className="mb-2 block text-xs font-semibold uppercase tracking-wider text-muted">
+        <label className="mb-1 block font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-prune/60">
           Recherche
         </label>
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            const formData = new FormData(e.currentTarget);
-            onSearchSubmit(formData.get("search") as string);
-          }}
-        >
-          <input
-            type="text"
-            name="search"
-            defaultValue={currentSearch}
-            placeholder="Nom du salon..."
-            className="w-full rounded-lg border border-border bg-white px-4 py-2.5 text-sm outline-none transition-colors placeholder:text-muted/60 focus:border-accent focus:ring-1 focus:ring-accent/20"
-          />
-        </form>
+        <EditorialSearchInput
+          defaultValue={currentSearch}
+          onSubmit={onSearchSubmit}
+        />
       </div>
 
       {/* Secteurs */}
       <div>
-        <label className="mb-3 block text-xs font-semibold uppercase tracking-wider text-muted">
-          Secteurs
+        <label className="mb-2.5 block font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-prune/60">
+          Filières
         </label>
-        <div className="flex flex-wrap gap-2">
-          {sectors.map((sector) => {
-            const isSelected = selectedSectors.includes(sector.slug);
-            const colorClasses = getSectorColorClasses(sector.slug);
-            return (
-              <button
-                key={sector.slug}
-                onClick={() => onToggleSector(sector.slug)}
-                className={`rounded-full border px-3 py-1.5 text-xs font-medium transition-all ${
-                  isSelected
-                    ? `${colorClasses} ring-2 ring-offset-1 ring-current/20 shadow-sm`
-                    : "border-border bg-white text-muted hover:border-gray-300"
-                }`}
-              >
-                {sector.name}
-              </button>
-            );
-          })}
-        </div>
+        <SectorChipsGrid
+          sectors={sectors}
+          selectedSectors={selectedSectors}
+          onToggleSector={onToggleSector}
+        />
       </div>
 
       {/* Ville */}
       <div>
-        <label className="mb-2 block text-xs font-semibold uppercase tracking-wider text-muted">
+        <label className="mb-1.5 block font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-prune/60">
           Ville
         </label>
         <select
           value={currentCity}
           onChange={(e) => onUpdateParam("city", e.target.value)}
-          className="w-full rounded-lg border border-border bg-white px-4 py-2.5 text-sm outline-none transition-colors focus:border-accent focus:ring-1 focus:ring-accent/20"
+          className="w-full rounded-md border border-prune/15 bg-papier px-3 py-2 text-sm text-prune outline-none transition-colors focus:border-prune"
         >
           <option value="">Toutes les villes</option>
           {cities.map((city) => (
@@ -130,15 +189,15 @@ function FilterContent({
         </select>
       </div>
 
-      {/* Periode */}
+      {/* Période */}
       <div>
-        <label className="mb-2 block text-xs font-semibold uppercase tracking-wider text-muted">
-          Periode
+        <label className="mb-1.5 block font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-prune/60">
+          Période
         </label>
         <select
           value={currentPeriod}
           onChange={(e) => onUpdateParam("period", e.target.value)}
-          className="w-full rounded-lg border border-border bg-white px-4 py-2.5 text-sm outline-none transition-colors focus:border-accent focus:ring-1 focus:ring-accent/20"
+          className="w-full rounded-md border border-prune/15 bg-papier px-3 py-2 text-sm text-prune outline-none transition-colors focus:border-prune"
         >
           {PERIOD_OPTIONS.map((opt) => (
             <option key={opt.value} value={opt.value}>
@@ -150,13 +209,13 @@ function FilterContent({
 
       {/* Catégorie */}
       <div>
-        <label className="mb-2 block text-xs font-semibold uppercase tracking-wider text-muted">
+        <label className="mb-1.5 block font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-prune/60">
           Catégorie
         </label>
         <select
           value={currentCategory}
           onChange={(e) => onUpdateParam("category", e.target.value)}
-          className="w-full rounded-lg border border-border bg-white px-4 py-2.5 text-sm outline-none transition-colors focus:border-accent focus:ring-1 focus:ring-accent/20"
+          className="w-full rounded-md border border-prune/15 bg-papier px-3 py-2 text-sm text-prune outline-none transition-colors focus:border-prune"
         >
           {CATEGORY_OPTIONS.map((opt) => (
             <option key={opt.value} value={opt.value}>
@@ -168,17 +227,14 @@ function FilterContent({
 
       {/* Trier par */}
       <div>
-        <label className="mb-3 block text-xs font-semibold uppercase tracking-wider text-muted">
+        <label className="mb-2 block font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-prune/60">
           Trier par
         </label>
-        <div className="flex flex-col gap-2">
-          {[
-            { value: "date", label: "Date" },
-            { value: "name", label: "Nom" },
-          ].map((option) => (
+        <div className="flex flex-col gap-1">
+          {SORT_OPTIONS.map((option) => (
             <label
               key={option.value}
-              className="flex cursor-pointer items-center gap-3 rounded-lg px-3 py-2 text-sm transition-colors hover:bg-gray-50"
+              className="flex cursor-pointer items-center gap-3 rounded-md px-2 py-1.5 text-sm transition-colors hover:bg-prune/5"
             >
               <input
                 type="radio"
@@ -186,9 +242,15 @@ function FilterContent({
                 value={option.value}
                 checked={currentSort === option.value}
                 onChange={() => onUpdateParam("sort", option.value)}
-                className="h-4 w-4 border-border text-accent accent-accent"
+                className="h-4 w-4 accent-prune"
               />
-              <span className={currentSort === option.value ? "font-medium text-ink" : "text-muted"}>
+              <span
+                className={
+                  currentSort === option.value
+                    ? "font-medium text-prune"
+                    : "text-prune/65"
+                }
+              >
                 {option.label}
               </span>
             </label>
@@ -196,15 +258,26 @@ function FilterContent({
         </div>
       </div>
 
-      {/* Reinitialiser */}
-      {hasActiveFilters && (
+      {/* Actions */}
+      <div className="sticky bottom-0 -mx-5 flex gap-3 border-t border-prune/10 bg-papier px-5 py-4">
+        {hasActiveFilters && (
+          <button
+            onClick={() => {
+              onUpdateParam("reset", "");
+              onClose();
+            }}
+            className="flex-1 rounded-md border border-prune/20 bg-papier px-4 py-2.5 text-sm font-medium text-prune/70 transition-colors hover:bg-prune/5 hover:text-prune"
+          >
+            Réinitialiser
+          </button>
+        )}
         <button
-          onClick={() => onUpdateParam("reset", "")}
-          className="mt-2 w-full rounded-lg border border-border bg-white px-4 py-2.5 text-sm font-medium text-muted transition-colors hover:bg-gray-50 hover:text-ink"
+          onClick={onClose}
+          className="flex-1 rounded-md bg-prune px-4 py-2.5 text-sm font-medium text-papier transition-opacity hover:opacity-90"
         >
-          Reinitialiser les filtres
+          Voir les résultats
         </button>
-      )}
+      </div>
     </div>
   );
 }
@@ -234,7 +307,7 @@ export function SalonFiltersSidebar({
         router.push(`/salons?${params.toString()}`);
       });
     },
-    [router, startTransition]
+    [router]
   );
 
   const updateParam = useCallback(
@@ -294,52 +367,50 @@ export function SalonFiltersSidebar({
 
   return (
     <>
-      {/* Mobile : bouton + panel */}
-      <div className="md:hidden">
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="flex w-full items-center justify-between rounded-lg border border-border bg-white px-4 py-3 text-sm font-medium transition-colors hover:bg-gray-50"
-        >
-          <span className="flex items-center gap-2">
-            <svg
-              className="h-4 w-4 text-muted"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75"
-              />
-            </svg>
-            Filtres
-            {activeFilterCount > 0 && (
-              <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-accent text-[10px] font-bold text-white">
-                {activeFilterCount}
-              </span>
-            )}
-          </span>
-          <svg
-            className={`h-4 w-4 text-muted transition-transform ${mobileOpen ? "rotate-180" : ""}`}
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
+      {/* MOBILE : bouton éditorial + bottom sheet */}
+      <div className="lg:hidden">
+        <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
+          <SheetTrigger
+            render={
+              <button className="inline-flex w-full items-center justify-between gap-2 rounded-md border border-prune/15 bg-papier px-4 py-2.5 font-mono text-[11px] uppercase tracking-[0.18em] text-prune transition-colors hover:bg-prune/5">
+                <span className="inline-flex items-center gap-2">
+                  <svg
+                    className="h-3.5 w-3.5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M3 6h18M6 12h12M10 18h4"
+                    />
+                  </svg>
+                  Filtrer
+                  {activeFilterCount > 0 && (
+                    <span className="ml-1 inline-flex h-4 min-w-[16px] items-center justify-center rounded-full bg-ocre px-1 text-[10px] font-bold tracking-normal text-prune">
+                      {activeFilterCount}
+                    </span>
+                  )}
+                </span>
+                <span className="text-prune/50" aria-hidden>
+                  ▴
+                </span>
+              </button>
+            }
+          />
+          <SheetContent
+            side="bottom"
+            className="max-h-[90dvh] rounded-t-xl bg-papier"
           >
-            <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-          </svg>
-        </button>
-
-        {/* Panel mobile slide-down */}
-        <div
-          className={`overflow-hidden transition-all duration-300 ease-in-out ${
-            mobileOpen ? "mt-4 max-h-[2000px] opacity-100" : "max-h-0 opacity-0"
-          }`}
-        >
-          <div className="rounded-xl border border-border bg-white p-6">
-            <FilterContent
+            <SheetHeader className="border-b border-prune/10">
+              <SheetTitle className="font-serif text-lg font-normal text-prune">
+                Filtrer les salons
+                <em className="not-italic text-ocre">.</em>
+              </SheetTitle>
+            </SheetHeader>
+            <MobileFilterPanel
               sectors={sectors}
               cities={cities}
               currentSearch={currentSearch}
@@ -350,42 +421,51 @@ export function SalonFiltersSidebar({
               currentSort={currentSort}
               onSearchSubmit={(val) => {
                 handleSearchSubmit(val);
-                setMobileOpen(false);
               }}
-              onToggleSector={(slug) => {
-                toggleSector(slug);
-              }}
-              onUpdateParam={(key, val) => {
-                updateParam(key, val);
-                if (key === "reset") setMobileOpen(false);
-              }}
+              onToggleSector={toggleSector}
+              onUpdateParam={updateParam}
+              onClose={() => setMobileOpen(false)}
             />
-            <button
-              onClick={() => setMobileOpen(false)}
-              className="mt-6 w-full rounded-lg bg-accent px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-hover"
-            >
-              Appliquer
-            </button>
-          </div>
-        </div>
+          </SheetContent>
+        </Sheet>
       </div>
 
-      {/* Desktop : sidebar sticky */}
-      <aside className="hidden md:block">
-        <div className="sticky top-20 w-[280px] rounded-xl border border-border bg-white p-6">
-          <FilterContent
-            sectors={sectors}
-            cities={cities}
-            currentSearch={currentSearch}
-            selectedSectors={selectedSectors}
-            currentCity={currentCity}
-            currentPeriod={currentPeriod}
-            currentCategory={currentCategory}
-            currentSort={currentSort}
-            onSearchSubmit={handleSearchSubmit}
-            onToggleSector={toggleSector}
-            onUpdateParam={updateParam}
-          />
+      {/* DESKTOP : rail latéral sticky — uniquement les filières en 2 colonnes */}
+      <aside className="hidden lg:block">
+        <div className="sticky top-20 w-[280px]">
+          <div className="rounded-lg border border-prune/10 bg-papier p-5">
+            {/* Recherche */}
+            <div className="mb-6">
+              <label className="mb-1 block font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-prune/60">
+                Recherche
+              </label>
+              <EditorialSearchInput
+                defaultValue={currentSearch}
+                onSubmit={handleSearchSubmit}
+              />
+            </div>
+
+            {/* Filières — 2 colonnes de chips */}
+            <div>
+              <label className="mb-2.5 block font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-prune/60">
+                Filières
+              </label>
+              <SectorChipsGrid
+                sectors={sectors}
+                selectedSectors={selectedSectors}
+                onToggleSector={toggleSector}
+              />
+            </div>
+
+            {activeFilterCount > 0 && (
+              <button
+                onClick={() => updateParam("reset", "")}
+                className="mt-6 w-full rounded-md border border-prune/15 bg-papier px-3 py-2 font-mono text-[10px] uppercase tracking-[0.2em] text-prune/65 transition-colors hover:bg-prune/5 hover:text-prune"
+              >
+                Réinitialiser
+              </button>
+            )}
+          </div>
         </div>
       </aside>
     </>
