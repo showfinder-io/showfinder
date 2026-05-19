@@ -90,6 +90,19 @@ export type SalonFilters = {
 // Requetes
 // ------------------------------------------------------------
 
+/**
+ * Normalise une chaîne de recherche pour la rendre agnostique aux accents et à la casse.
+ * Utilisée pour matcher contre les colonnes `name_search` et `description_search` de la view
+ * `salons_ordered`, déjà stockées en lower(unaccent(...)).
+ */
+function normalizeSearch(s: string): string {
+  return s
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .toLowerCase()
+    .trim();
+}
+
 export async function getSalons(filters: SalonFilters = {}) {
   const supabase = await createClient();
   const page = filters.page ?? 1;
@@ -111,9 +124,14 @@ export async function getSalons(filters: SalonFilters = {}) {
 
   // Recherche texte
   if (filters.search) {
-    query = query.or(
-      `name.ilike.%${filters.search}%,description.ilike.%${filters.search}%`
-    );
+    // Recherche agnostique aux accents / casse : on normalise l'input et on matche
+    // contre name_search / description_search (colonnes lower(unaccent(...)) de la view).
+    const q = normalizeSearch(filters.search);
+    if (q.length > 0) {
+      query = query.or(
+        `name_search.ilike.%${q}%,description_search.ilike.%${q}%`
+      );
+    }
   }
 
   // Filtre ville
@@ -239,9 +257,14 @@ async function getSalonsById(
     .in("id", ids);
 
   if (filters.search) {
-    query = query.or(
-      `name.ilike.%${filters.search}%,description.ilike.%${filters.search}%`
-    );
+    // Recherche agnostique aux accents / casse : on normalise l'input et on matche
+    // contre name_search / description_search (colonnes lower(unaccent(...)) de la view).
+    const q = normalizeSearch(filters.search);
+    if (q.length > 0) {
+      query = query.or(
+        `name_search.ilike.%${q}%,description_search.ilike.%${q}%`
+      );
+    }
   }
 
   if (filters.city) {
