@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Lora } from "next/font/google";
+import { Inter, Fraunces } from "next/font/google";
 import { siteConfig } from "@/lib/config";
 import { GoogleAnalytics } from "@/components/google-analytics";
 import { cn } from "@/lib/utils";
@@ -13,10 +13,14 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
-const lora = Lora({
+// Fraunces variable font : axe `opsz` déclaré explicitement (optical-size).
+// Pas de SOFT/WONK pour minimiser le payload font et préserver le LCP au POC.
+// Si on a besoin du wonkiness pour des titres très expressifs plus tard, on ajoutera ici.
+const fraunces = Fraunces({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-lora",
+  variable: "--font-fraunces",
+  axes: ["opsz"],
 });
 
 export const metadata: Metadata = {
@@ -34,8 +38,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className={cn(inter.variable, lora.variable)}>
-      <body className="flex min-h-screen flex-col bg-paper text-ink font-sans antialiased">
+    <html lang="fr" className={cn(inter.variable, fraunces.variable)}>
+      <body className="flex min-h-screen flex-col bg-sable text-prune font-sans antialiased">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
