@@ -166,4 +166,26 @@
   html {
     @apply font-sans;
   }
+
+  /* Détails typographiques globaux Agoris (cf. CLAUDE.md #7) */
+  h1, h2, h3, p {
+    text-wrap: pretty; /* évite les veuves */
+  }
+  /* Fraunces : activer alternates stylistiques + kerning auto */
+  .font-serif {
+    font-feature-settings: "ss01", "ss02", "kern";
+  }
+  /* Stats chiffrées : colonnes alignées (font-variant-numeric) */
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Focus visible institutionnel (cf. CLAUDE.md #4 États système).
+   * Outline Ocre 2px + offset → AA et signature de marque.
+   * Appliqué uniquement aux éléments focus-visible (keyboard), pas au click souris. */
+  *:focus-visible {
+    outline: 2px solid var(--color-ocre);
+    outline-offset: 2px;
+    border-radius: 3px;
+  }
 }

@@ -4,6 +4,7 @@ import { siteConfig } from "@/lib/config";
 import { getSalons, getSectors } from "@/lib/queries";
 import { SalonCard } from "@/components/salon-card";
 import { SectorBadge } from "@/components/sector-badge";
+import { SectionTitle } from "@/components/section-title";
 import { Search, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -23,7 +24,7 @@ export default async function Home() {
       {/* HERO — Calm tech : fond sable, typo Fraunces large, search proéminente */}
       <section className="border-b border-border bg-sable">
         <div className="mx-auto max-w-3xl px-4 py-20 text-center md:py-28">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">
+          <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-muted">
             Le forum des salons
           </p>
           <h1 className="mt-5 font-serif text-5xl font-normal leading-[1.05] tracking-[-0.015em] text-prune md:text-6xl">
@@ -60,18 +61,13 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* PROCHAINS SALONS — placé en premier après le hero (l'essentiel) */}
-      <section className="bg-sable py-16 md:py-20">
+      {/* PROCHAINS SALONS */}
+      <section className="bg-sable py-20 md:py-24">
         <div className="mx-auto max-w-6xl px-4">
           <div className="flex flex-wrap items-end justify-between gap-4">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-wider text-muted">
-                À l&apos;agenda
-              </p>
-              <h2 className="mt-2 font-serif text-3xl font-semibold tracking-tight text-prune md:text-4xl">
-                Prochains salons
-              </h2>
-            </div>
+            <SectionTitle eyebrow="À l'agenda" size="lg">
+              Prochains salons
+            </SectionTitle>
             <Link
               href="/salons"
               className="inline-flex items-center gap-1 text-sm font-medium text-prune underline decoration-prune/30 underline-offset-4 transition-colors hover:decoration-prune"
@@ -89,15 +85,12 @@ export default async function Home() {
       </section>
 
       {/* EXPLORER PAR SECTEUR */}
-      <section className="border-t border-border bg-sable py-16 md:py-20">
+      <section className="border-t border-border bg-sable py-20 md:py-24">
         <div className="mx-auto max-w-6xl px-4">
-          <p className="text-xs font-semibold uppercase tracking-wider text-muted">
-            Par filière
-          </p>
-          <h2 className="mt-2 font-serif text-3xl font-semibold tracking-tight text-prune md:text-4xl">
+          <SectionTitle eyebrow="Par filière" size="lg">
             Explorer par secteur
-          </h2>
-          <p className="mt-3 max-w-2xl text-base text-muted">
+          </SectionTitle>
+          <p className="mt-4 max-w-2xl text-base text-muted">
             15 filières B2B couvertes, du BTP à la cosmétique. Chaque secteur regroupe les salons audités et classés par notre équipe éditoriale.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
@@ -112,42 +105,53 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* POURQUOI AGORIS — bloc institutionnel Prune */}
-      <section className="bg-prune py-16 text-papier md:py-20">
-        <div className="mx-auto max-w-4xl px-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-ocre">
-            Pourquoi Agoris
-          </p>
-          <h2 className="mt-4 font-serif text-3xl font-semibold tracking-tight md:text-4xl">
-            Un annuaire qui audite, classe et certifie.
-          </h2>
-          <div className="mt-10 grid gap-8 md:grid-cols-3">
+      {/* POURQUOI AGORIS — bloc Prune, numéros 01/02/03 en Ocre, padding généreux */}
+      <section className="bg-prune py-[120px]">
+        <div className="mx-auto max-w-5xl px-4">
+          <SectionTitle eyebrow="Pourquoi Agoris" size="xl" variant="on-prune">
+            Un annuaire qui audite, classe et certifie
+          </SectionTitle>
+          <ol className="mt-16 grid gap-12 md:grid-cols-3 md:gap-10">
             <Argument
+              number="01"
               title="Curation, pas accumulation"
               body="On référence les salons B2B qui comptent vraiment pour votre filière, pas tous ceux qui existent."
             />
             <Argument
+              number="02"
               title="Marketplace prestataires"
               body="Standistes, traiteurs, audiovisuel : un réseau de prestataires locaux rattaché à chaque salon."
             />
             <Argument
+              number="03"
               title="Contenu éditorial expert"
               body="Guides sectoriels, comparatifs de lieux, benchmarks : nous publions ce que les annuaires data ne savent pas écrire."
             />
-          </div>
+          </ol>
         </div>
       </section>
     </div>
   );
 }
 
-function Argument({ title, body }: { title: string; body: string }) {
+function Argument({
+  number,
+  title,
+  body,
+}: {
+  number: string;
+  title: string;
+  body: string;
+}) {
   return (
-    <div>
-      <h3 className="font-serif text-xl font-semibold tracking-tight">
+    <li className="flex flex-col">
+      <span className="font-mono text-sm font-semibold uppercase tracking-[0.15em] text-ocre">
+        {number}<span aria-hidden="true">.</span>
+      </span>
+      <h3 className="mt-4 font-serif text-[28px] font-normal leading-tight tracking-[-0.015em] text-papier">
         {title}
       </h3>
-      <p className="mt-3 text-sm leading-relaxed text-papier/75">{body}</p>
-    </div>
+      <p className="mt-4 text-base leading-relaxed text-papier/75">{body}</p>
+    </li>
   );
 }
