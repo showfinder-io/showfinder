@@ -12,6 +12,7 @@ type Salon = {
   end_date: string | null;
   status: string;
   is_locked: boolean;
+  is_agoris_verified: boolean;
 };
 
 const statusConfig: Record<string, { label: string; className: string }> = {
@@ -118,6 +119,7 @@ export default function AdminSalonsPage() {
                 <th className="px-3 py-2">Ville</th>
                 <th className="px-3 py-2">Dates</th>
                 <th className="px-3 py-2">Statut</th>
+                <th className="px-3 py-2">Verified</th>
                 <th className="px-3 py-2">Verrouillé</th>
                 <th className="px-3 py-2">Actions</th>
               </tr>
@@ -144,6 +146,15 @@ export default function AdminSalonsPage() {
                       <span className={`inline-block rounded-full px-2 py-0.5 text-xs font-medium ${status.className}`}>
                         {status.label}
                       </span>
+                    </td>
+                    <td className="px-3 py-2">
+                      {salon.is_agoris_verified ? (
+                        <span className="inline-block rounded-full bg-ocre px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-prune">
+                          Verified
+                        </span>
+                      ) : (
+                        <span className="text-xs text-muted">—</span>
+                      )}
                     </td>
                     <td className="px-3 py-2">{salon.is_locked ? "Oui" : "Non"}</td>
                     <td className="px-3 py-2 space-x-2 whitespace-nowrap">

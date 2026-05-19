@@ -61,6 +61,7 @@ export function SalonForm({
       status: form.get("status") || "draft",
       is_premium: form.get("is_premium") === "on",
       is_locked: form.get("is_locked") === "on",
+      is_agoris_verified: form.get("is_agoris_verified") === "on",
       logo_url: form.get("logo_url") || null,
       cover_image_url: form.get("cover_image_url") || null,
       seo_title: form.get("seo_title") || null,
@@ -251,6 +252,18 @@ export function SalonForm({
             className="rounded border-border"
           />
           Verrouillé (protégé)
+        </label>
+        <label className="flex items-center gap-2 text-sm">
+          <input
+            name="is_agoris_verified"
+            type="checkbox"
+            defaultChecked={Boolean(d.is_agoris_verified)}
+            className="rounded border-border"
+          />
+          Agoris Verified
+          <span className="text-xs text-muted">
+            (badge visible côté public)
+          </span>
         </label>
       </div>
 
