@@ -9,6 +9,8 @@ import {
 } from "@/lib/queries";
 import { formatNumber } from "@/lib/format";
 import { SalonCard } from "@/components/salon-card";
+import { JsonLd } from "@/components/json-ld";
+import { BreadcrumbJsonLd } from "@/components/breadcrumb-jsonld";
 import { MapPin, ExternalLink, Maximize2, Globe } from "lucide-react";
 
 type Props = {
@@ -63,8 +65,43 @@ export default async function VenuePage({ params }: Props) {
   );
   const past = salons.filter((s) => s.start_date && s.start_date < today);
 
+  // Schema.org Place : lieu d'exposition. On enrichit avec PostalAddress et
+  // GeoCoordinates uniquement si on a les données — pas de fabrication.
+  const placeJsonLd: Record<string, unknown> = {
+    "@context": "https://schema.org",
+    "@type": "Place",
+    name: venue.name,
+    url: `${siteConfig.url}/lieux/${slug}`,
+    address: {
+      "@type": "PostalAddress",
+      ...(venue.address ? { streetAddress: venue.address } : {}),
+      addressLocality: venue.city,
+      ...(venue.postal_code ? { postalCode: venue.postal_code } : {}),
+      addressCountry: venue.country,
+    },
+  };
+  if (venue.lat != null && venue.lng != null) {
+    placeJsonLd.geo = {
+      "@type": "GeoCoordinates",
+      latitude: venue.lat,
+      longitude: venue.lng,
+    };
+  }
+  if (venue.description) placeJsonLd.description = venue.description;
+  if (venue.photo_url) placeJsonLd.image = venue.photo_url;
+  if (venue.website_url) placeJsonLd.sameAs = [venue.website_url];
+
   return (
     <div className="mx-auto max-w-6xl px-4 py-10">
+      <JsonLd data={placeJsonLd} />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Accueil", item: "/" },
+          { name: "Lieux", item: "/lieux" },
+          { name: venue.name, item: `/lieux/${slug}` },
+        ]}
+      />
+
       {/* Breadcrumb */}
       <nav className="mb-8 text-sm text-muted">
         <Link href="/lieux" className="hover:text-ink transition-colors">

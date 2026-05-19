@@ -10,21 +10,64 @@ import {
   type SalonCategory,
 } from "@/lib/queries";
 import { SalonFiltersSidebar } from "@/components/salon-filters-sidebar";
-import { SalonListLoadMore } from "@/components/salon-list-loadmore";
+import { SalonCard } from "@/components/salon-card";
+import { SalonPagination } from "@/components/salon-pagination";
 import { SectionTitle } from "@/components/section-title";
 import { SortBar } from "@/components/sort-bar";
 
-export const metadata: Metadata = {
-  title: "Tous les salons professionnels",
-  description: `Découvrez tous les salons professionnels en France sur ${siteConfig.name}. Filtrez par secteur, ville et date.`,
-  alternates: {
-    canonical: `${siteConfig.url}/salons`,
-  },
-};
+const PAGE_SIZE = 20;
 
 type Props = {
   searchParams: Promise<Record<string, string | undefined>>;
 };
+
+function parsePage(raw: string | undefined): number {
+  const n = Number(raw);
+  if (!Number.isFinite(n) || n < 1) return 1;
+  return Math.floor(n);
+}
+
+function buildCanonical(
+  base: string,
+  page: number,
+  params: Record<string, string>
+): string {
+  const sp = new URLSearchParams(params);
+  if (page > 1) sp.set("page", String(page));
+  const qs = sp.toString();
+  return qs ? `${base}?${qs}` : base;
+}
+
+export async function generateMetadata({
+  searchParams,
+}: Props): Promise<Metadata> {
+  const params = await searchParams;
+  const page = parsePage(params.page);
+  const base = `${siteConfig.url}/salons`;
+
+  // Conserver les filtres pertinents dans le canonical pour ne pas perdre la
+  // signature SEO de la combinaison filtre + pagination.
+  const seoParams: Record<string, string> = {};
+  if (params.search) seoParams.search = params.search;
+  if (params.sector) seoParams.sector = params.sector;
+  if (params.city) seoParams.city = params.city;
+  if (params.period) seoParams.period = params.period;
+  if (params.category) seoParams.category = params.category;
+  if (params.sort && params.sort !== "date") seoParams.sort = params.sort;
+
+  const canonical = buildCanonical(base, page, seoParams);
+
+  return {
+    title:
+      page > 1
+        ? `Tous les salons professionnels — Page ${page}`
+        : "Tous les salons professionnels",
+    description: `Découvrez tous les salons professionnels en France sur ${siteConfig.name}. Filtrez par secteur, ville et date.`,
+    alternates: {
+      canonical,
+    },
+  };
+}
 
 export default async function SalonsPage({ searchParams }: Props) {
   const params = await searchParams;
@@ -44,15 +87,33 @@ export default async function SalonsPage({ searchParams }: Props) {
     params.category && params.category in SALON_CATEGORY_LABELS
       ? (params.category as SalonCategory)
       : undefined;
+  const page = parsePage(params.page);
 
   const [sectors, cities, result] = await Promise.all([
     getSectors(),
     getCities(),
     sector
-      ? getSalonsBySector(sector, { search, city, period, category, page: 1, sort })
-      : getSalons({ search, city, period, category, page: 1, sort }),
+      ? getSalonsBySector(sector, {
+          search,
+          city,
+          period,
+          category,
+          page,
+          pageSize: PAGE_SIZE,
+          sort,
+        })
+      : getSalons({
+          search,
+          city,
+          period,
+          category,
+          page,
+          pageSize: PAGE_SIZE,
+          sort,
+        }),
   ]);
 
+  // Filtres actifs à conserver dans les URLs de pagination.
   const currentParams: Record<string, string> = {};
   if (search) currentParams.search = search;
   if (sector) currentParams.sector = sector;
@@ -60,6 +121,8 @@ export default async function SalonsPage({ searchParams }: Props) {
   if (period) currentParams.period = period;
   if (category) currentParams.category = category;
   if (sort && sort !== "date") currentParams.sort = sort;
+
+  const totalPages = Math.max(1, Math.ceil(result.total / PAGE_SIZE));
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-12 md:py-16">
@@ -93,15 +156,20 @@ export default async function SalonsPage({ searchParams }: Props) {
           </Suspense>
 
           {result.salons.length > 0 ? (
-            <SalonListLoadMore
-              // `key` change quand les filtres changent → force le remount du
-              // composant et reset le state local (sinon useState garde les
-              // anciens salons et on affiche des cartes hors filtre).
-              key={new URLSearchParams(currentParams).toString()}
-              initialSalons={result.salons}
-              total={result.total}
-              searchParams={currentParams}
-            />
+            <>
+              <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                {result.salons.map((salon) => (
+                  <SalonCard key={salon.id} salon={salon} />
+                ))}
+              </div>
+
+              <SalonPagination
+                currentPage={page}
+                totalPages={totalPages}
+                baseUrl="/salons"
+                searchParams={currentParams}
+              />
+            </>
           ) : (
             <div className="mt-16 rounded-lg border border-prune/10 bg-ivoire p-12 text-center">
               <p className="font-serif text-xl italic leading-relaxed text-prune/85">

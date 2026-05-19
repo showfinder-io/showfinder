@@ -6,6 +6,7 @@ import { getAllCitySlugs, getSalonsByCity } from "@/lib/queries";
 import { slugifyCity } from "@/lib/format";
 import { SalonCard } from "@/components/salon-card";
 import { SectionTitle } from "@/components/section-title";
+import { BreadcrumbJsonLd } from "@/components/breadcrumb-jsonld";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -58,6 +59,17 @@ export default async function VillePage({ params }: Props) {
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-12 md:py-16">
+      {/* Pas de page index /villes : on reflète le breadcrumb visuel
+          (Accueil → Salons → {ville}) pour rester cohérent et pointer vers
+          des URLs qui existent réellement. */}
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Accueil", item: "/" },
+          { name: "Salons", item: "/salons" },
+          { name: city, item: `/villes/${slug}` },
+        ]}
+      />
+
       {/* Breadcrumb */}
       <nav className="mb-10 text-sm text-muted">
         <Link href="/salons" className="hover:text-prune transition-colors">

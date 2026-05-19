@@ -10,6 +10,7 @@ import {
 import { SalonCard } from "@/components/salon-card";
 import { AlertSubscribe } from "@/components/alert-subscribe";
 import { SectionTitle } from "@/components/section-title";
+import { BreadcrumbJsonLd } from "@/components/breadcrumb-jsonld";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -58,6 +59,14 @@ export default async function SecteurPage({ params }: Props) {
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-12 md:py-16">
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Accueil", item: "/" },
+          { name: "Secteurs", item: "/secteurs" },
+          { name: sector.name, item: `/secteurs/${slug}` },
+        ]}
+      />
+
       {/* Breadcrumb */}
       <nav className="mb-10 text-sm text-muted">
         <Link href="/secteurs" className="hover:text-prune transition-colors">
