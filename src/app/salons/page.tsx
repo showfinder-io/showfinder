@@ -77,6 +77,10 @@ export default async function SalonsPage({ searchParams }: Props) {
         <div className="min-w-0 flex-1">
           {result.salons.length > 0 ? (
             <SalonListLoadMore
+              // `key` change quand les filtres changent → force le remount du
+              // composant et reset le state local (sinon useState garde les
+              // anciens salons et on affiche des cartes hors filtre).
+              key={new URLSearchParams(currentParams).toString()}
               initialSalons={result.salons}
               total={result.total}
               searchParams={currentParams}
