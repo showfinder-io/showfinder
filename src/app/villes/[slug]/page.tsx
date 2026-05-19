@@ -56,34 +56,42 @@ export default async function VillePage({ params }: Props) {
   const salons = await getSalonsByCity(city);
 
   return (
-    <div className="mx-auto max-w-6xl px-4 py-10">
+    <div className="mx-auto max-w-6xl px-4 py-12 md:py-16">
       {/* Breadcrumb */}
-      <nav className="mb-8 text-sm text-muted">
-        <Link href="/salons" className="hover:text-ink transition-colors">
+      <nav className="mb-10 text-sm text-muted">
+        <Link href="/salons" className="hover:text-prune transition-colors">
           Salons
         </Link>
         <span className="mx-2">/</span>
-        <span className="text-ink">{city}</span>
+        <span className="text-prune">{city}</span>
       </nav>
 
-      <h1 className="font-serif text-3xl font-bold tracking-tight sm:text-4xl">
-        Salons professionnels à {city}
-      </h1>
+      {/* Header éditorial */}
+      <header className="max-w-3xl">
+        <p className="text-xs font-semibold uppercase tracking-wider text-muted">
+          Géographie
+        </p>
+        <h1 className="mt-3 font-serif text-4xl font-semibold tracking-tight text-prune md:text-5xl">
+          Salons professionnels à {city}
+        </h1>
+        <p className="mt-5 text-base leading-relaxed text-prune/85 md:text-lg">
+          {salons.length} salon{salons.length > 1 ? "s" : ""} référencé
+          {salons.length > 1 ? "s" : ""} à {city}, audité
+          {salons.length > 1 ? "s" : ""} et classé
+          {salons.length > 1 ? "s" : ""} par notre équipe éditoriale.
+        </p>
+      </header>
 
-      <p className="mt-4 text-sm text-muted">
-        {salons.length} salon{salons.length > 1 ? "s" : ""} dans cette ville
-      </p>
-
-      {/* Resultats */}
+      {/* Résultats */}
       {salons.length > 0 ? (
-        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {salons.map((salon) => (
             <SalonCard key={salon.id} salon={salon} />
           ))}
         </div>
       ) : (
-        <div className="mt-16 text-center">
-          <p className="text-lg text-muted">
+        <div className="mt-16 rounded-lg border border-border bg-papier p-12 text-center">
+          <p className="text-base text-muted">
             Aucun salon dans cette ville pour le moment.
           </p>
         </div>
