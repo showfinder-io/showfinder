@@ -75,37 +75,46 @@ export function ProviderDrawer({ salonId, salonName }: ProviderDrawerProps) {
   }
 
   return (
-    <section className="mt-10">
+    <section className="mt-12">
       <Sheet onOpenChange={(open) => { if (open) loadProviders(); }}>
-        <SheetTrigger className="w-full rounded-lg border border-accent/20 bg-accent/5 p-8 text-center transition-colors hover:bg-accent/10 cursor-pointer">
-          <h2 className="font-serif text-xl font-bold tracking-tight">
+        <SheetTrigger className="group block w-full rounded-lg bg-prune p-8 text-left text-papier transition-opacity hover:opacity-95 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-ocre focus-visible:ring-offset-2 focus-visible:ring-offset-sable md:p-10">
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-ocre px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-prune">
+            Marketplace prestataires
+          </span>
+          <h2 className="mt-4 font-serif text-2xl font-semibold tracking-tight md:text-3xl">
             Organiser mon stand
           </h2>
-          <p className="mt-2 text-sm text-muted">
-            Trouvez les prestataires recommandés pour ce salon : standistes,
-            traiteurs, photographes...
+          <p className="mt-2 max-w-xl text-sm text-papier/75">
+            Standistes, traiteurs, audiovisuel, photographes : trouvez les prestataires recommandés pour {salonName}.
           </p>
+          <span className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-ocre transition-transform group-hover:translate-x-1">
+            Voir les prestataires
+            <span aria-hidden="true">→</span>
+          </span>
         </SheetTrigger>
-        <SheetContent className="overflow-y-auto">
+        <SheetContent className="overflow-y-auto bg-sable text-prune sm:max-w-md">
           <SheetHeader>
-            <SheetTitle className="font-serif text-xl">
+            <SheetTitle className="font-serif text-2xl text-prune">
               Prestataires pour {salonName}
             </SheetTitle>
           </SheetHeader>
 
           <div className="mt-6">
             {loading && (
-              <p className="text-sm text-muted">Chargement...</p>
+              <p className="text-sm text-muted">Chargement…</p>
             )}
 
             {!loading && providers.length === 0 && (
-              <div className="text-center py-8">
-                <p className="text-muted">
+              <div className="rounded-lg border border-border bg-papier py-10 px-6 text-center">
+                <p className="text-sm text-muted">
                   Pas encore de prestataires référencés pour ce salon.
                 </p>
-                <p className="mt-4 text-sm text-muted">
+                <p className="mt-4 text-sm text-prune">
                   Vous êtes prestataire ?{" "}
-                  <Link href="/contact" className="text-accent hover:text-accent-hover">
+                  <Link
+                    href="/contact"
+                    className="font-medium underline decoration-prune/30 underline-offset-2 hover:decoration-prune"
+                  >
                     Contactez-nous
                   </Link>
                 </p>
@@ -114,58 +123,63 @@ export function ProviderDrawer({ salonId, salonName }: ProviderDrawerProps) {
 
             {!loading &&
               Object.entries(grouped).map(([category, catProviders]) => (
-                <div key={category} className="mb-6">
-                  <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider text-muted">
+                <div key={category} className="mb-7">
+                  <h3 className="mb-3 text-[11px] font-semibold uppercase tracking-wider text-muted">
                     {CATEGORY_LABELS[category] ?? category}
                   </h3>
-                  <div className="space-y-3">
+                  <div className="space-y-2.5">
                     {catProviders.map((p) => {
                       const isPremium = p.subscription_tier === "premium";
                       return (
-                      <div
-                        key={p.id}
-                        className={`flex items-center justify-between rounded-lg border p-3 transition-shadow hover:shadow-sm ${
-                          isPremium ? "border-amber-200 bg-amber-50/30" : "border-border"
-                        }`}
-                      >
-                        <Link
-                          href={`/prestataires/${p.slug}`}
-                          className="flex-1"
+                        <div
+                          key={p.id}
+                          className={`flex items-center justify-between rounded-lg border p-3 transition-shadow hover:shadow-sm ${
+                            isPremium
+                              ? "border-ocre/40 bg-ocre/10"
+                              : "border-border bg-papier"
+                          }`}
                         >
-                          <div className="flex items-center gap-2">
-                            <span className="font-medium">
-                              {p.company_name}
-                            </span>
-                            {p.is_verified && (
-                              <BadgeCheck className="h-3.5 w-3.5 text-accent" />
-                            )}
-                            {isPremium && (
-                              <span className="inline-flex items-center gap-0.5 rounded border border-amber-200 bg-amber-50 px-1.5 py-0.5 text-[10px] font-medium text-amber-700">
-                                <Star className="h-2.5 w-2.5 fill-amber-400 text-amber-400" />
-                                Recommandé
+                          <Link
+                            href={`/prestataires/${p.slug}`}
+                            className="flex-1"
+                          >
+                            <div className="flex flex-wrap items-center gap-1.5">
+                              <span className="font-medium text-prune">
+                                {p.company_name}
                               </span>
-                            )}
-                            {!isPremium && p.is_featured && (
-                              <span className="rounded bg-accent/10 px-1.5 py-0.5 text-[10px] font-medium text-accent">
-                                Recommandé
-                              </span>
-                            )}
-                          </div>
-                          {p.city && (
-                            <div className="mt-1 flex items-center gap-1 text-xs text-muted">
-                              <MapPin className="h-3 w-3" />
-                              {p.city}
+                              {p.is_verified && (
+                                <BadgeCheck
+                                  className="h-3.5 w-3.5 text-prune"
+                                  aria-label="Prestataire vérifié"
+                                />
+                              )}
+                              {isPremium && (
+                                <span className="inline-flex items-center gap-0.5 rounded-full bg-ocre px-2 py-0.5 text-[10px] font-semibold text-prune">
+                                  <Star className="h-2.5 w-2.5 fill-prune" />
+                                  Recommandé
+                                </span>
+                              )}
+                              {!isPremium && p.is_featured && (
+                                <span className="rounded-full border border-prune/20 px-2 py-0.5 text-[10px] font-medium text-prune">
+                                  Recommandé
+                                </span>
+                              )}
                             </div>
-                          )}
-                        </Link>
-                        <Link
-                          href={`/prestataires/${p.slug}`}
-                          className="ml-3 shrink-0 rounded-md bg-accent/10 px-2.5 py-1 text-xs font-medium text-accent transition-colors hover:bg-accent/20"
-                        >
-                          Devis
-                        </Link>
-                      </div>
-                    );
+                            {p.city && (
+                              <div className="mt-1 flex items-center gap-1 text-xs text-muted">
+                                <MapPin className="h-3 w-3" aria-hidden="true" />
+                                {p.city}
+                              </div>
+                            )}
+                          </Link>
+                          <Link
+                            href={`/prestataires/${p.slug}`}
+                            className="ml-3 shrink-0 rounded-md border border-prune/30 px-2.5 py-1 text-xs font-medium text-prune transition-colors hover:bg-prune hover:text-papier"
+                          >
+                            Devis
+                          </Link>
+                        </div>
+                      );
                     })}
                   </div>
                 </div>
