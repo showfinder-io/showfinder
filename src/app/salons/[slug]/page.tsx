@@ -18,6 +18,7 @@ import { AlertSubscribe } from "@/components/alert-subscribe";
 import { ReviewList } from "@/components/review-list";
 import { ReviewForm } from "@/components/review-form";
 import { JsonLd } from "@/components/json-ld";
+import { BreadcrumbJsonLd } from "@/components/breadcrumb-jsonld";
 import { AgorisVerifiedBadge } from "@/components/agoris-verified-badge";
 import { PhotoPlaceholder } from "@/components/photo-placeholder";
 import {
@@ -133,6 +134,13 @@ export default async function SalonPage({ params }: Props) {
   return (
     <article className="mx-auto max-w-4xl px-4 py-10 md:py-16">
       <JsonLd data={eventJsonLd} />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Accueil", item: "/" },
+          { name: "Salons", item: "/salons" },
+          { name: salon.name, item: `/salons/${slug}` },
+        ]}
+      />
 
       {/* Breadcrumb */}
       <nav className="mb-10 text-sm text-muted">

@@ -9,6 +9,8 @@ import {
 } from "@/lib/queries";
 import { CategoryBadge } from "@/components/category-badge";
 import { QuoteRequest } from "@/components/quote-request";
+import { JsonLd } from "@/components/json-ld";
+import { BreadcrumbJsonLd } from "@/components/breadcrumb-jsonld";
 import {
   MapPin,
   Globe,
@@ -43,6 +45,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
+// Map des catégories Agoris vers les sous-types Schema.org.
+// Tomber sur `LocalBusiness` générique si pas de sous-type plus précis.
+const PROVIDER_SCHEMA_TYPE: Record<string, string> = {
+  traiteur: "FoodEstablishment",
+  hebergement: "LodgingBusiness",
+  photographe: "LocalBusiness",
+  transport: "LocalBusiness",
+  av_technique: "LocalBusiness",
+  standiste: "LocalBusiness",
+  autre: "LocalBusiness",
+};
+
 export default async function ProviderPage({ params }: Props) {
   const { slug } = await params;
   const provider = await getProviderBySlug(slug);
@@ -51,8 +65,49 @@ export default async function ProviderPage({ params }: Props) {
   const label = PROVIDER_CATEGORY_LABELS[provider.category] ?? provider.category;
   const isPremium = provider.subscription_tier === "premium";
 
+  // Schema.org LocalBusiness (ou sous-type plus précis selon la catégorie).
+  // Champs renseignés uniquement si la donnée existe — pas de fabrication.
+  const schemaType =
+    PROVIDER_SCHEMA_TYPE[provider.category] ?? "LocalBusiness";
+  const providerJsonLd: Record<string, unknown> = {
+    "@context": "https://schema.org",
+    "@type": schemaType,
+    name: provider.company_name,
+    url: `${siteConfig.url}/prestataires/${slug}`,
+  };
+  if (provider.description) providerJsonLd.description = provider.description;
+  if (provider.logo_url) providerJsonLd.image = provider.logo_url;
+  if (provider.phone) providerJsonLd.telephone = provider.phone;
+  if (provider.email) providerJsonLd.email = provider.email;
+  if (provider.website_url) providerJsonLd.sameAs = [provider.website_url];
+  if (provider.city) {
+    providerJsonLd.address = {
+      "@type": "PostalAddress",
+      addressLocality: provider.city,
+      addressCountry: "FR",
+    };
+  }
+  if (provider.review_count > 0 && provider.avg_rating > 0) {
+    providerJsonLd.aggregateRating = {
+      "@type": "AggregateRating",
+      ratingValue: provider.avg_rating,
+      reviewCount: provider.review_count,
+      bestRating: 5,
+      worstRating: 1,
+    };
+  }
+
   return (
     <div className="mx-auto max-w-4xl px-4 py-10">
+      <JsonLd data={providerJsonLd} />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Accueil", item: "/" },
+          { name: "Prestataires", item: "/prestataires" },
+          { name: provider.company_name, item: `/prestataires/${slug}` },
+        ]}
+      />
+
       {/* Barre d'accent premium */}
       {isPremium && (
         <div className="mb-6 h-1 rounded-full bg-gradient-to-r from-amber-300 via-amber-400 to-amber-300" />
