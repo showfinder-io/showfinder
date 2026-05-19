@@ -47,6 +47,25 @@
   --color-sector-tourisme: #A8745A;        /* Terre cuite désaturée — chaleur méditerranéenne sourde */
   --color-sector-default: #5E4854;         /* Prune muted — secteur inconnu / fallback */
 
+  /* Palette catégories prestataires Agoris — pendant de la palette sectorielle.
+   * Texte des pills sur fond couleur = Ivoire (#F7F2E6). Même règle d'usage :
+   * pills / dots / filtres UNIQUEMENT. Jamais en CTA, jamais en fond large.
+   * Certaines couleurs (mobilier, signaletique, securite, animation, rh) sont déclarées
+   * en anticipation de l'extension de l'enum DB `provider_category`. */
+  --color-provider-standiste:    #6B5340; /* Brun cuir — atelier / matière */
+  --color-provider-av:           #4D4F5C; /* Acier mat — technique / cabine */
+  --color-provider-traiteur:     #8A6B4A; /* Noyer désaturé — table / artisanat */
+  --color-provider-hebergement:  #5C5879; /* Ardoise mauve — hospitalité institutionnelle */
+  --color-provider-mobilier:     #6B5E48; /* Brun chêne — mobilier / structure */
+  --color-provider-decoration:   #A37880; /* Rose poudré chaud — scénographie */
+  --color-provider-signaletique: #4A6660; /* Bleu-vert sapin — repère / wayfinding */
+  --color-provider-logistique:   #5E5448; /* Brun cargo — transport / palette */
+  --color-provider-securite:     #3E4A3A; /* Vert kaki profond — sécurité / contrôle */
+  --color-provider-photo:        #5A5A55; /* Gris graphite — photographe / objectif */
+  --color-provider-animation:    #7D3E4A; /* Bordeaux sourd — événementiel chaud */
+  --color-provider-rh:           #7A5C6B; /* Mauve cendré — RH / staffing */
+  --color-provider-default:      #5E4854; /* Prune muted — catégorie inconnue / fallback */
+
   /* Legacy tokens — remappés vers la nouvelle palette pour ne pas casser les 58 fichiers existants.
    * À supprimer progressivement au fil des refontes de composants (S2 → S5). */
   --color-paper: var(--color-papier);
