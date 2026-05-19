@@ -27,7 +27,7 @@ const SECTOR_COLORS: Record<string, string> = {
   "rh-formation": "bg-purple-50 text-prune border-purple-200/70",
 };
 
-const DEFAULT_COLORS = "bg-papier text-prune border-border";
+const DEFAULT_COLORS = "bg-ivoire text-prune border-border";
 
 export function getSectorColorClasses(slug: string): string {
   return SECTOR_COLORS[slug] ?? DEFAULT_COLORS;

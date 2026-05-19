@@ -25,7 +25,7 @@ export function SalonCard({ salon }: SalonCardProps) {
 
   return (
     <article
-      className={`group relative rounded-lg border border-border bg-papier transition-shadow hover:shadow-md ${
+      className={`group relative rounded-lg border border-border bg-ivoire transition-shadow hover:shadow-md ${
         isPast ? "opacity-60" : ""
       }`}
     >

@@ -19,7 +19,7 @@ import { ReviewList } from "@/components/review-list";
 import { ReviewForm } from "@/components/review-form";
 import { JsonLd } from "@/components/json-ld";
 import { AgorisVerifiedBadge } from "@/components/agoris-verified-badge";
-import { PatternAgoris } from "@/components/pattern-agoris";
+import { PhotoPlaceholder } from "@/components/photo-placeholder";
 import {
   MapPin,
   Calendar,
@@ -148,7 +148,7 @@ export default async function SalonPage({ params }: Props) {
         {/* Tags : catégorie + secteurs + verified */}
         <div className="flex flex-wrap items-center gap-2">
           {salon.category && (
-            <span className="inline-block rounded-full border border-border bg-papier px-3 py-1 text-xs font-medium uppercase tracking-wider text-prune">
+            <span className="inline-block rounded-full border border-border bg-ivoire px-3 py-1 text-xs font-medium uppercase tracking-wider text-prune">
               {SALON_CATEGORY_LABELS[salon.category]}
             </span>
           )}
@@ -210,7 +210,7 @@ export default async function SalonPage({ params }: Props) {
             {salon.tags.map((tag) => (
               <span
                 key={tag.id}
-                className="rounded-full border border-prune/15 bg-papier px-3 py-1 text-xs font-medium text-prune"
+                className="rounded-full border border-prune/15 bg-ivoire px-3 py-1 text-xs font-medium text-prune"
               >
                 {tag.label}
               </span>
@@ -237,17 +237,17 @@ export default async function SalonPage({ params }: Props) {
         </section>
       )}
 
-      {/* 3. BLOC VISUEL — cover ou placeholder PatternAgoris */}
+      {/* 3. BLOC VISUEL — cover ou PhotoPlaceholder 16:9 (en attendant les photos d'ambiance) */}
       <section className="mt-12 overflow-hidden rounded-lg border border-border">
         {salon.cover_image_url ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
             src={salon.cover_image_url}
             alt={`${salon.name} - vue du salon`}
-            className="h-64 w-full object-cover sm:h-96"
+            className="aspect-video w-full object-cover"
           />
         ) : (
-          <PatternAgoris className="h-64 sm:h-80" label={salon.name} />
+          <PhotoPlaceholder ratio="16/9" label="salon prof." variant="sable" />
         )}
       </section>
 
