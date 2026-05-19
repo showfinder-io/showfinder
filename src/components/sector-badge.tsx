@@ -6,25 +6,28 @@ type SectorBadgeProps = {
   linked?: boolean;
 };
 
+// Palette désaturée "pastels chauds" conforme au brief Agoris.
+// Texte Prune partout pour uniformité éditoriale. Bordure assortie discrète.
+// Voir CLAUDE.md → "Couleurs sectorielles (badges)".
 const SECTOR_COLORS: Record<string, string> = {
-  agroalimentaire: "bg-emerald-50 text-emerald-700 border-emerald-200",
-  agriculture: "bg-lime-50 text-lime-700 border-lime-200",
-  "btp-construction": "bg-orange-50 text-orange-700 border-orange-200",
-  "tech-numerique": "bg-blue-50 text-blue-700 border-blue-200",
-  industrie: "bg-slate-100 text-slate-700 border-slate-200",
-  "sante-pharma": "bg-rose-50 text-rose-700 border-rose-200",
-  "mode-textile": "bg-purple-50 text-purple-700 border-purple-200",
-  "tourisme-hotellerie": "bg-cyan-50 text-cyan-700 border-cyan-200",
-  "energie-environnement": "bg-teal-50 text-teal-700 border-teal-200",
-  "defense-securite": "bg-zinc-100 text-zinc-700 border-zinc-300",
-  "cosmetique-beaute": "bg-pink-50 text-pink-700 border-pink-200",
-  "logistique-transport": "bg-amber-50 text-amber-700 border-amber-200",
-  "decoration-habitat": "bg-indigo-50 text-indigo-700 border-indigo-200",
-  "franchise-commerce": "bg-yellow-50 text-yellow-700 border-yellow-200",
-  "rh-formation": "bg-violet-50 text-violet-700 border-violet-200",
+  agroalimentaire: "bg-stone-100 text-prune border-stone-300/60",
+  agriculture: "bg-yellow-50 text-prune border-yellow-200/70",
+  "btp-construction": "bg-orange-50 text-prune border-orange-200/70",
+  "tech-numerique": "bg-slate-100 text-prune border-slate-300/60",
+  industrie: "bg-zinc-100 text-prune border-zinc-300/60",
+  "sante-pharma": "bg-rose-50 text-prune border-rose-200/70",
+  "mode-textile": "bg-fuchsia-50 text-prune border-fuchsia-200/70",
+  "tourisme-hotellerie": "bg-sky-50 text-prune border-sky-200/70",
+  "energie-environnement": "bg-emerald-50 text-prune border-emerald-200/70",
+  "defense-securite": "bg-neutral-100 text-prune border-neutral-300/60",
+  "cosmetique-beaute": "bg-pink-50 text-prune border-pink-200/70",
+  "logistique-transport": "bg-amber-50 text-prune border-amber-200/70",
+  "decoration-habitat": "bg-orange-100/70 text-prune border-orange-200/70",
+  "franchise-commerce": "bg-yellow-100/80 text-prune border-yellow-200/70",
+  "rh-formation": "bg-purple-50 text-prune border-purple-200/70",
 };
 
-const DEFAULT_COLORS = "bg-white text-muted border-border";
+const DEFAULT_COLORS = "bg-papier text-prune border-border";
 
 export function getSectorColorClasses(slug: string): string {
   return SECTOR_COLORS[slug] ?? DEFAULT_COLORS;

@@ -38,22 +38,22 @@ export function SalonListLoadMore({
 
   return (
     <>
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {salons.map((salon) => (
           <SalonCard key={salon.id} salon={salon} />
         ))}
       </div>
 
       {hasMore && (
-        <div className="mt-10 text-center">
+        <div className="mt-12 text-center">
           <button
             onClick={loadMore}
             disabled={loading}
-            className="rounded-lg border border-border bg-white px-8 py-3 text-sm font-medium transition-colors hover:bg-gray-50 disabled:opacity-50"
+            className="rounded-lg border border-prune bg-prune px-8 py-3 text-sm font-medium text-papier transition-opacity hover:opacity-90 disabled:opacity-50"
           >
-            {loading ? "Chargement..." : `Afficher plus de salons`}
+            {loading ? "Chargement..." : "Afficher plus de salons"}
           </button>
-          <p className="mt-2 text-xs text-muted">
+          <p className="mt-3 text-xs text-muted">
             {salons.length} sur {total} salons
           </p>
         </div>

@@ -54,20 +54,20 @@ export default async function SalonsPage({ searchParams }: Props) {
   if (sort && sort !== "date") currentParams.sort = sort;
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-10">
+    <div className="mx-auto max-w-7xl px-4 py-12 md:py-16">
       {/* En-tete */}
-      <div className="mb-8">
-        <h1 className="font-serif text-3xl font-bold tracking-tight">
+      <header className="mb-10 md:mb-14">
+        <h1 className="font-serif text-4xl font-semibold tracking-tight text-prune md:text-5xl">
           Salons professionnels
         </h1>
-        <p className="mt-2 text-muted">
-          {result.total} salon{result.total > 1 ? "s" : ""} trouvé
-          {result.total > 1 ? "s" : ""}
+        <p className="mt-3 max-w-2xl text-base text-muted">
+          {result.total} salon{result.total > 1 ? "s" : ""} référencé
+          {result.total > 1 ? "s" : ""} en France, audités et classés par filière.
         </p>
-      </div>
+      </header>
 
       {/* Layout : sidebar + contenu */}
-      <div className="flex flex-col gap-8 md:flex-row md:gap-10">
+      <div className="flex flex-col gap-10 md:flex-row md:gap-12">
         {/* Sidebar filtres */}
         <Suspense>
           <SalonFiltersSidebar sectors={sectors} cities={cities} />
