@@ -108,9 +108,12 @@ export async function Header() {
             {user ? (
               <>
                 {isAdmin && (
+                  // Admin link discret : mono ocre dim, fond transparent.
+                  // Variant V2 : moins agressif que le pill ocre plein du V1.
+                  // Hover vire en Prune pour signal d'interaction subtil.
                   <Link
                     href="/admin"
-                    className="rounded-[3px] bg-ocre px-2.5 py-1.5 font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-prune transition-opacity hover:opacity-90"
+                    className="rounded-[3px] px-2 py-1 font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-[#C8801F] transition-colors hover:text-prune"
                   >
                     Admin
                   </Link>
