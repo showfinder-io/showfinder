@@ -42,8 +42,8 @@ export default function AdminSecteurNewPage() {
         body: JSON.stringify(data),
       });
       if (!res.ok) throw new Error("Erreur lors de la création");
-      const result = await res.json();
-      router.push(`/admin/secteurs/${result.sector.id}`);
+      await res.json();
+      router.push("/admin/secteurs");
     } catch (err) {
       setError(err instanceof Error ? err.message : "Erreur inconnue");
       setSaving(false);

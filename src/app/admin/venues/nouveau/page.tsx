@@ -49,8 +49,8 @@ export default function AdminVenueNewPage() {
         body: JSON.stringify(data),
       });
       if (!res.ok) throw new Error("Erreur lors de la création");
-      const result = await res.json();
-      router.push(`/admin/venues/${result.venue.id}`);
+      await res.json();
+      router.push("/admin/venues");
     } catch (err) {
       setError(err instanceof Error ? err.message : "Erreur inconnue");
       setSaving(false);

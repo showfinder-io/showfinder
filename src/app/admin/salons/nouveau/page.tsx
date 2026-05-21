@@ -15,8 +15,8 @@ export default function AdminSalonNewPage() {
       body: JSON.stringify(data),
     });
     if (!res.ok) throw new Error("Erreur lors de la création");
-    const result = await res.json();
-    router.push(`/admin/salons/${result.salon.id}`);
+    await res.json();
+    router.push("/admin/salons");
   }
 
   return (

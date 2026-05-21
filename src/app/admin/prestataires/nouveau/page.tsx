@@ -60,8 +60,8 @@ export default function AdminProviderNewPage() {
         const json = await res.json().catch(() => ({}));
         throw new Error(json.error ?? "Erreur lors de la création");
       }
-      const result = await res.json();
-      router.push(`/admin/prestataires/${result.provider.id}`);
+      await res.json();
+      router.push("/admin/prestataires");
     } catch (err) {
       setError(err instanceof Error ? err.message : "Erreur inconnue");
       setSaving(false);
