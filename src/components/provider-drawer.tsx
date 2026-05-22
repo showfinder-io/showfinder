@@ -82,7 +82,7 @@ export function ProviderDrawer({ salonId, salonName }: ProviderDrawerProps) {
             Marketplace prestataires
           </span>
           <h2 className="mt-4 font-serif text-2xl font-semibold tracking-tight md:text-3xl">
-            Organiser mon stand
+            Organiser votre salon
           </h2>
           <p className="mt-2 max-w-xl text-sm text-papier/75">
             Standistes, traiteurs, audiovisuel, photographes : trouvez les prestataires recommandés pour {salonName}.

@@ -301,10 +301,10 @@ export default async function SalonPage({ params }: Props) {
       {/* 5. DRAWER PRESTATAIRES — point de monétisation */}
       <ProviderDrawer salonId={salon.id} salonName={salon.name} />
 
-      {/* 6. AVIS d'exposants */}
+      {/* 6. AVIS certifiés */}
       <section className="mt-16">
         <h2 className="font-serif text-2xl font-semibold tracking-tight text-prune md:text-3xl">
-          Avis d&apos;exposants
+          Avis certifiés
         </h2>
         <div className="mt-6">
           <ReviewList targetType="salon" targetId={salon.id} />

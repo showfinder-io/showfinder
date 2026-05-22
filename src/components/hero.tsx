@@ -74,7 +74,7 @@ export function Hero({ totalSalons }: HeroProps) {
             fontVariationSettings: "'opsz' 36",
           }}
         >
-          L&apos;annuaire intelligent des salons professionnels en France&nbsp;: trouvez les bons salons, organisez votre stand, développez votre business.
+          L&apos;annuaire intelligent des salons professionnels en France&nbsp;: visitez les bons salons, organisez votre stand, développez votre business.
         </p>
 
         <form

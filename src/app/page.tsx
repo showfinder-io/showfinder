@@ -111,8 +111,8 @@ export default async function Home() {
             />
             <Argument
               number="03"
-              title="Contenu éditorial expert"
-              body="Guides sectoriels, comparatifs de lieux, benchmarks : nous publions ce que les annuaires data ne savent pas écrire."
+              title="Le bon salon, au bon moment"
+              body="Calendrier mis à jour en continu et alertes par secteur pour ne rien manquer. Avis certifiés d'exposants et de visiteurs pour choisir en confiance."
             />
           </ol>
         </div>
