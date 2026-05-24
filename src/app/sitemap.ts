@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { siteConfig } from "@/lib/config";
 import { createStaticClient } from "@/lib/supabase/static";
 import { getAllPosts } from "@/lib/blog";
+import { getEditorialSectorSlugs } from "@/lib/sector-content";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const supabase = createStaticClient();
@@ -18,9 +19,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ]);
 
   const salons = salonsResult.data ?? [];
-  const sectors = sectorsResult.data ?? [];
+  const allSectors = sectorsResult.data ?? [];
   const providers = providersResult.data ?? [];
   const venues = venuesResult.data ?? [];
+
+  // Seuls les secteurs avec MDX éditorial sont indexables (les autres sont
+  // en noindex,follow côté page). Cf. UX/SEO spec mai 2026.
+  const editorialSlugs = new Set(getEditorialSectorSlugs());
+  const sectors = allSectors.filter((s) => editorialSlugs.has(s.slug));
 
   const now = new Date();
 
@@ -42,6 +48,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: now,
       changeFrequency: "weekly",
       priority: 0.8,
+    },
+    {
+      url: `${siteConfig.url}/methodologie`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.5,
     },
   ];
 

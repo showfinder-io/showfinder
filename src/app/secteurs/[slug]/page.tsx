@@ -7,7 +7,7 @@ import {
   getSectorBySlug,
   getSalonsBySector,
 } from "@/lib/queries";
-import { getSectorContent } from "@/lib/sector-content";
+import { getSectorContent, formatEditorialMonth } from "@/lib/sector-content";
 import { compileMdxContent } from "@/lib/mdx";
 import { SalonCard } from "@/components/salon-card";
 import { AlertSubscribe } from "@/components/alert-subscribe";
@@ -45,6 +45,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title,
     description,
+    // noindex,follow pour les secteurs sans MDX éditorial : Google peut crawler
+    // pour suivre les liens vers les salons, mais ne référence pas la page.
+    // Les 4 secteurs avec MDX (BTP, Énergie, Tech, Santé) restent indexables.
+    robots: sectorContent
+      ? { index: true, follow: true }
+      : { index: false, follow: true },
     alternates: {
       canonical: `${siteConfig.url}/secteurs/${slug}`,
     },
@@ -93,6 +99,31 @@ export default async function SecteurPage({ params }: Props) {
         <SectionTitle as="h1" size="xl" eyebrow="Filière">
           Salons {sector.name}
         </SectionTitle>
+
+        {/* Mention de fraîcheur éditoriale : signal E-E-A-T pour Google
+            et les LLMs. Uniquement sur les secteurs avec MDX travaillé. */}
+        {sectorContent && (
+          <p className="mt-4 font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
+            Analyse Agoris · mise à jour{" "}
+            {formatEditorialMonth(sectorContent.frontmatter.updated)}
+          </p>
+        )}
+
+        {/* Raccourci vers la liste : épargne le scroll aux visiteurs qui
+            cherchent juste les salons. Uniquement sur les secteurs avec
+            long-form (sinon la liste est juste sous le H1). */}
+        {sectorContent && (
+          <p className="mt-6 text-sm text-prune/65">
+            Cette page : notre analyse du secteur ou{" "}
+            <a
+              href="#salons"
+              className="underline-offset-4 transition-colors hover:underline hover:text-prune"
+            >
+              voir directement les salons listés ↓
+            </a>
+          </p>
+        )}
+
         {/* Sans MDX : description courte issue de la table sectors.
             Avec MDX : on n'affiche pas la description courte ici, le contenu
             éditorial qui suit prend le relais (intro plus dense). */}
@@ -110,8 +141,10 @@ export default async function SecteurPage({ params }: Props) {
         </article>
       )}
 
-      {/* Section liste des salons */}
-      <section className="mt-20">
+      {/* Section liste des salons : id=salons pour ancre du raccourci ci-dessus.
+          scroll-mt pour compenser le header sticky éventuel et garder le titre
+          aligné en haut du viewport au scroll. */}
+      <section id="salons" className="mt-20 scroll-mt-8">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <SectionTitle as="h2" size="lg">
             Les salons de cette filière

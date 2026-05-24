@@ -30,3 +30,29 @@ export function getSectorContent(slug: string): SectorContent | null {
     content,
   };
 }
+
+/**
+ * Renvoie la liste des slugs de secteurs qui ont un MDX éditorial.
+ * Utilisé par le sitemap pour ne référencer que les pages travaillées.
+ */
+export function getEditorialSectorSlugs(): string[] {
+  if (!fs.existsSync(SECTEURS_DIR)) return [];
+  return fs
+    .readdirSync(SECTEURS_DIR)
+    .filter((f) => f.endsWith(".mdx"))
+    .map((f) => f.replace(/\.mdx$/, ""));
+}
+
+const FR_MONTHS = [
+  "janvier", "février", "mars", "avril", "mai", "juin",
+  "juillet", "août", "septembre", "octobre", "novembre", "décembre",
+] as const;
+
+/**
+ * Formate une date ISO ("2026-05-24") en "mois année" français ("mai 2026").
+ * Utilisé pour la mention de fraîcheur éditoriale des pages secteur.
+ */
+export function formatEditorialMonth(iso: string): string {
+  const d = new Date(iso);
+  return `${FR_MONTHS[d.getUTCMonth()]} ${d.getUTCFullYear()}`;
+}
