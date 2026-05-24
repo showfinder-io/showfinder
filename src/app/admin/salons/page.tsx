@@ -12,7 +12,7 @@ type Salon = {
   end_date: string | null;
   status: string;
   is_locked: boolean;
-  is_agoris_verified: boolean;
+  is_agoris_certified: boolean;
 };
 
 const statusConfig: Record<string, { label: string; className: string }> = {
@@ -148,12 +148,12 @@ export default function AdminSalonsPage() {
                       </span>
                     </td>
                     <td className="px-3 py-2">
-                      {salon.is_agoris_verified ? (
+                      {salon.is_agoris_certified ? (
                         <span className="inline-block rounded-full bg-ocre px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-prune">
-                          Verified
+                          Certified
                         </span>
                       ) : (
-                        <span className="text-xs text-muted">—</span>
+                        <span className="text-xs text-muted">·</span>
                       )}
                     </td>
                     <td className="px-3 py-2">{salon.is_locked ? "Oui" : "Non"}</td>

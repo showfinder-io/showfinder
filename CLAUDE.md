@@ -32,7 +32,7 @@ Le principe directeur est "Show me the gold, hide the dirt." L'utilisateur (mark
 
 Trois niveaux d'information :
 
-- **Niveau 1 (immédiat)** : l'essentiel vital : dates, lieu, taille, badge Agoris Verified, tags éditoriaux
+- **Niveau 1 (immédiat)** : l'essentiel vital : dates, lieu, taille, badge Agoris Certified, tags éditoriaux
 - **Niveau 2 (au clic)** : détails logistiques, stats détaillées, contenu éditorial
 - **Niveau 3 (action)** : marketplace de prestataires (drawer latéral, pas une page séparée)
 
@@ -52,7 +52,7 @@ L'utilisateur doit avoir l'impression de consulter une institution qui audite et
 **Règles d'application strictes :**
 
 - **Prune = institution.** Wordmark, points externes du signe, headlines, texte courant, bordures. Le Prune porte la voix institutionnelle.
-- **Ocre = signal.** Centre du signe, badge "Agoris Verified", score en exergue, KPI, hover. La couleur des affaires qui se concluent. N'apparaît que pour valider une décision ou souligner une performance.
+- **Ocre = signal.** Centre du signe, badge "Agoris Certified", score en exergue, KPI, hover. La couleur des affaires qui se concluent. N'apparaît que pour valider une décision ou souligner une performance.
 - **JAMAIS d'Ocre en mélange à parts égales.** L'Ocre ne couvre jamais plus de 2% d'un écran. C'est l'or sur le drapeau, pas le drapeau.
 - **ACCESSIBILITÉ CRITIQUE :** L'Ocre `#E2A02E` sur fond Sable `#EEE7D4` a un ratio de contraste d'environ 2.3:1, bien en dessous du WCAG AA (4.5:1). L'Ocre ne peut PAS être utilisé pour du texte sur fond Sable. Utiliser uniquement : (1) en fond de badge avec texte Prune dessus, (2) sur fond Prune, (3) comme accent décoratif non-textuel. Pour tout texte, utiliser Prune sur Sable ou Prune sur Papier.
 
@@ -75,14 +75,14 @@ Le contraste Serif historique (Fraunces) + Sans-serif tech (Inter) est la signat
 Chaque salon dans les listes est présenté dans une carte fond Papier (#FFFFFF) contenant :
 
 1. **Tag sectoriel** : badge avec couleur désaturée (ex: "Industrie / Manufacturing"), discret
-2. **Badge "Agoris Verified"** : en Ocre, uniquement si le salon est certifié par l'équipe
+2. **Badge "Agoris Certified"** : en Ocre, uniquement si le salon est certifié par l'équipe
 3. **Nom et édition** : en Fraunces, ex: "Global Industrie 2026 · Lyon Eurexpo"
 4. **Triptyque vital** : Dates | Visiteurs | Exposants (en Inter, taille réduite)
 5. **Stats clés** : nombre de prestataires accrédités (donnée vérifiable)
 
 **IMPORTANT — Ce qu'on n'affiche PAS au POC :**
 
-- Pas de "Score Agoris" chiffré (94/100 etc.) tant qu'il n'y a pas de méthodologie publiée et un comité éditorial réel. Le badge "Agoris Verified" (binaire : vérifié ou non) suffit.
+- Pas de "Score Agoris" chiffré (94/100 etc.) tant qu'il n'y a pas de méthodologie publiée et un comité éditorial réel. Le badge "Agoris Certified" (binaire : vérifié ou non) suffit.
 - Pas de "CA médian généré" ou de données financières non sourcées. Si la donnée n'existe pas de manière vérifiable, elle ne s'affiche pas.
 - Pas de micro-stats au hover ("+12% de ROI") : données non disponibles et hover inexistant sur mobile.
 
@@ -100,7 +100,7 @@ Utiliser le fond Prune Profond (#3B1F33) avec texte Sable/Papier pour les sectio
 
 La fiche salon n'est PAS une page de 3 km. C'est une vue structurée en blocs clairs avec marges généreuses :
 
-1. **Header ("Le Pitch")** : une phrase de 10-15 mots en Fraunces qui définit le salon + logo + dates + lieu + badge Agoris Verified si applicable
+1. **Header ("Le Pitch")** : une phrase de 10-15 mots en Fraunces qui définit le salon + logo + dates + lieu + badge Agoris Certified si applicable
 2. **Bloc "Quick Stats"** : chiffres VÉRIFIABLES uniquement (nombre d'exposants, nombre de visiteurs, surface, prestataires accrédités). Chiffres en Fraunces semi-bold. Si la donnée n'existe pas, ne pas l'afficher. Fond Sable Doux.
 3. **Bloc visuel** : image de couverture unique de qualité. Filtre colorimétrique chaud optionnel pour cohérence. Placeholder élégant (fond Sable + pattern points Agoris) si pas de photo.
 4. **Bloc "Essentiel"** : description éditoriale en Inter, secteurs, fréquence, site officiel, accès transport
@@ -227,7 +227,7 @@ npx supabase db push     # Pousser les migrations vers la base distante
 | estimated_exhibitors | INT (nullable) | Nombre d'exposants estimé |
 | estimated_visitors | INT (nullable) | Nombre de visiteurs estimé |
 | is_premium | BOOLEAN | Fiche premium (organisateur payant) |
-| is_agoris_verified | BOOLEAN | Badge "Agoris Verified". Critère POC (décision manuelle Nicolas) : dates confirmées, lieu confirmé, nb exposants sourcé, description éditoriale rédigée. Premier batch : 20-30 salons max. La rareté du badge en fait la valeur. |
+| is_agoris_certified | BOOLEAN | Badge "Agoris Certified". Critère POC (décision manuelle Nicolas) : dates confirmées, lieu confirmé, nb exposants sourcé, description éditoriale rédigée. Premier batch : 20-30 salons max. La rareté du badge en fait la valeur. |
 | status | ENUM | draft, published, cancelled, postponed |
 | logo_url | VARCHAR | Logo du salon |
 | cover_image_url | VARCHAR | Image de couverture |
@@ -304,7 +304,7 @@ Les tags sont curatés manuellement par l'équipe. Pas de scoring automatique au
 
 Voir la section "Direction UX : The Clean Cut — Identité Agoris" pour la structure détaillée. En résumé, la fiche suit le modèle "One-Pager" avec divulgation progressive :
 
-1. Header (pitch en Fraunces + logo + dates + lieu + badge Agoris Verified)
+1. Header (pitch en Fraunces + logo + dates + lieu + badge Agoris Certified)
 2. Quick Stats sur fond Sable (chiffres vérifiables uniquement, en Fraunces semi-bold)
 3. Bloc visuel (image de couverture avec colorimétrie chaude, placeholder pattern Agoris si absente)
 4. Essentiel (description éditoriale en Inter, secteurs, accès, site officiel)
@@ -355,10 +355,10 @@ Le vrai levier SEO n'est pas l'annuaire (10times a 15+ ans d'avance). C'est le c
 | Session | Scope | Bénéfice |
 |---------|-------|----------|
 | S1 : Design tokens & typo | Palette Sable/Prune/Ocre/Papier dans Tailwind config, fonts Fraunces + Inter, refonte global layout (nav, footer), placeholder pattern Agoris | Identité visuelle posée, base pour tout le reste |
-| S2 : Carte salon & page liste | Refonte SalonCard (modèle épuré), liste /salons avec marges généreuses, badges Agoris Verified, tags sectoriels désaturés | Le composant le plus visible utilisateur |
+| S2 : Carte salon & page liste | Refonte SalonCard (modèle épuré), liste /salons avec marges généreuses, badges Agoris Certified, tags sectoriels désaturés | Le composant le plus visible utilisateur |
 | S3 : Fiche salon One-Pager | Refonte /salons/[slug] : Header pitch + Quick Stats vérifiables + Bloc visuel + Essentiel + Drawer prestataires (bottom sheet mobile) + Avis + Similaires | Le coeur du produit |
 | S4 : Pages secteurs / villes / homepage | Refonte homepage (calm tech), pages /secteurs/[slug] et /villes/[slug] enrichies | SEO + pages d'atterrissage |
-| S5 : Migration is_agoris_verified + admin | Migration DB, sélection manuelle premier batch verified (~20-30 salons), toggle admin, harmonisation styles admin | Permet d'utiliser le badge |
+| S5 : Migration is_agoris_certified + admin | Migration DB, sélection manuelle premier batch certified (~20-30 salons), toggle admin, harmonisation styles admin | Permet d'utiliser le badge |
 
 ### Chantiers parallèles (hors sessions principales)
 

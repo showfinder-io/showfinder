@@ -19,7 +19,7 @@ import { ReviewList } from "@/components/review-list";
 import { ReviewForm } from "@/components/review-form";
 import { JsonLd } from "@/components/json-ld";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-jsonld";
-import { AgorisVerifiedBadge } from "@/components/agoris-verified-badge";
+import { AgorisCertifiedBadge } from "@/components/agoris-certified-badge";
 import { PhotoPlaceholder } from "@/components/photo-placeholder";
 import {
   MapPin,
@@ -105,7 +105,7 @@ export default async function SalonPage({ params }: Props) {
   ].filter(Boolean) as { value: number; label: string }[];
 
   const pitch = pitchFrom(salon.description);
-  const verified = salon.is_agoris_verified === true;
+  const certified = salon.is_agoris_certified === true;
 
   // Schema.org Event
   const eventJsonLd = {
@@ -153,7 +153,7 @@ export default async function SalonPage({ params }: Props) {
 
       {/* 1. HEADER — Le Pitch */}
       <header>
-        {/* Tags : catégorie + secteurs + verified */}
+        {/* Tags : catégorie + secteurs + certified */}
         <div className="flex flex-wrap items-center gap-2">
           {salon.category && (
             <span className="inline-block rounded-full border border-border bg-ivoire px-3 py-1 text-xs font-medium uppercase tracking-wider text-prune">
@@ -167,7 +167,7 @@ export default async function SalonPage({ params }: Props) {
               name={sector.name}
             />
           ))}
-          {verified && <AgorisVerifiedBadge size="md" />}
+          {certified && <AgorisCertifiedBadge size="md" />}
         </div>
 
         {/* Titre + logo */}

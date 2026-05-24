@@ -14,7 +14,7 @@ export async function GET(request: NextRequest) {
   let query = supabase
     .from("salons")
     .select(
-      "id, name, slug, city, start_date, end_date, status, is_locked, is_agoris_verified"
+      "id, name, slug, city, start_date, end_date, status, is_locked, is_agoris_certified"
     )
     .order("created_at", { ascending: false })
     .limit(200);

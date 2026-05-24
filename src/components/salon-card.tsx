@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { formatDateRange, formatNumber } from "@/lib/format";
 import { SectorBadge } from "@/components/sector-badge";
-import { AgorisVerifiedBadge } from "@/components/agoris-verified-badge";
+import { AgorisCertifiedBadge } from "@/components/agoris-certified-badge";
 import type { SalonWithSectors } from "@/lib/queries";
 
 type SalonCardProps = {
@@ -16,14 +16,13 @@ type SalonCardProps = {
  *  - stats grid 2fr 1fr 1fr (Dates · Visiteurs · Exposants)
  *  - hover : fond ivoire chaud (#FBF7EA) + translateY(-2px) + arrow ocre bottom-right
  *
- * Note : `is_agoris_verified` est optionnel tant que la migration S5 n'est pas appliquée.
  * Pas de `edition_number` dans la DB pour le moment : l'eyebrow ne montre que l'année.
  */
 export function SalonCard({ salon }: SalonCardProps) {
   const isPast =
     !!salon.start_date &&
     new Date(salon.start_date) < new Date(new Date().toDateString());
-  const verified = salon.is_agoris_verified === true;
+  const certified = salon.is_agoris_certified === true;
   const firstSector = salon.sectors[0];
   const extraSectorCount = Math.max(0, salon.sectors.length - 1);
   // Eyebrow date : édition année (n° d'édition pas dispo en DB pour le moment).
@@ -65,7 +64,7 @@ export function SalonCard({ salon }: SalonCardProps) {
                 +{extraSectorCount}
               </span>
             )}
-            {verified && <AgorisVerifiedBadge />}
+            {certified && <AgorisCertifiedBadge />}
           </div>
           {eyebrowRight && (
             <span className="shrink-0 font-mono text-[10px] uppercase tracking-[0.18em] text-muted">

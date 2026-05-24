@@ -43,8 +43,7 @@ export type SalonRow = {
   category?: SalonCategory | null;
   category_to_confirm?: boolean;
   dates_confirmed?: boolean;
-  // Optionnel : posé en S5 du redesign. Tant que la migration n'est pas appliquée, toujours undefined.
-  is_agoris_verified?: boolean;
+  is_agoris_certified?: boolean;
   created_at: string;
 };
 
