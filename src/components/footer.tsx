@@ -24,7 +24,10 @@ const PRODUIT_LINKS = [
   { href: "/blog", label: "Blog" },
 ] as const;
 
-const SOCIETE_LINKS = [{ href: "/contact", label: "Contact" }] as const;
+const SOCIETE_LINKS = [
+  { href: "/methodologie", label: "Méthodologie" },
+  { href: "/contact", label: "Contact" },
+] as const;
 
 const LEGAL_LINKS = [
   { href: "/mentions", label: "Mentions" },
