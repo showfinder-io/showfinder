@@ -85,7 +85,7 @@ export default function AdminAlertesPage() {
                         {alertTypeLabels[alert.alert_type] ?? alert.alert_type}
                       </td>
                       <td className="px-3 py-2">
-                        {alert.salon_slug ?? alert.sector_slug ?? "—"}
+                        {alert.salon_slug ?? alert.sector_slug ?? "·"}
                       </td>
                       <td className="px-3 py-2">
                         <span

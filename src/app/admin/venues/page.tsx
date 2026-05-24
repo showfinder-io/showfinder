@@ -88,7 +88,7 @@ export default function AdminVenuesPage() {
                   <td className="px-3 py-2">
                     {venue.total_surface_sqm
                       ? venue.total_surface_sqm.toLocaleString("fr-FR")
-                      : "—"}
+                      : "·"}
                   </td>
                   <td className="px-3 py-2">{venue.salon_count}</td>
                   <td className="px-3 py-2 space-x-2 whitespace-nowrap">

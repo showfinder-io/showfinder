@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return { title: "Lieu introuvable" };
   }
 
-  const title = `Salons à ${venue.name} — ${venue.city}`;
+  const title = `Salons à ${venue.name}, ${venue.city}`;
   const description =
     venue.description ||
     `Découvrez tous les salons professionnels au ${venue.name} (${venue.city}) sur ${siteConfig.name}.`;

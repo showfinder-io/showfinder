@@ -24,7 +24,7 @@ export function VenueCard({ venue, salonCount }: VenueCardProps) {
       <Link
         href={`/lieux/${venue.slug}`}
         className="flex h-full flex-col focus:outline-none focus-visible:ring-2 focus-visible:ring-ocre focus-visible:ring-offset-2 focus-visible:ring-offset-sable"
-        aria-label={`${venue.name} — ${venue.city}`}
+        aria-label={`${venue.name}, ${venue.city}`}
       >
         {/* Photo ou placeholder */}
         {venue.photo_url ? (
@@ -89,7 +89,7 @@ function Stat({ label, value }: { label: string; value: string | null }) {
         {label}
       </dt>
       <dd className="mt-1.5 font-serif text-[22px] font-normal leading-[1.1] tracking-[-0.01em] text-prune tabular-nums">
-        {value ?? <span className="text-muted">—</span>}
+        {value ?? <span className="text-muted">·</span>}
       </dd>
     </div>
   );

@@ -4,7 +4,7 @@ import { SectionTitle } from "@/components/section-title";
 export const metadata: Metadata = {
   title: "Politique cookies",
   description:
-    "Politique cookies d'Agoris — cookies essentiels et mesure d'audience anonymisée.",
+    "Politique cookies d'Agoris : cookies essentiels et mesure d'audience anonymisée.",
   robots: { index: true, follow: true },
 };
 
@@ -37,7 +37,7 @@ export default function CookiesPage() {
           </p>
           <ul className="mt-3 list-disc space-y-2 pl-5">
             <li>
-              <strong>Supabase Auth</strong> — gestion de votre session
+              <strong>Supabase Auth</strong> : gestion de votre session
               (connexion, authentification). Durée : durée de la session ou 7
               jours en cas de « se souvenir de moi ».
             </li>
@@ -56,7 +56,7 @@ export default function CookiesPage() {
           </p>
           <ul className="mt-3 list-disc space-y-2 pl-5">
             <li>
-              <strong>_ga, _ga_*</strong> — identifiants Google Analytics.
+              <strong>_ga, _ga_*</strong> : identifiants Google Analytics.
               Durée : 13 mois maximum.
             </li>
           </ul>

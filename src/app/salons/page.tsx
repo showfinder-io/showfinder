@@ -60,7 +60,7 @@ export async function generateMetadata({
   return {
     title:
       page > 1
-        ? `Tous les salons professionnels — Page ${page}`
+        ? `Tous les salons professionnels · Page ${page}`
         : "Tous les salons professionnels",
     description: `Découvrez tous les salons professionnels en France sur ${siteConfig.name}. Filtrez par secteur, ville et date.`,
     alternates: {

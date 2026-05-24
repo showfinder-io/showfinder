@@ -86,7 +86,7 @@ export async function Header() {
         <Link
           href="/"
           className="flex items-center gap-3.5 transition-opacity hover:opacity-80"
-          aria-label={`${siteConfig.name} — accueil`}
+          aria-label={`${siteConfig.name}, accueil`}
         >
           <AgorisMark className="h-11 w-11" />
           <span

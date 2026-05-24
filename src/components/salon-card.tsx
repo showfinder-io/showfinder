@@ -137,7 +137,7 @@ function Stat({ label, value }: { label: string; value: string | null }) {
         {label}
       </dt>
       <dd className="mt-1.5 font-serif text-[22px] font-normal leading-[1.1] tracking-[-0.01em] text-prune">
-        {value ?? <span className="text-muted">—</span>}
+        {value ?? <span className="text-muted">·</span>}
       </dd>
     </div>
   );

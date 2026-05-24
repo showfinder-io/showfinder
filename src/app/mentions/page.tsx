@@ -4,7 +4,7 @@ import { SectionTitle } from "@/components/section-title";
 export const metadata: Metadata = {
   title: "Mentions légales",
   description:
-    "Mentions légales d'Agoris — éditeur, hébergeur, directeur de la publication.",
+    "Mentions légales d'Agoris : éditeur, hébergeur, directeur de la publication.",
   robots: { index: true, follow: true },
 };
 

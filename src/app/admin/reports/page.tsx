@@ -81,7 +81,7 @@ export default function AdminReportsPage() {
                     <td className="px-3 py-2 font-medium">{report.salon_slug}</td>
                     <td className="px-3 py-2">{report.field}</td>
                     <td className="px-3 py-2 max-w-xs truncate">{report.correction}</td>
-                    <td className="px-3 py-2">{report.reporter_email ?? "—"}</td>
+                    <td className="px-3 py-2">{report.reporter_email ?? "·"}</td>
                     <td className="px-3 py-2">
                       <span className={`inline-block rounded-full px-2 py-0.5 text-xs font-medium ${st.className}`}>
                         {st.label}

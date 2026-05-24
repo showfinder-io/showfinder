@@ -87,9 +87,9 @@ export default function AdminAvisPage() {
                     {review.target_name ?? review.target_id.slice(0, 8)}
                   </td>
                   <td className="px-3 py-2">{review.rating}/5</td>
-                  <td className="px-3 py-2">{review.title ?? "—"}</td>
+                  <td className="px-3 py-2">{review.title ?? "·"}</td>
                   <td className="px-3 py-2 max-w-xs truncate">
-                    {review.body ? review.body.slice(0, 80) : "—"}
+                    {review.body ? review.body.slice(0, 80) : "·"}
                   </td>
                   <td className="px-3 py-2">
                     <span

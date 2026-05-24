@@ -6,7 +6,7 @@ import { PhotoPlaceholder } from "@/components/photo-placeholder";
 import { SectionTitle } from "@/components/section-title";
 
 export const metadata: Metadata = {
-  title: "Le journal — Guides et analyses",
+  title: "Le journal : guides et analyses",
   description:
     "Conseils, guides et actualités pour réussir votre participation aux salons professionnels en France.",
   alternates: {

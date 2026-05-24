@@ -84,7 +84,7 @@ export default function AdminSecteursPage() {
                 <tr key={sector.id} className="border-b border-border/50 hover:bg-border/20">
                   <td className="px-3 py-2 font-medium">{sector.name}</td>
                   <td className="px-3 py-2 text-muted">{sector.slug}</td>
-                  <td className="px-3 py-2">{sector.icon ?? "—"}</td>
+                  <td className="px-3 py-2">{sector.icon ?? "·"}</td>
                   <td className="px-3 py-2">{sector.salon_count}</td>
                   <td className="px-3 py-2 space-x-2 whitespace-nowrap">
                     <Link

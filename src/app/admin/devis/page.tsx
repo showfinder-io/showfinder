@@ -80,7 +80,7 @@ export default function AdminDevisPage() {
                   <tr key={quote.id} className="border-b border-border/50 hover:bg-border/20">
                     <td className="px-3 py-2 font-medium">{quote.company_name}</td>
                     <td className="px-3 py-2">{quote.email}</td>
-                    <td className="px-3 py-2">{quote.provider_name ?? "—"}</td>
+                    <td className="px-3 py-2">{quote.provider_name ?? "·"}</td>
                     <td className="px-3 py-2 max-w-xs truncate">
                       {quote.message.slice(0, 80)}
                     </td>

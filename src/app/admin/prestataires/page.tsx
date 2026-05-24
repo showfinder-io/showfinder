@@ -139,7 +139,7 @@ export default function AdminPrestatairesPage() {
                       {PROVIDER_CATEGORY_LABELS[provider.category] ??
                         provider.category}
                     </td>
-                    <td className="px-3 py-2">{provider.city ?? "—"}</td>
+                    <td className="px-3 py-2">{provider.city ?? "·"}</td>
                     <td className="px-3 py-2">
                       <span
                         className={`inline-block rounded-full px-2 py-0.5 text-xs font-medium ${tier.className}`}

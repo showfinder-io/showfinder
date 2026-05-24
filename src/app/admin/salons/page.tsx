@@ -119,7 +119,7 @@ export default function AdminSalonsPage() {
                 <th className="px-3 py-2">Ville</th>
                 <th className="px-3 py-2">Dates</th>
                 <th className="px-3 py-2">Statut</th>
-                <th className="px-3 py-2">Verified</th>
+                <th className="px-3 py-2">Certified</th>
                 <th className="px-3 py-2">Verrouillé</th>
                 <th className="px-3 py-2">Actions</th>
               </tr>
@@ -130,14 +130,14 @@ export default function AdminSalonsPage() {
                 return (
                   <tr key={salon.id} className="border-b border-border/50 hover:bg-border/20">
                     <td className="px-3 py-2 font-medium">{salon.name}</td>
-                    <td className="px-3 py-2">{salon.city ?? "—"}</td>
+                    <td className="px-3 py-2">{salon.city ?? "·"}</td>
                     <td className="px-3 py-2 whitespace-nowrap">
                       {salon.start_date
                         ? new Date(salon.start_date).toLocaleDateString("fr-FR", { day: "numeric", month: "short" })
-                        : "—"}
+                        : "·"}
                       {salon.end_date && (
                         <>
-                          {" — "}
+                          {" · "}
                           {new Date(salon.end_date).toLocaleDateString("fr-FR", { day: "numeric", month: "short", year: "numeric" })}
                         </>
                       )}

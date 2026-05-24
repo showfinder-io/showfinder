@@ -4,7 +4,7 @@ import { ImageResponse } from "next/og";
 // utilisée pour la home et toute route qui n'override pas son propre OG.
 // Variante par-salon prévue plus tard dans src/app/salons/[slug]/opengraph-image.tsx.
 
-export const alt = "Agoris — l'annuaire intelligent des salons B2B";
+export const alt = "Agoris, l'annuaire intelligent des salons B2B";
 export const size = {
   width: 1200,
   height: 630,

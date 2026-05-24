@@ -4,7 +4,7 @@ import { SectionTitle } from "@/components/section-title";
 export const metadata: Metadata = {
   title: "Politique de confidentialité",
   description:
-    "Politique de confidentialité d'Agoris — RGPD, données personnelles, droits des utilisateurs.",
+    "Politique de confidentialité d'Agoris : RGPD, données personnelles, droits des utilisateurs.",
   robots: { index: true, follow: true },
 };
 
@@ -49,15 +49,15 @@ export default function ConfidentialitePage() {
           </h2>
           <ul className="mt-3 list-disc space-y-2 pl-5">
             <li>
-              Adresse email — lorsque vous créez un compte, vous inscrivez à
+              Adresse email : lorsque vous créez un compte, vous inscrivez à
               une alerte salon ou à notre newsletter.
             </li>
             <li>
-              Préférences éditoriales — secteurs et villes suivis, pour
+              Préférences éditoriales : secteurs et villes suivis, pour
               personnaliser vos alertes.
             </li>
             <li>
-              Données techniques anonymisées — type de navigateur, pages
+              Données techniques anonymisées : type de navigateur, pages
               consultées (via Google Analytics 4).
             </li>
           </ul>

@@ -12,7 +12,7 @@ const STATUS_OPTIONS = [
 ];
 
 const FREQUENCY_OPTIONS = [
-  { value: "", label: "— Non défini —" },
+  { value: "", label: "· Non défini" },
   { value: "annuel", label: "Annuel" },
   { value: "bisannuel", label: "Bisannuel" },
   { value: "ponctuel", label: "Ponctuel" },
