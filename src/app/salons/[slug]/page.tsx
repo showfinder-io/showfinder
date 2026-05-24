@@ -53,9 +53,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     salon.seo_description ||
     `${salon.name} : dates, lieu, exposants et informations pratiques sur ${siteConfig.name}.`;
 
+  // Fiches sans description editoriale : noindex,follow le temps que la
+  // pipeline editoriale Nicolas remplisse le champ. Eviter d'envoyer du
+  // contenu pauvre dans l'index Google (signal de qualite negatif).
+  // Coherent avec methodologie.mdx : "si la donnee n'existe pas, elle ne
+  // s'affiche pas" applique aussi a "elle n'est pas indexee".
+  const hasDescription =
+    typeof salon.description === "string" && salon.description.trim().length > 0;
+
   return {
     title,
     description,
+    robots: hasDescription
+      ? { index: true, follow: true }
+      : { index: false, follow: true },
     alternates: {
       canonical: `${siteConfig.url}/salons/${slug}`,
     },

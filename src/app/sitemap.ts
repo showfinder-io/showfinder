@@ -11,8 +11,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const [salonsResult, sectorsResult, providersResult, venuesResult] = await Promise.all([
     supabase
       .from("salons")
-      .select("slug, updated_at")
-      .eq("status", "published"),
+      .select("slug, updated_at, description")
+      .eq("status", "published")
+      // Exclure les fiches placeholder sans description editoriale.
+      // Coherent avec le noindex,follow pose cote page.
+      .not("description", "is", null)
+      .neq("description", ""),
     supabase.from("sectors").select("slug"),
     supabase.from("providers").select("slug"),
     supabase.from("venues").select("slug"),
