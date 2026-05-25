@@ -21,6 +21,10 @@ import { JsonLd } from "@/components/json-ld";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-jsonld";
 import { AgorisCertifiedBadge } from "@/components/agoris-certified-badge";
 import { PhotoPlaceholder } from "@/components/photo-placeholder";
+import { getSalonContent } from "@/lib/salon-content";
+import { formatEditorialMonth } from "@/lib/sector-content";
+import { compileMdxContent } from "@/lib/mdx";
+import { salonMdxComponents } from "@/components/mdx/salon-mdx-components";
 import {
   MapPin,
   Calendar,
@@ -53,18 +57,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     salon.seo_description ||
     `${salon.name} : dates, lieu, exposants et informations pratiques sur ${siteConfig.name}.`;
 
-  // Fiches sans description editoriale : noindex,follow le temps que la
-  // pipeline editoriale Nicolas remplisse le champ. Eviter d'envoyer du
-  // contenu pauvre dans l'index Google (signal de qualite negatif).
-  // Coherent avec methodologie.mdx : "si la donnee n'existe pas, elle ne
-  // s'affiche pas" applique aussi a "elle n'est pas indexee".
+  // Fiches sans contenu editorial : noindex,follow le temps que la pipeline
+  // editoriale Nicolas remplisse soit le champ description, soit un MDX
+  // (content/salons/[slug].mdx). Eviter d'envoyer du contenu pauvre dans
+  // l'index Google. Coherent avec methodologie.mdx : "si la donnee n'existe
+  // pas, elle ne s'affiche pas" applique aussi a "elle n'est pas indexee".
   const hasDescription =
     typeof salon.description === "string" && salon.description.trim().length > 0;
+  const hasEditorialMdx = getSalonContent(slug) !== null;
+  const hasEditorialContent = hasDescription || hasEditorialMdx;
 
   return {
     title,
     description,
-    robots: hasDescription
+    robots: hasEditorialContent
       ? { index: true, follow: true }
       : { index: false, follow: true },
     alternates: {
@@ -104,6 +110,13 @@ export default async function SalonPage({ params }: Props) {
 
   const sectorIds = salon.sectors.map((s) => s.id);
   const similarSalons = await getSimilarSalons(salon.id, sectorIds, 3);
+
+  // MDX éditorial (Bloc 2 → Bloc 9 du modèle Nicolas v3). Présent uniquement
+  // pour les fiches Agoris Certified passées par la pipeline éditoriale.
+  const salonContent = getSalonContent(slug);
+  const MdxContent = salonContent
+    ? await compileMdxContent(salonContent.content, salonMdxComponents)
+    : null;
 
   // Quick Stats : uniquement les chiffres vérifiables. Pas de placeholder.
   const stats = [
@@ -308,6 +321,20 @@ export default async function SalonPage({ params }: Props) {
           )}
         </dl>
       </section>
+
+      {/* 4 bis. ARTICLE MDX éditorial — fiches Agoris Certified uniquement.
+            Contient les blocs 2 à 9 du modèle Nicolas v3 (essentiel, qui expose,
+            vie du salon, logistique, budget, préparer sa venue, historique).
+            Le bloc 1 Identité n'est pas répété, déjà rendu par le header DB. */}
+      {MdxContent && salonContent && (
+        <article className="prose-agoris mt-12 max-w-3xl">
+          <p className="mb-8 font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
+            Analyse Agoris · mise à jour{" "}
+            {formatEditorialMonth(salonContent.frontmatter.updated)}
+          </p>
+          <MdxContent />
+        </article>
+      )}
 
       {/* 5. DRAWER PRESTATAIRES — point de monétisation */}
       <ProviderDrawer salonId={salon.id} salonName={salon.name} />

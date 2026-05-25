@@ -3,6 +3,7 @@ import { siteConfig } from "@/lib/config";
 import { createStaticClient } from "@/lib/supabase/static";
 import { getAllPosts } from "@/lib/blog";
 import { getEditorialSectorSlugs } from "@/lib/sector-content";
+import { getEditorialSalonSlugs } from "@/lib/salon-content";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const supabase = createStaticClient();
@@ -12,25 +13,31 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     supabase
       .from("salons")
       .select("slug, updated_at, description")
-      .eq("status", "published")
-      // Exclure les fiches placeholder sans description editoriale.
-      // Coherent avec le noindex,follow pose cote page.
-      .not("description", "is", null)
-      .neq("description", ""),
+      .eq("status", "published"),
     supabase.from("sectors").select("slug"),
     supabase.from("providers").select("slug"),
     supabase.from("venues").select("slug"),
   ]);
 
-  const salons = salonsResult.data ?? [];
+  const allSalons = salonsResult.data ?? [];
   const allSectors = sectorsResult.data ?? [];
   const providers = providersResult.data ?? [];
   const venues = venuesResult.data ?? [];
 
+  // Une fiche est indexable si elle a du contenu editorial : soit une
+  // description en DB, soit un MDX dans content/salons/[slug].mdx (Agoris
+  // Certified). Coherent avec le robots conditionnel cote page.
+  const editorialSalonSlugs = new Set(getEditorialSalonSlugs());
+  const salons = allSalons.filter(
+    (s) =>
+      (typeof s.description === "string" && s.description.trim().length > 0) ||
+      editorialSalonSlugs.has(s.slug)
+  );
+
   // Seuls les secteurs avec MDX éditorial sont indexables (les autres sont
   // en noindex,follow côté page). Cf. UX/SEO spec mai 2026.
-  const editorialSlugs = new Set(getEditorialSectorSlugs());
-  const sectors = allSectors.filter((s) => editorialSlugs.has(s.slug));
+  const editorialSectorSlugs = new Set(getEditorialSectorSlugs());
+  const sectors = allSectors.filter((s) => editorialSectorSlugs.has(s.slug));
 
   const now = new Date();
 
