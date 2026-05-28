@@ -1,3 +1,7 @@
+"use client";
+
+import { trackEvent } from "@/lib/analytics";
+
 type HeroProps = {
   /** Total de salons indexés (récupéré côté serveur, ex: count de getSalons). */
   totalSalons: number;
@@ -82,6 +86,13 @@ export function Hero({ totalSalons }: HeroProps) {
           method="get"
           className="relative mt-14 max-w-[720px]"
           role="search"
+          onSubmit={(e) => {
+            const formData = new FormData(e.currentTarget);
+            const query = String(formData.get("search") ?? "").trim();
+            if (query.length > 0) {
+              trackEvent("search_submit", { query, source: "home" });
+            }
+          }}
         >
           <input
             name="search"

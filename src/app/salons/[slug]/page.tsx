@@ -21,6 +21,7 @@ import { JsonLd } from "@/components/json-ld";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-jsonld";
 import { AgorisCertifiedBadge } from "@/components/agoris-certified-badge";
 import { PhotoPlaceholder } from "@/components/photo-placeholder";
+import { SalonOutboundLink } from "@/components/salon-outbound-link";
 import { getSalonContent } from "@/lib/salon-content";
 import { formatEditorialMonth } from "@/lib/sector-content";
 import { compileMdxContent } from "@/lib/mdx";
@@ -308,15 +309,15 @@ export default async function SalonPage({ params }: Props) {
           )}
           {salon.website_url && (
             <Detail icon={<Globe className="h-4 w-4" />} label="Site officiel">
-              <a
+              <SalonOutboundLink
+                slug={slug}
+                destination="website"
                 href={salon.website_url}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="inline-flex items-center gap-1 text-prune underline decoration-prune/30 underline-offset-2 transition-colors hover:decoration-prune"
               >
                 Visiter le site
                 <ExternalLink className="h-3 w-3" aria-hidden="true" />
-              </a>
+              </SalonOutboundLink>
             </Detail>
           )}
         </dl>
@@ -337,7 +338,11 @@ export default async function SalonPage({ params }: Props) {
       )}
 
       {/* 5. DRAWER PRESTATAIRES — point de monétisation */}
-      <ProviderDrawer salonId={salon.id} salonName={salon.name} />
+      <ProviderDrawer
+        salonId={salon.id}
+        salonName={salon.name}
+        salonSlug={slug}
+      />
 
       {/* 6. AVIS certifiés */}
       <section className="mt-16">

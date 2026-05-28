@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import {
   Sheet,
@@ -10,6 +10,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { BadgeCheck, MapPin, Star } from "lucide-react";
+import { trackEvent } from "@/lib/analytics";
 
 type Provider = {
   id: string;
@@ -35,9 +36,10 @@ const CATEGORY_LABELS: Record<string, string> = {
 type ProviderDrawerProps = {
   salonId: string;
   salonName: string;
+  salonSlug?: string;
 };
 
-export function ProviderDrawer({ salonId, salonName }: ProviderDrawerProps) {
+export function ProviderDrawer({ salonId, salonName, salonSlug }: ProviderDrawerProps) {
   const [providers, setProviders] = useState<Provider[]>([]);
   const [loading, setLoading] = useState(false);
   const [loaded, setLoaded] = useState(false);
@@ -76,7 +78,14 @@ export function ProviderDrawer({ salonId, salonName }: ProviderDrawerProps) {
 
   return (
     <section className="mt-12">
-      <Sheet onOpenChange={(open) => { if (open) loadProviders(); }}>
+      <Sheet
+        onOpenChange={(open) => {
+          if (open) {
+            loadProviders();
+            trackEvent("provider_drawer_open", { salon_slug: salonSlug });
+          }
+        }}
+      >
         <SheetTrigger className="group block w-full rounded-lg bg-prune p-8 text-left text-papier transition-opacity hover:opacity-95 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-ocre focus-visible:ring-offset-2 focus-visible:ring-offset-sable md:p-10">
           <span className="inline-flex items-center gap-1.5 rounded-full bg-ocre px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-prune">
             Marketplace prestataires

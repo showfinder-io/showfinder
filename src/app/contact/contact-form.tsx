@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Loader2, CheckCircle } from "lucide-react";
+import { trackEvent } from "@/lib/analytics";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -31,8 +32,10 @@ export function ContactForm() {
       });
 
       if (!res.ok) throw new Error("Erreur serveur");
+      trackEvent("contact_form_submit", { success: true });
       setStatus("success");
     } catch {
+      trackEvent("contact_form_submit", { success: false });
       setStatus("error");
     }
   }

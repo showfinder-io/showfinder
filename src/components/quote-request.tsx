@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Loader2, CheckCircle, FileText } from "lucide-react";
+import { trackEvent } from "@/lib/analytics";
 import {
   Sheet,
   SheetTrigger,
@@ -40,8 +41,10 @@ export function QuoteRequest({ providerId, providerName }: { providerId: string;
       });
 
       if (!res.ok) throw new Error("Erreur serveur");
+      trackEvent("quote_request_submit", { success: true });
       setStatus("success");
     } catch {
+      trackEvent("quote_request_submit", { success: false });
       setStatus("error");
     }
   }

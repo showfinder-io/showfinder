@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { signUpWithEmail, signInWithGoogle } from "@/lib/auth";
+import { trackEvent } from "@/lib/analytics";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/lib/config";
 
@@ -34,6 +35,8 @@ export default function InscriptionPage() {
 
     const { error } = await signUpWithEmail(email, password);
 
+    trackEvent("signup_attempt", { method: "email", success: !error });
+
     if (error) {
       setError("Impossible de créer le compte. Veuillez réessayer.");
       setLoading(false);
@@ -46,6 +49,7 @@ export default function InscriptionPage() {
 
   async function handleGoogleSignUp() {
     setError(null);
+    trackEvent("signup_attempt", { method: "google" });
     const { error } = await signInWithGoogle();
     if (error) {
       setError("Impossible de s'inscrire avec Google. Veuillez réessayer.");

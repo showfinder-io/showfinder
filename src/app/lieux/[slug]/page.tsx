@@ -11,6 +11,7 @@ import { formatNumber } from "@/lib/format";
 import { SalonCard } from "@/components/salon-card";
 import { JsonLd } from "@/components/json-ld";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-jsonld";
+import { VenueOutboundLink } from "@/components/venue-outbound-link";
 import { MapPin, ExternalLink, Maximize2, Globe } from "lucide-react";
 
 type Props = {
@@ -134,26 +135,26 @@ export default async function VenuePage({ params }: Props) {
       {/* Liens externes */}
       <div className="mt-4 flex flex-wrap gap-4">
         {venue.google_maps_url && (
-          <a
+          <VenueOutboundLink
+            slug={slug}
+            destination="google_maps"
             href={venue.google_maps_url}
-            target="_blank"
-            rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-hover transition-colors"
           >
             <ExternalLink className="h-4 w-4" />
             Voir sur Google Maps
-          </a>
+          </VenueOutboundLink>
         )}
         {venue.website_url && (
-          <a
+          <VenueOutboundLink
+            slug={slug}
+            destination="website"
             href={venue.website_url}
-            target="_blank"
-            rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-hover transition-colors"
           >
             <Globe className="h-4 w-4" />
             Site officiel
-          </a>
+          </VenueOutboundLink>
         )}
       </div>
 

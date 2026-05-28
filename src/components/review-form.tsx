@@ -5,6 +5,7 @@ import Link from "next/link";
 import { createClient } from "@/lib/supabase/client";
 import { StarRating } from "@/components/star-rating";
 import { Loader2, CheckCircle, LogIn } from "lucide-react";
+import { trackEvent } from "@/lib/analytics";
 
 type ReviewFormProps = {
   targetType: "salon" | "provider";
@@ -90,8 +91,18 @@ export function ReviewForm({ targetType, targetId }: ReviewFormProps) {
         throw new Error(data.error || "Erreur serveur");
       }
 
+      trackEvent("review_submit", {
+        salon_slug: targetId,
+        rating,
+        success: true,
+      });
       setStatus("success");
     } catch {
+      trackEvent("review_submit", {
+        salon_slug: targetId,
+        rating,
+        success: false,
+      });
       setStatus("error");
     }
   }
