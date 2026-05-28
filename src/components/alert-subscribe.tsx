@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Bell, Loader2, CheckCircle } from "lucide-react";
+import { trackEvent } from "@/lib/analytics";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -30,6 +31,7 @@ export function AlertSubscribe(props: AlertSubscribeProps) {
       });
 
       if (!res.ok) throw new Error("Erreur serveur");
+      trackEvent("alert_subscribe", { type: props.type, slug: props.slug });
       setStatus("success");
     } catch {
       setStatus("error");

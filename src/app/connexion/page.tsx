@@ -4,6 +4,7 @@ import { Suspense, useState } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { signInWithEmail, signInWithGoogle } from "@/lib/auth";
+import { trackEvent } from "@/lib/analytics";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/lib/config";
 
@@ -26,6 +27,8 @@ function ConnexionForm() {
 
     const { error } = await signInWithEmail(email, password);
 
+    trackEvent("login_attempt", { method: "email", success: !error });
+
     if (error) {
       setError("Identifiants incorrects. Veuillez réessayer.");
       setLoading(false);
@@ -38,6 +41,7 @@ function ConnexionForm() {
 
   async function handleGoogleLogin() {
     setError(null);
+    trackEvent("login_attempt", { method: "google" });
     const { error } = await signInWithGoogle();
     if (error) {
       setError("Impossible de se connecter avec Google. Veuillez réessayer.");
