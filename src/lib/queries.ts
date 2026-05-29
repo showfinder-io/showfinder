@@ -1,5 +1,6 @@
 import { createClient } from "@/lib/supabase/server";
 import { createStaticClient } from "@/lib/supabase/static";
+import { slugifyCity } from "@/lib/format";
 
 // Types helpers
 export type SalonCategory =
@@ -450,6 +451,56 @@ export async function getAllSalonSlugs() {
 
   if (error) throw error;
   return (data ?? []).map((s) => s.slug);
+}
+
+// ============================================================
+// Organisateurs (R32 : pages /organisateurs/[slug])
+// ============================================================
+
+/**
+ * Slugs distincts d'organisateurs (dérivés de organizer_name via slugify).
+ * Pour generateStaticParams → client statique (pas de cookies).
+ */
+export async function getAllOrganizerSlugs(): Promise<string[]> {
+  const supabase = createStaticClient();
+  const { data } = await supabase
+    .from("salons")
+    .select("organizer_name")
+    .eq("status", "published")
+    .not("organizer_name", "is", null);
+
+  const slugs = new Set<string>();
+  for (const row of data ?? []) {
+    const name = (row as { organizer_name: string | null }).organizer_name;
+    if (!name) continue;
+    const slug = slugifyCity(name);
+    if (slug) slugs.add(slug);
+  }
+  return [...slugs];
+}
+
+/**
+ * Salons d'un organisateur (match sur slugify(organizer_name)).
+ * Retourne le nom d'organisateur affichable + la liste des salons.
+ * Null si aucun salon ne correspond au slug.
+ */
+export async function getSalonsByOrganizer(slug: string) {
+  const supabase = await createClient();
+  const { data } = await supabase
+    .from("salons")
+    .select("id, organizer_name")
+    .eq("status", "published")
+    .not("organizer_name", "is", null);
+
+  const matching = (data ?? []).filter(
+    (s) => slugifyCity((s as { organizer_name: string }).organizer_name) === slug
+  );
+  if (matching.length === 0) return null;
+
+  const organizerName = (matching[0] as { organizer_name: string }).organizer_name;
+  const ids = matching.map((s) => (s as { id: string }).id);
+  const result = await getSalonsById(ids, { pageSize: 100 });
+  return { organizerName, ...result };
 }
 
 // ============================================================

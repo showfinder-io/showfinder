@@ -8,7 +8,7 @@ import {
   getSimilarSalons,
   SALON_CATEGORY_LABELS,
 } from "@/lib/queries";
-import { formatDateRange } from "@/lib/format";
+import { formatDateRange, slugifyCity } from "@/lib/format";
 import { SectorBadge } from "@/components/sector-badge";
 import { StatBlock } from "@/components/stat-block";
 import { SalonCard } from "@/components/salon-card";
@@ -309,7 +309,12 @@ export default async function SalonPage({ params }: Props) {
         <dl className="mt-8 grid gap-5 sm:grid-cols-2">
           {salon.organizer_name && (
             <Detail icon={<Building2 className="h-4 w-4" />} label="Organisateur">
-              {salon.organizer_name}
+              <Link
+                href={`/organisateurs/${slugifyCity(salon.organizer_name)}`}
+                className="underline decoration-prune/30 underline-offset-2 transition-colors hover:decoration-prune"
+              >
+                {salon.organizer_name}
+              </Link>
             </Detail>
           )}
           {salon.frequency && (
