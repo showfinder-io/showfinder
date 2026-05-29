@@ -231,7 +231,16 @@ export default async function SalonPage({ params }: Props) {
             <div className="flex items-center gap-2">
               <MapPin className="h-4 w-4" aria-hidden="true" />
               <span>
-                {salon.venue}
+                {salon.venue_slug ? (
+                  <Link
+                    href={`/lieux/${salon.venue_slug}`}
+                    className="underline decoration-prune/30 underline-offset-2 transition-colors hover:decoration-prune"
+                  >
+                    {salon.venue}
+                  </Link>
+                ) : (
+                  salon.venue
+                )}
                 {salon.city ? `, ${salon.city}` : ""}
               </span>
             </div>

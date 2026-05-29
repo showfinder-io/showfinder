@@ -342,7 +342,7 @@ export async function getSalonBySlug(slug: string) {
   const { data, error } = await supabase
     .from("salons")
     .select(
-      "*, salon_sectors(sector_id, sectors(id, slug, name)), salon_tags(id, label, category, color)"
+      "*, venues(slug), salon_sectors(sector_id, sectors(id, slug, name)), salon_tags(id, label, category, color)"
     )
     .eq("slug", slug)
     .eq("status", "published")
@@ -356,10 +356,16 @@ export async function getSalonBySlug(slug: string) {
 
   const tags = (data.salon_tags ?? []) as SalonTagRow[];
 
-  const { salon_sectors: _, salon_tags: __, ...rest } = data;
+  // Slug de la fiche lieu liée (R32 : lieu cliquable). Null si le salon n'a
+  // pas de venue_id rattaché à une fiche venue.
+  const venueSlug =
+    (data.venues as { slug: string } | null)?.slug ?? null;
 
-  return { ...rest, sectors, tags } as SalonWithSectors & {
+  const { salon_sectors: _, salon_tags: __, venues: ___, ...rest } = data;
+
+  return { ...rest, sectors, tags, venue_slug: venueSlug } as SalonWithSectors & {
     tags: SalonTagRow[];
+    venue_slug: string | null;
   };
 }
 
