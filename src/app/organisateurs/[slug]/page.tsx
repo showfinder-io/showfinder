@@ -27,6 +27,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title,
     description,
+    // Pages de navigation interne : 76% des organisateurs n'ont qu'1 salon
+    // (thin content). noindex pour ne pas exposer ces pages à l'index, follow
+    // pour préserver le maillage entre salons d'un même organisateur.
+    robots: { index: false, follow: true },
     alternates: { canonical: `${siteConfig.url}/organisateurs/${slug}` },
     openGraph: { title, description, type: "website" },
   };
