@@ -2,7 +2,7 @@
 // Usage côté server-only : route handlers, server actions. Jamais côté client (clé API).
 
 const BREVO_API_KEY = process.env.BREVO_API_KEY;
-const BREVO_FROM_EMAIL = process.env.BREVO_FROM_EMAIL ?? "contact@agoris.io";
+const BREVO_FROM_EMAIL = process.env.BREVO_FROM_EMAIL ?? "telemaque@agoris.io";
 const BREVO_FROM_NAME = "Agoris";
 
 type SendEmailParams = {
