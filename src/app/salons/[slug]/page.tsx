@@ -90,6 +90,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 const frequencyLabels: Record<string, string> = {
   annuel: "Annuel",
   bisannuel: "Bisannuel (tous les 2 ans)",
+  triennal: "Triennal (tous les 3 ans)",
   ponctuel: "Ponctuel",
 };
 
