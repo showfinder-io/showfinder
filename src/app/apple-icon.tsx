@@ -2,7 +2,9 @@ import { ImageResponse } from "next/og";
 
 // Convention Next.js : apple-icon.tsx génère /apple-icon.png à la racine
 // et insère automatiquement <link rel="apple-touch-icon" />.
-// PNG 180×180, fond Sable plein (iOS arrondit les coins automatiquement).
+// PNG 180×180, fond Prune plein (iOS arrondit les coins automatiquement).
+// Brief Nicolas 2026-05-29 : app icon iOS sur fond Prune pour faire
+// ressortir le symbole, cohérent avec favicon 16px+.
 
 export const size = {
   width: 180,
@@ -30,7 +32,7 @@ export default function AppleIcon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: SABLE,
+          background: PRUNE,
         }}
       >
         <svg
@@ -41,11 +43,11 @@ export default function AppleIcon() {
         >
           {/* Sommet — Ocre */}
           <circle cx="50" cy="28" r="5.5" fill={OCRE} />
-          {/* 4 points externes — Prune */}
-          <circle cx="71" cy="43" r="5" fill={PRUNE} />
-          <circle cx="29" cy="43" r="5" fill={PRUNE} />
-          <circle cx="63" cy="68" r="5" fill={PRUNE} />
-          <circle cx="37" cy="68" r="5" fill={PRUNE} />
+          {/* 4 points externes — Sable (inversion vs fond Prune) */}
+          <circle cx="71" cy="43" r="5" fill={SABLE} />
+          <circle cx="29" cy="43" r="5" fill={SABLE} />
+          <circle cx="63" cy="68" r="5" fill={SABLE} />
+          <circle cx="37" cy="68" r="5" fill={SABLE} />
           {/* Centre — Ocre */}
           <circle cx="50" cy="51" r="3" fill={OCRE} />
         </svg>
