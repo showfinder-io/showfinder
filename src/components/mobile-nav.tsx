@@ -18,6 +18,7 @@ import { useState } from "react";
 const navLinks = [
   { href: "/salons", label: "Salons" },
   { href: "/lieux", label: "Lieux" },
+  { href: "/secteurs", label: "Secteurs" },
   { href: "/prestataires", label: "Prestataires" },
   { href: "/blog", label: "Blog" },
 ];
