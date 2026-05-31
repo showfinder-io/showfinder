@@ -21,14 +21,30 @@ export const mdxComponents: MDXComponents = {
   p: ({ children }) => (
     <p className="mt-4 leading-7 text-ink/85">{children}</p>
   ),
-  a: ({ href, children }) => (
-    <Link
-      href={href ?? "#"}
-      className="font-medium text-accent underline underline-offset-4 transition-colors hover:text-accent-hover"
-    >
-      {children}
-    </Link>
-  ),
+  a: ({ href, children }) => {
+    const url = href ?? "#";
+    const isExternal = /^https?:\/\//i.test(url);
+    if (isExternal) {
+      return (
+        <a
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-medium text-accent underline underline-offset-4 transition-colors hover:text-accent-hover"
+        >
+          {children}
+        </a>
+      );
+    }
+    return (
+      <Link
+        href={url}
+        className="font-medium text-accent underline underline-offset-4 transition-colors hover:text-accent-hover"
+      >
+        {children}
+      </Link>
+    );
+  },
   ul: ({ children }) => (
     <ul className="mt-4 list-disc space-y-2 pl-6 text-ink/85">{children}</ul>
   ),

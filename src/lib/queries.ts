@@ -45,6 +45,8 @@ export type SalonRow = {
   category_to_confirm?: boolean;
   dates_confirmed?: boolean;
   is_agoris_certified?: boolean;
+  // Ajouté par migration 20260531200000 (separation orga / co-orga)
+  co_organizer_name?: string | null;
   created_at: string;
 };
 

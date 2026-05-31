@@ -317,6 +317,16 @@ export default async function SalonPage({ params }: Props) {
               </Link>
             </Detail>
           )}
+          {salon.co_organizer_name && (
+            <Detail icon={<Building2 className="h-4 w-4" />} label="Co-organisateur">
+              <Link
+                href={`/organisateurs/${slugifyCity(salon.co_organizer_name)}`}
+                className="underline decoration-prune/30 underline-offset-2 transition-colors hover:decoration-prune"
+              >
+                {salon.co_organizer_name}
+              </Link>
+            </Detail>
+          )}
           {salon.frequency && (
             <Detail icon={<RotateCcw className="h-4 w-4" />} label="Fréquence">
               {frequencyLabels[salon.frequency] ?? salon.frequency}
@@ -349,6 +359,12 @@ export default async function SalonPage({ params }: Props) {
             {formatEditorialMonth(salonContent.frontmatter.updated)}
           </p>
           <MdxContent />
+          <p className="mt-12 border-t border-border pt-6 text-xs italic leading-relaxed text-muted">
+            Sauf mention explicite, toutes les données factuelles de cette
+            fiche proviennent du site officiel de l&apos;organisateur
+            {salon.website_url ? ` (${new URL(salon.website_url).hostname.replace(/^www\./, "")})` : ""}
+            .
+          </p>
         </article>
       )}
 
