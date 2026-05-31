@@ -87,10 +87,17 @@ export function SalonCard({ salon }: SalonCardProps) {
           )}
         </div>
 
-        {/* Triptyque vital : grid asymétrique 2fr 1fr 1fr (Dates plus large). */}
+        {/* Triptyque vital : grid asymétrique. minmax(0, ...) pour que les
+            colonnes acceptent de shrinker (sinon les nombres a 6 chiffres
+            comme "120 000" forcent la colonne au-dela du cadre). Ratio
+            Visiteurs >= Dates car les nombres a 6 chiffres prennent plus
+            de place que les dates wrappees. */}
         <dl
           className="mt-auto grid gap-4 border-t border-border pt-4"
-          style={{ gridTemplateColumns: "2fr 1fr 1fr" }}
+          style={{
+            gridTemplateColumns:
+              "minmax(0, 1.4fr) minmax(0, 1.6fr) minmax(0, 1fr)",
+          }}
         >
           <Stat
             label="Dates"
@@ -132,11 +139,11 @@ export function SalonCard({ salon }: SalonCardProps) {
 
 function Stat({ label, value }: { label: string; value: string | null }) {
   return (
-    <div>
+    <div className="min-w-0">
       <dt className="font-mono text-[10px] uppercase tracking-[0.16em] text-muted">
         {label}
       </dt>
-      <dd className="mt-1.5 font-serif text-[22px] font-normal leading-[1.1] tracking-[-0.01em] text-prune">
+      <dd className="mt-1.5 font-serif text-[22px] font-normal leading-[1.1] tracking-[-0.01em] tabular-nums text-prune">
         {value ?? <span className="text-muted">·</span>}
       </dd>
     </div>
