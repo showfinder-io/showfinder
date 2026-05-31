@@ -361,7 +361,7 @@ export default async function SalonPage({ params }: Props) {
           <MdxContent />
           <p className="mt-12 border-t border-border pt-6 text-xs italic leading-relaxed text-muted">
             Sauf mention explicite, toutes les données factuelles de cette
-            fiche proviennent du site officiel de l'organisateur
+            fiche proviennent du site officiel de l&apos;organisateur
             {salon.website_url ? ` (${new URL(salon.website_url).hostname.replace(/^www\./, "")})` : ""}
             .
           </p>
