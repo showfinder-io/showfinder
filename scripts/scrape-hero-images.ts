@@ -17,6 +17,7 @@
 // Usage : npm exec -- tsx --env-file=.env.local scripts/scrape-hero-images.ts
 
 import * as cheerio from "cheerio";
+import imageSize from "image-size";
 import { createClient } from "@supabase/supabase-js";
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -29,6 +30,45 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 
 const TIMEOUT_MS = 12000;
 const SLEEP_MS = 800; // throttling soft pour eviter le ban anti-bot
+
+// Validation dimensions (cf. scripts/validate-covers.ts) :
+// l'image doit etre 16:9-ish et au moins 800px de large pour bien rendre
+// dans le aspect-video object-cover des fiches salons.
+const MIN_WIDTH = 800;
+const MIN_RATIO = 1.4;
+const MAX_RATIO = 2.4;
+
+async function fetchImageDimensions(url: string): Promise<{ width: number; height: number } | null> {
+  try {
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), TIMEOUT_MS);
+    const res = await fetch(url, {
+      signal: ctrl.signal,
+      headers: {
+        "User-Agent":
+          "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127 Safari/537.36",
+        Range: "bytes=0-65535",
+      },
+    });
+    clearTimeout(timer);
+    if (!res.ok && res.status !== 206) return null;
+    const buf = Buffer.from(await res.arrayBuffer());
+    const dim = imageSize(buf);
+    if (!dim.width || !dim.height) return null;
+    return { width: dim.width, height: dim.height };
+  } catch {
+    return null;
+  }
+}
+
+/** Verifie que l'image candidate respecte les criteres de rendu 16:9. */
+async function validateCandidate(url: string): Promise<boolean> {
+  const dim = await fetchImageDimensions(url);
+  if (!dim) return false;
+  if (dim.width < MIN_WIDTH) return false;
+  const ratio = dim.width / dim.height;
+  return ratio >= MIN_RATIO && ratio <= MAX_RATIO;
+}
 
 function sleep(ms: number) {
   return new Promise((r) => setTimeout(r, ms));
@@ -203,6 +243,15 @@ async function main() {
     const hero = pickHero(html, salon.website_url);
     if (!hero) {
       console.log("∅ no image found");
+      result.no_image++;
+      await sleep(SLEEP_MS);
+      continue;
+    }
+
+    // Validation dimensions (rejette ratios < 1.4 ou > 2.4, ou width < 800).
+    const valid = await validateCandidate(hero);
+    if (!valid) {
+      console.log(`∅ dimensions invalides (${hero.slice(0, 60)}...)`);
       result.no_image++;
       await sleep(SLEEP_MS);
       continue;
