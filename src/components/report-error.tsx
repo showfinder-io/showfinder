@@ -22,8 +22,19 @@ const FIELD_OPTIONS = [
 
 type Status = "idle" | "submitting" | "success" | "error";
 
-export function ReportError({ salonSlug }: { salonSlug: string }) {
-  const [open, setOpen] = useState(false);
+/**
+ * Sheet contrôlée pour signaler une erreur. Réutilisable depuis n'importe
+ * quel composant qui gère son propre `open` (ex : SalonActionsBar 3-dots).
+ */
+export function ReportErrorSheet({
+  salonSlug,
+  open,
+  onOpenChange,
+}: {
+  salonSlug: string;
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
+}) {
   const [field, setField] = useState("");
   const [correction, setCorrection] = useState("");
   const [email, setEmail] = useState("");
@@ -54,9 +65,8 @@ export function ReportError({ salonSlug }: { salonSlug: string }) {
   }
 
   function handleOpenChange(nextOpen: boolean) {
-    setOpen(nextOpen);
+    onOpenChange(nextOpen);
     if (!nextOpen) {
-      // Réinitialiser le formulaire à la fermeture
       setTimeout(() => {
         setField("");
         setCorrection("");
@@ -68,15 +78,6 @@ export function ReportError({ salonSlug }: { salonSlug: string }) {
 
   return (
     <Sheet open={open} onOpenChange={handleOpenChange}>
-      <SheetTrigger
-        render={
-          <button className="mt-8 inline-flex items-center gap-1.5 text-sm text-muted hover:text-ink transition-colors cursor-pointer" />
-        }
-      >
-        <Flag className="h-3.5 w-3.5" />
-        Une information incorrecte ? Signaler une erreur
-      </SheetTrigger>
-
       <SheetContent side="bottom" className="rounded-t-xl max-h-[85vh] overflow-y-auto">
         <SheetHeader>
           <SheetTitle>Signaler une erreur</SheetTitle>
@@ -95,7 +96,6 @@ export function ReportError({ salonSlug }: { salonSlug: string }) {
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="flex flex-col gap-4 px-4 pb-6">
-            {/* Champ concerné */}
             <div className="flex flex-col gap-1.5">
               <label htmlFor="report-field" className="text-sm font-medium">
                 Quel champ est incorrect ?
@@ -118,7 +118,6 @@ export function ReportError({ salonSlug }: { salonSlug: string }) {
               </select>
             </div>
 
-            {/* Correction */}
             <div className="flex flex-col gap-1.5">
               <label htmlFor="report-correction" className="text-sm font-medium">
                 Quelle est la bonne information ?
@@ -134,7 +133,6 @@ export function ReportError({ salonSlug }: { salonSlug: string }) {
               />
             </div>
 
-            {/* Email optionnel */}
             <div className="flex flex-col gap-1.5">
               <label htmlFor="report-email" className="text-sm font-medium">
                 Votre email{" "}
@@ -174,5 +172,25 @@ export function ReportError({ salonSlug }: { salonSlug: string }) {
         )}
       </SheetContent>
     </Sheet>
+  );
+}
+
+/** Wrapper legacy : bouton trigger inline + sheet auto-gérée. */
+export function ReportError({ salonSlug }: { salonSlug: string }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <>
+      <Sheet open={open} onOpenChange={setOpen}>
+        <SheetTrigger
+          render={
+            <button className="mt-8 inline-flex items-center gap-1.5 text-sm text-muted hover:text-ink transition-colors cursor-pointer" />
+          }
+        >
+          <Flag className="h-3.5 w-3.5" />
+          Une information incorrecte ? Signaler une erreur
+        </SheetTrigger>
+      </Sheet>
+      <ReportErrorSheet salonSlug={salonSlug} open={open} onOpenChange={setOpen} />
+    </>
   );
 }

@@ -9,12 +9,11 @@ import {
   SALON_CATEGORY_LABELS,
 } from "@/lib/queries";
 import { formatDateRange, slugifyCity } from "@/lib/format";
-import { AddToAgenda } from "@/components/add-to-agenda";
+import { SalonActionsBar } from "@/components/salon-actions-bar";
 import { SectorBadge } from "@/components/sector-badge";
 import { StatBlock } from "@/components/stat-block";
 import { SalonCard } from "@/components/salon-card";
 import { ProviderDrawer } from "@/components/provider-drawer";
-import { ReportError } from "@/components/report-error";
 import { AlertSubscribe } from "@/components/alert-subscribe";
 import { ReviewList } from "@/components/review-list";
 import { ReviewForm } from "@/components/review-form";
@@ -217,30 +216,44 @@ export default async function SalonPage({ params }: Props) {
           </p>
         )}
 
-        {/* Meta : dates + lieu */}
-        <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted">
-          <div className="flex items-center gap-2">
-            <Calendar className="h-4 w-4" aria-hidden="true" />
-            <span>{formatDateRange(salon.start_date, salon.end_date)}</span>
-          </div>
-          {salon.venue && (
+        {/* Meta : dates + lieu (gauche) + barre d'actions (droite) */}
+        <div className="mt-6 flex flex-wrap items-start justify-between gap-4">
+          <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted">
             <div className="flex items-center gap-2">
-              <MapPin className="h-4 w-4" aria-hidden="true" />
-              <span>
-                {salon.venue_slug ? (
-                  <Link
-                    href={`/lieux/${salon.venue_slug}`}
-                    className="underline decoration-prune/30 underline-offset-2 transition-colors hover:decoration-prune"
-                  >
-                    {salon.venue}
-                  </Link>
-                ) : (
-                  salon.venue
-                )}
-                {salon.city ? `, ${salon.city}` : ""}
-              </span>
+              <Calendar className="h-4 w-4" aria-hidden="true" />
+              <span>{formatDateRange(salon.start_date, salon.end_date)}</span>
             </div>
-          )}
+            {salon.venue && (
+              <div className="flex items-center gap-2">
+                <MapPin className="h-4 w-4" aria-hidden="true" />
+                <span>
+                  {salon.venue_slug ? (
+                    <Link
+                      href={`/lieux/${salon.venue_slug}`}
+                      className="underline decoration-prune/30 underline-offset-2 transition-colors hover:decoration-prune"
+                    >
+                      {salon.venue}
+                    </Link>
+                  ) : (
+                    salon.venue
+                  )}
+                  {salon.city ? `, ${salon.city}` : ""}
+                </span>
+              </div>
+            )}
+          </div>
+
+          <SalonActionsBar
+            slug={slug}
+            name={salon.name}
+            editionYear={salon.edition_year}
+            startDate={salon.start_date}
+            endDate={salon.end_date}
+            city={salon.city}
+            venue={salon.venue}
+            sectorLabel={salon.sectors[0]?.name}
+            shortDescription={salon.description}
+          />
         </div>
 
         {/* Tags editoriaux (curation Agoris) */}
@@ -329,18 +342,6 @@ export default async function SalonPage({ params }: Props) {
           )}
         </dl>
 
-        {/* Ajouter à l'agenda — brief évolutions juin 2026 §3 */}
-        <AddToAgenda
-          slug={slug}
-          name={salon.name}
-          editionYear={salon.edition_year}
-          startDate={salon.start_date}
-          endDate={salon.end_date}
-          city={salon.city}
-          venue={salon.venue}
-          sectorLabel={salon.sectors[0]?.name}
-          shortDescription={salon.description}
-        />
       </section>
 
       {/* 4. BLOC VISUEL — uniquement si photo réelle scrapable (pas de fallback) */}
@@ -394,9 +395,6 @@ export default async function SalonPage({ params }: Props) {
           <ReviewForm targetType="salon" targetId={salon.id} />
         </div>
       </section>
-
-      {/* Signaler une erreur (rendu via composant) */}
-      <ReportError salonSlug={slug} />
 
       {/* 7. SALONS SIMILAIRES */}
       {similarSalons.length > 0 && (
