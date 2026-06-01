@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Fraunces } from "next/font/google";
+import { Inter, Fraunces, JetBrains_Mono } from "next/font/google";
 import { siteConfig } from "@/lib/config";
 import { GoogleAnalytics } from "@/components/google-analytics";
 import { cn } from "@/lib/utils";
@@ -24,6 +24,15 @@ const fraunces = Fraunces({
   axes: ["opsz"],
 });
 
+// JetBrains Mono : labels, coordonnées GPS, méta visuels SalonVisual/VenueVisual.
+// Poids 400 + 500 (cf. brief visuels).
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-jetbrains-mono",
+  weight: ["400", "500"],
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
@@ -39,7 +48,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className={cn(inter.variable, fraunces.variable)}>
+    <html lang="fr" className={cn(inter.variable, fraunces.variable, jetbrainsMono.variable)}>
       <body className="flex min-h-screen flex-col bg-sable text-prune font-sans antialiased">
         <Header />
         <main className="flex-1">{children}</main>

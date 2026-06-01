@@ -47,6 +47,8 @@ export type SalonRow = {
   is_agoris_certified?: boolean;
   // Ajouté par migration 20260531200000 (separation orga / co-orga)
   co_organizer_name?: string | null;
+  // Ajouté par migration 20260601400000 (numero d'edition humain)
+  edition_number?: number | null;
   created_at: string;
 };
 

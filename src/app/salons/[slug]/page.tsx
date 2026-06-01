@@ -8,7 +8,8 @@ import {
   getSimilarSalons,
   SALON_CATEGORY_LABELS,
 } from "@/lib/queries";
-import { formatDateRange, slugifyCity } from "@/lib/format";
+import { formatDateRange, formatDateRangeArrow, slugifyCity } from "@/lib/format";
+import { SalonVisualResponsive } from "@/components/salon-visual-responsive";
 import { SectorBadge } from "@/components/sector-badge";
 import { StatBlock } from "@/components/stat-block";
 import { SalonCard } from "@/components/salon-card";
@@ -20,7 +21,6 @@ import { ReviewForm } from "@/components/review-form";
 import { JsonLd } from "@/components/json-ld";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-jsonld";
 import { AgorisCertifiedBadge } from "@/components/agoris-certified-badge";
-import { PhotoPlaceholder } from "@/components/photo-placeholder";
 import { SalonOutboundLink } from "@/components/salon-outbound-link";
 import { getSalonContent } from "@/lib/salon-content";
 import { formatEditorialMonth } from "@/lib/sector-content";
@@ -286,7 +286,18 @@ export default async function SalonPage({ params }: Props) {
             className="aspect-video w-full object-cover"
           />
         ) : (
-          <PhotoPlaceholder ratio="16/9" label="salon prof." variant="sable" />
+          <SalonVisualResponsive
+            name={salon.name}
+            sectorLabel={salon.sectors[0]?.name}
+            sectorDbSlug={salon.sectors[0]?.slug}
+            city={[salon.venue, salon.city].filter(Boolean).join(", ")}
+            dates={formatDateRangeArrow(salon.start_date, salon.end_date)}
+            edition={
+              salon.edition_number
+                ? `Éd. ${salon.edition_number}ᵉ`
+                : undefined
+            }
+          />
         )}
       </section>
 

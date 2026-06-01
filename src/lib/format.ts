@@ -43,6 +43,46 @@ export function formatDateRange(
   return `${formatDateShort(startDate)} - ${formatDate(endDate)}`;
 }
 
+/**
+ * Variante avec flèche → comme séparateur, pour les visuels de marque
+ * (SalonVisual). Conserve la logique de compression mois/année.
+ */
+export function formatDateRangeArrow(
+  startDate: string | null,
+  endDate: string | null
+): string {
+  if (!startDate) return "Dates à confirmer";
+  if (!endDate) return formatDate(startDate);
+
+  const start = new Date(startDate);
+  const end = new Date(endDate);
+
+  if (
+    start.getMonth() === end.getMonth() &&
+    start.getFullYear() === end.getFullYear()
+  ) {
+    return `${start.getDate()} → ${formatDate(endDate)}`;
+  }
+
+  return `${formatDateShort(startDate)} → ${formatDate(endDate)}`;
+}
+
+/**
+ * Convertit lat/lng en chaînes formatées style "48.8316° N" / "2.2877° E".
+ * Pour la signature cartographique des visuels VenueVisual.
+ */
+export function formatGpsLat(lat: number | null): string | null {
+  if (lat === null || lat === undefined) return null;
+  const cardinal = lat >= 0 ? "N" : "S";
+  return `${Math.abs(lat).toFixed(4)}° ${cardinal}`;
+}
+
+export function formatGpsLng(lng: number | null): string | null {
+  if (lng === null || lng === undefined) return null;
+  const cardinal = lng >= 0 ? "E" : "W";
+  return `${Math.abs(lng).toFixed(4)}° ${cardinal}`;
+}
+
 export function formatNumber(n: number | null): string {
   if (n === null || n === undefined) return "";
   return new Intl.NumberFormat("fr-FR").format(n);

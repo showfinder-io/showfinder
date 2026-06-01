@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { PhotoPlaceholder } from "@/components/photo-placeholder";
-import { formatNumber } from "@/lib/format";
+import { VenueVisualResponsive } from "@/components/venue-visual-responsive";
+import { formatGpsLat, formatGpsLng, formatNumber } from "@/lib/format";
 import type { VenueRow } from "@/lib/queries";
 
 type VenueCardProps = {
@@ -26,7 +26,7 @@ export function VenueCard({ venue, salonCount }: VenueCardProps) {
         className="flex h-full flex-col focus:outline-none focus-visible:ring-2 focus-visible:ring-ocre focus-visible:ring-offset-2 focus-visible:ring-offset-sable"
         aria-label={`${venue.name}, ${venue.city}`}
       >
-        {/* Photo ou placeholder */}
+        {/* Photo ou visuel de marque (fallback brief juin 2026) */}
         {venue.photo_url ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
@@ -36,7 +36,25 @@ export function VenueCard({ venue, salonCount }: VenueCardProps) {
             loading="lazy"
           />
         ) : (
-          <PhotoPlaceholder ratio="3/2" label="lieu" />
+          <VenueVisualResponsive
+            name={venue.name}
+            city={venue.city ?? undefined}
+            surface={
+              venue.total_surface_sqm
+                ? `${formatNumber(venue.total_surface_sqm)} m²`
+                : undefined
+            }
+            salons={
+              salonCount !== undefined
+                ? `${salonCount} salon${salonCount > 1 ? "s" : ""} hébergé${
+                    salonCount > 1 ? "s" : ""
+                  }`
+                : undefined
+            }
+            lat={formatGpsLat(venue.lat) ?? undefined}
+            lon={formatGpsLng(venue.lng) ?? undefined}
+            ratio={3 / 2}
+          />
         )}
 
         <div className="flex flex-1 flex-col gap-4 p-7">
