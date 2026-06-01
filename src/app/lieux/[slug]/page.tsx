@@ -37,9 +37,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     venue.description ||
     `Découvrez tous les salons professionnels au ${venue.name} (${venue.city}) sur ${siteConfig.name}.`;
 
+  // Un lieu n'est indexable que si la fiche est riche : description ≥ 80 chars
+  // + adresse + surface. Sinon coquille vide → noindex,follow.
+  const descLen = (venue.description ?? "").trim().length;
+  const hasAddress = ((venue.address ?? "").trim().length) > 0;
+  const hasSurface = (venue.total_surface_sqm ?? 0) > 0;
+  const isRich = descLen >= 80 && hasAddress && hasSurface;
+
   return {
     title,
     description,
+    robots: isRich
+      ? { index: true, follow: true }
+      : { index: false, follow: true },
     alternates: {
       canonical: `${siteConfig.url}/lieux/${slug}`,
     },

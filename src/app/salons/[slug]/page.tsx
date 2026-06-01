@@ -59,20 +59,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     salon.seo_description ||
     `${salon.name} : dates, lieu, exposants et informations pratiques sur ${siteConfig.name}.`;
 
-  // Fiches sans contenu editorial : noindex,follow le temps que la pipeline
-  // editoriale Nicolas remplisse soit le champ description, soit un MDX
-  // (content/salons/[slug].mdx). Eviter d'envoyer du contenu pauvre dans
-  // l'index Google. Coherent avec methodologie.mdx : "si la donnee n'existe
-  // pas, elle ne s'affiche pas" applique aussi a "elle n'est pas indexee".
-  const hasDescription =
-    typeof salon.description === "string" && salon.description.trim().length > 0;
+  // Une fiche n'est indexable que si elle a un MDX éditorial dans
+  // content/salons/[slug].mdx. La description en DB ne suffit pas : trop
+  // courte pour faire un contenu de qualité Google.
   const hasEditorialMdx = getSalonContent(slug) !== null;
-  const hasEditorialContent = hasDescription || hasEditorialMdx;
 
   return {
     title,
     description,
-    robots: hasEditorialContent
+    robots: hasEditorialMdx
       ? { index: true, follow: true }
       : { index: false, follow: true },
     alternates: {

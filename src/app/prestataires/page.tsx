@@ -15,6 +15,7 @@ import { SectionTitle } from "@/components/section-title";
 export const metadata: Metadata = {
   title: "Prestataires événementiels",
   description: `Trouvez les meilleurs prestataires pour votre salon professionnel sur ${siteConfig.name} : standistes, traiteurs, audiovisuel, photographes.`,
+  robots: { index: false, follow: true },
   alternates: {
     canonical: `${siteConfig.url}/prestataires`,
   },
