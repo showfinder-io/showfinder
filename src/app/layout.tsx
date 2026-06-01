@@ -35,16 +35,15 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
-  // Icons : override Next.js auto-generation pour eviter le query string
-  // malforme (`?favicon.hash.ico`) qui plante Safari macOS (autre Claude
-  // diagnostic juin 2026). URLs propres servies via les fichiers app/.
+  // Icons : 3 fichiers statiques en /public, pas de route dynamique.
+  // Safari macOS a un cache favicon agressif et déteste les routes app/icon.tsx
+  // qui servent en `Cache-Control: max-age=...`. Standard Apple = .ico + 32px PNG + 180px Apple.
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "32x32", type: "image/x-icon" },
-      { url: "/icon.svg", type: "image/svg+xml" },
-      { url: "/icon", sizes: "32x32", type: "image/png" },
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", type: "image/png", sizes: "32x32" },
     ],
-    apple: { url: "/apple-icon", sizes: "180x180", type: "image/png" },
+    apple: { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
   },
   title: {
     default: siteConfig.name,
