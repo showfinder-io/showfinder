@@ -26,6 +26,7 @@ import { getSalonContent } from "@/lib/salon-content";
 import { formatEditorialMonth } from "@/lib/sector-content";
 import { compileMdxContent } from "@/lib/mdx";
 import { salonMdxComponents } from "@/components/mdx/salon-mdx-components";
+import { FeedbackPrompt } from "@/components/feedback-prompt";
 import {
   MapPin,
   Calendar,
@@ -404,6 +405,7 @@ export default async function SalonPage({ params }: Props) {
           </div>
         </section>
       )}
+      <FeedbackPrompt salonName={salon.name} />
     </article>
   );
 }
