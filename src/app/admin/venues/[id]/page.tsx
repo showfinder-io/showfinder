@@ -39,6 +39,24 @@ export default function AdminVenueEditPage() {
     setSuccess(false);
 
     const form = new FormData(e.currentTarget);
+
+    // V6 gallery : JSON parsé depuis textarea
+    let galleryParsed: unknown = [];
+    const galleryRaw = String(form.get("gallery") ?? "").trim();
+    if (galleryRaw) {
+      try {
+        galleryParsed = JSON.parse(galleryRaw);
+      } catch {
+        setError(
+          "Galerie JSON invalide. Format attendu : [{ \"url\": \"...\", \"caption\": \"...\" }, ...]"
+        );
+        setSaving(false);
+        return;
+      }
+    }
+
+    const editorialMdx = String(form.get("editorial_mdx") ?? "");
+
     const data: VenueData = {
       name: form.get("name"),
       slug: form.get("slug"),
@@ -53,6 +71,11 @@ export default function AdminVenueEditPage() {
       description: form.get("description") || null,
       google_maps_url: form.get("google_maps_url") || null,
       photo_url: form.get("photo_url") || null,
+      // V6 — fiches lieux enrichies
+      halls_count: form.get("halls_count") ? Number(form.get("halls_count")) : null,
+      editorial_mdx: editorialMdx || null,
+      ...(editorialMdx && { editorial_updated_at: new Date().toISOString() }),
+      gallery: galleryParsed,
     };
 
     try {
@@ -180,6 +203,73 @@ export default function AdminVenueEditPage() {
         <div>
           <label className={labelClass}>URL photo</label>
           <input name="photo_url" type="url" defaultValue={field(d, "photo_url")} className={inputClass} />
+        </div>
+
+        {/* V6 — Fiches lieux enrichies */}
+        <div className="border-t border-border pt-5">
+          <h2 className="font-serif text-lg font-semibold text-ink">
+            Contenu éditorial V6
+          </h2>
+          <p className="mt-1 text-xs text-muted">
+            Nombre de halls, MDX éditorial (description longue, accès, services,
+            actualités), galerie photos. Affichage public sur la fiche lieu.
+          </p>
+        </div>
+
+        <div>
+          <label className={labelClass}>Nombre de halls</label>
+          <input
+            name="halls_count"
+            type="number"
+            defaultValue={field(d, "halls_count")}
+            className={inputClass}
+            placeholder="ex: 8"
+          />
+        </div>
+
+        <div>
+          <label className={labelClass}>
+            Contenu éditorial (MDX)
+            {d.editorial_updated_at ? (
+              <span className="ml-2 text-xs font-normal text-muted">
+                Maj :{" "}
+                {new Date(d.editorial_updated_at as string).toLocaleDateString(
+                  "fr-FR"
+                )}
+              </span>
+            ) : null}
+          </label>
+          <p className="mt-1 text-xs text-muted">
+            Format Markdown enrichi. Sections type : ## Description, ## Halls,
+            ## Accès & transports, ## Services sur site, ## Actualités. Liens,
+            listes, tableaux supportés.
+          </p>
+          <textarea
+            name="editorial_mdx"
+            rows={18}
+            defaultValue={field(d, "editorial_mdx")}
+            placeholder={`## Description\n\nLe parc des expositions...\n\n## Halls\n\n- Hall 1 : ...\n\n## Accès & transports\n\n- Métro 12 : Porte de Versailles\n...`}
+            className={`${inputClass} font-mono text-xs`}
+          />
+        </div>
+
+        <div>
+          <label className={labelClass}>Galerie photos (JSON)</label>
+          <p className="mt-1 text-xs text-muted">
+            Tableau JSON :{" "}
+            <code className="rounded bg-ivoire px-1 text-[10px]">
+              [{"{ "}&quot;url&quot;: &quot;...&quot;, &quot;caption&quot;: &quot;...&quot;{" }"}, ...]
+            </code>
+          </p>
+          <textarea
+            name="gallery"
+            rows={4}
+            defaultValue={
+              Array.isArray(d.gallery) ? JSON.stringify(d.gallery, null, 2) : "[]"
+            }
+            placeholder='[{"url": "https://...", "caption": "Hall 7 niveau 3"}]'
+            className={`${inputClass} font-mono text-xs`}
+          />
         </div>
 
         <button

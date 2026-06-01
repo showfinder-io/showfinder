@@ -676,6 +676,11 @@ export async function getAllCitySlugs() {
 // Venues (lieux d'exposition)
 // ============================================================
 
+export type VenueGalleryItem = {
+  url: string;
+  caption?: string;
+};
+
 export type VenueRow = {
   id: string;
   slug: string;
@@ -691,6 +696,11 @@ export type VenueRow = {
   description: string | null;
   photo_url: string | null;
   google_maps_url: string | null;
+  // V6 — fiches lieux enrichies
+  editorial_mdx?: string | null;
+  editorial_updated_at?: string | null;
+  halls_count?: number | null;
+  gallery?: VenueGalleryItem[];
   created_at: string;
 };
 

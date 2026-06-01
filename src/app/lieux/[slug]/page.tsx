@@ -6,13 +6,22 @@ import {
   getAllVenueSlugs,
   getVenueBySlug,
   getSalonsByVenue,
+  type VenueGalleryItem,
 } from "@/lib/queries";
 import { formatNumber } from "@/lib/format";
+import { compileMdxContent } from "@/lib/mdx";
+import { mdxComponents } from "@/components/mdx-components";
 import { SalonCard } from "@/components/salon-card";
 import { JsonLd } from "@/components/json-ld";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-jsonld";
 import { VenueOutboundLink } from "@/components/venue-outbound-link";
-import { MapPin, ExternalLink, Maximize2, Globe } from "lucide-react";
+import {
+  MapPin,
+  ExternalLink,
+  Maximize2,
+  Globe,
+  Building2,
+} from "lucide-react";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -68,6 +77,16 @@ export default async function VenuePage({ params }: Props) {
   if (!venue) notFound();
 
   const salons = await getSalonsByVenue(venue.id);
+
+  // V6 — MDX éditorial (description longue, halls, accès, services,
+  // actualités) render comme sur les salons.
+  const MdxContent = venue.editorial_mdx
+    ? await compileMdxContent(venue.editorial_mdx, mdxComponents)
+    : null;
+
+  const gallery: VenueGalleryItem[] = Array.isArray(venue.gallery)
+    ? venue.gallery
+    : [];
 
   // Separer salons a venir / passes
   const today = new Date().toISOString().split("T")[0];
@@ -130,16 +149,22 @@ export default async function VenuePage({ params }: Props) {
       <div className="mt-4 flex flex-wrap gap-4 text-sm text-muted">
         <div className="flex items-center gap-1.5">
           <MapPin className="h-4 w-4" />
-          <span>
-            {venue.address ? `${venue.address}` : venue.city}
-          </span>
+          <span>{venue.address ? `${venue.address}` : venue.city}</span>
         </div>
-        {venue.total_surface_sqm && (
+        {venue.total_surface_sqm ? (
           <div className="flex items-center gap-1.5">
             <Maximize2 className="h-4 w-4" />
             <span>{formatNumber(venue.total_surface_sqm)} m² de surface</span>
           </div>
-        )}
+        ) : null}
+        {venue.halls_count ? (
+          <div className="flex items-center gap-1.5">
+            <Building2 className="h-4 w-4" />
+            <span>
+              {venue.halls_count} hall{venue.halls_count > 1 ? "s" : ""}
+            </span>
+          </div>
+        ) : null}
       </div>
 
       {/* Liens externes */}
@@ -168,9 +193,43 @@ export default async function VenuePage({ params }: Props) {
         )}
       </div>
 
-      {/* Description */}
+      {/* Description courte (toujours visible, vient de la DB) */}
       {venue.description && (
         <p className="mt-6 leading-relaxed text-muted">{venue.description}</p>
+      )}
+
+      {/* Galerie photos (V6) */}
+      {gallery.length > 0 && (
+        <section className="mt-10">
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {gallery.map((img, i) => (
+              <figure
+                key={i}
+                className="overflow-hidden rounded-lg border border-border bg-sable"
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={img.url}
+                  alt={img.caption ?? venue.name}
+                  className="aspect-video w-full object-cover"
+                  loading="lazy"
+                />
+                {img.caption && (
+                  <figcaption className="px-3 py-2 text-xs text-muted">
+                    {img.caption}
+                  </figcaption>
+                )}
+              </figure>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* MDX éditorial (V6) : halls, accès, services, actualités… */}
+      {MdxContent && (
+        <article className="prose-agoris mt-10 max-w-3xl">
+          <MdxContent />
+        </article>
       )}
 
       {/* Prochains salons */}
