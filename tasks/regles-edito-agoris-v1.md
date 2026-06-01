@@ -1,11 +1,11 @@
-# Règles édito Agoris — Référentiel unique v1
+# Règles édito Agoris — Référentiel unique v2
 
 > Consolidation des **33 règles canoniques Nicolas** (R1-R33, cohortes 1-2 BTP)
-> et des **30 règles RR Dream** issues des cohortes 1-5 (RR1-RR30).
-> Date : 2026-06-01. À injecter in extenso dans le brief writer cohorte 6+.
+> et des **36 règles RR Dream** issues des cohortes 1-6 (RR1-RR36).
+> Date : 2026-06-01 (v2 post-cohorte 6). À injecter in extenso dans le brief writer cohorte 7+.
 
-**Statut** : 63 règles formalisées au total. R1-R33 = canoniques (Nicolas).
-RR1-RR30 = candidates Dream consolidées (5 cohortes, 84 fiches observées).
+**Statut** : 69 règles formalisées au total. R1-R33 = canoniques (Nicolas).
+RR1-RR36 = candidates Dream consolidées (6 cohortes, 113 fiches observées).
 
 ---
 
@@ -104,6 +104,15 @@ RR1-RR30 = candidates Dream consolidées (5 cohortes, 84 fiches observées).
 - **RR28** Confusion de programme entre salons concurrents : vérifier que les programmes RSE / awards cités appartiennent bien au salon, pas à un concurrent (ex. « Econogy » = Messe Frankfurt, pas Première Vision).
 - **RR29** Tarifs / chiffres exposants : « indicatif sectoriel » obligatoire si non publié officiellement. Jamais affirmer un tarif chiffré sans URL site officiel.
 - **RR30** Présidents / curateurs / jurys : changent à chaque édition. Toujours préciser l'année (2025 vs 2026 vs 2027) ou ne pas affirmer.
+
+### RR31-RR36 (cohorte 6, 29 fiches + 42 MAJEUR détectées)
+
+- **RR31** **Comexposium en sortie 2024-2025**. Pour tout salon attribué à Comexposium dans le brief, vérification renforcée mentions légales actuelles. 5 transferts détectés : SIMA + SITEVI → AgriVitiEvents (avril 2025) ; Europain → GL Events + Ekip (janvier 2025, rebrand Sirha Bake & Snack) ; Innov-Agri → Groupe NGPA ; Vinitech-Sifel → BEAM (octobre 2022).
+- **RR32** **Slug DB stale**. Un slug DB peut référencer une édition obsolète (année différente de la prochaine édition). Maintenir slug pour SEO mais clarifier dans L'Essentiel. Ex. : sia-paris-2026 → édition 2027, egast-strasbourg-2027 → édition 2028, world-nuclear-exhibition-2026 → édition 2027.
+- **RR33** **Vérifier existence autonome avant écriture**. Plusieurs salons historiques fusionnés : Smart Industries / Industrie / Midest / Tolexpo → Global Industrie (2018) ; E-Commerce Paris + Equipmag → Paris Retail Week (2015) → NRF (2025) ; Europain → Sirha Bake & Snack (2025) ; FIC → Forum InCyber Europe (2024). Si fusionné : fiche LEGACY SEO courte + redirect 301.
+- **RR34** **Doublons sémantiques de slugs DB**. Fuzzy match `tokens-shared` entre slugs DB sans MDX et MDX existants avant cohorte. Ex. : equiphotel ↔ equip-hotel, mif-expo-paris ↔ mif-expo, secuexpo ↔ expoprotection. DELETE doublon DB + redirect 301 vers canonique.
+- **RR35** **Cycle bisannuel décalé par Covid 2020**. Pour bisannuels créés avant 2020, vérifier l'historique 2018-2021 (présence/absence report Covid) avant d'affirmer "années paires/impaires". Ex. WNE : paires (2014/16/18) puis impaires (2021/23/25/27).
+- **RR36** **Itinérance des lieux : 3 cas**. (1) Lieu fixe (Eurosatory Villepinte) ; (2) Alternance binaire pair/impair (Global Industrie Paris/Lyon, Natexpo Lyon/Paris, Vinitech-Sifel/SITEVI) ; (3) Itinérance complète (Terres de Jim, Innov-Agri changent de site chaque édition). Pour itinérants : ne JAMAIS reproduire le lieu précédent sans vérification site officiel.
 
 ---
 
