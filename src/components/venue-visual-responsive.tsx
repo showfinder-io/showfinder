@@ -15,6 +15,8 @@ type Props = {
   lon?: string;
   /** Ratio largeur/hauteur. Défaut 21/9 (banner brief). */
   ratio?: number;
+  /** Mode compact pour les cards (cf. VenueVisual). */
+  compact?: boolean;
 };
 
 export function VenueVisualResponsive({
@@ -25,6 +27,7 @@ export function VenueVisualResponsive({
   lat,
   lon,
   ratio = 21 / 9,
+  compact = false,
 }: Props) {
   const ref = useRef<HTMLDivElement>(null);
   const [w, setW] = useState(0);
@@ -52,6 +55,7 @@ export function VenueVisualResponsive({
           lon={lon}
           width={w}
           height={h}
+          compact={compact}
         />
       )}
     </div>

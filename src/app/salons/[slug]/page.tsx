@@ -10,6 +10,7 @@ import {
 } from "@/lib/queries";
 import { formatDateRange, formatDateRangeArrow, slugifyCity } from "@/lib/format";
 import { SalonVisualResponsive } from "@/components/salon-visual-responsive";
+import { AddToAgenda } from "@/components/add-to-agenda";
 import { SectorBadge } from "@/components/sector-badge";
 import { StatBlock } from "@/components/stat-block";
 import { SalonCard } from "@/components/salon-card";
@@ -353,6 +354,19 @@ export default async function SalonPage({ params }: Props) {
             </Detail>
           )}
         </dl>
+
+        {/* Ajouter à l'agenda — brief évolutions juin 2026 §3 */}
+        <AddToAgenda
+          slug={slug}
+          name={salon.name}
+          editionYear={salon.edition_year}
+          startDate={salon.start_date}
+          endDate={salon.end_date}
+          city={salon.city}
+          venue={salon.venue}
+          sectorLabel={salon.sectors[0]?.name}
+          shortDescription={salon.description}
+        />
       </section>
 
       {/* 4 bis. ARTICLE MDX éditorial — fiches Agoris Certified uniquement.

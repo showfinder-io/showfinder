@@ -1,6 +1,5 @@
 import Link from "next/link";
-import { VenueVisualResponsive } from "@/components/venue-visual-responsive";
-import { formatGpsLat, formatGpsLng, formatNumber } from "@/lib/format";
+import { formatNumber } from "@/lib/format";
 import type { VenueRow } from "@/lib/queries";
 
 type VenueCardProps = {
@@ -26,37 +25,6 @@ export function VenueCard({ venue, salonCount }: VenueCardProps) {
         className="flex h-full flex-col focus:outline-none focus-visible:ring-2 focus-visible:ring-ocre focus-visible:ring-offset-2 focus-visible:ring-offset-sable"
         aria-label={`${venue.name}, ${venue.city}`}
       >
-        {/* Photo ou visuel de marque (fallback brief juin 2026) */}
-        {venue.photo_url ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            src={venue.photo_url}
-            alt={venue.name}
-            className="aspect-[3/2] w-full object-cover"
-            loading="lazy"
-          />
-        ) : (
-          <VenueVisualResponsive
-            name={venue.name}
-            city={venue.city ?? undefined}
-            surface={
-              venue.total_surface_sqm
-                ? `${formatNumber(venue.total_surface_sqm)} m²`
-                : undefined
-            }
-            salons={
-              salonCount !== undefined
-                ? `${salonCount} salon${salonCount > 1 ? "s" : ""} hébergé${
-                    salonCount > 1 ? "s" : ""
-                  }`
-                : undefined
-            }
-            lat={formatGpsLat(venue.lat) ?? undefined}
-            lon={formatGpsLng(venue.lng) ?? undefined}
-            ratio={3 / 2}
-          />
-        )}
-
         <div className="flex flex-1 flex-col gap-4 p-7">
           {/* Eyebrow ville */}
           <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted">

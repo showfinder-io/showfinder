@@ -24,13 +24,13 @@ const PRESET = {
 } as const;
 
 type VenueVisualProps = {
-  /** Nom du lieu (obligatoire). */
+  /** Nom du lieu (obligatoire en mode complet, ignoré en mode compact). */
   name: string;
-  /** Ville (eyebrow, ex: "Paris"). */
+  /** Ville (eyebrow). Ignoré en mode compact. */
   city?: string;
-  /** Surface (ex: "228 000 m²"). */
+  /** Surface. Ignoré en mode compact. */
   surface?: string;
-  /** Texte salons hébergés (ex: "71 salons hébergés"). */
+  /** Texte salons hébergés. Ignoré en mode compact. */
   salons?: string;
   /** Latitude formatée (ex: "48.8316° N"). */
   lat?: string;
@@ -39,6 +39,13 @@ type VenueVisualProps = {
   format?: keyof typeof PRESET;
   width?: number;
   height?: number;
+  /**
+   * Mode compact : pour les cards de grille où le nom/surface/salons sont déjà
+   * affichés sous la card. N'affiche que AgorisMark + coords GPS, et réduit la
+   * bande prune à 50% de la hauteur (centrée verticalement) pour éviter qu'elle
+   * domine la composition.
+   */
+  compact?: boolean;
 };
 
 function AgorisMarkInline({ size }: { size: number }) {
@@ -74,6 +81,7 @@ export function VenueVisual({
   format = "banner",
   width,
   height,
+  compact = false,
 }: VenueVisualProps) {
   const h = height ?? 440;
   const w = width ?? Math.round(h * (PRESET[format]?.ratio ?? 1));
@@ -82,6 +90,71 @@ export function VenueVisual({
 
   const specLine = joinDots(surface, salons);
   const coordsLine = joinDots(lat, lon);
+
+  // Mode compact : visuel court (1:3 ratio) au-dessus d'une card. Affiche
+  // uniquement AgorisMark (plus grand) + coords GPS (taille proche du nom de
+  // la card). La bande prune est ancrée en bas-droite (touche le bord
+  // supérieur du bloc texte de la card) et occupe 100% de la hauteur du visuel.
+  if (compact) {
+    // En compact, le k brief de référence (440px de haut) ne fonctionne plus :
+    // le visuel est court. On utilise une échelle dérivée de la HAUTEUR avec
+    // un baseline de 140px pour scaler symbol + coords proprement.
+    const kc = h / 140;
+    return (
+      <div
+        style={{
+          width: w,
+          height: h,
+          position: "relative",
+          overflow: "hidden",
+          background: AG.sable,
+          fontFamily: FONT_SANS,
+        }}
+      >
+        {/* Bande prune ancrée bas-droite, pleine hauteur du visuel : son bord
+            inférieur coïncide avec le bord supérieur du bloc texte de la card. */}
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            bottom: 0,
+            right: 0,
+            width: "22%",
+            background: AG.prune,
+          }}
+        />
+
+        {/* Contenu : AgorisMark en haut-gauche, coords en bas-gauche */}
+        <div
+          style={{
+            position: "relative",
+            padding: 20 * kc,
+            height: "100%",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            alignItems: "flex-start",
+          }}
+        >
+          <AgorisMarkInline size={96 * kc} />
+
+          {coordsLine && (
+            <div
+              style={{
+                fontFamily: FONT_MONO,
+                fontSize: 22 * kc,
+                letterSpacing: ".06em",
+                color: AG.ocre,
+                fontWeight: 500,
+              }}
+            >
+              {coordsLine}
+            </div>
+          )}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div
