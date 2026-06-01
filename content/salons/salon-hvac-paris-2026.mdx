@@ -1,0 +1,56 @@
+---
+updated: "2026-06-01"
+---
+
+## L'essentiel à retenir
+
+- Le slug « Salon HVAC Paris 2026 » ne correspond à aucun salon professionnel autonome identifié en France. Le seul salon dédié au génie climatique (chauffage, ventilation, climatisation : HVAC) qui se tient à Paris en septembre-octobre 2026 est **[Interclima](/salons/interclima-2026)**, composante du Mondial du Bâtiment.
+- Dates et secteur du brief initial (28 septembre - 1er octobre 2026, HVAC) recoupent **à l'identique** celles d'Interclima 2026, organisé à **Paris Expo Porte de Versailles** (et non Paris Nord Villepinte comme indiqué initialement) du 28 septembre au 1er octobre 2026.
+- L'organisateur cité dans le brief, « Reed Expositions », n'existe plus sous ce nom depuis 2022 : la filiale française de RELX s'appelle désormais **RX France**, et c'est elle qui exécute la production d'Interclima pour le compte du syndicat **[Uniclima](https://uniclima.fr)** (propriétaire du salon).
+- Le site `hvac-expo.com` mentionné dans le brief ne renvoie à aucun événement français référencé sur les sites de RX France, Viparis, Uniclima ou la presse spécialisée (Filière 3e, RPF, CVC, Le Monde du Génie Climatique, hvac-intelligence.fr). Aucun résultat SERP ne le rattache à un salon HVAC parisien 2026.
+- **Recommandation Agoris** : ce slug est un alias fantôme. Le rediriger éditorialement vers [Interclima 2026](/salons/interclima-2026) et marquer l'entrée DB en `legacy`/`merged` pour éviter la confusion dans le catalogue.
+
+## Qui expose
+
+### Profil type
+
+Sans objet : aucun salon « HVAC » indépendant identifié à Paris en 2026. L'offre française HVAC est consolidée sur Interclima, intégré au Mondial du Bâtiment. Pour le périmètre Interclima : industriels du génie climatique (chaudières, pompes à chaleur, ventilation et qualité d'air intérieur, fluides frigorigènes, hydraulique des réseaux).
+
+### Exposants notables
+
+Voir la liste officielle Interclima sur [interclima.com/fr-fr/qui-participe/liste-des-exposants.html](https://interclima.com/fr-fr/qui-participe/liste-des-exposants.html).
+
+### Qualité du visitorat
+
+Visitorat partagé avec Batimat et Idéobain dans le périmètre Mondial du Bâtiment. Édition Batimat 2024 : 85 % de visiteurs français dont 45 % d'Île-de-France.
+
+## Animations & communauté
+
+Programme, prix et événements satellites consolidés sur la fiche [Interclima 2026](/salons/interclima-2026). Le concours « Innovation Awards Interclima » récompense les solutions de génie climatique (54 participants, 6 lauréats en 2024).
+
+## Sur place : ce qu'il faut savoir
+
+- **Lieu effectif Interclima** : [Paris Expo Porte de Versailles](/lieux/paris-expo-porte-de-versailles), Hall 7.3 (et non Paris Nord Villepinte).
+- **Dates** : 28 septembre - 1er octobre 2026.
+- **Horaires** : 9 h-19 h les 3 premiers jours, 9 h-18 h le jeudi 1er octobre.
+- **Badge** : donne accès aux 3 salons du Mondial du Bâtiment (Batimat + Interclima + Idéobain). Tarifs 2026 non encore publiés au moment de la fiche.
+
+## Préparer sa venue
+
+Se référer à la fiche [Interclima 2026](/salons/interclima-2026) pour toutes les étapes exposant et visiteur, ou à la fiche [Batimat 2026](/salons/batimat-2026) si la cible commerciale dépasse le périmètre génie climatique.
+
+## Politique & initiatives RSE
+
+Sans objet sur ce slug. Interclima porte une orientation RSE structurelle (transition énergétique, décarbonation, qualité de l'air intérieur) pilotée par Uniclima : voir le bloc dédié sur la fiche [Interclima 2026](/salons/interclima-2026).
+
+## L'évolution du salon
+
+Sans historique propre : ce slug n'a pas d'édition antérieure documentée. Pour la trajectoire du salon HVAC français de référence, voir l'historique sur la fiche [Interclima 2026](/salons/interclima-2026) (42 506 visiteurs en 2022, 42 525 en 2024).
+
+### Recommandation cleanup base de données
+
+Entrée à fusionner ou marquer `legacy` côté DB Agoris :
+
+- Slug : `salon-hvac-paris-2026`
+- Action recommandée : redirection 301 vers `/salons/interclima-2026`, ou suppression douce avec note de fusion dans la table `salons`.
+- Motif : doublon sectoriel (HVAC = périmètre Interclima en France), dates identiques, lieu erroné dans le brief (Villepinte au lieu de Porte de Versailles), organisateur obsolète (Reed Expositions devenu RX France en 2022), site officiel `hvac-expo.com` non résolu et non référencé.
