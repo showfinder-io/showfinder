@@ -26,7 +26,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // Un salon n'est indexable que s'il a un MDX éditorial. La description en
   // DB ne suffit pas. Coherent avec le robots conditionnel cote page.
-  const editorialSalonSlugs = new Set(getEditorialSalonSlugs());
+  const editorialSalonSlugs = new Set(await getEditorialSalonSlugs());
   const salons = allSalons.filter((s) => editorialSalonSlugs.has(s.slug));
 
   // Seuls les secteurs avec MDX éditorial sont indexables (les autres sont

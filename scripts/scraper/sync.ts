@@ -55,19 +55,25 @@ async function main() {
     // Chercher un salon existant par slug ou nom similaire
     const { data: existing } = await supabase
       .from("salons")
-      .select("id, slug, name, is_locked, description, website_url, start_date, end_date, estimated_exhibitors, estimated_visitors, cover_image_url, logo_url, organizer_name, source_url")
+      .select("id, slug, name, is_locked, locked_fields, description, website_url, start_date, end_date, estimated_exhibitors, estimated_visitors, cover_image_url, logo_url, organizer_name, source_url")
       .eq("slug", salon.slug)
       .maybeSingle();
 
     if (existing) {
       // Salon existe déjà
       if (existing.is_locked) {
-        console.log(`  🔒 ${salon.name} (is_locked, ignoré)`);
+        console.log(`  🔒 ${salon.name} (is_locked global, ignoré)`);
         result.skipped_locked.push(salon.slug);
         continue;
       }
 
-      // Mettre à jour les champs vides uniquement
+      // locked_fields : array JSONB ajouté par migration V5 workflow éditorial.
+      // Le scraper skip ces champs individuellement (granularité fiche+champ).
+      const lockedFields = new Set<string>(
+        Array.isArray(existing.locked_fields) ? existing.locked_fields : []
+      );
+
+      // Mettre à jour les champs vides uniquement, sauf si verrouillés.
       const updates: Record<string, unknown> = {};
       const fields = [
         { key: "description", scraped: salon.description },
@@ -81,7 +87,13 @@ async function main() {
         { key: "organizer_name", scraped: salon.organizer_name },
       ];
 
+      let skippedLockedFieldsCount = 0;
       for (const { key, scraped } of fields) {
+        if (lockedFields.has(key)) {
+          // V5 : champ verrouillé individuellement, le scraper n'y touche pas
+          skippedLockedFieldsCount++;
+          continue;
+        }
         const dbValue = existing[key as keyof typeof existing];
         if (scraped === null || scraped === undefined) continue;
 
@@ -99,12 +111,21 @@ async function main() {
         }
       }
 
-      // Toujours mettre à jour source_url et last_scraped_at
-      updates.source_url = salon.source_url;
-      updates.last_scraped_at = new Date().toISOString();
+      if (skippedLockedFieldsCount > 0) {
+        console.log(
+          `  🔓 ${salon.name} (${skippedLockedFieldsCount} champ(s) verrouillé(s) skipped)`
+        );
+      }
 
-      if (Object.keys(updates).length > 2) {
-        // Plus que juste source_url et last_scraped_at
+      // Toujours mettre à jour source_url + tracking (last_scraped_at historique
+      // + last_ia_update_at V5 workflow éditorial pour l'admin UI).
+      const now = new Date().toISOString();
+      updates.source_url = salon.source_url;
+      updates.last_scraped_at = now;
+      updates.last_ia_update_at = now;
+
+      if (Object.keys(updates).length > 3) {
+        // Plus que juste source_url + last_scraped_at + last_ia_update_at
         const { error } = await supabase
           .from("salons")
           .update(updates)
@@ -113,7 +134,7 @@ async function main() {
         if (error) {
           console.log(`  ❌ ${salon.name} : ${error.message}`);
         } else {
-          const fieldCount = Object.keys(updates).length - 2; // -2 pour source_url et last_scraped_at
+          const fieldCount = Object.keys(updates).length - 3; // -3 pour les 3 trackings
           console.log(`  ✏️  ${salon.name} (+${fieldCount} champs)`);
           result.updated.push(salon.slug);
         }

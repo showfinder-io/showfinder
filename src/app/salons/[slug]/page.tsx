@@ -61,7 +61,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // Une fiche n'est indexable que si elle a un MDX éditorial dans
   // content/salons/[slug].mdx. La description en DB ne suffit pas : trop
   // courte pour faire un contenu de qualité Google.
-  const hasEditorialMdx = getSalonContent(slug) !== null;
+  const hasEditorialMdx = (await getSalonContent(slug)) !== null;
 
   return {
     title,
@@ -110,7 +110,7 @@ export default async function SalonPage({ params }: Props) {
 
   // MDX éditorial (Bloc 2 → Bloc 9 du modèle Nicolas v3). Présent uniquement
   // pour les fiches Agoris Certified passées par la pipeline éditoriale.
-  const salonContent = getSalonContent(slug);
+  const salonContent = await getSalonContent(slug);
   const MdxContent = salonContent
     ? await compileMdxContent(salonContent.content, salonMdxComponents)
     : null;

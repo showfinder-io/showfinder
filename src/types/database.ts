@@ -5,12 +5,36 @@ export type Json =
   | null
   | { [key: string]: Json | undefined }
   | Json[]
-
 export type Database = {
   // Allows to automatically instantiate createClient with right options
   // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
   __InternalSupabase: {
     PostgrestVersion: "14.4"
+  }
+  graphql_public: {
+    Tables: {
+      [_ in never]: never
+    }
+    Views: {
+      [_ in never]: never
+    }
+    Functions: {
+      graphql: {
+        Args: {
+          extensions?: Json
+          operationName?: string
+          query?: string
+          variables?: Json
+        }
+        Returns: Json
+      }
+    }
+    Enums: {
+      [_ in never]: never
+    }
+    CompositeTypes: {
+      [_ in never]: never
+    }
   }
   public: {
     Tables: {
@@ -309,6 +333,13 @@ export type Database = {
             foreignKeyName: "salon_providers_salon_id_fkey"
             columns: ["salon_id"]
             isOneToOne: false
+            referencedRelation: "salons_ordered"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "salon_providers_salon_id_fkey"
+            columns: ["salon_id"]
+            isOneToOne: false
             referencedRelation: "upcoming_salons"
             referencedColumns: ["id"]
           },
@@ -333,6 +364,13 @@ export type Database = {
             columns: ["salon_id"]
             isOneToOne: false
             referencedRelation: "salons"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "salon_sectors_salon_id_fkey"
+            columns: ["salon_id"]
+            isOneToOne: false
+            referencedRelation: "salons_ordered"
             referencedColumns: ["id"]
           },
           {
@@ -388,6 +426,13 @@ export type Database = {
             foreignKeyName: "salon_tags_salon_id_fkey"
             columns: ["salon_id"]
             isOneToOne: false
+            referencedRelation: "salons_ordered"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "salon_tags_salon_id_fkey"
+            columns: ["salon_id"]
+            isOneToOne: false
             referencedRelation: "upcoming_salons"
             referencedColumns: ["id"]
           },
@@ -395,26 +440,39 @@ export type Database = {
       }
       salons: {
         Row: {
+          alert_flag: boolean
           city: string | null
+          co_organizer_name: string | null
           country: string
           cover_image_url: string | null
           created_at: string
           description: string | null
+          edition_number: number | null
           edition_year: number | null
+          editorial_mdx: string | null
+          editorial_updated_at: string | null
           end_date: string | null
           estimated_exhibitors: number | null
           estimated_visitors: number | null
           frequency: Database["public"]["Enums"]["salon_frequency"] | null
           id: string
+          is_agoris_certified: boolean
           is_locked: boolean
           is_premium: boolean
+          last_human_check_at: string | null
+          last_ia_update_at: string | null
+          last_scraped_at: string | null
+          locked_fields: Json
           logo_url: string | null
           name: string
+          notes_internes: string | null
           organizer_email: string | null
           organizer_name: string | null
+          scraper_conflicts: Json | null
           seo_description: string | null
           seo_title: string | null
           slug: string
+          source_url: string | null
           start_date: string | null
           status: Database["public"]["Enums"]["salon_status"]
           updated_at: string
@@ -425,26 +483,39 @@ export type Database = {
           website_url: string | null
         }
         Insert: {
+          alert_flag?: boolean
           city?: string | null
+          co_organizer_name?: string | null
           country?: string
           cover_image_url?: string | null
           created_at?: string
           description?: string | null
+          edition_number?: number | null
           edition_year?: number | null
+          editorial_mdx?: string | null
+          editorial_updated_at?: string | null
           end_date?: string | null
           estimated_exhibitors?: number | null
           estimated_visitors?: number | null
           frequency?: Database["public"]["Enums"]["salon_frequency"] | null
           id?: string
+          is_agoris_certified?: boolean
           is_locked?: boolean
           is_premium?: boolean
+          last_human_check_at?: string | null
+          last_ia_update_at?: string | null
+          last_scraped_at?: string | null
+          locked_fields?: Json
           logo_url?: string | null
           name: string
+          notes_internes?: string | null
           organizer_email?: string | null
           organizer_name?: string | null
+          scraper_conflicts?: Json | null
           seo_description?: string | null
           seo_title?: string | null
           slug: string
+          source_url?: string | null
           start_date?: string | null
           status?: Database["public"]["Enums"]["salon_status"]
           updated_at?: string
@@ -455,26 +526,39 @@ export type Database = {
           website_url?: string | null
         }
         Update: {
+          alert_flag?: boolean
           city?: string | null
+          co_organizer_name?: string | null
           country?: string
           cover_image_url?: string | null
           created_at?: string
           description?: string | null
+          edition_number?: number | null
           edition_year?: number | null
+          editorial_mdx?: string | null
+          editorial_updated_at?: string | null
           end_date?: string | null
           estimated_exhibitors?: number | null
           estimated_visitors?: number | null
           frequency?: Database["public"]["Enums"]["salon_frequency"] | null
           id?: string
+          is_agoris_certified?: boolean
           is_locked?: boolean
           is_premium?: boolean
+          last_human_check_at?: string | null
+          last_ia_update_at?: string | null
+          last_scraped_at?: string | null
+          locked_fields?: Json
           logo_url?: string | null
           name?: string
+          notes_internes?: string | null
           organizer_email?: string | null
           organizer_name?: string | null
+          scraper_conflicts?: Json | null
           seo_description?: string | null
           seo_title?: string | null
           slug?: string
+          source_url?: string | null
           start_date?: string | null
           status?: Database["public"]["Enums"]["salon_status"]
           updated_at?: string
@@ -601,6 +685,128 @@ export type Database = {
       }
     }
     Views: {
+      salons_ordered: {
+        Row: {
+          city: string | null
+          country: string | null
+          cover_image_url: string | null
+          created_at: string | null
+          description: string | null
+          description_search: string | null
+          edition_year: number | null
+          end_date: string | null
+          estimated_exhibitors: number | null
+          estimated_visitors: number | null
+          frequency: Database["public"]["Enums"]["salon_frequency"] | null
+          id: string | null
+          is_agoris_certified: boolean | null
+          is_locked: boolean | null
+          is_premium: boolean | null
+          last_scraped_at: string | null
+          logo_url: string | null
+          name: string | null
+          name_search: string | null
+          organizer_email: string | null
+          organizer_name: string | null
+          scraper_conflicts: Json | null
+          seo_description: string | null
+          seo_title: string | null
+          slug: string | null
+          sort_key: string | null
+          source_url: string | null
+          start_date: string | null
+          status: Database["public"]["Enums"]["salon_status"] | null
+          updated_at: string | null
+          venue: string | null
+          venue_id: string | null
+          venue_lat: number | null
+          venue_lng: number | null
+          website_url: string | null
+        }
+        Insert: {
+          city?: string | null
+          country?: string | null
+          cover_image_url?: string | null
+          created_at?: string | null
+          description?: string | null
+          description_search?: never
+          edition_year?: number | null
+          end_date?: string | null
+          estimated_exhibitors?: number | null
+          estimated_visitors?: number | null
+          frequency?: Database["public"]["Enums"]["salon_frequency"] | null
+          id?: string | null
+          is_agoris_certified?: boolean | null
+          is_locked?: boolean | null
+          is_premium?: boolean | null
+          last_scraped_at?: string | null
+          logo_url?: string | null
+          name?: string | null
+          name_search?: never
+          organizer_email?: string | null
+          organizer_name?: string | null
+          scraper_conflicts?: Json | null
+          seo_description?: string | null
+          seo_title?: string | null
+          slug?: string | null
+          sort_key?: never
+          source_url?: string | null
+          start_date?: string | null
+          status?: Database["public"]["Enums"]["salon_status"] | null
+          updated_at?: string | null
+          venue?: string | null
+          venue_id?: string | null
+          venue_lat?: number | null
+          venue_lng?: number | null
+          website_url?: string | null
+        }
+        Update: {
+          city?: string | null
+          country?: string | null
+          cover_image_url?: string | null
+          created_at?: string | null
+          description?: string | null
+          description_search?: never
+          edition_year?: number | null
+          end_date?: string | null
+          estimated_exhibitors?: number | null
+          estimated_visitors?: number | null
+          frequency?: Database["public"]["Enums"]["salon_frequency"] | null
+          id?: string | null
+          is_agoris_certified?: boolean | null
+          is_locked?: boolean | null
+          is_premium?: boolean | null
+          last_scraped_at?: string | null
+          logo_url?: string | null
+          name?: string | null
+          name_search?: never
+          organizer_email?: string | null
+          organizer_name?: string | null
+          scraper_conflicts?: Json | null
+          seo_description?: string | null
+          seo_title?: string | null
+          slug?: string | null
+          sort_key?: never
+          source_url?: string | null
+          start_date?: string | null
+          status?: Database["public"]["Enums"]["salon_status"] | null
+          updated_at?: string | null
+          venue?: string | null
+          venue_id?: string | null
+          venue_lat?: number | null
+          venue_lng?: number | null
+          website_url?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "salons_venue_id_fkey"
+            columns: ["venue_id"]
+            isOneToOne: false
+            referencedRelation: "venues"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       upcoming_salons: {
         Row: {
           city: string | null
@@ -690,7 +896,7 @@ export type Database = {
       }
     }
     Functions: {
-      [_ in never]: never
+      unaccent: { Args: { "": string }; Returns: string }
     }
     Enums: {
       provider_category:
@@ -704,8 +910,8 @@ export type Database = {
       provider_tier: "free" | "premium"
       review_role: "exposant" | "visiteur" | "organisateur"
       review_target_type: "salon" | "provider"
-      salon_frequency: "annuel" | "bisannuel" | "ponctuel"
-      salon_status: "draft" | "published" | "cancelled" | "postponed"
+      salon_frequency: "annuel" | "bisannuel" | "ponctuel" | "triennal"
+      salon_status: "draft" | "review" | "published" | "cancelled" | "postponed"
       tag_category: "audience" | "trend" | "value" | "sector"
     }
     CompositeTypes: {
@@ -713,11 +919,8 @@ export type Database = {
     }
   }
 }
-
 type DatabaseWithoutInternals = Omit<Database, "__InternalSupabase">
-
 type DefaultSchema = DatabaseWithoutInternals[Extract<keyof Database, "public">]
-
 export type Tables<
   DefaultSchemaTableNameOrOptions extends
     | keyof (DefaultSchema["Tables"] & DefaultSchema["Views"])
@@ -746,7 +949,6 @@ export type Tables<
       ? R
       : never
     : never
-
 export type TablesInsert<
   DefaultSchemaTableNameOrOptions extends
     | keyof DefaultSchema["Tables"]
@@ -771,7 +973,6 @@ export type TablesInsert<
       ? I
       : never
     : never
-
 export type TablesUpdate<
   DefaultSchemaTableNameOrOptions extends
     | keyof DefaultSchema["Tables"]
@@ -796,7 +997,6 @@ export type TablesUpdate<
       ? U
       : never
     : never
-
 export type Enums<
   DefaultSchemaEnumNameOrOptions extends
     | keyof DefaultSchema["Enums"]
@@ -813,7 +1013,6 @@ export type Enums<
   : DefaultSchemaEnumNameOrOptions extends keyof DefaultSchema["Enums"]
     ? DefaultSchema["Enums"][DefaultSchemaEnumNameOrOptions]
     : never
-
 export type CompositeTypes<
   PublicCompositeTypeNameOrOptions extends
     | keyof DefaultSchema["CompositeTypes"]
@@ -830,8 +1029,10 @@ export type CompositeTypes<
   : PublicCompositeTypeNameOrOptions extends keyof DefaultSchema["CompositeTypes"]
     ? DefaultSchema["CompositeTypes"][PublicCompositeTypeNameOrOptions]
     : never
-
 export const Constants = {
+  graphql_public: {
+    Enums: {},
+  },
   public: {
     Enums: {
       provider_category: [
@@ -846,8 +1047,8 @@ export const Constants = {
       provider_tier: ["free", "premium"],
       review_role: ["exposant", "visiteur", "organisateur"],
       review_target_type: ["salon", "provider"],
-      salon_frequency: ["annuel", "bisannuel", "ponctuel"],
-      salon_status: ["draft", "published", "cancelled", "postponed"],
+      salon_frequency: ["annuel", "bisannuel", "ponctuel", "triennal"],
+      salon_status: ["draft", "review", "published", "cancelled", "postponed"],
       tag_category: ["audience", "trend", "value", "sector"],
     },
   },

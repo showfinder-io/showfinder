@@ -168,6 +168,11 @@ export function SalonForm({
       notes_internes: form.get("notes_internes") || null,
       alert_flag: alertFlag,
       ...(markHumanCheck && { last_human_check_at: new Date().toISOString() }),
+      // V5.6 — MDX éditorial en DB
+      editorial_mdx: form.get("editorial_mdx") || null,
+      ...(form.get("editorial_mdx") && {
+        editorial_updated_at: new Date().toISOString(),
+      }),
     };
 
     try {
@@ -490,6 +495,34 @@ export function SalonForm({
           defaultValue={field(d, "notes_internes")}
           placeholder="Arbitrages éditoriaux, informations en attente de confirmation, alertes..."
           className={inputClass}
+        />
+      </div>
+
+      {/* ─── MDX éditorial (8-10 blocs : À retenir / Qui expose / Animations / Sur place / RSE / Historique) ─── */}
+      <div>
+        <FieldLabel
+          fieldName="editorial_mdx"
+          label="Contenu éditorial (MDX)"
+          {...lockProps}
+        />
+        <p className="mt-1 text-xs text-muted">
+          Article éditorial complet de la fiche (Agoris Certified). Format
+          Markdown enrichi : <code className="rounded bg-ivoire px-1 text-[10px]">## Titre de bloc</code>, listes, liens, etc.
+          {d.editorial_updated_at ? (
+            <>
+              {" "}Dernière modification :{" "}
+              <span className="font-medium text-ink">
+                {formatDateTime(d.editorial_updated_at as string)}
+              </span>
+            </>
+          ) : null}
+        </p>
+        <textarea
+          name="editorial_mdx"
+          rows={18}
+          defaultValue={field(d, "editorial_mdx")}
+          placeholder="## À retenir&#10;&#10;- Premier point factuel verifiable...&#10;&#10;## Qui expose&#10;&#10;### Profil type&#10;..."
+          className={`${inputClass} font-mono text-xs`}
         />
       </div>
 

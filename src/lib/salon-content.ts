@@ -1,11 +1,14 @@
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
+// V5.6 — Lecture du MDX editorial depuis la DB (au lieu de
+// content/salons/*.mdx). Cf. migration 20260601800000 + script
+// scripts/migrate-mdx-to-db.ts.
+//
+// Le frontmatter (updated) est reconstitue depuis editorial_updated_at
+// de la DB pour rester compatible avec le rendering existant.
 
-const SALONS_DIR = path.join(process.cwd(), "content/salons");
+import { createStaticClient } from "@/lib/supabase/static";
 
 export type SalonContentFrontmatter = {
-  /** Date ISO de la dernière mise à jour éditoriale (ex "2026-05-25") */
+  /** Date ISO de la dernière mise à jour éditoriale */
   updated: string;
 };
 
@@ -15,32 +18,39 @@ export type SalonContent = {
 };
 
 /**
- * Lit le MDX éditorial d'un salon si il existe.
- * Retourne null si pas de fichier (= fiche standard sans contenu enrichi).
- * Cohérent avec content/secteurs/[slug].mdx.
+ * Lit le MDX éditorial d'un salon depuis la DB. Retourne null si le
+ * salon n'a pas de MDX éditorial (= fiche standard sans contenu enrichi).
  */
-export function getSalonContent(slug: string): SalonContent | null {
-  const filepath = path.join(SALONS_DIR, `${slug}.mdx`);
-  if (!fs.existsSync(filepath)) return null;
+export async function getSalonContent(
+  slug: string
+): Promise<SalonContent | null> {
+  const supabase = createStaticClient();
+  const { data } = await supabase
+    .from("salons")
+    .select("editorial_mdx, editorial_updated_at")
+    .eq("slug", slug)
+    .maybeSingle();
 
-  const raw = fs.readFileSync(filepath, "utf-8");
-  const { data, content } = matter(raw);
+  if (!data || !data.editorial_mdx) return null;
+
   return {
-    frontmatter: data as SalonContentFrontmatter,
-    content,
+    frontmatter: {
+      updated: data.editorial_updated_at ?? new Date().toISOString(),
+    },
+    content: data.editorial_mdx,
   };
 }
 
 /**
- * Liste des slugs de salons avec MDX éditorial. Pour la prochaine étape
- * (indexabilité différenciée des fiches "Certified" vs standard, si on
- * veut basculer le critère noindex de "description IS NULL" vers "présence
- * d'un MDX" plus tard).
+ * Liste des slugs de salons avec MDX éditorial. Utilisée pour la
+ * filtration du sitemap (RR : indexable ssi MDX editorial present).
  */
-export function getEditorialSalonSlugs(): string[] {
-  if (!fs.existsSync(SALONS_DIR)) return [];
-  return fs
-    .readdirSync(SALONS_DIR)
-    .filter((f) => f.endsWith(".mdx"))
-    .map((f) => f.replace(/\.mdx$/, ""));
+export async function getEditorialSalonSlugs(): Promise<string[]> {
+  const supabase = createStaticClient();
+  const { data } = await supabase
+    .from("salons")
+    .select("slug")
+    .not("editorial_mdx", "is", null);
+
+  return (data ?? []).map((s) => s.slug);
 }
