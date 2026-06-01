@@ -18,11 +18,16 @@ export async function GET() {
   // Eligibles : fiches jamais vérifiées OU dernière vérification > 6 mois.
   const sixMonthsAgo = new Date(Date.now() - SIX_MONTHS_MS).toISOString();
 
+  // Sampling cible UNIQUEMENT les fiches éditorialisées (editorial_mdx
+  // present). Les fiches stub (minimal DB only) n'ont pas besoin de
+  // relecture humaine périodique. Critère + last_human_check_at NULL
+  // ou > 6 mois.
   const { data, error } = await supabase
     .from("salons")
     .select(
       "id, slug, name, status, start_date, end_date, city, venue, organizer_name, last_human_check_at, last_ia_update_at, alert_flag, locked_fields"
     )
+    .not("editorial_mdx", "is", null)
     .or(
       `last_human_check_at.is.null,last_human_check_at.lt.${sixMonthsAgo}`
     )
