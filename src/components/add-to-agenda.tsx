@@ -54,15 +54,17 @@ function buildGoogleCalendarUrl({
     `Fiche Agoris : ${url}`,
   ].filter(Boolean) as string[];
 
+  // Endpoint /calendar/r/eventedit ouvre directement le formulaire d'event
+  // pré-rempli (vs /calendar/render qui peut atterrir sur la home selon les
+  // versions Google). Cf. brief évolutions juin 2026 §3.
   const params = new URLSearchParams({
-    action: "TEMPLATE",
     text: title,
     dates,
     location,
     details: descLines.join("\n"),
   });
 
-  return `https://calendar.google.com/calendar/render?${params.toString()}`;
+  return `https://calendar.google.com/calendar/r/eventedit?${params.toString()}`;
 }
 
 export function AddToAgenda(props: Props) {
