@@ -85,6 +85,45 @@ const nextConfig: NextConfig = {
         destination: "/salons/whos-next-paris-2026",
         permanent: true,
       },
+      // Cohorte 6 DB cleanup (audit 2026-06-01 batch 1+2) : doublons DB
+      // ↔ MDX existants. Voir migration 20260601500000_cohorte6_db_cleanup.
+      {
+        source: "/salons/equiphotel-paris-2026",
+        destination: "/salons/equip-hotel-paris-2026",
+        permanent: true,
+      },
+      {
+        source: "/salons/mif-expo-paris-2026",
+        destination: "/salons/mif-expo-2026",
+        permanent: true,
+      },
+      {
+        source: "/salons/solutrans-lyon-2027",
+        destination: "/salons/solutrans-2027",
+        permanent: true,
+      },
+      {
+        source: "/salons/sitl-paris-2026",
+        destination: "/salons/sitl-2026",
+        permanent: true,
+      },
+      {
+        source: "/salons/cfia-rennes-2026",
+        destination: "/salons/cfia-rennes-2027",
+        permanent: true,
+      },
+      {
+        source: "/salons/cosmetic-360-paris-2026",
+        destination: "/salons/cosmetic-360-2026",
+        permanent: true,
+      },
+      // Europain → rebrandé Sirha Bake & Snack depuis 2026 (rachat GL Events
+      // + Ekip à Comexposium janv 2025). MDX consolidé sur sirha-bake-snack-2028.
+      {
+        source: "/salons/europain-paris-2026",
+        destination: "/salons/sirha-bake-snack-2028",
+        permanent: true,
+      },
     ];
   },
 };
