@@ -277,32 +277,7 @@ export default async function SalonPage({ params }: Props) {
         </section>
       )}
 
-      {/* 3. BLOC VISUEL — cover ou PhotoPlaceholder 16:9 (en attendant les photos d'ambiance) */}
-      <section className="mt-12 overflow-hidden rounded-lg border border-border">
-        {salon.cover_image_url ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            src={salon.cover_image_url}
-            alt={`${salon.name} - vue du salon`}
-            className="aspect-video w-full object-cover"
-          />
-        ) : (
-          <SalonVisualResponsive
-            name={salon.name}
-            sectorLabel={salon.sectors[0]?.name}
-            sectorDbSlug={salon.sectors[0]?.slug}
-            city={[salon.venue, salon.city].filter(Boolean).join(", ")}
-            dates={formatDateRangeArrow(salon.start_date, salon.end_date)}
-            edition={
-              salon.edition_number
-                ? `Éd. ${salon.edition_number}ᵉ`
-                : undefined
-            }
-          />
-        )}
-      </section>
-
-      {/* 4. ESSENTIEL */}
+      {/* 3. ESSENTIEL — above the fold (brief Nicolas juin 2026) */}
       <section className="mt-12">
         <h2 className="font-serif text-2xl font-semibold tracking-tight text-prune md:text-3xl">
           L&apos;essentiel
@@ -367,6 +342,31 @@ export default async function SalonPage({ params }: Props) {
           sectorLabel={salon.sectors[0]?.name}
           shortDescription={salon.description}
         />
+      </section>
+
+      {/* 4. BLOC VISUEL — cover ou SalonVisual fallback (sous L'Essentiel) */}
+      <section className="mt-12 overflow-hidden rounded-lg border border-border">
+        {salon.cover_image_url ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={salon.cover_image_url}
+            alt={`${salon.name} - vue du salon`}
+            className="aspect-video w-full object-cover"
+          />
+        ) : (
+          <SalonVisualResponsive
+            name={salon.name}
+            sectorLabel={salon.sectors[0]?.name}
+            sectorDbSlug={salon.sectors[0]?.slug}
+            city={[salon.venue, salon.city].filter(Boolean).join(", ")}
+            dates={formatDateRangeArrow(salon.start_date, salon.end_date)}
+            edition={
+              salon.edition_number
+                ? `Éd. ${salon.edition_number}ᵉ`
+                : undefined
+            }
+          />
+        )}
       </section>
 
       {/* 4 bis. ARTICLE MDX éditorial — fiches Agoris Certified uniquement.
