@@ -124,6 +124,34 @@ const nextConfig: NextConfig = {
         destination: "/salons/sirha-bake-snack-2028",
         permanent: true,
       },
+      // Cohorte 6 DB cleanup final (audit 2026-06-01 batch 3-6) :
+      // legacy SEO + doublons semantiques. Voir migration
+      // 20260601600000_cohorte6_db_cleanup_final.
+      {
+        source: "/salons/smart-industries-2026",
+        destination: "/salons/global-industrie-lyon-2025",
+        permanent: true,
+      },
+      {
+        source: "/salons/ecommerce-paris-2026",
+        destination: "/salons/paris-retail-week-2026",
+        permanent: true,
+      },
+      {
+        source: "/salons/industrie-lyon-2026",
+        destination: "/salons/global-industrie-lyon-2025",
+        permanent: true,
+      },
+      {
+        source: "/salons/salon-hvac-paris-2026",
+        destination: "/salons/interclima-2026",
+        permanent: true,
+      },
+      {
+        source: "/salons/secuexpo-paris-2026",
+        destination: "/salons/expoprotection-2026",
+        permanent: true,
+      },
     ];
   },
 };
