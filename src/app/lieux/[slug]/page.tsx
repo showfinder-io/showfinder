@@ -141,62 +141,67 @@ export default async function VenuePage({ params }: Props) {
         <span className="text-ink">{venue.name}</span>
       </nav>
 
-      <h1 className="font-serif text-3xl font-bold tracking-tight sm:text-4xl">
-        {venue.name}
-      </h1>
+      {/* Header + description + MDX : contraints en max-w-3xl pour lisibilité
+            (cohérence avec le rendu prose éditorial en dessous). La grille
+            salons en bas garde toute la largeur du container max-w-6xl. */}
+      <div className="max-w-3xl">
+        <h1 className="font-serif text-3xl font-bold tracking-tight sm:text-4xl">
+          {venue.name}
+        </h1>
 
-      {/* Infos lieu */}
-      <div className="mt-4 flex flex-wrap gap-4 text-sm text-muted">
-        <div className="flex items-center gap-1.5">
-          <MapPin className="h-4 w-4" />
-          <span>{venue.address ? `${venue.address}` : venue.city}</span>
+        {/* Infos lieu */}
+        <div className="mt-4 flex flex-wrap gap-4 text-sm text-muted">
+          <div className="flex items-center gap-1.5">
+            <MapPin className="h-4 w-4" />
+            <span>{venue.address ? `${venue.address}` : venue.city}</span>
+          </div>
+          {venue.total_surface_sqm ? (
+            <div className="flex items-center gap-1.5">
+              <Maximize2 className="h-4 w-4" />
+              <span>{formatNumber(venue.total_surface_sqm)} m² de surface</span>
+            </div>
+          ) : null}
+          {venue.halls_count ? (
+            <div className="flex items-center gap-1.5">
+              <Building2 className="h-4 w-4" />
+              <span>
+                {venue.halls_count} hall{venue.halls_count > 1 ? "s" : ""}
+              </span>
+            </div>
+          ) : null}
         </div>
-        {venue.total_surface_sqm ? (
-          <div className="flex items-center gap-1.5">
-            <Maximize2 className="h-4 w-4" />
-            <span>{formatNumber(venue.total_surface_sqm)} m² de surface</span>
-          </div>
-        ) : null}
-        {venue.halls_count ? (
-          <div className="flex items-center gap-1.5">
-            <Building2 className="h-4 w-4" />
-            <span>
-              {venue.halls_count} hall{venue.halls_count > 1 ? "s" : ""}
-            </span>
-          </div>
-        ) : null}
-      </div>
 
-      {/* Liens externes */}
-      <div className="mt-4 flex flex-wrap gap-4">
-        {venue.google_maps_url && (
-          <VenueOutboundLink
-            slug={slug}
-            destination="google_maps"
-            href={venue.google_maps_url}
-            className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-hover transition-colors"
-          >
-            <ExternalLink className="h-4 w-4" />
-            Voir sur Google Maps
-          </VenueOutboundLink>
-        )}
-        {venue.website_url && (
-          <VenueOutboundLink
-            slug={slug}
-            destination="website"
-            href={venue.website_url}
-            className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-hover transition-colors"
-          >
-            <Globe className="h-4 w-4" />
-            Site officiel
-          </VenueOutboundLink>
+        {/* Liens externes */}
+        <div className="mt-4 flex flex-wrap gap-4">
+          {venue.google_maps_url && (
+            <VenueOutboundLink
+              slug={slug}
+              destination="google_maps"
+              href={venue.google_maps_url}
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-hover transition-colors"
+            >
+              <ExternalLink className="h-4 w-4" />
+              Voir sur Google Maps
+            </VenueOutboundLink>
+          )}
+          {venue.website_url && (
+            <VenueOutboundLink
+              slug={slug}
+              destination="website"
+              href={venue.website_url}
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-hover transition-colors"
+            >
+              <Globe className="h-4 w-4" />
+              Site officiel
+            </VenueOutboundLink>
+          )}
+        </div>
+
+        {/* Description courte (toujours visible, vient de la DB) */}
+        {venue.description && (
+          <p className="mt-6 leading-relaxed text-muted">{venue.description}</p>
         )}
       </div>
-
-      {/* Description courte (toujours visible, vient de la DB) */}
-      {venue.description && (
-        <p className="mt-6 leading-relaxed text-muted">{venue.description}</p>
-      )}
 
       {/* Galerie photos (V6) */}
       {gallery.length > 0 && (
