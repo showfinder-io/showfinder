@@ -33,11 +33,11 @@ export default function ContactPage() {
             pour une visibilité maximale.
           </p>
           <a
-            href="mailto:telemaque@agoris.io"
+            href="mailto:hello@agoris.io"
             className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-accent hover:text-accent-hover transition-colors"
           >
             <Mail className="h-4 w-4" />
-            telemaque@agoris.io
+            hello@agoris.io
           </a>
         </div>
 
@@ -54,11 +54,11 @@ export default function ContactPage() {
             l&apos;offre Premium pour toucher plus de clients.
           </p>
           <a
-            href="mailto:telemaque@agoris.io"
+            href="mailto:hello@agoris.io"
             className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-accent hover:text-accent-hover transition-colors"
           >
             <Mail className="h-4 w-4" />
-            telemaque@agoris.io
+            hello@agoris.io
           </a>
         </div>
       </div>

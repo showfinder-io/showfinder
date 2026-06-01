@@ -85,10 +85,10 @@ export default function CookiesPage() {
           <p className="mt-3">
             Pour toute question, contactez{" "}
             <a
-              href="mailto:telemaque@agoris.io"
+              href="mailto:hello@agoris.io"
               className="underline decoration-prune/30 underline-offset-4 transition-colors hover:decoration-prune"
             >
-              telemaque@agoris.io
+              hello@agoris.io
             </a>
             .
           </p>

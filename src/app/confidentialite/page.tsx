@@ -34,10 +34,10 @@ export default function ConfidentialitePage() {
           <p className="mt-3">
             Agoris SAS (à compléter), basée à Paris. Contact :{" "}
             <a
-              href="mailto:telemaque@agoris.io"
+              href="mailto:hello@agoris.io"
               className="underline decoration-prune/30 underline-offset-4 transition-colors hover:decoration-prune"
             >
-              telemaque@agoris.io
+              hello@agoris.io
             </a>
             .
           </p>
@@ -119,10 +119,10 @@ export default function ConfidentialitePage() {
           <p className="mt-3">
             Pour exercer ces droits, contactez notre DPO à{" "}
             <a
-              href="mailto:telemaque@agoris.io"
+              href="mailto:hello@agoris.io"
               className="underline decoration-prune/30 underline-offset-4 transition-colors hover:decoration-prune"
             >
-              telemaque@agoris.io
+              hello@agoris.io
             </a>
             . En cas de litige, vous pouvez saisir la CNIL (cnil.fr).
           </p>
