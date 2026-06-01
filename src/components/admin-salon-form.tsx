@@ -1,11 +1,22 @@
 "use client";
 
+// Admin salon form — V5 workflow éditorial (brief Nicolas juin 2026)
+//
+// - Lock par champ : icône cadenas à côté de chaque label. Le scraper
+//   skipe les champs verrouillés (via locked_fields jsonb DB).
+// - Workflow status : draft -> review -> published avec bouton transition.
+// - Alert flag : drapeau prioritaire.
+// - Métadonnées : last_human_check_at + last_ia_update_at affichés.
+// - Notes internes : textarea admin-only non publiée.
+
 import { useState } from "react";
+import { Lock, Unlock, Flag, CheckCircle, Bot, User } from "lucide-react";
 
 type SalonData = Record<string, unknown>;
 
 const STATUS_OPTIONS = [
   { value: "draft", label: "Brouillon" },
+  { value: "review", label: "En relecture" },
   { value: "published", label: "Publié" },
   { value: "cancelled", label: "Annulé" },
   { value: "postponed", label: "Reporté" },
@@ -24,6 +35,68 @@ function field(data: SalonData, key: string, fallback = ""): string {
   return String(v);
 }
 
+function formatDateTime(iso: string | null | undefined): string {
+  if (!iso) return "jamais";
+  try {
+    return new Intl.DateTimeFormat("fr-FR", {
+      day: "2-digit",
+      month: "short",
+      year: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+    }).format(new Date(iso));
+  } catch {
+    return iso;
+  }
+}
+
+/**
+ * Wrapper label + lock toggle. Click sur le cadenas → toggle dans lockedFields.
+ */
+function FieldLabel({
+  fieldName,
+  label,
+  required,
+  lockedFields,
+  toggleLock,
+}: {
+  fieldName: string;
+  label: string;
+  required?: boolean;
+  lockedFields: string[];
+  toggleLock: (f: string) => void;
+}) {
+  const locked = lockedFields.includes(fieldName);
+  return (
+    <div className="flex items-center justify-between">
+      <label className="block text-sm font-medium text-ink">
+        {label} {required && <span className="text-red-500">*</span>}
+      </label>
+      <button
+        type="button"
+        onClick={() => toggleLock(fieldName)}
+        className={`group inline-flex h-5 w-5 items-center justify-center rounded transition-colors ${
+          locked
+            ? "text-accent hover:text-accent-hover"
+            : "text-muted hover:text-ink"
+        }`}
+        title={
+          locked
+            ? "Champ verrouillé — le scraper ne touchera pas. Cliquer pour déverrouiller."
+            : "Champ libre — le scraper peut enrichir. Cliquer pour verrouiller."
+        }
+        aria-label={locked ? "Déverrouiller" : "Verrouiller"}
+      >
+        {locked ? (
+          <Lock className="h-3.5 w-3.5" />
+        ) : (
+          <Unlock className="h-3.5 w-3.5 opacity-40 group-hover:opacity-100" />
+        )}
+      </button>
+    </div>
+  );
+}
+
 export function SalonForm({
   initialData,
   onSave,
@@ -34,8 +107,26 @@ export function SalonForm({
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
+  const d = initialData ?? {};
 
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  // État local pour les champs verrouillés (array de field names) + flag d'alerte.
+  // Tout le reste passe par <input name=...> et FormData.
+  const initialLocked = Array.isArray(d.locked_fields)
+    ? (d.locked_fields as string[])
+    : [];
+  const [lockedFields, setLockedFields] = useState<string[]>(initialLocked);
+  const [alertFlag, setAlertFlag] = useState<boolean>(Boolean(d.alert_flag));
+
+  function toggleLock(f: string) {
+    setLockedFields((prev) =>
+      prev.includes(f) ? prev.filter((x) => x !== f) : [...prev, f]
+    );
+  }
+
+  async function handleSubmit(
+    e: React.FormEvent<HTMLFormElement>,
+    markHumanCheck = false
+  ) {
     e.preventDefault();
     setSaving(true);
     setError(null);
@@ -51,13 +142,19 @@ export function SalonForm({
       country: form.get("country") || "FR",
       start_date: form.get("start_date") || null,
       end_date: form.get("end_date") || null,
-      edition_year: form.get("edition_year") ? Number(form.get("edition_year")) : null,
+      edition_year: form.get("edition_year")
+        ? Number(form.get("edition_year"))
+        : null,
       website_url: form.get("website_url") || null,
       organizer_name: form.get("organizer_name") || null,
       organizer_email: form.get("organizer_email") || null,
       frequency: form.get("frequency") || null,
-      estimated_exhibitors: form.get("estimated_exhibitors") ? Number(form.get("estimated_exhibitors")) : null,
-      estimated_visitors: form.get("estimated_visitors") ? Number(form.get("estimated_visitors")) : null,
+      estimated_exhibitors: form.get("estimated_exhibitors")
+        ? Number(form.get("estimated_exhibitors"))
+        : null,
+      estimated_visitors: form.get("estimated_visitors")
+        ? Number(form.get("estimated_visitors"))
+        : null,
       status: form.get("status") || "draft",
       is_premium: form.get("is_premium") === "on",
       is_locked: form.get("is_locked") === "on",
@@ -66,6 +163,11 @@ export function SalonForm({
       cover_image_url: form.get("cover_image_url") || null,
       seo_title: form.get("seo_title") || null,
       seo_description: form.get("seo_description") || null,
+      // V5 workflow éditorial
+      locked_fields: lockedFields,
+      notes_internes: form.get("notes_internes") || null,
+      alert_flag: alertFlag,
+      ...(markHumanCheck && { last_human_check_at: new Date().toISOString() }),
     };
 
     try {
@@ -78,13 +180,92 @@ export function SalonForm({
     }
   }
 
-  const d = initialData ?? {};
   const inputClass =
     "mt-1 block w-full rounded-md border border-border px-3 py-2 text-sm focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent";
-  const labelClass = "block text-sm font-medium text-ink";
+  const lockProps = { lockedFields, toggleLock };
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-2xl space-y-5">
+    <form
+      onSubmit={(e) => handleSubmit(e, false)}
+      className="max-w-2xl space-y-5"
+    >
+      {/* ─── Workflow header ─── */}
+      <section className="rounded-md border border-border bg-ivoire p-4">
+        <div className="flex items-center justify-between gap-4">
+          <div>
+            <label className="block text-xs font-medium uppercase tracking-wider text-muted">
+              Statut éditorial
+            </label>
+            <select
+              name="status"
+              defaultValue={field(d, "status", "draft")}
+              className={`${inputClass} mt-1`}
+            >
+              {STATUS_OPTIONS.map((opt) => (
+                <option key={opt.value} value={opt.value}>
+                  {opt.label}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          <button
+            type="button"
+            onClick={() => setAlertFlag((v) => !v)}
+            className={`inline-flex items-center gap-2 rounded-md border px-3 py-2 text-sm font-medium transition-colors ${
+              alertFlag
+                ? "border-red-300 bg-red-50 text-red-700 hover:bg-red-100"
+                : "border-border bg-white text-muted hover:bg-ivoire hover:text-ink"
+            }`}
+            title="Marqueur de priorité admin"
+          >
+            <Flag className={`h-4 w-4 ${alertFlag ? "fill-red-500" : ""}`} />
+            {alertFlag ? "Fiche signalée" : "Signaler"}
+          </button>
+        </div>
+
+        <div className="mt-3 grid grid-cols-2 gap-3 text-xs">
+          <div className="flex items-center gap-2 text-muted">
+            <User className="h-3.5 w-3.5" />
+            <span>
+              Dernière vérification humaine :{" "}
+              <span className="font-medium text-ink">
+                {formatDateTime(d.last_human_check_at as string | null)}
+              </span>
+            </span>
+          </div>
+          <div className="flex items-center gap-2 text-muted">
+            <Bot className="h-3.5 w-3.5" />
+            <span>
+              Dernier sync IA :{" "}
+              <span className="font-medium text-ink">
+                {formatDateTime(d.last_ia_update_at as string | null)}
+              </span>
+            </span>
+          </div>
+        </div>
+
+        <button
+          type="button"
+          onClick={(e) => {
+            const formEl = (e.target as HTMLElement).closest("form");
+            if (formEl) {
+              const fakeEvent = {
+                preventDefault: () => {},
+                currentTarget: formEl,
+              } as unknown as React.FormEvent<HTMLFormElement>;
+              handleSubmit(fakeEvent, true);
+            }
+          }}
+          disabled={saving}
+          className="mt-3 inline-flex items-center gap-2 rounded-md border border-green-200 bg-green-50 px-3 py-1.5 text-xs font-medium text-green-700 transition-colors hover:bg-green-100 disabled:opacity-50"
+        >
+          <CheckCircle className="h-3.5 w-3.5" />
+          Marquer comme vérifié humainement maintenant
+        </button>
+      </section>
+
+      {/* ─── Feedback ─── */}
       {error && (
         <div className="rounded-md border border-red-200 bg-red-50 p-3 text-sm text-red-700">
           {error}
@@ -96,25 +277,31 @@ export function SalonForm({
         </div>
       )}
 
-      {/* Nom + Slug */}
+      {/* ─── Nom + Slug ─── */}
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
-          <label className={labelClass}>
-            Nom <span className="text-red-500">*</span>
-          </label>
-          <input name="name" required defaultValue={field(d, "name")} className={inputClass} />
+          <FieldLabel fieldName="name" label="Nom" required {...lockProps} />
+          <input
+            name="name"
+            required
+            defaultValue={field(d, "name")}
+            className={inputClass}
+          />
         </div>
         <div>
-          <label className={labelClass}>
-            Slug <span className="text-red-500">*</span>
-          </label>
-          <input name="slug" required defaultValue={field(d, "slug")} className={inputClass} />
+          <FieldLabel fieldName="slug" label="Slug" required {...lockProps} />
+          <input
+            name="slug"
+            required
+            defaultValue={field(d, "slug")}
+            className={inputClass}
+          />
         </div>
       </div>
 
-      {/* Description */}
+      {/* ─── Description ─── */}
       <div>
-        <label className={labelClass}>Description</label>
+        <FieldLabel fieldName="description" label="Description" {...lockProps} />
         <textarea
           name="description"
           rows={4}
@@ -123,61 +310,106 @@ export function SalonForm({
         />
       </div>
 
-      {/* Lieu */}
+      {/* ─── Lieu ─── */}
       <div className="grid gap-4 sm:grid-cols-3">
         <div>
-          <label className={labelClass}>Ville</label>
-          <input name="city" defaultValue={field(d, "city")} className={inputClass} />
+          <FieldLabel fieldName="city" label="Ville" {...lockProps} />
+          <input
+            name="city"
+            defaultValue={field(d, "city")}
+            className={inputClass}
+          />
         </div>
         <div>
-          <label className={labelClass}>Lieu / Venue</label>
-          <input name="venue" defaultValue={field(d, "venue")} className={inputClass} />
+          <FieldLabel fieldName="venue" label="Lieu / Venue" {...lockProps} />
+          <input
+            name="venue"
+            defaultValue={field(d, "venue")}
+            className={inputClass}
+          />
         </div>
         <div>
-          <label className={labelClass}>Pays</label>
-          <input name="country" defaultValue={field(d, "country", "FR")} className={inputClass} />
+          <FieldLabel fieldName="country" label="Pays" {...lockProps} />
+          <input
+            name="country"
+            defaultValue={field(d, "country", "FR")}
+            className={inputClass}
+          />
         </div>
       </div>
 
-      {/* Dates */}
+      {/* ─── Dates ─── */}
       <div className="grid gap-4 sm:grid-cols-3">
         <div>
-          <label className={labelClass}>Date de début</label>
-          <input name="start_date" type="date" defaultValue={field(d, "start_date")} className={inputClass} />
+          <FieldLabel fieldName="start_date" label="Date de début" {...lockProps} />
+          <input
+            name="start_date"
+            type="date"
+            defaultValue={field(d, "start_date")}
+            className={inputClass}
+          />
         </div>
         <div>
-          <label className={labelClass}>Date de fin</label>
-          <input name="end_date" type="date" defaultValue={field(d, "end_date")} className={inputClass} />
+          <FieldLabel fieldName="end_date" label="Date de fin" {...lockProps} />
+          <input
+            name="end_date"
+            type="date"
+            defaultValue={field(d, "end_date")}
+            className={inputClass}
+          />
         </div>
         <div>
-          <label className={labelClass}>Année d&apos;édition</label>
-          <input name="edition_year" type="number" defaultValue={field(d, "edition_year")} className={inputClass} />
+          <FieldLabel fieldName="edition_year" label="Année d'édition" {...lockProps} />
+          <input
+            name="edition_year"
+            type="number"
+            defaultValue={field(d, "edition_year")}
+            className={inputClass}
+          />
         </div>
       </div>
 
-      {/* Organisateur */}
+      {/* ─── Organisateur ─── */}
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
-          <label className={labelClass}>Organisateur</label>
-          <input name="organizer_name" defaultValue={field(d, "organizer_name")} className={inputClass} />
+          <FieldLabel fieldName="organizer_name" label="Organisateur" {...lockProps} />
+          <input
+            name="organizer_name"
+            defaultValue={field(d, "organizer_name")}
+            className={inputClass}
+          />
         </div>
         <div>
-          <label className={labelClass}>Email organisateur</label>
-          <input name="organizer_email" type="email" defaultValue={field(d, "organizer_email")} className={inputClass} />
+          <FieldLabel fieldName="organizer_email" label="Email organisateur" {...lockProps} />
+          <input
+            name="organizer_email"
+            type="email"
+            defaultValue={field(d, "organizer_email")}
+            className={inputClass}
+          />
         </div>
       </div>
 
-      {/* URL */}
+      {/* ─── Site web ─── */}
       <div>
-        <label className={labelClass}>Site web</label>
-        <input name="website_url" type="url" defaultValue={field(d, "website_url")} className={inputClass} />
+        <FieldLabel fieldName="website_url" label="Site web" {...lockProps} />
+        <input
+          name="website_url"
+          type="url"
+          defaultValue={field(d, "website_url")}
+          className={inputClass}
+        />
       </div>
 
-      {/* Fréquence + estimations */}
+      {/* ─── Fréquence + estimations ─── */}
       <div className="grid gap-4 sm:grid-cols-3">
         <div>
-          <label className={labelClass}>Fréquence</label>
-          <select name="frequency" defaultValue={field(d, "frequency")} className={inputClass}>
+          <FieldLabel fieldName="frequency" label="Fréquence" {...lockProps} />
+          <select
+            name="frequency"
+            defaultValue={field(d, "frequency")}
+            className={inputClass}
+          >
             {FREQUENCY_OPTIONS.map((opt) => (
               <option key={opt.value} value={opt.value}>
                 {opt.label}
@@ -186,54 +418,82 @@ export function SalonForm({
           </select>
         </div>
         <div>
-          <label className={labelClass}>Exposants estimés</label>
-          <input name="estimated_exhibitors" type="number" defaultValue={field(d, "estimated_exhibitors")} className={inputClass} />
+          <FieldLabel fieldName="estimated_exhibitors" label="Exposants estimés" {...lockProps} />
+          <input
+            name="estimated_exhibitors"
+            type="number"
+            defaultValue={field(d, "estimated_exhibitors")}
+            className={inputClass}
+          />
         </div>
         <div>
-          <label className={labelClass}>Visiteurs estimés</label>
-          <input name="estimated_visitors" type="number" defaultValue={field(d, "estimated_visitors")} className={inputClass} />
+          <FieldLabel fieldName="estimated_visitors" label="Visiteurs estimés" {...lockProps} />
+          <input
+            name="estimated_visitors"
+            type="number"
+            defaultValue={field(d, "estimated_visitors")}
+            className={inputClass}
+          />
         </div>
       </div>
 
-      {/* Statut */}
+      {/* ─── Images ─── */}
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
-          <label className={labelClass}>Statut</label>
-          <select name="status" defaultValue={field(d, "status", "draft")} className={inputClass}>
-            {STATUS_OPTIONS.map((opt) => (
-              <option key={opt.value} value={opt.value}>
-                {opt.label}
-              </option>
-            ))}
-          </select>
+          <FieldLabel fieldName="logo_url" label="URL du logo" {...lockProps} />
+          <input
+            name="logo_url"
+            type="url"
+            defaultValue={field(d, "logo_url")}
+            className={inputClass}
+          />
+        </div>
+        <div>
+          <FieldLabel fieldName="cover_image_url" label="URL image de couverture" {...lockProps} />
+          <input
+            name="cover_image_url"
+            type="url"
+            defaultValue={field(d, "cover_image_url")}
+            className={inputClass}
+          />
         </div>
       </div>
 
-      {/* Images */}
+      {/* ─── SEO ─── */}
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
-          <label className={labelClass}>URL du logo</label>
-          <input name="logo_url" type="url" defaultValue={field(d, "logo_url")} className={inputClass} />
+          <FieldLabel fieldName="seo_title" label="SEO Title" {...lockProps} />
+          <input
+            name="seo_title"
+            defaultValue={field(d, "seo_title")}
+            className={inputClass}
+          />
         </div>
         <div>
-          <label className={labelClass}>URL image de couverture</label>
-          <input name="cover_image_url" type="url" defaultValue={field(d, "cover_image_url")} className={inputClass} />
+          <FieldLabel fieldName="seo_description" label="SEO Description" {...lockProps} />
+          <input
+            name="seo_description"
+            defaultValue={field(d, "seo_description")}
+            className={inputClass}
+          />
         </div>
       </div>
 
-      {/* SEO */}
-      <div className="grid gap-4 sm:grid-cols-2">
-        <div>
-          <label className={labelClass}>SEO Title</label>
-          <input name="seo_title" defaultValue={field(d, "seo_title")} className={inputClass} />
-        </div>
-        <div>
-          <label className={labelClass}>SEO Description</label>
-          <input name="seo_description" defaultValue={field(d, "seo_description")} className={inputClass} />
-        </div>
+      {/* ─── Notes internes (admin-only, non publié) ─── */}
+      <div>
+        <label className="block text-sm font-medium text-ink">
+          Notes internes <span className="text-xs text-muted">(non publiées)</span>
+        </label>
+        <textarea
+          name="notes_internes"
+          rows={3}
+          defaultValue={field(d, "notes_internes")}
+          placeholder="Arbitrages éditoriaux, informations en attente de confirmation, alertes..."
+          className={inputClass}
+        />
       </div>
 
-      {/* Checkboxes */}
+      {/* ─── Checkboxes héritage ─── */}
       <div className="flex flex-wrap gap-6">
         <label className="flex items-center gap-2 text-sm">
           <input
@@ -251,7 +511,7 @@ export function SalonForm({
             defaultChecked={Boolean(d.is_locked)}
             className="rounded border-border"
           />
-          Verrouillé (protégé)
+          Verrouillage global (legacy)
         </label>
         <label className="flex items-center gap-2 text-sm">
           <input
@@ -261,13 +521,11 @@ export function SalonForm({
             className="rounded border-border"
           />
           Agoris Certified
-          <span className="text-xs text-muted">
-            (badge visible côté public)
-          </span>
+          <span className="text-xs text-muted">(badge public)</span>
         </label>
       </div>
 
-      {/* Submit */}
+      {/* ─── Submit ─── */}
       <button
         type="submit"
         disabled={saving}

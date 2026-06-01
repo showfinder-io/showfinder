@@ -49,6 +49,12 @@ export type SalonRow = {
   co_organizer_name?: string | null;
   // Ajouté par migration 20260601400000 (numero d'edition humain)
   edition_number?: number | null;
+  // Ajoutés par migration 20260601700000 (V5 workflow éditorial)
+  locked_fields?: string[];
+  notes_internes?: string | null;
+  last_human_check_at?: string | null;
+  last_ia_update_at?: string | null;
+  alert_flag?: boolean;
   created_at: string;
 };
 
