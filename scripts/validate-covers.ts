@@ -32,9 +32,10 @@ const DRY_RUN = process.argv.includes("--dry-run");
 const TIMEOUT_MS = 10000;
 const SLEEP_MS = 300;
 
-const MIN_WIDTH = 800;
-const MIN_RATIO = 1.4; // 16:9 = 1.78 ; on tolère 4:3 (1.33) → MIN un peu plus bas
-const MAX_RATIO = 2.4; // > 21:9 (2.33) = panorama, crop laid
+// Validation assouplie suite décision user : object-contain + bg-sable
+// (letterbox/pillarbox) sur la fiche salon → tous les ratios passent.
+// On rejette seulement : taille trop petite + formats invalides.
+const MIN_WIDTH = 600;
 
 function sleep(ms: number) {
   return new Promise((r) => setTimeout(r, ms));
@@ -90,14 +91,7 @@ async function validateCover(url: string): Promise<Verdict> {
   if (w < MIN_WIDTH) {
     return { ok: false, reason: `trop petite (${w}px de large)` };
   }
-  const ratio = w / h;
-  if (ratio < MIN_RATIO) {
-    return { ok: false, reason: `ratio ${ratio.toFixed(2)} trop carré / portrait` };
-  }
-  if (ratio > MAX_RATIO) {
-    return { ok: false, reason: `ratio ${ratio.toFixed(2)} trop panoramique` };
-  }
-  return { ok: true, width: w, height: h, ratio };
+  return { ok: true, width: w, height: h, ratio: w / h };
 }
 
 async function main() {

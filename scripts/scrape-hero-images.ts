@@ -31,12 +31,10 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 const TIMEOUT_MS = 12000;
 const SLEEP_MS = 800; // throttling soft pour eviter le ban anti-bot
 
-// Validation dimensions (cf. scripts/validate-covers.ts) :
-// l'image doit etre 16:9-ish et au moins 800px de large pour bien rendre
-// dans le aspect-video object-cover des fiches salons.
-const MIN_WIDTH = 800;
-const MIN_RATIO = 1.4;
-const MAX_RATIO = 2.4;
+// Validation dimensions assouplie : le fichier salon affiche en
+// object-contain + bg-sable (letterbox/pillarbox), donc on accepte tous
+// les ratios. On rejette uniquement : taille trop petite + formats invalides.
+const MIN_WIDTH = 600;
 
 async function fetchImageDimensions(url: string): Promise<{ width: number; height: number } | null> {
   try {
@@ -61,13 +59,11 @@ async function fetchImageDimensions(url: string): Promise<{ width: number; heigh
   }
 }
 
-/** Verifie que l'image candidate respecte les criteres de rendu 16:9. */
+/** Validation taille minimale (ratio gere via object-contain CSS). */
 async function validateCandidate(url: string): Promise<boolean> {
   const dim = await fetchImageDimensions(url);
   if (!dim) return false;
-  if (dim.width < MIN_WIDTH) return false;
-  const ratio = dim.width / dim.height;
-  return ratio >= MIN_RATIO && ratio <= MAX_RATIO;
+  return dim.width >= MIN_WIDTH;
 }
 
 function sleep(ms: number) {

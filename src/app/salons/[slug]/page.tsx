@@ -344,14 +344,16 @@ export default async function SalonPage({ params }: Props) {
 
       </section>
 
-      {/* 4. BLOC VISUEL — uniquement si photo réelle scrapable (pas de fallback) */}
+      {/* 4. BLOC VISUEL — photo réelle scrapable affichée en object-contain
+            sur fond sable (letterbox/pillarbox) pour préserver l'homothétie
+            quelle que soit la dimension d'origine. Pas de fallback brand. */}
       {salon.cover_image_url && (
-        <section className="mt-12 overflow-hidden rounded-lg border border-border">
+        <section className="mt-12 overflow-hidden rounded-lg border border-border bg-sable">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={salon.cover_image_url}
             alt={`${salon.name} - vue du salon`}
-            className="aspect-video w-full object-cover"
+            className="aspect-video w-full object-contain"
           />
         </section>
       )}
