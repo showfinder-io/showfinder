@@ -80,14 +80,16 @@ function isBadExt(src: string): boolean {
 function pickHero(html: string, baseUrl: string): string | null {
   const $ = cheerio.load(html);
 
-  // 1. og:image
+  // 1. og:image (+ filtre anti-logo : certains sites mettent leur logo
+  // comme og:image par defaut, on skipe pour eviter d'avoir un logo
+  // tout petit comme hero salon).
   const og =
     $('meta[property="og:image"]').attr("content") ??
     $('meta[property="og:image:secure_url"]').attr("content") ??
     $('meta[name="twitter:image"]').attr("content");
   if (og) {
     const abs = resolveUrl(og, baseUrl);
-    if (abs && !isBadExt(abs)) return abs;
+    if (abs && !isBadExt(abs) && !isLikelyLogo(abs, "", "")) return abs;
   }
 
   // 2. JSON-LD image
@@ -113,7 +115,7 @@ function pickHero(html: string, baseUrl: string): string | null {
   });
   if (jsonLdImage) {
     const abs = resolveUrl(jsonLdImage, baseUrl);
-    if (abs && !isBadExt(abs)) return abs;
+    if (abs && !isBadExt(abs) && !isLikelyLogo(abs, "", "")) return abs;
   }
 
   // 3. Hero img : sélecteurs courants
