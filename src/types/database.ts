@@ -582,6 +582,8 @@ export type Database = {
         Row: {
           created_at: string
           description: string | null
+          editorial_mdx: string | null
+          editorial_updated_at: string | null
           icon: string | null
           id: string
           name: string
@@ -592,6 +594,8 @@ export type Database = {
         Insert: {
           created_at?: string
           description?: string | null
+          editorial_mdx?: string | null
+          editorial_updated_at?: string | null
           icon?: string | null
           id?: string
           name: string
@@ -602,6 +606,8 @@ export type Database = {
         Update: {
           created_at?: string
           description?: string | null
+          editorial_mdx?: string | null
+          editorial_updated_at?: string | null
           icon?: string | null
           id?: string
           name?: string
@@ -636,7 +642,11 @@ export type Database = {
           country: string
           created_at: string
           description: string | null
+          editorial_mdx: string | null
+          editorial_updated_at: string | null
+          gallery: Json
           google_maps_url: string | null
+          halls_count: number | null
           id: string
           lat: number | null
           lng: number | null
@@ -653,7 +663,11 @@ export type Database = {
           country?: string
           created_at?: string
           description?: string | null
+          editorial_mdx?: string | null
+          editorial_updated_at?: string | null
+          gallery?: Json
           google_maps_url?: string | null
+          halls_count?: number | null
           id?: string
           lat?: number | null
           lng?: number | null
@@ -670,7 +684,11 @@ export type Database = {
           country?: string
           created_at?: string
           description?: string | null
+          editorial_mdx?: string | null
+          editorial_updated_at?: string | null
+          gallery?: Json
           google_maps_url?: string | null
+          halls_count?: number | null
           id?: string
           lat?: number | null
           lng?: number | null

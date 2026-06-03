@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return { title: "Secteur introuvable" };
   }
 
-  const sectorContent = getSectorContent(slug);
+  const sectorContent = await getSectorContent(slug);
 
   // Si MDX présent, on privilégie son frontmatter SEO (rédigé par l'équipe
   // éditoriale, plus riche que la simple description de la table sectors).
@@ -70,7 +70,7 @@ export default async function SecteurPage({ params }: Props) {
 
   const [result, sectorContent] = await Promise.all([
     getSalonsBySector(slug),
-    Promise.resolve(getSectorContent(slug)),
+    getSectorContent(slug),
   ]);
 
   const Content = sectorContent

@@ -39,6 +39,7 @@ export default function AdminSecteurEditPage() {
     setSuccess(false);
 
     const form = new FormData(e.currentTarget);
+    const editorialMdx = String(form.get("editorial_mdx") ?? "");
     const data: SectorData = {
       name: form.get("name"),
       slug: form.get("slug"),
@@ -46,6 +47,8 @@ export default function AdminSecteurEditPage() {
       icon: form.get("icon") || null,
       seo_title: form.get("seo_title") || null,
       seo_description: form.get("seo_description") || null,
+      editorial_mdx: editorialMdx || null,
+      ...(editorialMdx && { editorial_updated_at: new Date().toISOString() }),
     };
 
     try {
@@ -136,6 +139,40 @@ export default function AdminSecteurEditPage() {
             <label className={labelClass}>SEO Description</label>
             <input name="seo_description" defaultValue={field(d, "seo_description")} className={inputClass} />
           </div>
+        </div>
+
+        {/* V7 -- Contenu editorial long-form */}
+        <div className="border-t border-border pt-5">
+          <h2 className="font-serif text-lg font-semibold text-ink">
+            Contenu éditorial V7
+          </h2>
+          <p className="mt-1 text-xs text-muted">
+            Analyse long-form du secteur (Markdown). Sections type : ## Les
+            salons de référence en France, ## Les grands salons européens,
+            ## Au-delà des salons. Liens internes vers /salons/[slug] et
+            /lieux/[slug] supportés.
+          </p>
+        </div>
+
+        <div>
+          <label className={labelClass}>
+            Contenu éditorial (Markdown)
+            {d.editorial_updated_at ? (
+              <span className="ml-2 text-xs font-normal text-muted">
+                Maj :{" "}
+                {new Date(d.editorial_updated_at as string).toLocaleDateString(
+                  "fr-FR"
+                )}
+              </span>
+            ) : null}
+          </label>
+          <textarea
+            name="editorial_mdx"
+            rows={20}
+            defaultValue={field(d, "editorial_mdx")}
+            placeholder={`L'industrie agroalimentaire française...\n\n## Les salons de référence en France\n\n[SIAL Paris](/salons/sial-paris-2026)...\n\n## Les grands salons européens\n\n...`}
+            className={`${inputClass} font-mono text-xs`}
+          />
         </div>
 
         <button

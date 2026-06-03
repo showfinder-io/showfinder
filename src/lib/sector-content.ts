@@ -1,8 +1,4 @@
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
-
-const SECTEURS_DIR = path.join(process.cwd(), "content/secteurs");
+import { createClient } from "@/lib/supabase/server";
 
 export type SectorContentFrontmatter = {
   title: string;
@@ -16,18 +12,29 @@ export type SectorContent = {
 };
 
 /**
- * Lit le MDX éditorial d'un secteur si il existe.
- * Retourne null si pas de fichier (= secteur sans contenu chapeau).
+ * Lit le MDX éditorial d'un secteur depuis la DB (champ editorial_mdx).
+ * Retourne null si pas de contenu (= secteur sans chapeau éditorial).
+ * Le frontmatter est synthétisé depuis les colonnes name + description + editorial_updated_at.
  */
-export function getSectorContent(slug: string): SectorContent | null {
-  const filepath = path.join(SECTEURS_DIR, `${slug}.mdx`);
-  if (!fs.existsSync(filepath)) return null;
+export async function getSectorContent(slug: string): Promise<SectorContent | null> {
+  const supabase = await createClient();
+  const { data } = await supabase
+    .from("sectors")
+    .select("name, description, editorial_mdx, editorial_updated_at")
+    .eq("slug", slug)
+    .maybeSingle();
 
-  const raw = fs.readFileSync(filepath, "utf-8");
-  const { data, content } = matter(raw);
+  if (!data?.editorial_mdx) return null;
+
   return {
-    frontmatter: data as SectorContentFrontmatter,
-    content,
+    frontmatter: {
+      title: `Salons ${data.name} : analyse 2026 du secteur en France`,
+      description:
+        data.description ??
+        `Tous les salons professionnels du secteur ${data.name}.`,
+      updated: data.editorial_updated_at ?? new Date().toISOString(),
+    },
+    content: data.editorial_mdx,
   };
 }
 
@@ -35,12 +42,13 @@ export function getSectorContent(slug: string): SectorContent | null {
  * Renvoie la liste des slugs de secteurs qui ont un MDX éditorial.
  * Utilisé par le sitemap pour ne référencer que les pages travaillées.
  */
-export function getEditorialSectorSlugs(): string[] {
-  if (!fs.existsSync(SECTEURS_DIR)) return [];
-  return fs
-    .readdirSync(SECTEURS_DIR)
-    .filter((f) => f.endsWith(".mdx"))
-    .map((f) => f.replace(/\.mdx$/, ""));
+export async function getEditorialSectorSlugs(): Promise<string[]> {
+  const supabase = await createClient();
+  const { data } = await supabase
+    .from("sectors")
+    .select("slug")
+    .not("editorial_mdx", "is", null);
+  return (data ?? []).map((s) => s.slug);
 }
 
 const FR_MONTHS = [

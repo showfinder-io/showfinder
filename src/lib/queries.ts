@@ -63,6 +63,8 @@ export type SectorRow = {
   slug: string;
   name: string;
   description: string | null;
+  editorial_mdx?: string | null;
+  editorial_updated_at?: string | null;
 };
 
 // Version legere pour les jointures (sans description)

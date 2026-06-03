@@ -31,7 +31,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // Seuls les secteurs avec MDX éditorial sont indexables (les autres sont
   // en noindex,follow côté page). Cf. UX/SEO spec mai 2026.
-  const editorialSectorSlugs = new Set(getEditorialSectorSlugs());
+  const editorialSectorSlugs = new Set(await getEditorialSectorSlugs());
   const sectors = allSectors.filter((s) => editorialSectorSlugs.has(s.slug));
 
   // Un lieu n'est indexable que si la fiche est riche : description ≥ 80
