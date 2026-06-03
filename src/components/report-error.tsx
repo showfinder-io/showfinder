@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Flag, Loader2, CheckCircle } from "lucide-react";
+import { Flag, Mail } from "lucide-react";
 import {
   Sheet,
   SheetTrigger,
@@ -11,20 +11,11 @@ import {
   SheetDescription,
 } from "@/components/ui/sheet";
 
-const FIELD_OPTIONS = [
-  { value: "dates", label: "Dates" },
-  { value: "lieu", label: "Lieu" },
-  { value: "site_web", label: "Site web" },
-  { value: "description", label: "Description" },
-  { value: "chiffres", label: "Nombre d'exposants / visiteurs" },
-  { value: "autre", label: "Autre" },
-];
-
-type Status = "idle" | "submitting" | "success" | "error";
-
 /**
- * Sheet contrôlée pour signaler une erreur. Réutilisable depuis n'importe
- * quel composant qui gère son propre `open` (ex : SalonActionsBar 3-dots).
+ * Sheet "Signaler une erreur" simplifie en mailto direct le temps que
+ * l'API /api/reports soit fiabilisee. On garde le bottom-sheet UX +
+ * un subject mailto pre-rempli qui inclut le slug du salon pour
+ * faciliter le tri cote support.
  */
 export function ReportErrorSheet({
   salonSlug,
@@ -35,147 +26,43 @@ export function ReportErrorSheet({
   open: boolean;
   onOpenChange: (open: boolean) => void;
 }) {
-  const [field, setField] = useState("");
-  const [correction, setCorrection] = useState("");
-  const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<Status>("idle");
-
-  async function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    if (!field || !correction.trim()) return;
-
-    setStatus("submitting");
-    try {
-      const res = await fetch("/api/reports", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          salonSlug,
-          field,
-          correction: correction.trim(),
-          email: email.trim() || null,
-        }),
-      });
-
-      if (!res.ok) throw new Error("Erreur serveur");
-      setStatus("success");
-    } catch {
-      setStatus("error");
-    }
-  }
-
-  function handleOpenChange(nextOpen: boolean) {
-    onOpenChange(nextOpen);
-    if (!nextOpen) {
-      setTimeout(() => {
-        setField("");
-        setCorrection("");
-        setEmail("");
-        setStatus("idle");
-      }, 200);
-    }
-  }
+  const subject = encodeURIComponent(
+    `[Agoris] Signaler une erreur sur le salon: ${salonSlug}`
+  );
 
   return (
-    <Sheet open={open} onOpenChange={handleOpenChange}>
-      <SheetContent side="bottom" className="rounded-t-xl max-h-[85vh] overflow-y-auto">
+    <Sheet open={open} onOpenChange={onOpenChange}>
+      <SheetContent
+        side="bottom"
+        className="rounded-t-xl max-h-[85vh] overflow-y-auto"
+      >
         <SheetHeader>
           <SheetTitle>Signaler une erreur</SheetTitle>
           <SheetDescription>
-            Aidez-nous à maintenir des informations fiables sur les salons.
+            Aidez-nous a maintenir des informations fiables sur les salons.
           </SheetDescription>
         </SheetHeader>
 
-        {status === "success" ? (
-          <div className="flex flex-col items-center gap-3 px-4 pb-6 pt-2">
-            <CheckCircle className="h-8 w-8 text-green-600" />
-            <p className="text-sm text-center text-muted">
-              Merci pour votre signalement ! Nous vérifierons cette information
-              dans les plus brefs délais.
-            </p>
-          </div>
-        ) : (
-          <form onSubmit={handleSubmit} className="flex flex-col gap-4 px-4 pb-6">
-            <div className="flex flex-col gap-1.5">
-              <label htmlFor="report-field" className="text-sm font-medium">
-                Quel champ est incorrect ?
-              </label>
-              <select
-                id="report-field"
-                value={field}
-                onChange={(e) => setField(e.target.value)}
-                required
-                className="rounded-md border border-border bg-white px-3 py-2 text-sm text-ink outline-none focus:ring-2 focus:ring-accent/30"
-              >
-                <option value="" disabled>
-                  Sélectionner...
-                </option>
-                {FIELD_OPTIONS.map((opt) => (
-                  <option key={opt.value} value={opt.value}>
-                    {opt.label}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            <div className="flex flex-col gap-1.5">
-              <label htmlFor="report-correction" className="text-sm font-medium">
-                Quelle est la bonne information ?
-              </label>
-              <textarea
-                id="report-correction"
-                value={correction}
-                onChange={(e) => setCorrection(e.target.value)}
-                required
-                rows={3}
-                placeholder="Décrivez la correction à apporter..."
-                className="rounded-md border border-border bg-white px-3 py-2 text-sm text-ink outline-none resize-none focus:ring-2 focus:ring-accent/30"
-              />
-            </div>
-
-            <div className="flex flex-col gap-1.5">
-              <label htmlFor="report-email" className="text-sm font-medium">
-                Votre email{" "}
-                <span className="font-normal text-muted">(optionnel, pour être notifié de la correction)</span>
-              </label>
-              <input
-                id="report-email"
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="email@exemple.com"
-                className="rounded-md border border-border bg-white px-3 py-2 text-sm text-ink outline-none focus:ring-2 focus:ring-accent/30"
-              />
-            </div>
-
-            {status === "error" && (
-              <p className="text-sm text-red-600">
-                Une erreur est survenue. Veuillez réessayer.
-              </p>
-            )}
-
-            <button
-              type="submit"
-              disabled={status === "submitting" || !field || !correction.trim()}
-              className="inline-flex items-center justify-center gap-2 rounded-md bg-accent px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-accent-hover disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              {status === "submitting" ? (
-                <>
-                  <Loader2 className="h-4 w-4 animate-spin" />
-                  Envoi...
-                </>
-              ) : (
-                "Envoyer le signalement"
-              )}
-            </button>
-          </form>
-        )}
+        <div className="flex flex-col gap-4 px-4 pb-6">
+          <p className="text-sm leading-relaxed text-muted">
+            Decrivez-nous l&apos;erreur (date, lieu, site web, description,
+            chiffres, autre) ainsi que la bonne information. Nous verifierons
+            et corrigerons la fiche dans les plus brefs delais.
+          </p>
+          <a
+            href={`mailto:hello@agoris.io?subject=${subject}`}
+            className="inline-flex items-center justify-center gap-2 rounded-md bg-accent px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-accent-hover"
+          >
+            <Mail className="h-4 w-4" />
+            Ecrire a hello@agoris.io
+          </a>
+        </div>
       </SheetContent>
     </Sheet>
   );
 }
 
-/** Wrapper legacy : bouton trigger inline + sheet auto-gérée. */
+/** Wrapper legacy : bouton trigger inline + sheet auto-geree. */
 export function ReportError({ salonSlug }: { salonSlug: string }) {
   const [open, setOpen] = useState(false);
   return (
@@ -190,7 +77,11 @@ export function ReportError({ salonSlug }: { salonSlug: string }) {
           Une information incorrecte ? Signaler une erreur
         </SheetTrigger>
       </Sheet>
-      <ReportErrorSheet salonSlug={salonSlug} open={open} onOpenChange={setOpen} />
+      <ReportErrorSheet
+        salonSlug={salonSlug}
+        open={open}
+        onOpenChange={setOpen}
+      />
     </>
   );
 }
