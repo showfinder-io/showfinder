@@ -31,6 +31,17 @@ export type SyncResult = {
     db_value: string | null;
     scraped_value: string | null;
   }>;
+  // Doublons potentiels detectes en pre-insert : un salon avec un slug
+  // different mais un nom + ville + dates tres similaires existe deja.
+  // Non insere, signale a l'admin pour decision.
+  potential_dupes: Array<{
+    scraped_slug: string;
+    scraped_name: string;
+    db_slug: string;
+    db_name: string;
+    similarity: number;
+    day_diff: number;
+  }>;
 };
 
 export type VenueSource = {

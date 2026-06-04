@@ -32,6 +32,37 @@ function slugify(text: string): string {
     .replace(/^-|-$/g, "");
 }
 
+// Anti-doublon : normalise un nom pour fuzzy match.
+// "VivaTech" et "vivatech-paris-2026" se reduisent au meme set de tokens
+// avec ce traitement (lowercase, sans accents, tokens > 2 chars).
+function nameTokens(text: string | null | undefined): Set<string> {
+  if (!text) return new Set();
+  const norm = text
+    .normalize("NFD")
+    .replace(/\p{Diacritic}/gu, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9 ]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+  return new Set(norm.split(" ").filter((t) => t.length > 2));
+}
+
+// Jaccard similarity entre 2 noms : 1.0 = identique, 0 = disjoints.
+// Seuil 0.7 utilise pour declarer un doublon potentiel apres match ville.
+function jaccardSim(a: string | null | undefined, b: string | null | undefined): number {
+  const A = nameTokens(a);
+  const B = nameTokens(b);
+  if (A.size === 0 || B.size === 0) return 0;
+  const inter = [...A].filter((x) => B.has(x)).length;
+  return inter / (A.size + B.size - inter);
+}
+
+// Distance en jours entre 2 dates ISO. Infinity si l'une manque.
+function daysBetween(a: string | null | undefined, b: string | null | undefined): number {
+  if (!a || !b) return Infinity;
+  return Math.abs(+new Date(a) - +new Date(b)) / 86_400_000;
+}
+
 async function main() {
   console.log("=== SYNC : synchronisation avec la base de données ===\n");
 
@@ -49,7 +80,21 @@ async function main() {
     updated: [],
     skipped_locked: [],
     conflicts: [],
+    potential_dupes: [],
   };
+
+  // Pre-load tous les salons existants pour le check anti-doublon pre-insert.
+  // On compare sur name + city + start_date (fenetre +/-14j). Audit juin 2026
+  // a montre que le scraper inserait des doublons (ex: vivatech-2026 ET
+  // vivatech-paris-2026) parce qu'il matchait uniquement par slug exact.
+  const { data: allExisting } = await supabase
+    .from("salons")
+    .select("id, slug, name, city, start_date, status")
+    .limit(2000);
+  const existingForDupeCheck = allExisting ?? [];
+  console.log(
+    `  📋 ${existingForDupeCheck.length} salons charges pour check anti-doublon\n`
+  );
 
   for (const salon of enriched) {
     // Chercher un salon existant par slug ou nom similaire
@@ -146,6 +191,34 @@ async function main() {
           .eq("id", existing.id);
       }
     } else {
+      // Check anti-doublon avant INSERT : on cherche un salon en DB avec
+      // un nom similaire (jaccard >= 0.7) + meme ville + dates proches
+      // (+/- 14j). Si match -> on n'insere PAS, on signale a l'admin.
+      const cityNorm = (salon.city ?? "").toLowerCase().normalize("NFD").replace(/\p{Diacritic}/gu, "").trim();
+      const dupeMatch = existingForDupeCheck.find((e) => {
+        const eCityNorm = (e.city ?? "").toLowerCase().normalize("NFD").replace(/\p{Diacritic}/gu, "").trim();
+        if (eCityNorm !== cityNorm) return false;
+        if (daysBetween(salon.start_date, e.start_date) > 14) return false;
+        return jaccardSim(salon.name, e.name) >= 0.7;
+      });
+
+      if (dupeMatch) {
+        const sim = jaccardSim(salon.name, dupeMatch.name);
+        const dayDiff = Math.round(daysBetween(salon.start_date, dupeMatch.start_date));
+        console.log(
+          `  🚫 ${salon.name} : doublon potentiel de "${dupeMatch.name}" (${dupeMatch.slug}, sim=${sim.toFixed(2)}, ${dayDiff}j) — pas insere`
+        );
+        result.potential_dupes.push({
+          scraped_slug: salon.slug,
+          scraped_name: salon.name,
+          db_slug: dupeMatch.slug,
+          db_name: dupeMatch.name,
+          similarity: parseFloat(sim.toFixed(2)),
+          day_diff: dayDiff,
+        });
+        continue;
+      }
+
       // Nouveau salon → insérer en draft
       const year = salon.start_date
         ? parseInt(salon.start_date.substring(0, 4))
@@ -185,10 +258,11 @@ async function main() {
   fs.writeFileSync(REPORT_FILE, JSON.stringify(result, null, 2));
 
   console.log("\n=== RAPPORT ===");
-  console.log(`  Créés (draft) : ${result.created.length}`);
-  console.log(`  Mis à jour    : ${result.updated.length}`);
-  console.log(`  Locked (ignorés) : ${result.skipped_locked.length}`);
-  console.log(`  Conflits      : ${result.conflicts.length}`);
+  console.log(`  Créés (draft)        : ${result.created.length}`);
+  console.log(`  Mis à jour           : ${result.updated.length}`);
+  console.log(`  Locked (ignorés)     : ${result.skipped_locked.length}`);
+  console.log(`  Conflits             : ${result.conflicts.length}`);
+  console.log(`  Doublons potentiels  : ${result.potential_dupes.length}`);
   console.log(`\n📄 Rapport : ${REPORT_FILE}`);
 }
 
