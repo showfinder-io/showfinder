@@ -152,6 +152,52 @@ const nextConfig: NextConfig = {
         destination: "/salons/expoprotection-2026",
         permanent: true,
       },
+      // Audit doublons 2026-06-04 : 9 fiches fusionnees vers leurs canoniques
+      {
+        source: "/salons/big-data-paris-2026",
+        destination: "/salons/big-data-ai-paris-2026",
+        permanent: true,
+      },
+      {
+        source: "/salons/sia-paris-2027",
+        destination: "/salons/sia-paris-2026",
+        permanent: true,
+      },
+      {
+        source: "/salons/salon-mondial-tourisme-2026",
+        destination: "/salons/salon-mondial-du-tourisme-paris-2026",
+        permanent: true,
+      },
+      {
+        source: "/salons/salon-immobilier-entreprise-paris-2026",
+        destination: "/salons/simi-2026",
+        permanent: true,
+      },
+      {
+        source: "/salons/vivatech-paris-2026",
+        destination: "/salons/vivatech-2026",
+        permanent: true,
+      },
+      {
+        source: "/salons/congresmaire-paris-2026",
+        destination: "/salons/smcl-2026",
+        permanent: true,
+      },
+      {
+        source: "/salons/paris-healthcare-week-2026",
+        destination: "/salons/santexpo-paris-2026",
+        permanent: true,
+      },
+      {
+        source: "/salons/sido-lyon-2026",
+        destination: "/salons/innorobo-by-sido-2026",
+        permanent: true,
+      },
+      {
+        source: "/salons/pollutec-paris-2026",
+        destination: "/salons/pollutec-lyon-2027",
+        permanent: true,
+      },
     ];
   },
 };
