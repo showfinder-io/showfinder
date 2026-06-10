@@ -50,3 +50,6 @@ next-env.d.ts
 
 # Claude Code worktrees (agents temporaires)
 .claude/worktrees/
+
+# GSC audit exports (scripts/gsc-baseline-export.ts)
+audits/
