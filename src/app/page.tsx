@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { siteConfig } from "@/lib/config";
 import { getSalons, getSectors } from "@/lib/queries";
+import { JsonLd } from "@/components/json-ld";
 import { SalonCard } from "@/components/salon-card";
 import { SectorBadge } from "@/components/sector-badge";
 import { SectionTitle } from "@/components/section-title";
@@ -30,8 +31,35 @@ export default async function Home() {
     getSectors(),
   ]);
 
+  // Schema.org Organization + WebSite (SearchAction → /salons?search=)
+  const organizationJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: siteConfig.name,
+    url: siteConfig.url,
+    logo: `${siteConfig.url}/icon.png`,
+    description: siteConfig.description,
+  };
+  const webSiteJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: siteConfig.name,
+    url: siteConfig.url,
+    inLanguage: siteConfig.locale,
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${siteConfig.url}/salons?search={search_term_string}`,
+      },
+      "query-input": "required name=search_term_string",
+    },
+  };
+
   return (
     <div>
+      <JsonLd data={organizationJsonLd} />
+      <JsonLd data={webSiteJsonLd} />
       {/* HERO V1 refondu — éditorial, watermark symbole, search underline */}
       <Hero totalSalons={totalPublished} />
 
