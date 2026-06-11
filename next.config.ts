@@ -1,5 +1,14 @@
 import type { NextConfig } from "next";
 import createMDX from "@next/mdx";
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
+
+// Migration "slugs sans année" (2026-06-12) : 301 ancien slug-année -> slug de
+// base, générés par scripts/diag-slug-year-apply.ts. Fichier committé, ne pas
+// éditer à la main.
+const slugYearRedirects: { source: string; destination: string }[] = JSON.parse(
+  readFileSync(join(__dirname, "redirects-slug-year.json"), "utf8")
+);
 
 const nextConfig: NextConfig = {
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
@@ -7,21 +16,24 @@ const nextConfig: NextConfig = {
   async redirects() {
     // 301 permanents pour préserver l'indexation des anciennes URLs indexées
     // par Google quand le slug MDX a changé (rebrand, year shift, etc.).
+    // Depuis la migration "slugs sans année", les destinations ci-dessous
+    // pointent vers les slugs de base (pas de chaînes de 301).
     return [
+      ...slugYearRedirects.map((r) => ({ ...r, permanent: true })),
       // Cohortes 1-4 BTP/bois (cf. migration 20260528000000)
       {
         source: "/salons/artibat-rennes-2026",
-        destination: "/salons/artibat-rennes-2027",
+        destination: "/salons/artibat-rennes",
         permanent: true,
       },
       {
         source: "/salons/nordbat-lille-2026",
-        destination: "/salons/nordbat-lille-2028",
+        destination: "/salons/nordbat-lille",
         permanent: true,
       },
       {
         source: "/salons/eurobois-lyon-2026",
-        destination: "/salons/eurobois-lyon-2028",
+        destination: "/salons/eurobois-lyon",
         permanent: true,
       },
       // Cohorte 5 + index legacy (audit 2026-06-01 : 11 slugs GSC → canonique MDX)
@@ -31,22 +43,22 @@ const nextConfig: NextConfig = {
       // vraie fiche publiée.)
       {
         source: "/salons/innorobo-paris-2026",
-        destination: "/salons/innorobo-by-sido-2026",
+        destination: "/salons/innorobo-by-sido",
         permanent: true,
       },
       {
         source: "/salons/jec-world-paris-2026",
-        destination: "/salons/jec-world-2026",
+        destination: "/salons/jec-world",
         permanent: true,
       },
       {
         source: "/salons/maison-et-objet-paris-2026",
-        destination: "/salons/maison-objet-paris-2026",
+        destination: "/salons/maison-objet-paris",
         permanent: true,
       },
       {
         source: "/salons/salon-immobilier-entreprise-paris-2026",
-        destination: "/salons/simi-2026",
+        destination: "/salons/simi",
         permanent: true,
       },
       // (3 entrées cohorte 5 retirées le 2026-06-11 : elles formaient des
@@ -55,61 +67,61 @@ const nextConfig: NextConfig = {
       // ERR_TOO_MANY_REDIRECTS constaté en prod sur les 3 fiches canoniques.)
       {
         source: "/salons/sandwich-and-snack-show-2026",
-        destination: "/salons/snack-show-2026",
+        destination: "/salons/snack-show",
         permanent: true,
       },
       {
         source: "/salons/solscope-lyon-2026",
-        destination: "/salons/solscope-2027",
+        destination: "/salons/solscope",
         permanent: true,
       },
       {
         source: "/salons/solutions-rh-paris-2026",
-        destination: "/salons/solutions-rh-2026",
+        destination: "/salons/solutions-rh",
         permanent: true,
       },
       {
         source: "/salons/who-s-next-paris-2026",
-        destination: "/salons/whos-next-paris-2026",
+        destination: "/salons/whos-next-paris",
         permanent: true,
       },
       // Cohorte 6 DB cleanup (audit 2026-06-01 batch 1+2) : doublons DB
       // ↔ MDX existants. Voir migration 20260601500000_cohorte6_db_cleanup.
       {
         source: "/salons/equiphotel-paris-2026",
-        destination: "/salons/equip-hotel-paris-2026",
+        destination: "/salons/equip-hotel-paris",
         permanent: true,
       },
       {
         source: "/salons/mif-expo-paris-2026",
-        destination: "/salons/mif-expo-2026",
+        destination: "/salons/mif-expo",
         permanent: true,
       },
       {
         source: "/salons/solutrans-lyon-2027",
-        destination: "/salons/solutrans-2027",
+        destination: "/salons/solutrans",
         permanent: true,
       },
       {
         source: "/salons/sitl-paris-2026",
-        destination: "/salons/sitl-2026",
+        destination: "/salons/sitl",
         permanent: true,
       },
       {
         source: "/salons/cfia-rennes-2026",
-        destination: "/salons/cfia-rennes-2027",
+        destination: "/salons/cfia-rennes",
         permanent: true,
       },
       {
         source: "/salons/cosmetic-360-paris-2026",
-        destination: "/salons/cosmetic-360-2026",
+        destination: "/salons/cosmetic-360",
         permanent: true,
       },
       // Europain → rebrandé Sirha Bake & Snack depuis 2026 (rachat GL Events
       // + Ekip à Comexposium janv 2025). MDX consolidé sur sirha-bake-snack-2028.
       {
         source: "/salons/europain-paris-2026",
-        destination: "/salons/sirha-bake-snack-2028",
+        destination: "/salons/sirha-bake-snack",
         permanent: true,
       },
       // Cohorte 6 DB cleanup final (audit 2026-06-01 batch 3-6) :
@@ -117,33 +129,33 @@ const nextConfig: NextConfig = {
       // 20260601600000_cohorte6_db_cleanup_final.
       {
         source: "/salons/smart-industries-2026",
-        destination: "/salons/global-industrie-lyon-2025",
+        destination: "/salons/global-industrie-lyon",
         permanent: true,
       },
       {
         source: "/salons/ecommerce-paris-2026",
-        destination: "/salons/paris-retail-week-2026",
+        destination: "/salons/paris-retail-week",
         permanent: true,
       },
       {
         source: "/salons/industrie-lyon-2026",
-        destination: "/salons/global-industrie-lyon-2025",
+        destination: "/salons/global-industrie-lyon",
         permanent: true,
       },
       {
         source: "/salons/salon-hvac-paris-2026",
-        destination: "/salons/interclima-2026",
+        destination: "/salons/interclima",
         permanent: true,
       },
       {
         source: "/salons/secuexpo-paris-2026",
-        destination: "/salons/expoprotection-2026",
+        destination: "/salons/expoprotection",
         permanent: true,
       },
       // Audit doublons 2026-06-04 : 9 fiches fusionnees vers leurs canoniques
       {
         source: "/salons/big-data-paris-2026",
-        destination: "/salons/big-data-ai-paris-2026",
+        destination: "/salons/big-data-ai-paris",
         permanent: true,
       },
       // (sia-paris-2027 -> sia-paris-2026 INVERSÉ le 2026-06-11 : la fiche
@@ -151,39 +163,39 @@ const nextConfig: NextConfig = {
       // DB renommé sia-paris-2027 par scripts/diag-redirect-slug-cleanup.ts.)
       {
         source: "/salons/sia-paris-2026",
-        destination: "/salons/sia-paris-2027",
+        destination: "/salons/sia-paris",
         permanent: true,
       },
       {
         source: "/salons/salon-mondial-tourisme-2026",
-        destination: "/salons/salon-mondial-du-tourisme-paris-2026",
+        destination: "/salons/salon-mondial-du-tourisme-paris",
         permanent: true,
       },
       // (doublon salon-immobilier-entreprise-paris-2026 -> simi-2026 retiré,
       // déjà présent en cohorte 5 ci-dessus)
       {
         source: "/salons/vivatech-paris-2026",
-        destination: "/salons/vivatech-2026",
+        destination: "/salons/vivatech",
         permanent: true,
       },
       {
         source: "/salons/congresmaire-paris-2026",
-        destination: "/salons/smcl-2026",
+        destination: "/salons/smcl",
         permanent: true,
       },
       {
         source: "/salons/paris-healthcare-week-2026",
-        destination: "/salons/santexpo-paris-2026",
+        destination: "/salons/santexpo-paris",
         permanent: true,
       },
       {
         source: "/salons/sido-lyon-2026",
-        destination: "/salons/innorobo-by-sido-2026",
+        destination: "/salons/innorobo-by-sido",
         permanent: true,
       },
       {
         source: "/salons/pollutec-paris-2026",
-        destination: "/salons/pollutec-lyon-2027",
+        destination: "/salons/pollutec-lyon",
         permanent: true,
       },
     ];

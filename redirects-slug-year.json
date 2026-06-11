@@ -1,0 +1,954 @@
+[
+  {
+    "source": "/salons/3d-print-lyon-2026",
+    "destination": "/salons/3d-print-lyon"
+  },
+  {
+    "source": "/salons/adf-pcd-paris-2026",
+    "destination": "/salons/adf-pcd-paris"
+  },
+  {
+    "source": "/salons/aeromart-toulouse-2026",
+    "destination": "/salons/aeromart-toulouse"
+  },
+  {
+    "source": "/salons/agrimax-metz-2026",
+    "destination": "/salons/agrimax-metz"
+  },
+  {
+    "source": "/salons/air-drone-bordeaux-2026",
+    "destination": "/salons/air-drone-bordeaux"
+  },
+  {
+    "source": "/salons/all4customer-paris-2026",
+    "destination": "/salons/all4customer-paris"
+  },
+  {
+    "source": "/salons/all4pack-paris-2026",
+    "destination": "/salons/all4pack-paris"
+  },
+  {
+    "source": "/salons/arab-health-dubai-2026",
+    "destination": "/salons/arab-health-dubai"
+  },
+  {
+    "source": "/salons/architect-at-work-lyon-2026",
+    "destination": "/salons/architect-at-work-lyon"
+  },
+  {
+    "source": "/salons/architect-at-work-paris-2026",
+    "destination": "/salons/architect-at-work-paris"
+  },
+  {
+    "source": "/salons/art-paris-2026",
+    "destination": "/salons/art-paris"
+  },
+  {
+    "source": "/salons/artibat-rennes-2027",
+    "destination": "/salons/artibat-rennes"
+  },
+  {
+    "source": "/salons/batibig-nantes-2026",
+    "destination": "/salons/batibig-nantes"
+  },
+  {
+    "source": "/salons/batimat-2026",
+    "destination": "/salons/batimat"
+  },
+  {
+    "source": "/salons/batinov-lyon-2026",
+    "destination": "/salons/batinov-lyon"
+  },
+  {
+    "source": "/salons/bau-munich-2027",
+    "destination": "/salons/bau-munich"
+  },
+  {
+    "source": "/salons/bauma-munich-2028",
+    "destination": "/salons/bauma-munich"
+  },
+  {
+    "source": "/salons/bepositive-lyon-2027",
+    "destination": "/salons/bepositive-lyon"
+  },
+  {
+    "source": "/salons/beyond-beauty-paris-2026",
+    "destination": "/salons/beyond-beauty-paris"
+  },
+  {
+    "source": "/salons/big-data-ai-paris-2026",
+    "destination": "/salons/big-data-ai-paris"
+  },
+  {
+    "source": "/salons/bijorhca-paris-2026",
+    "destination": "/salons/bijorhca-paris"
+  },
+  {
+    "source": "/salons/bim-world-paris-2026",
+    "destination": "/salons/bim-world-paris"
+  },
+  {
+    "source": "/salons/biofit-lille-2026",
+    "destination": "/salons/biofit-lille"
+  },
+  {
+    "source": "/salons/blc-bordeaux-2026",
+    "destination": "/salons/blc-bordeaux"
+  },
+  {
+    "source": "/salons/carrefour-de-leau-rennes-2026",
+    "destination": "/salons/carrefour-de-leau-rennes"
+  },
+  {
+    "source": "/salons/cersaie-paris-showroom-2026",
+    "destination": "/salons/cersaie-paris-showroom"
+  },
+  {
+    "source": "/salons/ces-las-vegas-2026",
+    "destination": "/salons/ces-las-vegas"
+  },
+  {
+    "source": "/salons/cfia-rennes-2027",
+    "destination": "/salons/cfia-rennes"
+  },
+  {
+    "source": "/salons/cfia-toulouse-2026",
+    "destination": "/salons/cfia-toulouse"
+  },
+  {
+    "source": "/salons/changenow-paris-2027",
+    "destination": "/salons/changenow-paris"
+  },
+  {
+    "source": "/salons/cloud-expo-europe-paris-2026",
+    "destination": "/salons/cloud-expo-europe-paris"
+  },
+  {
+    "source": "/salons/comic-con-france-2026",
+    "destination": "/salons/comic-con-france"
+  },
+  {
+    "source": "/salons/conext-paris-2026",
+    "destination": "/salons/conext-paris"
+  },
+  {
+    "source": "/salons/congres-adf-paris-2026",
+    "destination": "/salons/congres-adf-paris"
+  },
+  {
+    "source": "/salons/congres-hr-paris-2026",
+    "destination": "/salons/congres-hr-paris"
+  },
+  {
+    "source": "/salons/cosmed-meeting-marseille-2026",
+    "destination": "/salons/cosmed-meeting-marseille"
+  },
+  {
+    "source": "/salons/cosmeeting-paris-2026",
+    "destination": "/salons/cosmeeting-paris"
+  },
+  {
+    "source": "/salons/cosmetagora-paris-2026",
+    "destination": "/salons/cosmetagora-paris"
+  },
+  {
+    "source": "/salons/cosmetic-360-2026",
+    "destination": "/salons/cosmetic-360"
+  },
+  {
+    "source": "/salons/cosmoprof-bologna-2027",
+    "destination": "/salons/cosmoprof-bologna"
+  },
+  {
+    "source": "/salons/cphi-worldwide-2026",
+    "destination": "/salons/cphi-worldwide"
+  },
+  {
+    "source": "/salons/cycl-eau-strasbourg-2026",
+    "destination": "/salons/cycl-eau-strasbourg"
+  },
+  {
+    "source": "/salons/cycl-eau-vichy-2026",
+    "destination": "/salons/cycl-eau-vichy"
+  },
+  {
+    "source": "/salons/devfest-nantes-2026",
+    "destination": "/salons/devfest-nantes"
+  },
+  {
+    "source": "/salons/djazagro-paris-2026",
+    "destination": "/salons/djazagro-paris"
+  },
+  {
+    "source": "/salons/e-world-essen-2026",
+    "destination": "/salons/e-world-essen"
+  },
+  {
+    "source": "/salons/egast-strasbourg-2027",
+    "destination": "/salons/egast-strasbourg"
+  },
+  {
+    "source": "/salons/elearning-expo-paris-2026",
+    "destination": "/salons/elearning-expo-paris"
+  },
+  {
+    "source": "/salons/emm-lyon-2026",
+    "destination": "/salons/emm-lyon"
+  },
+  {
+    "source": "/salons/energaia-montpellier-2026",
+    "destination": "/salons/energaia-montpellier"
+  },
+  {
+    "source": "/salons/enerj-meeting-lyon-2026",
+    "destination": "/salons/enerj-meeting-lyon"
+  },
+  {
+    "source": "/salons/enerj-meeting-paris-2026",
+    "destination": "/salons/enerj-meeting-paris"
+  },
+  {
+    "source": "/salons/equip-auto-paris-2027",
+    "destination": "/salons/equip-auto-paris"
+  },
+  {
+    "source": "/salons/equip-hotel-paris-2026",
+    "destination": "/salons/equip-hotel-paris"
+  },
+  {
+    "source": "/salons/equipbaie-metalexpo-paris-2026",
+    "destination": "/salons/equipbaie-metalexpo-paris"
+  },
+  {
+    "source": "/salons/equipmag-paris-2026",
+    "destination": "/salons/equipmag-paris"
+  },
+  {
+    "source": "/salons/eurobois-lyon-2028",
+    "destination": "/salons/eurobois-lyon"
+  },
+  {
+    "source": "/salons/eurogin-2026",
+    "destination": "/salons/eurogin"
+  },
+  {
+    "source": "/salons/euronaval-paris-2026",
+    "destination": "/salons/euronaval-paris"
+  },
+  {
+    "source": "/salons/europack-euromanut-lyon-2026",
+    "destination": "/salons/europack-euromanut-lyon"
+  },
+  {
+    "source": "/salons/eurosatory-paris-2026",
+    "destination": "/salons/eurosatory-paris"
+  },
+  {
+    "source": "/salons/euroviti-montpellier-2027",
+    "destination": "/salons/euroviti-montpellier"
+  },
+  {
+    "source": "/salons/exphotel-bordeaux-2026",
+    "destination": "/salons/exphotel-bordeaux"
+  },
+  {
+    "source": "/salons/expobiogaz-bordeaux-2026",
+    "destination": "/salons/expobiogaz-bordeaux"
+  },
+  {
+    "source": "/salons/expodefensa-paris-2026",
+    "destination": "/salons/expodefensa-paris"
+  },
+  {
+    "source": "/salons/expoprotection-2026",
+    "destination": "/salons/expoprotection"
+  },
+  {
+    "source": "/salons/fatex-paris-2026",
+    "destination": "/salons/fatex-paris"
+  },
+  {
+    "source": "/salons/festival-livre-paris-2026",
+    "destination": "/salons/festival-livre-paris"
+  },
+  {
+    "source": "/salons/fic-lille-2026",
+    "destination": "/salons/fic-lille"
+  },
+  {
+    "source": "/salons/flame-expo-lyon-2026",
+    "destination": "/salons/flame-expo-lyon"
+  },
+  {
+    "source": "/salons/foire-agricole-tarbes-2026",
+    "destination": "/salons/foire-agricole-tarbes"
+  },
+  {
+    "source": "/salons/foire-chalons-en-champagne-2026",
+    "destination": "/salons/foire-chalons-en-champagne"
+  },
+  {
+    "source": "/salons/foire-de-paris-2026",
+    "destination": "/salons/foire-de-paris"
+  },
+  {
+    "source": "/salons/food-hotel-tech-paris-2026",
+    "destination": "/salons/food-hotel-tech-paris"
+  },
+  {
+    "source": "/salons/formnext-france-lyon-2026",
+    "destination": "/salons/formnext-france-lyon"
+  },
+  {
+    "source": "/salons/franchise-expo-lyon-2026",
+    "destination": "/salons/franchise-expo-lyon"
+  },
+  {
+    "source": "/salons/franchise-expo-paris-2026",
+    "destination": "/salons/franchise-expo-paris"
+  },
+  {
+    "source": "/salons/gazelec-paris-2026",
+    "destination": "/salons/gazelec-paris"
+  },
+  {
+    "source": "/salons/global-industrie-lyon-2025",
+    "destination": "/salons/global-industrie-lyon"
+  },
+  {
+    "source": "/salons/hacking-health-lyon-2026",
+    "destination": "/salons/hacking-health-lyon"
+  },
+  {
+    "source": "/salons/hannover-messe-2026",
+    "destination": "/salons/hannover-messe"
+  },
+  {
+    "source": "/salons/heavent-cannes-2026",
+    "destination": "/salons/heavent-cannes"
+  },
+  {
+    "source": "/salons/heavent-paris-2026",
+    "destination": "/salons/heavent-paris"
+  },
+  {
+    "source": "/salons/hlt-paris-2026",
+    "destination": "/salons/hlt-paris"
+  },
+  {
+    "source": "/salons/hopital-expo-paris-2026",
+    "destination": "/salons/hopital-expo-paris"
+  },
+  {
+    "source": "/salons/hyvolution-paris-2026",
+    "destination": "/salons/hyvolution-paris"
+  },
+  {
+    "source": "/salons/ideobain-2026",
+    "destination": "/salons/ideobain"
+  },
+  {
+    "source": "/salons/iftm-top-resa-2026",
+    "destination": "/salons/iftm-top-resa"
+  },
+  {
+    "source": "/salons/iltm-cannes-2026",
+    "destination": "/salons/iltm-cannes"
+  },
+  {
+    "source": "/salons/innorobo-by-sido-2026",
+    "destination": "/salons/innorobo-by-sido"
+  },
+  {
+    "source": "/salons/innov-agri-ondes-2026",
+    "destination": "/salons/innov-agri-ondes"
+  },
+  {
+    "source": "/salons/interclima-2026",
+    "destination": "/salons/interclima"
+  },
+  {
+    "source": "/salons/interfiliere-paris-2026",
+    "destination": "/salons/interfiliere-paris"
+  },
+  {
+    "source": "/salons/intermat-paris-2027",
+    "destination": "/salons/intermat-paris"
+  },
+  {
+    "source": "/salons/intralogistics-france-2026",
+    "destination": "/salons/intralogistics-france"
+  },
+  {
+    "source": "/salons/ipa-nantes-2026",
+    "destination": "/salons/ipa-nantes"
+  },
+  {
+    "source": "/salons/ish-francfort-2027",
+    "destination": "/salons/ish-francfort"
+  },
+  {
+    "source": "/salons/it-partners-paris-2026",
+    "destination": "/salons/it-partners-paris"
+  },
+  {
+    "source": "/salons/itb-berlin-2027",
+    "destination": "/salons/itb-berlin"
+  },
+  {
+    "source": "/salons/japan-expo-paris-2026",
+    "destination": "/salons/japan-expo-paris"
+  },
+  {
+    "source": "/salons/je-m-export-paris-2026",
+    "destination": "/salons/je-m-export-paris"
+  },
+  {
+    "source": "/salons/jec-world-2026",
+    "destination": "/salons/jec-world"
+  },
+  {
+    "source": "/salons/jec-world-paris-2027",
+    "destination": "/salons/jec-world-paris"
+  },
+  {
+    "source": "/salons/jfr-paris-2026",
+    "destination": "/salons/jfr-paris"
+  },
+  {
+    "source": "/salons/laval-virtual-2026",
+    "destination": "/salons/laval-virtual"
+  },
+  {
+    "source": "/salons/learning-technologies-paris-2026",
+    "destination": "/salons/learning-technologies-paris"
+  },
+  {
+    "source": "/salons/les-assises-de-la-securite-monaco-2026",
+    "destination": "/salons/les-assises-de-la-securite-monaco"
+  },
+  {
+    "source": "/salons/les-assises-dechets-nantes-2027",
+    "destination": "/salons/les-assises-dechets-nantes"
+  },
+  {
+    "source": "/salons/les-thermalies-paris-2026",
+    "destination": "/salons/les-thermalies-paris"
+  },
+  {
+    "source": "/salons/luxe-pack-monaco-2026",
+    "destination": "/salons/luxe-pack-monaco"
+  },
+  {
+    "source": "/salons/maison-objet-paris-2026",
+    "destination": "/salons/maison-objet-paris"
+  },
+  {
+    "source": "/salons/makeup-in-paris-2026",
+    "destination": "/salons/makeup-in-paris"
+  },
+  {
+    "source": "/salons/map-pro-marseille-2027",
+    "destination": "/salons/map-pro-marseille"
+  },
+  {
+    "source": "/salons/maroquinerie-paris-2026",
+    "destination": "/salons/maroquinerie-paris"
+  },
+  {
+    "source": "/salons/mdd-expo-paris-2026",
+    "destination": "/salons/mdd-expo-paris"
+  },
+  {
+    "source": "/salons/measurement-world-paris-2026",
+    "destination": "/salons/measurement-world-paris"
+  },
+  {
+    "source": "/salons/medfit-marseille-2026",
+    "destination": "/salons/medfit-marseille"
+  },
+  {
+    "source": "/salons/medi-nov-connection-lyon-2026",
+    "destination": "/salons/medi-nov-connection-lyon"
+  },
+  {
+    "source": "/salons/medica-dusseldorf-2026",
+    "destination": "/salons/medica-dusseldorf"
+  },
+  {
+    "source": "/salons/medica-france-forum-2026",
+    "destination": "/salons/medica-france-forum"
+  },
+  {
+    "source": "/salons/medteclive-stuttgart-2026",
+    "destination": "/salons/medteclive-stuttgart"
+  },
+  {
+    "source": "/salons/metal-expo-paris-2026",
+    "destination": "/salons/metal-expo-paris"
+  },
+  {
+    "source": "/salons/meuble-paris-2026",
+    "destination": "/salons/meuble-paris"
+  },
+  {
+    "source": "/salons/micronora-besancon-2026",
+    "destination": "/salons/micronora-besancon"
+  },
+  {
+    "source": "/salons/midest-2026",
+    "destination": "/salons/midest"
+  },
+  {
+    "source": "/salons/mif-expo-2026",
+    "destination": "/salons/mif-expo"
+  },
+  {
+    "source": "/salons/milipol-paris-2027",
+    "destination": "/salons/milipol-paris"
+  },
+  {
+    "source": "/salons/mipim-cannes-2027",
+    "destination": "/salons/mipim-cannes"
+  },
+  {
+    "source": "/salons/mondial-auto-paris-2026",
+    "destination": "/salons/mondial-auto-paris"
+  },
+  {
+    "source": "/salons/mountain-planet-2026",
+    "destination": "/salons/mountain-planet"
+  },
+  {
+    "source": "/salons/mwc-barcelona-2026",
+    "destination": "/salons/mwc-barcelona"
+  },
+  {
+    "source": "/salons/natexpo-paris-2026",
+    "destination": "/salons/natexpo-paris"
+  },
+  {
+    "source": "/salons/nordbat-lille-2028",
+    "destination": "/salons/nordbat-lille"
+  },
+  {
+    "source": "/salons/numeriquest-toulouse-2026",
+    "destination": "/salons/numeriquest-toulouse"
+  },
+  {
+    "source": "/salons/open-energies-lyon-2026",
+    "destination": "/salons/open-energies-lyon"
+  },
+  {
+    "source": "/salons/parabere-forum-paris-2026",
+    "destination": "/salons/parabere-forum-paris"
+  },
+  {
+    "source": "/salons/paris-design-week-2026",
+    "destination": "/salons/paris-design-week"
+  },
+  {
+    "source": "/salons/paris-games-week-2026",
+    "destination": "/salons/paris-games-week"
+  },
+  {
+    "source": "/salons/paris-photo-2026",
+    "destination": "/salons/paris-photo"
+  },
+  {
+    "source": "/salons/paris-retail-week-2026",
+    "destination": "/salons/paris-retail-week"
+  },
+  {
+    "source": "/salons/paysalia-lyon-2027",
+    "destination": "/salons/paysalia-lyon"
+  },
+  {
+    "source": "/salons/pcd-congress-paris-2026",
+    "destination": "/salons/pcd-congress-paris"
+  },
+  {
+    "source": "/salons/pharmagora-plus-2027",
+    "destination": "/salons/pharmagora-plus"
+  },
+  {
+    "source": "/salons/pharmagora-plus-paris-2026",
+    "destination": "/salons/pharmagora-plus-paris"
+  },
+  {
+    "source": "/salons/pharmapack-paris-2026",
+    "destination": "/salons/pharmapack-paris"
+  },
+  {
+    "source": "/salons/piscine-global-lyon-2026",
+    "destination": "/salons/piscine-global-lyon"
+  },
+  {
+    "source": "/salons/plastic-expo-lyon-2026",
+    "destination": "/salons/plastic-expo-lyon"
+  },
+  {
+    "source": "/salons/playtime-paris-2026",
+    "destination": "/salons/playtime-paris"
+  },
+  {
+    "source": "/salons/pollutec-lyon-2027",
+    "destination": "/salons/pollutec-lyon"
+  },
+  {
+    "source": "/salons/power-gen-europe-paris-2026",
+    "destination": "/salons/power-gen-europe-paris"
+  },
+  {
+    "source": "/salons/premiere-vision-paris-2026",
+    "destination": "/salons/premiere-vision-paris"
+  },
+  {
+    "source": "/salons/preventica-lyon-2026",
+    "destination": "/salons/preventica-lyon"
+  },
+  {
+    "source": "/salons/preventica-paris-2026",
+    "destination": "/salons/preventica-paris"
+  },
+  {
+    "source": "/salons/produrable-paris-2026",
+    "destination": "/salons/produrable-paris"
+  },
+  {
+    "source": "/salons/reeduca-paris-2026",
+    "destination": "/salons/reeduca-paris"
+  },
+  {
+    "source": "/salons/regal-toulouse-2026",
+    "destination": "/salons/regal-toulouse"
+  },
+  {
+    "source": "/salons/rent-2026",
+    "destination": "/salons/rent"
+  },
+  {
+    "source": "/salons/restau-co-paris-2026",
+    "destination": "/salons/restau-co-paris"
+  },
+  {
+    "source": "/salons/rh-lyon-2026",
+    "destination": "/salons/rh-lyon"
+  },
+  {
+    "source": "/salons/rocalia-lyon-2027",
+    "destination": "/salons/rocalia-lyon"
+  },
+  {
+    "source": "/salons/rsi-reims-2026",
+    "destination": "/salons/rsi-reims"
+  },
+  {
+    "source": "/salons/salon-agriculture-nouvelle-aquitaine-2026",
+    "destination": "/salons/salon-agriculture-nouvelle-aquitaine"
+  },
+  {
+    "source": "/salons/salon-analyse-industrielle-paris-2026",
+    "destination": "/salons/salon-analyse-industrielle-paris"
+  },
+  {
+    "source": "/salons/salon-bois-energie-2026",
+    "destination": "/salons/salon-bois-energie"
+  },
+  {
+    "source": "/salons/salon-copropriete-paris-2026",
+    "destination": "/salons/salon-copropriete-paris"
+  },
+  {
+    "source": "/salons/salon-data-ai-paris-2026",
+    "destination": "/salons/salon-data-ai-paris"
+  },
+  {
+    "source": "/salons/salon-des-enr-paris-2026",
+    "destination": "/salons/salon-des-enr-paris"
+  },
+  {
+    "source": "/salons/salon-du-chocolat-paris-2026",
+    "destination": "/salons/salon-du-chocolat-paris"
+  },
+  {
+    "source": "/salons/salon-du-luxe-paris-2026",
+    "destination": "/salons/salon-du-luxe-paris"
+  },
+  {
+    "source": "/salons/salon-energie-habitat-colmar-2026",
+    "destination": "/salons/salon-energie-habitat-colmar"
+  },
+  {
+    "source": "/salons/salon-etudiant-ile-de-france-2026",
+    "destination": "/salons/salon-etudiant-ile-de-france"
+  },
+  {
+    "source": "/salons/salon-habitat-bordeaux-2026",
+    "destination": "/salons/salon-habitat-bordeaux"
+  },
+  {
+    "source": "/salons/salon-habitat-design-lyon-2026",
+    "destination": "/salons/salon-habitat-design-lyon"
+  },
+  {
+    "source": "/salons/salon-herbe-villefranche-2026",
+    "destination": "/salons/salon-herbe-villefranche"
+  },
+  {
+    "source": "/salons/salon-infirmier-paris-2026",
+    "destination": "/salons/salon-infirmier-paris"
+  },
+  {
+    "source": "/salons/salon-mondial-du-tourisme-paris-2026",
+    "destination": "/salons/salon-mondial-du-tourisme-paris"
+  },
+  {
+    "source": "/salons/salon-photo-paris-2026",
+    "destination": "/salons/salon-photo-paris"
+  },
+  {
+    "source": "/salons/salon-sme-paris-2026",
+    "destination": "/salons/salon-sme-paris"
+  },
+  {
+    "source": "/salons/salon-tourisme-voyages-lille-2026",
+    "destination": "/salons/salon-tourisme-voyages-lille"
+  },
+  {
+    "source": "/salons/salon-vegetal-angers-2026",
+    "destination": "/salons/salon-vegetal-angers"
+  },
+  {
+    "source": "/salons/salon-vignerons-independants-paris-2026",
+    "destination": "/salons/salon-vignerons-independants-paris"
+  },
+  {
+    "source": "/salons/santexpo-paris-2026",
+    "destination": "/salons/santexpo-paris"
+  },
+  {
+    "source": "/salons/sepag-2026",
+    "destination": "/salons/sepag"
+  },
+  {
+    "source": "/salons/sepem-angers-2026",
+    "destination": "/salons/sepem-angers"
+  },
+  {
+    "source": "/salons/sepem-colmar-2026",
+    "destination": "/salons/sepem-colmar"
+  },
+  {
+    "source": "/salons/sepem-douai-2026",
+    "destination": "/salons/sepem-douai"
+  },
+  {
+    "source": "/salons/sepem-grenoble-2026",
+    "destination": "/salons/sepem-grenoble"
+  },
+  {
+    "source": "/salons/sepem-toulouse-2026",
+    "destination": "/salons/sepem-toulouse"
+  },
+  {
+    "source": "/salons/serbotel-nantes-2027",
+    "destination": "/salons/serbotel-nantes"
+  },
+  {
+    "source": "/salons/sfar-congres-paris-2026",
+    "destination": "/salons/sfar-congres-paris"
+  },
+  {
+    "source": "/salons/shieldafrica-abidjan-2026",
+    "destination": "/salons/shieldafrica-abidjan"
+  },
+  {
+    "source": "/salons/sia-paris-2027",
+    "destination": "/salons/sia-paris"
+  },
+  {
+    "source": "/salons/siae-le-bourget-2027",
+    "destination": "/salons/siae-le-bourget"
+  },
+  {
+    "source": "/salons/sial-inspire-food-business-2026",
+    "destination": "/salons/sial-inspire-food-business"
+  },
+  {
+    "source": "/salons/sial-paris-2026",
+    "destination": "/salons/sial-paris"
+  },
+  {
+    "source": "/salons/siane-toulouse-2026",
+    "destination": "/salons/siane-toulouse"
+  },
+  {
+    "source": "/salons/sibca-paris-2026",
+    "destination": "/salons/sibca-paris"
+  },
+  {
+    "source": "/salons/silmo-paris-2026",
+    "destination": "/salons/silmo-paris"
+  },
+  {
+    "source": "/salons/sima-paris-2026",
+    "destination": "/salons/sima-paris"
+  },
+  {
+    "source": "/salons/simi-2026",
+    "destination": "/salons/simi"
+  },
+  {
+    "source": "/salons/sirha-bake-snack-2028",
+    "destination": "/salons/sirha-bake-snack"
+  },
+  {
+    "source": "/salons/sirha-green-lyon-2026",
+    "destination": "/salons/sirha-green-lyon"
+  },
+  {
+    "source": "/salons/sirha-lyon-2027",
+    "destination": "/salons/sirha-lyon"
+  },
+  {
+    "source": "/salons/sitevi-montpellier-2027",
+    "destination": "/salons/sitevi-montpellier"
+  },
+  {
+    "source": "/salons/sitl-2026",
+    "destination": "/salons/sitl"
+  },
+  {
+    "source": "/salons/sival-angers-2027",
+    "destination": "/salons/sival-angers"
+  },
+  {
+    "source": "/salons/smarter-e-europe-munich-2026",
+    "destination": "/salons/smarter-e-europe-munich"
+  },
+  {
+    "source": "/salons/smcl-2026",
+    "destination": "/salons/smcl"
+  },
+  {
+    "source": "/salons/snack-show-2026",
+    "destination": "/salons/snack-show"
+  },
+  {
+    "source": "/salons/solar-solutions-international-paris-2026",
+    "destination": "/salons/solar-solutions-international-paris"
+  },
+  {
+    "source": "/salons/solscope-2027",
+    "destination": "/salons/solscope"
+  },
+  {
+    "source": "/salons/solutions-rh-2026",
+    "destination": "/salons/solutions-rh"
+  },
+  {
+    "source": "/salons/solutions-rh-paris-2027",
+    "destination": "/salons/solutions-rh-paris"
+  },
+  {
+    "source": "/salons/solutrans-2027",
+    "destination": "/salons/solutrans"
+  },
+  {
+    "source": "/salons/sommet-elevage-clermont-2026",
+    "destination": "/salons/sommet-elevage-clermont"
+  },
+  {
+    "source": "/salons/space-rennes-2026",
+    "destination": "/salons/space-rennes"
+  },
+  {
+    "source": "/salons/supply-chain-event-paris-2026",
+    "destination": "/salons/supply-chain-event-paris"
+  },
+  {
+    "source": "/salons/surf-interieur-biarritz-2026",
+    "destination": "/salons/surf-interieur-biarritz"
+  },
+  {
+    "source": "/salons/talent-management-paris-2026",
+    "destination": "/salons/talent-management-paris"
+  },
+  {
+    "source": "/salons/tech-and-bio-2027",
+    "destination": "/salons/tech-and-bio"
+  },
+  {
+    "source": "/salons/tech-elevage-lamotte-beuvron-2027",
+    "destination": "/salons/tech-elevage-lamotte-beuvron"
+  },
+  {
+    "source": "/salons/tech-ovin-bellac-2027",
+    "destination": "/salons/tech-ovin-bellac"
+  },
+  {
+    "source": "/salons/tech-show-paris-2026",
+    "destination": "/salons/tech-show-paris"
+  },
+  {
+    "source": "/salons/terres-de-jim-2026",
+    "destination": "/salons/terres-de-jim"
+  },
+  {
+    "source": "/salons/texworld-paris-2026",
+    "destination": "/salons/texworld-paris"
+  },
+  {
+    "source": "/salons/top-transport-europe-marseille-2026",
+    "destination": "/salons/top-transport-europe-marseille"
+  },
+  {
+    "source": "/salons/tranofiliere-paris-2026",
+    "destination": "/salons/tranofiliere-paris"
+  },
+  {
+    "source": "/salons/transports-publics-paris-2026",
+    "destination": "/salons/transports-publics-paris"
+  },
+  {
+    "source": "/salons/untec-congres-2026",
+    "destination": "/salons/untec-congres"
+  },
+  {
+    "source": "/salons/vinexpo-paris-2026",
+    "destination": "/salons/vinexpo-paris"
+  },
+  {
+    "source": "/salons/vinitech-sifel-bordeaux-2026",
+    "destination": "/salons/vinitech-sifel-bordeaux"
+  },
+  {
+    "source": "/salons/vivatech-2026",
+    "destination": "/salons/vivatech"
+  },
+  {
+    "source": "/salons/web-summit-lisbonne-2026",
+    "destination": "/salons/web-summit-lisbonne"
+  },
+  {
+    "source": "/salons/whos-next-paris-2026",
+    "destination": "/salons/whos-next-paris"
+  },
+  {
+    "source": "/salons/wine-paris-2027",
+    "destination": "/salons/wine-paris"
+  },
+  {
+    "source": "/salons/workspace-expo-paris-2026",
+    "destination": "/salons/workspace-expo-paris"
+  },
+  {
+    "source": "/salons/world-nuclear-exhibition-2026",
+    "destination": "/salons/world-nuclear-exhibition"
+  },
+  {
+    "source": "/salons/world-of-concrete-europe-paris-2026",
+    "destination": "/salons/world-of-concrete-europe-paris"
+  }
+]

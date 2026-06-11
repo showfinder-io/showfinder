@@ -170,7 +170,7 @@ export default function AdminSecteurEditPage() {
             name="editorial_mdx"
             rows={20}
             defaultValue={field(d, "editorial_mdx")}
-            placeholder={`L'industrie agroalimentaire française...\n\n## Les salons de référence en France\n\n[SIAL Paris](/salons/sial-paris-2026)...\n\n## Les grands salons européens\n\n...`}
+            placeholder={`L'industrie agroalimentaire française...\n\n## Les salons de référence en France\n\n[SIAL Paris](/salons/sial-paris)...\n\n## Les grands salons européens\n\n...`}
             className={`${inputClass} font-mono text-xs`}
           />
         </div>
