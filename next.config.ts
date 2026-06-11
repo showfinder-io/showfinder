@@ -25,11 +25,10 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       // Cohorte 5 + index legacy (audit 2026-06-01 : 11 slugs GSC → canonique MDX)
-      {
-        source: "/salons/cfia-toulouse-2026",
-        destination: "/salons/cfia-rennes-2027",
-        permanent: true,
-      },
+      // (cfia-toulouse-2026 -> cfia-rennes-2027 retiré le 2026-06-11 : CFIA
+      // Toulouse est un salon distinct du CFIA Rennes (biennal années paires,
+      // MEETT, source toulouse.cfiaexpo.com) ; le redirect shadowait une
+      // vraie fiche publiée.)
       {
         source: "/salons/innorobo-paris-2026",
         destination: "/salons/innorobo-by-sido-2026",
@@ -147,9 +146,12 @@ const nextConfig: NextConfig = {
         destination: "/salons/big-data-ai-paris-2026",
         permanent: true,
       },
+      // (sia-paris-2027 -> sia-paris-2026 INVERSÉ le 2026-06-11 : la fiche
+      // porte l'édition 2027 (27/02-07/03/2027, salon-agriculture.com), slug
+      // DB renommé sia-paris-2027 par scripts/diag-redirect-slug-cleanup.ts.)
       {
-        source: "/salons/sia-paris-2027",
-        destination: "/salons/sia-paris-2026",
+        source: "/salons/sia-paris-2026",
+        destination: "/salons/sia-paris-2027",
         permanent: true,
       },
       {

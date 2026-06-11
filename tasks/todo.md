@@ -63,4 +63,43 @@ Suite du constat data de l'audit SEO du matin (/villes/villepinte et /villes/mun
 
 ## Reste à faire (hors scope, tracké)
 
-- [ ] Même famille slug/édition à auditer : sia-paris-2026 (dates 2027), solutions-rh-paris-2026 (dates 2027, shadowée), who-s-next-paris-2026 (édition janvier shadowée)
+- [x] Même famille slug/édition à auditer : sia-paris-2026 (dates 2027), solutions-rh-paris-2026 (dates 2027, shadowée), who-s-next-paris-2026 (édition janvier shadowée) -> traité dans le chantier ci-dessous
+
+---
+
+# Cohérence slugs / redirects : fiches publiées shadowées (2026-06-11, soir)
+
+Suite du "Reste à faire" du cleanup Villepinte. Détection systématique via le nouveau scripts/diag-redirect-coherence.ts (lecture seule) : 6 fiches publiées shadowées par un 301 de next.config.ts, 0 boucle restante, 23 fiches publiées avec slug à année désynchronisée de edition_year.
+
+## Décisions (toutes vérifiées sur sources officielles, agents web du 2026-06-11)
+
+- [x] Pas de renommage de masse des slugs désynchronisés non shadowés : l'éditorial de global-industrie-lyon-2025 documente le slug legacy comme "conservé pour stabilité URL" (décision éditoriale), et la vérification web montre que cette famille cache des erreurs de données plus profondes (cf. follow-ups). On ne renomme que les fiches shadowées roulées + sia (cas briefing).
+- [x] Précédents appliqués : fiche shadowée portant l'édition suivante -> renommage slug + 301 (précédent jec-world) ; fiche shadowée édition passée ou doublon de marque -> draft, redirect conservé (précédents maison-et-objet, europain).
+
+## Exécution (script scripts/diag-redirect-slug-cleanup.ts + next.config.ts)
+
+- [x] sia-paris-2026 -> slug sia-paris-2027 (SIA 2027 : 27/02-07/03/2027 confirmé salon-agriculture.com). Redirect sia-paris-2027 -> sia-paris-2026 INVERSÉ dans next.config.ts (sinon boucle).
+- [x] solutions-rh-paris-2026 -> slug solutions-rh-paris-2027 (même salon que solutions-rh-2026, organisateur Infopromotions ; édition 2027 : 9-10/06/2027 confirmé solutions-ressources-humaines.fr ; édition 2026 passée : 8-9/04/2026). Redirect existant conservé (vieille URL -> fiche éditoriale 2026).
+- [x] who-s-next-paris-2026 (édition janvier 2026, passée) -> draft + correction dates : 17-19/01/2026 (wsn-events.com, la base disait 24-26/01 à tort). Redirect conservé.
+- [x] innorobo-paris-2026 -> draft : fiche fantôme, le salon autonome a disparu (dernière édition 2018, innorobo.com figé ; seul Innorobo by SIDO existe, 16-17/09/2026 Lyon). Redirect conservé.
+- [x] sandwich-and-snack-show-2026 -> draft : rebrand "Snack Show" confirmé (sandwichshows.com 301 vers snackshow.com), doublon de marque ; l'édition 2027 (24-25/03/2027 confirmée) sera portée par le roll de snack-show-2026. Redirect conservé.
+- [x] solscope-lyon-2026 -> draft : pas d'édition 2026, salon biennal années impaires (2025, 2027, solscope.fr). Redirect conservé.
+- [x] cfia-toulouse-2026 : salon RÉEL distinct du CFIA Rennes (biennal années paires, MEETT). Redirect erroné cfia-toulouse-2026 -> cfia-rennes-2027 RETIRÉ de next.config.ts (il shadowait une vraie fiche). end_date corrigée 23 -> 24/09/2026 (toulouse.cfiaexpo.com, ria.fr).
+- [x] Hors briefing, vérifiés faux et publiés (drafts conservateurs) : autonomy-paris-2026 (salon mort, rebrandé Global Decarbonization Expo puis disparu), in-cosmetics-global-paris-2026 (édition 2027 à Barcelone, pas Paris : le roll a fabriqué un évènement "Paris 2027" inexistant).
+- [x] heavent-cannes-2026 : dates corrigées 30-31/03/2027 -> 3-4/03/2027 (heavent-one-to-one-meetings.fr).
+
+## Vérification (definition of done)
+
+- [x] Script idempotent exécuté (relance = 0 ligne), diag-redirect-coherence rerun : 0 fiche publiée shadowée, 0 boucle
+- [x] npm run build OK + serveur prod local (port 3100) : 308 vers les bonnes cibles avec final 200 partout, 200 sur les fiches dé-shadowées (cfia-toulouse-2026) et renommées (sia-paris-2027, solutions-rh-paris-2027), 404 sur les 2 drafts sans redirect (autonomy, in-cosmetics)
+
+## Follow-ups data (vérifiés sur sources officielles, à traiter avec Nicolas)
+
+- [ ] solscope-2027 (fiche éditoriale) : "juin 2027" confirmé par solscope.fr mais jours exacts (15-16) et lieu NON confirmés ; le site dit "tous les 2 ans dans une ville différente"
+- [ ] it-partners-paris-2026 : le salon quitte Disneyland pour Paris La Défense Arena (Nanterre) en 2027 (itpartners.fr) -> venue/city à mettre à jour
+- [ ] europack-euromanut-lyon-2026 : rebrandé Prod&Pack (prodandpack.com), 16-18/11/2027 Eurexpo -> renommage fiche à décider
+- [ ] parabere-forum-paris-2026 : édition 2027 à NICE, pas Paris (parabereforum.com) -> city à corriger
+- [ ] je-m-export-paris-2026 : existence NON confirmée (absent de l'agenda Classe Export ; coïncidence de dates exactes avec GO Entrepreneurs Paris 28-29/04/2027) ; fiche avec éditorial, décision à prendre côté process writer
+- [ ] midest-2026 : Midest n'existe plus en autonome (midest.com 301 vers global-industrie.com), univers sectoriel de GI Lyon 2027 -> fusion/draft à décider
+- [ ] les-thermalies-paris-2026, franchise-expo-paris-2026, learning-technologies-paris-2026, laval-virtual-2026, carrefour-de-leau-rennes-2026, pharmapack-paris-2026, hyvolution-paris-2026, world-nuclear-exhibition-2026 (biennal impair confirmé), workspace-expo-paris-2026 (devient "Workspace Paris"), egast-strasbourg-2027, enerj-meeting-paris-2026, global-industrie-lyon-2025 : dates de début confirmées conformes ; reste la question de fond du renommage des slugs à année legacy (convention "slug stable" vs renommage + 301) à trancher avec Nicolas
+- [ ] Cause racine : scripts/find-next-edition.ts roule les fiches en place (dates/edition_year) sans renommer le slug ni vérifier ville/existence de l'édition suivante (cas in-cosmetics Barcelone fabriqué en "Paris 2027") -> ajouter garde-fous
