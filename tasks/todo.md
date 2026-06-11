@@ -39,3 +39,28 @@ Audit via skill seo-geo. Base technique saine (canonicals 80%, sitemap filtré q
 - Constat data (hors scope, à traiter côté DB) : le sitemap expose /villes/munich (salons étrangers en base ?) et /villes/villepinte distinct de Paris. À harmoniser dans les données salons.city.
 - Le canonical homepage rendu sans trailing slash est une normalisation Next (trailingSlash:false) : équivalent strict pour Google sur la racine, pas d'action.
 - Pages secteur : la liste des villes est dérivée des salons affichés (pageSize 20 existant). Si une filière dépasse 20 salons, les villes du reste ne sont pas listées : limitation acceptée au POC.
+
+---
+
+# Cleanup data salons.city + boucles redirects (2026-06-11)
+
+Suite du constat data de l'audit SEO du matin (/villes/villepinte et /villes/munich dans le sitemap).
+
+## Décisions
+
+- [x] Salons étrangers (16 publiés, dont 3 à Munich) : décision Julien = ne rien changer, on assume l'international, /villes/munich reste indexée
+- [x] Convention city="Paris" pour le parc Paris Nord Villepinte (le lieu précis est porté par venue_id -> /lieux/paris-nord-villepinte)
+
+## Exécution (script scripts/diag-city-cleanup-villepinte.ts, 10 lignes)
+
+- [x] city Villepinte -> Paris : japan-expo-paris-2026, intermat-paris-2027, comic-con-france-2026, jec-world-2026, maison-objet-paris-2026, sitl-2026
+- [x] intermat-paris-2027 : venue_id null -> Paris Nord Villepinte
+- [x] midest-2026 : venue texte "Paris Nord Villepinte" -> "Eurexpo Lyon" (alignement migration cohorte4 GI Lyon 2027)
+- [x] "Doublons" /lieux/paris-nord-villepinte : PAS des doublons mais des paires d'éditions.
+  - jec-world-paris-2026 = édition 2027 (2-4 mars 2027, source jec-world.events) sous slug 2026, shadowée par le 301 du 1er juin -> slug renommé jec-world-paris-2027 + end_date corrigée
+  - maison-et-objet-paris-2026 = édition janvier 2026 (Pulse = édition septembre, confirmé maison-objet.com) ; passée, shadowée par le 301 -> draft, redirect conservé
+- [x] Boucles de redirects découvertes et corrigées dans next.config.ts : sia-paris-2026, salon-mondial-du-tourisme-paris-2026, santexpo-paris-2026 (entrées cohorte 5 du 1er juin en conflit avec les inverses du 4 juin, ERR_TOO_MANY_REDIRECTS confirmé en prod) + 1 entrée dupliquée simi retirée
+
+## Reste à faire (hors scope, tracké)
+
+- [ ] Même famille slug/édition à auditer : sia-paris-2026 (dates 2027), solutions-rh-paris-2026 (dates 2027, shadowée), who-s-next-paris-2026 (édition janvier shadowée)
