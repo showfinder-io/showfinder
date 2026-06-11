@@ -102,4 +102,25 @@ Suite du "Reste à faire" du cleanup Villepinte. Détection systématique via le
 - [ ] je-m-export-paris-2026 : existence NON confirmée (absent de l'agenda Classe Export ; coïncidence de dates exactes avec GO Entrepreneurs Paris 28-29/04/2027) ; fiche avec éditorial, décision à prendre côté process writer
 - [ ] midest-2026 : Midest n'existe plus en autonome (midest.com 301 vers global-industrie.com), univers sectoriel de GI Lyon 2027 -> fusion/draft à décider
 - [ ] les-thermalies-paris-2026, franchise-expo-paris-2026, learning-technologies-paris-2026, laval-virtual-2026, carrefour-de-leau-rennes-2026, pharmapack-paris-2026, hyvolution-paris-2026, world-nuclear-exhibition-2026 (biennal impair confirmé), workspace-expo-paris-2026 (devient "Workspace Paris"), egast-strasbourg-2027, enerj-meeting-paris-2026, global-industrie-lyon-2025 : dates de début confirmées conformes ; reste la question de fond du renommage des slugs à année legacy (convention "slug stable" vs renommage + 301) à trancher avec Nicolas
-- [ ] Cause racine : scripts/find-next-edition.ts roule les fiches en place (dates/edition_year) sans renommer le slug ni vérifier ville/existence de l'édition suivante (cas in-cosmetics Barcelone fabriqué en "Paris 2027") -> ajouter garde-fous
+- [x] Cause racine : scripts/find-next-edition.ts roule les fiches en place (dates/edition_year) sans renommer le slug ni vérifier ville/existence de l'édition suivante (cas in-cosmetics Barcelone fabriqué en "Paris 2027") -> garde-fous livrés (PR #28, mergée sur main le 2026-06-12). Précision : le script lui-même ne faisait aucun UPDATE (le dégât venait de l'application du CSV, hors repo) ; sa sortie est désormais un CSV avec verdict ok/verifier/ne_pas_rouler (périodicité, ville/lieu, locked_fields) + un SQL à relire qui pose alert_flag/notes_internes au lieu de rouler les cas douteux
+
+---
+
+# Migration slugs sans année (2026-06-12)
+
+Décision Julien 2026-06-12 : plus d'année dans les slugs salons. La fiche est la fiche canonique de la série, l'année vit dans les données (edition_year, dates, seo_title). Diagnostic scripts/diag-slug-migration.ts : 238 fiches publiées, 238 séries, 0 archive, 0 collision, 31 redirects existants à réécrire, 184 liens MDX, 0 shadowing.
+
+## Exécution
+
+- [ ] scripts/diag-slug-year-apply.ts : renommage des 238 slugs en DB (idempotent) + réécriture des liens /salons/ dans les editorial_mdx (salons, venues, sectors) + émission de redirects-slug-year.json (238 x 301 ancien -> nouveau)
+- [ ] next.config.ts : import des redirects générés + réécriture des 31 destinations existantes vers les slugs de base (pas de chaînes de 301)
+- [ ] Placeholder admin secteurs : exemple sial-paris-2026 -> sial-paris
+- [ ] CLAUDE.md : convention slug sans année (modèle de données + URLs propres)
+- [ ] regles-edito-agoris-v1.md : convention slug sans année pour les cohortes 7+
+- [ ] content/salons/*.mdx legacy : non rendus (lecture DB depuis migration 20260601800000), non touchés
+
+## Vérification (definition of done)
+
+- [ ] Script rejoué = 0 ligne modifiée ; diag-redirect-coherence : 0 shadowée, 0 boucle, 0 destination absente
+- [ ] Build + serveur local : ancien slug 308 -> nouveau 200 (échantillon), vieux redirects config 308 -> base en 1 saut, sitemap sans années
+- [ ] Après merge : vérif prod + Request Indexing GSC sur les fiches prioritaires

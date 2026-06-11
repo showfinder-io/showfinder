@@ -118,6 +118,10 @@ RR1-RR36 = candidates Dream consolidées (6 cohortes, 113 fiches observées).
 
 - **RR37** **Vérification du maillage interne**. Le maillage automatique (breadcrumb ville, bloc Explorer, salons similaires, badges secteurs) est généré par les templates : ne PAS le dupliquer dans le MDX. Dans le corps du MDX : (1) tout salon mentionné dans le texte (co-localisé, même série type SEPEM, édition précédente sous un autre slug) qui existe en base avec status published DOIT être lié vers `/salons/[slug]`, en liant la fiche canonique (jamais un slug cible d'un redirect 301 de next.config.ts ni un doublon connu ni une fiche draft) ; (2) le lieu pointe vers `/lieux/[slug]` (RR11 inchangé) ; (3) le reviewer vérifie chaque lien interne du MDX contre la liste des slugs publiés (salons, lieux, secteurs) : aucun lien cassé, et un salon mentionné sans lien alors qu'il existe en base = 💡 Spot-fix.
 
+### RR38 (migration slugs, 2026-06-12)
+
+- **RR38** **Slugs sans année**. Les slugs salons ne portent plus d'année (`/salons/sial-paris`, pas `/salons/sial-paris-2026`) : la fiche est la fiche canonique de la série, l'année vit dans les données et le seo_title. En rédaction : (1) ne jamais créer de fiche avec une année dans le slug (exception : archive d'une édition passée qui coexiste avec la fiche canonique) ; (2) les liens internes des MDX pointent vers les slugs sans année ; (3) le seo_title et le H1 portent l'année de l'édition courante, mis à jour à chaque roll.
+
 ---
 
 ## Conventions transversales Nicolas (2026-05-31)

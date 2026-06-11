@@ -207,7 +207,7 @@ npx supabase db push     # Pousser les migrations vers la base distante
 | Champ | Type | Description |
 |-------|------|-------------|
 | id | UUID (PK) | Identifiant unique |
-| slug | VARCHAR UNIQUE | URL-friendly (ex: sial-paris-2026) |
+| slug | VARCHAR UNIQUE | URL-friendly SANS année (ex: sial-paris). Convention 2026-06-12 : la fiche est la fiche canonique de la série, l'année vit dans edition_year/dates/seo_title. Le slug ne roule jamais. Un slug avec année n'est admis que pour une archive d'édition passée coexistant avec la canonique. |
 | name | VARCHAR | Nom officiel du salon |
 | edition_year | INT | Année de l'édition |
 | description | TEXT | Description éditoriale (pas le copier-coller du site officiel). Passe éditoriale LLM + review humaine prévue en S5+. |
@@ -326,7 +326,7 @@ Le drawer prestataires est le point de monétisation principal de la fiche.
 - Schema.org markup (Event, Organization, Review) sur chaque fiche
 - Sitemap XML dynamique généré automatiquement
 - Meta title/description dynamiques mais personnalisables par fiche
-- URLs propres : `/salons/sial-paris-2026`, `/secteurs/agroalimentaire`, `/villes/lyon`
+- URLs propres et pérennes : `/salons/sial-paris` (sans année : l'URL capitalise l'autorité d'édition en édition), `/secteurs/agroalimentaire`, `/villes/lyon`
 
 ### Contenu éditorial différenciant
 
