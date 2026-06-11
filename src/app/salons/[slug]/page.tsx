@@ -159,15 +159,29 @@ export default async function SalonPage({ params }: Props) {
         items={[
           { name: "Accueil", item: "/" },
           { name: "Salons", item: "/salons" },
+          ...(salon.city
+            ? [{ name: salon.city, item: `/villes/${slugifyCity(salon.city)}` }]
+            : []),
           { name: salon.name, item: `/salons/${slug}` },
         ]}
       />
 
-      {/* Breadcrumb */}
+      {/* Breadcrumb : niveau ville intercalé pour le maillage géographique */}
       <nav className="mb-10 text-sm text-muted">
         <Link href="/salons" className="hover:text-prune transition-colors">
           Salons
         </Link>
+        {salon.city && (
+          <>
+            <span className="mx-2">/</span>
+            <Link
+              href={`/villes/${slugifyCity(salon.city)}`}
+              className="hover:text-prune transition-colors"
+            >
+              {salon.city}
+            </Link>
+          </>
+        )}
         <span className="mx-2">/</span>
         <span className="text-prune">{salon.name}</span>
       </nav>
@@ -237,7 +251,17 @@ export default async function SalonPage({ params }: Props) {
                   ) : (
                     salon.venue
                   )}
-                  {salon.city ? `, ${salon.city}` : ""}
+                  {salon.city && (
+                    <>
+                      {", "}
+                      <Link
+                        href={`/villes/${slugifyCity(salon.city)}`}
+                        className="underline decoration-prune/30 underline-offset-2 transition-colors hover:decoration-prune"
+                      >
+                        {salon.city}
+                      </Link>
+                    </>
+                  )}
                 </span>
               </div>
             )}
@@ -410,6 +434,37 @@ export default async function SalonPage({ params }: Props) {
             ))}
           </div>
         </section>
+      )}
+
+      {/* 8. EXPLORER : liens hub secteur / ville (maillage interne) */}
+      {(salon.sectors.length > 0 || salon.city) && (
+        <nav
+          aria-label="Explorer"
+          className="mt-12 border-t border-border pt-8"
+        >
+          <ul className="flex flex-wrap gap-x-8 gap-y-3 text-sm">
+            {salon.sectors[0] && (
+              <li>
+                <Link
+                  href={`/secteurs/${salon.sectors[0].slug}`}
+                  className="text-prune underline decoration-prune/30 underline-offset-2 transition-colors hover:decoration-prune"
+                >
+                  Tous les salons {salon.sectors[0].name}
+                </Link>
+              </li>
+            )}
+            {salon.city && (
+              <li>
+                <Link
+                  href={`/villes/${slugifyCity(salon.city)}`}
+                  className="text-prune underline decoration-prune/30 underline-offset-2 transition-colors hover:decoration-prune"
+                >
+                  Tous les salons à {salon.city}
+                </Link>
+              </li>
+            )}
+          </ul>
+        </nav>
       )}
       <FeedbackPrompt salonName={salon.name} />
     </article>

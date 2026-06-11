@@ -1,9 +1,10 @@
 import type { MetadataRoute } from "next";
-import { siteConfig } from "@/lib/config";
+import { siteConfig, CITY_INDEX_MIN_SALONS } from "@/lib/config";
 import { createStaticClient } from "@/lib/supabase/static";
 import { getAllPosts } from "@/lib/blog";
 import { getEditorialSectorSlugs } from "@/lib/sector-content";
 import { getEditorialSalonSlugs } from "@/lib/salon-content";
+import { slugifyCity } from "@/lib/format";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const supabase = createStaticClient();
@@ -12,7 +13,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const [salonsResult, sectorsResult, venuesResult] = await Promise.all([
     supabase
       .from("salons")
-      .select("slug, updated_at")
+      .select("slug, updated_at, city")
       .eq("status", "published"),
     supabase.from("sectors").select("slug"),
     supabase
@@ -92,6 +93,24 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     });
   }
 
+  // Pages ville : seules les villes avec assez de salons publiés sont
+  // indexables (cohérent avec le robots conditionnel de /villes/[slug]).
+  const cityCounts = new Map<string, number>();
+  for (const salon of allSalons) {
+    const city = (salon as { city?: string | null }).city;
+    if (!city) continue;
+    cityCounts.set(city, (cityCounts.get(city) ?? 0) + 1);
+  }
+  for (const [city, count] of cityCounts) {
+    if (count < CITY_INDEX_MIN_SALONS) continue;
+    entries.push({
+      url: `${siteConfig.url}/villes/${slugifyCity(city)}`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.6,
+    });
+  }
+
   // Page index lieux
   entries.push({
     url: `${siteConfig.url}/lieux`,
@@ -129,6 +148,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(post.frontmatter.date),
       changeFrequency: "monthly",
       priority: 0.6,
+    });
+  }
+
+  // Pages annexes indexables (contact + légal) : priorité basse mais
+  // présentes dans le sitemap pour un signal d'exhaustivité propre.
+  for (const path of ["/contact", "/mentions", "/confidentialite", "/cookies"]) {
+    entries.push({
+      url: `${siteConfig.url}${path}`,
+      lastModified: now,
+      changeFrequency: "yearly",
+      priority: 0.3,
     });
   }
 

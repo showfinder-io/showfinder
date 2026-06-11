@@ -4,8 +4,12 @@ import { ContactForm } from "./contact-form";
 import { Mail, Building2, Wrench } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: `Contactez-nous | ${siteConfig.name}`,
+  // Pas de suffixe "| Agoris" ici : le template du root layout l'ajoute déjà
+  title: "Contactez-nous",
   description: `Contactez l'équipe ${siteConfig.name} : organisateurs de salons, prestataires ou demande générale.`,
+  alternates: {
+    canonical: `${siteConfig.url}/contact`,
+  },
 };
 
 export default function ContactPage() {
