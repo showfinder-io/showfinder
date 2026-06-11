@@ -112,15 +112,15 @@ Décision Julien 2026-06-12 : plus d'année dans les slugs salons. La fiche est 
 
 ## Exécution
 
-- [ ] scripts/diag-slug-year-apply.ts : renommage des 238 slugs en DB (idempotent) + réécriture des liens /salons/ dans les editorial_mdx (salons, venues, sectors) + émission de redirects-slug-year.json (238 x 301 ancien -> nouveau)
-- [ ] next.config.ts : import des redirects générés + réécriture des 31 destinations existantes vers les slugs de base (pas de chaînes de 301)
-- [ ] Placeholder admin secteurs : exemple sial-paris-2026 -> sial-paris
-- [ ] CLAUDE.md : convention slug sans année (modèle de données + URLs propres)
-- [ ] regles-edito-agoris-v1.md : convention slug sans année pour les cohortes 7+
-- [ ] content/salons/*.mdx legacy : non rendus (lecture DB depuis migration 20260601800000), non touchés
+- [x] scripts/diag-slug-year-apply.ts : renommage des 238 slugs en DB (idempotent) + réécriture des liens /salons/ dans les editorial_mdx (salons, venues, sectors) + émission de redirects-slug-year.json (238 x 301 ancien -> nouveau)
+- [x] next.config.ts : import des redirects générés + réécriture des 31 destinations existantes vers les slugs de base (pas de chaînes de 301)
+- [x] Placeholder admin secteurs : exemple sial-paris-2026 -> sial-paris
+- [x] CLAUDE.md : convention slug sans année (modèle de données + URLs propres)
+- [x] regles-edito-agoris-v1.md : convention slug sans année pour les cohortes 7+
+- [x] content/salons/*.mdx legacy : non rendus (lecture DB depuis migration 20260601800000), non touchés
 
 ## Vérification (definition of done)
 
-- [ ] Script rejoué = 0 ligne modifiée ; diag-redirect-coherence : 0 shadowée, 0 boucle, 0 destination absente
-- [ ] Build + serveur local : ancien slug 308 -> nouveau 200 (échantillon), vieux redirects config 308 -> base en 1 saut, sitemap sans années
-- [ ] Après merge : vérif prod + Request Indexing GSC sur les fiches prioritaires
+- [x] Script rejoué = 0 ligne modifiée ; diag-redirect-coherence : 0 shadowée, 0 boucle, 0 destination absente
+- [x] Build + serveur local : ancien slug 308 -> nouveau 200 (échantillon), vieux redirects config 308 -> base en 1 saut, sitemap sans années
+- [x] Après merge : vérif prod OK (308 un saut, canonicals sans année, sitemap 0 année, liens MDX réécrits). Reste : Request Indexing GSC manuel sur les fiches prioritaires
