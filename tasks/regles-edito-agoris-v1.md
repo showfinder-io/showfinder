@@ -114,6 +114,10 @@ RR1-RR36 = candidates Dream consolidées (6 cohortes, 113 fiches observées).
 - **RR35** **Cycle bisannuel décalé par Covid 2020**. Pour bisannuels créés avant 2020, vérifier l'historique 2018-2021 (présence/absence report Covid) avant d'affirmer "années paires/impaires". Ex. WNE : paires (2014/16/18) puis impaires (2021/23/25/27).
 - **RR36** **Itinérance des lieux : 3 cas**. (1) Lieu fixe (Eurosatory Villepinte) ; (2) Alternance binaire pair/impair (Global Industrie Paris/Lyon, Natexpo Lyon/Paris, Vinitech-Sifel/SITEVI) ; (3) Itinérance complète (Terres de Jim, Innov-Agri changent de site chaque édition). Pour itinérants : ne JAMAIS reproduire le lieu précédent sans vérification site officiel.
 
+### RR37 (cohorte 7, 2026-06-11)
+
+- **RR37** **Vérification du maillage interne**. Le maillage automatique (breadcrumb ville, bloc Explorer, salons similaires, badges secteurs) est généré par les templates : ne PAS le dupliquer dans le MDX. Dans le corps du MDX : (1) tout salon mentionné dans le texte (co-localisé, même série type SEPEM, édition précédente sous un autre slug) qui existe en base avec status published DOIT être lié vers `/salons/[slug]`, en liant la fiche canonique (jamais un slug cible d'un redirect 301 de next.config.ts ni un doublon connu ni une fiche draft) ; (2) le lieu pointe vers `/lieux/[slug]` (RR11 inchangé) ; (3) le reviewer vérifie chaque lien interne du MDX contre la liste des slugs publiés (salons, lieux, secteurs) : aucun lien cassé, et un salon mentionné sans lien alors qu'il existe en base = 💡 Spot-fix.
+
 ---
 
 ## Conventions transversales Nicolas (2026-05-31)
