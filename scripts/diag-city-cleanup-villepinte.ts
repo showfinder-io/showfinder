@@ -20,6 +20,10 @@
 //    (Pulse, édition septembre) mais l'édition janvier 2026, passée et
 //    inaccessible (shadowée par le 301 de l'audit 2026-06-01). Passée en
 //    draft, le redirect existant reste en place.
+// 6. venues.editorial_mdx : liens internes en dur vers
+//    /salons/maison-et-objet-paris-2026 (slug shadowé puis drafté) dans les
+//    fiches paris-nord-villepinte et paris-expo-porte-de-versailles ->
+//    repointés sur /salons/maison-objet-paris-2026 (fiche Pulse publiée).
 //
 // Usage : npm exec -- tsx --env-file=.env.local scripts/diag-city-cleanup-villepinte.ts
 
@@ -128,6 +132,33 @@ const steps: Step[] = [
         { status: "published" }
       ),
     }),
+  },
+  {
+    label:
+      "6. venues.editorial_mdx : liens /salons/maison-et-objet-paris-2026 -> fiche Pulse",
+    run: async () => {
+      const { data, error } = await supabase
+        .from("venues")
+        .select("id, slug, editorial_mdx")
+        .not("editorial_mdx", "is", null);
+      if (error) throw new Error(error.message);
+      const stale = "/salons/maison-et-objet-paris-2026";
+      const fixed = "/salons/maison-objet-paris-2026";
+      let updated = 0;
+      const slugs: string[] = [];
+      for (const venue of data ?? []) {
+        const mdx = venue.editorial_mdx as string;
+        if (!mdx.includes(stale)) continue;
+        const { error: updError } = await supabase
+          .from("venues")
+          .update({ editorial_mdx: mdx.split(stale).join(fixed) })
+          .eq("id", venue.id);
+        if (updError) throw new Error(`${venue.slug} : ${updError.message}`);
+        updated += 1;
+        slugs.push(venue.slug);
+      }
+      return { updated, detail: slugs.join(", ") };
+    },
   },
 ];
 
