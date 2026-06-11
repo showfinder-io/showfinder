@@ -50,24 +50,13 @@ const nextConfig: NextConfig = {
         destination: "/salons/simi-2026",
         permanent: true,
       },
-      {
-        source: "/salons/salon-mondial-du-tourisme-paris-2026",
-        destination: "/salons/salon-mondial-tourisme-2026",
-        permanent: true,
-      },
+      // (3 entrées cohorte 5 retirées le 2026-06-11 : elles formaient des
+      // boucles infinies avec les redirects inverses de l'audit doublons
+      // 2026-06-04 : sia-paris, salon-mondial-tourisme, santexpo.
+      // ERR_TOO_MANY_REDIRECTS constaté en prod sur les 3 fiches canoniques.)
       {
         source: "/salons/sandwich-and-snack-show-2026",
         destination: "/salons/snack-show-2026",
-        permanent: true,
-      },
-      {
-        source: "/salons/santexpo-paris-2026",
-        destination: "/salons/paris-healthcare-week-2026",
-        permanent: true,
-      },
-      {
-        source: "/salons/sia-paris-2026",
-        destination: "/salons/sia-paris-2027",
         permanent: true,
       },
       {
@@ -168,11 +157,8 @@ const nextConfig: NextConfig = {
         destination: "/salons/salon-mondial-du-tourisme-paris-2026",
         permanent: true,
       },
-      {
-        source: "/salons/salon-immobilier-entreprise-paris-2026",
-        destination: "/salons/simi-2026",
-        permanent: true,
-      },
+      // (doublon salon-immobilier-entreprise-paris-2026 -> simi-2026 retiré,
+      // déjà présent en cohorte 5 ci-dessus)
       {
         source: "/salons/vivatech-paris-2026",
         destination: "/salons/vivatech-2026",
