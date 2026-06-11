@@ -69,6 +69,11 @@ Toujours vérifier la nature institutionnelle d'un acronyme avant de le classer.
 ### RR-17. Numérotation d'édition incluant l'année de création
 Si un événement est créé en année N et qu'une édition s'est tenue en N, c'est la **1re édition de N**, pas l'édition 0. *Exemple : THCon créé en 2017 = 1re édition 2017, 2018 = 2e édition.*
 
+> **Note 2026-06-11 :** ce brief est historique (cohorte 5). Le référentiel
+> à jour est `tasks/regles-edito-agoris-v1.md` (v2, R1-R33 + RR1-RR37, à
+> injecter in extenso pour les cohortes 7+). La vérification du maillage
+> interne y est formalisée en RR37.
+
 ## Patterns d'erreurs identifiés à éviter
 
 ### 1. Confusion entre éditions
