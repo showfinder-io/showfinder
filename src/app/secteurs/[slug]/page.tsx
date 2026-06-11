@@ -6,12 +6,16 @@ import {
   getAllSectorSlugs,
   getSectorBySlug,
   getSalonsBySector,
+  getSectors,
 } from "@/lib/queries";
+import { slugifyCity } from "@/lib/format";
 import { getSectorContent, formatEditorialMonth } from "@/lib/sector-content";
 import { compileMdxContent } from "@/lib/mdx";
 import { SalonCard } from "@/components/salon-card";
 import { AlertSubscribe } from "@/components/alert-subscribe";
 import { SectionTitle } from "@/components/section-title";
+import { SectorBadge } from "@/components/sector-badge";
+import { JsonLd } from "@/components/json-ld";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-jsonld";
 
 type Props = {
@@ -68,17 +72,44 @@ export default async function SecteurPage({ params }: Props) {
 
   if (!sector) notFound();
 
-  const [result, sectorContent] = await Promise.all([
+  const [result, sectorContent, allSectors] = await Promise.all([
     getSalonsBySector(slug),
     getSectorContent(slug),
+    getSectors(),
   ]);
 
   const Content = sectorContent
     ? await compileMdxContent(sectorContent.content)
     : null;
 
+  // Villes de la filière (dédupliquées via les salons listés) : maillage
+  // croisé secteur → pages ville.
+  const cities = [
+    ...new Set(
+      result.salons.map((s) => s.city).filter((c): c is string => Boolean(c))
+    ),
+  ].sort((a, b) => a.localeCompare(b));
+
+  // Autres filières : maillage horizontal entre pages secteur
+  const otherSectors = allSectors.filter((s) => s.slug !== slug);
+
+  // Schema.org ItemList : liste citable par Google et les LLMs (GEO)
+  const itemListJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: `Salons ${sector.name}`,
+    numberOfItems: result.total,
+    itemListElement: result.salons.map((salon, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: salon.name,
+      url: `${siteConfig.url}/salons/${salon.slug}`,
+    })),
+  };
+
   return (
     <div className="mx-auto max-w-6xl px-4 py-12 md:py-16">
+      {result.salons.length > 0 && <JsonLd data={itemListJsonLd} />}
       <BreadcrumbJsonLd
         items={[
           { name: "Accueil", item: "/" },
@@ -177,6 +208,41 @@ export default async function SecteurPage({ params }: Props) {
           </div>
         )}
       </section>
+
+      {/* Villes de la filière : maillage croisé vers les pages ville */}
+      {cities.length > 0 && (
+        <section className="mt-16 border-t border-border pt-10">
+          <SectionTitle as="h2" size="lg">
+            Les villes de la filière
+          </SectionTitle>
+          <ul className="mt-6 flex flex-wrap gap-x-8 gap-y-3 text-sm">
+            {cities.map((city) => (
+              <li key={city}>
+                <Link
+                  href={`/villes/${slugifyCity(city)}`}
+                  className="text-prune underline decoration-prune/30 underline-offset-2 transition-colors hover:decoration-prune"
+                >
+                  Salons à {city}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {/* Autres filières : maillage horizontal entre pages secteur */}
+      {otherSectors.length > 0 && (
+        <section className="mt-16 border-t border-border pt-10">
+          <SectionTitle as="h2" size="lg">
+            Explorer d&apos;autres filières
+          </SectionTitle>
+          <div className="mt-6 flex flex-wrap gap-2">
+            {otherSectors.map((s) => (
+              <SectorBadge key={s.slug} slug={s.slug} name={s.name} />
+            ))}
+          </div>
+        </section>
+      )}
     </div>
   );
 }

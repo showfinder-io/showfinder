@@ -19,6 +19,7 @@ import { AgorisMark } from "@/components/agoris-mark";
 
 const PRODUIT_LINKS = [
   { href: "/salons", label: "Salons" },
+  { href: "/secteurs", label: "Secteurs" },
   { href: "/lieux", label: "Lieux" },
   { href: "/prestataires", label: "Prestataires" },
   { href: "/blog", label: "Blog" },

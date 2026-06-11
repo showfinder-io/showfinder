@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { siteConfig } from "@/lib/config";
 import { SectionTitle } from "@/components/section-title";
 
 export const metadata: Metadata = {
@@ -6,6 +7,9 @@ export const metadata: Metadata = {
   description:
     "Politique de confidentialité d'Agoris : RGPD, données personnelles, droits des utilisateurs.",
   robots: { index: true, follow: true },
+  alternates: {
+    canonical: `${siteConfig.url}/confidentialite`,
+  },
 };
 
 export default function ConfidentialitePage() {

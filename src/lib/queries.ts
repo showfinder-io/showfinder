@@ -658,6 +658,31 @@ export async function getSalonsByCity(city: string) {
   });
 }
 
+// Villes uniques avec leur nombre de salons publiés, triées par volume
+// décroissant. Sert au maillage interne (bloc "autres villes") et au seuil
+// d'indexabilité des pages ville.
+export async function getCityCounts() {
+  const supabase = await createClient();
+
+  const { data, error } = await supabase
+    .from("salons")
+    .select("city")
+    .eq("status", "published")
+    .not("city", "is", null);
+
+  if (error) throw error;
+
+  const counts = new Map<string, number>();
+  for (const row of data ?? []) {
+    const city = row.city as string;
+    counts.set(city, (counts.get(city) ?? 0) + 1);
+  }
+
+  return [...counts.entries()]
+    .map(([city, count]) => ({ city, count }))
+    .sort((a, b) => b.count - a.count || a.city.localeCompare(b.city));
+}
+
 // Toutes les villes uniques avec leurs slugs (pour generateStaticParams)
 export async function getAllCitySlugs() {
   const supabase = createStaticClient();
@@ -716,6 +741,23 @@ export async function getVenues() {
 
   if (error) throw error;
   return (data ?? []) as VenueRow[];
+}
+
+// Lieux d'exposition d'une ville (maillage interne page ville → fiches lieu)
+export async function getVenuesByCity(city: string) {
+  const supabase = await createClient();
+
+  const { data, error } = await supabase
+    .from("venues")
+    .select("id, slug, name, total_surface_sqm")
+    .eq("city", city)
+    .order("name");
+
+  if (error) throw error;
+  return (data ?? []) as Pick<
+    VenueRow,
+    "id" | "slug" | "name" | "total_surface_sqm"
+  >[];
 }
 
 export async function getVenueBySlug(slug: string) {

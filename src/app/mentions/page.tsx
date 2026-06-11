@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { siteConfig } from "@/lib/config";
 import { SectionTitle } from "@/components/section-title";
 
 export const metadata: Metadata = {
@@ -6,6 +7,9 @@ export const metadata: Metadata = {
   description:
     "Mentions légales d'Agoris : éditeur, hébergeur, directeur de la publication.",
   robots: { index: true, follow: true },
+  alternates: {
+    canonical: `${siteConfig.url}/mentions`,
+  },
 };
 
 export default function MentionsPage() {

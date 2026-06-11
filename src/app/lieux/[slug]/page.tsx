@@ -8,7 +8,7 @@ import {
   getSalonsByVenue,
   type VenueGalleryItem,
 } from "@/lib/queries";
-import { formatNumber } from "@/lib/format";
+import { formatNumber, slugifyCity } from "@/lib/format";
 import { compileMdxContent } from "@/lib/mdx";
 import { mdxComponents } from "@/components/mdx-components";
 import { SalonCard } from "@/components/salon-card";
@@ -200,6 +200,18 @@ export default async function VenuePage({ params }: Props) {
         {/* Description courte (toujours visible, vient de la DB) */}
         {venue.description && (
           <p className="mt-6 leading-relaxed text-muted">{venue.description}</p>
+        )}
+
+        {/* Maillage : page ville correspondante */}
+        {venue.city && (
+          <p className="mt-4 text-sm">
+            <Link
+              href={`/villes/${slugifyCity(venue.city)}`}
+              className="text-prune underline decoration-prune/30 underline-offset-2 transition-colors hover:decoration-prune"
+            >
+              Tous les salons à {venue.city}
+            </Link>
+          </p>
         )}
       </div>
 

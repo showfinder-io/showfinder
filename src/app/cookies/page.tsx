@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { siteConfig } from "@/lib/config";
 import { SectionTitle } from "@/components/section-title";
 
 export const metadata: Metadata = {
@@ -6,6 +7,9 @@ export const metadata: Metadata = {
   description:
     "Politique cookies d'Agoris : cookies essentiels et mesure d'audience anonymisée.",
   robots: { index: true, follow: true },
+  alternates: {
+    canonical: `${siteConfig.url}/cookies`,
+  },
 };
 
 export default function CookiesPage() {
