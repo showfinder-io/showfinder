@@ -20,6 +20,12 @@ const nextConfig: NextConfig = {
     // pointent vers les slugs de base (pas de chaînes de 301).
     return [
       ...slugYearRedirects.map((r) => ({ ...r, permanent: true })),
+      // Doublon venues fusionné le 2026-06-12 (chantier couverture lieux)
+      {
+        source: "/lieux/grand-palais-paris",
+        destination: "/lieux/grand-palais",
+        permanent: true,
+      },
       // Cohortes 1-4 BTP/bois (cf. migration 20260528000000)
       {
         source: "/salons/artibat-rennes-2026",

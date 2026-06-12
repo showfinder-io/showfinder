@@ -124,3 +124,21 @@ Décision Julien 2026-06-12 : plus d'année dans les slugs salons. La fiche est 
 - [x] Script rejoué = 0 ligne modifiée ; diag-redirect-coherence : 0 shadowée, 0 boucle, 0 destination absente
 - [x] Build + serveur local : ancien slug 308 -> nouveau 200 (échantillon), vieux redirects config 308 -> base en 1 saut, sitemap sans années
 - [x] Après merge : vérif prod OK (308 un saut, canonicals sans année, sitemap 0 année, liens MDX réécrits). Reste : Request Indexing GSC manuel sur les fiches prioritaires
+
+---
+
+# Chantier couverture lieux (2026-06-12)
+
+Signalement Nicolas : salons avec lieu non cliquable. Diagnostic : 73 salons publiés avec venue texte sans venue_id (31% du catalogue), dont une grosse part pointant vers des fiches lieux EXISTANTES.
+
+## Exécution (scripts/diag-venues-coverage-apply.ts, idempotent vérifié)
+
+- [x] Fusion doublon venues grand-palais-paris -> grand-palais (même adresse, MDX conservé) : 2 salons repointés, redirect 301 /lieux ajouté
+- [x] Rapprochement venue_id vers fiches existantes : 26 salons (Palais des Congrès Paris 9, Centre de Congrès Lyon 6, Eurexpo 2, Porte de Versailles 2, Montpellier 2, Beaujoire->Nantes 2, Angers 2, Villette 1)
+- [x] 30 fiches lieux créées (18 FR : Cannes, Tokyo, La Défense Arena, Tony Garnier, PMC Strasbourg, Reims, Châlons, Vichy, Champerret, Brongniart, Lamotte-Beuvron, Douai, Besançon, Tarbes, Mutualité, Pharo, Parc Floral, Cité Congrès Nantes ; 12 intl : Messe München/Frankfurt/Düsseldorf/Essen/Stuttgart, Hanovre, Fira Barcelona, FIL Lisboa, LVCC, DWTC, Grimaldi, Vienne) : nom+ville+pays uniquement (pas de stats fabriquées), noindex tant que non riches
+- [x] 40 salons liés aux nouvelles fiches ; venue texte aligné sur le nom canonique
+- [x] Résultat : 224/238 salons avec lieu cliquable. 8 restants = sites non pérennes assumés (plein champ x4, Camp de Souge, Divers lieux Paris, Sofitel Abidjan, EPLEFPA)
+
+## Vérification
+
+- [x] Relance script = 0 ligne. Build OK. Local : fiches lieux créées 200 + noindex,follow, redirect grand-palais-paris 308, lien /lieux/palais-des-congres-paris rendu sur fiche salon
