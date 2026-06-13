@@ -56,6 +56,10 @@
     "destination": "/secteurs/sante-pharma"
   },
   {
+    "source": "/salons/midest",
+    "destination": "/salons/global-industrie-lyon"
+  },
+  {
     "source": "/salons/rsi-reims",
     "destination": "/villes/reims"
   },
