@@ -440,6 +440,7 @@ colors: {
 10. **Performance** : temps de chargement cible < 2s sur mobile 4G.
 11. **WCAG Ocre :** ne JAMAIS générer `text-ocre` sur fond `bg-sable`. L'Ocre ne sert que pour : fond de badge (texte Prune dessus), texte sur fond Prune, accents décoratifs non-textuels. Envisager un lint rule ou un utilitaire Tailwind pour enforcer.
 12. **PAS de Prisma.** Utiliser exclusivement le client Supabase JS pour l'accès données. Ne jamais introduire Prisma dans le projet.
+13. **JAMAIS de données factuelles générées par LLM publiées sans vérification.** Cause racine de la contamination massive du catalogue (seed `20260401000002_seed_batch2.sql`, 150 salons hallucinés par LLM publiés directement en `status='published'` : salons fantômes, villes fausses, dates inventées). Règles : (a) un LLM peut générer le template SQL, les descriptions, le formatage, mais JAMAIS les données factuelles (nom, ville, dates, URL, organisateur) sans source primaire (site officiel, Unimev, calendrier de lieu) ; (b) tout import de masse s'insère en `status='draft'`, jamais `published` ; (c) passage en `published` uniquement après vérification (fetch website_url 200 + nom présent, ou process éditorial writer + 2 reviewers). Les fiches avec `editorial_mdx` ont traversé ce process et sont fiables ; les fiches sans MDX restent suspectes par défaut.
 
 ---
 
