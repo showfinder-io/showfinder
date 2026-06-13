@@ -60,6 +60,10 @@
     "destination": "/salons/global-industrie-lyon"
   },
   {
+    "source": "/salons/rh-lyon",
+    "destination": "/salons/solutions-rh-paris"
+  },
+  {
     "source": "/salons/rsi-reims",
     "destination": "/villes/reims"
   },
