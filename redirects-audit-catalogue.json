@@ -24,6 +24,10 @@
     "destination": "/salons/global-industrie-lyon"
   },
   {
+    "source": "/salons/euroviti-montpellier",
+    "destination": "/salons/euroviti-angers"
+  },
+  {
     "source": "/salons/expodefensa-paris",
     "destination": "/secteurs/defense-securite"
   },
