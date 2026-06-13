@@ -61,7 +61,7 @@
   },
   {
     "source": "/salons/rh-lyon",
-    "destination": "/salons/solutions-rh-paris"
+    "destination": "/salons/solutions-rh"
   },
   {
     "source": "/salons/rsi-reims",
@@ -98,6 +98,10 @@
   {
     "source": "/salons/solar-solutions-international-paris",
     "destination": "/salons/solar-solutions-international-amsterdam"
+  },
+  {
+    "source": "/salons/solutions-rh-paris",
+    "destination": "/salons/solutions-rh"
   },
   {
     "source": "/salons/talent-management-paris",
