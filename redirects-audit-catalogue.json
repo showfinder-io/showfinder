@@ -1,0 +1,102 @@
+[
+  {
+    "source": "/salons/blc-bordeaux",
+    "destination": "/villes/bordeaux"
+  },
+  {
+    "source": "/salons/cersaie-paris-showroom",
+    "destination": "/salons/ideobain"
+  },
+  {
+    "source": "/salons/conext-paris",
+    "destination": "/secteurs/franchise-commerce"
+  },
+  {
+    "source": "/salons/cosmed-meeting-marseille",
+    "destination": "/salons/cfic-marseille"
+  },
+  {
+    "source": "/salons/cosmeeting-paris",
+    "destination": "/secteurs/cosmetique-beaute"
+  },
+  {
+    "source": "/salons/emm-lyon",
+    "destination": "/salons/global-industrie-lyon"
+  },
+  {
+    "source": "/salons/expodefensa-paris",
+    "destination": "/secteurs/defense-securite"
+  },
+  {
+    "source": "/salons/fatex-paris",
+    "destination": "/salons/texworld-paris"
+  },
+  {
+    "source": "/salons/flame-expo-lyon",
+    "destination": "/secteurs/energie-environnement"
+  },
+  {
+    "source": "/salons/hacking-health-lyon",
+    "destination": "/salons/hacking-health-strasbourg"
+  },
+  {
+    "source": "/salons/intralogistics-france",
+    "destination": "/salons/sitl"
+  },
+  {
+    "source": "/salons/mdd-expo-paris",
+    "destination": "/secteurs/agroalimentaire"
+  },
+  {
+    "source": "/salons/measurement-world-paris",
+    "destination": "/salons/global-industrie-lyon"
+  },
+  {
+    "source": "/salons/medica-france-forum",
+    "destination": "/secteurs/sante-pharma"
+  },
+  {
+    "source": "/salons/rsi-reims",
+    "destination": "/villes/reims"
+  },
+  {
+    "source": "/salons/salon-analyse-industrielle-paris",
+    "destination": "/secteurs/industrie"
+  },
+  {
+    "source": "/salons/salon-data-ai-paris",
+    "destination": "/salons/big-data-ai-paris"
+  },
+  {
+    "source": "/salons/salon-des-enr-paris",
+    "destination": "/secteurs/energie-environnement"
+  },
+  {
+    "source": "/salons/salon-habitat-design-lyon",
+    "destination": "/salons/salon-habitat-design-saint-etienne"
+  },
+  {
+    "source": "/salons/shieldafrica-abidjan",
+    "destination": "/secteurs/defense-securite"
+  },
+  {
+    "source": "/salons/sial-inspire-food-business",
+    "destination": "/salons/sial-paris"
+  },
+  {
+    "source": "/salons/sirha-green-lyon",
+    "destination": "/salons/sirha-lyon"
+  },
+  {
+    "source": "/salons/solar-solutions-international-paris",
+    "destination": "/salons/solar-solutions-international-amsterdam"
+  },
+  {
+    "source": "/salons/talent-management-paris",
+    "destination": "/secteurs/rh-formation"
+  },
+  {
+    "source": "/salons/tech-show-paris",
+    "destination": "/salons/ready-for-it-monaco"
+  }
+]

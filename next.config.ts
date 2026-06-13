@@ -10,6 +10,12 @@ const slugYearRedirects: { source: string; destination: string }[] = JSON.parse(
   readFileSync(join(__dirname, "redirects-slug-year.json"), "utf8")
 );
 
+// Audit catalogue passé (2026-06-13) : 301 des fiches fantômes/doublons dépubliées
+// et des slugs renommés (ville corrigée). Généré, ne pas éditer à la main.
+const auditCatalogueRedirects: { source: string; destination: string }[] = JSON.parse(
+  readFileSync(join(__dirname, "redirects-audit-catalogue.json"), "utf8")
+);
+
 const nextConfig: NextConfig = {
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
   trailingSlash: false,
@@ -20,6 +26,7 @@ const nextConfig: NextConfig = {
     // pointent vers les slugs de base (pas de chaînes de 301).
     return [
       ...slugYearRedirects.map((r) => ({ ...r, permanent: true })),
+      ...auditCatalogueRedirects.map((r) => ({ ...r, permanent: true })),
       // Doublon venues fusionné le 2026-06-12 (chantier couverture lieux)
       {
         source: "/lieux/grand-palais-paris",
