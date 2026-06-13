@@ -51,6 +51,19 @@ const nextConfig: NextConfig = {
         destination: "/salons/djazagro-alger",
         permanent: true,
       },
+      // Audit find-next-edition (2026-06-13)
+      {
+        // ExpoBiogaz est itinérant : Bordeaux n'a jamais été une édition
+        source: "/salons/expobiogaz-bordeaux",
+        destination: "/salons/expobiogaz",
+        permanent: true,
+      },
+      {
+        // Vinexpo Paris fusionné avec Wine Paris (Vinexposium, même édition)
+        source: "/salons/vinexpo-paris",
+        destination: "/salons/wine-paris",
+        permanent: true,
+      },
       // Cohortes 1-4 BTP/bois (cf. migration 20260528000000)
       {
         source: "/salons/artibat-rennes-2026",
