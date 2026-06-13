@@ -11,7 +11,8 @@ import { createClient } from "@supabase/supabase-js";
 
 const sb = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPABASE_SERVICE_ROLE_KEY!);
 const APPLY = process.argv.includes("--apply");
-const HANDOFF = join(process.cwd(), "handoff/cohorte-10-review");
+const dirArg = process.argv.find((a) => a.startsWith("--dir="));
+const HANDOFF = join(process.cwd(), dirArg ? dirArg.slice("--dir=".length) : "handoff/cohorte-10-review");
 const SLUGS = readdirSync(HANDOFF).filter((f) => f.endsWith(".json")).map((f) => f.slice(0, -5));
 
 const FIELDS = new Set(["name", "start_date", "end_date", "edition_year", "edition_number", "frequency", "organizer_name", "co_organizer_name", "website_url", "estimated_visitors", "estimated_exhibitors", "city", "venue", "description"]);
@@ -31,6 +32,7 @@ async function main() {
   console.log(APPLY ? "=== APPLY ===" : "=== DRY-RUN ===");
   for (const slug of SLUGS) {
     const h = JSON.parse(readFileSync(join(HANDOFF, `${slug}.json`), "utf8"));
+    if (h.verdict === "do_not_publish" || !h.mdx) { console.log(`${slug}: SKIP (do_not_publish / mdx vide)`); continue; }
     const patch: Record<string, unknown> = { editorial_mdx: h.mdx, seo_title: h.seo_title, seo_description: h.seo_description, status: "published" };
     const skipped: string[] = [];
     for (const u of h.db_updates ?? []) {
