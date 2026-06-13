@@ -64,6 +64,12 @@ const nextConfig: NextConfig = {
         destination: "/salons/wine-paris",
         permanent: true,
       },
+      {
+        // EquipMag absorbé par Paris Retail Week (puis NRF Retail's Big Show Europe)
+        source: "/salons/equipmag-paris",
+        destination: "/salons/paris-retail-week",
+        permanent: true,
+      },
       // Cohortes 1-4 BTP/bois (cf. migration 20260528000000)
       {
         source: "/salons/artibat-rennes-2026",
