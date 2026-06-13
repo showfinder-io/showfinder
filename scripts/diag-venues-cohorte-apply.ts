@@ -5,14 +5,16 @@
  *
  * Usage : set -a && source .env.local && set +a && ./node_modules/.bin/tsx scripts/diag-venues-cohorte-apply.ts [--apply]
  */
-import { readFileSync } from "node:fs";
+import { readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import { createClient } from "@supabase/supabase-js";
 
 const sb = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPABASE_SERVICE_ROLE_KEY!);
 const APPLY = process.argv.includes("--apply");
-const HANDOFF = join(process.cwd(), "handoff/venues-cohorte");
-const SLUGS = ["palais-des-festivals-cannes", "messe-munchen", "grimaldi-forum", "paris-la-defense-arena", "parc-expositions-montpellier", "grande-halle-villette", "palais-du-pharo", "palais-musique-congres-strasbourg", "cite-des-congres-nantes", "centre-des-congres-reims"];
+// Dossier de handoffs passable en argv (défaut : 1er batch). Réutilisable.
+const dirArg = process.argv.find((a) => a.startsWith("--dir="));
+const HANDOFF = join(process.cwd(), dirArg ? dirArg.slice("--dir=".length) : "handoff/venues-cohorte");
+const SLUGS = readdirSync(HANDOFF).filter((f) => f.endsWith(".json")).map((f) => f.slice(0, -5));
 
 // Champs venue acceptés depuis les db_updates des handoffs.
 const FIELDS = new Set(["address", "postal_code", "total_surface_sqm", "halls_count", "website_url", "google_maps_url", "lat", "lng", "description", "city"]);
