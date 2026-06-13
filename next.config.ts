@@ -70,6 +70,25 @@ const nextConfig: NextConfig = {
         destination: "/salons/paris-retail-week",
         permanent: true,
       },
+      // Cohorte 9 (2026-06-13) : doublons / marques absorbées détectés
+      {
+        // Metal Expo n'est autonome qu'à partir de 2027 : composante d'EquipBaie Metalexpo en 2026
+        source: "/salons/metal-expo-paris",
+        destination: "/salons/equipbaie-metalexpo-paris",
+        permanent: true,
+      },
+      {
+        // Salon de la Maroquinerie absorbé par Première Vision en 2014 (Leather Hub)
+        source: "/salons/maroquinerie-paris",
+        destination: "/salons/premiere-vision-paris",
+        permanent: true,
+      },
+      {
+        // Beyond Beauty Paris : marque éteinte (dernière édition 2018), pas de successeur direct
+        source: "/salons/beyond-beauty-paris",
+        destination: "/secteurs/cosmetique-beaute",
+        permanent: true,
+      },
       // Cohortes 1-4 BTP/bois (cf. migration 20260528000000)
       {
         source: "/salons/artibat-rennes-2026",
