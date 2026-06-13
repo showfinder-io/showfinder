@@ -26,6 +26,31 @@ const nextConfig: NextConfig = {
         destination: "/lieux/grand-palais",
         permanent: true,
       },
+      // Cohorte 8 (2026-06-13) : doublons / salons disparus / renommages
+      {
+        // doublon sémantique de la canonique jec-world
+        source: "/salons/jec-world-paris",
+        destination: "/salons/jec-world",
+        permanent: true,
+      },
+      {
+        // Salon du Meuble de Paris absorbé par Maison&Objet en 2016
+        source: "/salons/meuble-paris",
+        destination: "/salons/maison-objet-paris",
+        permanent: true,
+      },
+      {
+        // fiche fantôme MAP Pro remplacée par le vrai salon Sirha Méditerranée
+        source: "/salons/map-pro-marseille",
+        destination: "/salons/sirha-mediterranee",
+        permanent: true,
+      },
+      {
+        // Djazagro se tient à Alger, pas à Paris : slug réaligné
+        source: "/salons/djazagro-paris",
+        destination: "/salons/djazagro-alger",
+        permanent: true,
+      },
       // Cohortes 1-4 BTP/bois (cf. migration 20260528000000)
       {
         source: "/salons/artibat-rennes-2026",
