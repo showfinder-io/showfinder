@@ -69,8 +69,15 @@ function loadHandoff(slug: string) {
   return JSON.parse(readFileSync(join(HANDOFF, `${slug}.json`), "utf8"));
 }
 
+type Handoff = {
+  db_updates?: { field: string; proposed: unknown }[];
+  mdx?: string;
+  seo_title?: string;
+  seo_description?: string;
+};
+
 /** Construit le patch d'un fiche publiable depuis ses db_updates + overrides + MDX. */
-function buildPatch(slug: string, h: any): Record<string, unknown> {
+function buildPatch(slug: string, h: Handoff): Record<string, unknown> {
   const patch: Record<string, unknown> = {};
   for (const u of h.db_updates ?? []) {
     const f = u.field;
