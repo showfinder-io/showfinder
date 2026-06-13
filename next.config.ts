@@ -89,6 +89,25 @@ const nextConfig: NextConfig = {
         destination: "/secteurs/cosmetique-beaute",
         permanent: true,
       },
+      // Audit upcoming passe 2 (2026-06-13) : fantôme + renommages de slug
+      {
+        // IPA Nantes disparu, successeur sectoriel = SIAL Paris
+        source: "/salons/ipa-nantes",
+        destination: "/salons/sial-paris",
+        permanent: true,
+      },
+      {
+        // Parabère Forum se tient à Nice, pas Paris
+        source: "/salons/parabere-forum-paris",
+        destination: "/salons/parabere-forum-nice",
+        permanent: true,
+      },
+      {
+        // Tech'Élevage à La Roche-sur-Yon (le Parc Équestre de Lamotte-Beuvron accueille le Game Fair)
+        source: "/salons/tech-elevage-lamotte-beuvron",
+        destination: "/salons/tech-elevage-la-roche-sur-yon",
+        permanent: true,
+      },
       // Cohortes 1-4 BTP/bois (cf. migration 20260528000000)
       {
         source: "/salons/artibat-rennes-2026",
