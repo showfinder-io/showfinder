@@ -76,6 +76,10 @@
     "destination": "/salons/global-industrie-lyon"
   },
   {
+    "source": "/salons/pharmagora-plus-paris",
+    "destination": "/salons/pharmagora-plus"
+  },
+  {
     "source": "/salons/rh-lyon",
     "destination": "/salons/solutions-rh"
   },
@@ -98,6 +102,10 @@
   {
     "source": "/salons/salon-habitat-design-lyon",
     "destination": "/salons/salon-habitat-design-saint-etienne"
+  },
+  {
+    "source": "/salons/salon-herbe-villefranche",
+    "destination": "/salons/salon-herbe"
   },
   {
     "source": "/salons/shieldafrica-abidjan",

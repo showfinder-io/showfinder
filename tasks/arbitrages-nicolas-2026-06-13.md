@@ -53,3 +53,7 @@ Décisions accumulées pendant l'assainissement du catalogue + cohortes 8-12. No
 
 ### Reste (non bloquant)
 - **24 fiches category_to_confirm** : rien à faire en DB (elles ont déjà une catégorie posée par le backfill LLM, juste flaggée `category_to_confirm=true` pour relecture). À passer en revue dans l'admin quand tu veux : confirmer (passer le flag à false) ou corriger la catégorie. Je peux te sortir la liste pour une passe rapide si utile.
+
+## Nouveaux (cohorte 14, 2026-06-15)
+- [ ] **salon-habitat-design-saint-etienne** : category probablement grand_public (B2C), à confirmer.
+- [ ] **arab-health-dubai** : rebrandé WHX Dubai. name passé à "Arab Health (WHX Dubai)" (slug conservé). À valider.
