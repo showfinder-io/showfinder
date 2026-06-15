@@ -122,6 +122,12 @@ RR1-RR36 = candidates Dream consolidées (6 cohortes, 113 fiches observées).
 
 - **RR38** **Slugs sans année**. Les slugs salons ne portent plus d'année (`/salons/sial-paris`, pas `/salons/sial-paris-2026`) : la fiche est la fiche canonique de la série, l'année vit dans les données et le seo_title. En rédaction : (1) ne jamais créer de fiche avec une année dans le slug (exception : archive d'une édition passée qui coexiste avec la fiche canonique) ; (2) les liens internes des MDX pointent vers les slugs sans année ; (3) le seo_title et le H1 portent l'année de l'édition courante, mis à jour à chaque roll.
 
+### RR39-RR41 (décisions Julien 2026-06-15)
+
+- **RR39** **Slug d'un salon itinérant : sans ville**. Un salon qui change de ville d'une édition à l'autre (BioFIT, ExpoBiogaz, Cycl'eau...) ne porte JAMAIS de ville dans son slug (`/salons/biofit`, pas `/salons/biofit-lille`). La ville de l'édition courante vit dans le champ `city`. Renommer + 301 si un slug itinérant contient une ville.
+- **RR40** **Source de vérité = site officiel**. En cas de divergence entre un site tiers/agrégateur (abcsalles.com, paris-art.com, eventseye, presse) et le site officiel de l'événement ou du lieu, le **site officiel prime**. N'utiliser le tiers que si l'officiel est muet, en le signalant en alerte.
+- **RR41** **Numéro d'édition aligné sur le site officiel**. Quand des sources divergent sur le numéro d'édition, retenir celui affiché par le site officiel de l'organisateur (ex. Gazelec : 17e en 2026 selon congresgazelec.com).
+
 ---
 
 ## Conventions transversales Nicolas (2026-05-31)

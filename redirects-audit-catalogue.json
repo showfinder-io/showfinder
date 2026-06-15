@@ -1,11 +1,23 @@
 [
   {
+    "source": "/lieux/maison-de-la-mutualite",
+    "destination": "/lieux"
+  },
+  {
+    "source": "/salons/biofit-lille",
+    "destination": "/salons/biofit"
+  },
+  {
     "source": "/salons/blc-bordeaux",
     "destination": "/villes/bordeaux"
   },
   {
     "source": "/salons/cersaie-paris-showroom",
     "destination": "/salons/ideobain"
+  },
+  {
+    "source": "/salons/cloud-expo-europe-paris",
+    "destination": "/secteurs/tech-numerique"
   },
   {
     "source": "/salons/conext-paris",
@@ -114,5 +126,9 @@
   {
     "source": "/salons/tech-show-paris",
     "destination": "/salons/ready-for-it-monaco"
+  },
+  {
+    "source": "/salons/world-of-concrete-europe-paris",
+    "destination": "/salons/intermat-paris"
   }
 ]

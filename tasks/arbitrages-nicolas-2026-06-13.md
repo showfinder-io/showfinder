@@ -35,3 +35,21 @@ Décisions accumulées pendant l'assainissement du catalogue + cohortes 8-12. No
 
 - [ ] **Request Indexing GSC** sur le contenu publié/corrigé de la session.
 - [ ] Reste **~18 fiches "à venir" vierges** (avant cohorte 12) + **~39 passées** à éditorialiser au fil des rolls.
+
+---
+
+## RÉSOLU (décisions Julien 2026-06-15, appliqué via scripts/diag-arbitrages-apply.ts)
+
+- **Fréquence semestrielle** : valeur `semestriel` ajoutée à l'enum (migration 20260615000000). congres-hr-paris -> semestriel. (RR : voir RR (fréquences) ; d'autres salons semestriels surfaceront, à classer au fil de l'eau.)
+- **cloud-expo-europe-paris** : dépublié (draft) + 301. NB : aucune fiche "Tech Show Paris" en base (ready-for-it-monaco est un autre événement), donc 301 -> /secteurs/tech-numerique.
+- **world-of-concrete-europe-paris** : dépublié (draft) + 301 -> /salons/intermat-paris (sous-ensemble d'Intermat).
+- **parabere-forum-nice** : secteur tourisme-hotellerie -> agroalimentaire.
+- **regal-toulouse** : category -> grand_public (reste en draft, salon en pause).
+- **salon-copropriete-paris** : category -> pro (salon_professionnel).
+- **Slug itinérant sans ville** : règle RR39. biofit-lille -> biofit (+301).
+- **Numéro d'édition aligné site officiel** : règle RR41. gazelec edition_number=17.
+- **Divergence agrégateur vs site officiel** : règle RR40 (site officiel = source de vérité). Re-vérif des surfaces venues issues d'agrégateurs (Reims/Champerret/Mutualité/Palais de Tokyo) à faire à la prochaine campagne de gestion de fiches.
+- **maison-de-la-mutualite** : venue orpheline (plus aucun salon) -> supprimée + 301 /lieux/maison-de-la-mutualite -> /lieux.
+
+### Reste (non bloquant)
+- **24 fiches category_to_confirm** : rien à faire en DB (elles ont déjà une catégorie posée par le backfill LLM, juste flaggée `category_to_confirm=true` pour relecture). À passer en revue dans l'admin quand tu veux : confirmer (passer le flag à false) ou corriger la catégorie. Je peux te sortir la liste pour une passe rapide si utile.
