@@ -14,6 +14,7 @@ import { SalonCard } from "@/components/salon-card";
 import { SalonPagination } from "@/components/salon-pagination";
 import { SectionTitle } from "@/components/section-title";
 import { SortBar } from "@/components/sort-bar";
+import { JsonLd } from "@/components/json-ld";
 
 const PAGE_SIZE = 20;
 
@@ -124,8 +125,25 @@ export default async function SalonsPage({ searchParams }: Props) {
 
   const totalPages = Math.max(1, Math.ceil(result.total / PAGE_SIZE));
 
+  // Schema.org ItemList : rend la liste de salons citable par Google et les
+  // LLMs (GEO). Position globale tenant compte de la pagination ; numberOfItems
+  // reflète les éléments réellement listés sur cette vue.
+  const itemListJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Salons professionnels en France",
+    numberOfItems: result.salons.length,
+    itemListElement: result.salons.map((salon, i) => ({
+      "@type": "ListItem",
+      position: (page - 1) * PAGE_SIZE + i + 1,
+      name: salon.name,
+      url: `${siteConfig.url}/salons/${salon.slug}`,
+    })),
+  };
+
   return (
     <div className="mx-auto max-w-7xl px-4 py-12 md:py-16">
+      {result.salons.length > 0 && <JsonLd data={itemListJsonLd} />}
       {/* En-tete */}
       <header className="mb-10 md:mb-14">
         <SectionTitle as="h1" size="xl">
