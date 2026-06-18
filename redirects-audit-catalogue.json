@@ -138,5 +138,9 @@
   {
     "source": "/salons/world-of-concrete-europe-paris",
     "destination": "/salons/intermat-paris"
+  },
+  {
+    "source": "/salons/pcd-congress-paris",
+    "destination": "/salons/adf-pcd-paris"
   }
 ]
