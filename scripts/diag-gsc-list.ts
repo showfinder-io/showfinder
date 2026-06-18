@@ -8,7 +8,7 @@ import { createClient } from "@supabase/supabase-js";
 const sb = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPABASE_SERVICE_ROLE_KEY!);
 
 (async () => {
-  const today = "2026-06-13";
+  const today = "2026-06-18";
   // Tous les salons indexables : la migration slugs sans année (today) a changé
   // TOUTES les URLs, donc Google doit recrawler l'ensemble.
   const { data: sal } = await sb.from("salons")
@@ -27,14 +27,13 @@ const sb = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPAB
   const all = [...salUrls, ...venUrls];
 
   const lines = [
-    "# Request Indexing GSC - referencements du 2026-06-13", "",
+    "# Request Indexing GSC - referencements du 2026-06-18", "",
     `Total : ${all.length} URLs (${salUrls.length} salons + ${venUrls.length} lieux). Quota GSC ~10/jour.`,
     "Priorite : salons a venir d'abord (par date), puis passes (par visiteurs), puis lieux.",
-    "Contexte : la migration slugs sans annee (today) a change TOUTES les URLs salons,",
-    "donc l'ensemble des fiches indexables est a re-soumettre. Pousser depuis le haut.",
-    "Note : la cohorte 13 (10 fiches, en cours) s'ajoutera une fois publiee.", "",
+    "Contexte : cohorte 15 publiee (9 fiches) + dedup pcd-congress-paris (301 -> adf-pcd-paris).",
+    "Pousser en priorite les 9 fiches cohorte 15. Pousser depuis le haut.", "",
   ];
-  const start = new Date("2026-06-14T00:00:00Z");
+  const start = new Date("2026-06-19T00:00:00Z");
   const jours = ["dim", "lun", "mar", "mer", "jeu", "ven", "sam"];
   for (let i = 0; i < all.length; i += 10) {
     const d = new Date(start.getTime() + (i / 10) * 86400000);
@@ -42,6 +41,6 @@ const sb = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPAB
     all.slice(i, i + 10).forEach((u, j) => lines.push(`${i + j + 1}. ${u}`));
     lines.push("");
   }
-  writeFileSync("tasks/gsc-request-indexing-2026-06-13.md", lines.join("\n"));
+  writeFileSync("tasks/gsc-request-indexing-2026-06-18.md", lines.join("\n"));
   console.log(`OK : ${all.length} URLs (${salUrls.length} salons + ${venUrls.length} lieux), ${Math.ceil(all.length / 10)} jours.`);
 })().catch((e) => { console.error(e); process.exit(1); });

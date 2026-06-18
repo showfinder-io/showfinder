@@ -128,6 +128,10 @@ RR1-RR36 = candidates Dream consolidées (6 cohortes, 113 fiches observées).
 - **RR40** **Source de vérité = site officiel**. En cas de divergence entre un site tiers/agrégateur (abcsalles.com, paris-art.com, eventseye, presse) et le site officiel de l'événement ou du lieu, le **site officiel prime**. N'utiliser le tiers que si l'officiel est muet, en le signalant en alerte.
 - **RR41** **Numéro d'édition aligné sur le site officiel**. Quand des sources divergent sur le numéro d'édition, retenir celui affiché par le site officiel de l'organisateur (ex. Gazelec : 17e en 2026 selon congresgazelec.com).
 
+### RR42 (cohorte 15, 2026-06-18)
+
+- **RR42** **RSE : chercher au-delà du site de l'événement**. Le bloc RSE (R22) ne doit jamais être déclaré "absent" sans avoir vérifié 4 niveaux de sources, dans l'ordre : (1) page Engagements/RSE/Sustainability du site de **l'événement** ; (2) programme RSE du **groupe organisateur** (ex. Easyfairs "Act for the Future" neutralité carbone 2050 ; Weyou Group RSE/ESG ; CCI "Dynamic R" + accompagnement ADEME ; etc.) ; (3) certification **ISO 20121** de l'événement ; (4) RSE/ISO 20121 du **lieu** (ex. Viparis, premier opérateur mondial certifié ISO 20121 sur tous ses sites parisiens dont Porte de Versailles et Espace Champerret, stratégie Better Events 2030 ; Expo Greater Amsterdam label Green Key). Origine : cohorte 15, où 2 salons du même organisateur Easyfairs (adf-pcd, food-hotel-tech) avaient un bloc RSE de qualité inégale faute d'avoir vérifié le programme groupe. Discipline R23 inchangée : si après ces 4 vérifs rien n'est sourçable, note factuelle d'absence, jamais d'invention. Distinguer toujours engagement organisationnel vérifiable vs simple thème de conférence du programme.
+
 ---
 
 ## Conventions transversales Nicolas (2026-05-31)
