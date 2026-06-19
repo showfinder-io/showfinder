@@ -53,7 +53,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return { title: "Salon introuvable" };
   }
 
-  const title = salon.seo_title || `${salon.name} ${salon.edition_year ?? ""}`;
+  // Le seo_title en DB se termine déjà par " | Agoris". Le root layout pose
+  // un title.template "%s | Agoris" qui ajouterait un second suffixe. On
+  // construit donc un title absolu (court-circuite le template) en garantissant
+  // exactement un suffixe de marque, y compris pour les fiches sans seo_title.
+  const brandSuffix = ` | ${siteConfig.name}`;
+  const baseTitle = (
+    salon.seo_title || `${salon.name} ${salon.edition_year ?? ""}`
+  ).trim();
+  const title = baseTitle.endsWith(brandSuffix)
+    ? baseTitle
+    : `${baseTitle}${brandSuffix}`;
   const description =
     salon.seo_description ||
     `${salon.name} : dates, lieu, exposants et informations pratiques sur ${siteConfig.name}.`;
@@ -64,7 +74,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const hasEditorialMdx = (await getSalonContent(slug)) !== null;
 
   return {
-    title,
+    title: { absolute: title },
     description,
     robots: hasEditorialMdx
       ? { index: true, follow: true }
