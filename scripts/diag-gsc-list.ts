@@ -30,8 +30,8 @@ const sb = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPAB
     "# Request Indexing GSC - referencements du 2026-06-19", "",
     `Total : ${all.length} URLs (${salUrls.length} salons + ${venUrls.length} lieux). Quota GSC ~10/jour.`,
     "Priorite : salons a venir d'abord (par date), puis passes (par visiteurs), puis lieux.",
-    "Contexte : cohorte 16 publiee (10 fiches, gros events internationaux).",
-    "Pousser en priorite les 10 fiches cohorte 16. Pousser depuis le haut.", "",
+    "Contexte : cohorte 17 publiee (4 fiches) - annuaire boucle, 100% des fiches publiees enrichies.",
+    "Pousser en priorite les 4 fiches cohorte 17 (all4customer, open-energies, medi-nov, reeduca). Depuis le haut.", "",
   ];
   const start = new Date("2026-06-20T00:00:00Z");
   const jours = ["dim", "lun", "mar", "mer", "jeu", "ven", "sam"];
