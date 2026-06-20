@@ -1,14 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { AgorisMark } from "@/components/agoris-mark";
+import { getSalons } from "@/lib/queries";
 
 export const metadata: Metadata = {
   title: "Page introuvable",
-  description: "Cette page n'existe pas. Mais 196 salons vous attendent sur Agoris.",
+  description:
+    "Cette page n'existe pas. Mais tous les salons professionnels de France vous attendent sur Agoris.",
   robots: { index: false, follow: false },
 };
 
-export default function NotFound() {
+export default async function NotFound() {
+  // Compteur dynamique (même source que le Hero de la home) : ne dérive pas
+  // quand des fiches sont publiées ou dépubliées.
+  const { total } = await getSalons({ pageSize: 1, sort: "date" });
   return (
     <div className="relative mx-auto flex min-h-[70vh] max-w-3xl flex-col items-center justify-center px-4 py-16 text-center">
       {/* Symbole en filigrane, derrière le texte */}
@@ -25,7 +30,7 @@ export default function NotFound() {
           Cette page n&apos;existe pas.
           <br />
           <span className="text-prune/70">
-            Mais 196 salons vous attendent
+            Mais {total} salons vous attendent
           </span>
           <em className="not-italic text-[1.1em] leading-none text-ocre">.</em>
         </h1>
