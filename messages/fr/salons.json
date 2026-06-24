@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "title": "Tous les salons professionnels",
+    "titleWithPage": "Tous les salons professionnels · Page {page}",
+    "description": "Découvrez tous les salons professionnels en France sur {siteName}. Filtrez par secteur, ville et date."
+  },
+  "header": {
+    "title": "Salons professionnels",
+    "countSuffix": "salon référencé en France, audité et classé par filière.",
+    "countSuffixPlural": "salons référencés en France, audités et classés par filière."
+  },
+  "empty": {
+    "message": "Rien ne correspond à votre recherche.",
+    "hint": "Essayez un secteur ou une ville"
+  },
+  "jsonld": {
+    "listName": "Salons professionnels en France"
+  }
+}

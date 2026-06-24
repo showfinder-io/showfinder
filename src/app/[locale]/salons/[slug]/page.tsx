@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { getTranslations } from "next-intl/server";
 import { siteConfig } from "@/lib/config";
 import {
   getSalonBySlug,
@@ -50,15 +51,16 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug, locale } = await params;
   const salon = await getSalonBySlug(slug);
+  const t = await getTranslations({ locale, namespace: "salon-detail" });
 
   if (!salon) {
-    return { title: "Salon introuvable" };
+    return { title: t("meta.notFound") };
   }
 
   const title = salon.seo_title || `${salon.name} ${salon.edition_year ?? ""}`;
   const description =
     salon.seo_description ||
-    `${salon.name} : dates, lieu, exposants et informations pratiques sur ${siteConfig.name}.`;
+    t("meta.descriptionFallback", { name: salon.name, siteName: siteConfig.name });
 
   // Une fiche n'est indexable que si elle a un MDX éditorial dans
   // content/salons/[slug].mdx. La description en DB ne suffit pas : trop
@@ -81,12 +83,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-// Labels pour la frequence
-const frequencyLabels: Record<string, string> = {
-  annuel: "Annuel",
-  bisannuel: "Bisannuel (tous les 2 ans)",
-  triennal: "Triennal (tous les 3 ans)",
-  ponctuel: "Ponctuel",
+// Clés de fréquence -> clé de traduction (dans salon-detail.frequency)
+const FREQUENCY_KEYS: Record<string, string> = {
+  annuel: "annuel",
+  bisannuel: "bisannuel",
+  triennal: "triennal",
+  ponctuel: "ponctuel",
 };
 
 /** Extrait une phrase d'accroche de 140-180 chars max depuis la description. */
@@ -100,8 +102,9 @@ function pitchFrom(description: string | null): string | null {
 }
 
 export default async function SalonPage({ params }: Props) {
-  const { slug } = await params;
+  const { slug, locale } = await params;
   const salon = await getSalonBySlug(slug);
+  const t = await getTranslations({ locale, namespace: "salon-detail" });
 
   if (!salon) notFound();
 
@@ -118,10 +121,10 @@ export default async function SalonPage({ params }: Props) {
   // Quick Stats : uniquement les chiffres vérifiables. Pas de placeholder.
   const stats = [
     salon.estimated_exhibitors
-      ? { value: salon.estimated_exhibitors, label: "Exposants" }
+      ? { value: salon.estimated_exhibitors, label: t("stats.exhibitors") }
       : null,
     salon.estimated_visitors
-      ? { value: salon.estimated_visitors, label: "Visiteurs" }
+      ? { value: salon.estimated_visitors, label: t("stats.visitors") }
       : null,
   ].filter(Boolean) as { value: number; label: string }[];
 
@@ -157,8 +160,8 @@ export default async function SalonPage({ params }: Props) {
       <JsonLd data={eventJsonLd} />
       <BreadcrumbJsonLd
         items={[
-          { name: "Accueil", item: "/" },
-          { name: "Salons", item: "/salons" },
+          { name: t("breadcrumb.home"), item: "/" },
+          { name: t("breadcrumb.salons"), item: "/salons" },
           ...(salon.city
             ? [{ name: salon.city, item: `/villes/${slugifyCity(salon.city)}` }]
             : []),
@@ -169,7 +172,7 @@ export default async function SalonPage({ params }: Props) {
       {/* Breadcrumb : niveau ville intercalé pour le maillage géographique */}
       <nav className="mb-10 text-sm text-muted">
         <Link href="/salons" className="hover:text-prune transition-colors">
-          Salons
+          {t("nav.salons")}
         </Link>
         {salon.city && (
           <>
@@ -211,7 +214,7 @@ export default async function SalonPage({ params }: Props) {
             // eslint-disable-next-line @next/next/no-img-element
             <img
               src={salon.logo_url}
-              alt=""
+              alt={salon.name}
               className="h-12 w-12 shrink-0 rounded"
             />
           )}
@@ -316,7 +319,7 @@ export default async function SalonPage({ params }: Props) {
       {/* 3. ESSENTIEL — above the fold (brief Nicolas juin 2026) */}
       <section className="mt-12">
         <h2 className="font-serif text-2xl font-semibold tracking-tight text-prune md:text-3xl">
-          L&apos;essentiel
+          {t("essential.title")}
         </h2>
 
         {salon.description && (
@@ -327,7 +330,7 @@ export default async function SalonPage({ params }: Props) {
 
         <dl className="mt-8 grid gap-5 sm:grid-cols-2">
           {salon.organizer_name && (
-            <Detail icon={<Building2 className="h-4 w-4" />} label="Organisateur">
+            <Detail icon={<Building2 className="h-4 w-4" />} label={t("essential.organisateur")}>
               <Link
                 href={`/organisateurs/${slugifyCity(salon.organizer_name)}`}
                 className="underline decoration-prune/30 underline-offset-2 transition-colors hover:decoration-prune"
@@ -337,7 +340,7 @@ export default async function SalonPage({ params }: Props) {
             </Detail>
           )}
           {salon.co_organizer_name && (
-            <Detail icon={<Building2 className="h-4 w-4" />} label="Co-organisateur">
+            <Detail icon={<Building2 className="h-4 w-4" />} label={t("essential.coOrganisateur")}>
               <Link
                 href={`/organisateurs/${slugifyCity(salon.co_organizer_name)}`}
                 className="underline decoration-prune/30 underline-offset-2 transition-colors hover:decoration-prune"
@@ -347,19 +350,21 @@ export default async function SalonPage({ params }: Props) {
             </Detail>
           )}
           {salon.frequency && (
-            <Detail icon={<RotateCcw className="h-4 w-4" />} label="Fréquence">
-              {frequencyLabels[salon.frequency] ?? salon.frequency}
+            <Detail icon={<RotateCcw className="h-4 w-4" />} label={t("essential.frequence")}>
+              {FREQUENCY_KEYS[salon.frequency]
+                ? t(`frequency.${FREQUENCY_KEYS[salon.frequency]}` as Parameters<typeof t>[0])
+                : salon.frequency}
             </Detail>
           )}
           {salon.website_url && (
-            <Detail icon={<Globe className="h-4 w-4" />} label="Site officiel">
+            <Detail icon={<Globe className="h-4 w-4" />} label={t("essential.siteOfficiel")}>
               <SalonOutboundLink
                 slug={slug}
                 destination="website"
                 href={salon.website_url}
                 className="inline-flex items-center gap-1 text-prune underline decoration-prune/30 underline-offset-2 transition-colors hover:decoration-prune"
               >
-                Visiter le site
+                {t("essential.visiterLeSite")}
                 <ExternalLink className="h-3 w-3" aria-hidden="true" />
               </SalonOutboundLink>
             </Detail>
@@ -376,7 +381,7 @@ export default async function SalonPage({ params }: Props) {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={salon.cover_image_url}
-            alt={`${salon.name} - vue du salon`}
+            alt={t("cover.alt", { name: salon.name })}
             className="aspect-video w-full object-contain"
           />
         </section>
@@ -389,13 +394,12 @@ export default async function SalonPage({ params }: Props) {
       {MdxContent && salonContent && (
         <article className="prose-agoris mt-12 max-w-3xl">
           <p className="mb-8 font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
-            Analyse Agoris · mise à jour{" "}
+            {t("editorial.analysePrefix")}{" "}
             {formatEditorialMonth(salonContent.frontmatter.updated)}
           </p>
           <MdxContent />
           <p className="mt-12 border-t border-border pt-6 text-xs italic leading-relaxed text-muted">
-            Sauf mention explicite, toutes les données factuelles de cette
-            fiche proviennent du site officiel de l&apos;organisateur
+            {t("editorial.sourcesNote")}
             {salon.website_url ? ` (${new URL(salon.website_url).hostname.replace(/^www\./, "")})` : ""}
             .
           </p>
@@ -412,7 +416,7 @@ export default async function SalonPage({ params }: Props) {
       {/* 6. AVIS certifiés */}
       <section className="mt-16">
         <h2 className="font-serif text-2xl font-semibold tracking-tight text-prune md:text-3xl">
-          Avis certifiés
+          {t("reviews.title")}
         </h2>
         <div className="mt-6">
           <ReviewList targetType="salon" targetId={salon.id} />
@@ -426,7 +430,7 @@ export default async function SalonPage({ params }: Props) {
       {similarSalons.length > 0 && (
         <section className="mt-16">
           <h2 className="font-serif text-2xl font-semibold tracking-tight text-prune md:text-3xl">
-            Salons similaires
+            {t("similarSalons.title")}
           </h2>
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {similarSalons.map((s) => (
@@ -449,7 +453,7 @@ export default async function SalonPage({ params }: Props) {
                   href={`/secteurs/${salon.sectors[0].slug}`}
                   className="text-prune underline decoration-prune/30 underline-offset-2 transition-colors hover:decoration-prune"
                 >
-                  Tous les salons {salon.sectors[0].name}
+                  {t("explore.allSalonsSector", { sector: salon.sectors[0].name })}
                 </Link>
               </li>
             )}
@@ -459,7 +463,7 @@ export default async function SalonPage({ params }: Props) {
                   href={`/villes/${slugifyCity(salon.city)}`}
                   className="text-prune underline decoration-prune/30 underline-offset-2 transition-colors hover:decoration-prune"
                 >
-                  Tous les salons à {salon.city}
+                  {t("explore.allSalonsCity", { city: salon.city })}
                 </Link>
               </li>
             )}

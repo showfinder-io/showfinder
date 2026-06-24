@@ -1,0 +1,34 @@
+{
+  "listing": {
+    "metaTitle": "Prestataires événementiels",
+    "metaDescription": "Trouvez les meilleurs prestataires pour votre salon professionnel sur {siteName} : standistes, traiteurs, audiovisuel, photographes.",
+    "eyebrow": "Prestataires événementiels",
+    "heading": "Prestataires",
+    "countLabelOne": "prestataire référencé en France, audité.",
+    "countLabelMany": "prestataires référencés en France, audités.",
+    "emptyResult": "Aucun prestataire ne correspond à vos critères.",
+    "emptyHint": "Essayez une autre catégorie ou ville",
+    "banner": {
+      "eyebrow": "Prestataires · Référencement",
+      "heading": "Référencez votre activité",
+      "description": "Vous êtes standiste, traiteur, audiovisuel ou photographe ? Rejoignez l'annuaire Agoris et accédez aux organisateurs des salons B2B audités par notre équipe.",
+      "ctaPrimary": "Créer un profil",
+      "ctaSecondary": "ou découvrir Agoris Premium"
+    }
+  },
+  "detail": {
+    "metaNotFound": "Prestataire introuvable",
+    "metaDescriptionFallback": "{companyName}, {label} pour salons professionnels sur {siteName}.",
+    "breadcrumbProviders": "Prestataires",
+    "badgeVerified": "Vérifié",
+    "badgePremium": "Premium",
+    "fieldCity": "Ville",
+    "fieldWebsite": "Site web",
+    "fieldWebsiteVisit": "Visiter le site",
+    "fieldEmail": "Email",
+    "fieldPhone": "Téléphone",
+    "ctaNotPremium": "Vous êtes ce prestataire ?",
+    "ctaNotPremiumLink": "Passez en Premium",
+    "ctaNotPremiumSuffix": "pour être mis en avant sur les fiches salons."
+  }
+}

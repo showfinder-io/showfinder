@@ -1,21 +1,23 @@
 import Link from "next/link";
+import { getTranslations } from "next-intl/server";
 
-export function FeedbackPrompt({ salonName }: { salonName?: string }) {
+export async function FeedbackPrompt({ salonName }: { salonName?: string }) {
+  const t = await getTranslations("common.feedbackPrompt");
   const subject = salonName
-    ? `Correction ou suggestion sur la fiche ${salonName}`
-    : "Correction ou suggestion sur une fiche";
+    ? t("subjectSalon", { salonName })
+    : t("subjectGeneric");
   const href = `/contact?sujet=${encodeURIComponent(subject)}`;
 
   return (
     <aside className="mt-16 rounded-lg border border-ink/10 bg-cream/50 px-5 py-4 text-sm text-ink/70">
-      Une information à corriger ou à ajouter sur cette fiche ?{" "}
+      {t("text")}{" "}
       <Link
         href={href}
         className="font-medium text-accent underline underline-offset-4 transition-colors hover:text-accent-hover"
       >
-        Contactez-nous
+        {t("linkLabel")}
       </Link>
-      , nous mettons à jour rapidement.
+      {t("suffix")}
     </aside>
   );
 }

@@ -9,5 +9,21 @@
   "certified": {
     "ariaLabel": "Agoris Certified trade show",
     "label": "Agoris Certified"
+  },
+  "alertSubscribe": {
+    "salonMessage": "Receive an alert when the dates of {label} are confirmed",
+    "sectorMessage": "Receive an alert for new trade shows in {label}",
+    "placeholder": "your@email.com",
+    "submitLabel": "Alert me",
+    "submitting": "Loading…",
+    "successMessage": "You will be notified by email.",
+    "errorMessage": "An error occurred. Please try again."
+  },
+  "feedbackPrompt": {
+    "text": "Something to correct or add to this listing?",
+    "linkLabel": "Contact us",
+    "suffix": ", we update quickly.",
+    "subjectSalon": "Correction or suggestion for the listing {salonName}",
+    "subjectGeneric": "Correction or suggestion for a listing"
   }
 }

@@ -1,0 +1,12 @@
+{
+  "detail": {
+    "metaNotFound": "Organiser not found",
+    "metaTitle": "Trade shows organised by {organizerName}",
+    "metaDescription": "All professional trade shows organised by {organizerName} on {siteName}.",
+    "breadcrumbSalons": "Trade shows",
+    "eyebrow": "Organiser",
+    "countLabelOne": "trade show organised by {organizerName}.",
+    "countLabelMany": "trade shows organised by {organizerName}.",
+    "emptyResult": "No trade shows for this organiser"
+  }
+}

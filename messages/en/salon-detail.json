@@ -1,0 +1,111 @@
+{
+  "meta": {
+    "notFound": "Trade show not found",
+    "descriptionFallback": "{name}: dates, venue, exhibitors and practical information on {siteName}."
+  },
+  "breadcrumb": {
+    "home": "Home",
+    "salons": "Trade shows"
+  },
+  "nav": {
+    "salons": "Trade shows"
+  },
+  "cover": {
+    "alt": "{name} - trade show overview"
+  },
+  "stats": {
+    "exhibitors": "Exhibitors",
+    "visitors": "Visitors"
+  },
+  "essential": {
+    "title": "Key information",
+    "organisateur": "Organiser",
+    "coOrganisateur": "Co-organiser",
+    "frequence": "Frequency",
+    "siteOfficiel": "Official website",
+    "visiterLeSite": "Visit the website"
+  },
+  "frequency": {
+    "annuel": "Annual",
+    "bisannuel": "Biennial (every 2 years)",
+    "triennal": "Triennial (every 3 years)",
+    "ponctuel": "One-off"
+  },
+  "editorial": {
+    "analysePrefix": "Agoris analysis · updated",
+    "sourcesNote": "Unless otherwise stated, all factual data in this listing comes from the organiser's official website"
+  },
+  "providers": {
+    "badgeLabel": "Service provider marketplace",
+    "title": "Organise your stand",
+    "description": "Stand builders, caterers, audiovisual, photographers: find recommended service providers for {salonName}.",
+    "cta": "View service providers",
+    "drawerTitle": "Service providers for {salonName}",
+    "loading": "Loading…",
+    "empty": "No service providers listed for this trade show yet.",
+    "areYouProvider": "Are you a service provider?",
+    "contactUs": "Contact us",
+    "verifiedAriaLabel": "Verified service provider",
+    "recommended": "Recommended",
+    "quote": "Quote",
+    "categories": {
+      "standiste": "Stand builders",
+      "traiteur": "Caterers",
+      "av_technique": "Audiovisual",
+      "photographe": "Photographers",
+      "transport": "Transport",
+      "hebergement": "Accommodation",
+      "autre": "Other"
+    }
+  },
+  "reviews": {
+    "title": "Verified reviews",
+    "empty": "No reviews yet. Be the first to share your experience!",
+    "ratingLabel": "{average} / 5",
+    "ratingCount": "({count} reviews)",
+    "verified": "Verified review",
+    "roles": {
+      "exposant": "Exhibitor",
+      "visiteur": "Visitor",
+      "organisateur": "Organiser"
+    }
+  },
+  "reviewForm": {
+    "title": "Leave a review",
+    "targetSalon": "this trade show",
+    "targetProvider": "this service provider",
+    "description": "Share your experience of {target} by email: rating, context (exhibitor, visitor, organiser) and free comment. We will publish the review after moderation.",
+    "submitLabel": "Send my review by email",
+    "emailSubject": "[Agoris] Review for {targetType}: {targetId}"
+  },
+  "similarSalons": {
+    "title": "Similar trade shows"
+  },
+  "explore": {
+    "allSalonsSector": "All {sector} trade shows",
+    "allSalonsCity": "All trade shows in {city}"
+  },
+  "actions": {
+    "addToCalendar": "Add to calendar",
+    "share": "Share",
+    "moreOptions": "More options",
+    "googleCalendar": "Google Calendar",
+    "googleCalendarHint": "Open a pre-filled new event",
+    "downloadIcs": "Download .ics",
+    "downloadIcsHint": "Apple Calendar, Outlook, others",
+    "shareCopied": "Link copied to clipboard",
+    "shareText": "{name} on Agoris",
+    "reportError": "Report an error",
+    "reportErrorHint": "Incorrect data on the listing",
+    "calendarSectorLabel": "Sector: {sector}",
+    "calendarFicheLabel": "Agoris listing: {url}"
+  },
+  "report": {
+    "title": "Report an error",
+    "description": "Help us maintain reliable information about trade shows.",
+    "body": "Please describe the error (date, venue, website, description, figures, other) and the correct information. We will verify and update the listing as soon as possible.",
+    "emailLabel": "Write to hello@agoris.io",
+    "emailSubject": "[Agoris] Report an error on trade show: {slug}",
+    "legacyTrigger": "Incorrect information? Report an error"
+  }
+}

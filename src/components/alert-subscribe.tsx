@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Bell, Loader2, CheckCircle } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { trackEvent } from "@/lib/analytics";
 
 type Status = "idle" | "submitting" | "success" | "error";
@@ -11,6 +12,7 @@ type AlertSubscribeProps =
   | { type: "sector"; slug: string; label: string };
 
 export function AlertSubscribe(props: AlertSubscribeProps) {
+  const t = useTranslations("common.alertSubscribe");
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<Status>("idle");
 
@@ -38,17 +40,18 @@ export function AlertSubscribe(props: AlertSubscribeProps) {
     }
   }
 
+  // Interpolation next-intl : {label} est injecté dynamiquement selon le type
   const message =
     props.type === "salon"
-      ? `Recevoir une alerte quand les dates de ${props.label} sont confirmées`
-      : `Recevoir une alerte pour les nouveaux salons en ${props.label}`;
+      ? t("salonMessage", { label: props.label })
+      : t("sectorMessage", { label: props.label });
 
   if (status === "success") {
     return (
       <div className="flex items-center gap-2 rounded-lg border border-green-200 bg-green-50 px-4 py-3">
         <CheckCircle className="h-4 w-4 shrink-0 text-green-600" />
         <p className="text-sm text-green-800">
-          Vous serez notifié par email.
+          {t("successMessage")}
         </p>
       </div>
     );
@@ -66,7 +69,7 @@ export function AlertSubscribe(props: AlertSubscribeProps) {
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          placeholder="votre@email.com"
+          placeholder={t("placeholder")}
           required
           className="min-w-0 flex-1 rounded-md border border-border bg-white px-3 py-2 text-sm text-ink outline-none focus:ring-2 focus:ring-accent/30"
         />
@@ -78,14 +81,14 @@ export function AlertSubscribe(props: AlertSubscribeProps) {
           {status === "submitting" ? (
             <Loader2 className="h-4 w-4 animate-spin" />
           ) : (
-            "M'alerter"
+            t("submitLabel")
           )}
         </button>
       </form>
 
       {status === "error" && (
         <p className="mt-2 text-sm text-red-600">
-          Une erreur est survenue. Veuillez réessayer.
+          {t("errorMessage")}
         </p>
       )}
     </div>

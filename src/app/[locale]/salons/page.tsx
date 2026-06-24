@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
+import { getTranslations } from "next-intl/server";
 import { siteConfig } from "@/lib/config";
 import {
   getSalons,
@@ -48,6 +49,7 @@ export async function generateMetadata({
   const { locale } = await params;
   const sp = await searchParams;
   const page = parsePage(sp.page);
+  const t = await getTranslations({ locale, namespace: "salons" });
 
   // Conserver les filtres pertinents dans le canonical pour ne pas perdre la
   // signature SEO de la combinaison filtre + pagination. Le helper applique la
@@ -63,15 +65,17 @@ export async function generateMetadata({
   return {
     title:
       page > 1
-        ? `Tous les salons professionnels · Page ${page}`
-        : "Tous les salons professionnels",
-    description: `Découvrez tous les salons professionnels en France sur ${siteConfig.name}. Filtrez par secteur, ville et date.`,
+        ? t("meta.titleWithPage", { page })
+        : t("meta.title"),
+    description: t("meta.description", { siteName: siteConfig.name }),
     alternates: buildAlternates(buildCanonicalPath(page, seoParams), locale),
   };
 }
 
-export default async function SalonsPage({ searchParams }: Props) {
+export default async function SalonsPage({ params: paramsPromise, searchParams }: Props) {
+  const { locale } = await paramsPromise;
   const params = await searchParams;
+  const t = await getTranslations({ locale, namespace: "salons" });
 
   const search = params.search ?? "";
   const sector = params.sector ?? "";
@@ -131,7 +135,7 @@ export default async function SalonsPage({ searchParams }: Props) {
   const itemListJsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Salons professionnels en France",
+    name: t("jsonld.listName"),
     numberOfItems: result.salons.length,
     itemListElement: result.salons.map((salon, i) => ({
       "@type": "ListItem",
@@ -147,16 +151,15 @@ export default async function SalonsPage({ searchParams }: Props) {
       {/* En-tete */}
       <header className="mb-10 md:mb-14">
         <SectionTitle as="h1" size="xl">
-          Salons professionnels
+          {t("header.title")}
         </SectionTitle>
         <p className="mt-4 max-w-2xl text-base text-muted">
           <span className="font-serif text-[22px] font-normal text-ocre tabular-nums">
             {result.total}
           </span>{" "}
-          salon{result.total > 1 ? "s" : ""} référencé
-          {result.total > 1 ? "s" : ""} en France, audité
-          {result.total > 1 ? "s" : ""} et classé
-          {result.total > 1 ? "s" : ""} par filière.
+          {result.total > 1
+            ? t("header.countSuffixPlural")
+            : t("header.countSuffix")}
         </p>
       </header>
 
@@ -191,9 +194,9 @@ export default async function SalonsPage({ searchParams }: Props) {
           ) : (
             <div className="mt-16 rounded-lg border border-prune/10 bg-ivoire p-12 text-center">
               <p className="font-serif text-xl italic leading-relaxed text-prune/85">
-                Rien ne correspond à votre recherche.
+                {t("empty.message")}
                 <br />
-                Essayez un secteur ou une ville
+                {t("empty.hint")}
                 <em className="not-italic text-ocre">.</em>
               </p>
             </div>

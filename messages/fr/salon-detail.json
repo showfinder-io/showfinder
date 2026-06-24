@@ -1,0 +1,111 @@
+{
+  "meta": {
+    "notFound": "Salon introuvable",
+    "descriptionFallback": "{name} : dates, lieu, exposants et informations pratiques sur {siteName}."
+  },
+  "breadcrumb": {
+    "home": "Accueil",
+    "salons": "Salons"
+  },
+  "nav": {
+    "salons": "Salons"
+  },
+  "cover": {
+    "alt": "{name} - vue du salon"
+  },
+  "stats": {
+    "exhibitors": "Exposants",
+    "visitors": "Visiteurs"
+  },
+  "essential": {
+    "title": "L'essentiel",
+    "organisateur": "Organisateur",
+    "coOrganisateur": "Co-organisateur",
+    "frequence": "Fréquence",
+    "siteOfficiel": "Site officiel",
+    "visiterLeSite": "Visiter le site"
+  },
+  "frequency": {
+    "annuel": "Annuel",
+    "bisannuel": "Bisannuel (tous les 2 ans)",
+    "triennal": "Triennal (tous les 3 ans)",
+    "ponctuel": "Ponctuel"
+  },
+  "editorial": {
+    "analysePrefix": "Analyse Agoris · mise à jour",
+    "sourcesNote": "Sauf mention explicite, toutes les données factuelles de cette fiche proviennent du site officiel de l'organisateur"
+  },
+  "providers": {
+    "badgeLabel": "Marketplace prestataires",
+    "title": "Organiser votre salon",
+    "description": "Standistes, traiteurs, audiovisuel, photographes : trouvez les prestataires recommandés pour {salonName}.",
+    "cta": "Voir les prestataires",
+    "drawerTitle": "Prestataires pour {salonName}",
+    "loading": "Chargement…",
+    "empty": "Pas encore de prestataires référencés pour ce salon.",
+    "areYouProvider": "Vous êtes prestataire ?",
+    "contactUs": "Contactez-nous",
+    "verifiedAriaLabel": "Prestataire vérifié",
+    "recommended": "Recommandé",
+    "quote": "Devis",
+    "categories": {
+      "standiste": "Standistes",
+      "traiteur": "Traiteurs",
+      "av_technique": "Audiovisuel",
+      "photographe": "Photographes",
+      "transport": "Transport",
+      "hebergement": "Hébergement",
+      "autre": "Autres"
+    }
+  },
+  "reviews": {
+    "title": "Avis certifiés",
+    "empty": "Aucun avis pour le moment. Soyez le premier à donner votre avis !",
+    "ratingLabel": "{average} / 5",
+    "ratingCount": "({count} avis)",
+    "verified": "Avis vérifié",
+    "roles": {
+      "exposant": "Exposant",
+      "visiteur": "Visiteur",
+      "organisateur": "Organisateur"
+    }
+  },
+  "reviewForm": {
+    "title": "Laisser un avis",
+    "targetSalon": "ce salon",
+    "targetProvider": "ce prestataire",
+    "description": "Partagez votre expérience sur {target} par email : note, contexte (exposant, visiteur, organisateur) et commentaire libre. Nous publierons l'avis après modération.",
+    "submitLabel": "Envoyer mon avis par email",
+    "emailSubject": "[Agoris] Avis sur {targetType}: {targetId}"
+  },
+  "similarSalons": {
+    "title": "Salons similaires"
+  },
+  "explore": {
+    "allSalonsSector": "Tous les salons {sector}",
+    "allSalonsCity": "Tous les salons à {city}"
+  },
+  "actions": {
+    "addToCalendar": "Ajouter à l'agenda",
+    "share": "Partager",
+    "moreOptions": "Plus d'options",
+    "googleCalendar": "Google Calendar",
+    "googleCalendarHint": "Ouvrir un nouvel event pré-rempli",
+    "downloadIcs": "Télécharger .ics",
+    "downloadIcsHint": "Apple Calendar, Outlook, autres",
+    "shareCopied": "Lien copié dans le presse-papier",
+    "shareText": "{name} sur Agoris",
+    "reportError": "Signaler une erreur",
+    "reportErrorHint": "Donnée incorrecte sur la fiche",
+    "calendarSectorLabel": "Secteur : {sector}",
+    "calendarFicheLabel": "Fiche Agoris : {url}"
+  },
+  "report": {
+    "title": "Signaler une erreur",
+    "description": "Aidez-nous à maintenir des informations fiables sur les salons.",
+    "body": "Décrivez-nous l'erreur (date, lieu, site web, description, chiffres, autre) ainsi que la bonne information. Nous vérifierons et corrigerons la fiche dans les plus brefs délais.",
+    "emailLabel": "Écrire à hello@agoris.io",
+    "emailSubject": "[Agoris] Signaler une erreur sur le salon: {slug}",
+    "legacyTrigger": "Une information incorrecte ? Signaler une erreur"
+  }
+}
