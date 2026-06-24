@@ -1,6 +1,7 @@
 "use client";
 
 import { Mail } from "lucide-react";
+import { trackEvent } from "@/lib/analytics";
 
 type ReviewFormProps = {
   targetType: "salon" | "provider";
@@ -29,6 +30,7 @@ export function ReviewForm({ targetType, targetId }: ReviewFormProps) {
       </p>
       <a
         href={`mailto:hello@agoris.io?subject=${subject}`}
+        onClick={() => trackEvent("review_submit", { target_type: targetType, target_id: targetId })}
         className="inline-flex items-center justify-center gap-2 rounded-md bg-accent px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-accent-hover"
       >
         <Mail className="h-4 w-4" />

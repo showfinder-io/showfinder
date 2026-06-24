@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { FileText, Mail } from "lucide-react";
+import { trackEvent } from "@/lib/analytics";
 import {
   Sheet,
   SheetTrigger,
@@ -59,6 +60,7 @@ export function QuoteRequest({
           </p>
           <a
             href={`mailto:hello@agoris.io?subject=${subject}`}
+            onClick={() => trackEvent("quote_request_submit", { provider_name: providerName })}
             className="inline-flex items-center justify-center gap-2 rounded-md bg-accent px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-accent-hover"
           >
             <Mail className="h-4 w-4" />
