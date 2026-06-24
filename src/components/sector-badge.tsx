@@ -82,22 +82,31 @@ export function SectorBadge({
   linked = true,
   variant = "filled",
 }: SectorBadgeProps) {
-  const className =
+  // Style de base par variante (état au repos).
+  const base =
     variant === "outline"
       ? // Outline éditorial : bordure + texte Prune, fond transparent, typo mono uppercase.
         // Utilisé sur les cards Hero V1 pour un rendu moins saturé que le filled MVP.
-        "inline-block rounded-full border border-prune bg-transparent px-2.5 py-1 font-mono text-[10px] font-medium uppercase tracking-[0.14em] text-prune transition-colors hover:bg-prune/5"
-      : `inline-block rounded-full border px-3 py-1 text-xs font-medium transition-opacity hover:opacity-90 ${getSectorColorClasses(
+        "inline-block rounded-full border border-prune bg-transparent px-2.5 py-1 font-mono text-[10px] font-medium uppercase tracking-[0.14em] text-prune"
+      : `inline-block rounded-full border px-3 py-1 text-xs font-medium ${getSectorColorClasses(
           slug
         )}`;
 
+  // Affordance d'interaction : uniquement sur la pill cliquable (Link).
+  // Léger soulèvement + ombre au survol pour signaler qu'on peut cliquer,
+  // ring au focus clavier pour l'accessibilité. Reste discret (calm tech).
   if (linked) {
+    const interactive =
+      variant === "outline"
+        ? "cursor-pointer transition-all duration-150 hover:bg-prune/5 hover:-translate-y-px hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-prune/40"
+        : "cursor-pointer transition-all duration-150 hover:-translate-y-px hover:shadow-md hover:brightness-[1.06] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-prune/40";
+
     return (
-      <Link href={`/secteurs/${slug}`} className={className}>
+      <Link href={`/secteurs/${slug}`} className={`${base} ${interactive}`}>
         {name}
       </Link>
     );
   }
 
-  return <span className={className}>{name}</span>;
+  return <span className={base}>{name}</span>;
 }

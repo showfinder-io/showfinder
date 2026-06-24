@@ -39,22 +39,22 @@ export function ReportErrorSheet({
         <SheetHeader>
           <SheetTitle>Signaler une erreur</SheetTitle>
           <SheetDescription>
-            Aidez-nous a maintenir des informations fiables sur les salons.
+            Aidez-nous à maintenir des informations fiables sur les salons.
           </SheetDescription>
         </SheetHeader>
 
         <div className="flex flex-col gap-4 px-4 pb-6">
           <p className="text-sm leading-relaxed text-muted">
-            Decrivez-nous l&apos;erreur (date, lieu, site web, description,
-            chiffres, autre) ainsi que la bonne information. Nous verifierons
-            et corrigerons la fiche dans les plus brefs delais.
+            Décrivez-nous l&apos;erreur (date, lieu, site web, description,
+            chiffres, autre) ainsi que la bonne information. Nous vérifierons
+            et corrigerons la fiche dans les plus brefs délais.
           </p>
           <a
             href={`mailto:hello@agoris.io?subject=${subject}`}
             className="inline-flex items-center justify-center gap-2 rounded-md bg-accent px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-accent-hover"
           >
             <Mail className="h-4 w-4" />
-            Ecrire a hello@agoris.io
+            Écrire à hello@agoris.io
           </a>
         </div>
       </SheetContent>

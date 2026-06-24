@@ -48,12 +48,21 @@ export default function AdminVenuesPage() {
     <div>
       <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <h1 className="font-serif text-2xl font-bold">Venues</h1>
-        <Link
-          href="/admin/venues/nouveau"
-          className="inline-flex items-center rounded-md bg-accent px-4 py-2 text-sm font-medium text-white hover:bg-accent-hover transition-colors"
-        >
-          + Ajouter une venue
-        </Link>
+        <div className="flex items-center gap-2">
+          <a
+            href="/api/admin/venues/export-csv"
+            download
+            className="inline-flex items-center rounded-md border border-border bg-white px-4 py-2 text-sm font-medium text-ink hover:bg-ivoire transition-colors"
+          >
+            Exporter CSV
+          </a>
+          <Link
+            href="/admin/venues/nouveau"
+            className="inline-flex items-center rounded-md bg-accent px-4 py-2 text-sm font-medium text-white hover:bg-accent-hover transition-colors"
+          >
+            + Ajouter une venue
+          </Link>
+        </div>
       </div>
 
       <input

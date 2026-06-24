@@ -55,6 +55,12 @@ export async function POST(request: NextRequest) {
   const body = await request.json();
   const supabase = await createClient();
 
+  // Extraire les sector_ids avant l'insert (champ virtuel)
+  const sectorIds: string[] | undefined = Array.isArray(body.sector_ids)
+    ? (body.sector_ids as string[])
+    : undefined;
+  delete body.sector_ids;
+
   const { data, error } = await supabase
     .from("salons")
     .insert(body)
@@ -64,6 +70,18 @@ export async function POST(request: NextRequest) {
   if (error) {
     console.error("Admin salons POST:", error);
     return NextResponse.json({ error: error.message }, { status: 400 });
+  }
+
+  // Insérer les liens secteurs si fournis
+  if (sectorIds && sectorIds.length > 0) {
+    const inserts = sectorIds.map((sector_id) => ({ salon_id: data.id, sector_id }));
+    const { error: linkError } = await supabase
+      .from("salon_sectors")
+      .insert(inserts);
+    if (linkError) {
+      console.error("Admin salons POST — salon_sectors:", linkError);
+      // Non bloquant : le salon est créé, on logue l'erreur secteurs
+    }
   }
 
   return NextResponse.json({ salon: data }, { status: 201 });

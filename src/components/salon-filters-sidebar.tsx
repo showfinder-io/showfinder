@@ -3,6 +3,7 @@
 import { useRouter, useSearchParams } from "next/navigation";
 import { useCallback, useState, useTransition } from "react";
 import { getSectorColorClasses } from "@/components/sector-badge";
+import { trackEvent } from "@/lib/analytics";
 import {
   Sheet,
   SheetContent,
@@ -323,6 +324,8 @@ export function SalonFiltersSidebar({
         params.delete(key);
       }
       params.delete("page");
+      // Tracking : chaque changement de filtre (hors reset)
+      trackEvent("filter_change", { filter_name: key, filter_value: value || "none" });
       navigate(params);
     },
     [searchParams, navigate]
@@ -345,6 +348,12 @@ export function SalonFiltersSidebar({
         params.delete("sector");
       }
       params.delete("page");
+      // Tracking : toggle de filière (ajout ou retrait)
+      trackEvent("filter_change", {
+        filter_name: "sector",
+        filter_value: slug,
+        action: current.includes(slug) ? "remove" : "add",
+      });
       navigate(params);
     },
     [searchParams, navigate]
