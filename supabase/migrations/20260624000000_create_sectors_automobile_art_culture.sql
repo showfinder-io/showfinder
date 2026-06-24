@@ -39,11 +39,11 @@ ON CONFLICT (slug) DO NOTHING;
 
 -- 2) Rattachement des salons (par slug, sans suppression des tags existants).
 --    Helper : insere une paire (salon, secteur) si elle n'existe pas deja.
+-- On part des VALUES puis on joint salons et sectors (ordre de JOIN correct :
+-- l'alias v doit etre introduit avant d'etre reference).
 INSERT INTO salon_sectors (salon_id, sector_id)
 SELECT s.id, sec.id
-FROM salons s
-JOIN sectors sec ON sec.slug = v.sector_slug
-JOIN (VALUES
+FROM (VALUES
   -- Automobile
   ('mondial-auto-paris',    'automobile'),
   ('equip-auto-paris',      'automobile'),
@@ -61,7 +61,9 @@ JOIN (VALUES
   ('mipim-cannes',          'immobilier'),
   ('rent',                  'immobilier'),
   ('rent',                  'tech-numerique')
-) AS v(salon_slug, sector_slug) ON s.slug = v.salon_slug
+) AS v(salon_slug, sector_slug)
+JOIN salons s ON s.slug = v.salon_slug
+JOIN sectors sec ON sec.slug = v.sector_slug
 ON CONFLICT (salon_id, sector_id) DO NOTHING;
 
 COMMIT;
