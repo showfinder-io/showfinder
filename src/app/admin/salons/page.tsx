@@ -79,12 +79,21 @@ export default function AdminSalonsPage() {
             <span className="font-medium text-ink">{lockedCount}</span> fiche{lockedCount > 1 ? "s" : ""} verrouillée{lockedCount > 1 ? "s" : ""} (exclues du scraping auto)
           </p>
         </div>
-        <Link
-          href="/admin/salons/nouveau"
-          className="inline-flex items-center rounded-md bg-accent px-4 py-2 text-sm font-medium text-white hover:bg-accent-hover transition-colors"
-        >
-          + Ajouter un salon
-        </Link>
+        <div className="flex items-center gap-2">
+          <a
+            href="/api/admin/salons/export-csv"
+            download
+            className="inline-flex items-center rounded-md border border-border bg-white px-4 py-2 text-sm font-medium text-ink hover:bg-ivoire transition-colors"
+          >
+            Exporter CSV
+          </a>
+          <Link
+            href="/admin/salons/nouveau"
+            className="inline-flex items-center rounded-md bg-accent px-4 py-2 text-sm font-medium text-white hover:bg-accent-hover transition-colors"
+          >
+            + Ajouter un salon
+          </Link>
+        </div>
       </div>
 
       <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center">

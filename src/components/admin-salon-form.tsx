@@ -8,11 +8,49 @@
 // - Alert flag : drapeau prioritaire.
 // - Métadonnées : last_human_check_at + last_ia_update_at affichés.
 // - Notes internes : textarea admin-only non publiée.
+// - V5.7 : pays dropdown ISO, venue dropdown depuis table venues, secteurs multi-select M:N.
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Lock, Unlock, Flag, CheckCircle, Bot, User } from "lucide-react";
 
 type SalonData = Record<string, unknown>;
+
+type VenueOption = { id: string; name: string; city: string; slug: string };
+type SectorOption = { id: string; name: string; slug: string };
+
+// Pays les plus courants d'abord, puis ordre alphabétique pour le reste
+const COUNTRY_OPTIONS: { code: string; label: string }[] = [
+  { code: "FR", label: "France" },
+  { code: "DE", label: "Allemagne" },
+  { code: "BE", label: "Belgique" },
+  { code: "CH", label: "Suisse" },
+  { code: "GB", label: "Royaume-Uni" },
+  { code: "ES", label: "Espagne" },
+  { code: "IT", label: "Italie" },
+  { code: "NL", label: "Pays-Bas" },
+  { code: "LU", label: "Luxembourg" },
+  { code: "AT", label: "Autriche" },
+  { code: "PT", label: "Portugal" },
+  { code: "PL", label: "Pologne" },
+  { code: "SE", label: "Suède" },
+  { code: "DK", label: "Danemark" },
+  { code: "FI", label: "Finlande" },
+  { code: "NO", label: "Norvège" },
+  { code: "CZ", label: "République tchèque" },
+  { code: "HU", label: "Hongrie" },
+  { code: "RO", label: "Roumanie" },
+  { code: "US", label: "États-Unis" },
+  { code: "CA", label: "Canada" },
+  { code: "JP", label: "Japon" },
+  { code: "CN", label: "Chine" },
+  { code: "AE", label: "Émirats arabes unis" },
+  { code: "SG", label: "Singapour" },
+  { code: "AU", label: "Australie" },
+  { code: "BR", label: "Brésil" },
+  { code: "IN", label: "Inde" },
+  { code: "MX", label: "Mexique" },
+  { code: "ZA", label: "Afrique du Sud" },
+];
 
 const STATUS_OPTIONS = [
   { value: "draft", label: "Brouillon" },
@@ -117,6 +155,31 @@ export function SalonForm({
   const [lockedFields, setLockedFields] = useState<string[]>(initialLocked);
   const [alertFlag, setAlertFlag] = useState<boolean>(Boolean(d.alert_flag));
 
+  // Options pour les dropdowns venue et secteurs
+  const [venueOptions, setVenueOptions] = useState<VenueOption[]>([]);
+  const [sectorOptions, setSectorOptions] = useState<SectorOption[]>([]);
+  const [selectedSectorIds, setSelectedSectorIds] = useState<string[]>(
+    Array.isArray(d.sector_ids) ? (d.sector_ids as string[]) : []
+  );
+  const [optionsLoaded, setOptionsLoaded] = useState(false);
+
+  useEffect(() => {
+    fetch("/api/admin/salons/form-options")
+      .then((r) => r.json())
+      .then((data) => {
+        setVenueOptions(data.venues ?? []);
+        setSectorOptions(data.sectors ?? []);
+        setOptionsLoaded(true);
+      })
+      .catch(() => setOptionsLoaded(true));
+  }, []);
+
+  function toggleSector(sectorId: string) {
+    setSelectedSectorIds((prev) =>
+      prev.includes(sectorId) ? prev.filter((id) => id !== sectorId) : [...prev, sectorId]
+    );
+  }
+
   function toggleLock(f: string) {
     setLockedFields((prev) =>
       prev.includes(f) ? prev.filter((x) => x !== f) : [...prev, f]
@@ -167,6 +230,8 @@ export function SalonForm({
       locked_fields: lockedFields,
       notes_internes: form.get("notes_internes") || null,
       alert_flag: alertFlag,
+      // V5.7 secteurs M:N
+      sector_ids: selectedSectorIds,
       ...(markHumanCheck && { last_human_check_at: new Date().toISOString() }),
       // V5.6 — MDX éditorial en DB
       editorial_mdx: form.get("editorial_mdx") || null,
@@ -327,19 +392,48 @@ export function SalonForm({
         </div>
         <div>
           <FieldLabel fieldName="venue" label="Lieu / Venue" {...lockProps} />
-          <input
-            name="venue"
-            defaultValue={field(d, "venue")}
-            className={inputClass}
-          />
+          {optionsLoaded && venueOptions.length > 0 ? (
+            <select
+              name="venue"
+              defaultValue={field(d, "venue")}
+              className={inputClass}
+            >
+              <option value="">· Aucun lieu sélectionné</option>
+              {venueOptions.map((v) => (
+                <option key={v.id} value={v.name}>
+                  {v.name}{v.city ? ` — ${v.city}` : ""}
+                </option>
+              ))}
+              {/* Fallback : si la venue du salon n'est pas dans la liste, afficher l'option actuelle */}
+              {field(d, "venue") &&
+                !venueOptions.some((v) => v.name === field(d, "venue")) && (
+                  <option value={field(d, "venue")}>
+                    {field(d, "venue")} (valeur actuelle, non répertoriée)
+                  </option>
+                )}
+            </select>
+          ) : (
+            <input
+              name="venue"
+              defaultValue={field(d, "venue")}
+              placeholder={optionsLoaded ? "Saisie libre" : "Chargement..."}
+              className={inputClass}
+            />
+          )}
         </div>
         <div>
           <FieldLabel fieldName="country" label="Pays" {...lockProps} />
-          <input
+          <select
             name="country"
             defaultValue={field(d, "country", "FR")}
             className={inputClass}
-          />
+          >
+            {COUNTRY_OPTIONS.map((c) => (
+              <option key={c.code} value={c.code}>
+                {c.label} ({c.code})
+              </option>
+            ))}
+          </select>
         </div>
       </div>
 
@@ -482,6 +576,44 @@ export function SalonForm({
             className={inputClass}
           />
         </div>
+      </div>
+
+      {/* ─── Secteurs (M:N via salon_sectors) ─── */}
+      <div>
+        <label className="block text-sm font-medium text-ink">
+          Secteurs{" "}
+          <span className="text-xs text-muted">
+            ({selectedSectorIds.length} sélectionné{selectedSectorIds.length > 1 ? "s" : ""})
+          </span>
+        </label>
+        {optionsLoaded ? (
+          sectorOptions.length > 0 ? (
+            <div className="mt-1 grid grid-cols-2 gap-1.5 rounded-md border border-border bg-white p-3 sm:grid-cols-3">
+              {sectorOptions.map((sector) => (
+                <label
+                  key={sector.id}
+                  className={`flex cursor-pointer items-center gap-2 rounded px-2 py-1.5 text-sm transition-colors ${
+                    selectedSectorIds.includes(sector.id)
+                      ? "bg-accent/10 font-medium text-accent"
+                      : "text-ink hover:bg-ivoire"
+                  }`}
+                >
+                  <input
+                    type="checkbox"
+                    checked={selectedSectorIds.includes(sector.id)}
+                    onChange={() => toggleSector(sector.id)}
+                    className="rounded border-border"
+                  />
+                  {sector.name}
+                </label>
+              ))}
+            </div>
+          ) : (
+            <p className="mt-1 text-xs text-muted">Aucun secteur disponible.</p>
+          )
+        ) : (
+          <p className="mt-1 text-xs text-muted">Chargement des secteurs...</p>
+        )}
       </div>
 
       {/* ─── Notes internes (admin-only, non publié) ─── */}
