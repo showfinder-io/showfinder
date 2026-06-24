@@ -1,0 +1,13 @@
+{
+  "connexion": "Connexion",
+  "deconnexion": "Déconnexion",
+  "pagination": {
+    "previous": "Précédent",
+    "next": "Suivant",
+    "page": "Page {current} sur {total}"
+  },
+  "certified": {
+    "ariaLabel": "Salon certifié Agoris Certified",
+    "label": "Agoris Certified"
+  }
+}

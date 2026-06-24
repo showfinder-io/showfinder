@@ -1,0 +1,31 @@
+{
+  "hero": {
+    "eyebrow": "Le forum des salons · Édition 2026",
+    "headline": "Là où les industries se retrouvent",
+    "subline": "L'annuaire intelligent des salons professionnels en France : visitez les bons salons, organisez votre stand, développez votre business.",
+    "searchPlaceholder": "ex. SantExpo, agroalimentaire, Lyon…",
+    "searchAriaLabel": "Rechercher un salon, un secteur ou une ville",
+    "searchSubmitAriaLabel": "Lancer la recherche",
+    "salonsIndexed": "salons indexés"
+  },
+  "upcoming": {
+    "eyebrow": "À l'agenda",
+    "title": "Prochains salons",
+    "seeAll": "Voir les {count} salons"
+  },
+  "sectors": {
+    "eyebrow": "Par filière",
+    "title": "Explorer par secteur",
+    "description": "15 filières B2B couvertes, du BTP à la cosmétique. Chaque secteur regroupe les salons audités et classés par notre équipe éditoriale."
+  },
+  "why": {
+    "eyebrow": "Pourquoi Agoris",
+    "title": "Un annuaire qui audite, classe et certifie",
+    "arg1Title": "Curation, pas accumulation",
+    "arg1Body": "On référence les salons B2B qui comptent vraiment pour votre filière, pas tous ceux qui existent.",
+    "arg2Title": "Marketplace prestataires",
+    "arg2Body": "Standistes, traiteurs, audiovisuel : un réseau de prestataires locaux rattaché à chaque salon.",
+    "arg3Title": "Le bon salon, au bon moment",
+    "arg3Body": "Calendrier mis à jour en continu et alertes par secteur pour ne rien manquer. Avis certifiés d'exposants et de visiteurs pour choisir en confiance."
+  }
+}

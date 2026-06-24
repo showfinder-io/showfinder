@@ -2,6 +2,7 @@
 
 import { useRouter, useSearchParams } from "next/navigation";
 import { useCallback, useMemo, useTransition } from "react";
+import { useTranslations } from "next-intl";
 import {
   Popover,
   PopoverTrigger,
@@ -21,19 +22,13 @@ type SortOption = {
   shortLabel: string;
 };
 
-const SORT_OPTIONS: SortOption[] = [
-  { value: "notoriety", label: "Notoriété", shortLabel: "Notoriété" },
-  { value: "name", label: "Nom (A-Z)", shortLabel: "Nom A-Z" },
-  { value: "category", label: "Catégorie", shortLabel: "Catégorie" },
-  { value: "city", label: "Ville", shortLabel: "Ville" },
-];
-
 /**
  * Bandeau horizontal éditorial pour le listing /prestataires.
  * Aligné stylistiquement sur SortBar (salons), mais filtres en live via searchParams.
  * Typo mono small caps, séparateurs ·, popovers éditoriaux.
  */
 export function ProviderSortBar({ total, categories, cities }: ProviderSortBarProps) {
+  const t = useTranslations("filters");
   const router = useRouter();
   const searchParams = useSearchParams();
   const [, startTransition] = useTransition();
@@ -41,6 +36,13 @@ export function ProviderSortBar({ total, categories, cities }: ProviderSortBarPr
   const currentSort = searchParams.get("sort") ?? "notoriety";
   const currentCategory = searchParams.get("category") ?? "";
   const currentCity = searchParams.get("city") ?? "";
+
+  const SORT_OPTIONS: SortOption[] = useMemo(() => [
+    { value: "notoriety", label: t("providerSort.notoriety"), shortLabel: t("providerSort.notoriety") },
+    { value: "name", label: t("sortOptions.name"), shortLabel: t("sortOptions.nameShort") },
+    { value: "category", label: t("providerSort.category"), shortLabel: t("providerSort.category") },
+    { value: "city", label: t("providerSort.city"), shortLabel: t("providerSort.city") },
+  ], [t]);
 
   const navigate = useCallback(
     (params: URLSearchParams) => {
@@ -67,24 +69,21 @@ export function ProviderSortBar({ total, categories, cities }: ProviderSortBarPr
   const sortLabel = useMemo(
     () =>
       SORT_OPTIONS.find((o) => o.value === currentSort)?.shortLabel ??
-      "Notoriété",
-    [currentSort]
+      t("providerSort.notoriety"),
+    [SORT_OPTIONS, currentSort, t]
   );
 
   const categoryLabel = useMemo(() => {
-    if (!currentCategory) return "Toutes";
+    if (!currentCategory) return t("allShort");
     return (
       categories.find((c) => c.value === currentCategory)?.label ??
       currentCategory
     );
-  }, [currentCategory, categories]);
-
-  const cityLabel = currentCity || "Toutes";
+  }, [currentCategory, categories, t]);
 
   return (
     <div className="sticky top-16 z-20 -mx-4 mb-6 border-y border-prune/10 bg-sable/95 px-4 py-3 backdrop-blur-sm md:top-20 md:-mx-0 md:rounded-md md:border md:px-5">
       <div className="flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-[11px] uppercase tracking-[0.18em] text-prune/80">
-        {/* Total */}
         <span className="text-prune">
           <span className="font-serif text-[15px] normal-case tracking-normal text-prune tabular-nums">
             {total}
@@ -94,9 +93,8 @@ export function ProviderSortBar({ total, categories, cities }: ProviderSortBarPr
 
         <span className="text-prune/30">·</span>
 
-        {/* Tri */}
         <span className="flex items-center gap-1.5">
-          <span className="text-prune/55">Trier :</span>
+          <span className="text-prune/55">{t("sort.label")}</span>
           <Popover>
             <PopoverTrigger className="inline-flex items-center gap-1 rounded-sm px-1 py-0.5 text-prune transition-colors hover:bg-prune/5 focus-visible:bg-prune/5">
               <span>{sortLabel}</span>
@@ -134,9 +132,8 @@ export function ProviderSortBar({ total, categories, cities }: ProviderSortBarPr
 
         <span className="text-prune/30">·</span>
 
-        {/* Catégorie */}
         <span className="flex items-center gap-1.5">
-          <span className="text-prune/55">Catégorie :</span>
+          <span className="text-prune/55">{t("providerSort.categoryLabel")}</span>
           <Popover>
             <PopoverTrigger className="inline-flex items-center gap-1 rounded-sm px-1 py-0.5 text-prune transition-colors hover:bg-prune/5 focus-visible:bg-prune/5">
               <span className="max-w-[18ch] truncate">{categoryLabel}</span>
@@ -155,7 +152,7 @@ export function ProviderSortBar({ total, categories, cities }: ProviderSortBarPr
                         : "text-prune/70"
                     }`}
                   >
-                    <span>Toutes les catégories</span>
+                    <span>{t("providerSort.allCategories")}</span>
                     {!currentCategory && (
                       <span className="text-ocre" aria-hidden>
                         ●
@@ -189,12 +186,11 @@ export function ProviderSortBar({ total, categories, cities }: ProviderSortBarPr
 
         <span className="text-prune/30">·</span>
 
-        {/* Ville */}
         <span className="flex items-center gap-1.5">
-          <span className="text-prune/55">Ville :</span>
+          <span className="text-prune/55">{t("sort.city")}</span>
           <Popover>
             <PopoverTrigger className="inline-flex items-center gap-1 rounded-sm px-1 py-0.5 text-prune transition-colors hover:bg-prune/5 focus-visible:bg-prune/5">
-              <span className="max-w-[16ch] truncate">{cityLabel}</span>
+              <span className="max-w-[16ch] truncate">{currentCity || t("allShort")}</span>
               <span aria-hidden className="text-prune/50">
                 ▾
               </span>
@@ -208,7 +204,7 @@ export function ProviderSortBar({ total, categories, cities }: ProviderSortBarPr
                       !currentCity ? "font-medium text-prune" : "text-prune/70"
                     }`}
                   >
-                    <span>Toutes les villes</span>
+                    <span>{t("allCities")}</span>
                     {!currentCity && (
                       <span className="text-ocre" aria-hidden>
                         ●

@@ -1,0 +1,68 @@
+{
+  "search": "Search",
+  "sectors": "Sectors",
+  "city": "City",
+  "period": "Period",
+  "category": "Category",
+  "sortBy": "Sort by",
+  "filterLabel": "Filter",
+  "filterTitle": "Filter trade shows",
+  "reset": "Reset",
+  "seeResults": "See results",
+  "searchPlaceholder": "Search for a trade show…",
+  "allCities": "All cities",
+  "allSectors": "All sectors",
+  "allCategories": "All categories",
+  "sort": {
+    "label": "Sort:",
+    "city": "City:",
+    "period": "Period:"
+  },
+  "periods": {
+    "all": "All dates",
+    "thisMonth": "This month",
+    "nextQuarter": "Next quarter",
+    "2026": "2026",
+    "2027": "2027"
+  },
+  "categories": {
+    "all": "All categories",
+    "salonProfessionnel": "Trade show",
+    "salonGrandPublic": "Consumer show",
+    "congres": "Congress",
+    "autres": "Other"
+  },
+  "allShort": "All",
+  "sortOptions": {
+    "dateAsc": "Date (ascending)",
+    "dateDesc": "Date (descending)",
+    "visitors": "Visitors (descending)",
+    "name": "Name (A-Z)",
+    "dateAscShort": "Date ↓",
+    "dateDescShort": "Date ↑",
+    "visitorsShort": "Visitors ↓",
+    "nameShort": "Name A-Z",
+    "allDatesShort": "All"
+  },
+  "providerSort": {
+    "notoriety": "Notoriety",
+    "name": "Name (A-Z)",
+    "category": "Category",
+    "city": "City",
+    "allCategories": "All categories",
+    "categoryLabel": "Category:"
+  },
+  "venueSort": {
+    "surfaceDesc": "Surface area (descending)",
+    "surfaceAsc": "Surface area (ascending)",
+    "name": "Name (A-Z)",
+    "city": "City",
+    "surfaceDescShort": "Surface ↓",
+    "surfaceAscShort": "Surface ↑"
+  },
+  "total": {
+    "salons": "{count} trade show{plural}",
+    "providers": "{count} supplier{plural}",
+    "venues": "{count} venue{plural}"
+  }
+}

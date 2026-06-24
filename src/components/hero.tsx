@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { trackEvent } from "@/lib/analytics";
 
 type HeroProps = {
@@ -10,24 +11,21 @@ type HeroProps = {
 /**
  * Hero V1 refondu — Agoris, mai 2026.
  * Composition éditoriale :
- *  - eyebrow mono uppercase ocre-dim ("Le forum des salons · Édition 2026")
- *  - titre Fraunces clamp 72→132px, max 12ch, point ocre final
+ *  - eyebrow mono uppercase ocre-dim
+ *  - titre Fraunces clamp 72->132px, max 12ch, point ocre final
  *  - sub Fraunces italic 22px, max 52ch, text-muted
- *  - search underline 2px prune (focus → ocre), arrow ocre à droite
+ *  - search underline 2px prune (focus -> ocre), arrow ocre à droite
  *  - hint mono "{N} salons indexés" avec N en Fraunces ocre
  *  - watermark : symbole 680px à droite (right:-80px), opacity 0.07
  *
- * Le form post sur /salons via la query `?search=...` pour réutiliser la liste
+ * Le form post sur /salons via la query ?search=... pour réutiliser la liste
  * filtrée existante.
  */
 export function Hero({ totalSalons }: HeroProps) {
+  const t = useTranslations("home.hero");
+
   return (
     <section className="relative overflow-hidden border-b border-border bg-sable">
-      {/* Watermark symbole — SVG inline EXACT selon brief V1 :
-       *  6 cercles, tous en Prune #3B1F33, viewBox 100×100.
-       *  680×680px positionné right:-80px, opacity 0.07, pointer-events none.
-       *  Volontairement inline (pas via AgorisMark composant) pour garantir
-       *  le rendu pixel-perfect du brief sans dépendance d'autres props. */}
       <svg
         aria-hidden="true"
         viewBox="0 0 100 100"
@@ -51,7 +49,7 @@ export function Hero({ totalSalons }: HeroProps) {
             marginBottom: "28px",
           }}
         >
-          Le forum des salons · Édition 2026
+          {t("eyebrow")}
         </p>
 
         <h1
@@ -64,7 +62,7 @@ export function Hero({ totalSalons }: HeroProps) {
             fontVariationSettings: "'opsz' 144",
           }}
         >
-          Là où les industries se retrouvent
+          {t("headline")}
           <em className="not-italic text-ocre">.</em>
         </h1>
 
@@ -78,7 +76,7 @@ export function Hero({ totalSalons }: HeroProps) {
             fontVariationSettings: "'opsz' 36",
           }}
         >
-          L&apos;annuaire intelligent des salons professionnels en France&nbsp;: visitez les bons salons, organisez votre stand, développez votre business.
+          {t("subline")}
         </p>
 
         <form
@@ -97,8 +95,8 @@ export function Hero({ totalSalons }: HeroProps) {
           <input
             name="search"
             type="text"
-            placeholder="ex. SantExpo, agroalimentaire, Lyon…"
-            aria-label="Rechercher un salon, un secteur ou une ville"
+            placeholder={t("searchPlaceholder")}
+            aria-label={t("searchAriaLabel")}
             className="peer w-full border-0 border-b-2 border-prune bg-transparent py-3.5 pl-0 pr-14 font-serif italic font-normal text-prune outline-none placeholder:italic placeholder:text-muted/55 focus:border-ocre"
             style={{
               fontSize: "24px",
@@ -107,7 +105,7 @@ export function Hero({ totalSalons }: HeroProps) {
           />
           <button
             type="submit"
-            aria-label="Lancer la recherche"
+            aria-label={t("searchSubmitAriaLabel")}
             className="absolute right-0 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center border-0 bg-transparent font-serif text-[28px] leading-none text-ocre opacity-35 transition-[opacity,transform] duration-200 hover:opacity-100 peer-focus:translate-x-1 peer-focus:opacity-100"
           >
             →
@@ -133,7 +131,7 @@ export function Hero({ totalSalons }: HeroProps) {
           >
             {totalSalons}
           </span>{" "}
-          salons indexés
+          {t("salonsIndexed")}
         </p>
       </div>
     </section>

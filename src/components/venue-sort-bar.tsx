@@ -2,6 +2,7 @@
 
 import { useRouter, useSearchParams } from "next/navigation";
 import { useCallback, useMemo, useTransition } from "react";
+import { useTranslations } from "next-intl";
 import {
   Popover,
   PopoverTrigger,
@@ -20,24 +21,25 @@ type SortOption = {
   shortLabel: string;
 };
 
-const SORT_OPTIONS: SortOption[] = [
-  { value: "surface-desc", label: "Surface (décroissant)", shortLabel: "Surface ↓" },
-  { value: "surface-asc", label: "Surface (croissant)", shortLabel: "Surface ↑" },
-  { value: "name", label: "Nom (A-Z)", shortLabel: "Nom A-Z" },
-  { value: "city", label: "Ville", shortLabel: "Ville" },
-];
-
 /**
  * Bandeau horizontal éditorial pour le listing /lieux.
  * Aligné sur SortBar (salons) et ProviderSortBar.
  */
 export function VenueSortBar({ total, cities }: VenueSortBarProps) {
+  const t = useTranslations("filters");
   const router = useRouter();
   const searchParams = useSearchParams();
   const [, startTransition] = useTransition();
 
   const currentSort = searchParams.get("sort") ?? "surface-desc";
   const currentCity = searchParams.get("city") ?? "";
+
+  const SORT_OPTIONS: SortOption[] = useMemo(() => [
+    { value: "surface-desc", label: t("venueSort.surfaceDesc"), shortLabel: t("venueSort.surfaceDescShort") },
+    { value: "surface-asc", label: t("venueSort.surfaceAsc"), shortLabel: t("venueSort.surfaceAscShort") },
+    { value: "name", label: t("sortOptions.name"), shortLabel: t("sortOptions.nameShort") },
+    { value: "city", label: t("venueSort.city"), shortLabel: t("venueSort.city") },
+  ], [t]);
 
   const navigate = useCallback(
     (params: URLSearchParams) => {
@@ -64,11 +66,9 @@ export function VenueSortBar({ total, cities }: VenueSortBarProps) {
   const sortLabel = useMemo(
     () =>
       SORT_OPTIONS.find((o) => o.value === currentSort)?.shortLabel ??
-      "Surface ↓",
-    [currentSort]
+      t("venueSort.surfaceDescShort"),
+    [SORT_OPTIONS, currentSort, t]
   );
-
-  const cityLabel = currentCity || "Toutes";
 
   return (
     <div className="sticky top-16 z-20 -mx-4 mb-6 border-y border-prune/10 bg-sable/95 px-4 py-3 backdrop-blur-sm md:top-20 md:-mx-0 md:rounded-md md:border md:px-5">
@@ -82,9 +82,8 @@ export function VenueSortBar({ total, cities }: VenueSortBarProps) {
 
         <span className="text-prune/30">·</span>
 
-        {/* Tri */}
         <span className="flex items-center gap-1.5">
-          <span className="text-prune/55">Trier :</span>
+          <span className="text-prune/55">{t("sort.label")}</span>
           <Popover>
             <PopoverTrigger className="inline-flex items-center gap-1 rounded-sm px-1 py-0.5 text-prune transition-colors hover:bg-prune/5 focus-visible:bg-prune/5">
               <span>{sortLabel}</span>
@@ -122,12 +121,11 @@ export function VenueSortBar({ total, cities }: VenueSortBarProps) {
 
         <span className="text-prune/30">·</span>
 
-        {/* Ville */}
         <span className="flex items-center gap-1.5">
-          <span className="text-prune/55">Ville :</span>
+          <span className="text-prune/55">{t("sort.city")}</span>
           <Popover>
             <PopoverTrigger className="inline-flex items-center gap-1 rounded-sm px-1 py-0.5 text-prune transition-colors hover:bg-prune/5 focus-visible:bg-prune/5">
-              <span className="max-w-[16ch] truncate">{cityLabel}</span>
+              <span className="max-w-[16ch] truncate">{currentCity || t("allShort")}</span>
               <span aria-hidden className="text-prune/50">
                 ▾
               </span>
@@ -141,7 +139,7 @@ export function VenueSortBar({ total, cities }: VenueSortBarProps) {
                       !currentCity ? "font-medium text-prune" : "text-prune/70"
                     }`}
                   >
-                    <span>Toutes les villes</span>
+                    <span>{t("allCities")}</span>
                     {!currentCity && (
                       <span className="text-ocre" aria-hidden>
                         ●

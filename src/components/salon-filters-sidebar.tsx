@@ -2,6 +2,7 @@
 
 import { useRouter, useSearchParams } from "next/navigation";
 import { useCallback, useState, useTransition } from "react";
+import { useTranslations } from "next-intl";
 import { getSectorColorClasses } from "@/components/sector-badge";
 import { trackEvent } from "@/lib/analytics";
 import {
@@ -19,28 +20,7 @@ type SalonFiltersSidebarProps = {
   cities: string[];
 };
 
-const PERIOD_OPTIONS = [
-  { value: "", label: "Toutes les dates" },
-  { value: "this-month", label: "Ce mois" },
-  { value: "next-quarter", label: "Prochain trimestre" },
-  { value: "2026", label: "2026" },
-  { value: "2027", label: "2027" },
-];
-
-const CATEGORY_OPTIONS = [
-  { value: "", label: "Toutes catégories" },
-  { value: "salon_professionnel", label: "Salon professionnel" },
-  { value: "salon_grand_public", label: "Salon grand public" },
-  { value: "congres", label: "Congrès" },
-  { value: "autres", label: "Autres" },
-];
-
-const SORT_OPTIONS = [
-  { value: "date", label: "Date (croissant)" },
-  { value: "date-desc", label: "Date (décroissant)" },
-  { value: "visitors", label: "Visiteurs (décroissant)" },
-  { value: "name", label: "Nom (A-Z)" },
-];
+type TranslationFn = ReturnType<typeof useTranslations>;
 
 /**
  * Grille de chips sectorielles 2 colonnes.
@@ -85,9 +65,11 @@ function SectorChipsGrid({
 function EditorialSearchInput({
   defaultValue,
   onSubmit,
+  placeholder,
 }: {
   defaultValue: string;
   onSubmit: (value: string) => void;
+  placeholder: string;
 }) {
   return (
     <form
@@ -101,7 +83,7 @@ function EditorialSearchInput({
         type="text"
         name="search"
         defaultValue={defaultValue}
-        placeholder="Rechercher un salon…"
+        placeholder={placeholder}
         className="w-full border-0 border-b border-prune/30 bg-transparent px-0 py-2 font-serif text-[16px] italic text-prune outline-none transition-colors placeholder:italic placeholder:text-prune/40 focus:border-prune"
       />
     </form>
@@ -124,6 +106,7 @@ function MobileFilterPanel({
   onToggleSector,
   onUpdateParam,
   onClose,
+  t,
 }: {
   sectors: Sector[];
   cities: string[];
@@ -137,6 +120,7 @@ function MobileFilterPanel({
   onToggleSector: (slug: string) => void;
   onUpdateParam: (key: string, value: string) => void;
   onClose: () => void;
+  t: TranslationFn;
 }) {
   const hasActiveFilters =
     currentSearch ||
@@ -146,23 +130,45 @@ function MobileFilterPanel({
     currentCategory ||
     currentSort !== "date";
 
+  const PERIOD_OPTIONS = [
+    { value: "", label: t("periods.all") },
+    { value: "this-month", label: t("periods.thisMonth") },
+    { value: "next-quarter", label: t("periods.nextQuarter") },
+    { value: "2026", label: t("periods.2026") },
+    { value: "2027", label: t("periods.2027") },
+  ];
+
+  const CATEGORY_OPTIONS = [
+    { value: "", label: t("categories.all") },
+    { value: "salon_professionnel", label: t("categories.salonProfessionnel") },
+    { value: "salon_grand_public", label: t("categories.salonGrandPublic") },
+    { value: "congres", label: t("categories.congres") },
+    { value: "autres", label: t("categories.autres") },
+  ];
+
+  const SORT_OPTIONS = [
+    { value: "date", label: t("sortOptions.dateAsc") },
+    { value: "date-desc", label: t("sortOptions.dateDesc") },
+    { value: "visitors", label: t("sortOptions.visitors") },
+    { value: "name", label: t("sortOptions.name") },
+  ];
+
   return (
     <div className="flex flex-col gap-7 overflow-y-auto px-5 pb-6 pt-2">
-      {/* Recherche */}
       <div>
         <label className="mb-1 block font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-prune/60">
-          Recherche
+          {t("search")}
         </label>
         <EditorialSearchInput
           defaultValue={currentSearch}
           onSubmit={onSearchSubmit}
+          placeholder={t("searchPlaceholder")}
         />
       </div>
 
-      {/* Secteurs */}
       <div>
         <label className="mb-2.5 block font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-prune/60">
-          Filières
+          {t("sectors")}
         </label>
         <SectorChipsGrid
           sectors={sectors}
@@ -171,17 +177,16 @@ function MobileFilterPanel({
         />
       </div>
 
-      {/* Ville */}
       <div>
         <label className="mb-1.5 block font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-prune/60">
-          Ville
+          {t("city")}
         </label>
         <select
           value={currentCity}
           onChange={(e) => onUpdateParam("city", e.target.value)}
           className="w-full rounded-md border border-prune/15 bg-papier px-3 py-2 text-sm text-prune outline-none transition-colors focus:border-prune"
         >
-          <option value="">Toutes les villes</option>
+          <option value="">{t("allCities")}</option>
           {cities.map((city) => (
             <option key={city} value={city}>
               {city}
@@ -190,10 +195,9 @@ function MobileFilterPanel({
         </select>
       </div>
 
-      {/* Période */}
       <div>
         <label className="mb-1.5 block font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-prune/60">
-          Période
+          {t("period")}
         </label>
         <select
           value={currentPeriod}
@@ -208,10 +212,9 @@ function MobileFilterPanel({
         </select>
       </div>
 
-      {/* Catégorie */}
       <div>
         <label className="mb-1.5 block font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-prune/60">
-          Catégorie
+          {t("category")}
         </label>
         <select
           value={currentCategory}
@@ -226,10 +229,9 @@ function MobileFilterPanel({
         </select>
       </div>
 
-      {/* Trier par */}
       <div>
         <label className="mb-2 block font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-prune/60">
-          Trier par
+          {t("sortBy")}
         </label>
         <div className="flex flex-col gap-1">
           {SORT_OPTIONS.map((option) => (
@@ -259,7 +261,6 @@ function MobileFilterPanel({
         </div>
       </div>
 
-      {/* Actions */}
       <div className="sticky bottom-0 -mx-5 flex gap-3 border-t border-prune/10 bg-papier px-5 py-4">
         {hasActiveFilters && (
           <button
@@ -269,14 +270,14 @@ function MobileFilterPanel({
             }}
             className="flex-1 rounded-md border border-prune/20 bg-papier px-4 py-2.5 text-sm font-medium text-prune/70 transition-colors hover:bg-prune/5 hover:text-prune"
           >
-            Réinitialiser
+            {t("reset")}
           </button>
         )}
         <button
           onClick={onClose}
           className="flex-1 rounded-md bg-prune px-4 py-2.5 text-sm font-medium text-papier transition-opacity hover:opacity-90"
         >
-          Voir les résultats
+          {t("seeResults")}
         </button>
       </div>
     </div>
@@ -287,6 +288,7 @@ export function SalonFiltersSidebar({
   sectors,
   cities,
 }: SalonFiltersSidebarProps) {
+  const t = useTranslations("filters");
   const router = useRouter();
   const searchParams = useSearchParams();
   const [, startTransition] = useTransition();
@@ -324,7 +326,6 @@ export function SalonFiltersSidebar({
         params.delete(key);
       }
       params.delete("page");
-      // Tracking : chaque changement de filtre (hors reset)
       trackEvent("filter_change", { filter_name: key, filter_value: value || "none" });
       navigate(params);
     },
@@ -348,7 +349,6 @@ export function SalonFiltersSidebar({
         params.delete("sector");
       }
       params.delete("page");
-      // Tracking : toggle de filière (ajout ou retrait)
       trackEvent("filter_change", {
         filter_name: "sector",
         filter_value: slug,
@@ -376,7 +376,6 @@ export function SalonFiltersSidebar({
 
   return (
     <>
-      {/* MOBILE : bouton éditorial + bottom sheet */}
       <div className="lg:hidden">
         <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
           <SheetTrigger
@@ -396,7 +395,7 @@ export function SalonFiltersSidebar({
                       d="M3 6h18M6 12h12M10 18h4"
                     />
                   </svg>
-                  Filtrer
+                  {t("filterLabel")}
                   {activeFilterCount > 0 && (
                     <span className="ml-1 inline-flex h-4 min-w-[16px] items-center justify-center rounded-full bg-ocre px-1 text-[10px] font-bold tracking-normal text-prune">
                       {activeFilterCount}
@@ -415,7 +414,7 @@ export function SalonFiltersSidebar({
           >
             <SheetHeader className="border-b border-prune/10">
               <SheetTitle className="font-serif text-lg font-normal text-prune">
-                Filtrer les salons
+                {t("filterTitle")}
                 <em className="not-italic text-ocre">.</em>
               </SheetTitle>
             </SheetHeader>
@@ -434,30 +433,29 @@ export function SalonFiltersSidebar({
               onToggleSector={toggleSector}
               onUpdateParam={updateParam}
               onClose={() => setMobileOpen(false)}
+              t={t}
             />
           </SheetContent>
         </Sheet>
       </div>
 
-      {/* DESKTOP : rail latéral sticky — uniquement les filières en 2 colonnes */}
       <aside className="hidden lg:block">
         <div className="sticky top-20 w-[280px]">
           <div className="rounded-lg border border-prune/10 bg-papier p-5">
-            {/* Recherche */}
             <div className="mb-6">
               <label className="mb-1 block font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-prune/60">
-                Recherche
+                {t("search")}
               </label>
               <EditorialSearchInput
                 defaultValue={currentSearch}
                 onSubmit={handleSearchSubmit}
+                placeholder={t("searchPlaceholder")}
               />
             </div>
 
-            {/* Filières — 2 colonnes de chips */}
             <div>
               <label className="mb-2.5 block font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-prune/60">
-                Filières
+                {t("sectors")}
               </label>
               <SectorChipsGrid
                 sectors={sectors}
@@ -471,7 +469,7 @@ export function SalonFiltersSidebar({
                 onClick={() => updateParam("reset", "")}
                 className="mt-6 w-full rounded-md border border-prune/15 bg-papier px-3 py-2 font-mono text-[10px] uppercase tracking-[0.2em] text-prune/65 transition-colors hover:bg-prune/5 hover:text-prune"
               >
-                Réinitialiser
+                {t("reset")}
               </button>
             )}
           </div>

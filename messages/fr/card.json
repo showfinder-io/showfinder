@@ -1,0 +1,18 @@
+{
+  "salon": {
+    "pastEdition": "Édition passée",
+    "statDates": "Dates",
+    "statVisitors": "Visiteurs",
+    "statExhibitors": "Exposants",
+    "extraSectors": "et {count} autre secteur(s)",
+    "certifiedAriaLabel": "Salon certifié Agoris Certified"
+  },
+  "provider": {
+    "premium": "Premium",
+    "auditedBy": "Audité par Agoris"
+  },
+  "venue": {
+    "statSurface": "Surface",
+    "statSalons": "Salons hébergés"
+  }
+}

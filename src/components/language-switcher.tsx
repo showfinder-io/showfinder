@@ -17,7 +17,7 @@ export function LanguageSwitcher() {
   const locale = useLocale() as AppLocale;
   const pathname = usePathname();
   const router = useRouter();
-  const t = useTranslations("LanguageSwitcher");
+  const t = useTranslations("language-switcher");
 
   // Gate Phase 0 : pas de switcher tant que l'EN n'est pas active.
   if (!I18N_EN_ENABLED) {

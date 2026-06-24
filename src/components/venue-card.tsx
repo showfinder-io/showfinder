@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { getTranslations } from "next-intl/server";
 import { formatNumber } from "@/lib/format";
 import type { VenueRow } from "@/lib/queries";
 
@@ -17,7 +18,9 @@ type VenueCardProps = {
  *  - stats grid : Surface · Salons hébergés (si salonCount fourni)
  *  - hover : fond ivoire chaud (#FBF7EA) + translateY(-2px) + arrow ocre bottom-right
  */
-export function VenueCard({ venue, salonCount }: VenueCardProps) {
+export async function VenueCard({ venue, salonCount }: VenueCardProps) {
+  const t = await getTranslations("card.venue");
+
   return (
     <article className="group relative overflow-hidden rounded-lg bg-ivoire transition-[background-color,transform] duration-200 hover:-translate-y-0.5 hover:bg-[#FBF7EA]">
       <Link
@@ -26,23 +29,20 @@ export function VenueCard({ venue, salonCount }: VenueCardProps) {
         aria-label={`${venue.name}, ${venue.city}`}
       >
         <div className="flex flex-1 flex-col gap-4 p-7">
-          {/* Eyebrow ville */}
           <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted">
             {venue.city}
           </p>
 
-          {/* Titre */}
           <h3 className="font-serif text-[28px] font-normal leading-[1.05] tracking-[-0.015em] text-prune">
             {venue.name}
           </h3>
 
-          {/* Stats : Surface + Salons hébergés */}
           <dl
             className="mt-auto grid gap-4 border-t border-border pt-4"
             style={{ gridTemplateColumns: "1fr 1fr" }}
           >
             <Stat
-              label="Surface"
+              label={t("statSurface")}
               value={
                 venue.total_surface_sqm
                   ? `${formatNumber(venue.total_surface_sqm)} m²`
@@ -50,14 +50,13 @@ export function VenueCard({ venue, salonCount }: VenueCardProps) {
               }
             />
             <Stat
-              label="Salons hébergés"
+              label={t("statSalons")}
               value={salonCount !== undefined ? String(salonCount) : null}
             />
           </dl>
         </div>
       </Link>
 
-      {/* Arrow ocre apparait au hover, bottom-right (hors du Link). */}
       <span
         aria-hidden="true"
         className="pointer-events-none absolute bottom-5 right-7 -translate-x-1.5 font-serif text-xl text-ocre opacity-0 transition-[opacity,transform] duration-200 group-hover:translate-x-0 group-hover:opacity-100"

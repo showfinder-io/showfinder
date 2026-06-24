@@ -1,0 +1,13 @@
+{
+  "connexion": "Sign in",
+  "deconnexion": "Sign out",
+  "pagination": {
+    "previous": "Previous",
+    "next": "Next",
+    "page": "Page {current} of {total}"
+  },
+  "certified": {
+    "ariaLabel": "Agoris Certified trade show",
+    "label": "Agoris Certified"
+  }
+}
