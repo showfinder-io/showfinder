@@ -23,7 +23,7 @@ import { BreadcrumbJsonLd } from "@/components/breadcrumb-jsonld";
 import { AgorisCertifiedBadge } from "@/components/agoris-certified-badge";
 import { SalonOutboundLink } from "@/components/salon-outbound-link";
 import { getSalonContent } from "@/lib/salon-content";
-import { formatEditorialMonth } from "@/lib/sector-content";
+import { formatEditorialMonthLocale } from "@/lib/sector-content";
 import { compileMdxContent } from "@/lib/mdx";
 import { salonMdxComponents } from "@/components/mdx/salon-mdx-components";
 import { FeedbackPrompt } from "@/components/feedback-prompt";
@@ -57,15 +57,23 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return { title: t("meta.notFound") };
   }
 
-  const title = salon.seo_title || `${salon.name} ${salon.edition_year ?? ""}`;
+  // Phase 2 i18n : utiliser les champs _en si locale EN et non nuls,
+  // sinon fallback sur les champs FR.
+  const seoTitle =
+    (locale === "en" && salon.seo_title_en ? salon.seo_title_en : null) ??
+    salon.seo_title;
+  const seoDescription =
+    (locale === "en" && salon.seo_description_en ? salon.seo_description_en : null) ??
+    salon.seo_description;
+
+  const title = seoTitle || `${salon.name} ${salon.edition_year ?? ""}`;
   const description =
-    salon.seo_description ||
+    seoDescription ||
     t("meta.descriptionFallback", { name: salon.name, siteName: siteConfig.name });
 
-  // Une fiche n'est indexable que si elle a un MDX éditorial dans
-  // content/salons/[slug].mdx. La description en DB ne suffit pas : trop
-  // courte pour faire un contenu de qualité Google.
-  const hasEditorialMdx = (await getSalonContent(slug)) !== null;
+  // Une fiche n'est indexable que si elle a un MDX éditorial. La description
+  // en DB ne suffit pas : trop courte pour faire un contenu de qualité Google.
+  const hasEditorialMdx = (await getSalonContent(slug, locale)) !== null;
 
   return {
     title,
@@ -113,7 +121,8 @@ export default async function SalonPage({ params }: Props) {
 
   // MDX éditorial (Bloc 2 → Bloc 9 du modèle Nicolas v3). Présent uniquement
   // pour les fiches Agoris Certified passées par la pipeline éditoriale.
-  const salonContent = await getSalonContent(slug);
+  // Phase 2 i18n : getSalonContent retourne le MDX EN si disponible, sinon FR.
+  const salonContent = await getSalonContent(slug, locale);
   const MdxContent = salonContent
     ? await compileMdxContent(salonContent.content, salonMdxComponents)
     : null;
@@ -128,7 +137,11 @@ export default async function SalonPage({ params }: Props) {
       : null,
   ].filter(Boolean) as { value: number; label: string }[];
 
-  const pitch = pitchFrom(salon.description);
+  // Phase 2 i18n : utiliser description_en si disponible en locale EN.
+  const description =
+    (locale === "en" && salon.description_en ? salon.description_en : null) ??
+    salon.description;
+  const pitch = pitchFrom(description);
   const certified = salon.is_agoris_certified === true;
 
   // Schema.org Event
@@ -136,7 +149,7 @@ export default async function SalonPage({ params }: Props) {
     "@context": "https://schema.org",
     "@type": "Event",
     name: salon.name,
-    description: salon.description,
+    description: description,
     startDate: salon.start_date,
     endDate: salon.end_date,
     location: {
@@ -322,9 +335,9 @@ export default async function SalonPage({ params }: Props) {
           {t("essential.title")}
         </h2>
 
-        {salon.description && (
+        {description && (
           <p className="mt-5 leading-relaxed text-prune/85">
-            {salon.description}
+            {description}
           </p>
         )}
 
@@ -395,7 +408,7 @@ export default async function SalonPage({ params }: Props) {
         <article className="prose-agoris mt-12 max-w-3xl">
           <p className="mb-8 font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
             {t("editorial.analysePrefix")}{" "}
-            {formatEditorialMonth(salonContent.frontmatter.updated)}
+            {formatEditorialMonthLocale(salonContent.frontmatter.updated, locale)}
           </p>
           <MdxContent />
           <p className="mt-12 border-t border-border pt-6 text-xs italic leading-relaxed text-muted">

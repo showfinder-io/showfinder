@@ -16,6 +16,15 @@
       "ctaSecondary": "ou découvrir Agoris Premium"
     }
   },
+  "categories": {
+    "standiste": "Standiste",
+    "traiteur": "Traiteur",
+    "av_technique": "Audiovisuel",
+    "photographe": "Photographe",
+    "transport": "Transport",
+    "hebergement": "Hébergement",
+    "autre": "Autre"
+  },
   "detail": {
     "metaNotFound": "Prestataire introuvable",
     "metaDescriptionFallback": "{companyName}, {label} pour salons professionnels sur {siteName}.",

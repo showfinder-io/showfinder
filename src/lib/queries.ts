@@ -56,6 +56,10 @@ export type SalonRow = {
   last_ia_update_at?: string | null;
   alert_flag?: boolean;
   created_at: string;
+  // Phase 2 i18n : colonnes _en (nulles par défaut, traduites hors bande)
+  description_en?: string | null;
+  seo_title_en?: string | null;
+  seo_description_en?: string | null;
 };
 
 export type SectorRow = {
@@ -65,6 +69,9 @@ export type SectorRow = {
   description: string | null;
   editorial_mdx?: string | null;
   editorial_updated_at?: string | null;
+  // Phase 2 i18n
+  name_en?: string | null;
+  description_en?: string | null;
 };
 
 // Version legere pour les jointures (sans description)
@@ -352,6 +359,10 @@ async function getSalonsById(
 export async function getSalonBySlug(slug: string) {
   const supabase = await createClient();
 
+  // Select avec `*` : retourne toutes les colonnes y compris les colonnes
+  // _en de la Phase 2 i18n (description_en, seo_title_en, seo_description_en).
+  // On cast le résultat vers SalonRow (qui les déclare comme optionnelles)
+  // pour conserver le typage fort sans dépendre des types Supabase générés.
   const { data, error } = await supabase
     .from("salons")
     .select(
@@ -363,18 +374,26 @@ export async function getSalonBySlug(slug: string) {
 
   if (error || !data) return null;
 
-  const sectors = (data.salon_sectors as Array<{ sectors: SectorSummary }>)
+  // Cast en unknown d'abord : les types Supabase générés ne connaissent pas
+  // encore les colonnes _en (description_en, seo_title_en, seo_description_en)
+  // ajoutées par la Phase 2 i18n. Elles arrivent dans le payload runtime via `*`
+  // mais l'inférence TS Supabase les ignore. Le cast final vers SalonRow + extras
+  // garantit la sécurité de type pour le reste du code.
+  const raw = data as unknown as Record<string, unknown>;
+
+  const sectors = (raw.salon_sectors as Array<{ sectors: SectorSummary }>)
     .map((ss) => ss.sectors)
     .filter(Boolean);
 
-  const tags = (data.salon_tags ?? []) as SalonTagRow[];
+  const tags = (raw.salon_tags ?? []) as SalonTagRow[];
 
   // Slug de la fiche lieu liée (R32 : lieu cliquable). Null si le salon n'a
   // pas de venue_id rattaché à une fiche venue.
   const venueSlug =
-    (data.venues as { slug: string } | null)?.slug ?? null;
+    (raw.venues as { slug: string } | null)?.slug ?? null;
 
-  const { salon_sectors: _, salon_tags: __, venues: ___, ...rest } = data;
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const { salon_sectors, salon_tags, venues, ...rest } = raw;
 
   return { ...rest, sectors, tags, venue_slug: venueSlug } as SalonWithSectors & {
     tags: SalonTagRow[];
@@ -626,14 +645,17 @@ export async function getAllSectorSlugs() {
 export async function getSectorBySlug(slug: string) {
   const supabase = await createClient();
 
+  // Les colonnes _en (Phase 2 i18n) ne sont pas encore dans les types Supabase
+  // générés : on utilise select("*") et on cast en SectorRow qui les déclare
+  // comme optionnelles.
   const { data, error } = await supabase
     .from("sectors")
-    .select("id, slug, name, description")
+    .select("*")
     .eq("slug", slug)
     .single();
 
   if (error || !data) return null;
-  return data as SectorRow;
+  return data as unknown as SectorRow;
 }
 
 // Salons filtres par ville
@@ -729,6 +751,11 @@ export type VenueRow = {
   halls_count?: number | null;
   gallery?: VenueGalleryItem[];
   created_at: string;
+  // Phase 2 i18n : colonnes _en (fallback sur FR si null)
+  description_en?: string | null;
+  editorial_mdx_en?: string | null;
+  seo_title_en?: string | null;
+  seo_description_en?: string | null;
 };
 
 export async function getVenues() {

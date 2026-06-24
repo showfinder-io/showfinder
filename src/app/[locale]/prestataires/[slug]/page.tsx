@@ -35,11 +35,18 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug, locale } = await params;
-  const t = await getTranslations({ locale, namespace: "providers.detail" });
+  const [t, tCat] = await Promise.all([
+    getTranslations({ locale, namespace: "providers.detail" }),
+    getTranslations({ locale, namespace: "providers.categories" }),
+  ]);
   const provider = await getProviderBySlug(slug);
   if (!provider) return { title: t("metaNotFound") };
 
-  const label = PROVIDER_CATEGORY_LABELS[provider.category] ?? provider.category;
+  // Phase 2 i18n : label de catégorie localisé avec fallback FR.
+  const label =
+    tCat(provider.category as Parameters<typeof tCat>[0], {}) ??
+    PROVIDER_CATEGORY_LABELS[provider.category] ??
+    provider.category;
   return {
     title: `${provider.company_name} - ${label}`,
     description: provider.description || t("metaDescriptionFallback", { companyName: provider.company_name, label, siteName: siteConfig.name }),
@@ -62,11 +69,18 @@ const PROVIDER_SCHEMA_TYPE: Record<string, string> = {
 
 export default async function ProviderPage({ params }: Props) {
   const { slug, locale } = await params;
-  const t = await getTranslations({ locale, namespace: "providers.detail" });
+  const [t, tCat] = await Promise.all([
+    getTranslations({ locale, namespace: "providers.detail" }),
+    getTranslations({ locale, namespace: "providers.categories" }),
+  ]);
   const provider = await getProviderBySlug(slug);
   if (!provider) notFound();
 
-  const label = PROVIDER_CATEGORY_LABELS[provider.category] ?? provider.category;
+  // Phase 2 i18n : label de catégorie localisé avec fallback FR.
+  const label =
+    tCat(provider.category as Parameters<typeof tCat>[0], {}) ??
+    PROVIDER_CATEGORY_LABELS[provider.category] ??
+    provider.category;
   const isPremium = provider.subscription_tier === "premium";
 
   // Schema.org LocalBusiness (ou sous-type plus précis selon la catégorie).
@@ -129,7 +143,7 @@ export default async function ProviderPage({ params }: Props) {
       {/* Header */}
       <header>
         <div className="flex items-center gap-3">
-          <CategoryBadge category={provider.category} />
+          <CategoryBadge category={provider.category} label={label} />
           {provider.is_verified && (
             <span className="inline-flex items-center gap-1 rounded-full bg-accent/10 px-3 py-1 text-xs font-medium text-accent">
               <BadgeCheck className="h-3 w-3" />

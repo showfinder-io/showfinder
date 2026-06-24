@@ -9,6 +9,8 @@ type ProviderCategoryBadgeProps = {
    *    (pendant de SectorBadge outline — utilisé sur les cards éditoriales).
    */
   variant?: "filled" | "outline";
+  /** Label localisé optionnel (passe via t("categories.xxx") depuis un Server Component). Fallback sur PROVIDER_CATEGORY_LABELS si absent. */
+  label?: string;
 };
 
 /**
@@ -46,8 +48,9 @@ export function getProviderCategoryColorClasses(category: string): string {
 export function ProviderCategoryBadge({
   category,
   variant = "filled",
+  label: labelProp,
 }: ProviderCategoryBadgeProps) {
-  const label = PROVIDER_CATEGORY_LABELS[category] ?? category;
+  const label = labelProp ?? PROVIDER_CATEGORY_LABELS[category] ?? category;
 
   const className =
     variant === "outline"

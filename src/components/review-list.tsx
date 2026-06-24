@@ -1,5 +1,6 @@
-import { getTranslations } from "next-intl/server";
+import { getTranslations, getLocale } from "next-intl/server";
 import { getReviewsByTarget, getAverageRating } from "@/lib/queries";
+import { toIntlLocale } from "@/lib/format";
 import { StarRating } from "@/components/star-rating";
 import { BadgeCheck } from "lucide-react";
 
@@ -9,7 +10,10 @@ type ReviewListProps = {
 };
 
 export async function ReviewList({ targetType, targetId }: ReviewListProps) {
-  const t = await getTranslations("salon-detail.reviews");
+  const [t, locale] = await Promise.all([
+    getTranslations("salon-detail.reviews"),
+    getLocale(),
+  ]);
   const [reviews, stats] = await Promise.all([
     getReviewsByTarget(targetType, targetId),
     getAverageRating(targetType, targetId),
@@ -23,10 +27,8 @@ export async function ReviewList({ targetType, targetId }: ReviewListProps) {
     );
   }
 
-  // La locale est résolue par next-intl via les headers de requête.
-  // On n'a pas besoin de la passer explicitement ici : Intl.DateTimeFormat
-  // utilisera la locale active du serveur, ce qui est correct pour le rendu SSR.
-  const dateFormatter = new Intl.DateTimeFormat("fr-FR", {
+  // Phase 2 i18n : utiliser la locale courante (en-GB en EN, fr-FR en FR).
+  const dateFormatter = new Intl.DateTimeFormat(toIntlLocale(locale), {
     day: "numeric",
     month: "long",
     year: "numeric",
