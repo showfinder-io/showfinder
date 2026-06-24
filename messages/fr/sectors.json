@@ -1,0 +1,26 @@
+{
+  "listing": {
+    "metaTitle": "Tous les secteurs",
+    "metaDescription": "Parcourez les salons professionnels par secteur d'activité sur {siteName}.",
+    "heading": "Secteurs d'activité",
+    "countOne": "{count} secteur répertorié",
+    "countMany": "{count} secteurs répertoriés",
+    "seeShows": "Voir les salons"
+  },
+  "detail": {
+    "metaNotFound": "Secteur introuvable",
+    "eyebrow": "Filière",
+    "breadcrumbHome": "Accueil",
+    "breadcrumbSectors": "Secteurs",
+    "editorialUpdate": "Analyse Agoris · mise à jour {date}",
+    "skipToListPrefix": "Cette page : notre analyse du secteur ou",
+    "skipToList": "voir directement les salons listés",
+    "showsHeading": "Les salons de cette filière",
+    "showsLabelOne": "salon référencé",
+    "showsLabelMany": "salons référencés",
+    "emptyShows": "Aucun salon dans cette filière pour le moment",
+    "citiesHeading": "Les villes de la filière",
+    "cityLink": "Salons à {city}",
+    "otherSectorsHeading": "Explorer d'autres filières"
+  }
+}

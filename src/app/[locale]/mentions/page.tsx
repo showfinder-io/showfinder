@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { SectionTitle } from "@/components/section-title";
 import { buildAlternates } from "@/lib/i18n-metadata";
 import type { AppLocale } from "@/i18n/routing";
+import { getTranslations } from "next-intl/server";
 
 export async function generateMetadata({
   params,
@@ -9,86 +10,72 @@ export async function generateMetadata({
   params: Promise<{ locale: AppLocale }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "legal" });
   return {
-    title: "Mentions légales",
-    description:
-      "Mentions légales d'Agoris : éditeur, hébergeur, directeur de la publication.",
+    title: t("mentions.meta.title"),
+    description: t("mentions.meta.description"),
     robots: { index: true, follow: true },
     alternates: buildAlternates("/mentions", locale),
   };
 }
 
-export default function MentionsPage() {
+export default async function MentionsPage() {
+  const t = await getTranslations("legal");
+
   return (
     <div className="mx-auto max-w-3xl px-4 py-16">
       <SectionTitle as="h1" size="lg">
-        Mentions légales
+        {t("mentions.heading")}
       </SectionTitle>
 
       <div className="mt-10 space-y-8 text-[15px] leading-relaxed text-prune/85">
         <p className="text-sm italic text-muted">
-          Pour la V1. À actualiser quand la société sera juridiquement créée.
+          {t("mentions.v1Notice")}
         </p>
 
         <section>
           <h2 className="font-serif text-xl font-normal tracking-[-0.015em] text-prune">
-            Éditeur du site
+            {t("mentions.editeur.title")}
           </h2>
-          <p className="mt-3">
-            Agoris SAS (à compléter)
-            <br />
-            Siège social : Paris, France
-            <br />
-            SIRET : TBD
-            <br />
-            Contact : hello@agoris.io
+          <p className="mt-3 whitespace-pre-line">
+            {t("mentions.editeur.body")}
           </p>
         </section>
 
         <section>
           <h2 className="font-serif text-xl font-normal tracking-[-0.015em] text-prune">
-            Directeur de la publication
+            {t("mentions.directeur.title")}
           </h2>
-          <p className="mt-3">Julien Zakoian</p>
+          <p className="mt-3">{t("mentions.directeur.body")}</p>
         </section>
 
         <section>
           <h2 className="font-serif text-xl font-normal tracking-[-0.015em] text-prune">
-            Hébergeur
+            {t("mentions.hebergeur.title")}
           </h2>
-          <p className="mt-3">
-            Vercel Inc.
-            <br />
-            440 N Barranca Avenue #4133, Covina, CA 91723, États-Unis
-            <br />
-            vercel.com
+          <p className="mt-3 whitespace-pre-line">
+            {t("mentions.hebergeur.body")}
           </p>
         </section>
 
         <section>
           <h2 className="font-serif text-xl font-normal tracking-[-0.015em] text-prune">
-            Propriété intellectuelle
+            {t("mentions.propriete.title")}
           </h2>
           <p className="mt-3">
-            L&apos;ensemble du contenu de ce site (textes, graphismes, logos,
-            structure) est protégé par le droit d&apos;auteur. Toute
-            reproduction, représentation, modification ou exploitation, totale
-            ou partielle, sans autorisation préalable est interdite.
+            {t("mentions.propriete.p1")}
           </p>
           <p className="mt-3">
-            Les marques et logos tiers (salons, prestataires, lieux) cités sont
-            la propriété de leurs détenteurs respectifs et sont utilisés à des
-            fins d&apos;information éditoriale.
+            {t("mentions.propriete.p2")}
           </p>
         </section>
 
         <section>
           <h2 className="font-serif text-xl font-normal tracking-[-0.015em] text-prune">
-            Signalement
+            {t("mentions.signalement.title")}
           </h2>
           <p className="mt-3">
-            Pour toute demande de correction, retrait d&apos;information ou
-            signalement, écrivez à{" "}
+            {t("mentions.signalement.body")}{" "}
             <a
               href="mailto:hello@agoris.io"
               className="underline decoration-prune/30 underline-offset-4 transition-colors hover:decoration-prune"

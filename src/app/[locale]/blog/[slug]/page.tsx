@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { getTranslations } from "next-intl/server";
 import { getAllPosts, getPostBySlug } from "@/lib/blog";
-import { siteConfig } from "@/lib/config";
 import { compileMdxContent } from "@/lib/mdx";
 import { buildAlternates } from "@/lib/i18n-metadata";
 import type { AppLocale } from "@/i18n/routing";
@@ -42,25 +42,26 @@ export async function generateMetadata({
 }
 
 export default async function BlogPostPage({ params }: PageProps) {
-  const { slug } = await params;
+  const { slug, locale } = await params;
   const post = getPostBySlug(slug);
 
   if (!post) notFound();
 
   // Compiler le MDX (sans le frontmatter)
   const PostContent = await compileMdxContent(post.content);
+  const t = await getTranslations({ locale, namespace: "blog.post" });
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-16">
       {/* Fil d'Ariane */}
-      <nav className="mb-8 text-sm text-muted" aria-label="Fil d'Ariane">
+      <nav className="mb-8 text-sm text-muted" aria-label={t("breadcrumbAriaLabel")}>
         <ol className="flex items-center gap-1.5">
           <li>
             <Link
               href="/"
               className="transition-colors hover:text-ink"
             >
-              Accueil
+              {t("breadcrumb.home")}
             </Link>
           </li>
           <li aria-hidden="true">/</li>
@@ -69,7 +70,7 @@ export default async function BlogPostPage({ params }: PageProps) {
               href="/blog"
               className="transition-colors hover:text-ink"
             >
-              Blog
+              {t("breadcrumb.blog")}
             </Link>
           </li>
           <li aria-hidden="true">/</li>
@@ -102,7 +103,7 @@ export default async function BlogPostPage({ params }: PageProps) {
           <span aria-hidden="true">&middot;</span>
           <time dateTime={post.frontmatter.date}>
             {new Date(post.frontmatter.date).toLocaleDateString(
-              siteConfig.locale,
+              locale === "en" ? "en-GB" : "fr-FR",
               {
                 year: "numeric",
                 month: "long",
@@ -126,7 +127,7 @@ export default async function BlogPostPage({ params }: PageProps) {
           href="/blog"
           className="text-sm font-medium text-accent transition-colors hover:text-accent-hover"
         >
-          &larr; Retour au blog
+          &larr; {t("backToBlog")}
         </Link>
       </div>
     </div>

@@ -1,0 +1,25 @@
+{
+  "meta": {
+    "title": "Contactez-nous",
+    "description": "Contactez l'équipe Agoris : organisateurs de salons, prestataires ou demande générale."
+  },
+  "heading": "Contactez-nous",
+  "intro": "Une question, une suggestion ? Choisissez le canal adapté à votre situation.",
+  "organisateurs": {
+    "title": "Organisateurs",
+    "body": "Vous organisez un salon ? Réclamez votre fiche ou passez Premium pour une visibilité maximale."
+  },
+  "prestataires": {
+    "title": "Prestataires",
+    "body": "Vous êtes prestataire ? Inscrivez-vous gratuitement ou découvrez l'offre Premium pour toucher plus de clients."
+  },
+  "general": {
+    "title": "Demande générale",
+    "intro": "Pour toute autre demande, utilisez le formulaire ci-dessous."
+  },
+  "form": {
+    "body": "Envoyez-nous votre demande par email : nous répondons sous 48h ouvrées. Pensez à indiquer le contexte (organisateur, prestataire, visiteur) et toute information utile pour traiter votre demande.",
+    "cta": "Écrire à hello@agoris.io",
+    "mailtoSubject": "Demande generale Agoris"
+  }
+}

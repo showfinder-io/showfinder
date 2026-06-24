@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { getTranslations } from "next-intl/server";
 import { getAllPosts } from "@/lib/blog";
-import { siteConfig } from "@/lib/config";
 import { PhotoPlaceholder } from "@/components/photo-placeholder";
 import { SectionTitle } from "@/components/section-title";
 import { buildAlternates } from "@/lib/i18n-metadata";
@@ -13,33 +13,38 @@ export async function generateMetadata({
   params: Promise<{ locale: AppLocale }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "blog.meta" });
   return {
-    title: "Le journal : guides et analyses",
-    description:
-      "Conseils, guides et actualités pour réussir votre participation aux salons professionnels en France.",
+    title: t("title"),
+    description: t("description"),
     alternates: buildAlternates("/blog", locale),
   };
 }
 
-export default function BlogPage() {
+export default async function BlogPage({
+  params,
+}: {
+  params: Promise<{ locale: AppLocale }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "blog" });
   const posts = getAllPosts();
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-12 md:py-16">
       <header className="mb-10 md:mb-14">
-        <SectionTitle as="h1" size="xl" eyebrow="Guides et analyses">
-          Le journal
+        <SectionTitle as="h1" size="xl" eyebrow={t("list.eyebrow")}>
+          {t("list.heading")}
         </SectionTitle>
         <p className="mt-4 max-w-2xl text-base text-muted">
-          Conseils éditoriaux, comparatifs et benchmarks pour comprendre l&apos;écosystème
-          des salons professionnels en France.
+          {t("list.intro")}
         </p>
       </header>
 
       {posts.length === 0 ? (
         <div className="rounded-lg border border-prune/10 bg-ivoire p-12 text-center">
           <p className="font-serif text-xl italic leading-relaxed text-prune/85">
-            Le journal s&apos;ouvrira prochainement
+            {t("list.empty")}
             <em className="not-italic text-ocre">.</em>
           </p>
         </div>
@@ -65,7 +70,7 @@ export default function BlogPage() {
                     loading="lazy"
                   />
                 ) : (
-                  <PhotoPlaceholder ratio="3/2" label="article" />
+                  <PhotoPlaceholder ratio="3/2" label={t("list.photoLabel")} />
                 )}
 
                 <div className="flex flex-1 flex-col gap-4 p-7">
@@ -97,7 +102,7 @@ export default function BlogPage() {
                   <div className="mt-auto flex items-center gap-3 border-t border-border pt-4 font-mono text-[10px] uppercase tracking-[0.16em] text-prune/60">
                     <time dateTime={post.frontmatter.date}>
                       {new Date(post.frontmatter.date).toLocaleDateString(
-                        siteConfig.locale,
+                        locale === "en" ? "en-GB" : "fr-FR",
                         {
                           year: "numeric",
                           month: "long",

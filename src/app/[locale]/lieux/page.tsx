@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
+import { getTranslations } from "next-intl/server";
 import { siteConfig } from "@/lib/config";
 import { getVenues, type VenueRow } from "@/lib/queries";
 import { createClient } from "@/lib/supabase/server";
@@ -15,14 +16,16 @@ export async function generateMetadata({
   params: Promise<{ locale: AppLocale }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "venues.listing" });
   return {
-    title: "Parcs et lieux d'exposition en France",
-    description: `Découvrez les principaux lieux d'exposition et parcs des expositions en France sur ${siteConfig.name}. Trouvez les salons par lieu.`,
+    title: t("metaTitle"),
+    description: t("metaDescription", { siteName: siteConfig.name }),
     alternates: buildAlternates("/lieux", locale),
   };
 }
 
 type Props = {
+  params: Promise<{ locale: AppLocale }>;
   searchParams: Promise<Record<string, string | undefined>>;
 };
 
@@ -63,10 +66,13 @@ function sortVenues(venues: VenueRow[], sort: string): VenueRow[] {
   });
 }
 
-export default async function LieuxPage({ searchParams }: Props) {
-  const params = await searchParams;
-  const city = params.city ?? "";
-  const sort = params.sort ?? "surface-desc";
+export default async function LieuxPage({ params, searchParams }: Props) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "venues.listing" });
+
+  const sp = await searchParams;
+  const city = sp.city ?? "";
+  const sort = sp.sort ?? "surface-desc";
 
   const supabase = await createClient();
   const [venuesRaw, salonVenuesRes] = await Promise.all([
@@ -105,15 +111,16 @@ export default async function LieuxPage({ searchParams }: Props) {
   return (
     <div className="mx-auto max-w-7xl px-4 py-12 md:py-16">
       <header className="mb-10 md:mb-14">
-        <SectionTitle as="h1" size="xl" eyebrow="Parcs et lieux d'exposition">
-          Lieux
+        <SectionTitle as="h1" size="xl" eyebrow={t("eyebrow")}>
+          {t("heading")}
         </SectionTitle>
         <p className="mt-4 max-w-2xl text-base text-muted">
           <span className="font-serif text-[22px] font-normal text-ocre tabular-nums">
             {venues.length}
           </span>{" "}
-          lieu{venues.length > 1 ? "x" : ""} référencé
-          {venues.length > 1 ? "s" : ""} en France.
+          {venues.length > 1
+            ? t("countLabelMany")
+            : t("countLabelOne")}
         </p>
       </header>
 
@@ -134,9 +141,9 @@ export default async function LieuxPage({ searchParams }: Props) {
       ) : (
         <div className="mt-16 rounded-lg border border-prune/10 bg-ivoire p-12 text-center">
           <p className="font-serif text-xl italic leading-relaxed text-prune/85">
-            Aucun lieu ne correspond à votre recherche.
+            {t("emptyResult")}
             <br />
-            Essayez une autre ville
+            {t("emptyHint")}
             <em className="not-italic text-ocre">.</em>
           </p>
         </div>

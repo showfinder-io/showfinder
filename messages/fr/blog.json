@@ -1,0 +1,21 @@
+{
+  "meta": {
+    "title": "Le journal : guides et analyses",
+    "description": "Conseils, guides et actualités pour réussir votre participation aux salons professionnels en France."
+  },
+  "list": {
+    "eyebrow": "Guides et analyses",
+    "heading": "Le journal",
+    "intro": "Conseils éditoriaux, comparatifs et benchmarks pour comprendre l'écosystème des salons professionnels en France.",
+    "empty": "Le journal s'ouvrira prochainement",
+    "photoLabel": "article"
+  },
+  "post": {
+    "breadcrumb": {
+      "home": "Accueil",
+      "blog": "Blog"
+    },
+    "backToBlog": "Retour au blog",
+    "breadcrumbAriaLabel": "Fil d'Ariane"
+  }
+}

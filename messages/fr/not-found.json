@@ -1,0 +1,10 @@
+{
+  "meta": {
+    "title": "Page introuvable",
+    "description": "Cette page n'existe pas. Mais tous les salons professionnels de France vous attendent sur Agoris."
+  },
+  "heading": "Cette page n'existe pas.",
+  "subheading": "Mais {total} salons vous attendent",
+  "backHome": "Retour à l'accueil",
+  "allShows": "Voir tous les salons"
+}

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { SectionTitle } from "@/components/section-title";
 import { buildAlternates } from "@/lib/i18n-metadata";
 import type { AppLocale } from "@/i18n/routing";
+import { getTranslations } from "next-intl/server";
 
 export async function generateMetadata({
   params,
@@ -9,91 +10,79 @@ export async function generateMetadata({
   params: Promise<{ locale: AppLocale }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "legal" });
   return {
-    title: "Politique cookies",
-    description:
-      "Politique cookies d'Agoris : cookies essentiels et mesure d'audience anonymisée.",
+    title: t("cookies.meta.title"),
+    description: t("cookies.meta.description"),
     robots: { index: true, follow: true },
     alternates: buildAlternates("/cookies", locale),
   };
 }
 
-export default function CookiesPage() {
+export default async function CookiesPage() {
+  const t = await getTranslations("legal");
+
   return (
     <div className="mx-auto max-w-3xl px-4 py-16">
       <SectionTitle as="h1" size="lg">
-        Politique cookies
+        {t("cookies.heading")}
       </SectionTitle>
 
       <div className="mt-10 space-y-8 text-[15px] leading-relaxed text-prune/85">
         <p className="text-sm italic text-muted">
-          Pour la V1. À actualiser quand la société sera juridiquement créée.
+          {t("cookies.v1Notice")}
         </p>
 
         <p>
-          Agoris utilise des cookies pour assurer le fonctionnement du site et
-          mesurer son audience de manière anonymisée. Aucun cookie marketing
-          ou publicitaire n&apos;est déposé au stade actuel.
+          {t("cookies.intro")}
         </p>
 
         <section>
           <h2 className="font-serif text-xl font-normal tracking-[-0.015em] text-prune">
-            Cookies essentiels
+            {t("cookies.essentiels.title")}
           </h2>
           <p className="mt-3">
-            Ces cookies sont indispensables au fonctionnement du site et ne
-            peuvent pas être désactivés. Ils ne nécessitent pas de
-            consentement.
+            {t("cookies.essentiels.body")}
           </p>
           <ul className="mt-3 list-disc space-y-2 pl-5">
             <li>
-              <strong>Supabase Auth</strong> : gestion de votre session
-              (connexion, authentification). Durée : durée de la session ou 7
-              jours en cas de « se souvenir de moi ».
+              <strong>Supabase Auth</strong> : {t("cookies.essentiels.supabase")}
             </li>
           </ul>
         </section>
 
         <section>
           <h2 className="font-serif text-xl font-normal tracking-[-0.015em] text-prune">
-            Cookies de mesure d&apos;audience
+            {t("cookies.audience.title")}
           </h2>
           <p className="mt-3">
-            Agoris utilise Google Analytics 4 pour mesurer l&apos;audience du
-            site de manière anonymisée (anonymisation IP activée, pas de
-            partage publicitaire). Ces données nous aident à améliorer le
-            service.
+            {t("cookies.audience.body")}
           </p>
           <ul className="mt-3 list-disc space-y-2 pl-5">
             <li>
-              <strong>_ga, _ga_*</strong> : identifiants Google Analytics.
-              Durée : 13 mois maximum.
+              <strong>_ga, _ga_*</strong> : {t("cookies.audience.ga")}
             </li>
           </ul>
         </section>
 
         <section>
           <h2 className="font-serif text-xl font-normal tracking-[-0.015em] text-prune">
-            Cookies marketing
+            {t("cookies.marketing.title")}
           </h2>
           <p className="mt-3">
-            Aucun cookie marketing ou publicitaire n&apos;est déposé sur
-            Agoris au stade du POC.
+            {t("cookies.marketing.body")}
           </p>
         </section>
 
         <section>
           <h2 className="font-serif text-xl font-normal tracking-[-0.015em] text-prune">
-            Gestion des cookies
+            {t("cookies.gestion.title")}
           </h2>
           <p className="mt-3">
-            Vous pouvez refuser les cookies analytics directement dans les
-            paramètres de votre navigateur (mode privé, blocage des traceurs,
-            extensions type uBlock Origin). Le refus de ces cookies
-            n&apos;empêche pas l&apos;utilisation du site.
+            {t("cookies.gestion.p1")}
           </p>
           <p className="mt-3">
-            Pour toute question, contactez{" "}
+            {t("cookies.gestion.contact")}{" "}
             <a
               href="mailto:hello@agoris.io"
               className="underline decoration-prune/30 underline-offset-4 transition-colors hover:decoration-prune"

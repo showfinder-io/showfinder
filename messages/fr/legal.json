@@ -1,0 +1,108 @@
+{
+  "mentions": {
+    "meta": {
+      "title": "Mentions légales",
+      "description": "Mentions légales d'Agoris : éditeur, hébergeur, directeur de la publication."
+    },
+    "heading": "Mentions légales",
+    "v1Notice": "Pour la V1. À actualiser quand la société sera juridiquement créée.",
+    "editeur": {
+      "title": "Éditeur du site",
+      "body": "Agoris SAS (à compléter)\nSiège social : Paris, France\nSIRET : TBD\nContact : hello@agoris.io"
+    },
+    "directeur": {
+      "title": "Directeur de la publication",
+      "body": "Julien Zakoian"
+    },
+    "hebergeur": {
+      "title": "Hébergeur",
+      "body": "Vercel Inc.\n440 N Barranca Avenue #4133, Covina, CA 91723, États-Unis\nvercel.com"
+    },
+    "propriete": {
+      "title": "Propriété intellectuelle",
+      "p1": "L'ensemble du contenu de ce site (textes, graphismes, logos, structure) est protégé par le droit d'auteur. Toute reproduction, représentation, modification ou exploitation, totale ou partielle, sans autorisation préalable est interdite.",
+      "p2": "Les marques et logos tiers (salons, prestataires, lieux) cités sont la propriété de leurs détenteurs respectifs et sont utilisés à des fins d'information éditoriale."
+    },
+    "signalement": {
+      "title": "Signalement",
+      "body": "Pour toute demande de correction, retrait d'information ou signalement, écrivez à"
+    }
+  },
+  "confidentialite": {
+    "meta": {
+      "title": "Politique de confidentialité",
+      "description": "Politique de confidentialité d'Agoris : RGPD, données personnelles, droits des utilisateurs."
+    },
+    "heading": "Politique de confidentialité",
+    "v1Notice": "Pour la V1. À actualiser quand la société sera juridiquement créée.",
+    "intro": "La présente politique décrit comment Agoris collecte, utilise et protège vos données personnelles, conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi Informatique et Libertés.",
+    "responsable": {
+      "title": "Responsable de traitement",
+      "body": "Agoris SAS (à compléter), basée à Paris. Contact :"
+    },
+    "donnees": {
+      "title": "Données collectées",
+      "item1": "Adresse email : lorsque vous créez un compte, vous inscrivez à une alerte salon ou à notre newsletter.",
+      "item2": "Préférences éditoriales : secteurs et villes suivis, pour personnaliser vos alertes.",
+      "item3": "Données techniques anonymisées : type de navigateur, pages consultées (via Google Analytics 4)."
+    },
+    "finalites": {
+      "title": "Finalités du traitement",
+      "item1": "Vous envoyer les alertes salons auxquelles vous êtes inscrit.",
+      "item2": "Vous adresser notre newsletter mensuelle (uniquement avec consentement explicite).",
+      "item3": "Améliorer le service en mesurant l'audience de manière agrégée."
+    },
+    "baseLegale": {
+      "title": "Base légale",
+      "body": "Vos données sont traitées sur la base de votre consentement (inscription explicite) ou de l'intérêt légitime d'Agoris à fournir un service éditorial pertinent."
+    },
+    "conservation": {
+      "title": "Durée de conservation",
+      "body": "Les données de compte et d'abonnement sont conservées tant que votre compte est actif, et jusqu'à 3 ans après votre dernière interaction. Les données analytiques anonymisées sont conservées 14 mois (paramétrage Google Analytics)."
+    },
+    "droits": {
+      "title": "Vos droits",
+      "intro": "Vous disposez à tout moment des droits suivants :",
+      "item1": "Droit d'accès à vos données personnelles.",
+      "item2": "Droit de rectification et de mise à jour.",
+      "item3": "Droit d'effacement (droit à l'oubli).",
+      "item4": "Droit à la portabilité.",
+      "item5": "Droit d'opposition au traitement.",
+      "item6": "Droit de retirer votre consentement à tout moment.",
+      "contact": "Pour exercer ces droits, contactez notre DPO à",
+      "cnil": "En cas de litige, vous pouvez saisir la CNIL (cnil.fr)."
+    },
+    "partage": {
+      "title": "Partage des données",
+      "body": "Agoris ne vend ni ne loue vos données. Elles peuvent être transmises uniquement à nos sous-traitants techniques (hébergement Vercel, base de données Supabase, mesure d'audience Google Analytics), tous soumis à des engagements de confidentialité et de sécurité conformes au RGPD."
+    }
+  },
+  "cookies": {
+    "meta": {
+      "title": "Politique cookies",
+      "description": "Politique cookies d'Agoris : cookies essentiels et mesure d'audience anonymisée."
+    },
+    "heading": "Politique cookies",
+    "v1Notice": "Pour la V1. À actualiser quand la société sera juridiquement créée.",
+    "intro": "Agoris utilise des cookies pour assurer le fonctionnement du site et mesurer son audience de manière anonymisée. Aucun cookie marketing ou publicitaire n'est déposé au stade actuel.",
+    "essentiels": {
+      "title": "Cookies essentiels",
+      "body": "Ces cookies sont indispensables au fonctionnement du site et ne peuvent pas être désactivés. Ils ne nécessitent pas de consentement.",
+      "supabase": "gestion de votre session (connexion, authentification). Durée : durée de la session ou 7 jours en cas de « se souvenir de moi »."
+    },
+    "audience": {
+      "title": "Cookies de mesure d'audience",
+      "body": "Agoris utilise Google Analytics 4 pour mesurer l'audience du site de manière anonymisée (anonymisation IP activée, pas de partage publicitaire). Ces données nous aident à améliorer le service.",
+      "ga": "identifiants Google Analytics. Durée : 13 mois maximum."
+    },
+    "marketing": {
+      "title": "Cookies marketing",
+      "body": "Aucun cookie marketing ou publicitaire n'est déposé sur Agoris au stade du POC."
+    },
+    "gestion": {
+      "title": "Gestion des cookies",
+      "p1": "Vous pouvez refuser les cookies analytics directement dans les paramètres de votre navigateur (mode privé, blocage des traceurs, extensions type uBlock Origin). Le refus de ces cookies n'empêche pas l'utilisation du site.",
+      "contact": "Pour toute question, contactez"
+    }
+  }
+}

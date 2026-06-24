@@ -1,0 +1,21 @@
+{
+  "meta": {
+    "title": "The journal: guides and analyses",
+    "description": "Advice, guides and news to help you succeed at professional trade shows in France."
+  },
+  "list": {
+    "eyebrow": "Guides and analyses",
+    "heading": "The journal",
+    "intro": "Editorial insight, comparisons and benchmarks for understanding the trade show ecosystem in France.",
+    "empty": "The journal will be opening shortly",
+    "photoLabel": "article"
+  },
+  "post": {
+    "breadcrumb": {
+      "home": "Home",
+      "blog": "Blog"
+    },
+    "backToBlog": "Back to the blog",
+    "breadcrumbAriaLabel": "Breadcrumb"
+  }
+}

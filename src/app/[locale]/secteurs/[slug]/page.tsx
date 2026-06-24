@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { getTranslations } from "next-intl/server";
 import { siteConfig } from "@/lib/config";
 import {
   getAllSectorSlugs,
@@ -33,9 +34,10 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug, locale } = await params;
   const sector = await getSectorBySlug(slug);
+  const t = await getTranslations({ locale, namespace: "sectors.detail" });
 
   if (!sector) {
-    return { title: "Secteur introuvable" };
+    return { title: t("metaNotFound") };
   }
 
   const sectorContent = await getSectorContent(slug);
@@ -67,10 +69,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function SecteurPage({ params }: Props) {
-  const { slug } = await params;
+  const { slug, locale } = await params;
   const sector = await getSectorBySlug(slug);
 
   if (!sector) notFound();
+
+  const t = await getTranslations({ locale, namespace: "sectors.detail" });
 
   const [result, sectorContent, allSectors] = await Promise.all([
     getSalonsBySector(slug),
@@ -112,22 +116,22 @@ export default async function SecteurPage({ params }: Props) {
       {result.salons.length > 0 && <JsonLd data={itemListJsonLd} />}
       <BreadcrumbJsonLd
         items={[
-          { name: "Accueil", item: "/" },
-          { name: "Secteurs", item: "/secteurs" },
+          { name: t("breadcrumbHome"), item: "/" },
+          { name: t("breadcrumbSectors"), item: "/secteurs" },
           { name: sector.name, item: `/secteurs/${slug}` },
         ]}
       />
 
       <nav className="mb-10 text-sm text-muted">
         <Link href="/secteurs" className="hover:text-prune transition-colors">
-          Secteurs
+          {t("breadcrumbSectors")}
         </Link>
         <span className="mx-2">/</span>
         <span className="text-prune">{sector.name}</span>
       </nav>
 
       <header className="max-w-3xl">
-        <SectionTitle as="h1" size="xl" eyebrow="Filière">
+        <SectionTitle as="h1" size="xl" eyebrow={t("eyebrow")}>
           Salons {sector.name}
         </SectionTitle>
 
@@ -135,8 +139,9 @@ export default async function SecteurPage({ params }: Props) {
             et les LLMs. Uniquement sur les secteurs avec MDX travaillé. */}
         {sectorContent && (
           <p className="mt-4 font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
-            Analyse Agoris · mise à jour{" "}
-            {formatEditorialMonth(sectorContent.frontmatter.updated)}
+            {t("editorialUpdate", {
+              date: formatEditorialMonth(sectorContent.frontmatter.updated),
+            })}
           </p>
         )}
 
@@ -145,12 +150,12 @@ export default async function SecteurPage({ params }: Props) {
             long-form (sinon la liste est juste sous le H1). */}
         {sectorContent && (
           <p className="mt-6 text-sm text-prune/65">
-            Cette page : notre analyse du secteur ou{" "}
+            {t("skipToListPrefix")}{" "}
             <a
               href="#salons"
               className="underline-offset-4 transition-colors hover:underline hover:text-prune"
             >
-              voir directement les salons listés ↓
+              {t("skipToList")} ↓
             </a>
           </p>
         )}
@@ -178,14 +183,13 @@ export default async function SecteurPage({ params }: Props) {
       <section id="salons" className="mt-20 scroll-mt-8">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <SectionTitle as="h2" size="lg">
-            Les salons de cette filière
+            {t("showsHeading")}
           </SectionTitle>
           <p className="text-sm text-muted">
             <span className="font-serif text-[22px] font-normal text-ocre tabular-nums">
               {result.total}
             </span>{" "}
-            salon{result.total > 1 ? "s" : ""} référencé
-            {result.total > 1 ? "s" : ""}.
+            {result.total > 1 ? t("showsLabelMany") : t("showsLabelOne")}
           </p>
         </div>
 
@@ -202,7 +206,7 @@ export default async function SecteurPage({ params }: Props) {
         ) : (
           <div className="mt-12 rounded-lg border border-border bg-ivoire p-12 text-center">
             <p className="font-serif text-xl italic leading-relaxed text-prune/85">
-              Aucun salon dans cette filière pour le moment
+              {t("emptyShows")}
               <em className="not-italic text-ocre">.</em>
             </p>
           </div>
@@ -213,7 +217,7 @@ export default async function SecteurPage({ params }: Props) {
       {cities.length > 0 && (
         <section className="mt-16 border-t border-border pt-10">
           <SectionTitle as="h2" size="lg">
-            Les villes de la filière
+            {t("citiesHeading")}
           </SectionTitle>
           <ul className="mt-6 flex flex-wrap gap-x-8 gap-y-3 text-sm">
             {cities.map((city) => (
@@ -222,7 +226,7 @@ export default async function SecteurPage({ params }: Props) {
                   href={`/villes/${slugifyCity(city)}`}
                   className="text-prune underline decoration-prune/30 underline-offset-2 transition-colors hover:decoration-prune"
                 >
-                  Salons à {city}
+                  {t("cityLink", { city })}
                 </Link>
               </li>
             ))}
@@ -234,7 +238,7 @@ export default async function SecteurPage({ params }: Props) {
       {otherSectors.length > 0 && (
         <section className="mt-16 border-t border-border pt-10">
           <SectionTitle as="h2" size="lg">
-            Explorer d&apos;autres filières
+            {t("otherSectorsHeading")}
           </SectionTitle>
           <div className="mt-6 flex flex-wrap gap-2">
             {otherSectors.map((s) => (

@@ -1,0 +1,10 @@
+{
+  "meta": {
+    "title": "Page not found",
+    "description": "This page does not exist. But all the professional trade shows you need are waiting on Agoris."
+  },
+  "heading": "This page does not exist.",
+  "subheading": "But {total} trade shows are waiting for you",
+  "backHome": "Back to home",
+  "allShows": "Browse all trade shows"
+}

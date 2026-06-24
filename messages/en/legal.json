@@ -1,0 +1,108 @@
+{
+  "mentions": {
+    "meta": {
+      "title": "Legal Notice",
+      "description": "Legal notice for Agoris: publisher, hosting provider, editorial director."
+    },
+    "heading": "Legal Notice",
+    "v1Notice": "For V1. To be updated once the company is legally incorporated.",
+    "editeur": {
+      "title": "Publisher",
+      "body": "Agoris SAS (to be completed)\nRegistered office: Paris, France\nSIRET: TBD\nContact: hello@agoris.io"
+    },
+    "directeur": {
+      "title": "Editorial Director",
+      "body": "Julien Zakoian"
+    },
+    "hebergeur": {
+      "title": "Hosting Provider",
+      "body": "Vercel Inc.\n440 N Barranca Avenue #4133, Covina, CA 91723, United States\nvercel.com"
+    },
+    "propriete": {
+      "title": "Intellectual Property",
+      "p1": "All content on this site (texts, graphics, logos, structure) is protected by copyright. Any reproduction, representation, modification or exploitation, in whole or in part, without prior authorisation is prohibited.",
+      "p2": "Third-party trademarks and logos (trade shows, service providers, venues) cited on this site are the property of their respective owners and are used for editorial information purposes only."
+    },
+    "signalement": {
+      "title": "Reporting",
+      "body": "For any correction request, information removal, or reporting, please write to"
+    }
+  },
+  "confidentialite": {
+    "meta": {
+      "title": "Privacy Policy",
+      "description": "Agoris privacy policy: GDPR, personal data, user rights."
+    },
+    "heading": "Privacy Policy",
+    "v1Notice": "For V1. To be updated once the company is legally incorporated.",
+    "intro": "This policy describes how Agoris collects, uses and protects your personal data, in accordance with the General Data Protection Regulation (GDPR) and applicable data protection legislation.",
+    "responsable": {
+      "title": "Data Controller",
+      "body": "Agoris SAS (to be completed), based in Paris. Contact:"
+    },
+    "donnees": {
+      "title": "Data Collected",
+      "item1": "Email address: when you create an account, subscribe to a trade show alert, or sign up for our newsletter.",
+      "item2": "Editorial preferences: sectors and cities followed, to personalise your alerts.",
+      "item3": "Anonymised technical data: browser type, pages visited (via Google Analytics 4)."
+    },
+    "finalites": {
+      "title": "Purposes of Processing",
+      "item1": "To send you the trade show alerts you have subscribed to.",
+      "item2": "To send you our monthly newsletter (only with explicit consent).",
+      "item3": "To improve the service by measuring audience in an aggregated manner."
+    },
+    "baseLegale": {
+      "title": "Legal Basis",
+      "body": "Your data is processed on the basis of your consent (explicit sign-up) or Agoris's legitimate interest in providing a relevant editorial service."
+    },
+    "conservation": {
+      "title": "Retention Period",
+      "body": "Account and subscription data is retained for as long as your account is active, and for up to 3 years after your last interaction. Anonymised analytics data is retained for 14 months (Google Analytics settings)."
+    },
+    "droits": {
+      "title": "Your Rights",
+      "intro": "You have the following rights at any time:",
+      "item1": "Right of access to your personal data.",
+      "item2": "Right to rectification and update.",
+      "item3": "Right to erasure (right to be forgotten).",
+      "item4": "Right to data portability.",
+      "item5": "Right to object to processing.",
+      "item6": "Right to withdraw your consent at any time.",
+      "contact": "To exercise these rights, please contact our DPO at",
+      "cnil": "In case of dispute, you may contact the relevant supervisory authority in your country."
+    },
+    "partage": {
+      "title": "Data Sharing",
+      "body": "Agoris does not sell or rent your data. It may be shared only with our technical sub-processors (Vercel hosting, Supabase database, Google Analytics audience measurement), all of whom are bound by confidentiality and security commitments compliant with the GDPR."
+    }
+  },
+  "cookies": {
+    "meta": {
+      "title": "Cookie Policy",
+      "description": "Agoris cookie policy: essential cookies and anonymised audience measurement."
+    },
+    "heading": "Cookie Policy",
+    "v1Notice": "For V1. To be updated once the company is legally incorporated.",
+    "intro": "Agoris uses cookies to ensure the site functions correctly and to measure its audience in an anonymised manner. No marketing or advertising cookies are placed at this stage.",
+    "essentiels": {
+      "title": "Essential Cookies",
+      "body": "These cookies are essential for the site to function and cannot be disabled. They do not require consent.",
+      "supabase": "manages your session (login, authentication). Duration: session duration or 7 days if you select \"Remember me\"."
+    },
+    "audience": {
+      "title": "Audience Measurement Cookies",
+      "body": "Agoris uses Google Analytics 4 to measure the site's audience in an anonymised manner (IP anonymisation enabled, no advertising sharing). This data helps us improve the service.",
+      "ga": "Google Analytics identifiers. Duration: 13 months maximum."
+    },
+    "marketing": {
+      "title": "Marketing Cookies",
+      "body": "No marketing or advertising cookies are placed on Agoris at the POC stage."
+    },
+    "gestion": {
+      "title": "Cookie Management",
+      "p1": "You can refuse analytics cookies directly in your browser settings (private mode, tracker blocking, extensions such as uBlock Origin). Refusing these cookies does not prevent use of the site.",
+      "contact": "For any questions, please contact"
+    }
+  }
+}

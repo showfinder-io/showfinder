@@ -1,0 +1,30 @@
+{
+  "listing": {
+    "metaTitle": "Parcs et lieux d'exposition en France",
+    "metaDescription": "Découvrez les principaux lieux d'exposition et parcs des expositions en France sur {siteName}. Trouvez les salons par lieu.",
+    "eyebrow": "Parcs et lieux d'exposition",
+    "heading": "Lieux",
+    "countLabelOne": "lieu référencé en France",
+    "countLabelMany": "lieux référencés en France",
+    "emptyResult": "Aucun lieu ne correspond à votre recherche.",
+    "emptyHint": "Essayez une autre ville"
+  },
+  "detail": {
+    "metaNotFound": "Lieu introuvable",
+    "breadcrumbHome": "Accueil",
+    "breadcrumbVenues": "Lieux",
+    "surfaceLabel": "de surface",
+    "hallOne": "{count} hall",
+    "hallMany": "{count} halls",
+    "googleMapsLink": "Voir sur Google Maps",
+    "websiteLink": "Site officiel",
+    "cityLink": "Tous les salons à {city}",
+    "upcomingHeading": "Prochains salons",
+    "upcomingLabelOne": "salon à venir",
+    "upcomingLabelMany": "salons à venir",
+    "upcomingEmpty": "Aucun salon à venir dans ce lieu pour le moment.",
+    "pastHeading": "Salons passés",
+    "pastLabelOne": "salon passé",
+    "pastLabelMany": "salons passés"
+  }
+}

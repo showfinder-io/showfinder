@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { getTranslations } from "next-intl/server";
 import { siteConfig } from "@/lib/config";
 import {
   getAllVenueSlugs,
@@ -38,9 +39,10 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug, locale } = await params;
   const venue = await getVenueBySlug(slug);
+  const t = await getTranslations({ locale, namespace: "venues.detail" });
 
   if (!venue) {
-    return { title: "Lieu introuvable" };
+    return { title: t("metaNotFound") };
   }
 
   const title = `Salons à ${venue.name}, ${venue.city}`;
@@ -48,8 +50,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     venue.description ||
     `Découvrez tous les salons professionnels au ${venue.name} (${venue.city}) sur ${siteConfig.name}.`;
 
-  // Un lieu n'est indexable que si la fiche est riche : description ≥ 80 chars
-  // + adresse + surface. Sinon coquille vide → noindex,follow.
+  // Un lieu n'est indexable que si la fiche est riche : description >= 80 chars
+  // + adresse + surface. Sinon coquille vide : noindex,follow.
   const descLen = (venue.description ?? "").trim().length;
   const hasAddress = ((venue.address ?? "").trim().length) > 0;
   const hasSurface = (venue.total_surface_sqm ?? 0) > 0;
@@ -71,10 +73,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function VenuePage({ params }: Props) {
-  const { slug } = await params;
+  const { slug, locale } = await params;
   const venue = await getVenueBySlug(slug);
 
   if (!venue) notFound();
+
+  const t = await getTranslations({ locale, namespace: "venues.detail" });
 
   const salons = await getSalonsByVenue(venue.id);
 
@@ -126,8 +130,8 @@ export default async function VenuePage({ params }: Props) {
       <JsonLd data={placeJsonLd} />
       <BreadcrumbJsonLd
         items={[
-          { name: "Accueil", item: "/" },
-          { name: "Lieux", item: "/lieux" },
+          { name: t("breadcrumbHome"), item: "/" },
+          { name: t("breadcrumbVenues"), item: "/lieux" },
           { name: venue.name, item: `/lieux/${slug}` },
         ]}
       />
@@ -135,7 +139,7 @@ export default async function VenuePage({ params }: Props) {
       {/* Breadcrumb */}
       <nav className="mb-8 text-sm text-muted">
         <Link href="/lieux" className="hover:text-ink transition-colors">
-          Lieux
+          {t("breadcrumbVenues")}
         </Link>
         <span className="mx-2">/</span>
         <span className="text-ink">{venue.name}</span>
@@ -158,14 +162,18 @@ export default async function VenuePage({ params }: Props) {
           {venue.total_surface_sqm ? (
             <div className="flex items-center gap-1.5">
               <Maximize2 className="h-4 w-4" />
-              <span>{formatNumber(venue.total_surface_sqm)} m² de surface</span>
+              <span>
+                {formatNumber(venue.total_surface_sqm)} m² {t("surfaceLabel")}
+              </span>
             </div>
           ) : null}
           {venue.halls_count ? (
             <div className="flex items-center gap-1.5">
               <Building2 className="h-4 w-4" />
               <span>
-                {venue.halls_count} hall{venue.halls_count > 1 ? "s" : ""}
+                {venue.halls_count > 1
+                  ? t("hallMany", { count: venue.halls_count })
+                  : t("hallOne", { count: venue.halls_count })}
               </span>
             </div>
           ) : null}
@@ -181,7 +189,7 @@ export default async function VenuePage({ params }: Props) {
               className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-hover transition-colors"
             >
               <ExternalLink className="h-4 w-4" />
-              Voir sur Google Maps
+              {t("googleMapsLink")}
             </VenueOutboundLink>
           )}
           {venue.website_url && (
@@ -192,7 +200,7 @@ export default async function VenuePage({ params }: Props) {
               className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-hover transition-colors"
             >
               <Globe className="h-4 w-4" />
-              Site officiel
+              {t("websiteLink")}
             </VenueOutboundLink>
           )}
         </div>
@@ -209,7 +217,7 @@ export default async function VenuePage({ params }: Props) {
               href={`/villes/${slugifyCity(venue.city)}`}
               className="text-prune underline decoration-prune/30 underline-offset-2 transition-colors hover:decoration-prune"
             >
-              Tous les salons à {venue.city}
+              {t("cityLink", { city: venue.city })}
             </Link>
           </p>
         )}
@@ -242,7 +250,7 @@ export default async function VenuePage({ params }: Props) {
         </section>
       )}
 
-      {/* MDX éditorial (V6) : halls, accès, services, actualités… */}
+      {/* MDX éditorial (V6) : halls, accès, services, actualités */}
       {MdxContent && (
         <article className="prose-agoris mt-10 max-w-3xl">
           <MdxContent />
@@ -252,10 +260,11 @@ export default async function VenuePage({ params }: Props) {
       {/* Prochains salons */}
       <section className="mt-10">
         <h2 className="font-serif text-2xl font-bold tracking-tight">
-          Prochains salons
+          {t("upcomingHeading")}
         </h2>
         <p className="mt-1 text-sm text-muted">
-          {upcoming.length} salon{upcoming.length > 1 ? "s" : ""} à venir
+          {upcoming.length}{" "}
+          {upcoming.length > 1 ? t("upcomingLabelMany") : t("upcomingLabelOne")}
         </p>
 
         {upcoming.length > 0 ? (
@@ -266,9 +275,7 @@ export default async function VenuePage({ params }: Props) {
           </div>
         ) : (
           <div className="mt-8 text-center">
-            <p className="text-muted">
-              Aucun salon à venir dans ce lieu pour le moment.
-            </p>
+            <p className="text-muted">{t("upcomingEmpty")}</p>
           </div>
         )}
       </section>
@@ -277,11 +284,11 @@ export default async function VenuePage({ params }: Props) {
       {past.length > 0 && (
         <section className="mt-10">
           <h2 className="font-serif text-2xl font-bold tracking-tight">
-            Salons passés
+            {t("pastHeading")}
           </h2>
           <p className="mt-1 text-sm text-muted">
-            {past.length} salon{past.length > 1 ? "s" : ""} passé
-            {past.length > 1 ? "s" : ""}
+            {past.length}{" "}
+            {past.length > 1 ? t("pastLabelMany") : t("pastLabelOne")}
           </p>
 
           <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
