@@ -14,9 +14,11 @@ import { SectorBadge } from "@/components/sector-badge";
 import { SectionTitle } from "@/components/section-title";
 import { JsonLd } from "@/components/json-ld";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-jsonld";
+import { buildAlternates } from "@/lib/i18n-metadata";
+import type { AppLocale } from "@/i18n/routing";
 
 type Props = {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ slug: string; locale: AppLocale }>;
 };
 
 // SSG : pre-render toutes les pages ville
@@ -32,7 +34,7 @@ async function findCityBySlug(slug: string): Promise<string | null> {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params;
+  const { slug, locale } = await params;
   const city = await findCityBySlug(slug);
 
   if (!city) {
@@ -58,9 +60,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       count >= CITY_INDEX_MIN_SALONS
         ? { index: true, follow: true }
         : { index: false, follow: true },
-    alternates: {
-      canonical: `${siteConfig.url}/villes/${slug}`,
-    },
+    alternates: buildAlternates(`/villes/${slug}`, locale),
     openGraph: {
       title,
       description,

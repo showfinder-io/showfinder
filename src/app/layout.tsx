@@ -5,6 +5,8 @@ import { GoogleAnalytics } from "@/components/google-analytics";
 import { cn } from "@/lib/utils";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { NextIntlClientProvider } from "next-intl";
+import { getLocale } from "next-intl/server";
 import { Toaster } from "sonner";
 import "./globals.css";
 
@@ -52,17 +54,29 @@ export const metadata: Metadata = {
   description: siteConfig.description,
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Locale resolue par next-intl (depuis le segment [locale] ou, pour les
+  // routes app-internes a la racine, la locale par defaut FR). On la pose sur
+  // <html lang> pour que les pages EN portent bien lang="en" quand l'EN est
+  // active, sans dupliquer le <html> (qui doit rester unique au niveau racine
+  // pour ne pas casser les routes internes).
+  const locale = await getLocale();
   return (
-    <html lang="fr" className={cn(inter.variable, fraunces.variable, jetbrainsMono.variable)}>
+    <html lang={locale} className={cn(inter.variable, fraunces.variable, jetbrainsMono.variable)}>
       <body className="flex min-h-screen flex-col bg-sable text-prune font-sans antialiased">
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        {/* Provider i18n au niveau racine : le Header (et son selecteur de
+            langue) ainsi que le Footer ont besoin du contexte next-intl, y
+            compris sur les routes app-internes a la racine. Pour ces routes la
+            locale resolue est FR (defaut, cf. src/i18n/request.ts). Les pages
+            localisees ont en plus leur propre provider via [locale]/layout. */}
+        <NextIntlClientProvider>
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
         <GoogleAnalytics />
         <Toaster
           position="bottom-right"
@@ -79,6 +93,7 @@ export default function RootLayout({
             className: "agoris-toast",
           }}
         />
+        </NextIntlClientProvider>
       </body>
     </html>
   );

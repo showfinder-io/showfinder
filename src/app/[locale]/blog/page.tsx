@@ -4,15 +4,22 @@ import { getAllPosts } from "@/lib/blog";
 import { siteConfig } from "@/lib/config";
 import { PhotoPlaceholder } from "@/components/photo-placeholder";
 import { SectionTitle } from "@/components/section-title";
+import { buildAlternates } from "@/lib/i18n-metadata";
+import type { AppLocale } from "@/i18n/routing";
 
-export const metadata: Metadata = {
-  title: "Le journal : guides et analyses",
-  description:
-    "Conseils, guides et actualités pour réussir votre participation aux salons professionnels en France.",
-  alternates: {
-    canonical: `${siteConfig.url}/blog`,
-  },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: AppLocale }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return {
+    title: "Le journal : guides et analyses",
+    description:
+      "Conseils, guides et actualités pour réussir votre participation aux salons professionnels en France.",
+    alternates: buildAlternates("/blog", locale),
+  };
+}
 
 export default function BlogPage() {
   const posts = getAllPosts();

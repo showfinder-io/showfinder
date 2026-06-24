@@ -1,16 +1,22 @@
 import type { Metadata } from "next";
-import { siteConfig } from "@/lib/config";
 import { SectionTitle } from "@/components/section-title";
+import { buildAlternates } from "@/lib/i18n-metadata";
+import type { AppLocale } from "@/i18n/routing";
 
-export const metadata: Metadata = {
-  title: "Mentions légales",
-  description:
-    "Mentions légales d'Agoris : éditeur, hébergeur, directeur de la publication.",
-  robots: { index: true, follow: true },
-  alternates: {
-    canonical: `${siteConfig.url}/mentions`,
-  },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: AppLocale }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return {
+    title: "Mentions légales",
+    description:
+      "Mentions légales d'Agoris : éditeur, hébergeur, directeur de la publication.",
+    robots: { index: true, follow: true },
+    alternates: buildAlternates("/mentions", locale),
+  };
+}
 
 export default function MentionsPage() {
   return (

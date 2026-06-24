@@ -4,8 +4,9 @@ import matter from "gray-matter";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { compileMdxContent } from "@/lib/mdx";
-import { siteConfig } from "@/lib/config";
 import { SectionTitle } from "@/components/section-title";
+import { buildAlternates } from "@/lib/i18n-metadata";
+import type { AppLocale } from "@/i18n/routing";
 
 const METHODOLOGIE_PATH = path.join(
   process.cwd(),
@@ -27,14 +28,17 @@ function getMethodologie(): { frontmatter: Frontmatter; content: string } {
   };
 }
 
-export function generateMetadata(): Metadata {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: AppLocale }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
   const { frontmatter } = getMethodologie();
   return {
     title: frontmatter.title,
     description: frontmatter.description,
-    alternates: {
-      canonical: `${siteConfig.url}/methodologie`,
-    },
+    alternates: buildAlternates("/methodologie", locale),
     openGraph: {
       title: frontmatter.title,
       description: frontmatter.description,

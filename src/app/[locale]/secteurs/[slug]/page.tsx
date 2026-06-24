@@ -17,9 +17,11 @@ import { SectionTitle } from "@/components/section-title";
 import { SectorBadge } from "@/components/sector-badge";
 import { JsonLd } from "@/components/json-ld";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-jsonld";
+import { buildAlternates } from "@/lib/i18n-metadata";
+import type { AppLocale } from "@/i18n/routing";
 
 type Props = {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ slug: string; locale: AppLocale }>;
 };
 
 // SSG : pre-render toutes les pages secteur
@@ -29,7 +31,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params;
+  const { slug, locale } = await params;
   const sector = await getSectorBySlug(slug);
 
   if (!sector) {
@@ -55,9 +57,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     robots: sectorContent
       ? { index: true, follow: true }
       : { index: false, follow: true },
-    alternates: {
-      canonical: `${siteConfig.url}/secteurs/${slug}`,
-    },
+    alternates: buildAlternates(`/secteurs/${slug}`, locale),
     openGraph: {
       title,
       description,

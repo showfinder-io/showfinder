@@ -15,10 +15,13 @@ import { SalonPagination } from "@/components/salon-pagination";
 import { SectionTitle } from "@/components/section-title";
 import { SortBar } from "@/components/sort-bar";
 import { JsonLd } from "@/components/json-ld";
+import { buildAlternates } from "@/lib/i18n-metadata";
+import type { AppLocale } from "@/i18n/routing";
 
 const PAGE_SIZE = 20;
 
 type Props = {
+  params: Promise<{ locale: AppLocale }>;
   searchParams: Promise<Record<string, string | undefined>>;
 };
 
@@ -28,35 +31,34 @@ function parsePage(raw: string | undefined): number {
   return Math.floor(n);
 }
 
-function buildCanonical(
-  base: string,
+function buildCanonicalPath(
   page: number,
   params: Record<string, string>
 ): string {
   const sp = new URLSearchParams(params);
   if (page > 1) sp.set("page", String(page));
   const qs = sp.toString();
-  return qs ? `${base}?${qs}` : base;
+  return qs ? `/salons?${qs}` : "/salons";
 }
 
 export async function generateMetadata({
+  params,
   searchParams,
 }: Props): Promise<Metadata> {
-  const params = await searchParams;
-  const page = parsePage(params.page);
-  const base = `${siteConfig.url}/salons`;
+  const { locale } = await params;
+  const sp = await searchParams;
+  const page = parsePage(sp.page);
 
   // Conserver les filtres pertinents dans le canonical pour ne pas perdre la
-  // signature SEO de la combinaison filtre + pagination.
+  // signature SEO de la combinaison filtre + pagination. Le helper applique la
+  // meme query string a chaque locale (hreflang reciproque).
   const seoParams: Record<string, string> = {};
-  if (params.search) seoParams.search = params.search;
-  if (params.sector) seoParams.sector = params.sector;
-  if (params.city) seoParams.city = params.city;
-  if (params.period) seoParams.period = params.period;
-  if (params.category) seoParams.category = params.category;
-  if (params.sort && params.sort !== "date") seoParams.sort = params.sort;
-
-  const canonical = buildCanonical(base, page, seoParams);
+  if (sp.search) seoParams.search = sp.search;
+  if (sp.sector) seoParams.sector = sp.sector;
+  if (sp.city) seoParams.city = sp.city;
+  if (sp.period) seoParams.period = sp.period;
+  if (sp.category) seoParams.category = sp.category;
+  if (sp.sort && sp.sort !== "date") seoParams.sort = sp.sort;
 
   return {
     title:
@@ -64,9 +66,7 @@ export async function generateMetadata({
         ? `Tous les salons professionnels · Page ${page}`
         : "Tous les salons professionnels",
     description: `Découvrez tous les salons professionnels en France sur ${siteConfig.name}. Filtrez par secteur, ville et date.`,
-    alternates: {
-      canonical,
-    },
+    alternates: buildAlternates(buildCanonicalPath(page, seoParams), locale),
   };
 }
 

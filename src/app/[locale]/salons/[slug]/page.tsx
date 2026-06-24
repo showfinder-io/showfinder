@@ -26,6 +26,8 @@ import { formatEditorialMonth } from "@/lib/sector-content";
 import { compileMdxContent } from "@/lib/mdx";
 import { salonMdxComponents } from "@/components/mdx/salon-mdx-components";
 import { FeedbackPrompt } from "@/components/feedback-prompt";
+import { buildAlternates } from "@/lib/i18n-metadata";
+import type { AppLocale } from "@/i18n/routing";
 import {
   MapPin,
   Calendar,
@@ -36,7 +38,7 @@ import {
 } from "lucide-react";
 
 type Props = {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ slug: string; locale: AppLocale }>;
 };
 
 // SSG : pre-render toutes les fiches
@@ -46,7 +48,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params;
+  const { slug, locale } = await params;
   const salon = await getSalonBySlug(slug);
 
   if (!salon) {
@@ -69,9 +71,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     robots: hasEditorialMdx
       ? { index: true, follow: true }
       : { index: false, follow: true },
-    alternates: {
-      canonical: `${siteConfig.url}/salons/${slug}`,
-    },
+    alternates: buildAlternates(`/salons/${slug}`, locale),
     openGraph: {
       title,
       description,

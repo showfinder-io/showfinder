@@ -2,15 +2,22 @@ import type { Metadata } from "next";
 import { siteConfig } from "@/lib/config";
 import { ContactForm } from "./contact-form";
 import { Mail, Building2, Wrench } from "lucide-react";
+import { buildAlternates } from "@/lib/i18n-metadata";
+import type { AppLocale } from "@/i18n/routing";
 
-export const metadata: Metadata = {
-  // Pas de suffixe "| Agoris" ici : le template du root layout l'ajoute déjà
-  title: "Contactez-nous",
-  description: `Contactez l'équipe ${siteConfig.name} : organisateurs de salons, prestataires ou demande générale.`,
-  alternates: {
-    canonical: `${siteConfig.url}/contact`,
-  },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: AppLocale }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return {
+    // Pas de suffixe "| Agoris" ici : le template du root layout l'ajoute déjà
+    title: "Contactez-nous",
+    description: `Contactez l'équipe ${siteConfig.name} : organisateurs de salons, prestataires ou demande générale.`,
+    alternates: buildAlternates("/contact", locale),
+  };
+}
 
 export default function ContactPage() {
   return (

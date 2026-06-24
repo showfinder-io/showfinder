@@ -6,9 +6,11 @@ import { getAllOrganizerSlugs, getSalonsByOrganizer } from "@/lib/queries";
 import { SalonCard } from "@/components/salon-card";
 import { SectionTitle } from "@/components/section-title";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-jsonld";
+import { buildAlternates } from "@/lib/i18n-metadata";
+import type { AppLocale } from "@/i18n/routing";
 
 type Props = {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ slug: string; locale: AppLocale }>;
 };
 
 export async function generateStaticParams() {
@@ -17,7 +19,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params;
+  const { slug, locale } = await params;
   const result = await getSalonsByOrganizer(slug);
   if (!result) return { title: "Organisateur introuvable" };
 
@@ -31,7 +33,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     // (thin content). noindex pour ne pas exposer ces pages à l'index, follow
     // pour préserver le maillage entre salons d'un même organisateur.
     robots: { index: false, follow: true },
-    alternates: { canonical: `${siteConfig.url}/organisateurs/${slug}` },
+    alternates: buildAlternates(`/organisateurs/${slug}`, locale),
     openGraph: { title, description, type: "website" },
   };
 }

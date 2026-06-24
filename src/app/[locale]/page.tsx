@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { siteConfig } from "@/lib/config";
+import { buildAlternates } from "@/lib/i18n-metadata";
+import type { AppLocale } from "@/i18n/routing";
 import { getSalons, getSectors } from "@/lib/queries";
 import { JsonLd } from "@/components/json-ld";
 import { SalonCard } from "@/components/salon-card";
@@ -8,11 +10,16 @@ import { SectorBadge } from "@/components/sector-badge";
 import { SectionTitle } from "@/components/section-title";
 import { Hero } from "@/components/hero";
 
-export const metadata: Metadata = {
-  alternates: {
-    canonical: `${siteConfig.url}/`,
-  },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: AppLocale }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return {
+    alternates: buildAlternates("/", locale),
+  };
+}
 
 export default async function Home() {
   // 1 seul appel = 1 round-trip : on récupère les 6 prochains salons + le count total

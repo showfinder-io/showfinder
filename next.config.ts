@@ -1,7 +1,12 @@
 import type { NextConfig } from "next";
 import createMDX from "@next/mdx";
+import createNextIntlPlugin from "next-intl/plugin";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
+
+// Plugin next-intl : pointe vers la config de requete (resolution locale +
+// chargement des messages). Cf. src/i18n/request.ts.
+const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 
 // Migration "slugs sans année" (2026-06-12) : 301 ancien slug-année -> slug de
 // base, générés par scripts/diag-slug-year-apply.ts. Fichier committé, ne pas
@@ -299,4 +304,4 @@ const nextConfig: NextConfig = {
 
 const withMDX = createMDX({});
 
-export default withMDX(nextConfig);
+export default withNextIntl(withMDX(nextConfig));

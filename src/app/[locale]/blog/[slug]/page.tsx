@@ -4,9 +4,11 @@ import { notFound } from "next/navigation";
 import { getAllPosts, getPostBySlug } from "@/lib/blog";
 import { siteConfig } from "@/lib/config";
 import { compileMdxContent } from "@/lib/mdx";
+import { buildAlternates } from "@/lib/i18n-metadata";
+import type { AppLocale } from "@/i18n/routing";
 
 interface PageProps {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ slug: string; locale: AppLocale }>;
 }
 
 export async function generateStaticParams() {
@@ -17,7 +19,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
-  const { slug } = await params;
+  const { slug, locale } = await params;
   const post = getPostBySlug(slug);
 
   if (!post) return {};
@@ -25,9 +27,7 @@ export async function generateMetadata({
   return {
     title: post.frontmatter.title,
     description: post.frontmatter.description,
-    alternates: {
-      canonical: `${siteConfig.url}/blog/${slug}`,
-    },
+    alternates: buildAlternates(`/blog/${slug}`, locale),
     openGraph: {
       title: post.frontmatter.title,
       description: post.frontmatter.description,

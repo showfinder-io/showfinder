@@ -11,15 +11,22 @@ import {
 import { ProviderCard } from "@/components/provider-card";
 import { ProviderSortBar } from "@/components/provider-sort-bar";
 import { SectionTitle } from "@/components/section-title";
+import { buildAlternates } from "@/lib/i18n-metadata";
+import type { AppLocale } from "@/i18n/routing";
 
-export const metadata: Metadata = {
-  title: "Prestataires événementiels",
-  description: `Trouvez les meilleurs prestataires pour votre salon professionnel sur ${siteConfig.name} : standistes, traiteurs, audiovisuel, photographes.`,
-  robots: { index: false, follow: true },
-  alternates: {
-    canonical: `${siteConfig.url}/prestataires`,
-  },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: AppLocale }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return {
+    title: "Prestataires événementiels",
+    description: `Trouvez les meilleurs prestataires pour votre salon professionnel sur ${siteConfig.name} : standistes, traiteurs, audiovisuel, photographes.`,
+    robots: { index: false, follow: true },
+    alternates: buildAlternates("/prestataires", locale),
+  };
+}
 
 type Props = {
   searchParams: Promise<Record<string, string | undefined>>;

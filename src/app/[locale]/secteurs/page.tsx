@@ -2,14 +2,21 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { siteConfig } from "@/lib/config";
 import { getSectors } from "@/lib/queries";
+import { buildAlternates } from "@/lib/i18n-metadata";
+import type { AppLocale } from "@/i18n/routing";
 
-export const metadata: Metadata = {
-  title: "Tous les secteurs",
-  description: `Parcourez les salons professionnels par secteur d'activité sur ${siteConfig.name}.`,
-  alternates: {
-    canonical: `${siteConfig.url}/secteurs`,
-  },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: AppLocale }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return {
+    title: "Tous les secteurs",
+    description: `Parcourez les salons professionnels par secteur d'activité sur ${siteConfig.name}.`,
+    alternates: buildAlternates("/secteurs", locale),
+  };
+}
 
 export default async function SecteursPage() {
   const sectors = await getSectors();

@@ -11,6 +11,8 @@ import { CategoryBadge } from "@/components/category-badge";
 import { QuoteRequest } from "@/components/quote-request";
 import { JsonLd } from "@/components/json-ld";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-jsonld";
+import { buildAlternates } from "@/lib/i18n-metadata";
+import type { AppLocale } from "@/i18n/routing";
 import {
   MapPin,
   Globe,
@@ -22,7 +24,7 @@ import {
 } from "lucide-react";
 
 type Props = {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ slug: string; locale: AppLocale }>;
 };
 
 export async function generateStaticParams() {
@@ -31,7 +33,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params;
+  const { slug, locale } = await params;
   const provider = await getProviderBySlug(slug);
   if (!provider) return { title: "Prestataire introuvable" };
 
@@ -40,9 +42,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${provider.company_name} - ${label}`,
     description: provider.description || `${provider.company_name}, ${label} pour salons professionnels sur ${siteConfig.name}.`,
     robots: { index: false, follow: true },
-    alternates: {
-      canonical: `${siteConfig.url}/prestataires/${slug}`,
-    },
+    alternates: buildAlternates(`/prestataires/${slug}`, locale),
   };
 }
 

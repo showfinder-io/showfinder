@@ -6,14 +6,21 @@ import { createClient } from "@/lib/supabase/server";
 import { VenueCard } from "@/components/venue-card";
 import { VenueSortBar } from "@/components/venue-sort-bar";
 import { SectionTitle } from "@/components/section-title";
+import { buildAlternates } from "@/lib/i18n-metadata";
+import type { AppLocale } from "@/i18n/routing";
 
-export const metadata: Metadata = {
-  title: "Parcs et lieux d'exposition en France",
-  description: `Découvrez les principaux lieux d'exposition et parcs des expositions en France sur ${siteConfig.name}. Trouvez les salons par lieu.`,
-  alternates: {
-    canonical: `${siteConfig.url}/lieux`,
-  },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: AppLocale }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return {
+    title: "Parcs et lieux d'exposition en France",
+    description: `Découvrez les principaux lieux d'exposition et parcs des expositions en France sur ${siteConfig.name}. Trouvez les salons par lieu.`,
+    alternates: buildAlternates("/lieux", locale),
+  };
+}
 
 type Props = {
   searchParams: Promise<Record<string, string | undefined>>;
