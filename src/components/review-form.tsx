@@ -24,9 +24,9 @@ export function ReviewForm({ targetType, targetId }: ReviewFormProps) {
     <div className="flex flex-col gap-4 rounded-lg border border-border bg-white p-6">
       <h3 className="font-serif text-lg font-bold">Laisser un avis</h3>
       <p className="text-sm leading-relaxed text-muted">
-        Partagez votre experience sur {label} par email : note,
+        Partagez votre expérience sur {label} par email : note,
         contexte (exposant, visiteur, organisateur) et commentaire libre.
-        Nous publierons l&apos;avis apres moderation.
+        Nous publierons l&apos;avis après modération.
       </p>
       <a
         href={`mailto:hello@agoris.io?subject=${subject}`}

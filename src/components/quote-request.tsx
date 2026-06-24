@@ -45,17 +45,17 @@ export function QuoteRequest({
         className="rounded-t-xl max-h-[85vh] overflow-y-auto"
       >
         <SheetHeader>
-          <SheetTitle>Demander un devis a {providerName}</SheetTitle>
+          <SheetTitle>Demander un devis à {providerName}</SheetTitle>
           <SheetDescription>
-            Decrivez votre besoin par email : nous vous mettons en relation
+            Décrivez votre besoin par email : nous vous mettons en relation
             avec le prestataire.
           </SheetDescription>
         </SheetHeader>
 
         <div className="flex flex-col gap-4 px-4 pb-6">
           <p className="text-sm leading-relaxed text-muted">
-            Indiquez votre societe, votre email de contact, le salon concerne
-            si applicable, et decrivez votre besoin (stand, services associes,
+            Indiquez votre société, votre email de contact, le salon concerné
+            si applicable, et décrivez votre besoin (stand, services associés,
             volume, dates). Le prestataire recevra votre demande sous 48h.
           </p>
           <a
@@ -64,7 +64,7 @@ export function QuoteRequest({
             className="inline-flex items-center justify-center gap-2 rounded-md bg-accent px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-accent-hover"
           >
             <Mail className="h-4 w-4" />
-            Ecrire a hello@agoris.io
+            Écrire à hello@agoris.io
           </a>
         </div>
       </SheetContent>
