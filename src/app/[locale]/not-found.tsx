@@ -3,9 +3,6 @@ import Link from "next/link";
 import { AgorisMark } from "@/components/agoris-mark";
 import { getSalons } from "@/lib/queries";
 
-// 404 racine : couvre les chemins hors segment [locale] (routes app-internes,
-// requetes non rewrites par le middleware). Contenu FR, identique a la 404
-// localisee. La version par locale vit dans src/app/[locale]/not-found.tsx.
 export const metadata: Metadata = {
   title: "Page introuvable",
   description:

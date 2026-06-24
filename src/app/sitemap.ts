@@ -5,6 +5,55 @@ import { getAllPosts } from "@/lib/blog";
 import { getEditorialSectorSlugs } from "@/lib/sector-content";
 import { getEditorialSalonSlugs } from "@/lib/salon-content";
 import { slugifyCity } from "@/lib/format";
+import { I18N_EN_ENABLED, HREFLANG_BY_LOCALE } from "@/lib/i18n/config";
+
+/**
+ * URL FR (racine, sans prefixe) pour un chemin donne.
+ * `path` commence par "/" ou vaut "" pour la home.
+ */
+function frUrl(path: string): string {
+  return `${siteConfig.url}${path}`;
+}
+
+/**
+ * URL EN (sous-chemin /en) pour un chemin donne.
+ */
+function enUrl(path: string): string {
+  return `${siteConfig.url}/en${path}`;
+}
+
+/**
+ * Construit une entree de sitemap avec hreflang reciproque (fr-FR / en-GB /
+ * x-default). Tant que l'EN n'est pas active (I18N_EN_ENABLED = false), on
+ * n'emet PAS d'alternates EN : exposer des URLs /en qui renvoient 404 nuirait
+ * au SEO. L'architecture est prete pour basculer en une variable.
+ *
+ * @param path Chemin SANS domaine et SANS prefixe de locale ("" pour la home).
+ */
+function entry(
+  path: string,
+  opts: Omit<MetadataRoute.Sitemap[number], "url" | "alternates">
+): MetadataRoute.Sitemap[number] {
+  const base: MetadataRoute.Sitemap[number] = {
+    url: frUrl(path) || siteConfig.url,
+    ...opts,
+  };
+
+  if (!I18N_EN_ENABLED) {
+    return base;
+  }
+
+  return {
+    ...base,
+    alternates: {
+      languages: {
+        [HREFLANG_BY_LOCALE.fr]: frUrl(path) || siteConfig.url,
+        [HREFLANG_BY_LOCALE.en]: enUrl(path),
+        "x-default": frUrl(path) || siteConfig.url,
+      },
+    },
+  };
+}
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const supabase = createStaticClient();
@@ -47,50 +96,44 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
 
   const entries: MetadataRoute.Sitemap = [
-    {
-      url: siteConfig.url,
-      lastModified: now,
-      changeFrequency: "daily",
-      priority: 1,
-    },
-    {
-      url: `${siteConfig.url}/salons`,
+    entry("", { lastModified: now, changeFrequency: "daily", priority: 1 }),
+    entry("/salons", {
       lastModified: now,
       changeFrequency: "daily",
       priority: 0.9,
-    },
-    {
-      url: `${siteConfig.url}/secteurs`,
+    }),
+    entry("/secteurs", {
       lastModified: now,
       changeFrequency: "weekly",
       priority: 0.8,
-    },
-    {
-      url: `${siteConfig.url}/methodologie`,
+    }),
+    entry("/methodologie", {
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.5,
-    },
+    }),
   ];
 
   // Pages salon
   for (const salon of salons) {
-    entries.push({
-      url: `${siteConfig.url}/salons/${salon.slug}`,
-      lastModified: salon.updated_at ? new Date(salon.updated_at) : now,
-      changeFrequency: "weekly",
-      priority: 0.7,
-    });
+    entries.push(
+      entry(`/salons/${salon.slug}`, {
+        lastModified: salon.updated_at ? new Date(salon.updated_at) : now,
+        changeFrequency: "weekly",
+        priority: 0.7,
+      })
+    );
   }
 
   // Pages secteur
   for (const sector of sectors) {
-    entries.push({
-      url: `${siteConfig.url}/secteurs/${sector.slug}`,
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: 0.6,
-    });
+    entries.push(
+      entry(`/secteurs/${sector.slug}`, {
+        lastModified: now,
+        changeFrequency: "weekly",
+        priority: 0.6,
+      })
+    );
   }
 
   // Pages ville : seules les villes avec assez de salons publiés sont
@@ -103,30 +146,33 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }
   for (const [city, count] of cityCounts) {
     if (count < CITY_INDEX_MIN_SALONS) continue;
-    entries.push({
-      url: `${siteConfig.url}/villes/${slugifyCity(city)}`,
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: 0.6,
-    });
+    entries.push(
+      entry(`/villes/${slugifyCity(city)}`, {
+        lastModified: now,
+        changeFrequency: "weekly",
+        priority: 0.6,
+      })
+    );
   }
 
   // Page index lieux
-  entries.push({
-    url: `${siteConfig.url}/lieux`,
-    lastModified: now,
-    changeFrequency: "weekly",
-    priority: 0.8,
-  });
+  entries.push(
+    entry("/lieux", {
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    })
+  );
 
   // Pages lieu
   for (const venue of venues) {
-    entries.push({
-      url: `${siteConfig.url}/lieux/${venue.slug}`,
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: 0.6,
-    });
+    entries.push(
+      entry(`/lieux/${venue.slug}`, {
+        lastModified: now,
+        changeFrequency: "weekly",
+        priority: 0.6,
+      })
+    );
   }
 
   // Prestataires : hors sitemap (toutes les pages sont en noindex,follow).
@@ -135,31 +181,34 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Blog
   const posts = getAllPosts();
 
-  entries.push({
-    url: `${siteConfig.url}/blog`,
-    lastModified: now,
-    changeFrequency: "weekly",
-    priority: 0.7,
-  });
+  entries.push(
+    entry("/blog", {
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.7,
+    })
+  );
 
   for (const post of posts) {
-    entries.push({
-      url: `${siteConfig.url}/blog/${post.slug}`,
-      lastModified: new Date(post.frontmatter.date),
-      changeFrequency: "monthly",
-      priority: 0.6,
-    });
+    entries.push(
+      entry(`/blog/${post.slug}`, {
+        lastModified: new Date(post.frontmatter.date),
+        changeFrequency: "monthly",
+        priority: 0.6,
+      })
+    );
   }
 
   // Pages annexes indexables (contact + légal) : priorité basse mais
   // présentes dans le sitemap pour un signal d'exhaustivité propre.
   for (const path of ["/contact", "/mentions", "/confidentialite", "/cookies"]) {
-    entries.push({
-      url: `${siteConfig.url}${path}`,
-      lastModified: now,
-      changeFrequency: "yearly",
-      priority: 0.3,
-    });
+    entries.push(
+      entry(path, {
+        lastModified: now,
+        changeFrequency: "yearly",
+        priority: 0.3,
+      })
+    );
   }
 
   return entries;

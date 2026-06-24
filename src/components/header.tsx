@@ -5,6 +5,7 @@ import { AgorisMark } from "@/components/agoris-mark";
 import { AuthButton } from "@/components/auth-button";
 import { NavLinks } from "@/components/nav-links";
 import { UserChip } from "@/components/user-chip";
+import { LanguageSwitcher } from "@/components/language-switcher";
 import { createClient } from "@/lib/supabase/server";
 
 const NAV_LINKS = [
@@ -104,6 +105,10 @@ export async function Header() {
 
         {/* NAV RIGHT — admin-pill + user-chip OU connexion (mobile : MobileNav) */}
         <div className="flex items-center justify-end gap-4">
+          {/* Selecteur de langue FR | EN : masque tant que I18N_EN_ENABLED est
+              false (Phase 0). Le composant ne rend rien dans ce cas. */}
+          <LanguageSwitcher />
+
           {/* Desktop : version refondue inline */}
           <div className="hidden items-center gap-4 md:flex">
             {user ? (

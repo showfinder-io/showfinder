@@ -1,0 +1,35 @@
+{
+  "Nav": {
+    "salons": "Salons",
+    "lieux": "Lieux",
+    "secteurs": "Secteurs",
+    "prestataires": "Prestataires",
+    "blog": "Blog",
+    "methodologie": "Méthodologie",
+    "contact": "Contact",
+    "connexion": "Connexion",
+    "admin": "Admin",
+    "homeAriaLabel": "Agoris, accueil"
+  },
+  "Footer": {
+    "tagline": "L'annuaire intelligent des salons professionnels.",
+    "produit": "Produit",
+    "societe": "Société",
+    "legal": "Légal",
+    "mentions": "Mentions",
+    "confidentialite": "Confidentialité",
+    "cookies": "Cookies",
+    "newsletter": "Newsletter",
+    "newsletterPitch": "Un email par mois, les salons à ne pas rater.",
+    "newsletterPlaceholder": "Entrez votre email",
+    "newsletterSubmit": "S'inscrire à la newsletter",
+    "madeIn": "Fait à Paris"
+  },
+  "LanguageSwitcher": {
+    "label": "Langue",
+    "fr": "FR",
+    "en": "EN",
+    "switchToFr": "Voir le site en français",
+    "switchToEn": "View the site in English"
+  }
+}
