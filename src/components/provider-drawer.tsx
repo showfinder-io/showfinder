@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import {
   Sheet,
   SheetContent,
@@ -23,15 +24,7 @@ type Provider = {
   subscription_tier: string;
 };
 
-const CATEGORY_LABELS: Record<string, string> = {
-  standiste: "Standistes",
-  traiteur: "Traiteurs",
-  av_technique: "Audiovisuel",
-  photographe: "Photographes",
-  transport: "Transport",
-  hebergement: "Hébergement",
-  autre: "Autres",
-};
+// Les labels de catégorie sont maintenant gérés via next-intl (salon-detail.providers.categories).
 
 type ProviderDrawerProps = {
   salonId: string;
@@ -40,6 +33,7 @@ type ProviderDrawerProps = {
 };
 
 export function ProviderDrawer({ salonId, salonName, salonSlug }: ProviderDrawerProps) {
+  const t = useTranslations("salon-detail.providers");
   const [providers, setProviders] = useState<Provider[]>([]);
   const [loading, setLoading] = useState(false);
   const [loaded, setLoaded] = useState(false);
@@ -88,43 +82,43 @@ export function ProviderDrawer({ salonId, salonName, salonSlug }: ProviderDrawer
       >
         <SheetTrigger className="group block w-full rounded-lg bg-prune p-8 text-left text-papier transition-opacity hover:opacity-95 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-ocre focus-visible:ring-offset-2 focus-visible:ring-offset-sable md:p-10">
           <span className="inline-flex items-center gap-1.5 rounded-full bg-ocre px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-prune">
-            Marketplace prestataires
+            {t("badgeLabel")}
           </span>
           <h2 className="mt-4 font-serif text-2xl font-semibold tracking-tight md:text-3xl">
-            Organiser votre salon
+            {t("title")}
           </h2>
           <p className="mt-2 max-w-xl text-sm text-papier/75">
-            Standistes, traiteurs, audiovisuel, photographes : trouvez les prestataires recommandés pour {salonName}.
+            {t("description", { salonName })}
           </p>
           <span className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-ocre transition-transform group-hover:translate-x-1">
-            Voir les prestataires
+            {t("cta")}
             <span aria-hidden="true">→</span>
           </span>
         </SheetTrigger>
         <SheetContent className="overflow-y-auto bg-sable text-prune sm:max-w-md">
           <SheetHeader>
             <SheetTitle className="font-serif text-2xl text-prune">
-              Prestataires pour {salonName}
+              {t("drawerTitle", { salonName })}
             </SheetTitle>
           </SheetHeader>
 
           <div className="mt-6">
             {loading && (
-              <p className="text-sm text-muted">Chargement…</p>
+              <p className="text-sm text-muted">{t("loading")}</p>
             )}
 
             {!loading && providers.length === 0 && (
               <div className="rounded-lg border border-border bg-ivoire py-10 px-6 text-center">
                 <p className="text-sm text-muted">
-                  Pas encore de prestataires référencés pour ce salon.
+                  {t("empty")}
                 </p>
                 <p className="mt-4 text-sm text-prune">
-                  Vous êtes prestataire ?{" "}
+                  {t("areYouProvider")}{" "}
                   <Link
                     href="/contact"
                     className="font-medium underline decoration-prune/30 underline-offset-2 hover:decoration-prune"
                   >
-                    Contactez-nous
+                    {t("contactUs")}
                   </Link>
                 </p>
               </div>
@@ -134,7 +128,7 @@ export function ProviderDrawer({ salonId, salonName, salonSlug }: ProviderDrawer
               Object.entries(grouped).map(([category, catProviders]) => (
                 <div key={category} className="mb-7">
                   <h3 className="mb-3 text-[11px] font-semibold uppercase tracking-wider text-muted">
-                    {CATEGORY_LABELS[category] ?? category}
+                    {t(`categories.${category}` as Parameters<typeof t>[0]) ?? category}
                   </h3>
                   <div className="space-y-2.5">
                     {catProviders.map((p) => {
@@ -159,18 +153,18 @@ export function ProviderDrawer({ salonId, salonName, salonSlug }: ProviderDrawer
                               {p.is_verified && (
                                 <BadgeCheck
                                   className="h-3.5 w-3.5 text-prune"
-                                  aria-label="Prestataire vérifié"
+                                  aria-label={t("verifiedAriaLabel")}
                                 />
                               )}
                               {isPremium && (
                                 <span className="inline-flex items-center gap-0.5 rounded-full bg-ocre px-2 py-0.5 text-[10px] font-semibold text-prune">
                                   <Star className="h-2.5 w-2.5 fill-prune" />
-                                  Recommandé
+                                  {t("recommended")}
                                 </span>
                               )}
                               {!isPremium && p.is_featured && (
                                 <span className="rounded-full border border-prune/20 px-2 py-0.5 text-[10px] font-medium text-prune">
-                                  Recommandé
+                                  {t("recommended")}
                                 </span>
                               )}
                             </div>
@@ -185,7 +179,7 @@ export function ProviderDrawer({ salonId, salonName, salonSlug }: ProviderDrawer
                             href={`/prestataires/${p.slug}`}
                             className="ml-3 shrink-0 rounded-md border border-prune/30 px-2.5 py-1 text-xs font-medium text-prune transition-colors hover:bg-prune hover:text-papier"
                           >
-                            Devis
+                            {t("quote")}
                           </Link>
                         </div>
                       );

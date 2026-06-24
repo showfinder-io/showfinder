@@ -7,6 +7,7 @@
 // Reprend le pattern d'une concurrent identifié par le user (juin 2026).
 
 import { useEffect, useRef, useState } from "react";
+import { useTranslations } from "next-intl";
 import {
   CalendarPlus,
   Share2,
@@ -41,7 +42,10 @@ function addOneDay(iso: string): string {
   return d.toISOString().slice(0, 10);
 }
 
-function buildGoogleCalendarUrl(props: Props): string | null {
+function buildGoogleCalendarUrl(
+  props: Props,
+  tActions: ReturnType<typeof useTranslations<"salon-detail.actions">>
+): string | null {
   if (!props.startDate) return null;
   const url = `${siteConfig.url}/salons/${props.slug}`;
   const title = props.editionYear ? `${props.name} ${props.editionYear}` : props.name;
@@ -50,9 +54,9 @@ function buildGoogleCalendarUrl(props: Props): string | null {
   )}`;
   const location = [props.venue, props.city].filter(Boolean).join(", ");
   const descLines = [
-    props.sectorLabel ? `Secteur : ${props.sectorLabel}` : null,
+    props.sectorLabel ? tActions("calendarSectorLabel", { sector: props.sectorLabel }) : null,
     props.shortDescription ? props.shortDescription.split(/[.!?]\s+/)[0] : null,
-    `Fiche Agoris : ${url}`,
+    tActions("calendarFicheLabel", { url }),
   ].filter(Boolean) as string[];
 
   const params = new URLSearchParams({
@@ -81,6 +85,7 @@ function useClickOutside<T extends HTMLElement>(
 }
 
 export function SalonActionsBar(props: Props) {
+  const t = useTranslations("salon-detail.actions");
   const [calOpen, setCalOpen] = useState(false);
   const [moreOpen, setMoreOpen] = useState(false);
   const [reportOpen, setReportOpen] = useState(false);
@@ -89,7 +94,7 @@ export function SalonActionsBar(props: Props) {
   useClickOutside(calRef, () => setCalOpen(false));
   useClickOutside(moreRef, () => setMoreOpen(false));
 
-  const googleUrl = buildGoogleCalendarUrl(props);
+  const googleUrl = buildGoogleCalendarUrl(props, t);
   const icsUrl = `/api/salons/${props.slug}/ics`;
   const fullUrl = `${siteConfig.url}/salons/${props.slug}`;
 
@@ -99,7 +104,7 @@ export function SalonActionsBar(props: Props) {
       title: props.editionYear
         ? `${props.name} ${props.editionYear}`
         : props.name,
-      text: `${props.name} sur Agoris`,
+      text: t("shareText", { name: props.name }),
       url: fullUrl,
     };
     try {
@@ -109,7 +114,7 @@ export function SalonActionsBar(props: Props) {
       }
       if (navigator.clipboard?.writeText) {
         await navigator.clipboard.writeText(fullUrl);
-        toast.success("Lien copié dans le presse-papier");
+        toast.success(t("shareCopied"));
       }
     } catch {
       // AbortError si l'user ferme le sheet share : on ne notifie pas.
@@ -128,7 +133,7 @@ export function SalonActionsBar(props: Props) {
               setMoreOpen(false);
             }}
             className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-prune/15 bg-ivoire text-prune transition-colors hover:border-prune/30 hover:bg-[#FBF7EA]"
-            aria-label="Ajouter à l'agenda"
+            aria-label={t("addToCalendar")}
             aria-expanded={calOpen}
           >
             <CalendarPlus className="h-4 w-4" aria-hidden="true" />
@@ -145,8 +150,8 @@ export function SalonActionsBar(props: Props) {
                 >
                   <ExternalLink className="mt-0.5 h-4 w-4 shrink-0 text-muted" />
                   <div>
-                    <div className="font-medium">Google Calendar</div>
-                    <div className="text-xs text-muted">Ouvrir un nouvel event pré-rempli</div>
+                    <div className="font-medium">{t("googleCalendar")}</div>
+                    <div className="text-xs text-muted">{t("googleCalendarHint")}</div>
                   </div>
                 </a>
               )}
@@ -158,8 +163,8 @@ export function SalonActionsBar(props: Props) {
               >
                 <Download className="mt-0.5 h-4 w-4 shrink-0 text-muted" />
                 <div>
-                  <div className="font-medium">Télécharger .ics</div>
-                  <div className="text-xs text-muted">Apple Calendar, Outlook, autres</div>
+                  <div className="font-medium">{t("downloadIcs")}</div>
+                  <div className="text-xs text-muted">{t("downloadIcsHint")}</div>
                 </div>
               </a>
             </div>
@@ -172,7 +177,7 @@ export function SalonActionsBar(props: Props) {
         type="button"
         onClick={handleShare}
         className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-prune/15 bg-ivoire text-prune transition-colors hover:border-prune/30 hover:bg-[#FBF7EA]"
-        aria-label="Partager"
+        aria-label={t("share")}
       >
         <Share2 className="h-4 w-4" aria-hidden="true" />
       </button>
@@ -186,7 +191,7 @@ export function SalonActionsBar(props: Props) {
             setCalOpen(false);
           }}
           className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-prune/15 bg-ivoire text-prune transition-colors hover:border-prune/30 hover:bg-[#FBF7EA]"
-          aria-label="Plus d'options"
+          aria-label={t("moreOptions")}
           aria-expanded={moreOpen}
         >
           <MoreVertical className="h-4 w-4" aria-hidden="true" />
@@ -203,8 +208,8 @@ export function SalonActionsBar(props: Props) {
             >
               <Flag className="mt-0.5 h-4 w-4 shrink-0 text-muted" />
               <div>
-                <div className="font-medium">Signaler une erreur</div>
-                <div className="text-xs text-muted">Donnée incorrecte sur la fiche</div>
+                <div className="font-medium">{t("reportError")}</div>
+                <div className="text-xs text-muted">{t("reportErrorHint")}</div>
               </div>
             </button>
           </div>

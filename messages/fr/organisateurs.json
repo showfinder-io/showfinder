@@ -1,0 +1,12 @@
+{
+  "detail": {
+    "metaNotFound": "Organisateur introuvable",
+    "metaTitle": "Salons organisés par {organizerName}",
+    "metaDescription": "Tous les salons professionnels organisés par {organizerName} sur {siteName}.",
+    "breadcrumbSalons": "Salons",
+    "eyebrow": "Organisateur",
+    "countLabelOne": "salon organisé par {organizerName}.",
+    "countLabelMany": "salons organisés par {organizerName}.",
+    "emptyResult": "Aucun salon pour cet organisateur"
+  }
+}

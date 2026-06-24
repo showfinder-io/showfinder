@@ -1,0 +1,26 @@
+{
+  "listing": {
+    "metaTitle": "All sectors",
+    "metaDescription": "Browse trade shows by industry sector on {siteName}.",
+    "heading": "Industry sectors",
+    "countOne": "{count} sector listed",
+    "countMany": "{count} sectors listed",
+    "seeShows": "Browse trade shows"
+  },
+  "detail": {
+    "metaNotFound": "Sector not found",
+    "eyebrow": "Sector",
+    "breadcrumbHome": "Home",
+    "breadcrumbSectors": "Sectors",
+    "editorialUpdate": "Agoris analysis · updated {date}",
+    "skipToListPrefix": "On this page: our sector analysis, or",
+    "skipToList": "go directly to the trade shows listed",
+    "showsHeading": "Trade shows in this sector",
+    "showsLabelOne": "trade show listed",
+    "showsLabelMany": "trade shows listed",
+    "emptyShows": "No trade shows in this sector at the moment",
+    "citiesHeading": "Cities in this sector",
+    "cityLink": "Trade shows in {city}",
+    "otherSectorsHeading": "Explore other sectors"
+  }
+}

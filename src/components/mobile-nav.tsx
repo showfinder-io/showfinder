@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -15,17 +16,28 @@ import {
 import { siteConfig } from "@/lib/config";
 import { useState } from "react";
 
-const navLinks = [
-  { href: "/salons", label: "Salons" },
-  { href: "/lieux", label: "Lieux" },
-  { href: "/secteurs", label: "Secteurs" },
-  { href: "/prestataires", label: "Prestataires" },
-  { href: "/blog", label: "Blog" },
-];
+const NAV_HREFS = [
+  "/salons",
+  "/lieux",
+  "/secteurs",
+  "/prestataires",
+  "/blog",
+] as const;
+
+type NavHref = (typeof NAV_HREFS)[number];
+
+const NAV_KEYS: Record<NavHref, string> = {
+  "/salons": "salons",
+  "/lieux": "lieux",
+  "/secteurs": "secteurs",
+  "/prestataires": "prestataires",
+  "/blog": "blog",
+};
 
 export function MobileNav({ children }: { children?: React.ReactNode }) {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const t = useTranslations("nav");
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
@@ -35,7 +47,7 @@ export function MobileNav({ children }: { children?: React.ReactNode }) {
         }
       >
         <Menu className="size-5" />
-        <span className="sr-only">Menu</span>
+        <span className="sr-only">{t("menuAriaLabel")}</span>
       </SheetTrigger>
       <SheetContent side="right" className="w-[280px] bg-paper">
         <SheetHeader>
@@ -44,7 +56,7 @@ export function MobileNav({ children }: { children?: React.ReactNode }) {
           </SheetTitle>
         </SheetHeader>
         <nav className="flex flex-col gap-1 px-4">
-          {navLinks.map(({ href, label }) => (
+          {NAV_HREFS.map((href) => (
             <SheetClose key={href} render={<Link href={href} />}>
               <span
                 className={`block rounded-md px-3 py-2 text-sm transition-colors ${
@@ -53,12 +65,11 @@ export function MobileNav({ children }: { children?: React.ReactNode }) {
                     : "text-muted hover:text-ink"
                 }`}
               >
-                {label}
+                {t(NAV_KEYS[href])}
               </span>
             </SheetClose>
           ))}
         </nav>
-        {/* AuthButton (server component) passé en children */}
         {children && (
           <div className="mt-auto border-t border-border px-4 py-4">
             {children}

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { getTranslations } from "next-intl/server";
 import { siteConfig } from "@/lib/config";
 import { getSectors } from "@/lib/queries";
 import { buildAlternates } from "@/lib/i18n-metadata";
@@ -11,24 +12,32 @@ export async function generateMetadata({
   params: Promise<{ locale: AppLocale }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "sectors.listing" });
   return {
-    title: "Tous les secteurs",
-    description: `Parcourez les salons professionnels par secteur d'activité sur ${siteConfig.name}.`,
+    title: t("metaTitle"),
+    description: t("metaDescription", { siteName: siteConfig.name }),
     alternates: buildAlternates("/secteurs", locale),
   };
 }
 
-export default async function SecteursPage() {
+export default async function SecteursPage({
+  params,
+}: {
+  params: Promise<{ locale: AppLocale }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "sectors.listing" });
   const sectors = await getSectors();
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-10">
       <h1 className="font-serif text-3xl font-bold tracking-tight">
-        Secteurs d&apos;activité
+        {t("heading")}
       </h1>
       <p className="mt-2 text-muted">
-        {sectors.length} secteur{sectors.length > 1 ? "s" : ""} répertorié
-        {sectors.length > 1 ? "s" : ""}
+        {sectors.length > 1
+          ? t("countMany", { count: sectors.length })
+          : t("countOne", { count: sectors.length })}
       </p>
 
       <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -47,7 +56,7 @@ export default async function SecteursPage() {
               </p>
             )}
             <span className="mt-4 inline-flex items-center text-sm font-medium text-accent group-hover:text-accent-hover transition-colors">
-              Voir les salons &rarr;
+              {t("seeShows")} &rarr;
             </span>
           </Link>
         ))}

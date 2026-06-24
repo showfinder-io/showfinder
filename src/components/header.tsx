@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { getTranslations } from "next-intl/server";
 import { siteConfig } from "@/lib/config";
 import { MobileNav } from "@/components/mobile-nav";
 import { AgorisMark } from "@/components/agoris-mark";
@@ -8,17 +9,9 @@ import { UserChip } from "@/components/user-chip";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { createClient } from "@/lib/supabase/server";
 
-const NAV_LINKS = [
-  { href: "/salons", label: "Salons" },
-  { href: "/lieux", label: "Lieux" },
-  { href: "/secteurs", label: "Secteurs" },
-  { href: "/prestataires", label: "Prestataires" },
-  { href: "/blog", label: "Blog" },
-] as const;
-
 /**
  * Récupère les initiales d'un utilisateur à partir de son email ou son nom.
- * "jane.doe@x.com" → "JD" · "jzakoian@gmail.com" → "JZ"
+ * "jane.doe@x.com" -> "JD" · "jzakoian@gmail.com" -> "JZ"
  */
 function getInitials(email: string | undefined, fullName?: string | null): string {
   if (fullName) {
@@ -28,7 +21,6 @@ function getInitials(email: string | undefined, fullName?: string | null): strin
   }
   if (!email) return "·";
   const localPart = email.split("@")[0] ?? "";
-  // "j.doe" → "JD", "jzakoian" → "JZ" (premier + dernier char alpha distinct)
   const split = localPart.split(/[._-]/).filter(Boolean);
   if (split.length >= 2) return (split[0][0] + split[1][0]).toUpperCase();
   if (localPart.length >= 2) return (localPart[0] + localPart[1]).toUpperCase();
@@ -37,26 +29,19 @@ function getInitials(email: string | undefined, fullName?: string | null): strin
 
 /**
  * Affiche un "display name" court à partir de l'email/nom.
- * "jzakoian@gmail.com" → "J. Zakoian" (si fullName indispo, on dérive un nom partiel)
  */
 function getDisplayName(email: string | undefined, fullName?: string | null): string {
   if (fullName) return fullName;
   if (!email) return "Compte";
   const localPart = email.split("@")[0] ?? email;
-  // pas de heuristique magique : on affiche le local-part tel quel, capitalisé.
   return localPart.charAt(0).toUpperCase() + localPart.slice(1);
 }
 
 /**
  * Header Hero V1 refondu — grid 3 colonnes (brand | nav-center | nav-right).
  * - brand : symbole 44px + wordmark Fraunces 30px (Agoris.)
- * - nav-center : 4 liens Inter 14px weight 500, underline ocre 2px sur active (TODO)
- * - nav-right : admin-pill ocre uppercase mono (si admin/editor) + user-chip avatar + nom + caret
- *
- * NB : la mise en évidence "active" via underline ocre nécessite usePathname,
- * donc un client component dédié pour les liens (pas encore implémenté ici car
- * tous les server-side dans nav). Pour V1, le hover suffit ; le `active` est
- * un evolutif S2.
+ * - nav-center : 5 liens Inter 14px weight 500, underline ocre 2px sur active
+ * - nav-right : admin-pill ocre uppercase mono (si admin/editor) + user-chip
  */
 export async function Header() {
   const supabase = await createClient();
@@ -81,14 +66,23 @@ export async function Header() {
   const initials = getInitials(user?.email, fullName);
   const displayName = getDisplayName(user?.email, fullName);
 
+  const t = await getTranslations("nav");
+
+  const NAV_LINKS = [
+    { href: "/salons", label: t("salons") },
+    { href: "/lieux", label: t("lieux") },
+    { href: "/secteurs", label: t("secteurs") },
+    { href: "/prestataires", label: t("prestataires") },
+    { href: "/blog", label: t("blog") },
+  ] as const;
+
   return (
     <header className="border-b border-border bg-sable">
       <div className="grid grid-cols-[auto_1fr_auto] items-center gap-6 px-6 py-5 md:px-14">
-        {/* BRAND : symbole 44px + wordmark */}
         <Link
           href="/"
           className="flex items-center gap-3.5 transition-opacity hover:opacity-80"
-          aria-label={`${siteConfig.name}, accueil`}
+          aria-label={t("homeAriaLabel")}
         >
           <AgorisMark className="h-11 w-11" />
           <span
@@ -100,28 +94,20 @@ export async function Header() {
           </span>
         </Link>
 
-        {/* NAV CENTER — caché sur mobile, active state via composant client */}
         <NavLinks links={NAV_LINKS} />
 
-        {/* NAV RIGHT — admin-pill + user-chip OU connexion (mobile : MobileNav) */}
         <div className="flex items-center justify-end gap-4">
-          {/* Selecteur de langue FR | EN : masque tant que I18N_EN_ENABLED est
-              false (Phase 0). Le composant ne rend rien dans ce cas. */}
           <LanguageSwitcher />
 
-          {/* Desktop : version refondue inline */}
           <div className="hidden items-center gap-4 md:flex">
             {user ? (
               <>
                 {isAdmin && (
-                  // Admin link discret : mono ocre dim, fond transparent.
-                  // Variant V2 : moins agressif que le pill ocre plein du V1.
-                  // Hover vire en Prune pour signal d'interaction subtil.
                   <Link
                     href="/admin"
                     className="rounded-[3px] px-2 py-1 font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-[#C8801F] transition-colors hover:text-prune"
                   >
-                    Admin
+                    {t("admin")}
                   </Link>
                 )}
                 <UserChip
@@ -135,12 +121,11 @@ export async function Header() {
                 href="/connexion"
                 className="text-sm text-muted transition-colors hover:text-prune"
               >
-                Connexion
+                {t("connexion")}
               </Link>
             )}
           </div>
 
-          {/* Mobile : burger (avec AuthButton legacy à l'intérieur du sheet) */}
           <MobileNav>
             <AuthButton />
           </MobileNav>

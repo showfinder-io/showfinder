@@ -1,13 +1,12 @@
 "use client";
 
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { siteConfig } from "@/lib/config";
 import { AgorisMark } from "@/components/agoris-mark";
 
 /**
  * Footer Agoris — variante "rupture" sur fond Prune.
- * Continuité narrative volontairement cassée pour signaler la fin de page,
- * mise en avant institutionnelle, et différencier zone éditoriale vs zone légale.
  *
  * Structure :
  *  - Top : symbole + wordmark + signature + newsletter inline (droite)
@@ -16,25 +15,6 @@ import { AgorisMark } from "@/components/agoris-mark";
  *
  * Touche éditoriale : point ocre sur "Agoris." ET sur "Paris.".
  */
-
-const PRODUIT_LINKS = [
-  { href: "/salons", label: "Salons" },
-  { href: "/secteurs", label: "Secteurs" },
-  { href: "/lieux", label: "Lieux" },
-  { href: "/prestataires", label: "Prestataires" },
-  { href: "/blog", label: "Blog" },
-] as const;
-
-const SOCIETE_LINKS = [
-  { href: "/methodologie", label: "Méthodologie" },
-  { href: "/contact", label: "Contact" },
-] as const;
-
-const LEGAL_LINKS = [
-  { href: "/mentions", label: "Mentions" },
-  { href: "/confidentialite", label: "Confidentialité" },
-  { href: "/cookies", label: "Cookies" },
-] as const;
 
 function ColumnLabel({ children }: { children: React.ReactNode }) {
   return (
@@ -58,14 +38,33 @@ function FooterLink({ href, label }: { href: string; label: string }) {
 }
 
 export function Footer() {
+  const t = useTranslations("footer");
+  const tNav = useTranslations("nav");
   const year = new Date().getFullYear();
+
+  const PRODUIT_LINKS = [
+    { href: "/salons", label: tNav("salons") },
+    { href: "/secteurs", label: tNav("secteurs") },
+    { href: "/lieux", label: tNav("lieux") },
+    { href: "/prestataires", label: tNav("prestataires") },
+    { href: "/blog", label: tNav("blog") },
+  ];
+
+  const SOCIETE_LINKS = [
+    { href: "/methodologie", label: tNav("methodologie") },
+    { href: "/contact", label: tNav("contact") },
+  ];
+
+  const LEGAL_LINKS = [
+    { href: "/mentions", label: t("mentions") },
+    { href: "/confidentialite", label: t("confidentialite") },
+    { href: "/cookies", label: t("cookies") },
+  ];
 
   return (
     <footer className="bg-prune text-sable">
       <div className="mx-auto max-w-6xl px-4 pt-24 pb-8 md:px-8">
-        {/* TOP : brand + newsletter */}
         <div className="flex flex-col gap-12 md:flex-row md:items-start md:justify-between">
-          {/* Brand bloc */}
           <div className="max-w-sm">
             <AgorisMark
               className="h-20 w-20"
@@ -82,17 +81,14 @@ export function Footer() {
               </em>
             </p>
             <p className="mt-4 text-[15px] leading-relaxed text-sable/75">
-              L&apos;annuaire intelligent
-              <br />
-              des salons professionnels.
+              {t("tagline")}
             </p>
           </div>
 
-          {/* Newsletter inline — TODO: brancher Brevo plus tard */}
           <div className="md:max-w-sm md:flex-1 md:pl-10">
-            <ColumnLabel>Newsletter</ColumnLabel>
+            <ColumnLabel>{t("newsletter")}</ColumnLabel>
             <p className="mt-3 text-[14px] text-sable/75">
-              Un email par mois, les salons à ne pas rater.
+              {t("newsletterPitch")}
             </p>
             <form
               action=""
@@ -100,19 +96,19 @@ export function Footer() {
               className="mt-5 flex items-center gap-2 border-b border-sable/25 pb-2 focus-within:border-ocre"
             >
               <label htmlFor="footer-newsletter-email" className="sr-only">
-                Adresse email
+                {t("newsletterEmailLabel")}
               </label>
               <input
                 id="footer-newsletter-email"
                 type="email"
                 name="email"
-                placeholder="Entrez votre email"
+                placeholder={t("newsletterPlaceholder")}
                 autoComplete="email"
                 className="flex-1 bg-transparent text-[14px] text-sable placeholder:text-sable/40 focus:outline-none"
               />
               <button
                 type="submit"
-                aria-label="S'inscrire à la newsletter"
+                aria-label={t("newsletterSubmit")}
                 className="text-ocre transition-opacity hover:opacity-80"
               >
                 <span aria-hidden="true" className="text-lg leading-none">
@@ -123,13 +119,11 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Séparateur */}
         <div className="my-14 h-px bg-sable/15" />
 
-        {/* COLONNES */}
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-3">
           <div>
-            <ColumnLabel>Produit</ColumnLabel>
+            <ColumnLabel>{t("produit")}</ColumnLabel>
             <ul className="mt-5 space-y-3">
               {PRODUIT_LINKS.map((link) => (
                 <FooterLink key={link.href} {...link} />
@@ -138,7 +132,7 @@ export function Footer() {
           </div>
 
           <div>
-            <ColumnLabel>Société</ColumnLabel>
+            <ColumnLabel>{t("societe")}</ColumnLabel>
             <ul className="mt-5 space-y-3">
               {SOCIETE_LINKS.map((link) => (
                 <FooterLink key={link.href} {...link} />
@@ -147,7 +141,7 @@ export function Footer() {
           </div>
 
           <div>
-            <ColumnLabel>Légal</ColumnLabel>
+            <ColumnLabel>{t("legal")}</ColumnLabel>
             <ul className="mt-5 space-y-3">
               {LEGAL_LINKS.map((link) => (
                 <FooterLink key={link.href} {...link} />
@@ -156,10 +150,8 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Séparateur */}
         <div className="my-14 h-px bg-sable/15" />
 
-        {/* BOTTOM : copyright + Fait à Paris */}
         <div className="flex flex-col items-start justify-between gap-3 text-[13px] text-sable/60 sm:flex-row sm:items-center">
           <p>
             &copy; {year} {siteConfig.name}
@@ -168,7 +160,7 @@ export function Footer() {
             </em>
           </p>
           <p>
-            Fait à Paris
+            {t("madeIn")}
             <em className="not-italic text-[1.1em] leading-none text-ocre">
               .
             </em>

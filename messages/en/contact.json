@@ -1,0 +1,25 @@
+{
+  "meta": {
+    "title": "Contact Us",
+    "description": "Contact the Agoris team: trade show organisers, service providers, or general enquiries."
+  },
+  "heading": "Contact Us",
+  "intro": "A question or a suggestion? Choose the channel that fits your situation.",
+  "organisateurs": {
+    "title": "Organisers",
+    "body": "Do you organise a trade show? Claim your listing or upgrade to Premium for maximum visibility."
+  },
+  "prestataires": {
+    "title": "Service Providers",
+    "body": "Are you a service provider? Register for free or discover the Premium offer to reach more clients."
+  },
+  "general": {
+    "title": "General Enquiry",
+    "intro": "For any other request, use the form below."
+  },
+  "form": {
+    "body": "Send us your enquiry by email: we respond within 48 working hours. Please include your context (organiser, service provider, visitor) and any useful information to help us handle your request.",
+    "cta": "Write to hello@agoris.io",
+    "mailtoSubject": "General enquiry Agoris"
+  }
+}

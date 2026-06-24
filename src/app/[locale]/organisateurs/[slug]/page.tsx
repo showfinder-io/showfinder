@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { getTranslations } from "next-intl/server";
 import { siteConfig } from "@/lib/config";
 import { getAllOrganizerSlugs, getSalonsByOrganizer } from "@/lib/queries";
 import { SalonCard } from "@/components/salon-card";
@@ -20,11 +21,12 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug, locale } = await params;
+  const t = await getTranslations({ locale, namespace: "organisateurs.detail" });
   const result = await getSalonsByOrganizer(slug);
-  if (!result) return { title: "Organisateur introuvable" };
+  if (!result) return { title: t("metaNotFound") };
 
-  const title = `Salons organisés par ${result.organizerName}`;
-  const description = `Tous les salons professionnels organisés par ${result.organizerName} sur ${siteConfig.name}.`;
+  const title = t("metaTitle", { organizerName: result.organizerName });
+  const description = t("metaDescription", { organizerName: result.organizerName, siteName: siteConfig.name });
 
   return {
     title,
@@ -39,7 +41,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function OrganisateurPage({ params }: Props) {
-  const { slug } = await params;
+  const { slug, locale } = await params;
+  const t = await getTranslations({ locale, namespace: "organisateurs.detail" });
   const result = await getSalonsByOrganizer(slug);
 
   if (!result) notFound();
@@ -51,29 +54,30 @@ export default async function OrganisateurPage({ params }: Props) {
       <BreadcrumbJsonLd
         items={[
           { name: "Accueil", item: "/" },
-          { name: "Salons", item: "/salons" },
+          { name: t("breadcrumbSalons"), item: "/salons" },
           { name: organizerName, item: `/organisateurs/${slug}` },
         ]}
       />
 
       <nav className="mb-10 text-sm text-muted">
         <Link href="/salons" className="hover:text-prune transition-colors">
-          Salons
+          {t("breadcrumbSalons")}
         </Link>
         <span className="mx-2">/</span>
         <span className="text-prune">{organizerName}</span>
       </nav>
 
       <header className="max-w-3xl">
-        <SectionTitle as="h1" size="xl" eyebrow="Organisateur">
+        <SectionTitle as="h1" size="xl" eyebrow={t("eyebrow")}>
           {organizerName}
         </SectionTitle>
         <p className="mt-5 text-sm text-muted">
           <span className="font-serif text-[22px] font-normal text-ocre tabular-nums">
             {total}
           </span>{" "}
-          salon{total > 1 ? "s" : ""} organisé{total > 1 ? "s" : ""} par{" "}
-          {organizerName}.
+          {total > 1
+            ? t("countLabelMany", { organizerName })
+            : t("countLabelOne", { organizerName })}
         </p>
       </header>
 
@@ -86,7 +90,7 @@ export default async function OrganisateurPage({ params }: Props) {
       ) : (
         <div className="mt-12 rounded-lg border border-border bg-ivoire p-12 text-center">
           <p className="font-serif text-xl italic leading-relaxed text-prune/85">
-            Aucun salon pour cet organisateur
+            {t("emptyResult")}
             <em className="not-italic text-ocre">.</em>
           </p>
         </div>

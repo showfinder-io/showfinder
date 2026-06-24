@@ -1,0 +1,29 @@
+{
+  "connexion": "Connexion",
+  "deconnexion": "Déconnexion",
+  "pagination": {
+    "previous": "Précédent",
+    "next": "Suivant",
+    "page": "Page {current} sur {total}"
+  },
+  "certified": {
+    "ariaLabel": "Salon certifié Agoris Certified",
+    "label": "Agoris Certified"
+  },
+  "alertSubscribe": {
+    "salonMessage": "Recevoir une alerte quand les dates de {label} sont confirmées",
+    "sectorMessage": "Recevoir une alerte pour les nouveaux salons en {label}",
+    "placeholder": "votre@email.com",
+    "submitLabel": "M'alerter",
+    "submitting": "Chargement…",
+    "successMessage": "Vous serez notifié par email.",
+    "errorMessage": "Une erreur est survenue. Veuillez réessayer."
+  },
+  "feedbackPrompt": {
+    "text": "Une information à corriger ou à ajouter sur cette fiche ?",
+    "linkLabel": "Contactez-nous",
+    "suffix": ", nous mettons à jour rapidement.",
+    "subjectSalon": "Correction ou suggestion sur la fiche {salonName}",
+    "subjectGeneric": "Correction ou suggestion sur une fiche"
+  }
+}

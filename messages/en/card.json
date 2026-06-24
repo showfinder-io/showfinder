@@ -1,0 +1,18 @@
+{
+  "salon": {
+    "pastEdition": "Past edition",
+    "statDates": "Dates",
+    "statVisitors": "Visitors",
+    "statExhibitors": "Exhibitors",
+    "extraSectors": "and {count} other sector(s)",
+    "certifiedAriaLabel": "Agoris Certified trade show"
+  },
+  "provider": {
+    "premium": "Premium",
+    "auditedBy": "Audited by Agoris"
+  },
+  "venue": {
+    "statSurface": "Surface area",
+    "statSalons": "Trade shows hosted"
+  }
+}

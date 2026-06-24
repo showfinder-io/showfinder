@@ -1,6 +1,7 @@
 "use client";
 
 import { Mail } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { trackEvent } from "@/lib/analytics";
 
 type ReviewFormProps = {
@@ -15,18 +16,17 @@ type ReviewFormProps = {
  * et l'id de la cible (salon ou prestataire) pour faciliter le tri.
  */
 export function ReviewForm({ targetType, targetId }: ReviewFormProps) {
-  const label = targetType === "salon" ? "ce salon" : "ce prestataire";
+  const t = useTranslations("salon-detail.reviewForm");
+  const target = targetType === "salon" ? t("targetSalon") : t("targetProvider");
   const subject = encodeURIComponent(
-    `[Agoris] Avis sur ${targetType}: ${targetId}`
+    t("emailSubject", { targetType, targetId })
   );
 
   return (
     <div className="flex flex-col gap-4 rounded-lg border border-border bg-white p-6">
-      <h3 className="font-serif text-lg font-bold">Laisser un avis</h3>
+      <h3 className="font-serif text-lg font-bold">{t("title")}</h3>
       <p className="text-sm leading-relaxed text-muted">
-        Partagez votre expérience sur {label} par email : note,
-        contexte (exposant, visiteur, organisateur) et commentaire libre.
-        Nous publierons l&apos;avis après modération.
+        {t("description", { target })}
       </p>
       <a
         href={`mailto:hello@agoris.io?subject=${subject}`}
@@ -34,7 +34,7 @@ export function ReviewForm({ targetType, targetId }: ReviewFormProps) {
         className="inline-flex items-center justify-center gap-2 rounded-md bg-accent px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-accent-hover"
       >
         <Mail className="h-4 w-4" />
-        Envoyer mon avis par email
+        {t("submitLabel")}
       </a>
     </div>
   );

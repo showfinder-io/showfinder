@@ -1,0 +1,30 @@
+{
+  "listing": {
+    "metaTitle": "Exhibition centres and venues in France",
+    "metaDescription": "Discover the main exhibition centres and venues in France on {siteName}. Find trade shows by venue.",
+    "eyebrow": "Exhibition centres and venues",
+    "heading": "Venues",
+    "countLabelOne": "venue listed in France",
+    "countLabelMany": "venues listed in France",
+    "emptyResult": "No venue matches your search.",
+    "emptyHint": "Try a different city"
+  },
+  "detail": {
+    "metaNotFound": "Venue not found",
+    "breadcrumbHome": "Home",
+    "breadcrumbVenues": "Venues",
+    "surfaceLabel": "of exhibition space",
+    "hallOne": "{count} hall",
+    "hallMany": "{count} halls",
+    "googleMapsLink": "View on Google Maps",
+    "websiteLink": "Official website",
+    "cityLink": "All trade shows in {city}",
+    "upcomingHeading": "Upcoming trade shows",
+    "upcomingLabelOne": "upcoming trade show",
+    "upcomingLabelMany": "upcoming trade shows",
+    "upcomingEmpty": "No upcoming trade shows at this venue at the moment.",
+    "pastHeading": "Past trade shows",
+    "pastLabelOne": "past trade show",
+    "pastLabelMany": "past trade shows"
+  }
+}

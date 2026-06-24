@@ -2,11 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { AgorisMark } from "@/components/agoris-mark";
 import { getSalons } from "@/lib/queries";
+import { getTranslations } from "next-intl/server";
 
 export const metadata: Metadata = {
-  title: "Page introuvable",
-  description:
-    "Cette page n'existe pas. Mais tous les salons professionnels de France vous attendent sur Agoris.",
   robots: { index: false, follow: false },
 };
 
@@ -14,6 +12,8 @@ export default async function NotFound() {
   // Compteur dynamique (même source que le Hero de la home) : ne dérive pas
   // quand des fiches sont publiées ou dépubliées.
   const { total } = await getSalons({ pageSize: 1, sort: "date" });
+  const t = await getTranslations("not-found");
+
   return (
     <div className="relative mx-auto flex min-h-[70vh] max-w-3xl flex-col items-center justify-center px-4 py-16 text-center">
       {/* Symbole en filigrane, derrière le texte */}
@@ -27,10 +27,10 @@ export default async function NotFound() {
           404
         </p>
         <h1 className="mt-6 font-serif text-3xl font-normal leading-tight tracking-[-0.015em] text-prune md:text-4xl">
-          Cette page n&apos;existe pas.
+          {t("heading")}
           <br />
           <span className="text-prune/70">
-            Mais {total} salons vous attendent
+            {t("subheading", { total })}
           </span>
           <em className="not-italic text-[1.1em] leading-none text-ocre">.</em>
         </h1>
@@ -40,7 +40,7 @@ export default async function NotFound() {
             href="/"
             className="inline-flex items-center gap-2 font-medium text-prune underline decoration-prune/30 underline-offset-4 transition-colors hover:decoration-prune"
           >
-            <span aria-hidden="true">→</span> Retour à l&apos;accueil
+            <span aria-hidden="true">→</span> {t("backHome")}
           </Link>
           <span className="hidden text-muted sm:inline" aria-hidden="true">
             |
@@ -49,7 +49,7 @@ export default async function NotFound() {
             href="/salons"
             className="inline-flex items-center gap-2 font-medium text-prune underline decoration-prune/30 underline-offset-4 transition-colors hover:decoration-prune"
           >
-            <span aria-hidden="true">→</span> Voir tous les salons
+            <span aria-hidden="true">→</span> {t("allShows")}
           </Link>
         </div>
       </div>

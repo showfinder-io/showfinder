@@ -1,0 +1,34 @@
+{
+  "listing": {
+    "metaTitle": "Event service providers",
+    "metaDescription": "Find the best service providers for your trade show on {siteName}: stand builders, caterers, audiovisual, photographers.",
+    "eyebrow": "Event service providers",
+    "heading": "Suppliers",
+    "countLabelOne": "service provider listed in France, audited.",
+    "countLabelMany": "service providers listed in France, audited.",
+    "emptyResult": "No service provider matches your criteria.",
+    "emptyHint": "Try a different category or city",
+    "banner": {
+      "eyebrow": "Suppliers · Register",
+      "heading": "List your business",
+      "description": "Are you a stand builder, caterer, audiovisual technician or photographer? Join the Agoris directory and connect with the organisers of B2B trade shows audited by our team.",
+      "ctaPrimary": "Create a profile",
+      "ctaSecondary": "or discover Agoris Premium"
+    }
+  },
+  "detail": {
+    "metaNotFound": "Supplier not found",
+    "metaDescriptionFallback": "{companyName}, {label} for trade shows on {siteName}.",
+    "breadcrumbProviders": "Suppliers",
+    "badgeVerified": "Verified",
+    "badgePremium": "Premium",
+    "fieldCity": "City",
+    "fieldWebsite": "Website",
+    "fieldWebsiteVisit": "Visit website",
+    "fieldEmail": "Email",
+    "fieldPhone": "Phone",
+    "ctaNotPremium": "Are you this supplier?",
+    "ctaNotPremiumLink": "Switch to Premium",
+    "ctaNotPremiumSuffix": "to be featured on trade show listings."
+  }
+}

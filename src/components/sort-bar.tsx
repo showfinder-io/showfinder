@@ -2,6 +2,7 @@
 
 import { useRouter, useSearchParams } from "next/navigation";
 import { useCallback, useMemo, useTransition } from "react";
+import { useTranslations } from "next-intl";
 import {
   Popover,
   PopoverTrigger,
@@ -20,27 +21,13 @@ type SortOption = {
   shortLabel: string;
 };
 
-const SORT_OPTIONS: SortOption[] = [
-  { value: "date", label: "Date (croissant)", shortLabel: "Date ↓" },
-  { value: "date-desc", label: "Date (décroissant)", shortLabel: "Date ↑" },
-  { value: "visitors", label: "Visiteurs (décroissant)", shortLabel: "Visiteurs ↓" },
-  { value: "name", label: "Nom (A-Z)", shortLabel: "Nom A-Z" },
-];
-
-const PERIOD_OPTIONS = [
-  { value: "", label: "Toutes les dates", shortLabel: "Toutes" },
-  { value: "this-month", label: "Ce mois", shortLabel: "Ce mois" },
-  { value: "next-quarter", label: "Prochain trimestre", shortLabel: "Trimestre" },
-  { value: "2026", label: "2026", shortLabel: "2026" },
-  { value: "2027", label: "2027", shortLabel: "2027" },
-];
-
 /**
  * Bandeau horizontal sticky au-dessus de la grille listing salons.
  * Affiche le total + trois popovers éditoriaux : tri, ville, période.
  * Typo mono small caps, séparateurs ·, style institutionnel.
  */
 export function SortBar({ total, cities }: SortBarProps) {
+  const t = useTranslations("filters");
   const router = useRouter();
   const searchParams = useSearchParams();
   const [, startTransition] = useTransition();
@@ -48,6 +35,21 @@ export function SortBar({ total, cities }: SortBarProps) {
   const currentSort = searchParams.get("sort") ?? "date";
   const currentCity = searchParams.get("city") ?? "";
   const currentPeriod = searchParams.get("period") ?? "";
+
+  const SORT_OPTIONS: SortOption[] = useMemo(() => [
+    { value: "date", label: t("sortOptions.dateAsc"), shortLabel: t("sortOptions.dateAscShort") },
+    { value: "date-desc", label: t("sortOptions.dateDesc"), shortLabel: t("sortOptions.dateDescShort") },
+    { value: "visitors", label: t("sortOptions.visitors"), shortLabel: t("sortOptions.visitorsShort") },
+    { value: "name", label: t("sortOptions.name"), shortLabel: t("sortOptions.nameShort") },
+  ], [t]);
+
+  const PERIOD_OPTIONS: SortOption[] = useMemo(() => [
+    { value: "", label: t("periods.all"), shortLabel: t("sortOptions.allDatesShort") },
+    { value: "this-month", label: t("periods.thisMonth"), shortLabel: t("periods.thisMonth") },
+    { value: "next-quarter", label: t("periods.nextQuarter"), shortLabel: t("periods.nextQuarter") },
+    { value: "2026", label: t("periods.2026"), shortLabel: t("periods.2026") },
+    { value: "2027", label: t("periods.2027"), shortLabel: t("periods.2027") },
+  ], [t]);
 
   const navigate = useCallback(
     (params: URLSearchParams) => {
@@ -73,35 +75,32 @@ export function SortBar({ total, cities }: SortBarProps) {
   );
 
   const sortLabel = useMemo(
-    () => SORT_OPTIONS.find((o) => o.value === currentSort)?.shortLabel ?? "Date ↓",
-    [currentSort]
+    () => SORT_OPTIONS.find((o) => o.value === currentSort)?.shortLabel ?? t("sortOptions.dateAscShort"),
+    [SORT_OPTIONS, currentSort, t]
   );
 
   const periodLabel = useMemo(
     () =>
       PERIOD_OPTIONS.find((o) => o.value === currentPeriod)?.shortLabel ??
-      "Toutes",
-    [currentPeriod]
+      t("sortOptions.allDatesShort"),
+    [PERIOD_OPTIONS, currentPeriod, t]
   );
-
-  const cityLabel = currentCity || "Toutes";
 
   return (
     <div className="sticky top-16 z-20 -mx-4 mb-6 border-y border-prune/10 bg-sable/95 px-4 py-3 backdrop-blur-sm md:top-20 md:-mx-0 md:rounded-md md:border md:px-5">
       <div className="flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-[11px] uppercase tracking-[0.18em] text-prune/80">
-        {/* Total */}
         <span className="text-prune">
           <span className="font-serif text-[15px] normal-case tracking-normal text-prune tabular-nums">
             {total}
           </span>{" "}
+          {/* Pluralisation simple : total salon(s). La forme plurielle FR/EN varie peu ici. */}
           salon{total > 1 ? "s" : ""}
         </span>
 
         <span className="text-prune/30">·</span>
 
-        {/* Tri */}
         <span className="flex items-center gap-1.5">
-          <span className="text-prune/55">Trier :</span>
+          <span className="text-prune/55">{t("sort.label")}</span>
           <Popover>
             <PopoverTrigger
               className="inline-flex items-center gap-1 rounded-sm px-1 py-0.5 text-prune transition-colors hover:bg-prune/5 focus-visible:bg-prune/5"
@@ -137,14 +136,13 @@ export function SortBar({ total, cities }: SortBarProps) {
 
         <span className="text-prune/30">·</span>
 
-        {/* Ville */}
         <span className="flex items-center gap-1.5">
-          <span className="text-prune/55">Ville :</span>
+          <span className="text-prune/55">{t("sort.city")}</span>
           <Popover>
             <PopoverTrigger
               className="inline-flex items-center gap-1 rounded-sm px-1 py-0.5 text-prune transition-colors hover:bg-prune/5 focus-visible:bg-prune/5"
             >
-              <span className="max-w-[16ch] truncate">{cityLabel}</span>
+              <span className="max-w-[16ch] truncate">{currentCity || t("allShort")}</span>
               <span aria-hidden className="text-prune/50">▾</span>
             </PopoverTrigger>
             <PopoverContent className="max-h-[60vh] overflow-y-auto">
@@ -156,7 +154,7 @@ export function SortBar({ total, cities }: SortBarProps) {
                       !currentCity ? "font-medium text-prune" : "text-prune/70"
                     }`}
                   >
-                    <span>Toutes les villes</span>
+                    <span>{t("allCities")}</span>
                     {!currentCity && (
                       <span className="text-ocre" aria-hidden>
                         ●
@@ -190,9 +188,8 @@ export function SortBar({ total, cities }: SortBarProps) {
 
         <span className="text-prune/30">·</span>
 
-        {/* Période */}
         <span className="flex items-center gap-1.5">
-          <span className="text-prune/55">Période :</span>
+          <span className="text-prune/55">{t("sort.period")}</span>
           <Popover>
             <PopoverTrigger
               className="inline-flex items-center gap-1 rounded-sm px-1 py-0.5 text-prune transition-colors hover:bg-prune/5 focus-visible:bg-prune/5"

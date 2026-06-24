@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "title": "All professional trade shows",
+    "titleWithPage": "All professional trade shows · Page {page}",
+    "description": "Discover all professional trade shows in France on {siteName}. Filter by sector, city and date."
+  },
+  "header": {
+    "title": "Trade shows",
+    "countSuffix": "trade show listed in France, audited and classified by industry.",
+    "countSuffixPlural": "trade shows listed in France, audited and classified by industry."
+  },
+  "empty": {
+    "message": "Nothing matches your search.",
+    "hint": "Try a sector or a city"
+  },
+  "jsonld": {
+    "listName": "Professional trade shows in France"
+  }
+}

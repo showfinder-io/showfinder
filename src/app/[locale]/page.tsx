@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { getTranslations } from "next-intl/server";
 import { siteConfig } from "@/lib/config";
 import { buildAlternates } from "@/lib/i18n-metadata";
 import type { AppLocale } from "@/i18n/routing";
@@ -22,23 +23,18 @@ export async function generateMetadata({
 }
 
 export default async function Home() {
-  // 1 seul appel = 1 round-trip : on récupère les 6 prochains salons + le count total
-  //    publiés (toutes éditions). Le count est utilisé dans le Hero ("196 salons indexés")
-  //    et dans le CTA "Voir les N salons".
-  // Note : getSalons retourne `total` = count(*) FILTRÉ par les conditions appliquées,
-  // donc ici "published" + "upcoming". Pour avoir le total brut indexé (incluant les
-  // éditions passées), on fait un appel séparé sans `upcoming`.
   const [
     { salons: upcomingSalons },
     { total: totalPublished },
     sectors,
+    t,
   ] = await Promise.all([
     getSalons({ pageSize: 6, sort: "date", upcoming: true }),
     getSalons({ pageSize: 1, sort: "date" }),
     getSectors(),
+    getTranslations("home"),
   ]);
 
-  // Schema.org Organization + WebSite (SearchAction → /salons?search=)
   const organizationJsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -67,17 +63,14 @@ export default async function Home() {
     <div>
       <JsonLd data={organizationJsonLd} />
       <JsonLd data={webSiteJsonLd} />
-      {/* HERO V1 refondu — éditorial, watermark symbole, search underline */}
       <Hero totalSalons={totalPublished} />
 
-      {/* PROCHAINS SALONS */}
       <section className="border-b border-border bg-sable py-22 md:py-24">
         <div className="mx-auto max-w-[1440px] px-6 md:px-14">
           <div className="flex flex-wrap items-end justify-between gap-6">
-            <SectionTitle eyebrow="À l'agenda" size="xl">
-              Prochains salons
+            <SectionTitle eyebrow={t("upcoming.eyebrow")} size="xl">
+              {t("upcoming.title")}
             </SectionTitle>
-            {/* CTA Fraunces italic souligné ocre — pattern "section-cta" du mockup */}
             <Link
               href="/salons"
               className="font-serif italic text-prune transition-colors hover:text-[var(--color-warning)]"
@@ -88,14 +81,15 @@ export default async function Home() {
                 lineHeight: "1.2",
               }}
             >
-              Voir les{" "}
+              {/* On décompose le CTA pour préserver le rendu Fraunces ocre sur le chiffre */}
+              {t("upcoming.seeAll").split("{count}")[0]}
               <span
                 className="not-italic font-serif text-ocre"
                 style={{ fontStyle: "normal" }}
               >
                 {totalPublished}
-              </span>{" "}
-              salons
+              </span>
+              {t("upcoming.seeAll").split("{count}")[1]}
             </Link>
           </div>
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -106,14 +100,13 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* EXPLORER PAR SECTEUR */}
       <section className="border-b border-border bg-sable py-20 md:py-24">
         <div className="mx-auto max-w-[1440px] px-6 md:px-14">
-          <SectionTitle eyebrow="Par filière" size="lg">
-            Explorer par secteur
+          <SectionTitle eyebrow={t("sectors.eyebrow")} size="lg">
+            {t("sectors.title")}
           </SectionTitle>
           <p className="mt-4 max-w-2xl text-base text-muted">
-            15 filières B2B couvertes, du BTP à la cosmétique. Chaque secteur regroupe les salons audités et classés par notre équipe éditoriale.
+            {t("sectors.description")}
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
             {sectors.map((sector) => (
@@ -127,27 +120,26 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* POURQUOI AGORIS — bloc Prune, numéros 01/02/03 en Ocre, padding généreux */}
       <section className="bg-prune py-[120px]">
         <div className="mx-auto max-w-5xl px-4">
-          <SectionTitle eyebrow="Pourquoi Agoris" size="xl" variant="on-prune">
-            Un annuaire qui audite, classe et certifie
+          <SectionTitle eyebrow={t("why.eyebrow")} size="xl" variant="on-prune">
+            {t("why.title")}
           </SectionTitle>
           <ol className="mt-16 grid gap-12 md:grid-cols-3 md:gap-10">
             <Argument
               number="01"
-              title="Curation, pas accumulation"
-              body="On référence les salons B2B qui comptent vraiment pour votre filière, pas tous ceux qui existent."
+              title={t("why.arg1Title")}
+              body={t("why.arg1Body")}
             />
             <Argument
               number="02"
-              title="Marketplace prestataires"
-              body="Standistes, traiteurs, audiovisuel : un réseau de prestataires locaux rattaché à chaque salon."
+              title={t("why.arg2Title")}
+              body={t("why.arg2Body")}
             />
             <Argument
               number="03"
-              title="Le bon salon, au bon moment"
-              body="Calendrier mis à jour en continu et alertes par secteur pour ne rien manquer. Avis certifiés d'exposants et de visiteurs pour choisir en confiance."
+              title={t("why.arg3Title")}
+              body={t("why.arg3Body")}
             />
           </ol>
         </div>

@@ -1,12 +1,7 @@
+import { getTranslations } from "next-intl/server";
 import { getReviewsByTarget, getAverageRating } from "@/lib/queries";
 import { StarRating } from "@/components/star-rating";
 import { BadgeCheck } from "lucide-react";
-
-const ROLE_LABELS: Record<string, string> = {
-  exposant: "Exposant",
-  visiteur: "Visiteur",
-  organisateur: "Organisateur",
-};
 
 type ReviewListProps = {
   targetType: "salon" | "provider";
@@ -14,6 +9,7 @@ type ReviewListProps = {
 };
 
 export async function ReviewList({ targetType, targetId }: ReviewListProps) {
+  const t = await getTranslations("salon-detail.reviews");
   const [reviews, stats] = await Promise.all([
     getReviewsByTarget(targetType, targetId),
     getAverageRating(targetType, targetId),
@@ -22,11 +18,14 @@ export async function ReviewList({ targetType, targetId }: ReviewListProps) {
   if (reviews.length === 0) {
     return (
       <p className="text-sm text-muted">
-        Aucun avis pour le moment. Soyez le premier à donner votre avis !
+        {t("empty")}
       </p>
     );
   }
 
+  // La locale est résolue par next-intl via les headers de requête.
+  // On n'a pas besoin de la passer explicitement ici : Intl.DateTimeFormat
+  // utilisera la locale active du serveur, ce qui est correct pour le rendu SSR.
   const dateFormatter = new Intl.DateTimeFormat("fr-FR", {
     day: "numeric",
     month: "long",
@@ -39,10 +38,10 @@ export async function ReviewList({ targetType, targetId }: ReviewListProps) {
       <div className="flex items-center gap-3">
         <StarRating value={Math.round(stats.average)} size="sm" />
         <span className="text-sm font-medium">
-          {stats.average.toFixed(1)} / 5
+          {t("ratingLabel", { average: stats.average.toFixed(1) })}
         </span>
         <span className="text-sm text-muted">
-          ({stats.count} avis)
+          {t("ratingCount", { count: stats.count })}
         </span>
       </div>
 
@@ -58,13 +57,13 @@ export async function ReviewList({ targetType, targetId }: ReviewListProps) {
                 <StarRating value={review.rating} size="sm" />
                 {review.role && (
                   <span className="rounded-full bg-accent/10 px-2.5 py-0.5 text-xs font-medium text-accent">
-                    {ROLE_LABELS[review.role] ?? review.role}
+                    {t(`roles.${review.role}` as Parameters<typeof t>[0]) ?? review.role}
                   </span>
                 )}
                 {review.is_verified && (
                   <span className="inline-flex items-center gap-1 text-xs text-green-700">
                     <BadgeCheck className="h-3.5 w-3.5" />
-                    Avis vérifié
+                    {t("verified")}
                   </span>
                 )}
               </div>

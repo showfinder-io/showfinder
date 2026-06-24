@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { getTranslations } from "next-intl/server";
 import { formatDateRange, formatNumber } from "@/lib/format";
 import { SectorBadge } from "@/components/sector-badge";
 import { AgorisCertifiedBadge } from "@/components/agoris-certified-badge";
@@ -18,18 +19,19 @@ type SalonCardProps = {
  *
  * Pas de `edition_number` dans la DB pour le moment : l'eyebrow ne montre que l'année.
  */
-export function SalonCard({ salon }: SalonCardProps) {
+export async function SalonCard({ salon }: SalonCardProps) {
+  const t = await getTranslations("card.salon");
+
   const isPast =
     !!salon.start_date &&
     new Date(salon.start_date) < new Date(new Date().toDateString());
   const certified = salon.is_agoris_certified === true;
   const firstSector = salon.sectors[0];
   const extraSectorCount = Math.max(0, salon.sectors.length - 1);
-  // Eyebrow date : édition année (n° d'édition pas dispo en DB pour le moment).
   const eyebrowRight = salon.edition_year
     ? `${salon.edition_year}`
     : isPast
-      ? "Édition passée"
+      ? t("pastEdition")
       : "";
 
   return (
@@ -45,7 +47,6 @@ export function SalonCard({ salon }: SalonCardProps) {
           salon.edition_year ? ` ${salon.edition_year}` : ""
         }`}
       >
-        {/* TOP : pill secteur outline + eyebrow mono droite */}
         <div className="flex items-baseline justify-between gap-3">
           <div className="flex flex-wrap items-center gap-2">
             {firstSector && (
@@ -59,7 +60,7 @@ export function SalonCard({ salon }: SalonCardProps) {
             {extraSectorCount > 0 && (
               <span
                 className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted"
-                aria-label={`et ${extraSectorCount} autre secteur(s)`}
+                aria-label={t("extraSectors", { count: extraSectorCount })}
               >
                 +{extraSectorCount}
               </span>
@@ -73,7 +74,6 @@ export function SalonCard({ salon }: SalonCardProps) {
           )}
         </div>
 
-        {/* Titre + lieu */}
         <div>
           <h3 className="font-serif text-[32px] font-normal leading-[1.05] tracking-[-0.015em] text-prune">
             {salon.name}
@@ -87,11 +87,6 @@ export function SalonCard({ salon }: SalonCardProps) {
           )}
         </div>
 
-        {/* Triptyque vital : grid asymétrique. minmax(0, ...) pour que les
-            colonnes acceptent de shrinker (sinon les nombres a 6 chiffres
-            comme "120 000" forcent la colonne au-dela du cadre). Ratio
-            Visiteurs >= Dates car les nombres a 6 chiffres prennent plus
-            de place que les dates wrappees. */}
         <dl
           className="mt-auto grid gap-4 border-t border-border pt-4"
           style={{
@@ -100,7 +95,7 @@ export function SalonCard({ salon }: SalonCardProps) {
           }}
         >
           <Stat
-            label="Dates"
+            label={t("statDates")}
             value={
               salon.start_date
                 ? formatDateRange(salon.start_date, salon.end_date)
@@ -108,7 +103,7 @@ export function SalonCard({ salon }: SalonCardProps) {
             }
           />
           <Stat
-            label="Visiteurs"
+            label={t("statVisitors")}
             value={
               salon.estimated_visitors
                 ? formatNumber(salon.estimated_visitors)
@@ -116,7 +111,7 @@ export function SalonCard({ salon }: SalonCardProps) {
             }
           />
           <Stat
-            label="Exposants"
+            label={t("statExhibitors")}
             value={
               salon.estimated_exhibitors
                 ? formatNumber(salon.estimated_exhibitors)
@@ -126,7 +121,6 @@ export function SalonCard({ salon }: SalonCardProps) {
         </dl>
       </Link>
 
-      {/* Arrow ocre apparait au hover, bottom-right (hors du Link pour ne pas voler le click). */}
       <span
         aria-hidden="true"
         className="pointer-events-none absolute bottom-5 right-7 -translate-x-1.5 font-serif text-xl text-ocre opacity-0 transition-[opacity,transform] duration-200 group-hover:translate-x-0 group-hover:opacity-100"

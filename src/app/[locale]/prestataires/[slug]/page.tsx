@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { getTranslations } from "next-intl/server";
 import { siteConfig } from "@/lib/config";
 import {
   getProviderBySlug,
@@ -34,13 +35,14 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug, locale } = await params;
+  const t = await getTranslations({ locale, namespace: "providers.detail" });
   const provider = await getProviderBySlug(slug);
-  if (!provider) return { title: "Prestataire introuvable" };
+  if (!provider) return { title: t("metaNotFound") };
 
   const label = PROVIDER_CATEGORY_LABELS[provider.category] ?? provider.category;
   return {
     title: `${provider.company_name} - ${label}`,
-    description: provider.description || `${provider.company_name}, ${label} pour salons professionnels sur ${siteConfig.name}.`,
+    description: provider.description || t("metaDescriptionFallback", { companyName: provider.company_name, label, siteName: siteConfig.name }),
     robots: { index: false, follow: true },
     alternates: buildAlternates(`/prestataires/${slug}`, locale),
   };
@@ -59,7 +61,8 @@ const PROVIDER_SCHEMA_TYPE: Record<string, string> = {
 };
 
 export default async function ProviderPage({ params }: Props) {
-  const { slug } = await params;
+  const { slug, locale } = await params;
+  const t = await getTranslations({ locale, namespace: "providers.detail" });
   const provider = await getProviderBySlug(slug);
   if (!provider) notFound();
 
@@ -117,7 +120,7 @@ export default async function ProviderPage({ params }: Props) {
       {/* Breadcrumb */}
       <nav className="mb-8 text-sm text-muted">
         <Link href="/prestataires" className="hover:text-ink transition-colors">
-          Prestataires
+          {t("breadcrumbProviders")}
         </Link>
         <span className="mx-2">/</span>
         <span className="text-ink">{provider.company_name}</span>
@@ -130,13 +133,13 @@ export default async function ProviderPage({ params }: Props) {
           {provider.is_verified && (
             <span className="inline-flex items-center gap-1 rounded-full bg-accent/10 px-3 py-1 text-xs font-medium text-accent">
               <BadgeCheck className="h-3 w-3" />
-              Vérifié
+              {t("badgeVerified")}
             </span>
           )}
           {isPremium && (
             <span className="inline-flex items-center gap-1 rounded-full border border-amber-200 bg-amber-50 px-3 py-1 text-xs font-medium text-amber-700">
               <Star className="h-3 w-3 fill-amber-400 text-amber-400" />
-              Premium
+              {t("badgePremium")}
             </span>
           )}
         </div>
@@ -156,7 +159,7 @@ export default async function ProviderPage({ params }: Props) {
             <div className="flex items-start gap-3">
               <MapPin className="mt-0.5 h-4 w-4 text-muted" />
               <div>
-                <p className="text-sm font-medium">Ville</p>
+                <p className="text-sm font-medium">{t("fieldCity")}</p>
                 <p className="text-sm text-muted">{provider.city}</p>
               </div>
             </div>
@@ -165,14 +168,14 @@ export default async function ProviderPage({ params }: Props) {
             <div className="flex items-start gap-3">
               <Globe className="mt-0.5 h-4 w-4 text-muted" />
               <div>
-                <p className="text-sm font-medium">Site web</p>
+                <p className="text-sm font-medium">{t("fieldWebsite")}</p>
                 <a
                   href={provider.website_url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 text-sm text-accent hover:text-accent-hover transition-colors"
                 >
-                  Visiter le site <ExternalLink className="h-3 w-3" />
+                  {t("fieldWebsiteVisit")} <ExternalLink className="h-3 w-3" />
                 </a>
               </div>
             </div>
@@ -181,7 +184,7 @@ export default async function ProviderPage({ params }: Props) {
             <div className="flex items-start gap-3">
               <Mail className="mt-0.5 h-4 w-4 text-muted" />
               <div>
-                <p className="text-sm font-medium">Email</p>
+                <p className="text-sm font-medium">{t("fieldEmail")}</p>
                 <a href={`mailto:${provider.email}`} className="text-sm text-accent hover:text-accent-hover transition-colors">
                   {provider.email}
                 </a>
@@ -192,7 +195,7 @@ export default async function ProviderPage({ params }: Props) {
             <div className="flex items-start gap-3">
               <Phone className="mt-0.5 h-4 w-4 text-muted" />
               <div>
-                <p className="text-sm font-medium">Téléphone</p>
+                <p className="text-sm font-medium">{t("fieldPhone")}</p>
                 <a href={`tel:${provider.phone}`} className="text-sm text-accent hover:text-accent-hover transition-colors">
                   {provider.phone}
                 </a>
@@ -211,14 +214,14 @@ export default async function ProviderPage({ params }: Props) {
       {!isPremium && (
         <section className="mt-12 rounded-lg border border-border bg-paper p-6 text-center">
           <p className="text-sm text-muted">
-            Vous êtes ce prestataire ? {" "}
+            {t("ctaNotPremium")}{" "}
             <Link
               href="/contact"
               className="font-medium text-accent hover:text-accent-hover transition-colors"
             >
-              Passez en Premium
+              {t("ctaNotPremiumLink")}
             </Link>{" "}
-            pour être mis en avant sur les fiches salons.
+            {t("ctaNotPremiumSuffix")}
           </p>
         </section>
       )}

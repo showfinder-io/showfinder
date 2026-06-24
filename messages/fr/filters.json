@@ -1,0 +1,68 @@
+{
+  "search": "Recherche",
+  "sectors": "Filières",
+  "city": "Ville",
+  "period": "Période",
+  "category": "Catégorie",
+  "sortBy": "Trier par",
+  "filterLabel": "Filtrer",
+  "filterTitle": "Filtrer les salons",
+  "reset": "Réinitialiser",
+  "seeResults": "Voir les résultats",
+  "searchPlaceholder": "Rechercher un salon…",
+  "allCities": "Toutes les villes",
+  "allSectors": "Tous les secteurs",
+  "allCategories": "Toutes catégories",
+  "sort": {
+    "label": "Trier :",
+    "city": "Ville :",
+    "period": "Période :"
+  },
+  "periods": {
+    "all": "Toutes les dates",
+    "thisMonth": "Ce mois",
+    "nextQuarter": "Prochain trimestre",
+    "2026": "2026",
+    "2027": "2027"
+  },
+  "categories": {
+    "all": "Toutes catégories",
+    "salonProfessionnel": "Salon professionnel",
+    "salonGrandPublic": "Salon grand public",
+    "congres": "Congrès",
+    "autres": "Autres"
+  },
+  "allShort": "Toutes",
+  "sortOptions": {
+    "dateAsc": "Date (croissant)",
+    "dateDesc": "Date (décroissant)",
+    "visitors": "Visiteurs (décroissant)",
+    "name": "Nom (A-Z)",
+    "dateAscShort": "Date ↓",
+    "dateDescShort": "Date ↑",
+    "visitorsShort": "Visiteurs ↓",
+    "nameShort": "Nom A-Z",
+    "allDatesShort": "Toutes"
+  },
+  "providerSort": {
+    "notoriety": "Notoriété",
+    "name": "Nom (A-Z)",
+    "category": "Catégorie",
+    "city": "Ville",
+    "allCategories": "Toutes les catégories",
+    "categoryLabel": "Catégorie :"
+  },
+  "venueSort": {
+    "surfaceDesc": "Surface (décroissant)",
+    "surfaceAsc": "Surface (croissant)",
+    "name": "Nom (A-Z)",
+    "city": "Ville",
+    "surfaceDescShort": "Surface ↓",
+    "surfaceAscShort": "Surface ↑"
+  },
+  "total": {
+    "salons": "{count} salon{plural}",
+    "providers": "{count} prestataire{plural}",
+    "venues": "{count} lieu{plural}"
+  }
+}

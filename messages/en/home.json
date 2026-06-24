@@ -1,0 +1,31 @@
+{
+  "hero": {
+    "eyebrow": "The trade show hub · 2026 edition",
+    "headline": "Where industries meet",
+    "subline": "The intelligent directory of trade shows in France: find the right shows, organise your stand, grow your business.",
+    "searchPlaceholder": "e.g. SantExpo, food & beverage, Lyon…",
+    "searchAriaLabel": "Search for a trade show, sector or city",
+    "searchSubmitAriaLabel": "Search",
+    "salonsIndexed": "trade shows listed"
+  },
+  "upcoming": {
+    "eyebrow": "On the agenda",
+    "title": "Upcoming trade shows",
+    "seeAll": "See all {count} trade shows"
+  },
+  "sectors": {
+    "eyebrow": "By sector",
+    "title": "Explore by sector",
+    "description": "15 B2B sectors covered, from construction to cosmetics. Each sector groups the trade shows audited and ranked by our editorial team."
+  },
+  "why": {
+    "eyebrow": "Why Agoris",
+    "title": "A directory that audits, ranks and certifies",
+    "arg1Title": "Curation, not accumulation",
+    "arg1Body": "We list the B2B trade shows that truly matter for your sector, not every show that exists.",
+    "arg2Title": "Supplier marketplace",
+    "arg2Body": "Stand builders, caterers, audiovisual: a network of local suppliers attached to each trade show.",
+    "arg3Title": "The right show, at the right time",
+    "arg3Body": "Continuously updated calendar and sector alerts so you never miss anything. Certified reviews from exhibitors and visitors to help you choose with confidence."
+  }
+}
