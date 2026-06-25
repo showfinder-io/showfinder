@@ -8,9 +8,10 @@
  *   pour ne pas exposer du contenu FR sous une URL EN aupres de Google.
  *
  * Passer a `true` UNIQUEMENT quand tout le site est traduit et relu.
- * Defaut Phase 0 : false.
+ * Active le 2026-06-25 : Phases 1 et 2 completes (chrome + 255 fiches en-GB),
+ * legal EN relu. L'anglais est expose (selecteur visible, /en indexable).
  */
-export const I18N_EN_ENABLED = false;
+export const I18N_EN_ENABLED = true;
 
 /**
  * Map locale -> code BCP 47 utilise pour les balises hreflang.
