@@ -1,10 +1,15 @@
 {
   "connexion": "Sign in",
   "deconnexion": "Sign out",
+  "loggedInAs": "Signed in as",
+  "loading": "Loading",
+  "photoPlaceholder": "[ Photo · {label} · coming soon ]",
+  "starRating": "{count, plural, one {# star} other {# stars}}",
   "pagination": {
     "previous": "Previous",
     "next": "Next",
-    "page": "Page {current} of {total}"
+    "page": "Page {current} of {total}",
+    "ariaLabel": "Trade show pagination"
   },
   "certified": {
     "ariaLabel": "Agoris Certified trade show",

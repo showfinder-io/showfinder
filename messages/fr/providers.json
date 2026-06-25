@@ -25,6 +25,14 @@
     "hebergement": "Hébergement",
     "autre": "Autre"
   },
+  "quoteRequest": {
+    "trigger": "Demander un devis",
+    "title": "Demander un devis à {providerName}",
+    "description": "Indiquez votre société, votre email de contact, le salon concerné si applicable, et décrivez votre besoin (stand, services associés, volume, dates). Le prestataire recevra votre demande sous 48h.",
+    "ctaEmail": "Écrire à hello@agoris.io",
+    "sheetDescription": "Décrivez votre besoin par email : nous vous mettons en relation avec le prestataire.",
+    "subject": "[Agoris] Demande de devis: {providerName}"
+  },
   "detail": {
     "metaNotFound": "Prestataire introuvable",
     "metaDescriptionFallback": "{companyName}, {label} pour salons professionnels sur {siteName}.",

@@ -61,8 +61,8 @@
     "surfaceAscShort": "Surface ↑"
   },
   "total": {
-    "salons": "{count} trade show{plural}",
-    "providers": "{count} supplier{plural}",
-    "venues": "{count} venue{plural}"
+    "salons": "{count, plural, one {# trade show} other {# trade shows}}",
+    "providers": "{count, plural, one {# supplier} other {# suppliers}}",
+    "venues": "{count, plural, one {# venue} other {# venues}}"
   }
 }

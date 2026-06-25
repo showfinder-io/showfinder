@@ -1,10 +1,15 @@
 {
   "connexion": "Connexion",
   "deconnexion": "Déconnexion",
+  "loggedInAs": "Connecté en tant que",
+  "loading": "Chargement en cours",
+  "photoPlaceholder": "[ Photo · {label} · à venir ]",
+  "starRating": "{count, plural, one {# étoile} other {# étoiles}}",
   "pagination": {
     "previous": "Précédent",
     "next": "Suivant",
-    "page": "Page {current} sur {total}"
+    "page": "Page {current} sur {total}",
+    "ariaLabel": "Pagination des salons"
   },
   "certified": {
     "ariaLabel": "Salon certifié Agoris Certified",
