@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { NextIntlClientProvider } from "next-intl";
-import { getLocale } from "next-intl/server";
+import { getLocale, getMessages } from "next-intl/server";
 import { Toaster } from "sonner";
 import "./globals.css";
 
@@ -65,6 +65,11 @@ export default async function RootLayout({
   // active, sans dupliquer le <html> (qui doit rester unique au niveau racine
   // pour ne pas casser les routes internes).
   const locale = await getLocale();
+  // Messages passes EXPLICITEMENT au provider client : sans ca, les composants
+  // client du Header/Footer (mobile-nav, footer, selecteur) ne recoivent pas les
+  // messages de la locale et retombent en FR sur /en. getMessages() resout la
+  // locale courante via request.ts (EN pour /en, FR sinon).
+  const messages = await getMessages();
   return (
     <html lang={locale} className={cn(inter.variable, fraunces.variable, jetbrainsMono.variable)}>
       <body className="flex min-h-screen flex-col bg-sable text-prune font-sans antialiased">
@@ -73,7 +78,7 @@ export default async function RootLayout({
             compris sur les routes app-internes a la racine. Pour ces routes la
             locale resolue est FR (defaut, cf. src/i18n/request.ts). Les pages
             localisees ont en plus leur propre provider via [locale]/layout. */}
-        <NextIntlClientProvider>
+        <NextIntlClientProvider locale={locale} messages={messages}>
           <Header />
           <main className="flex-1">{children}</main>
           <Footer />

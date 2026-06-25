@@ -1,6 +1,7 @@
 "use client";
 
 import { Star } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 
 type StarRatingProps = {
@@ -10,6 +11,7 @@ type StarRatingProps = {
 };
 
 export function StarRating({ value, onChange, size = "md" }: StarRatingProps) {
+  const t = useTranslations("common");
   const isInteractive = !!onChange;
   const iconSize = size === "sm" ? "h-4 w-4" : "h-5 w-5";
 
@@ -27,7 +29,7 @@ export function StarRating({ value, onChange, size = "md" }: StarRatingProps) {
               ? "cursor-pointer hover:scale-110 transition-transform"
               : "cursor-default"
           )}
-          aria-label={`${star} étoile${star > 1 ? "s" : ""}`}
+          aria-label={t("starRating", { count: star })}
         >
           <Star
             className={cn(

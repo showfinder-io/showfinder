@@ -25,6 +25,14 @@
     "hebergement": "Accommodation",
     "autre": "Other"
   },
+  "quoteRequest": {
+    "trigger": "Request a quote",
+    "title": "Request a quote from {providerName}",
+    "description": "Please provide your company name, contact email, the trade show concerned if applicable, and describe your requirements (stand, associated services, volume, dates). The supplier will receive your request within 48 hours.",
+    "ctaEmail": "Write to hello@agoris.io",
+    "sheetDescription": "Describe your requirements by email: we will put you in touch with the supplier.",
+    "subject": "[Agoris] Quote request: {providerName}"
+  },
   "detail": {
     "metaNotFound": "Supplier not found",
     "metaDescriptionFallback": "{companyName}, {label} for trade shows on {siteName}.",

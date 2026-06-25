@@ -61,8 +61,8 @@
     "surfaceAscShort": "Surface ↑"
   },
   "total": {
-    "salons": "{count} salon{plural}",
-    "providers": "{count} prestataire{plural}",
-    "venues": "{count} lieu{plural}"
+    "salons": "{count, plural, one {# salon} other {# salons}}",
+    "providers": "{count, plural, one {# prestataire} other {# prestataires}}",
+    "venues": "{count, plural, one {# lieu} other {# lieux}}"
   }
 }

@@ -1,8 +1,10 @@
 import Link from "next/link";
+import { getTranslations } from "next-intl/server";
 import { createClient } from "@/lib/supabase/server";
 import { SignOutButton } from "@/components/sign-out-button";
 
 export async function AuthButton() {
+  const t = await getTranslations("common");
   const supabase = await createClient();
   const {
     data: { user },
@@ -14,7 +16,7 @@ export async function AuthButton() {
         href="/connexion"
         className="text-sm text-muted transition-colors hover:text-ink"
       >
-        Connexion
+        {t("connexion")}
       </Link>
     );
   }

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { getTranslations } from "next-intl/server";
 
 type SalonPaginationProps = {
   currentPage: number;
@@ -17,13 +18,15 @@ type SalonPaginationProps = {
  * Style éditorial Agoris : mono small caps, séparateur point médian, accent
  * ocre sur la page courante.
  */
-export function SalonPagination({
+export async function SalonPagination({
   currentPage,
   totalPages,
   baseUrl,
   searchParams,
 }: SalonPaginationProps) {
   if (totalPages <= 1) return null;
+
+  const t = await getTranslations("common");
 
   function buildUrl(page: number) {
     const params = new URLSearchParams(searchParams);
@@ -41,7 +44,7 @@ export function SalonPagination({
 
   return (
     <nav
-      aria-label="Pagination des salons"
+      aria-label={t("pagination.ariaLabel")}
       className="mt-12 flex items-center justify-center gap-4 text-xs uppercase tracking-[0.18em] text-prune/80"
     >
       {hasPrev ? (
@@ -50,11 +53,11 @@ export function SalonPagination({
           rel="prev"
           className="border-b border-prune/30 pb-0.5 transition-colors hover:border-prune hover:text-prune"
         >
-          ← Précédent
+          ← {t("pagination.previous")}
         </Link>
       ) : (
         <span aria-hidden="true" className="text-prune/30">
-          ← Précédent
+          ← {t("pagination.previous")}
         </span>
       )}
 
@@ -62,10 +65,8 @@ export function SalonPagination({
         ·
       </span>
 
-      <span className="font-serif text-sm normal-case tracking-normal text-prune">
-        Page{" "}
-        <span className="text-ocre tabular-nums">{currentPage}</span> sur{" "}
-        <span className="tabular-nums">{totalPages}</span>
+      <span className="font-serif text-sm normal-case tracking-normal text-prune tabular-nums">
+        {t("pagination.page", { current: currentPage, total: totalPages })}
       </span>
 
       <span className="text-prune/40" aria-hidden="true">
@@ -78,11 +79,11 @@ export function SalonPagination({
           rel="next"
           className="border-b border-prune/30 pb-0.5 transition-colors hover:border-prune hover:text-prune"
         >
-          Suivant →
+          {t("pagination.next")} →
         </Link>
       ) : (
         <span aria-hidden="true" className="text-prune/30">
-          Suivant →
+          {t("pagination.next")} →
         </span>
       )}
     </nav>

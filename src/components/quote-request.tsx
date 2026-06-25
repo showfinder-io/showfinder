@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { FileText, Mail } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { trackEvent } from "@/lib/analytics";
 import {
   Sheet,
@@ -24,10 +25,9 @@ export function QuoteRequest({
   providerId: string;
   providerName: string;
 }) {
+  const t = useTranslations("providers.quoteRequest");
   const [open, setOpen] = useState(false);
-  const subject = encodeURIComponent(
-    `[Agoris] Demande de devis: ${providerName}`
-  );
+  const subject = encodeURIComponent(t("subject", { providerName }));
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
@@ -37,7 +37,7 @@ export function QuoteRequest({
         }
       >
         <FileText className="h-4 w-4" />
-        Demander un devis
+        {t("trigger")}
       </SheetTrigger>
 
       <SheetContent
@@ -45,18 +45,15 @@ export function QuoteRequest({
         className="rounded-t-xl max-h-[85vh] overflow-y-auto"
       >
         <SheetHeader>
-          <SheetTitle>Demander un devis à {providerName}</SheetTitle>
+          <SheetTitle>{t("title", { providerName })}</SheetTitle>
           <SheetDescription>
-            Décrivez votre besoin par email : nous vous mettons en relation
-            avec le prestataire.
+            {t("sheetDescription")}
           </SheetDescription>
         </SheetHeader>
 
         <div className="flex flex-col gap-4 px-4 pb-6">
           <p className="text-sm leading-relaxed text-muted">
-            Indiquez votre société, votre email de contact, le salon concerné
-            si applicable, et décrivez votre besoin (stand, services associés,
-            volume, dates). Le prestataire recevra votre demande sous 48h.
+            {t("description")}
           </p>
           <a
             href={`mailto:hello@agoris.io?subject=${subject}`}
@@ -64,7 +61,7 @@ export function QuoteRequest({
             className="inline-flex items-center justify-center gap-2 rounded-md bg-accent px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-accent-hover"
           >
             <Mail className="h-4 w-4" />
-            Écrire à hello@agoris.io
+            {t("ctaEmail")}
           </a>
         </div>
       </SheetContent>

@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { signOut } from "@/lib/auth";
 
 type UserChipProps = {
@@ -16,6 +17,7 @@ type UserChipProps = {
  * Pattern visuel conforme au mockup Hero V1 (caret triangle CSS).
  */
 export function UserChip({ initials, displayName, email }: UserChipProps) {
+  const t = useTranslations("common");
   const router = useRouter();
   const [open, setOpen] = useState(false);
 
@@ -60,7 +62,7 @@ export function UserChip({ initials, displayName, email }: UserChipProps) {
           className="absolute right-0 top-[calc(100%+8px)] z-50 min-w-[220px] overflow-hidden rounded-md border border-border bg-papier shadow-md"
         >
           <div className="px-4 py-3 text-xs text-muted">
-            <p>Connecté en tant que</p>
+            <p>{t("loggedInAs")}</p>
             <p className="mt-0.5 truncate text-prune">{email}</p>
           </div>
           <div className="border-t border-border" />
@@ -70,7 +72,7 @@ export function UserChip({ initials, displayName, email }: UserChipProps) {
             onClick={handleSignOut}
             className="block w-full px-4 py-2.5 text-left text-sm text-prune transition-colors hover:bg-prune/5"
           >
-            Déconnexion
+            {t("deconnexion")}
           </button>
         </div>
       )}

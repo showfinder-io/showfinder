@@ -1,3 +1,4 @@
+import { getTranslations } from "next-intl/server";
 import { cn } from "@/lib/utils";
 
 type PhotoPlaceholderProps = {
@@ -22,12 +23,13 @@ type PhotoPlaceholderProps = {
  *
  * Format : `[ Photo · {label} · à venir ]` en font-mono uppercase.
  */
-export function PhotoPlaceholder({
+export async function PhotoPlaceholder({
   ratio = "16/9",
   label = "salon prof.",
   variant = "sable",
   className,
 }: PhotoPlaceholderProps) {
+  const t = await getTranslations("common");
   const surface =
     variant === "prune"
       ? "bg-prune text-papier/55"
@@ -44,7 +46,7 @@ export function PhotoPlaceholder({
       aria-hidden="true"
     >
       <span className="font-mono text-[11px] uppercase tracking-[0.15em]">
-        [ Photo · {label} · à venir ]
+        {t("photoPlaceholder", { label })}
       </span>
     </div>
   );

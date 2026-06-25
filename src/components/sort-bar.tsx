@@ -89,12 +89,8 @@ export function SortBar({ total, cities }: SortBarProps) {
   return (
     <div className="sticky top-16 z-20 -mx-4 mb-6 border-y border-prune/10 bg-sable/95 px-4 py-3 backdrop-blur-sm md:top-20 md:-mx-0 md:rounded-md md:border md:px-5">
       <div className="flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-[11px] uppercase tracking-[0.18em] text-prune/80">
-        <span className="text-prune">
-          <span className="font-serif text-[15px] normal-case tracking-normal text-prune tabular-nums">
-            {total}
-          </span>{" "}
-          {/* Pluralisation simple : total salon(s). La forme plurielle FR/EN varie peu ici. */}
-          salon{total > 1 ? "s" : ""}
+        <span className="text-prune font-serif text-[15px] normal-case tracking-normal tabular-nums">
+          {t("total.salons", { count: total })}
         </span>
 
         <span className="text-prune/30">·</span>
