@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { Flag, Mail } from "lucide-react";
 import {
   Sheet,
@@ -26,9 +27,8 @@ export function ReportErrorSheet({
   open: boolean;
   onOpenChange: (open: boolean) => void;
 }) {
-  const subject = encodeURIComponent(
-    `[Agoris] Signaler une erreur sur le salon: ${salonSlug}`
-  );
+  const t = useTranslations("salon-detail.report");
+  const subject = encodeURIComponent(t("emailSubject", { slug: salonSlug }));
 
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
@@ -37,24 +37,18 @@ export function ReportErrorSheet({
         className="rounded-t-xl max-h-[85vh] overflow-y-auto"
       >
         <SheetHeader>
-          <SheetTitle>Signaler une erreur</SheetTitle>
-          <SheetDescription>
-            Aidez-nous à maintenir des informations fiables sur les salons.
-          </SheetDescription>
+          <SheetTitle>{t("title")}</SheetTitle>
+          <SheetDescription>{t("description")}</SheetDescription>
         </SheetHeader>
 
         <div className="flex flex-col gap-4 px-4 pb-6">
-          <p className="text-sm leading-relaxed text-muted">
-            Décrivez-nous l&apos;erreur (date, lieu, site web, description,
-            chiffres, autre) ainsi que la bonne information. Nous vérifierons
-            et corrigerons la fiche dans les plus brefs délais.
-          </p>
+          <p className="text-sm leading-relaxed text-muted">{t("body")}</p>
           <a
             href={`mailto:hello@agoris.io?subject=${subject}`}
             className="inline-flex items-center justify-center gap-2 rounded-md bg-accent px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-accent-hover"
           >
             <Mail className="h-4 w-4" />
-            Écrire à hello@agoris.io
+            {t("emailLabel")}
           </a>
         </div>
       </SheetContent>
@@ -65,6 +59,7 @@ export function ReportErrorSheet({
 /** Wrapper legacy : bouton trigger inline + sheet auto-geree. */
 export function ReportError({ salonSlug }: { salonSlug: string }) {
   const [open, setOpen] = useState(false);
+  const t = useTranslations("salon-detail.report");
   return (
     <>
       <Sheet open={open} onOpenChange={setOpen}>
@@ -74,7 +69,7 @@ export function ReportError({ salonSlug }: { salonSlug: string }) {
           }
         >
           <Flag className="h-3.5 w-3.5" />
-          Une information incorrecte ? Signaler une erreur
+          {t("legacyTrigger")}
         </SheetTrigger>
       </Sheet>
       <ReportErrorSheet

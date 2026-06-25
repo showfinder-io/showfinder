@@ -39,12 +39,13 @@ type Props = {
  * Tri appliqué côté serveur (post-fetch) :
  *  - notoriety (défaut) : ordre natif renvoyé par getProviders (premium → verified → name)
  *  - name     : A-Z par company_name
- *  - category : groupé par catégorie (label FR), puis A-Z dans chaque
+ *  - category : groupé par catégorie (label localisé), puis A-Z dans chaque
  *  - city     : groupé par ville (nulls last), puis A-Z dans chaque
  */
 function sortProviders(
   providers: ProviderRow[],
-  sort: string
+  sort: string,
+  categoryLabels: Record<string, string>
 ): ProviderRow[] {
   if (sort === "name") {
     return [...providers].sort((a, b) =>
@@ -55,8 +56,8 @@ function sortProviders(
   }
   if (sort === "category") {
     return [...providers].sort((a, b) => {
-      const la = PROVIDER_CATEGORY_LABELS[a.category] ?? a.category;
-      const lb = PROVIDER_CATEGORY_LABELS[b.category] ?? b.category;
+      const la = categoryLabels[a.category] ?? a.category;
+      const lb = categoryLabels[b.category] ?? b.category;
       const cmp = la.localeCompare(lb, "fr", { sensitivity: "base" });
       if (cmp !== 0) return cmp;
       return a.company_name.localeCompare(b.company_name, "fr", {
@@ -82,21 +83,33 @@ function sortProviders(
 
 export default async function PrestatairesPage({ params: pageParams, searchParams }: Props) {
   const { locale } = await pageParams;
-  const t = await getTranslations({ locale, namespace: "providers.listing" });
+  const [t, tCat] = await Promise.all([
+    getTranslations({ locale, namespace: "providers.listing" }),
+    getTranslations({ locale, namespace: "providers.categories" }),
+  ]);
 
   const params = await searchParams;
   const category = params.category ?? "";
   const city = params.city ?? "";
   const sort = params.sort ?? "notoriety";
 
+  // Labels de catégories localisés (Phase 2 i18n) : fallback sur les labels FR
+  // statiques si la clé n'est pas traduite.
+  const categoryLabels: Record<string, string> = Object.fromEntries(
+    Object.keys(PROVIDER_CATEGORY_LABELS).map((key) => [
+      key,
+      tCat(key as Parameters<typeof tCat>[0], {}) ?? PROVIDER_CATEGORY_LABELS[key],
+    ])
+  );
+
   const [providersRaw, cities] = await Promise.all([
     getProviders({ category: category || undefined, city: city || undefined }),
     getProviderCities(),
   ]);
 
-  const providers = sortProviders(providersRaw, sort);
+  const providers = sortProviders(providersRaw, sort, categoryLabels);
 
-  const categories = Object.entries(PROVIDER_CATEGORY_LABELS).map(
+  const categories = Object.entries(categoryLabels).map(
     ([value, label]) => ({ value, label })
   );
 

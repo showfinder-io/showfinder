@@ -2,6 +2,8 @@ import { PROVIDER_CATEGORY_LABELS } from "@/lib/queries";
 
 type CategoryBadgeProps = {
   category: string;
+  /** Label localisé optionnel (passe via t("categories.xxx") depuis un Server Component). Fallback sur PROVIDER_CATEGORY_LABELS si absent. */
+  label?: string;
 };
 
 const CATEGORY_COLORS: Record<string, string> = {
@@ -15,8 +17,8 @@ const CATEGORY_COLORS: Record<string, string> = {
 
 const DEFAULT_COLORS = "bg-white text-muted border-border";
 
-export function CategoryBadge({ category }: CategoryBadgeProps) {
-  const label = PROVIDER_CATEGORY_LABELS[category] ?? category;
+export function CategoryBadge({ category, label: labelProp }: CategoryBadgeProps) {
+  const label = labelProp ?? PROVIDER_CATEGORY_LABELS[category] ?? category;
   const colorClasses = CATEGORY_COLORS[category] ?? DEFAULT_COLORS;
 
   return (

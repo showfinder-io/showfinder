@@ -18,26 +18,44 @@ export type SalonContent = {
 };
 
 /**
- * Lit le MDX éditorial d'un salon depuis la DB. Retourne null si le
- * salon n'a pas de MDX éditorial (= fiche standard sans contenu enrichi).
+ * Lit le MDX éditorial d'un salon depuis la DB.
+ * Phase 2 i18n : si locale === "en" et que editorial_mdx_en est non nul,
+ * retourne le contenu EN. Sinon retombe sur editorial_mdx (FR).
+ * Retourne null si aucun MDX disponible dans aucune des deux locales.
  */
 export async function getSalonContent(
-  slug: string
+  slug: string,
+  locale: string = "fr"
 ): Promise<SalonContent | null> {
   const supabase = createStaticClient();
+  // Les colonnes _en ne sont pas encore dans les types Supabase générés.
+  // On sélectionne les colonnes nécessaires et on cast via unknown pour
+  // accéder à editorial_mdx_en sans erreur TS.
   const { data } = await supabase
     .from("salons")
     .select("editorial_mdx, editorial_updated_at")
     .eq("slug", slug)
     .maybeSingle();
 
-  if (!data || !data.editorial_mdx) return null;
+  if (!data) return null;
+
+  // Colonnes _en : présentes en runtime via Supabase même si absentes des types
+  // générés. On les lit via cast.
+  const raw = data as unknown as Record<string, unknown>;
+
+  // Fallback : si la colonne EN est nulle, on revient sur le FR.
+  const mdx =
+    locale === "en" && raw.editorial_mdx_en
+      ? (raw.editorial_mdx_en as string)
+      : raw.editorial_mdx as string | null | undefined;
+
+  if (!mdx) return null;
 
   return {
     frontmatter: {
-      updated: data.editorial_updated_at ?? new Date().toISOString(),
+      updated: (raw.editorial_updated_at as string | null) ?? new Date().toISOString(),
     },
-    content: data.editorial_mdx,
+    content: mdx,
   };
 }
 

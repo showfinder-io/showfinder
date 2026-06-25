@@ -45,10 +45,26 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return { title: t("metaNotFound") };
   }
 
-  const title = `Salons à ${venue.name}, ${venue.city}`;
+  // Phase 2 i18n : utiliser les champs _en si disponibles, sinon fallback FR.
+  const seoTitle =
+    (locale === "en" && venue.seo_title_en ? venue.seo_title_en : null);
+  const seoDescription =
+    (locale === "en" && venue.seo_description_en ? venue.seo_description_en : null);
+  const venueDescription =
+    (locale === "en" && venue.description_en ? venue.description_en : null) ??
+    venue.description;
+
+  const title =
+    seoTitle ??
+    (locale === "en"
+      ? `Trade Shows at ${venue.name}, ${venue.city}`
+      : `Salons à ${venue.name}, ${venue.city}`);
   const description =
-    venue.description ||
-    `Découvrez tous les salons professionnels au ${venue.name} (${venue.city}) sur ${siteConfig.name}.`;
+    seoDescription ??
+    venueDescription ??
+    (locale === "en"
+      ? `Discover all professional trade shows at ${venue.name} (${venue.city}) on ${siteConfig.name}.`
+      : `Découvrez tous les salons professionnels au ${venue.name} (${venue.city}) sur ${siteConfig.name}.`);
 
   // Un lieu n'est indexable que si la fiche est riche : description >= 80 chars
   // + adresse + surface. Sinon coquille vide : noindex,follow.
@@ -82,10 +98,18 @@ export default async function VenuePage({ params }: Props) {
 
   const salons = await getSalonsByVenue(venue.id);
 
+  // Phase 2 i18n : description et MDX avec fallback FR si la colonne EN est nulle.
+  const venueDescription =
+    (locale === "en" && venue.description_en ? venue.description_en : null) ??
+    venue.description;
+  const venueMdx =
+    (locale === "en" && venue.editorial_mdx_en ? venue.editorial_mdx_en : null) ??
+    venue.editorial_mdx ?? null;
+
   // V6 — MDX éditorial (description longue, halls, accès, services,
   // actualités) render comme sur les salons.
-  const MdxContent = venue.editorial_mdx
-    ? await compileMdxContent(venue.editorial_mdx, mdxComponents)
+  const MdxContent = venueMdx
+    ? await compileMdxContent(venueMdx, mdxComponents)
     : null;
 
   const gallery: VenueGalleryItem[] = Array.isArray(venue.gallery)
@@ -121,7 +145,7 @@ export default async function VenuePage({ params }: Props) {
       longitude: venue.lng,
     };
   }
-  if (venue.description) placeJsonLd.description = venue.description;
+  if (venueDescription) placeJsonLd.description = venueDescription;
   if (venue.photo_url) placeJsonLd.image = venue.photo_url;
   if (venue.website_url) placeJsonLd.sameAs = [venue.website_url];
 
@@ -205,9 +229,10 @@ export default async function VenuePage({ params }: Props) {
           )}
         </div>
 
-        {/* Description courte (toujours visible, vient de la DB) */}
-        {venue.description && (
-          <p className="mt-6 leading-relaxed text-muted">{venue.description}</p>
+        {/* Description courte (toujours visible, vient de la DB).
+            Phase 2 i18n : affiche description_en si disponible, sinon FR. */}
+        {venueDescription && (
+          <p className="mt-6 leading-relaxed text-muted">{venueDescription}</p>
         )}
 
         {/* Maillage : page ville correspondante */}

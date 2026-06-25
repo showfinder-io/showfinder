@@ -68,6 +68,57 @@ export function formatDateRangeArrow(
 }
 
 /**
+ * Helpers locale-aware pour la Phase 2 i18n.
+ * Utilisent la locale fournie en paramètre (ex: "fr-FR" ou "en-GB").
+ * Les fonctions sans suffixe _locale restent câblées sur fr-FR pour
+ * la compatibilité avec le code existant (fallback FR).
+ */
+
+/** Locale BCP-47 à utiliser pour Intl selon la locale next-intl ("fr" | "en"). */
+export function toIntlLocale(locale: string): string {
+  return locale === "en" ? "en-GB" : "fr-FR";
+}
+
+export function formatDateLocale(dateStr: string | null, locale: string): string {
+  if (!dateStr) return "";
+  return new Intl.DateTimeFormat(toIntlLocale(locale), {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  }).format(new Date(dateStr));
+}
+
+export function formatDateShortLocale(dateStr: string | null, locale: string): string {
+  if (!dateStr) return "";
+  return new Intl.DateTimeFormat(toIntlLocale(locale), {
+    day: "numeric",
+    month: "short",
+  }).format(new Date(dateStr));
+}
+
+export function formatDateRangeLocale(
+  startDate: string | null,
+  endDate: string | null,
+  locale: string,
+  pendingLabel: string = locale === "en" ? "Dates to be confirmed" : "Dates à confirmer"
+): string {
+  if (!startDate) return pendingLabel;
+  if (!endDate) return formatDateLocale(startDate, locale);
+
+  const start = new Date(startDate);
+  const end = new Date(endDate);
+
+  if (
+    start.getMonth() === end.getMonth() &&
+    start.getFullYear() === end.getFullYear()
+  ) {
+    return `${start.getDate()} - ${formatDateLocale(endDate, locale)}`;
+  }
+
+  return `${formatDateShortLocale(startDate, locale)} - ${formatDateLocale(endDate, locale)}`;
+}
+
+/**
  * Convertit lat/lng en chaînes formatées style "48.8316° N" / "2.2877° E".
  * Pour la signature cartographique des visuels VenueVisual.
  */

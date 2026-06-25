@@ -10,7 +10,7 @@ import {
   getSectors,
 } from "@/lib/queries";
 import { slugifyCity } from "@/lib/format";
-import { getSectorContent, formatEditorialMonth } from "@/lib/sector-content";
+import { getSectorContent, formatEditorialMonthLocale } from "@/lib/sector-content";
 import { compileMdxContent } from "@/lib/mdx";
 import { SalonCard } from "@/components/salon-card";
 import { AlertSubscribe } from "@/components/alert-subscribe";
@@ -40,15 +40,26 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return { title: t("metaNotFound") };
   }
 
-  const sectorContent = await getSectorContent(slug);
+  // Phase 2 i18n : getSectorContent retourne le contenu EN (avec fallback FR)
+  // selon la locale passée.
+  const sectorContent = await getSectorContent(slug, locale);
+
+  // Nom et description du secteur avec fallback FR si la colonne _en est nulle.
+  const sectorName =
+    (locale === "en" && sector.name_en ? sector.name_en : null) ?? sector.name;
+  const sectorDescription =
+    (locale === "en" && sector.description_en ? sector.description_en : null) ??
+    sector.description;
 
   // Si MDX présent, on privilégie son frontmatter SEO (rédigé par l'équipe
   // éditoriale, plus riche que la simple description de la table sectors).
-  const title = sectorContent?.frontmatter.title ?? `Salons ${sector.name}`;
+  const title = sectorContent?.frontmatter.title ?? `Salons ${sectorName}`;
   const description =
     sectorContent?.frontmatter.description ??
-    sector.description ??
-    `Découvrez tous les salons professionnels du secteur ${sector.name} sur ${siteConfig.name}.`;
+    sectorDescription ??
+    (locale === "en"
+      ? `Discover all professional trade shows in the ${sectorName} sector on ${siteConfig.name}.`
+      : `Découvrez tous les salons professionnels du secteur ${sectorName} sur ${siteConfig.name}.`);
 
   return {
     title,
@@ -78,13 +89,21 @@ export default async function SecteurPage({ params }: Props) {
 
   const [result, sectorContent, allSectors] = await Promise.all([
     getSalonsBySector(slug),
-    getSectorContent(slug),
+    // Phase 2 i18n : retourne le MDX EN si disponible, sinon FR.
+    getSectorContent(slug, locale),
     getSectors(),
   ]);
 
   const Content = sectorContent
     ? await compileMdxContent(sectorContent.content)
     : null;
+
+  // Phase 2 i18n : nom et description du secteur avec fallback FR.
+  const sectorName =
+    (locale === "en" && sector.name_en ? sector.name_en : null) ?? sector.name;
+  const sectorDescription =
+    (locale === "en" && sector.description_en ? sector.description_en : null) ??
+    sector.description;
 
   // Villes de la filière (dédupliquées via les salons listés) : maillage
   // croisé secteur → pages ville.
@@ -101,7 +120,7 @@ export default async function SecteurPage({ params }: Props) {
   const itemListJsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: `Salons ${sector.name}`,
+    name: locale === "en" ? `${sectorName} Trade Shows` : `Salons ${sectorName}`,
     numberOfItems: result.total,
     itemListElement: result.salons.map((salon, i) => ({
       "@type": "ListItem",
@@ -118,7 +137,7 @@ export default async function SecteurPage({ params }: Props) {
         items={[
           { name: t("breadcrumbHome"), item: "/" },
           { name: t("breadcrumbSectors"), item: "/secteurs" },
-          { name: sector.name, item: `/secteurs/${slug}` },
+          { name: sectorName, item: `/secteurs/${slug}` },
         ]}
       />
 
@@ -127,12 +146,12 @@ export default async function SecteurPage({ params }: Props) {
           {t("breadcrumbSectors")}
         </Link>
         <span className="mx-2">/</span>
-        <span className="text-prune">{sector.name}</span>
+        <span className="text-prune">{sectorName}</span>
       </nav>
 
       <header className="max-w-3xl">
         <SectionTitle as="h1" size="xl" eyebrow={t("eyebrow")}>
-          Salons {sector.name}
+          {locale === "en" ? `${sectorName} Trade Shows` : `Salons ${sectorName}`}
         </SectionTitle>
 
         {/* Mention de fraîcheur éditoriale : signal E-E-A-T pour Google
@@ -140,7 +159,7 @@ export default async function SecteurPage({ params }: Props) {
         {sectorContent && (
           <p className="mt-4 font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
             {t("editorialUpdate", {
-              date: formatEditorialMonth(sectorContent.frontmatter.updated),
+              date: formatEditorialMonthLocale(sectorContent.frontmatter.updated, locale),
             })}
           </p>
         )}
@@ -163,9 +182,9 @@ export default async function SecteurPage({ params }: Props) {
         {/* Sans MDX : description courte issue de la table sectors.
             Avec MDX : on n'affiche pas la description courte ici, le contenu
             éditorial qui suit prend le relais (intro plus dense). */}
-        {!Content && sector.description && (
+        {!Content && sectorDescription && (
           <p className="mt-5 text-base leading-relaxed text-prune/85 md:text-lg">
-            {sector.description}
+            {sectorDescription}
           </p>
         )}
       </header>

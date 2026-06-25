@@ -16,6 +16,15 @@
       "ctaSecondary": "or discover Agoris Premium"
     }
   },
+  "categories": {
+    "standiste": "Stand builder",
+    "traiteur": "Caterer",
+    "av_technique": "Audiovisual",
+    "photographe": "Photographer",
+    "transport": "Transport",
+    "hebergement": "Accommodation",
+    "autre": "Other"
+  },
   "detail": {
     "metaNotFound": "Supplier not found",
     "metaDescriptionFallback": "{companyName}, {label} for trade shows on {siteName}.",
