@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { ProviderCategoryBadge } from "@/components/provider-category-badge";
 import type { ProviderRow } from "@/lib/queries";
 
@@ -17,9 +17,17 @@ type ProviderCardProps = {
  *  - hover : fond ivoire chaud (#FBF7EA) + translateY(-2px) + arrow ocre bottom-right
  */
 export async function ProviderCard({ provider }: ProviderCardProps) {
-  const t = await getTranslations("card.provider");
+  const [t, locale] = await Promise.all([
+    getTranslations("card.provider"),
+    getLocale(),
+  ]);
 
   const isPremium = provider.subscription_tier === "premium";
+  // Phase 2 i18n : description traduite si dispo en EN, sinon FR.
+  const description =
+    (locale === "en" && provider.description_en
+      ? provider.description_en
+      : null) ?? provider.description;
 
   return (
     <article className="group relative rounded-lg bg-ivoire transition-[background-color,transform] duration-200 hover:-translate-y-0.5 hover:bg-[#FBF7EA]">
@@ -48,9 +56,9 @@ export async function ProviderCard({ provider }: ProviderCardProps) {
           )}
         </div>
 
-        {provider.description && (
+        {description && (
           <p className="line-clamp-2 text-sm leading-relaxed text-prune/70">
-            {provider.description}
+            {description}
           </p>
         )}
 

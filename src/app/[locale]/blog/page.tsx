@@ -28,7 +28,7 @@ export default async function BlogPage({
 }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "blog" });
-  const posts = getAllPosts();
+  const posts = getAllPosts(locale);
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-12 md:py-16">
@@ -113,7 +113,7 @@ export default async function BlogPage({
                     <span aria-hidden="true" className="text-prune/30">
                       ·
                     </span>
-                    <span>{post.readingTime}</span>
+                    <span>{t("post.readingTime", { minutes: post.readingMinutes })}</span>
                   </div>
                 </div>
               </Link>

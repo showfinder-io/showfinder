@@ -16,6 +16,7 @@
       "blog": "Blog"
     },
     "backToBlog": "Back to the blog",
-    "breadcrumbAriaLabel": "Breadcrumb"
+    "breadcrumbAriaLabel": "Breadcrumb",
+    "readingTime": "{minutes} min read"
   }
 }

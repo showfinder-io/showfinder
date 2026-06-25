@@ -16,6 +16,7 @@
       "blog": "Blog"
     },
     "backToBlog": "Retour au blog",
-    "breadcrumbAriaLabel": "Fil d'Ariane"
+    "breadcrumbAriaLabel": "Fil d'Ariane",
+    "readingTime": "{minutes} min de lecture"
   }
 }

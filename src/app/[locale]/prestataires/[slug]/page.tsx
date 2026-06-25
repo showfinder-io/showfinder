@@ -47,9 +47,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     tCat(provider.category as Parameters<typeof tCat>[0], {}) ??
     PROVIDER_CATEGORY_LABELS[provider.category] ??
     provider.category;
+  // Phase 2 i18n : description traduite si dispo en EN, sinon FR.
+  const description =
+    (locale === "en" && provider.description_en
+      ? provider.description_en
+      : null) ?? provider.description;
   return {
     title: `${provider.company_name} - ${label}`,
-    description: provider.description || t("metaDescriptionFallback", { companyName: provider.company_name, label, siteName: siteConfig.name }),
+    description: description || t("metaDescriptionFallback", { companyName: provider.company_name, label, siteName: siteConfig.name }),
     robots: { index: false, follow: true },
     alternates: buildAlternates(`/prestataires/${slug}`, locale),
   };
@@ -76,6 +81,12 @@ export default async function ProviderPage({ params }: Props) {
   const provider = await getProviderBySlug(slug);
   if (!provider) notFound();
 
+  // Phase 2 i18n : description traduite si dispo en EN, sinon FR.
+  const description =
+    (locale === "en" && provider.description_en
+      ? provider.description_en
+      : null) ?? provider.description;
+
   // Phase 2 i18n : label de catégorie localisé avec fallback FR.
   const label =
     tCat(provider.category as Parameters<typeof tCat>[0], {}) ??
@@ -93,7 +104,7 @@ export default async function ProviderPage({ params }: Props) {
     name: provider.company_name,
     url: `${siteConfig.url}/prestataires/${slug}`,
   };
-  if (provider.description) providerJsonLd.description = provider.description;
+  if (description) providerJsonLd.description = description;
   if (provider.logo_url) providerJsonLd.image = provider.logo_url;
   if (provider.phone) providerJsonLd.telephone = provider.phone;
   if (provider.email) providerJsonLd.email = provider.email;
@@ -164,8 +175,8 @@ export default async function ProviderPage({ params }: Props) {
 
       {/* Infos */}
       <section className="mt-8">
-        {provider.description && (
-          <p className="leading-relaxed text-muted">{provider.description}</p>
+        {description && (
+          <p className="leading-relaxed text-muted">{description}</p>
         )}
 
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
