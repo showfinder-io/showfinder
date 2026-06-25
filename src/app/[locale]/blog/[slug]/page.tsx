@@ -20,7 +20,7 @@ export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
   const { slug, locale } = await params;
-  const post = getPostBySlug(slug);
+  const post = getPostBySlug(slug, locale);
 
   if (!post) return {};
 
@@ -43,7 +43,7 @@ export async function generateMetadata({
 
 export default async function BlogPostPage({ params }: PageProps) {
   const { slug, locale } = await params;
-  const post = getPostBySlug(slug);
+  const post = getPostBySlug(slug, locale);
 
   if (!post) notFound();
 
@@ -112,7 +112,7 @@ export default async function BlogPostPage({ params }: PageProps) {
             )}
           </time>
           <span aria-hidden="true">&middot;</span>
-          <span>{post.readingTime}</span>
+          <span>{t("readingTime", { minutes: post.readingMinutes })}</span>
         </div>
       </header>
 

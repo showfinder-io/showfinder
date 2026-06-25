@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import readingTime from "reading-time";
+import type { AppLocale } from "@/i18n/routing";
 
 const BLOG_DIR = path.join(process.cwd(), "content/blog");
 
@@ -17,19 +18,38 @@ export interface PostFrontmatter {
 export interface Post {
   slug: string;
   frontmatter: PostFrontmatter;
-  readingTime: string;
+  // Durée de lecture en minutes (arrondie). Le formatage localisé
+  // ("min de lecture" / "min read") se fait côté page via next-intl.
+  readingMinutes: number;
   content: string;
 }
 
-/** Recupere tous les articles, tries par date decroissante */
-export function getAllPosts(): Post[] {
+/**
+ * Résout le chemin du fichier MDX pour un slug et une locale donnés.
+ * En locale EN, on privilégie `{slug}.en.mdx` s'il existe, sinon fallback
+ * sur la version FR canonique `{slug}.mdx`.
+ */
+function resolveFilePath(slug: string, locale: AppLocale): string | null {
+  if (locale === "en") {
+    const enPath = path.join(BLOG_DIR, `${slug}.en.mdx`);
+    if (fs.existsSync(enPath)) return enPath;
+  }
+  const frPath = path.join(BLOG_DIR, `${slug}.mdx`);
+  return fs.existsSync(frPath) ? frPath : null;
+}
+
+/** Recupere tous les articles (slugs canoniques FR), tries par date decroissante */
+export function getAllPosts(locale: AppLocale = "fr"): Post[] {
   if (!fs.existsSync(BLOG_DIR)) return [];
 
-  const files = fs.readdirSync(BLOG_DIR).filter((f) => f.endsWith(".mdx"));
+  // Slugs canoniques : fichiers `.mdx` hors variantes localisées `.en.mdx`.
+  const files = fs
+    .readdirSync(BLOG_DIR)
+    .filter((f) => f.endsWith(".mdx") && !f.endsWith(".en.mdx"));
 
   const posts = files.map((filename) => {
     const slug = filename.replace(/\.mdx$/, "");
-    return getPostBySlug(slug);
+    return getPostBySlug(slug, locale);
   });
 
   return posts
@@ -41,11 +61,14 @@ export function getAllPosts(): Post[] {
     );
 }
 
-/** Recupere un article par son slug */
-export function getPostBySlug(slug: string): Post | null {
-  const filePath = path.join(BLOG_DIR, `${slug}.mdx`);
+/** Recupere un article par son slug, dans la locale demandée (fallback FR) */
+export function getPostBySlug(
+  slug: string,
+  locale: AppLocale = "fr"
+): Post | null {
+  const filePath = resolveFilePath(slug, locale);
 
-  if (!fs.existsSync(filePath)) return null;
+  if (!filePath) return null;
 
   const raw = fs.readFileSync(filePath, "utf-8");
   const { data, content } = matter(raw);
@@ -54,7 +77,7 @@ export function getPostBySlug(slug: string): Post | null {
   return {
     slug,
     frontmatter: data as PostFrontmatter,
-    readingTime: `${Math.ceil(stats.minutes)} min de lecture`,
+    readingMinutes: Math.ceil(stats.minutes),
     content,
   };
 }

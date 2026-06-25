@@ -404,13 +404,18 @@ export async function getSalonBySlug(slug: string) {
 export async function getSectors() {
   const supabase = await createClient();
 
+  // On sélectionne aussi les colonnes _en (Phase 2 i18n) pour que la liste
+  // /secteurs puisse afficher le contenu localisé. Le picking FR/EN se fait
+  // côté page selon la locale.
   const { data, error } = await supabase
     .from("sectors")
-    .select("id, slug, name, description")
+    .select("id, slug, name, description, name_en, description_en")
     .order("name");
 
   if (error) throw error;
-  return (data ?? []) as SectorRow[];
+  // Cast via unknown : les types Supabase générés ne connaissent pas encore
+  // les colonnes _en (Phase 2 i18n). Elles existent au runtime.
+  return (data ?? []) as unknown as SectorRow[];
 }
 
 export async function getCities() {
@@ -544,6 +549,8 @@ export type ProviderRow = {
   company_name: string;
   category: string;
   description: string | null;
+  // Phase 2 i18n : description traduite (nulle par défaut, remplie hors bande).
+  description_en?: string | null;
   city: string | null;
   website_url: string | null;
   phone: string | null;
