@@ -23,36 +23,38 @@ function enUrl(path: string): string {
 }
 
 /**
- * Construit une entree de sitemap avec hreflang reciproque (fr-FR / en-GB /
- * x-default). Tant que l'EN n'est pas active (I18N_EN_ENABLED = false), on
- * n'emet PAS d'alternates EN : exposer des URLs /en qui renvoient 404 nuirait
- * au SEO. L'architecture est prete pour basculer en une variable.
+ * Construit les entrees de sitemap pour un chemin : une entree FR et, si l'EN
+ * est active, une entree EN distincte. Format recommande par Google pour
+ * l'hreflang en sitemap : chaque version de langue a sa propre balise <url>,
+ * chacune repetant le bloc d'alternates complet (fr-FR / en-GB / x-default).
+ * Tant que l'EN n'est pas active (I18N_EN_ENABLED = false), on n'emet ni
+ * entree EN ni alternates : exposer des URLs /en qui renvoient 404 nuirait
+ * au SEO.
  *
  * @param path Chemin SANS domaine et SANS prefixe de locale ("" pour la home).
  */
 function entry(
   path: string,
   opts: Omit<MetadataRoute.Sitemap[number], "url" | "alternates">
-): MetadataRoute.Sitemap[number] {
-  const base: MetadataRoute.Sitemap[number] = {
-    url: frUrl(path) || siteConfig.url,
-    ...opts,
-  };
+): MetadataRoute.Sitemap {
+  const fr = frUrl(path) || siteConfig.url;
 
   if (!I18N_EN_ENABLED) {
-    return base;
+    return [{ url: fr, ...opts }];
   }
 
-  return {
-    ...base,
-    alternates: {
-      languages: {
-        [HREFLANG_BY_LOCALE.fr]: frUrl(path) || siteConfig.url,
-        [HREFLANG_BY_LOCALE.en]: enUrl(path),
-        "x-default": frUrl(path) || siteConfig.url,
-      },
+  const alternates: MetadataRoute.Sitemap[number]["alternates"] = {
+    languages: {
+      [HREFLANG_BY_LOCALE.fr]: fr,
+      [HREFLANG_BY_LOCALE.en]: enUrl(path),
+      "x-default": fr,
     },
   };
+
+  return [
+    { url: fr, ...opts, alternates },
+    { url: enUrl(path), ...opts, alternates },
+  ];
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -96,18 +98,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
 
   const entries: MetadataRoute.Sitemap = [
-    entry("", { lastModified: now, changeFrequency: "daily", priority: 1 }),
-    entry("/salons", {
+    ...entry("", { lastModified: now, changeFrequency: "daily", priority: 1 }),
+    ...entry("/salons", {
       lastModified: now,
       changeFrequency: "daily",
       priority: 0.9,
     }),
-    entry("/secteurs", {
+    ...entry("/secteurs", {
       lastModified: now,
       changeFrequency: "weekly",
       priority: 0.8,
     }),
-    entry("/methodologie", {
+    ...entry("/methodologie", {
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.5,
@@ -117,7 +119,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Pages salon
   for (const salon of salons) {
     entries.push(
-      entry(`/salons/${salon.slug}`, {
+      ...entry(`/salons/${salon.slug}`, {
         lastModified: salon.updated_at ? new Date(salon.updated_at) : now,
         changeFrequency: "weekly",
         priority: 0.7,
@@ -128,7 +130,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Pages secteur
   for (const sector of sectors) {
     entries.push(
-      entry(`/secteurs/${sector.slug}`, {
+      ...entry(`/secteurs/${sector.slug}`, {
         lastModified: now,
         changeFrequency: "weekly",
         priority: 0.6,
@@ -147,7 +149,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   for (const [city, count] of cityCounts) {
     if (count < CITY_INDEX_MIN_SALONS) continue;
     entries.push(
-      entry(`/villes/${slugifyCity(city)}`, {
+      ...entry(`/villes/${slugifyCity(city)}`, {
         lastModified: now,
         changeFrequency: "weekly",
         priority: 0.6,
@@ -157,7 +159,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // Page index lieux
   entries.push(
-    entry("/lieux", {
+    ...entry("/lieux", {
       lastModified: now,
       changeFrequency: "weekly",
       priority: 0.8,
@@ -167,7 +169,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Pages lieu
   for (const venue of venues) {
     entries.push(
-      entry(`/lieux/${venue.slug}`, {
+      ...entry(`/lieux/${venue.slug}`, {
         lastModified: now,
         changeFrequency: "weekly",
         priority: 0.6,
@@ -182,7 +184,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const posts = getAllPosts();
 
   entries.push(
-    entry("/blog", {
+    ...entry("/blog", {
       lastModified: now,
       changeFrequency: "weekly",
       priority: 0.7,
@@ -191,7 +193,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   for (const post of posts) {
     entries.push(
-      entry(`/blog/${post.slug}`, {
+      ...entry(`/blog/${post.slug}`, {
         lastModified: new Date(post.frontmatter.date),
         changeFrequency: "monthly",
         priority: 0.6,
@@ -203,7 +205,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // présentes dans le sitemap pour un signal d'exhaustivité propre.
   for (const path of ["/contact", "/mentions", "/confidentialite", "/cookies"]) {
     entries.push(
-      entry(path, {
+      ...entry(path, {
         lastModified: now,
         changeFrequency: "yearly",
         priority: 0.3,
