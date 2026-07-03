@@ -197,12 +197,20 @@ const FAMILIES: Record<string, string> = {
 function classifyUrl(url: string): Gabarit {
   const p = url.replace(/^https?:\/\/[^/]+/, "").replace(/\/$/, "");
   if (p === "" || p === "/") return "home";
-  const segments = p.replace(/^\//, "").split("/");
+  let segments = p.replace(/^\//, "").split("/");
+  // Version anglaise (/en/...) : mêmes familles, gabarit préfixé "en-" pour
+  // suivre la cohorte EN séparément (149 pages classées "autre" au 2026-07-03).
+  let prefix = "";
+  if (segments[0] === "en") {
+    prefix = "en-";
+    segments = segments.slice(1);
+    if (segments.length === 0) return "en-home";
+  }
   const family = FAMILIES[segments[0]];
   if (family) {
-    return segments.length > 1 ? `${family}-fiche` : `${family}-index`;
+    return `${prefix}${family}-${segments.length > 1 ? "fiche" : "index"}`;
   }
-  return "autre";
+  return `${prefix}autre`;
 }
 
 // ─── Pick le bon siteUrl GSC ──────────────────────────────────────────
