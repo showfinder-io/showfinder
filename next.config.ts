@@ -298,6 +298,13 @@ const nextConfig: NextConfig = {
         destination: "/salons/pollutec-lyon",
         permanent: true,
       },
+      // 12 guides éditoriaux Nicolas (2026-07-23) : preparer-stand-salon-professionnel.mdx
+      // remplacé + budget-salon-professionnel.mdx renommé/étoffé en budget-stand-salon-professionnel.mdx
+      {
+        source: "/blog/budget-salon-professionnel",
+        destination: "/blog/budget-stand-salon-professionnel",
+        permanent: true,
+      },
     ];
   },
 };
