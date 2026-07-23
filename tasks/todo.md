@@ -22,8 +22,8 @@ Constat : 29 prestataires en base mais salon_providers ne couvre que 6 salons su
 - [x] B3. Montage des 12 articles en MDX : PR draft #68 (feat/jz-blog-12-articles-nicolas), build OK 1049 pages, 0 tiret cadratin, 0 résidu pandoc. En recette Julien/Nicolas, ne pas merger sans acceptation
 - [x] B4. Slug budget : nouveau slug + redirect 301 appliqués dans next.config (PR #68). Liens internes de top-salons-agroalimentaire corrigés. NB : les redirects du fichier ne couvrent pas les variantes /en (convention existante). Article 12 : contenu remplacé sous le slug existant preparer-stand-salon-professionnel ; son .en.mdx est désynchronisé (fallback FR en attendant)
 - [ ] B5. Versions EN (.en.mdx) : décision Julien (coût tokens vs cohérence i18n) ; si oui, batch Sonnet différé
-- [ ] B6. Ordre de publication P1 : articles 1, 2, 6, 10 (publication en batch, pas de calendrier étalé)
-- [ ] Vérif : npm run build (SSG des nouvelles pages blog), relecture accents, maillage interne réel vers fiches/secteurs
+- [x] B6. Publication en batch complet le 2026-07-23 (PR #68 mergée). Reste : Request Indexing GSC sur les P1 (1, 2, 6, 10)
+- [x] Vérif : recette complète via ship-review (rapport local dans audits/2026-07-23-blog-12-articles/). Relecture second reviewer : 1 bloquant corrigé (chiffre non sourcé art. 1) + 4 mineurs. Prod vérifiée : 12 slugs 200, fallback EN 200, redirects FR+EN 308 actifs, sitemap OK, corrections fact-check présentes dans le HTML rendu
 
 ## Review
 
