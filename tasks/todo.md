@@ -18,9 +18,9 @@ Constat : 29 prestataires en base mais salon_providers ne couvre que 6 salons su
 ## Volet B : 12 articles blog
 
 - [x] B1. Fact-check articles 6, 7, 8, 9 (sous-agent Sonnet, 2026-07-23) : articles 6/7/9 solides ; article 8 : 1 erreur factuelle (Global Industrie attribué aussi à RX France : faux, GL events exclusif) + renommages (Paris Builders Show, Paris Nautic Show, Vinexposium, SAFI pour Maison&Objet, CENECA pour le SIA) ; article 9 : préciser que les 7,5/34,5 Md€ reposent sur une étude de référence 2012
-- [ ] B2. Corrections des articles selon fact-check (Sonnet)
-- [ ] B3. Montage des 12 articles en MDX dans content/blog (Sonnet), frontmatter conforme à l'existant, accents vérifiés
-- [ ] B4. Décision slug : article 10 budget-stand-salon-professionnel vs existant budget-salon-professionnel (défaut proposé : nouveau slug + redirect 301 de l'ancien), à valider Julien
+- [x] B2. Corrections fact-check appliquées dans les MDX (vérifié par spot-check : Global Industrie retiré de RX, SAFI, Paris Builders Show, Paris Nautic Show, Vinexposium, CENECA, 38 000, 24 juillet 2025 / 32 actions, réserve étude 2012)
+- [x] B3. Montage des 12 articles en MDX : PR draft #68 (feat/jz-blog-12-articles-nicolas), build OK 1049 pages, 0 tiret cadratin, 0 résidu pandoc. En recette Julien/Nicolas, ne pas merger sans acceptation
+- [x] B4. Slug budget : nouveau slug + redirect 301 appliqués dans next.config (PR #68). Liens internes de top-salons-agroalimentaire corrigés. NB : les redirects du fichier ne couvrent pas les variantes /en (convention existante). Article 12 : contenu remplacé sous le slug existant preparer-stand-salon-professionnel ; son .en.mdx est désynchronisé (fallback FR en attendant)
 - [ ] B5. Versions EN (.en.mdx) : décision Julien (coût tokens vs cohérence i18n) ; si oui, batch Sonnet différé
 - [ ] B6. Ordre de publication P1 : articles 1, 2, 6, 10 (publication en batch, pas de calendrier étalé)
 - [ ] Vérif : npm run build (SSG des nouvelles pages blog), relecture accents, maillage interne réel vers fiches/secteurs

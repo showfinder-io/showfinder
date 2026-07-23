@@ -305,6 +305,12 @@ const nextConfig: NextConfig = {
         destination: "/blog/budget-stand-salon-professionnel",
         permanent: true,
       },
+      // Variante EN : l'URL est référencée dans le sitemap EN (PR #65), éviter un 404 sec
+      {
+        source: "/en/blog/budget-salon-professionnel",
+        destination: "/en/blog/budget-stand-salon-professionnel",
+        permanent: true,
+      },
     ];
   },
 };
