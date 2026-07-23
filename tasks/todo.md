@@ -21,10 +21,14 @@ Constat : 29 prestataires en base mais salon_providers ne couvre que 6 salons su
 - [x] B2. Corrections fact-check appliquées dans les MDX (vérifié par spot-check : Global Industrie retiré de RX, SAFI, Paris Builders Show, Paris Nautic Show, Vinexposium, CENECA, 38 000, 24 juillet 2025 / 32 actions, réserve étude 2012)
 - [x] B3. Montage des 12 articles en MDX : PR draft #68 (feat/jz-blog-12-articles-nicolas), build OK 1049 pages, 0 tiret cadratin, 0 résidu pandoc. En recette Julien/Nicolas, ne pas merger sans acceptation
 - [x] B4. Slug budget : nouveau slug + redirect 301 appliqués dans next.config (PR #68). Liens internes de top-salons-agroalimentaire corrigés. NB : les redirects du fichier ne couvrent pas les variantes /en (convention existante). Article 12 : contenu remplacé sous le slug existant preparer-stand-salon-professionnel ; son .en.mdx est désynchronisé (fallback FR en attendant)
-- [ ] B5. Versions EN (.en.mdx) : décision Julien (coût tokens vs cohérence i18n) ; si oui, batch Sonnet différé
-- [x] B6. Publication en batch complet le 2026-07-23 (PR #68 mergée). Reste : Request Indexing GSC sur les P1 (1, 2, 6, 10)
+- [x] B5. Versions EN livrées le 2026-07-23 (PR #70) : 11 .en.mdx créés + preparer-stand resynchronisé. Vérifié en prod (/en/blog sert bien l'anglais). NB architecture préexistante : les liens internes des MDX utilisent next/link brut, donc pointent vers /salons (FR) même depuis les pages EN ; à corriger un jour dans le composant a de src/lib/mdx ou blog.ts, pas dans les contenus
+- [x] B6. Publication en batch complet le 2026-07-23 (PR #68 mergée). Request Indexing GSC fait le jour même sur les 4 P1 (1, 2, 6, 10), confirmations "Indexing requested" à l'écran
 - [x] Vérif : recette complète via ship-review (rapport local dans audits/2026-07-23-blog-12-articles/). Relecture second reviewer : 1 bloquant corrigé (chiffre non sourcé art. 1) + 4 mineurs. Prod vérifiée : 12 slugs 200, fallback EN 200, redirects FR+EN 308 actifs, sitemap OK, corrections fact-check présentes dans le HTML rendu
 
 ## Review
 
-(à compléter en fin de chantier)
+- Chantier bouclé le 2026-07-23 en une journée : purge prestataires (PR #67), 12 articles FR (PR #68), versions EN (PR #70), indexation GSC des 4 P1.
+- Volet A restant : A3 (réseau réel de Nicolas, bloqué sur lui), A4 (bloc prestataires inline sur fiche, standistes en premier), A5 (fallback ville/venue). À reprendre quand Nicolas envoie sa liste.
+- Leçon : dans GSC via Chrome, la première saisie dans la barre d'inspection juste après un toast "Indexing requested" est systématiquement perdue ; toujours vérifier par screenshot que l'URL est bien dans la barre avant Enter.
+- Leçon : RTK peut rendre vide un grep piped sur du HTML curl volumineux ; sauvegarder dans un fichier puis grepper (déjà en mémoire projet, confirmé).
+- supabase db push : à lancer depuis le dossier du projet (fait par Julien).
