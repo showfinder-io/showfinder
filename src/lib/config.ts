@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "Agoris",
   description:
-    "L'annuaire intelligent des salons professionnels en France : visitez les bons salons, organisez votre stand, développez votre business.",
+    "Agoris, l'annuaire décisionnel des salons professionnels en France : dates, lieux, exposants, secteurs. 190+ salons B2B référencés, fiches à jour.",
   url: process.env.NEXT_PUBLIC_APP_URL || "https://www.agoris.io",
   locale: "fr-FR",
 } as const;
