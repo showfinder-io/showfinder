@@ -1,3 +1,26 @@
+# Chantier croissance trafic (2026-08-03) : passe CTR + cadrage cohorte suivante
+
+Objectif long terme validé Julien : 10 000 visites/mois. État au 2026-07-28 : 384 clics GSC / 28j, 29k impressions, plateau depuis mi-juillet.
+
+## Volet C : passe CTR sur les pages à fortes impressions
+
+Cible : fiches FR en position 5-15 avec CTR < 1,5% et impressions significatives (baseline 2026-07-28). Réécriture seo_title / seo_description orientée réponse (dates, lieu, exposants), générée depuis les champs DB vérifiés, aucune donnée fabriquée.
+
+- [x] C1. Sélection : 38 pages candidates (imp >= 80, CTR < 1,5%, pos <= 15), dont 34 fiches salons
+- [x] C2. Audit : 24 fiches sur 34 avaient seo_title/seo_description NULL (fallback "Nom Année" + description générique), cause principale du CTR faible. Les 10 autres ont des metas correctes, non touchées (minimum diff). 2 pages secteurs : title vient du frontmatter MDX (repo), non traité ici. 2 pages lieux : pas de seo_title FR dans le code, non traité
+- [x] C3+C4. scripts/diag-ctr-pass-apply.ts : 24 seo_title/seo_description composés uniquement depuis les champs DB vérifiés (dates, lieu, exposants, visiteurs, description éditoriale). Garde-fous : verrou sur les dates (skip si fiche rollée), jamais d'écrasement d'un seo_title existant. Appliqué en DB le 2026-08-03 (24/24)
+- [x] Vérif : npm run build OK (1049 pages), spot-check runtime local (next start) : titles rendus corrects sur artibat-rennes et smcl. Fiches en SSG pur : metas servies en prod au prochain déploiement (merge de la PR)
+- [ ] C5. Mesure : comparer CTR des 24 fiches dans la baseline GSC vers le 2026-08-18 (2 semaines après indexation)
+
+## Volet D : cadrage cohorte "trafic" (extension catalogue 192 → 500+)
+
+- [ ] D1. Extraire de queries.csv les requêtes salons à impressions sans fiche dédiée (demande non couverte)
+- [ ] D2. Construire la liste candidate de salons manquants depuis sources primaires (calendriers des parcs, Unimev)
+- [ ] D3. Scorer par volume de recherche, produire la shortlist priorisée de la prochaine cohorte
+- [ ] Livrable : tasks/cohorte-trafic-shortlist.md, validation Julien/Nicolas avant écriture des fiches
+
+---
+
 # Chantier double : prestataires sur fiches + 12 articles blog Nicolas (2026-07-23)
 
 Source : message WhatsApp Nicolas + doc "agoris-plan-et-articles-blog.docx" (converti en markdown dans le scratchpad session).
