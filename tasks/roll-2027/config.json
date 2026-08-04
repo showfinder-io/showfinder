@@ -1,0 +1,5 @@
+{
+  "supabase_url": "https://pquihkwoxhkmneymazcb.supabase.co",
+  "anon_key": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBxdWloa3dveGhrbW5leW1hemNiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUwMjk0ODYsImV4cCI6MjA5MDYwNTQ4Nn0.bQFRSF7S4vTUgLaeWkPXENBhsfyfbZ49d_IeO9Ba3xA",
+  "note": "Cl\u00e9 anon publique (d\u00e9j\u00e0 expos\u00e9e dans le bundle client du site). Lecture seule via RLS. Utilis\u00e9e par la routine cloud agoris-roll-2027-watch."
+}
