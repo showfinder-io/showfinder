@@ -15,10 +15,11 @@ Cible : fiches FR en position 5-15 avec CTR < 1,5% et impressions significatives
 
 ## Volet D : cadrage cohorte "trafic" (extension catalogue 192 → 500+)
 
-- [ ] D1. Extraire de queries.csv les requêtes salons à impressions sans fiche dédiée (demande non couverte)
-- [ ] D2. Construire la liste candidate de salons manquants depuis sources primaires (calendriers des parcs, Unimev)
-- [ ] D3. Scorer par volume de recherche, produire la shortlist priorisée de la prochaine cohorte
-- [ ] Livrable : tasks/cohorte-trafic-shortlist.md, validation Julien/Nicolas avant écriture des fiches
+- [x] D1. Analyse queries.csv (2026-08-03) : 1 seul gap réel (Art Basel Paris, 34 imp) ; 4 faux gaps = salons déjà en base sous un autre nom (Terres de Jim, SantExpo, Sirha Bake & Snack, GO Entrepreneurs) → opportunité on-page, pas de nouvelle fiche
+- [x] D2. Recherche web 3 zones (IDF, Lyon/Grand Ouest, Sud-Ouest/Nord/Méditerranée) : 37 candidats bruts, tous vérifiés source primaire ou écartés
+- [x] D3. Shortlist livrée : tasks/cohorte-trafic-shortlist.md, 36 salons (13 P1, 20 P2, 3 P3 dont 1 non vérifiable). Priorisation par signal GSC + notoriété filière (pas de scoring DataForSEO : demande GSC déjà en main)
+- [ ] D4. Validation Julien/Nicolas de la shortlist, puis lancement cohorte d'écriture writer + 2 reviewers sur les P1 (import en draft, publication après vérification, règle #13)
+- [ ] D5. On-page des 4 faux gaps : intégrer les anciens noms (Concours National de Labour, Géront'Expo, Europain, Salon des Entrepreneurs) dans les fiches Terres de Jim, SantExpo, Sirha Bake & Snack, GO Entrepreneurs
 
 ---
 
