@@ -298,6 +298,22 @@ const nextConfig: NextConfig = {
         destination: "/salons/pollutec-lyon",
         permanent: true,
       },
+      // Passe anciens noms GSC (2026-08-04) : le slug je-m-export-paris était
+      // une erreur de données (la fiche est Go Entrepreneurs, ex-Salon des
+      // Entrepreneurs ; aucun événement "Je m'Exporte" n'existe). Slug DB
+      // renommé par scripts/diag-anciens-noms-gsc-apply.ts ; la destination de
+      // je-m-export-paris-2026 dans redirects-slug-year.json est corrigée en
+      // conséquence (pas de chaîne de 301).
+      {
+        source: "/salons/je-m-export-paris",
+        destination: "/salons/go-entrepreneurs-paris",
+        permanent: true,
+      },
+      {
+        source: "/en/salons/je-m-export-paris",
+        destination: "/en/salons/go-entrepreneurs-paris",
+        permanent: true,
+      },
       // 12 guides éditoriaux Nicolas (2026-07-23) : preparer-stand-salon-professionnel.mdx
       // remplacé + budget-salon-professionnel.mdx renommé/étoffé en budget-stand-salon-professionnel.mdx
       {
