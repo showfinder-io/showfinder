@@ -19,7 +19,8 @@ Cible : fiches FR en position 5-15 avec CTR < 1,5% et impressions significatives
 - [x] D2. Recherche web 3 zones (IDF, Lyon/Grand Ouest, Sud-Ouest/Nord/Méditerranée) : 37 candidats bruts, tous vérifiés source primaire ou écartés
 - [x] D3. Shortlist livrée : tasks/cohorte-trafic-shortlist.md, 36 salons (13 P1, 20 P2, 3 P3 dont 1 non vérifiable). Priorisation par signal GSC + notoriété filière (pas de scoring DataForSEO : demande GSC déjà en main)
 - [ ] D4. Validation Julien/Nicolas de la shortlist, puis lancement cohorte d'écriture writer + 2 reviewers sur les P1 (import en draft, publication après vérification, règle #13)
-- [ ] D5. On-page des 4 faux gaps : intégrer les anciens noms (Concours National de Labour, Géront'Expo, Europain, Salon des Entrepreneurs) dans les fiches Terres de Jim, SantExpo, Sirha Bake & Snack, GO Entrepreneurs
+- [x] D5. On-page des 4 faux gaps (2026-08-04, scripts/diag-anciens-noms-gsc-apply.ts, 18 champs) : anciens noms intégrés dans metas/description/MDX (FR+EN). Terres de Jim et Sirha Bake & Snack n'avaient aucun seo_title/seo_description (créés). Orthographe historique FHF vérifiée : "Géront Expo-Handicap Expo". Bonus : slug je-m-export-paris (erreur de données, aucun événement "Je m'Exporte" n'existe) renommé go-entrepreneurs-paris + 301 FR/EN dans next.config + destination de je-m-export-paris-2026 corrigée dans redirects-slug-year.json (pas de chaîne). Mention du slug interne retirée du MDX public
+- [ ] D5bis. Mesure : vérifier à la prochaine baseline GSC (vers le 2026-08-18) que les requêtes anciens noms ("concours de labour", "geront expo", "salon europain", "salon des entrepreneurs") commencent à capter. Après déploiement, Request Indexing GSC sur /salons/go-entrepreneurs-paris (slug neuf) et vérifier le 301 de /salons/je-m-export-paris (rappel : un redirect next.config peut ne s'activer qu'au déploiement suivant)
 
 ---
 
