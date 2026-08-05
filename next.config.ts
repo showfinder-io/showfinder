@@ -314,6 +314,20 @@ const nextConfig: NextConfig = {
         destination: "/en/salons/go-entrepreneurs-paris",
         permanent: true,
       },
+      // Cohorte trafic lot 2 (2026-08-04) : le Salon Bois Énergie s'est arrêté
+      // en 2020, absorbé dans Bio360 (RR33, confirmé par 3 sources : page À
+      // propos bio360expo.com + presse spécialisée). Fiche salon-bois-energie
+      // dépubliée (édition 2027 fantôme), 301 vers la fiche canonique.
+      {
+        source: "/salons/salon-bois-energie",
+        destination: "/salons/bio360-expo",
+        permanent: true,
+      },
+      {
+        source: "/en/salons/salon-bois-energie",
+        destination: "/en/salons/bio360-expo",
+        permanent: true,
+      },
       // 12 guides éditoriaux Nicolas (2026-07-23) : preparer-stand-salon-professionnel.mdx
       // remplacé + budget-salon-professionnel.mdx renommé/étoffé en budget-stand-salon-professionnel.mdx
       {
