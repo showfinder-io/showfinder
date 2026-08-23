@@ -80,7 +80,7 @@ async function main() {
       organizer_name: h.organizer_name ?? null, co_organizer_name: h.co_organizer_name ?? null,
       frequency: h.frequency ?? null,
       estimated_exhibitors: h.estimated_exhibitors ?? null, estimated_visitors: h.estimated_visitors ?? null,
-      category: h.category ?? null, description: h.description,
+      category: h.category ?? null, category_to_confirm: h.category_to_confirm === true, description: h.description,
       seo_title: h.seo_title, seo_description: h.seo_description, editorial_mdx: h.editorial_mdx,
       description_en: h.description_en ?? null, seo_title_en: h.seo_title_en ?? null,
       seo_description_en: h.seo_description_en ?? null, editorial_mdx_en: h.editorial_mdx_en ?? null,
