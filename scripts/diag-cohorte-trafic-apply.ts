@@ -61,6 +61,11 @@ async function main() {
     for (const k of ["name", "start_date", "end_date", "city", "website_url", "editorial_mdx", "seo_title", "seo_description", "description", "editorial_mdx_en", "seo_title_en"]) {
       if (!h[k]) throw new Error(`${slug}: champ ${k} manquant ou vide dans le handoff`);
     }
+    // Enum DB salon_category (lot 4 : un writer avait écrit "salon_pro", insert refusé en plein lot)
+    const CATEGORIES = ["salon_professionnel", "salon_grand_public", "congres", "autres"];
+    if (h.category && !CATEGORIES.includes(h.category)) {
+      throw new Error(`${slug}: category "${h.category}" hors enum (${CATEGORIES.join(", ")})`);
+    }
 
     const { data: existing } = await sb.from("salons").select("id,status").eq("slug", slug).maybeSingle();
     if (existing) { console.log(`SKIP ${slug}: existe déjà (status ${existing.status})`); continue; }
