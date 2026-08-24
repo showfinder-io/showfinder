@@ -24,7 +24,7 @@ import { AgorisCertifiedBadge } from "@/components/agoris-certified-badge";
 import { SalonOutboundLink } from "@/components/salon-outbound-link";
 import { getSalonContent } from "@/lib/salon-content";
 import { formatEditorialMonthLocale } from "@/lib/sector-content";
-import { compileMdxContent } from "@/lib/mdx";
+import { compileMdxContentSafe } from "@/lib/mdx";
 import { salonMdxComponents } from "@/components/mdx/salon-mdx-components";
 import { FeedbackPrompt } from "@/components/feedback-prompt";
 import { buildAlternates } from "@/lib/i18n-metadata";
@@ -124,7 +124,7 @@ export default async function SalonPage({ params }: Props) {
   // Phase 2 i18n : getSalonContent retourne le MDX EN si disponible, sinon FR.
   const salonContent = await getSalonContent(slug, locale);
   const MdxContent = salonContent
-    ? await compileMdxContent(salonContent.content, salonMdxComponents)
+    ? await compileMdxContentSafe(salonContent.content, salonMdxComponents)
     : null;
 
   // Quick Stats : uniquement les chiffres vérifiables. Pas de placeholder.
@@ -144,14 +144,30 @@ export default async function SalonPage({ params }: Props) {
   const pitch = pitchFrom(description);
   const certified = salon.is_agoris_certified === true;
 
-  // Schema.org Event
+  // Schema.org Event. Champs recommandés par GSC (rapport 2026-08) : image,
+  // eventStatus, organizer.url, performer, offers. Uniquement des données
+  // vérifiables : pas de prix inventé dans offers, pas d'image placeholder.
+  const eventStatusBySalonStatus: Record<string, string> = {
+    published: "https://schema.org/EventScheduled",
+    cancelled: "https://schema.org/EventCancelled",
+    postponed: "https://schema.org/EventPostponed",
+  };
+  const eventImage = salon.cover_image_url ?? salon.logo_url ?? undefined;
+  const eventOrganizer = salon.organizer_name
+    ? {
+        "@type": "Organization",
+        name: salon.organizer_name,
+        ...(salon.website_url && { url: salon.website_url }),
+      }
+    : undefined;
   const eventJsonLd = {
     "@context": "https://schema.org",
     "@type": "Event",
     name: salon.name,
-    description: description,
+    description: description ?? salon.seo_description ?? undefined,
     startDate: salon.start_date,
     endDate: salon.end_date,
+    ...(eventImage && { image: eventImage }),
     location: {
       "@type": "Place",
       name: salon.venue,
@@ -161,9 +177,19 @@ export default async function SalonPage({ params }: Props) {
         addressCountry: salon.country,
       },
     },
-    organizer: salon.organizer_name
-      ? { "@type": "Organization", name: salon.organizer_name }
-      : undefined,
+    organizer: eventOrganizer,
+    // Pour un salon professionnel, l'organisateur tient le rôle de performer
+    // (pas d'artiste) : c'est la valeur attendue par Google pour un BusinessEvent.
+    performer: eventOrganizer,
+    ...(salon.website_url && {
+      offers: {
+        "@type": "Offer",
+        url: salon.website_url,
+      },
+    }),
+    eventStatus:
+      eventStatusBySalonStatus[salon.status] ??
+      "https://schema.org/EventScheduled",
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
     url: salon.website_url,
   };

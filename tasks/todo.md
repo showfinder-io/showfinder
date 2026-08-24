@@ -84,3 +84,9 @@ Constat : 29 prestataires en base mais salon_providers ne couvre que 6 salons su
 - Leçon : dans GSC via Chrome, la première saisie dans la barre d'inspection juste après un toast "Indexing requested" est systématiquement perdue ; toujours vérifier par screenshot que l'URL est bien dans la barre avant Enter.
 - Leçon : RTK peut rendre vide un grep piped sur du HTML curl volumineux ; sauvegarder dans un fichier puis grepper (déjà en mémoire projet, confirmé).
 - supabase db push : à lancer depuis le dossier du projet (fait par Julien).
+
+## Corrections GSC 2026-08-24 (rapport du 21/08)
+
+- [ ] Redirects temporaires next.config vers pages secteurs pour 3 slugs canoniques en draft : /salons/sima-paris (AgriSIMA), /salons/regal-toulouse (REGAL 2027), /salons/formnext-france-lyon. À RETIRER de next.config.ts (et repointer les entrées -2026 de redirects-slug-year.json vers le slug canonique) si une de ces fiches repasse en published, sinon le redirect masquera la fiche.
+- [ ] Valider dans l'UI GSC après déploiement : "Not found (404)", "Server error (5xx)", "Redirect error" (maison-et-objet-paris-2026 déjà résolu en prod), "Duplicate canonical" (les 3 URLs vérifiées correctes).
+- [ ] Décision produit en attente : 173 pages "Excluded by noindex" (/organisateurs/*, /lieux/*, /villes/* FR+EN). Retirer le noindex ou documenter que c'est voulu.

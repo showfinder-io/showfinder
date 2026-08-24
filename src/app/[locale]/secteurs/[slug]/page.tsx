@@ -11,7 +11,7 @@ import {
 } from "@/lib/queries";
 import { slugifyCity } from "@/lib/format";
 import { getSectorContent, formatEditorialMonthLocale } from "@/lib/sector-content";
-import { compileMdxContent } from "@/lib/mdx";
+import { compileMdxContentSafe } from "@/lib/mdx";
 import { SalonCard } from "@/components/salon-card";
 import { AlertSubscribe } from "@/components/alert-subscribe";
 import { SectionTitle } from "@/components/section-title";
@@ -95,7 +95,7 @@ export default async function SecteurPage({ params }: Props) {
   ]);
 
   const Content = sectorContent
-    ? await compileMdxContent(sectorContent.content)
+    ? await compileMdxContentSafe(sectorContent.content)
     : null;
 
   // Phase 2 i18n : nom et description du secteur avec fallback FR.
