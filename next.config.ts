@@ -32,6 +32,34 @@ const nextConfig: NextConfig = {
     return [
       ...slugYearRedirects.map((r) => ({ ...r, permanent: true })),
       ...auditCatalogueRedirects.map((r) => ({ ...r, permanent: true })),
+      // GSC 2026-08 : 404 sur des slugs canoniques dont la fiche est en draft.
+      // À RETIRER si la fiche correspondante repasse en published (cf. tasks/todo.md).
+      {
+        source: "/salons/sima-paris",
+        destination: "/secteurs/agriculture",
+        permanent: true,
+      },
+      {
+        source: "/salons/regal-toulouse",
+        destination: "/secteurs/agroalimentaire",
+        permanent: true,
+      },
+      {
+        source: "/salons/formnext-france-lyon",
+        destination: "/secteurs/industrie",
+        permanent: true,
+      },
+      // GSC 2026-08 : fiches supprimées sans fiche fusionnée
+      {
+        source: "/salons/autonomy-paris-2026",
+        destination: "/secteurs/logistique-transport",
+        permanent: true,
+      },
+      {
+        source: "/organisateurs/clubster-nhl-biovalley-france-eurobiomed",
+        destination: "/organisateurs/eurasante",
+        permanent: true,
+      },
       // Doublon venues fusionné le 2026-06-12 (chantier couverture lieux)
       {
         source: "/lieux/grand-palais-paris",

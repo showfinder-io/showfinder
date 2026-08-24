@@ -70,11 +70,15 @@ async function main() {
     const { data: existing } = await sb.from("salons").select("id,status").eq("slug", slug).maybeSingle();
     if (existing) { console.log(`SKIP ${slug}: existe déjà (status ${existing.status})`); continue; }
 
-    const venueId = await ensureVenue(h);
+    // Cas documenté (rendez-vous-en-france) : lieu pas encore annoncé par l'organisateur,
+    // insertion sans venue plutôt qu'un venue inventé (règle #13). À compléter au roll.
+    const hasVenue = Boolean(h.venue_slug || h.venue_create);
+    if (!hasVenue) console.log(`  WARN ${slug}: aucun venue (lieu non annoncé), insertion avec venue null`);
+    const venueId = hasVenue ? await ensureVenue(h) : null;
     const row = {
       slug, name: h.name, edition_year: h.edition_year, edition_number: h.edition_number ?? null,
       start_date: h.start_date, end_date: h.end_date, dates_confirmed: h.dates_confirmed ?? false,
-      city: h.city, venue: h.venue_name, venue_id: venueId,
+      city: h.city, venue: h.venue_name ?? null, venue_id: venueId,
       venue_lat: h.venue_create?.lat ?? null, venue_lng: h.venue_create?.lng ?? null,
       country: h.country ?? "FR", website_url: h.website_url,
       organizer_name: h.organizer_name ?? null, co_organizer_name: h.co_organizer_name ?? null,

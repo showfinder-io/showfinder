@@ -141,7 +141,7 @@
   },
   {
     "source": "/salons/cosmed-meeting-marseille-2026",
-    "destination": "/salons/cosmed-meeting-marseille"
+    "destination": "/secteurs/cosmetique-beaute"
   },
   {
     "source": "/salons/cosmeeting-paris-2026",
@@ -297,7 +297,7 @@
   },
   {
     "source": "/salons/formnext-france-lyon-2026",
-    "destination": "/salons/formnext-france-lyon"
+    "destination": "/secteurs/industrie"
   },
   {
     "source": "/salons/franchise-expo-lyon-2026",
@@ -621,7 +621,7 @@
   },
   {
     "source": "/salons/regal-toulouse-2026",
-    "destination": "/salons/regal-toulouse"
+    "destination": "/secteurs/agroalimentaire"
   },
   {
     "source": "/salons/rent-2026",
@@ -793,7 +793,7 @@
   },
   {
     "source": "/salons/sima-paris-2026",
-    "destination": "/salons/sima-paris"
+    "destination": "/secteurs/agriculture"
   },
   {
     "source": "/salons/simi-2026",

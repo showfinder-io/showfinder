@@ -10,7 +10,7 @@ import {
   type VenueGalleryItem,
 } from "@/lib/queries";
 import { formatNumber, slugifyCity } from "@/lib/format";
-import { compileMdxContent } from "@/lib/mdx";
+import { compileMdxContentSafe } from "@/lib/mdx";
 import { mdxComponents } from "@/components/mdx-components";
 import { SalonCard } from "@/components/salon-card";
 import { JsonLd } from "@/components/json-ld";
@@ -109,7 +109,7 @@ export default async function VenuePage({ params }: Props) {
   // V6 — MDX éditorial (description longue, halls, accès, services,
   // actualités) render comme sur les salons.
   const MdxContent = venueMdx
-    ? await compileMdxContent(venueMdx, mdxComponents)
+    ? await compileMdxContentSafe(venueMdx, mdxComponents)
     : null;
 
   const gallery: VenueGalleryItem[] = Array.isArray(venue.gallery)
