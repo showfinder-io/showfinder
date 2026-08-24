@@ -39,8 +39,8 @@ Demande GSC prouvée ou salon majeur de filière, vérifié par fetch direct du 
 - Dates : 1-2 février 2027 (source : laleveedelaloire.com, page programme)
 - Site officiel : https://www.laleveedelaloire.com
 - Organisateur : association Loire Vin Bio
-- Signal : GSC, 20 impressions (2 requêtes, position 8,6). Salon des vins de Loire bio, biodynamie et nature, environ 480 exposants, format professionnel (mise en relation par cépage/appellation) avec accès grand public. Allié depuis 2023 au Salon des Vins de Loire (déjà au catalogue) mais marque, site et calendrier propres : pas un doublon.
-- Catégorie : salon_professionnel (mixte à signaler)
+- Signal : GSC, 20 impressions (2 requêtes, position 8,6). Salon des vins de Loire bio, biodynamie et nature, environ 480 exposants, strictement réservé aux professionnels (vérifié à l'écriture sur le site officiel, contrairement au cadrage initial). Allié depuis 2023 au Salon des Vins de Loire (déjà au catalogue) mais marque, site et calendrier propres : pas un doublon.
+- Catégorie : salon_professionnel
 - Vérification : fetch direct.
 
 ### Millésime Bio
@@ -79,7 +79,7 @@ Demande GSC prouvée ou salon majeur de filière, vérifié par fetch direct du 
 - Dates : 20-21 janvier 2027 (source : hrtechnologiesfrance.com)
 - Site officiel : https://www.hrtechnologiesfrance.com/
 - Organisateur : CloserStill Media avec Parlons RH, co-localisé avec Learning Technologies France (déjà au catalogue)
-- Signal : notoriété. 410 exposants, 16 000 participants, 350 conférences. Distinct de Congrès HR (`congres-hr-paris`) et de Solutions RH (`solutions-rh`). Absorbe Digital RH Meeting France.
+- Signal : notoriété. Bilan 2026 : 350 exposants, 16 000 participants (périmètre du duo co-localisé avec Learning Technologies), 300 sessions ; les 410 exposants et 350 conférences du cadrage initial étaient l'annonce 2027 (corrigé à l'écriture, RR21). Distinct de Congrès HR (`congres-hr-paris`) et de Solutions RH (`solutions-rh`). NB : la mention initiale "absorbe Digital RH Meeting France" était fausse (événement distinct de One Place Corporate, vérifié à l'écriture).
 - Vérification : fetch direct.
 
 ### SETA, Salon de l'Environnement de Travail et des Achats
