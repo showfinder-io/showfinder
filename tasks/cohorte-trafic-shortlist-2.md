@@ -18,13 +18,13 @@ Règle appliquée strictement (CLAUDE.md #13) : aucun salon en P1 ou P2 sans vé
 
 **Étape 3, recherche web.** Vague 1 (IDF ; Lyon/Grand Ouest ; Sud/Nord/Est) : 25 candidats, en dessous de l'attendu car chaque sous-agent a épuisé son budget de recherche, et parce que le catalogue couvre déjà densément Lyon/AURA, le Grand Ouest et le Nord (zone Nord : zéro candidat nouveau, tout est déjà en base). Vague 2 (quatre angles complémentaires) : 31 candidats supplémentaires uniques. Les calendriers des grands parcs (Viparis, GL events, Comexposium, RX) sont rendus en JavaScript et inaccessibles en fetch statique : la découverte a reposé sur les sites des organisateurs, les filières et les agrégateurs, chaque nom étant ensuite vérifié sur le site officiel.
 
-**Étape 4, shortlist.** **56 candidats** : 18 en P1, 32 en P2, 6 en P3. Dans la fourchette cible 40-60. Une observation de fond : la demande organique nommée est couverte à 96%, la shortlist 2 est donc un levier d'élargissement de l'offre (nouvelles filières : maritime, musées, montagne, forêt, flotte automobile, risk management, composites, lingerie, accessoires) plutôt qu'un rattrapage de gaps GSC.
+**Étape 4, shortlist.** **56 candidats** : 18 en P1, 33 en P2, 5 en P3 (après arbitrages du 2026-08-24). Dans la fourchette cible 40-60. Une observation de fond : la demande organique nommée est couverte à 96%, la shortlist 2 est donc un levier d'élargissement de l'offre (nouvelles filières : maritime, musées, montagne, forêt, flotte automobile, risk management, composites, lingerie, accessoires) plutôt qu'un rattrapage de gaps GSC.
 
-**Points à trancher par Julien/Nicolas avant écriture** :
+**Points tranchés (Julien, 2026-08-24)** :
 
-1. One to One Retail E-Commerce se tient à Monaco (hors France) : précédent accepté au catalogue (Luxe Pack, Ready For IT, Assises de la cybersécurité), décision à confirmer.
-2. Première Classe est co-localisé avec Who's Next (déjà au catalogue) : salon distinct (accessoires) mais risque de doublon perçu.
-3. Cannes Lions, AMRAE, ATEC ITS et Minalogic sont des congrès/conventions d'affaires plutôt que des salons à stands : catégorie `congres`, à valider comme périmètre.
+1. One to One Retail E-Commerce (Monaco) : ACCEPTÉ, promu en P2 (précédents Luxe Pack, Ready For IT, Assises de la cybersécurité). Reste à re-fetcher le site dédié (403) avant écriture, l'agenda Comexposium fait foi en attendant.
+2. Première Classe : CONSERVÉ. Précédent CTCO / C!Print : co-localisé avec Who's Next mais marque, site et audience distincts ; la co-localisation sera dite dans la fiche.
+3. Cannes Lions, AMRAE, ATEC ITS, Minalogic : catégorie `salon_professionnel` (décision Julien : `congres` ne dit rien de l'audience, or elle est 100% pro). Le format convention/festival sera précisé dans le texte éditorial.
 4. Signalement hors shortlist, fiche existante à corriger : ALL4PACK (fiche `all4pack-paris`, 24-27 novembre 2026) n'a plus lieu à cette date. Vérifié par fetch : all4pack.fr redirige en 301 vers all-for-pack.com, le salon est rebaptisé "ALLFORPACK Emballage Paris" et la prochaine édition est annoncée du 29 juin au 1er juillet 2027 à Paris Expo Porte de Versailles. À répercuter sur la fiche (nom, dates, edition_year, website_url, ancien nom dans les metas) via le pattern diag-edito-roll-apply.
 5. Signalement hors shortlist, incohérence interne : la fiche `sepem-grenoble` porte le nom "SEPEM Industries Sud-Est" alors que sepem-industries.com nomme "Sud-Est" l'édition de Martigues (8-9 juin 2027, nouveau candidat P2) et liste Grenoble séparément (édition 24-26 novembre 2026, pas d'édition 2027/2028 annoncée). À réconcilier lors de l'écriture de la fiche Martigues.
 
@@ -63,7 +63,7 @@ Demande GSC prouvée ou salon majeur de filière, vérifié par fetch direct du 
 - Dates : 21-25 juin 2027 (source : canneslions.com/festival)
 - Site officiel : https://www.canneslions.com
 - Signal : notoriété mondiale. Festival professionnel de référence de la publicité et de la communication créative. Chiffres : non disponible sur la page consultée.
-- Catégorie : congres (festival professionnel, pas un salon à stands classique), à valider.
+- Catégorie : salon_professionnel (format festival/congrès à préciser dans le texte, décision Julien 2026-08-24).
 - Vérification : fetch direct.
 
 ### Euromaritime
@@ -178,7 +178,7 @@ Demande GSC prouvée ou salon majeur de filière, vérifié par fetch direct du 
 
 ---
 
-## Priorité P2 (32 salons)
+## Priorité P2 (33 salons)
 
 Vérifiés par fetch direct, mais échelle plus modeste, régionale, congrès/convention d'affaires, ou audience mixte.
 
@@ -299,7 +299,7 @@ Vérifiés par fetch direct, mais échelle plus modeste, régionale, congrès/co
 - Site officiel : https://www.congresdesaudios.org/
 - Organisateur : Syndicat des Audioprothésistes
 - Signal : 47e édition, congrès avec exposition professionnelle de la filière audition. Chiffres : non disponible.
-- Catégorie : congres.
+- Catégorie : salon_professionnel (même logique que la décision du 2026-08-24 : l'audience est pro, le format congrès sera dit dans le texte).
 - Vérification : fetch direct.
 
 ### Paris Café Festival
@@ -357,7 +357,7 @@ Vérifiés par fetch direct, mais échelle plus modeste, régionale, congrès/co
 - Site officiel : https://www.minalogicbusinessmeetings.com/fr
 - Organisateur : Minalogic
 - Signal : convention d'affaires du numérique et des technologies, édition précédente 500+ participants, 1400+ rendez-vous (chiffres 2025/2026).
-- Catégorie : congres.
+- Catégorie : salon_professionnel (format convention d'affaires, décision Julien 2026-08-24).
 - Vérification : fetch direct.
 
 ### Digital Workplace Paris
@@ -422,7 +422,7 @@ Vérifiés par fetch direct, mais échelle plus modeste, régionale, congrès/co
 - Site officiel : https://congres.atec-its-france.com/
 - Organisateur : ATEC ITS France
 - Signal : 54e congrès, référence française des systèmes de transport intelligents. Chiffres : non disponible.
-- Catégorie : congres.
+- Catégorie : salon_professionnel (format convention d'affaires, décision Julien 2026-08-24).
 - Vérification : fetch direct.
 
 ### Les Rencontres du Risk Management (AMRAE)
@@ -431,7 +431,7 @@ Vérifiés par fetch direct, mais échelle plus modeste, régionale, congrès/co
 - Site officiel : https://www.amrae-rencontres.fr/
 - Organisateur : AMRAE
 - Signal : 34e édition, congrès de référence du risk management et de l'assurance d'entreprise. Chiffres : non disponible. Complète les Journées du Courtage déjà au catalogue.
-- Catégorie : congres.
+- Catégorie : salon_professionnel (format convention d'affaires, décision Julien 2026-08-24).
 - Vérification : fetch direct.
 
 ### VS Pack
@@ -442,9 +442,17 @@ Vérifiés par fetch direct, mais échelle plus modeste, régionale, congrès/co
 - Signal : 14e édition, salon du packaging et du conditionnement des vins et spiritueux. Chiffres : non disponible.
 - Vérification : fetch direct.
 
+### One to One Retail E-Commerce
+- Monaco, Grimaldi Forum
+- Dates : 9-11 mars 2027, 15e édition (source : agenda comexposium.com ; site dédié en 403)
+- Site officiel : https://www.1to1-retail-ecommerce.com/
+- Organisateur : Comexposium
+- Signal : rendez-vous d'affaires de référence des décideurs retail et e-commerce. Chiffres : non disponible.
+- Vérification : agenda organisateur Comexposium (site dédié en 403, à re-fetcher avant écriture). Monaco accepté (décision Julien 2026-08-24).
+
 ---
 
-## Priorité P3 (6 salons, à confirmer)
+## Priorité P3 (5 salons, à confirmer)
 
 Une information essentielle (date, lieu, existence de l'édition) n'a pas pu être lue sur la source primaire malgré la passe finale, ou une décision de périmètre est nécessaire. Ne pas écrire de fiche sans lever le point bloquant.
 
@@ -482,14 +490,6 @@ Une information essentielle (date, lieu, existence de l'édition) n'a pas pu êt
 - Site officiel : https://architectatwork.com (page événement : architectatwork.com/events/a@w-bordeaux)
 - Signal : Architect@Work Lyon et Paris sont au catalogue ; édition Bordeaux cohérente mais non lue sur le site officiel.
 - Bloquant : à confirmer en navigateur.
-
-### One to One Retail E-Commerce
-- Monaco, Grimaldi Forum
-- Dates : 9-11 mars 2027, 15e édition (source : agenda comexposium.com ; site dédié en 403)
-- Site officiel : https://www.1to1-retail-ecommerce.com/
-- Organisateur : Comexposium
-- Signal : rendez-vous d'affaires de référence des décideurs retail et e-commerce. Chiffres : non disponible.
-- Bloquant : hors France (Monaco), décision de périmètre (précédents Luxe Pack, Ready For IT, Assises de la cybersécurité au catalogue).
 
 ---
 
