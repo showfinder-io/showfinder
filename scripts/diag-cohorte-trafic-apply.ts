@@ -13,6 +13,7 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { createClient } from "@supabase/supabase-js";
+import { localizedUrls, submitIndexNow } from "../src/lib/indexnow";
 
 const sb = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPABASE_SERVICE_ROLE_KEY!);
 const APPLY = process.argv.includes("--apply");
@@ -42,6 +43,7 @@ async function main() {
   console.log(PUBLISH ? "=== PUBLISH ===" : APPLY ? "=== APPLY (draft) ===" : "=== DRY-RUN ===");
 
   if (PUBLISH) {
+    const published: string[] = [];
     for (const slug of slugs) {
       const { data: row, error } = await sb.from("salons").select("status,editorial_mdx").eq("slug", slug).maybeSingle();
       if (error) throw new Error(`${slug}: ${error.message}`);
@@ -51,6 +53,15 @@ async function main() {
       console.log(`PUBLISH ${slug}`);
       const { error: upErr } = await sb.from("salons").update({ status: "published" } as never).eq("slug", slug);
       if (upErr) throw new Error(`${slug}: ${upErr.message}`);
+      published.push(slug);
+    }
+    // IndexNow (Bing, Yandex, Ecosia...) : notification des URLs FR + EN
+    // fraîchement publiées. Jamais bloquant : sans clé, simple "skipped".
+    // NB : les pages sont en SSG, la notification n'a de sens qu'une fois le
+    // déploiement Vercel effectif ; relancer scripts/indexnow-submit.ts si besoin.
+    if (published.length) {
+      const result = await submitIndexNow(published.flatMap((s) => localizedUrls(`/salons/${s}`)));
+      console.log("IndexNow :", JSON.stringify(result));
     }
     return;
   }

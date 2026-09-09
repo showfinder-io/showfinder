@@ -52,6 +52,11 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
+  // Bing Webmaster Tools : balise msvalidate.01, uniquement si l'env est
+  // renseignée (facultatif si le site est importé depuis Google Search Console).
+  ...(process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION
+    ? { verification: { other: { "msvalidate.01": process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION } } }
+    : {}),
 };
 
 export default async function RootLayout({
