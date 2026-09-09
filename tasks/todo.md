@@ -46,7 +46,8 @@ Constat 2026-08-04 (scripts/diag-roll-watch.ts, lecture seule) : 25 fiches publi
 
 - [x] E1. Script de détection scripts/diag-roll-watch.ts (published + end_date < today, tri ancienneté)
 - [x] E2. Décision Julien 2026-08-04 : routine hebdo CLOUD (indépendante de la machine locale). Créée : agoris-roll-2027-watch (trig_01KnBQstVzCLxznwT28DwLtT, https://claude.ai/code/routines/trig_01KnBQstVzCLxznwT28DwLtT), lundis 5h UTC, Sonnet, lots de 6 par ancienneté. Lecture DB via clé anon (tasks/roll-2027/config.json), livrable = PR avec handoffs (roll-pret / non-annoncee / site-mort / a-arbitrer) + rapport. Jamais d'écriture DB ni de push main : application en session via pattern diag-edito-roll-apply
-- [ ] E3. Backlog des 25 : écluser via les PR hebdo de la routine (6/semaine) ; possibilité de déclencher des runs manuels pour accélérer. Appliquer chaque PR mergée en session (dates + edition_year + seo_title, MDX si besoin). NB : je-m-export-paris renommé go-entrepreneurs-paris par D5, la liste des 25 le mentionne sous l'ancien slug
+- [ ] E2bis. CONSTAT 2026-09-09 : la routine agoris-roll-2027-watch n'existe plus (API 404, absente de la liste des routines, aucun run enregistré, handoffs/ vide, rapport.md vide, aucune PR depuis le 04/08). Supprimée à une date inconnue, par qui inconnu. Backlog passé de 25 à 32 fiches périmées (diag-roll-watch 2026-09-09 : preventica-paris 454 j, puis 24 fiches de 59 à 220 j, et 7 fiches de la rentrée à moins de 8 j : texworld, sibca, premiere-vision, bijorhca, interfiliere, whos-next, foire-chalons). Décision Julien attendue : recréer la routine cloud (même prompt, lots de 6) ou écluser en session
+- [ ] E3. Backlog des 32 (ex-25) : écluser via les PR hebdo de la routine (6/semaine) ; possibilité de déclencher des runs manuels pour accélérer. Appliquer chaque PR mergée en session (dates + edition_year + seo_title, MDX si besoin). NB : je-m-export-paris renommé go-entrepreneurs-paris par D5, la liste des 25 le mentionne sous l'ancien slug
 
 ---
 
@@ -90,3 +91,18 @@ Constat : 29 prestataires en base mais salon_providers ne couvre que 6 salons su
 - [ ] Redirects temporaires next.config vers pages secteurs pour 3 slugs canoniques en draft : /salons/sima-paris (AgriSIMA), /salons/regal-toulouse (REGAL 2027), /salons/formnext-france-lyon. À RETIRER de next.config.ts (et repointer les entrées -2026 de redirects-slug-year.json vers le slug canonique) si une de ces fiches repasse en published, sinon le redirect masquera la fiche.
 - [ ] Valider dans l'UI GSC après déploiement : "Not found (404)", "Server error (5xx)", "Redirect error" (maison-et-objet-paris-2026 déjà résolu en prod), "Duplicate canonical" (les 3 URLs vérifiées correctes).
 - [x] Décision produit (Julien, 2026-08-24) : les 173 pages "Excluded by noindex" (/organisateurs/*, /lieux/*, /villes/* FR+EN) restent noindex, c'est VOULU (anti thin-content : organisateurs toujours noindex car 76% n'ont qu'un salon, lieux indexés seulement si fiche riche, villes indexées à partir d'un seuil de salons). Le trend en hausse suit la croissance du catalogue, ne pas re-signaler à chaque rapport GSC.
+
+---
+
+## Volet F : moteurs hors Google (Bing 17 % des sessions, ChatGPT 7 %, GA4 12/08-08/09)
+
+Constat 2026-09-09 (GA4 28 j) : google/organic 892 sessions, bing/organic 275, direct 225, chatgpt.com 117, yahoo 39, ecosia 22. Aucun suivi Bing, pas d'IndexNow, pas de llms.txt (404).
+
+- [x] F1. IndexNow : src/lib/indexnow.ts (submitIndexNow, jamais bloquant, skip sans clé), route /indexnow-key.txt (clé servie depuis INDEXNOW_KEY), scripts/indexnow-submit.ts (slugs, --path, --sitemap, --dry-run), hook dans diag-cohorte-trafic-apply.ts --publish (URLs FR+EN). PR feat/jz-indexnow-llms
+- [x] F2. /llms.txt généré depuis le catalogue (même périmètre que le sitemap : fiches avec MDX, secteurs éditoriaux, blog), revalidate 1 h. Vérifié en runtime local : 238 fiches, 49 Ko
+- [x] F3. Slot Bing Webmaster Tools : NEXT_PUBLIC_BING_SITE_VERIFICATION -> meta msvalidate.01 (inactif si vide)
+- [ ] F4. INDEXNOW_KEY à poser sur Vercel production (clé générée le 2026-09-09, présente dans .env.local de Julien). BLOQUÉ : le projet Vercel showfinder (team_aDHm1U0z3Wz10Sks6HUU5y63) n'est visible ni depuis la CLI de Julien (jzakoian-3408, scope julien-zakoians-projects) ni depuis le MCP Vercel. À poser par le compte propriétaire du projet, puis redéployer, puis `scripts/indexnow-submit.ts --sitemap` une fois
+- [ ] F5. Bing Webmaster Tools : créer la propriété agoris.io par import depuis Google Search Console (bing.com/webmasters, "Import from GSC", 2 clics, sans balise). Action Julien
+- [ ] F6. GA4 : canal personnalisé "IA" (chatgpt.com, perplexity.ai, claude.ai, gemini.google.com, copilot.microsoft.com) pour ne plus diluer ce trafic dans Direct/Referral
+- [ ] F7. Session d'écriture : reste de la shortlist 2 = 4 P1 (Euromaritime, Smahrt Toulouse, Signal Week, VITeff) + 33 P2 + D13bis (all4pack à rouler, sepem-grenoble à renommer, batinov-lyon et mdd-expo-paris en draft à publier si règle #13 remplie)
+
