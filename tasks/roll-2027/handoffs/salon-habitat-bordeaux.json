@@ -1,0 +1,25 @@
+{
+  "slug": "salon-habitat-bordeaux",
+  "name": "Salon Habitat & Déco de Bordeaux",
+  "status": "roll-pret",
+  "checked_at": "2026-09-11",
+  "current": {
+    "start_date": "2026-03-06",
+    "end_date": "2026-03-08",
+    "edition_year": 2026,
+    "city": "Bordeaux",
+    "venue": "Parc des Expositions Bordeaux"
+  },
+  "next": {
+    "start_date": "2027-03-05",
+    "end_date": "2027-03-07",
+    "edition_year": 2027,
+    "city": "Bordeaux",
+    "venue": "Parc des Expositions de Bordeaux, Hall 3"
+  },
+  "source_url": "https://leopro.fr/salon-habitat-deco-bordeaux/",
+  "quote": "Pour sa sixième édition, le Salon Habitat & Déco de Bordeaux s'installe au Parc des Expositions – Hall 3 du 5 au 7 mars 2027.",
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "Sixième édition confirmée du 5 au 7 mars 2027, même parc des expositions (Hall 3 précisé). Adresse de l'organisme sur la page : 33300 Bordeaux."
+}

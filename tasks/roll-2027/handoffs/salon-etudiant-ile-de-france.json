@@ -1,0 +1,25 @@
+{
+  "slug": "salon-etudiant-ile-de-france",
+  "name": "Salon de l'Étudiant Île-de-France",
+  "status": "roll-pret",
+  "checked_at": "2026-09-11",
+  "current": {
+    "start_date": "2026-01-30",
+    "end_date": "2026-02-01",
+    "edition_year": 2026,
+    "city": "Paris",
+    "venue": "Paris Expo Porte de Versailles"
+  },
+  "next": {
+    "start_date": "2027-01-29",
+    "end_date": "2027-01-30",
+    "edition_year": 2027,
+    "city": "Paris",
+    "venue": "Paris Expo Porte de Versailles, Halls 5.2 et 5.3"
+  },
+  "source_url": "https://salon-de-l-etudiant-en-ile-de-france-paris.salon.letudiant.fr",
+  "quote": "Vendredi 29 et samedi 30 janvier 2027. Porte de Versailles - Halls 5.2 et 5.3, place de la Porte de Versailles 75015 PARIS",
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "Prochaine édition passe de 3 jours (30 janv au 1 fév 2026) à 2 jours (29 au 30 janv 2027), sur les mêmes halls de Paris Expo Porte de Versailles. Page trouvée via le calendrier paginé de l'organisateur (letudiant.fr/etudes/salons, page 9 sur 11)."
+}

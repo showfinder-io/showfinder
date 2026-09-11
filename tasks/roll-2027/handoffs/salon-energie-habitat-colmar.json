@@ -1,0 +1,19 @@
+{
+  "slug": "salon-energie-habitat-colmar",
+  "name": "Salon Énergie Habitat",
+  "status": "non-annoncee",
+  "checked_at": "2026-09-11",
+  "current": {
+    "start_date": "2026-03-20",
+    "end_date": "2026-03-23",
+    "edition_year": 2026,
+    "city": "Colmar",
+    "venue": "Parc Expo Colmar"
+  },
+  "next": null,
+  "source_url": "https://www.energiehabitat-colmar.com",
+  "quote": "45ème SALON ÉNERGIE HABITAT : 20 au 23 Mars 2026. SA Colmar Expo, Avenue de la Foire aux Vins, 68000 COLMAR",
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "Le site est vivant mais affiche encore la 45e édition (20 au 23 mars 2026, déjà passée) comme édition en cours. Aucune mention de 2027 trouvée sur la page."
+}

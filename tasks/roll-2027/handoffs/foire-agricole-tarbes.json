@@ -1,0 +1,19 @@
+{
+  "slug": "foire-agricole-tarbes",
+  "name": "Salon Régional de l'Agriculture de Tarbes",
+  "status": "non-annoncee",
+  "checked_at": "2026-09-11",
+  "current": {
+    "start_date": "2026-03-05",
+    "end_date": "2026-03-08",
+    "edition_year": 2026,
+    "city": "Tarbes",
+    "venue": "Parc des Expositions de Tarbes"
+  },
+  "next": null,
+  "source_url": "https://www.salon-agricole.com",
+  "quote": "Salon Régional de l'Agriculture Tarbes Du 5 au 8 mars 2026, 49e édition. Prochain événement Salon Régional de l'Agriculture Tarbes Du 5 au 8 mars 2026",
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "Le site est vivant mais affiche encore la 49e édition (5 au 8 mars 2026, déjà passée) comme 'prochain événement'. Aucune date 2027 publiée, page non mise à jour depuis l'édition écoulée."
+}
