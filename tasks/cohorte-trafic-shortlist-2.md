@@ -71,7 +71,7 @@ Demande GSC prouvée ou salon majeur de filière, vérifié par fetch direct du 
 - Dates : 1-3 février 2028 (source : euromaritime.fr, "See you from 1 to 3 February 2028 in Marseille, Parc Chanot")
 - Site officiel : https://www.euromaritime.fr
 - Organisateur : SOGENA pour le GICAN
-- Signal : notoriété. Salon biennal de l'économie maritime (construction et réparation navales, économie portuaire, technologies). Édition 2026 : 330 exposants, 5791 visiteurs de 70 pays, 1547 rendez-vous B2B (lus sur le site officiel). Historiquement à Paris, déménage à Marseille en 2028. Filière maritime absente du catalogue.
+- Signal : notoriété. Salon biennal de l'économie maritime (construction et réparation navales, économie portuaire, technologies). Édition 2026 : 330 exposants, 5791 visiteurs de 70 pays, 1547 rendez-vous B2B (lus sur le site officiel). CORRIGÉ à l'écriture (lot 3) : implanté à Marseille depuis 2020 (3 éditions parisiennes 2013-2017 à Porte de Versailles), 2028 est la 5e édition marseillaise, pas un déménagement. Organisateur GICAN, co-organisateur SOGENA. Filière maritime absente du catalogue. FICHE PUBLIÉE (lot 3, `euromaritime`).
 - Vérification : fetch direct (deux agents indépendants).
 
 ### HR Technologies France
@@ -126,7 +126,7 @@ Demande GSC prouvée ou salon majeur de filière, vérifié par fetch direct du 
 - Dates : 30 janvier au 1er février 2028 (source : smahrt.com)
 - Site officiel : https://www.smahrt.com/
 - Organisateur : GL events, écosystème Sirha Food
-- Signal : notoriété. Rendez-vous du food service, de l'hôtellerie et des métiers de bouche du Grand Sud-Ouest : 270 exposants, 18 000 m², 15 000 visiteurs professionnels attendus (52% décideurs). Complète Sirha Lyon, Serbotel et SIPRHO déjà au catalogue.
+- Signal : notoriété. Rendez-vous du food service, de l'hôtellerie et des métiers de bouche du Grand Sud-Ouest : 270 exposants, 18 000 m², 15 000 visiteurs professionnels attendus (52% décideurs). CORRIGÉ à l'écriture (lot 3) : ce bandeau est la cible annoncée pour 2026, non actualisée ; bilan 2026 = 12 500 visiteurs (communiqué organisateur relayé presse), 267 exposants (annuaire officiel). Organisateur Sirha Food, co-organisateur GL events Exhibitions Opérations, biennal années paires. Complète Sirha Lyon, Serbotel et SIPRHO déjà au catalogue. FICHE PUBLIÉE (lot 3, `smahrt-toulouse`).
 - Vérification : fetch direct.
 
 ### Rencontres Flotauto Paris
@@ -165,7 +165,7 @@ Demande GSC prouvée ou salon majeur de filière, vérifié par fetch direct du 
 - Paris, Palais des Congrès de Paris
 - Dates : 6-7 juillet 2027 (source : parisblockchainweek.com)
 - Site officiel : https://www.parisblockchainweek.com/
-- Signal : notoriété. Édition 2026 : 7500+ participants de 100+ pays, co-localisé avec le sommet IA RAISE. Finance institutionnelle et actifs numériques.
+- Signal : notoriété. Édition 2026 : 7500+ participants de 100+ pays, co-localisé avec le sommet IA RAISE. Finance institutionnelle et actifs numériques. CORRIGÉ à l'écriture (lot 3) : bilan 2026 daté = 10 000+ participants (communiqué post-édition), le 7 500+ de la home n'est pas millésimé ; en 2026 RAISE s'est tenu à d'autres dates (co-localisation réelle en 2027 seulement). Organisateur Chain of Events, racheté par Hyve (juillet 2026). Rebranding « Signal Week, formerly Paris Blockchain Week » confirmé verbatim. FICHE PUBLIÉE (lot 3, `signal-week`).
 - Vérification : fetch direct. Rebranding récent : prévoir l'ancien nom dans les metas.
 
 ### VITeff
@@ -173,7 +173,7 @@ Demande GSC prouvée ou salon majeur de filière, vérifié par fetch direct du 
 - Dates : 12-14 octobre 2027 (source : viteff.com)
 - Site officiel : https://www.viteff.com
 - Organisateur : EFFEVENT
-- Signal : notoriété. Salon international biennal des technologies des vins effervescents, seul événement de ce type en France. Chiffres (350 entreprises, 27 000 m² selon agrégateurs) : non confirmés sur la source primaire, non disponible.
+- Signal : notoriété. Salon international biennal des technologies des vins effervescents, seul événement de ce type en France. Chiffres (350 entreprises, 27 000 m² selon agrégateurs) : non confirmés sur la source primaire, non disponible. CORRIGÉ à l'écriture (lot 3) : bilan 2025 lu sur viteff.com = 350 exposants, 18 000 visiteurs (le site affiche aussi 22 000 sur une sous-page, contradiction interne signalée) ; surface écartée (27 000 vs 19 000 m² sur le site). Lieu Le Millesium, 51530 Pierry (venue créé `le-millesium-epernay`). FICHE PUBLIÉE (lot 3, `viteff`).
 - Vérification : fetch direct.
 
 ---
@@ -186,8 +186,8 @@ Vérifiés par fetch direct, mais échelle plus modeste, régionale, congrès/co
 - Lorient, Port de Lorient Centre, Quai du Péristyle (10 rue Jean Stéphan)
 - Dates : 25-27 mai 2027 (source : navexpo.com, "25 > 27 MAI 2027", page accès et horaires)
 - Site officiel : https://www.navexpo.com
-- Organisateur : Le Bureau Naval / VAL S.A.S. (lu sur le site)
-- Signal : salon biennal de l'innovation maritime à flot, réservé aux opérateurs, acheteurs et décideurs. Chiffres 2027 : non disponible. Filière maritime absente du catalogue (avec Euromaritime en P1).
+- Organisateur : Le Bureau Naval / VAL S.A.S. (lu sur le site). CORRIGÉ à l'écriture (lot 3) : Le Bureau Naval S.A.S (lecture tronquée au cadrage).
+- Signal : salon biennal de l'innovation maritime à flot, réservé aux opérateurs, acheteurs et décideurs. Chiffres 2027 : non disponible. CORRIGÉ à l'écriture (lot 3) : rythme annuel (2016-2019, 2022, 2024-2026), 9e édition en 2027 ; bilan 2026 = 120 exposants, 1 200 visiteurs pro ; le 10 rue Jean Stéphan est l'adresse de l'organisateur, le salon est Quai du Péristyle (venue créé `port-de-lorient-centre`). Filière maritime absente du catalogue (avec Euromaritime en P1). FICHE PUBLIÉE (lot 3, `navexpo`).
 - Vérification : fetch direct (passe finale ; un premier recoupement plaçait le salon à Lanester, contredit par la source primaire).
 
 ### Documation
@@ -203,7 +203,7 @@ Vérifiés par fetch direct, mais échelle plus modeste, régionale, congrès/co
 - Dates : 16-18 janvier 2027 (source : fr.saloninternationaldelalingerie.com, horaires 9h-19h les 16 et 17, 9h-18h le 18)
 - Site officiel : https://fr.saloninternationaldelalingerie.com/
 - Organisateur : WSN
-- Signal : salon biannuel (janvier et septembre) de la lingerie et du balnéaire, couplé à Interfilière Paris (déjà au catalogue) mais marque distincte. Chiffres : non disponible.
+- Signal : salon biannuel (janvier et septembre) de la lingerie et du balnéaire, couplé à Interfilière Paris (déjà au catalogue) mais marque distincte. Chiffres : non disponible. CORRIGÉ à l'écriture (lot 3) : « Curve Paris » est la marque de l'édition d'été ; l'édition de janvier s'appelle Salon International de la Lingerie (annuel), slug retenu `salon-international-de-la-lingerie`. Organisateur Eurovet, co-organisateur WSN. Bilan janvier 2026 = 220 exposants (visiteurs non attribuables, total partagé avec Interfilière). Hall 1 en 2027. FICHE PUBLIÉE (lot 3). Signalement : la fiche `interfiliere-paris` porte encore l'édition de septembre 2026, à rouler vers le 16-18 janvier 2027.
 - Vérification : fetch direct (passe finale).
 
 ### Tech For Industry Show
@@ -251,7 +251,7 @@ Vérifiés par fetch direct, mais échelle plus modeste, régionale, congrès/co
 - Dates : 26-28 janvier 2027 (source : rouen.sepem-industries.com)
 - Site officiel : https://rouen.sepem-industries.com/
 - Organisateur : SEPEM Industries
-- Signal : 6e édition normande du réseau SEPEM (Angers, Colmar, Douai, Grenoble, Toulouse déjà au catalogue). Nombre d'exposants : non disponible.
+- Signal : 6e édition normande du réseau SEPEM (Angers, Colmar, Douai, Grenoble, Toulouse déjà au catalogue). Nombre d'exposants : non disponible. CORRIGÉ à l'écriture (lot 3) : nom officiel SEPEM Industries Nord-Ouest ; l'édition prévue en janvier 2026 a été reportée d'un an (presse spécialisée, non infirmé par le site) ; bilan 2024 = 423 exposants, 4 692 visiteurs (PDF officiel) ; organisateur GL events Exhibitions Industrie (mentions légales). Venue créé `parc-des-expositions-rouen`. FICHE PUBLIÉE (lot 3, `sepem-rouen`). Signalement : `sepem-grenoble` et `sepem-toulouse` portent encore Even Pro comme organisateur en base.
 - Vérification : fetch direct.
 
 ### IODE
