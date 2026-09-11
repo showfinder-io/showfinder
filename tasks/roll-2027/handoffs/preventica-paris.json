@@ -1,0 +1,19 @@
+{
+  "slug": "preventica-paris",
+  "name": "Preventica Paris",
+  "status": "non-annoncee",
+  "checked_at": "2026-09-11",
+  "current": {
+    "start_date": "2025-06-10",
+    "end_date": "2025-06-12",
+    "edition_year": 2025,
+    "city": "Paris",
+    "venue": "Paris Expo Porte de Versailles"
+  },
+  "next": null,
+  "source_url": "https://www.preventica.com",
+  "quote": "Les rendez-vous 2026 LYON 06 > 08 oct CASABLANCA 10 > 12 NOV Rétrospective BORDEAUX 14 > 16 oct 2025 PARIS 10 > 12 juin 2025",
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "Le site liste les éditions 2026 à Rennes, Lyon et Casablanca. Paris n'apparaît que dans la rétrospective des éditions passées (juin 2025), sans date de retour annoncée. Salon bisannuel qui alterne les villes, aucune page dédiée Paris trouvée (404 sur /salon/paris)."
+}

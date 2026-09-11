@@ -1,0 +1,19 @@
+{
+  "slug": "salon-mondial-du-tourisme-paris",
+  "name": "Salon Mondial du Tourisme",
+  "status": "site-mort",
+  "checked_at": "2026-09-11",
+  "current": {
+    "start_date": "2026-03-12",
+    "end_date": "2026-03-15",
+    "edition_year": 2026,
+    "city": "Paris",
+    "venue": "Paris Expo Porte de Versailles"
+  },
+  "next": null,
+  "source_url": null,
+  "quote": null,
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "Le domaine en base (salon-mondial-tourisme.com) ne résout plus (échec DNS). Une recherche a permis de repérer un site successeur probable, salons-du-tourisme.com, mais celui-ci renvoie un blocage Cloudflare (403) sur toutes les tentatives d'accès, donc impossible de lire une date officielle. Le site de Viparis (exploitant du lieu, pas l'organisateur) affiche encore l'édition déjà passée du 12 au 15 mars 2026, sans annonce 2027 vérifiable sur source officielle."
+}
