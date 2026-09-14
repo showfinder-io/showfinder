@@ -49,6 +49,11 @@ const nextConfig: NextConfig = {
         destination: "/secteurs/industrie",
         permanent: true,
       },
+      {
+        source: "/salons/salon-du-luxe-paris",
+        destination: "/secteurs/cosmetique-beaute",
+        permanent: true,
+      },
       // GSC 2026-08 : fiches supprimées sans fiche fusionnée
       {
         source: "/salons/autonomy-paris-2026",
