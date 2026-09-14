@@ -1,0 +1,25 @@
+{
+  "slug": "ready-for-it-monaco",
+  "name": "Ready For IT",
+  "status": "a-arbitrer",
+  "checked_at": "2026-09-14",
+  "current": {
+    "start_date": "2026-06-02",
+    "end_date": "2026-06-04",
+    "edition_year": 2026,
+    "city": "Monaco",
+    "venue": "Grimaldi Forum"
+  },
+  "next": {
+    "start_date": "2027-06-01",
+    "end_date": "2027-06-03",
+    "edition_year": 2027,
+    "city": "Monaco",
+    "venue": null
+  },
+  "source_url": "https://www.comexposium.com/newsroom/presse/nos-evenements/agenda-des-evenements/ready-for-it/",
+  "quote": "Ready For IT / 1 Juin 2027 - 3 Juin 2027 / Monaco / \"Le concentre cle en main des fondamentaux de la cyber !\"",
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "Site officiel ready-for-it.com injoignable (HTTP 403, protection anti-bot persistante sur plusieurs tentatives). Dates 2027 confirmees via la page officielle de l'organisateur Comexposium, mais cette page ne precise que la ville (Monaco), pas le lieu exact. Lieu historique Grimaldi Forum non reconfirme pour 2027 : a valider par un humain avant application."
+}
