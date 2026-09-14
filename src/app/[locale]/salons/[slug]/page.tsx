@@ -147,6 +147,8 @@ export default async function SalonPage({ params }: Props) {
   // Schema.org Event. Champs recommandés par GSC (rapport 2026-08) : image,
   // eventStatus, organizer.url, performer, offers. Uniquement des données
   // vérifiables : pas de prix inventé dans offers, pas d'image placeholder.
+  // startDate est obligatoire pour Google (alerte GSC 2026-09-13 "Missing
+  // field startDate") : sans date de début, on n'émet pas de bloc Event.
   const eventStatusBySalonStatus: Record<string, string> = {
     published: "https://schema.org/EventScheduled",
     cancelled: "https://schema.org/EventCancelled",
@@ -160,13 +162,13 @@ export default async function SalonPage({ params }: Props) {
         ...(salon.website_url && { url: salon.website_url }),
       }
     : undefined;
-  const eventJsonLd = {
+  const eventJsonLd = salon.start_date && {
     "@context": "https://schema.org",
     "@type": "Event",
     name: salon.name,
     description: description ?? salon.seo_description ?? undefined,
     startDate: salon.start_date,
-    endDate: salon.end_date,
+    ...(salon.end_date && { endDate: salon.end_date }),
     ...(eventImage && { image: eventImage }),
     location: {
       "@type": "Place",
@@ -196,7 +198,7 @@ export default async function SalonPage({ params }: Props) {
 
   return (
     <article className="mx-auto max-w-4xl px-4 py-10 md:py-16">
-      <JsonLd data={eventJsonLd} />
+      {eventJsonLd && <JsonLd data={eventJsonLd} />}
       <BreadcrumbJsonLd
         items={[
           { name: t("breadcrumb.home"), item: "/" },
