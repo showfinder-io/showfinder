@@ -1,0 +1,25 @@
+{
+  "slug": "whos-next-paris",
+  "name": "Who's Next",
+  "status": "roll-pret",
+  "checked_at": "2026-09-14",
+  "current": {
+    "start_date": "2026-09-05",
+    "end_date": "2026-09-07",
+    "edition_year": 2026,
+    "city": "Paris",
+    "venue": "Paris Expo Porte de Versailles"
+  },
+  "next": {
+    "start_date": "2027-01-16",
+    "end_date": "2027-01-18",
+    "edition_year": 2027,
+    "city": "Paris",
+    "venue": "Paris Expo Porte de Versailles"
+  },
+  "source_url": "https://wsn-events.com/events/whos-next",
+  "quote": "Dates : 16-18 janvier 2027 / Lieu : Porte de Versailles, Paris",
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "Le site officiel whosnext.com redirige automatiquement vers le portail unifié de l'organisateur WSN (wsn-events.com). Prochaine édition confirmée : 16 au 18 janvier 2027, Porte de Versailles, Paris. Ville et lieu inchangés. Le site confirme deux éditions par an (janvier et septembre), cohérent avec le champ 'bisannuel' en base."
+}
