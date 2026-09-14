@@ -1,0 +1,19 @@
+{
+  "slug": "untec-congres",
+  "name": "Salon Actes",
+  "status": "non-annoncee",
+  "checked_at": "2026-09-14",
+  "current": {
+    "start_date": "2026-06-03",
+    "end_date": "2026-06-05",
+    "edition_year": 2026,
+    "city": "Chartres",
+    "venue": "Parc des Expositions L'Iliade (édition 2026 uniquement, salon itinérant)"
+  },
+  "next": null,
+  "source_url": "https://www.actes-untec.com/",
+  "quote": null,
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "Site officiel actes-untec.com vivant et à jour, mais entièrement dédié à l'édition 2026 à Chartres (Illiade) : accueil, page informations-pratiques et site de l'organisateur untec.com consultés, aucune mention d'une édition 2027 ni de date/ville future trouvée. Le salon étant itinérant (précisé en base), un changement de ville pour la prochaine édition est attendu mais reste à confirmer par l'organisateur : rien à annoncer pour l'instant."
+}
