@@ -1,0 +1,19 @@
+{
+  "slug": "comic-con-france",
+  "name": "Comic Con France",
+  "status": "non-annoncee",
+  "checked_at": "2026-09-14",
+  "current": {
+    "start_date": "2026-04-18",
+    "end_date": "2026-04-19",
+    "edition_year": 2026,
+    "city": "Paris",
+    "venue": "Paris Nord Villepinte"
+  },
+  "next": null,
+  "source_url": "https://comiccon.fr",
+  "quote": "18-19 Avril 2026 (compte a rebours vers le 2026-04-18) ; page non mise a jour depuis mars 2026, aucune mention de 2027",
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "Le website_url en base (https://www.comic-con-paris.com) est injoignable (HTTP 000/503 persistant sur plusieurs tentatives curl et WebFetch). Un site lie au meme organisateur et au meme lieu (Paris-nord, Villepinte Exhibition Center) a ete trouve : comiccon.fr, vivant mais fige sur l'edition 2026 deja passee, aucune date 2027 publiee. A verifier manuellement si website_url doit etre mis a jour vers comiccon.fr."
+}

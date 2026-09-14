@@ -1,0 +1,19 @@
+{
+  "slug": "salon-agriculture-nouvelle-aquitaine",
+  "name": "Salon de l'Agriculture Nouvelle-Aquitaine",
+  "status": "non-annoncee",
+  "checked_at": "2026-09-14",
+  "current": {
+    "start_date": "2026-05-22",
+    "end_date": "2026-05-31",
+    "edition_year": 2026,
+    "city": "Bordeaux",
+    "venue": "Foire Internationale de Bordeaux"
+  },
+  "next": null,
+  "source_url": "https://www.foiredebordeaux.com/salon-agriculture",
+  "quote": "<title>Le Salon de l'Agriculture - Foire Internationale de Bordeaux | 22 au 31 mai 2026</title> (page generee le 2026-09-13)",
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "Site officiel vivant et regenere la veille du controle, mais toujours cale sur l'edition 2026 deja passee (page d'accueil, infos pratiques et page 'en bref' consultees). Aucune date 2027 publiee a ce jour."
+}

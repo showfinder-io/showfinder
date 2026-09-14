@@ -1,0 +1,25 @@
+{
+  "slug": "foire-de-paris",
+  "name": "Foire de Paris",
+  "status": "a-arbitrer",
+  "checked_at": "2026-09-14",
+  "current": {
+    "start_date": "2026-04-30",
+    "end_date": "2026-05-11",
+    "edition_year": 2026,
+    "city": "Paris",
+    "venue": "Paris Expo Porte de Versailles"
+  },
+  "next": {
+    "start_date": "2027-04-30",
+    "end_date": "2027-05-10",
+    "edition_year": 2027,
+    "city": "Paris",
+    "venue": null
+  },
+  "source_url": "https://www.comexposium.com/newsroom/presse/nos-evenements/agenda-des-evenements/foire-de-paris/",
+  "quote": "Foire de Paris / 30 Avr 2027 - 10 Mai 2027 / Paris / France / \"La sortie familiale : nouveautes, innovations, decouvertes pendant 12 jours.\"",
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "Site officiel foiredeparis.fr injoignable (HTTP 403, protection anti-bot persistante sur plusieurs tentatives). Dates 2027 confirmees via la page officielle de l'organisateur Comexposium, mais cette page ne precise que la ville (Paris), pas le lieu exact. Lieu historique Paris Expo Porte de Versailles non reconfirme pour 2027 : a valider par un humain avant application."
+}

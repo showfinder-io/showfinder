@@ -1,0 +1,25 @@
+{
+  "slug": "snack-show",
+  "name": "Snack Show",
+  "status": "roll-pret",
+  "checked_at": "2026-09-14",
+  "current": {
+    "start_date": "2026-04-01",
+    "end_date": "2026-04-02",
+    "edition_year": 2026,
+    "city": "Paris",
+    "venue": "Paris Expo Porte de Versailles"
+  },
+  "next": {
+    "start_date": "2027-03-24",
+    "end_date": "2027-03-25",
+    "edition_year": 2027,
+    "city": "Paris",
+    "venue": "Pavillon 7.3 - Paris Porte de Versailles"
+  },
+  "source_url": "https://www.snackshow.com",
+  "quote": "24-25 mars 2027 / Pavillon 7.3 - Paris Porte de Versailles",
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "Dates et lieu lus directement dans l'en-tete de la page d'accueil officielle (bloc infos salon). Coherent avec la frequence annuelle."
+}

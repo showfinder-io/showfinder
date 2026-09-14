@@ -1,0 +1,19 @@
+{
+  "slug": "numeriquest-toulouse",
+  "name": "Toulouse Hacking Convention (THCon)",
+  "status": "a-arbitrer",
+  "checked_at": "2026-09-14",
+  "current": {
+    "start_date": "2026-05-05",
+    "end_date": "2026-05-07",
+    "edition_year": 2026,
+    "city": "Toulouse",
+    "venue": "Centre de Congrès Pierre Baudis"
+  },
+  "next": null,
+  "source_url": "https://thcon.party",
+  "quote": "THCon 2026 will take place in the Marthe Condat auditorium of the Paul Sabatier University on Tuesday, May 5th and Wednesday, May 6th. The CTF will take place at the ENSEEIHT school on Thursday, May 7th [...] Thank you for coming see you next year!",
+  "venue_changed": true,
+  "city_changed": false,
+  "notes": "Contradiction sur le lieu : la fiche indique Centre de Congres Pierre Baudis mais le site officiel decrit l'edition 2026 comme tenue a l'auditorium Marthe Condat (Universite Paul Sabatier) pour les conferences et a l'ENSEEIHT pour le CTF. Aucune date 2027 n'est encore publiee (site a jour, message de remerciement post-edition affiche)."
+}

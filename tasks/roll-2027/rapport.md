@@ -2,6 +2,19 @@
 
 Rapport alimenté chaque lundi par la routine cloud agoris-roll-2027-watch (détection des fiches publiées à édition passée, vérification des dates de la prochaine édition sur les sites officiels, handoffs dans handoffs/). Application en base en session interactive via le pattern diag-edito-roll-apply.
 
+## Lot du 2026-09-14
+
+| Slug | Ancienneté | Statut | Prochaine édition / raison | Source |
+|------|-----------:|--------|------------------------------|--------|
+| snack-show | 165 jours | roll-pret | 24 au 25 mars 2027, Pavillon 7.3, Paris Porte de Versailles | https://www.snackshow.com |
+| comic-con-france | 148 jours | non-annoncee | Site officiel en base injoignable ; site lié (comiccon.fr) vivant mais figé sur l'édition 2026, aucune date 2027 | https://comiccon.fr |
+| numeriquest-toulouse | 130 jours | a-arbitrer | Contradiction de lieu : fiche indique Centre de Congrès Pierre Baudis, site officiel décrit l'édition 2026 à l'auditorium Marthe Condat (Univ. Paul Sabatier) + ENSEEIHT ; aucune date 2027 | https://thcon.party |
+| foire-de-paris | 126 jours | a-arbitrer | 30 avril au 10 mai 2027, Paris (lieu exact non reconfirmé) ; site officiel foiredeparis.fr bloqué (403) | https://www.comexposium.com (organisateur) |
+| salon-agriculture-nouvelle-aquitaine | 106 jours | non-annoncee | Site figé sur l'édition 2026 (22 au 31 mai, déjà passée), aucune date 2027 | https://www.foiredebordeaux.com/salon-agriculture |
+| ready-for-it-monaco | 102 jours | a-arbitrer | 1er au 3 juin 2027, Monaco (lieu exact non reconfirmé) ; site officiel ready-for-it.com bloqué (403) | https://www.comexposium.com (organisateur) |
+
+Reste à traiter : 23 fiches périmées
+
 ## Lot du 2026-09-11
 
 | Slug | Ancienneté | Statut | Prochaine édition / raison | Source |
