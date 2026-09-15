@@ -1,0 +1,25 @@
+{
+  "slug": "texworld-paris",
+  "name": "Texworld Paris",
+  "status": "roll-pret",
+  "checked_at": "2026-09-14",
+  "current": {
+    "start_date": "2026-08-31",
+    "end_date": "2026-09-02",
+    "edition_year": 2026,
+    "city": "Paris",
+    "venue": "Paris Le Bourget"
+  },
+  "next": {
+    "start_date": "2027-01-25",
+    "end_date": "2027-01-27",
+    "edition_year": 2027,
+    "city": "Paris",
+    "venue": "Paris Le Bourget"
+  },
+  "source_url": "https://texworld-paris.fr.messefrankfurt.com/paris/en.html",
+  "quote": "Save the date: from 25 to27 January 2027 [...] We look forward to seeing you at the Parc des Expositions de Paris-Le Bourget in Halls 2, 3 and 4: From 25 to 27 January 2027",
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "Prochaine édition confirmée sur le site officiel (Messe Frankfurt France) : 25 au 27 janvier 2027, Parc des Expositions de Paris-Le Bourget (halls 2, 3 et 4). Ville et lieu inchangés par rapport à la fiche actuelle. Le site précise que l'événement réunit ses exposants deux fois par an à Paris (janvier et septembre), ce qui reste cohérent avec le champ 'bisannuel' en base."
+}

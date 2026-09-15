@@ -2,6 +2,38 @@
 
 Rapport alimenté chaque lundi par la routine cloud agoris-roll-2027-watch (détection des fiches publiées à édition passée, vérification des dates de la prochaine édition sur les sites officiels, handoffs dans handoffs/). Application en base en session interactive via le pattern diag-edito-roll-apply.
 
+## Lot du 2026-09-14 (complément, 23 fiches)
+
+Lot complémentaire traité le même jour à la demande de Julien, en dehors du rythme hebdomadaire habituel (6 fiches/semaine), pour vider le stock de fiches périmées restantes.
+
+| Slug | Ancienneté | Statut | Prochaine édition / raison | Source |
+|------|-----------:|--------|------------------------------|--------|
+| 3d-print-lyon | 102 jours | a-arbitrer | Site annonce 15-16 septembre 2027 à Eurexpo Lyon, mais incohérence en base : edition_year=2027 alors que les dates actuelles sont celles de l'édition 2026 | https://www.3dprint-exhibition-lyon.com/ |
+| untec-congres | 101 jours | non-annoncee | Site vivant, toujours sur l'édition 2026 (Chartres) ; salon itinérant, aucune date/ville 2027 publiée | https://www.actes-untec.com/ |
+| plastic-expo-lyon | 101 jours | roll-pret | 5 au 8 juin 2029, Eurexpo Lyon (cohérent avec le rythme triennal) | https://www.f-i-p.com/ |
+| architect-at-work-lyon | 95 jours | a-arbitrer | 17 au 18 mai 2028, Halle Tony Garnier Lyon, mais saut 2026 → 2028 incohérent avec frequency=annuel en base | https://www.architectatwork.com/en/events/a@w-lyon |
+| transports-publics-paris | 95 jours | a-arbitrer | 31 mars au 1er avril 2027, mais déménagement Paris → Saint-Étienne (Parc Expo Auvergne-Rhône-Alpes) | https://mobco-expo.com/dates-lieu-et-acces/ |
+| restau-co-paris | 89 jours | non-annoncee | Aucune date publiée ; commercialisation de la nouvelle édition annoncée pour fin septembre 2026 | https://www.salonrestauco.com |
+| makeup-in-paris | 88 jours | roll-pret | 16 au 17 juin 2027, Carrousel du Louvre, Paris (lieu inchangé) | https://www.makeup-in-paris.com |
+| eurosatory-paris | 87 jours | a-arbitrer | 19 au 23 juin 2028 (bisannuel), Paris confirmé mais nom exact du site d'exposition non confirmé | https://www.eurosatory.com/ |
+| vivatech | 86 jours | roll-pret | 16 au 19 juin 2027, Paris Expo Porte de Versailles (lieu inchangé ; domaine officiel devenu vivatech.com) | https://vivatech.com/ |
+| smarter-e-europe-munich | 81 jours | roll-pret | 8 au 10 juin 2027, Munich (Messe München), inchangé | https://www.thesmartere.de/home |
+| playtime-paris | 77 jours | roll-pret | 30 janvier au 1er février 2027, Parc Floral de Paris ; année déduite des fichiers officiels (bannière WINTER-2027), à vérifier visuellement | https://www.iloveplaytime.com/playtime-paris/ |
+| medi-nov-connection-lyon | 74 jours | a-arbitrer | Site annonce "2027 à Lyon" sans jour ni lieu précis | https://www.medinov-connection.com/ |
+| japan-expo-paris | 64 jours | roll-pret | 8 au 11 juillet 2027, Paris Nord Villepinte, inchangé | https://www.japan-expo-paris.com |
+| texworld-paris | 12 jours | roll-pret | 25 au 27 janvier 2027, Paris Le Bourget | https://texworld-paris.fr.messefrankfurt.com/paris/en.html |
+| sibca-paris | 11 jours | non-annoncee | Site vivant, entièrement centré sur l'édition 2026, aucune date 2027 | https://www.sibca.fr |
+| premiere-vision-paris | 11 jours | roll-pret | 26 au 28 janvier 2027, Paris Nord Villepinte | https://paris.premierevision.com/en |
+| bijorhca-paris | 7 jours | roll-pret | 16 au 18 janvier 2027, Porte de Versailles Paris | https://wsn-events.com/events/bijorhca |
+| interfiliere-paris | 7 jours | roll-pret | 16 au 18 janvier 2027, Porte de Versailles Paris (site interfiliere.com injoignable, HTTP 503 ; source = organisateur WSN) | https://wsn-events.com/events/interfiliere-paris |
+| foire-chalons-en-champagne | 7 jours | roll-pret | 27 août au 6 septembre 2027, Châlons-en-Champagne | https://www.foiredechalons.com/ |
+| whos-next-paris | 7 jours | roll-pret | 16 au 18 janvier 2027, Porte de Versailles Paris | https://wsn-events.com/events/whos-next |
+| innov-agri-ondes | 4 jours | roll-pret | 26 au 27 mai 2027 à Grugies (Hauts-de-France) ; changement de ville, salon itinérant | https://www.innovagri.com/accueil-grugies |
+| terres-de-jim | 1 jour | non-annoncee | Site à jour sur 2026 (Metz-Magny), aucune date ni ville 2027 publiée | https://www.lesterresdejim.com/ |
+| cannes-yachting-festival | 1 jour | non-annoncee | Site à jour sur 2026, aucune date 2027 publiée | https://www.cannesyachtingfestival.com/ |
+
+Reste à traiter : 0 fiche périmée
+
 ## Lot du 2026-09-14
 
 | Slug | Ancienneté | Statut | Prochaine édition / raison | Source |

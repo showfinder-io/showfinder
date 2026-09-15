@@ -1,0 +1,19 @@
+{
+  "slug": "terres-de-jim",
+  "name": "Terres de Jim",
+  "status": "non-annoncee",
+  "checked_at": "2026-09-14",
+  "current": {
+    "start_date": "2026-09-11",
+    "end_date": "2026-09-13",
+    "edition_year": 2026,
+    "city": "Metz-Magny",
+    "venue": "Site de plein air"
+  },
+  "next": null,
+  "source_url": "https://www.lesterresdejim.com/",
+  "quote": null,
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "Site officiel vivant et à jour sur l'édition 2026 (Metz-Magny, Moselle), mais aucune date ni ville n'est publiée pour 2027 : page d'accueil, page infos-pratiques, page presse, page histoire et sitemap.xml ne contiennent aucune mention de 2027 ni de page dédiée à une prochaine édition. Salon itinérant, un changement de ville est attendu mais rien n'est encore annoncé officiellement."
+}

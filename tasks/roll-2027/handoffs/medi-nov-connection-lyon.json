@@ -1,0 +1,25 @@
+{
+  "slug": "medi-nov-connection-lyon",
+  "name": "Medi'Nov Connection",
+  "status": "a-arbitrer",
+  "checked_at": "2026-09-14",
+  "current": {
+    "start_date": "2026-07-01",
+    "end_date": "2026-07-02",
+    "edition_year": 2026,
+    "city": "Lyon",
+    "venue": "Centre de Congrès de Lyon"
+  },
+  "next": {
+    "start_date": null,
+    "end_date": null,
+    "edition_year": 2027,
+    "city": "Lyon",
+    "venue": null
+  },
+  "source_url": "https://www.medinov-connection.com/",
+  "quote": "L'évènement Medi'Nov aura lieu en 2027 à Lyon. / Rendez-vous à Lyon en 2027 !",
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "Site officiel mis à jour très récemment (mention Last Published le 11 septembre 2026). La page confirme la ville (Lyon) et l'année (2027) pour la prochaine édition, mais ne précise ni dates exactes ni lieu confirmé (le bloc DATES ET LIEU se contente de en 2027 à Lyon, sans jour ni salle). Aucune borne de date connue : dates et lieu à confirmer par l'organisateur avant de rouler la fiche."
+}
