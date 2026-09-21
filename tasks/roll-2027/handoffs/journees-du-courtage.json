@@ -1,0 +1,25 @@
+{
+  "slug": "journees-du-courtage",
+  "name": "Les Journées du Courtage",
+  "status": "roll-pret",
+  "checked_at": "2026-09-21",
+  "current": {
+    "start_date": "2026-09-15",
+    "end_date": "2026-09-16",
+    "edition_year": 2026,
+    "city": "Paris",
+    "venue": "Palais des Congrès de Paris"
+  },
+  "next": {
+    "start_date": "2027-09-14",
+    "end_date": "2027-09-15",
+    "edition_year": 2027,
+    "city": "Paris",
+    "venue": "Palais des Congrès Paris"
+  },
+  "source_url": "https://www.lesjourneesducourtage.com/informations-pratiques",
+  "quote": "HORAIRES MARDI 14 SEPTEMBRE 2027 : 9h00 à 19h00 MERCREDI 15 SEPTEMBRE 2027 : 9h00 à 18h00 LIEU 2 Pl de la Pte Maillot, 75017 Paris Palais des Congrès Paris",
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "Pour la 26e edition, dates et lieu de la prochaine edition lus sur la page infos pratiques du site officiel, meme ville et meme lieu (Palais des Congres, Porte Maillot) que l'edition actuelle. Ecart de 12 mois, coherent avec la frequence annuelle."
+}

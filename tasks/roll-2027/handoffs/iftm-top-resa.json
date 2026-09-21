@@ -1,0 +1,19 @@
+{
+  "slug": "iftm-top-resa",
+  "name": "IFTM Top Resa",
+  "status": "non-annoncee",
+  "checked_at": "2026-09-21",
+  "current": {
+    "start_date": "2026-09-15",
+    "end_date": "2026-09-17",
+    "edition_year": 2026,
+    "city": "Paris",
+    "venue": "Paris Expo Porte de Versailles"
+  },
+  "next": null,
+  "source_url": "https://www.iftm.fr",
+  "quote": null,
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "Site officiel vivant et a jour sur la 47e edition (15-17 septembre 2026, Paris Porte de Versailles). Aucune date pour 2027 trouvee sur la page d'accueil ; les pages /informations-pratiques, /dates, /prochaine-edition et /visiteurs renvoient toutes une 404. Pas de save-the-date 2027 publie a ce jour."
+}

@@ -1,0 +1,25 @@
+{
+  "slug": "innorobo-by-sido",
+  "name": "Innorobo by SIDO",
+  "status": "a-arbitrer",
+  "checked_at": "2026-09-21",
+  "current": {
+    "start_date": "2026-09-16",
+    "end_date": "2026-09-17",
+    "edition_year": 2026,
+    "city": "Lyon",
+    "venue": "Centre de Congrès de Lyon"
+  },
+  "next": {
+    "start_date": "2027-09-15",
+    "end_date": "2027-09-16",
+    "edition_year": 2027,
+    "city": "Lyon",
+    "venue": "Eurexpo Lyon"
+  },
+  "source_url": "https://www.sido-lyon.com/",
+  "quote": "SAVE THE DATE : Rendez-vous les 15 et 16 septembre 2027 à Eurexpo Lyon pour la 13e édition !",
+  "venue_changed": true,
+  "city_changed": false,
+  "notes": "Le site officiel (sido-event.com redirige vers sido-lyon.com) annonce la prochaine edition les 15 et 16 septembre 2027, mais a Eurexpo Lyon alors que la fiche actuelle indique Centre de Congres de Lyon comme lieu : changement de lieu au sein de la meme ville, ce qui impose l'arbitrage humain meme si les dates sont sans ambiguite."
+}
