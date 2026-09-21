@@ -124,3 +124,17 @@ Fichier source : scripts/seeds/prestataires-2026-09-20.json (78 lignes, l'onglet
 - [ ] G6. description_en absente pour les nouveaux (46 descriptions FR sur 71) : passe de traduction à prévoir ; 25 fiches sans description du tout
 - [ ] G7. Logos : logo_url pointe vers leads-france.com / prestalians.fr (hotlink). Non affichés dans l'UI aujourd'hui (uniquement JSON-LD image), aucun bucket Storage n'existe. À ré-héberger le jour où l'UI affiche les logos
 - [ ] G8. bouvry-gilles à renvoyer à Nicolas (site mort)
+
+### Volet G bis : chantier SEO prestataires (lancé le 2026-09-21)
+
+Phase 0 (DataForSEO, France) : standiste 720/mois, standiste paris 390, standiste lyon 210, CPC standiste + ville 30 à 75 EUR ; location mobilier événementiel 590 ; location matériel audiovisuel 480. Métier x salon quasi nul. Conclusion : levier de revenu (Premium) plus que de trafic. Données brutes dans scripts/output/phase0-prestataires-*.json (hors git).
+
+- [x] G9. Référentiel édito prestataires P1-P34 (tasks/regles-edito-prestataires-v1.md) + brief pipeline (tasks/writer-brief-prestataires.md)
+- [x] G10. Étape 0 : 87 dossiers sources figés (scripts/diag-providers-dossiers.ts, handoff/prestataires/dossiers/, hors git) ; contrôle mécanique scripts/diag-providers-lint.ts (sanity check fait sur une sortie volontairement fausse)
+- [x] G11. Migration 20260921100000 appliquée en prod (colonnes éditoriales providers, seo_indexable, table provider_hubs) ; pages hub servies par /prestataires/[slug], fiche enrichie, sitemap aligné
+- [ ] G12. Workflow fiches (writer Sonnet, review pass-1, corrections, pass-2 sur le lot test, traduction EN) puis scripts/diag-providers-editorial-apply.ts --apply --indexable-lot <20 slugs>
+- [ ] G13. Workflow hubs (writer Opus, 2 reviews) : standistes, standistes-paris, standistes-lyon, location-mobilier-evenementiel, prestataires-audiovisuel-paris ; scripts/diag-provider-hubs-dossiers.ts puis diag-provider-hubs-apply.ts --apply. Hubs Bordeaux, Nantes/Rennes, Montpellier non créés tant que la zone n'a pas 5 prestataires
+- [ ] G14. Relecture Nicolas des 20 fiches du lot test + 5 hubs avant Request Indexing GSC
+- [ ] G15. Lecture GSC à 4-6 semaines (taux d'indexation du lot test, impressions sur requêtes de nom, effet de la longueur 400-500 vs 700-800) puis décision d'ouvrir le reste (flag seo_indexable)
+- [ ] G16. Email de prise de contact prestataires ("votre fiche est en ligne") à envoyer par Nicolas une fois les fiches propres
+- [ ] G17. Bannière du bas de /prestataires : "salons B2B audités par notre équipe" à relire (libellé du compteur "audités" déjà retiré)
