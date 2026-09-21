@@ -2,6 +2,19 @@
 
 Rapport alimenté chaque lundi par la routine cloud agoris-roll-2027-watch (détection des fiches publiées à édition passée, vérification des dates de la prochaine édition sur les sites officiels, handoffs dans handoffs/). Application en base en session interactive via le pattern diag-edito-roll-apply.
 
+## Lot du 2026-09-21
+
+| Slug | Ancienneté | Statut | Prochaine édition / raison | Source |
+|------|-----------:|--------|------------------------------|--------|
+| 3d-print-lyon | 109 jours | roll-pret | 15 et 16 septembre 2027, Eurexpo Lyon (passage de juin 3 jours à septembre 2 jours) | https://www.3dprint-exhibition-lyon.com |
+| plastic-expo-lyon | 108 jours | roll-pret | 5 au 8 juin 2029, Eurexpo Lyon (rythme triennal confirmé, cohérent avec la fiche) | https://www.f-i-p.com |
+| untec-congres | 108 jours | non-annoncee | Site figé sur l'édition 2026 (Illiade de Chartres), aucune date 2027 ; salon itinérant | https://www.actes-untec.com |
+| transports-publics-paris | 102 jours | a-arbitrer | Changement de ville et de lieu : 31 mars au 1er avril 2027, Parc Expo Auvergne-Rhône-Alpes, Saint-Étienne (Mobco alterne Paris / régions) | https://mobco-expo.com/dates-lieu-et-acces/ |
+| architect-at-work-lyon | 102 jours | a-arbitrer | website_url absent en base (retrouvé via WebSearch) ; calendrier officiel du réseau A@WX indique "Spring 2028" sans dates précises, saut de fréquence à arbitrer | https://www.architectatwork.com/fr/events/a@w-lyon |
+| restau-co-paris | 96 jours | roll-pret | 16 juin 2027, Paris Expo Porte de Versailles hall 5.1 (bandeau d'accueil ambigu "fin septembre" à vérifier) | https://www.salonrestauco.com/evenement |
+
+Reste à traiter : 0 fiche périmée. Ce lot a revérifié 6 fiches déjà couvertes par le complément du 2026-09-14 (la PR #97 n'était pas encore mergée au moment du run, le décompte initial de 29 l'ignorait). Les handoffs du 2026-09-21 font foi.
+
 ## Lot du 2026-09-14 (complément, 23 fiches)
 
 Lot complémentaire traité le même jour à la demande de Julien, en dehors du rythme hebdomadaire habituel (6 fiches/semaine), pour vider le stock de fiches périmées restantes.

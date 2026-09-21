@@ -2,7 +2,7 @@
   "slug": "plastic-expo-lyon",
   "name": "FIP - France Innovation Plasturgie",
   "status": "roll-pret",
-  "checked_at": "2026-09-14",
+  "checked_at": "2026-09-21",
   "current": {
     "start_date": "2026-06-02",
     "end_date": "2026-06-05",
@@ -17,9 +17,9 @@
     "city": "Lyon",
     "venue": "Eurexpo Lyon"
   },
-  "source_url": "https://www.f-i-p.com/",
-  "quote": "Du 5 au 8 juin 2029 - Eurexpo - Lyon / Rendez-vous sur FIP 2029 !",
+  "source_url": "https://www.f-i-p.com",
+  "quote": "Du 5 au 8 juin 2029 - Eurexpo - Lyon / Retrouvant un rythme triennal, avec une prochaine edition prevue en 2029",
   "venue_changed": false,
   "city_changed": false,
-  "notes": "Prochaine édition clairement annoncée sur le site officiel : 5 au 8 juin 2029, Eurexpo Lyon. Cohérent avec le rythme triennal indiqué en base (2026 puis 2029), aucune contradiction détectée."
+  "notes": "Le site confirme explicitement un rythme triennal, ce qui correspond au champ frequency=triennal deja en base : l'ecart de 3 ans avec l'edition 2026 n'est pas une anomalie mais le cycle normal du salon."
 }

@@ -2,7 +2,7 @@
   "slug": "transports-publics-paris",
   "name": "Mobco",
   "status": "a-arbitrer",
-  "checked_at": "2026-09-14",
+  "checked_at": "2026-09-21",
   "current": {
     "start_date": "2026-06-09",
     "end_date": "2026-06-11",
@@ -14,12 +14,12 @@
     "start_date": "2027-03-31",
     "end_date": "2027-04-01",
     "edition_year": 2027,
-    "city": "Saint-Étienne",
-    "venue": "Saint-Étienne Parc Expo Auvergne-Rhône-Alpes"
+    "city": "Saint-Etienne",
+    "venue": "Parc Expo Auvergne-Rhone-Alpes"
   },
   "source_url": "https://mobco-expo.com/dates-lieu-et-acces/",
-  "quote": "Lieu Saint-Etienne Parc Expo Auvergne-Rhône-Alpes Boulevard Jules Janin, All. des Olympiades, 42000 Saint-Étienne. Dates et horaires d'ouverture : Du 31 mars au 1 avril 2027.",
+  "quote": "Lieu Saint-Etienne Parc Expo Auvergne-Rhone-Alpes Boulevard Jules Janin, All. des Olympiades, 42000 Saint-Etienne / Dates et horaires d'ouverture Du 31 mars au 1 avril 2027",
   "venue_changed": true,
   "city_changed": true,
-  "notes": "Changement majeur détecté : Mobco quitte Paris Expo Porte de Versailles pour le Parc Expo Auvergne-Rhône-Alpes à Saint-Étienne, avec des dates en mars-avril 2027 au lieu de juin habituellement. Le menu du site confirme aussi cette bascule (liens Exposer/Visiter Saint-Étienne 2027). A faire arbitrer par un humain avant toute mise à jour en base : il s'agit d'un changement de ville et de lieu, pas d'une simple continuité d'édition."
+  "notes": "Mobco est ne en 2026 de la fusion d'EuMo Expo et des RNTP ; le site explique que l'evenement alterne chaque annee entre Paris et les regions. Le changement de ville et de lieu pour 2027 est donc conforme au format annonce, mais reste a arbitrer editorialement (nom de fiche, ville affichee dans le catalogue Agoris)."
 }
