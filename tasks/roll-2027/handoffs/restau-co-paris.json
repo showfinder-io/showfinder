@@ -1,0 +1,19 @@
+{
+  "slug": "restau-co-paris",
+  "name": "Restau'Co",
+  "status": "non-annoncee",
+  "checked_at": "2026-09-14",
+  "current": {
+    "start_date": "2026-06-17",
+    "end_date": "2026-06-17",
+    "edition_year": 2026,
+    "city": "Paris",
+    "venue": "Paris Expo Porte de Versailles"
+  },
+  "next": null,
+  "source_url": "https://www.salonrestauco.com",
+  "quote": "Lancement de la commercialisation de la nouvelle édition fin septembre ! Un mail informatif sera envoyé 1 semaine avant.",
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "Le site est actif (lieu confirmé : Paris Expo Porte de Versailles, Hall 4.1) et évoque une nouvelle édition dont la commercialisation démarre fin septembre 2026, mais aucune date précise de la prochaine édition n'est publiée à ce jour. A revérifier après le lancement annoncé fin septembre."
+}

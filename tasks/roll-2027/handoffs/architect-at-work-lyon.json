@@ -1,0 +1,25 @@
+{
+  "slug": "architect-at-work-lyon",
+  "name": "Architect@Work Lyon",
+  "status": "a-arbitrer",
+  "checked_at": "2026-09-14",
+  "current": {
+    "start_date": "2026-06-10",
+    "end_date": "2026-06-11",
+    "edition_year": 2026,
+    "city": "Lyon",
+    "venue": "Halle Tony Garnier"
+  },
+  "next": {
+    "start_date": "2028-05-17",
+    "end_date": "2028-05-18",
+    "edition_year": 2028,
+    "city": "Lyon",
+    "venue": "La Halle Tony Garnier"
+  },
+  "source_url": "https://www.architectatwork.com/en/events/a@w-lyon",
+  "quote": "This event has passed. Next edition: Spring 2028. (17 - 18.05.2028, La Halle Tony Garnier)",
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "website_url était vide en base : site officiel retrouvé via WebSearch (réseau international architectatwork.com, page A@W Lyon confirmée par redirection depuis lyon.architectatwork.fr), puis les dates ont été lues directement sur ce site officiel. La prochaine édition est annoncée pour les 17-18 mai 2028 à La Halle Tony Garnier (même lieu), soit un saut de 2026 à 2028 sans édition 2027. Ceci contredit le champ frequency=annuel en base (probablement bisannuel en réalité) : à faire arbitrer par un humain avant de rouler la fiche, et penser à renseigner website_url."
+}

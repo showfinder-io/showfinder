@@ -1,0 +1,25 @@
+{
+  "slug": "innov-agri-ondes",
+  "name": "Innov-Agri",
+  "status": "roll-pret",
+  "checked_at": "2026-09-14",
+  "current": {
+    "start_date": "2026-09-09",
+    "end_date": "2026-09-10",
+    "edition_year": 2026,
+    "city": "Ondes",
+    "venue": "Site de plein champ"
+  },
+  "next": {
+    "start_date": "2027-05-26",
+    "end_date": "2027-05-27",
+    "edition_year": 2027,
+    "city": "Grugies",
+    "venue": "Site de plein champ"
+  },
+  "source_url": "https://www.innovagri.com/accueil-grugies",
+  "quote": "Nous vous donnons donc rendez-vous les 26 & 27 mai 2027 pour le lancement de la 2nde édition d'INNOVAGRI dans les Hauts de France !",
+  "venue_changed": false,
+  "city_changed": true,
+  "notes": "Salon itinérant : la prochaine édition change de région et se tiendra à Grugies (Hauts-de-France, Aisne), et non plus à Ondes. Dates confirmées sur le site officiel (page dédiée /accueil-grugies, également annoncée en page d'accueil). Aucune adresse précise du site de plein champ n'est donnée, cohérent avec la convention actuelle en base (venue générique « Site de plein champ »)."
+}
