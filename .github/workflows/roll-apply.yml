@@ -1,0 +1,55 @@
+name: Roll apply
+
+# Application en base des handoffs roll-pret de la routine agoris-roll-2027-watch
+# (CLAUDE.md règle 13d). La clé service-role ne vit qu'ici, jamais chez l'agent
+# qui navigue sur les sites des salons. Le commit du journal déclenche un
+# déploiement Vercel postérieur à l'écriture (les fiches sont en SSG).
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "tasks/roll-2027/handoffs/**"
+  workflow_dispatch:
+
+concurrency: roll-apply
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Garde-fous (régression)
+        run: ./node_modules/.bin/tsx scripts/test-roll-guards.ts
+
+      - name: Application des roll-pret
+        run: ./node_modules/.bin/tsx scripts/roll-apply-handoffs.ts --apply
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+
+      - name: Commit du journal
+        run: |
+          git add tasks/roll-2027/journal.json
+          if git diff --cached --quiet; then
+            echo "Journal inchangé."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore(roll-2027): journal d'application du $(date -u +%F)"
+          git pull --rebase origin main
+          git push origin HEAD:main
