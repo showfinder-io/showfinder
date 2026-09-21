@@ -62,8 +62,10 @@ const STATUS_OPTIONS = [
 
 const FREQUENCY_OPTIONS = [
   { value: "", label: "· Non défini" },
+  { value: "semestriel", label: "Semestriel (2 fois par an)" },
   { value: "annuel", label: "Annuel" },
-  { value: "bisannuel", label: "Bisannuel" },
+  { value: "bisannuel", label: "Bisannuel (tous les 2 ans)" },
+  { value: "triennal", label: "Triennal (tous les 3 ans)" },
   { value: "ponctuel", label: "Ponctuel" },
 ];
 

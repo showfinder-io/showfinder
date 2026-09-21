@@ -93,6 +93,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 // Clés de fréquence -> clé de traduction (dans salon-detail.frequency)
 const FREQUENCY_KEYS: Record<string, string> = {
+  semestriel: "semestriel",
   annuel: "annuel",
   bisannuel: "bisannuel",
   triennal: "triennal",
