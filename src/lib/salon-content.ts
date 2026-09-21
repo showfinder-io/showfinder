@@ -28,19 +28,17 @@ export async function getSalonContent(
   locale: string = "fr"
 ): Promise<SalonContent | null> {
   const supabase = createStaticClient();
-  // Les colonnes _en ne sont pas encore dans les types Supabase générés.
-  // On sélectionne les colonnes nécessaires et on cast via unknown pour
-  // accéder à editorial_mdx_en sans erreur TS.
+  // editorial_mdx_en doit figurer dans le select : Supabase ne renvoie que les
+  // colonnes demandées. Son absence (jusqu'au 2026-09-21) faisait servir le MDX
+  // français sur toutes les fiches /en.
   const { data } = await supabase
     .from("salons")
-    .select("editorial_mdx, editorial_updated_at")
+    .select("editorial_mdx, editorial_mdx_en, editorial_updated_at")
     .eq("slug", slug)
     .maybeSingle();
 
   if (!data) return null;
 
-  // Colonnes _en : présentes en runtime via Supabase même si absentes des types
-  // générés. On les lit via cast.
   const raw = data as unknown as Record<string, unknown>;
 
   // Fallback : si la colonne EN est nulle, on revient sur le FR.
