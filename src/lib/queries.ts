@@ -560,6 +560,14 @@ export type ProviderRow = {
   subscription_tier: string;
   avg_rating: number;
   review_count: number;
+  // Données éditoriales vérifiées (pipeline writer / reviewers, migration 20260921100000)
+  postal_code?: string | null;
+  department?: string | null;
+  specialties?: string[];
+  founded_year?: number | null;
+  zone_intervention?: string | null;
+  memberships?: string[];
+  seo_indexable?: boolean;
 };
 
 export const PROVIDER_CATEGORY_LABELS: Record<string, string> = {
@@ -616,6 +624,20 @@ export async function getProvidersBySalon(salonId: string) {
     ...(sp.providers as unknown as ProviderRow),
     is_featured: sp.is_featured,
   }));
+}
+
+/** Salons publiés auxquels un prestataire est rattaché (maillage fiche prestataire vers fiches salon). */
+export async function getSalonsByProvider(providerId: string) {
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from("salon_providers")
+    .select("salons(slug, name, status)")
+    .eq("provider_id", providerId);
+  if (error) throw error;
+  return (data ?? [])
+    .map((sp) => sp.salons as unknown as { slug: string; name: string; status: string } | null)
+    .filter((s): s is { slug: string; name: string; status: string } => s !== null && s.status === "published")
+    .sort((a, b) => a.name.localeCompare(b.name, "fr"));
 }
 
 export async function getAllProviderSlugs() {

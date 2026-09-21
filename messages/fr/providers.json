@@ -4,8 +4,8 @@
     "metaDescription": "Trouvez les meilleurs prestataires pour votre salon professionnel sur {siteName} : standistes, traiteurs, audiovisuel, photographes.",
     "eyebrow": "Prestataires événementiels",
     "heading": "Prestataires",
-    "countLabelOne": "prestataire référencé en France, audité.",
-    "countLabelMany": "prestataires référencés en France, audités.",
+    "countLabelOne": "prestataire référencé en France.",
+    "countLabelMany": "prestataires référencés en France.",
     "emptyResult": "Aucun prestataire ne correspond à vos critères.",
     "emptyHint": "Essayez une autre catégorie ou ville",
     "banner": {
@@ -14,7 +14,8 @@
       "description": "Vous êtes standiste, traiteur, audiovisuel ou photographe ? Rejoignez l'annuaire Agoris et accédez aux organisateurs des salons B2B audités par notre équipe.",
       "ctaPrimary": "Créer un profil",
       "ctaSecondary": "ou découvrir Agoris Premium"
-    }
+    },
+    "hubsLabel": "Prestataires par métier et par ville"
   },
   "categories": {
     "standiste": "Standiste",
@@ -47,6 +48,25 @@
     "fieldPhone": "Téléphone",
     "ctaNotPremium": "Vous êtes ce prestataire ?",
     "ctaNotPremiumLink": "Passez en Premium",
-    "ctaNotPremiumSuffix": "pour être mis en avant sur les fiches salons."
+    "ctaNotPremiumSuffix": "pour être mis en avant sur les fiches salons.",
+    "fieldSpecialties": "Spécialités",
+    "fieldZone": "Zone d'intervention",
+    "fieldFounded": "Création",
+    "fieldMemberships": "Adhésions",
+    "memberships": {
+      "leads_france": "LEADS France",
+      "prestalians": "Prestalians"
+    },
+    "salonsHeading": "Salons où ce prestataire est référencé",
+    "hubsHeading": "Voir aussi"
+  },
+  "hub": {
+    "breadcrumbHome": "Accueil",
+    "breadcrumbProviders": "Prestataires",
+    "eyebrow": "Prestataires de salons",
+    "editorialUpdate": "Mis à jour en {date}",
+    "countLabelOne": "prestataire référencé",
+    "countLabelMany": "prestataires référencés",
+    "otherHubsHeading": "Autres métiers et villes"
   }
 }

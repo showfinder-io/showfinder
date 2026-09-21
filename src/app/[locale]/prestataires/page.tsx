@@ -10,6 +10,8 @@ import {
   type ProviderRow,
 } from "@/lib/queries";
 import { ProviderCard } from "@/components/provider-card";
+import { getAllProviderHubs } from "@/lib/provider-hubs";
+import { hubField } from "@/components/provider-hub-view";
 import { ProviderSortBar } from "@/components/provider-sort-bar";
 import { SectionTitle } from "@/components/section-title";
 import { buildAlternates } from "@/lib/i18n-metadata";
@@ -102,9 +104,10 @@ export default async function PrestatairesPage({ params: pageParams, searchParam
     ])
   );
 
-  const [providersRaw, cities] = await Promise.all([
+  const [providersRaw, cities, hubs] = await Promise.all([
     getProviders({ category: category || undefined, city: city || undefined }),
     getProviderCities(),
+    getAllProviderHubs(),
   ]);
 
   const providers = sortProviders(providersRaw, sort, categoryLabels);
@@ -128,6 +131,21 @@ export default async function PrestatairesPage({ params: pageParams, searchParam
             {providers.length > 1 ? t("countLabelMany") : t("countLabelOne")}
           </p>
         </header>
+
+        {/* Maillage vers les pages hub métier x zone */}
+        {hubs.length > 0 && (
+          <nav aria-label={t("hubsLabel")} className="mb-10 flex flex-wrap gap-3">
+            {hubs.map((hub) => (
+              <Link
+                key={hub.slug}
+                href={`/prestataires/${hub.slug}`}
+                className="inline-block rounded-full border border-prune px-4 py-2 text-sm text-prune transition-colors hover:bg-prune/5"
+              >
+                {hubField(hub, "h1", locale)}
+              </Link>
+            ))}
+          </nav>
+        )}
 
         <Suspense>
           <ProviderSortBar

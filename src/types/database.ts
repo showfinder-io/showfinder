@@ -9,32 +9,7 @@ export type Database = {
   // Allows to automatically instantiate createClient with right options
   // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
   __InternalSupabase: {
-    PostgrestVersion: "14.4"
-  }
-  graphql_public: {
-    Tables: {
-      [_ in never]: never
-    }
-    Views: {
-      [_ in never]: never
-    }
-    Functions: {
-      graphql: {
-        Args: {
-          extensions?: Json
-          operationName?: string
-          query?: string
-          variables?: Json
-        }
-        Returns: Json
-      }
-    }
-    Enums: {
-      [_ in never]: never
-    }
-    CompositeTypes: {
-      [_ in never]: never
-    }
+    PostgrestVersion: "14.5"
   }
   public: {
     Tables: {
@@ -95,6 +70,69 @@ export type Database = {
         }
         Relationships: []
       }
+      provider_hubs: {
+        Row: {
+          category: Database["public"]["Enums"]["provider_category"]
+          created_at: string
+          departments: string[]
+          editorial_mdx: string | null
+          editorial_mdx_en: string | null
+          editorial_updated_at: string | null
+          h1: string
+          h1_en: string | null
+          id: string
+          min_providers: number
+          seo_description: string
+          seo_description_en: string | null
+          seo_title: string
+          seo_title_en: string | null
+          slug: string
+          updated_at: string
+          zone_label: string | null
+          zone_label_en: string | null
+        }
+        Insert: {
+          category: Database["public"]["Enums"]["provider_category"]
+          created_at?: string
+          departments?: string[]
+          editorial_mdx?: string | null
+          editorial_mdx_en?: string | null
+          editorial_updated_at?: string | null
+          h1: string
+          h1_en?: string | null
+          id?: string
+          min_providers?: number
+          seo_description: string
+          seo_description_en?: string | null
+          seo_title: string
+          seo_title_en?: string | null
+          slug: string
+          updated_at?: string
+          zone_label?: string | null
+          zone_label_en?: string | null
+        }
+        Update: {
+          category?: Database["public"]["Enums"]["provider_category"]
+          created_at?: string
+          departments?: string[]
+          editorial_mdx?: string | null
+          editorial_mdx_en?: string | null
+          editorial_updated_at?: string | null
+          h1?: string
+          h1_en?: string | null
+          id?: string
+          min_providers?: number
+          seo_description?: string
+          seo_description_en?: string | null
+          seo_title?: string
+          seo_title_en?: string | null
+          slug?: string
+          updated_at?: string
+          zone_label?: string | null
+          zone_label_en?: string | null
+        }
+        Relationships: []
+      }
       provider_venues: {
         Row: {
           provider_id: string
@@ -133,14 +171,22 @@ export type Database = {
           company_name: string
           coverage_radius_km: number | null
           created_at: string
+          department: string | null
           description: string | null
+          description_en: string | null
+          editorial_reviewed_at: string | null
           email: string | null
+          founded_year: number | null
           id: string
           is_verified: boolean
           logo_url: string | null
+          memberships: string[]
           phone: string | null
+          postal_code: string | null
           review_count: number
+          seo_indexable: boolean
           slug: string
+          specialties: string[]
           subscription_tier: Database["public"]["Enums"]["provider_tier"]
           updated_at: string
           website_url: string | null
@@ -153,14 +199,22 @@ export type Database = {
           company_name: string
           coverage_radius_km?: number | null
           created_at?: string
+          department?: string | null
           description?: string | null
+          description_en?: string | null
+          editorial_reviewed_at?: string | null
           email?: string | null
+          founded_year?: number | null
           id?: string
           is_verified?: boolean
           logo_url?: string | null
+          memberships?: string[]
           phone?: string | null
+          postal_code?: string | null
           review_count?: number
+          seo_indexable?: boolean
           slug: string
+          specialties?: string[]
           subscription_tier?: Database["public"]["Enums"]["provider_tier"]
           updated_at?: string
           website_url?: string | null
@@ -173,14 +227,22 @@ export type Database = {
           company_name?: string
           coverage_radius_km?: number | null
           created_at?: string
+          department?: string | null
           description?: string | null
+          description_en?: string | null
+          editorial_reviewed_at?: string | null
           email?: string | null
+          founded_year?: number | null
           id?: string
           is_verified?: boolean
           logo_url?: string | null
+          memberships?: string[]
           phone?: string | null
+          postal_code?: string | null
           review_count?: number
+          seo_indexable?: boolean
           slug?: string
+          specialties?: string[]
           subscription_tier?: Database["public"]["Enums"]["provider_tier"]
           updated_at?: string
           website_url?: string | null
@@ -441,15 +503,20 @@ export type Database = {
       salons: {
         Row: {
           alert_flag: boolean
+          category: Database["public"]["Enums"]["salon_category"] | null
+          category_to_confirm: boolean
           city: string | null
           co_organizer_name: string | null
           country: string
           cover_image_url: string | null
           created_at: string
+          dates_confirmed: boolean
           description: string | null
+          description_en: string | null
           edition_number: number | null
           edition_year: number | null
           editorial_mdx: string | null
+          editorial_mdx_en: string | null
           editorial_updated_at: string | null
           end_date: string | null
           estimated_exhibitors: number | null
@@ -470,7 +537,9 @@ export type Database = {
           organizer_name: string | null
           scraper_conflicts: Json | null
           seo_description: string | null
+          seo_description_en: string | null
           seo_title: string | null
+          seo_title_en: string | null
           slug: string
           source_url: string | null
           start_date: string | null
@@ -484,15 +553,20 @@ export type Database = {
         }
         Insert: {
           alert_flag?: boolean
+          category?: Database["public"]["Enums"]["salon_category"] | null
+          category_to_confirm?: boolean
           city?: string | null
           co_organizer_name?: string | null
           country?: string
           cover_image_url?: string | null
           created_at?: string
+          dates_confirmed?: boolean
           description?: string | null
+          description_en?: string | null
           edition_number?: number | null
           edition_year?: number | null
           editorial_mdx?: string | null
+          editorial_mdx_en?: string | null
           editorial_updated_at?: string | null
           end_date?: string | null
           estimated_exhibitors?: number | null
@@ -513,7 +587,9 @@ export type Database = {
           organizer_name?: string | null
           scraper_conflicts?: Json | null
           seo_description?: string | null
+          seo_description_en?: string | null
           seo_title?: string | null
+          seo_title_en?: string | null
           slug: string
           source_url?: string | null
           start_date?: string | null
@@ -527,15 +603,20 @@ export type Database = {
         }
         Update: {
           alert_flag?: boolean
+          category?: Database["public"]["Enums"]["salon_category"] | null
+          category_to_confirm?: boolean
           city?: string | null
           co_organizer_name?: string | null
           country?: string
           cover_image_url?: string | null
           created_at?: string
+          dates_confirmed?: boolean
           description?: string | null
+          description_en?: string | null
           edition_number?: number | null
           edition_year?: number | null
           editorial_mdx?: string | null
+          editorial_mdx_en?: string | null
           editorial_updated_at?: string | null
           end_date?: string | null
           estimated_exhibitors?: number | null
@@ -556,7 +637,9 @@ export type Database = {
           organizer_name?: string | null
           scraper_conflicts?: Json | null
           seo_description?: string | null
+          seo_description_en?: string | null
           seo_title?: string | null
+          seo_title_en?: string | null
           slug?: string
           source_url?: string | null
           start_date?: string | null
@@ -582,37 +665,52 @@ export type Database = {
         Row: {
           created_at: string
           description: string | null
+          description_en: string | null
           editorial_mdx: string | null
+          editorial_mdx_en: string | null
           editorial_updated_at: string | null
           icon: string | null
           id: string
           name: string
+          name_en: string | null
           seo_description: string | null
+          seo_description_en: string | null
           seo_title: string | null
+          seo_title_en: string | null
           slug: string
         }
         Insert: {
           created_at?: string
           description?: string | null
+          description_en?: string | null
           editorial_mdx?: string | null
+          editorial_mdx_en?: string | null
           editorial_updated_at?: string | null
           icon?: string | null
           id?: string
           name: string
+          name_en?: string | null
           seo_description?: string | null
+          seo_description_en?: string | null
           seo_title?: string | null
+          seo_title_en?: string | null
           slug: string
         }
         Update: {
           created_at?: string
           description?: string | null
+          description_en?: string | null
           editorial_mdx?: string | null
+          editorial_mdx_en?: string | null
           editorial_updated_at?: string | null
           icon?: string | null
           id?: string
           name?: string
+          name_en?: string | null
           seo_description?: string | null
+          seo_description_en?: string | null
           seo_title?: string | null
+          seo_title_en?: string | null
           slug?: string
         }
         Relationships: []
@@ -642,7 +740,9 @@ export type Database = {
           country: string
           created_at: string
           description: string | null
+          description_en: string | null
           editorial_mdx: string | null
+          editorial_mdx_en: string | null
           editorial_updated_at: string | null
           gallery: Json
           google_maps_url: string | null
@@ -653,6 +753,8 @@ export type Database = {
           name: string
           photo_url: string | null
           postal_code: string | null
+          seo_description_en: string | null
+          seo_title_en: string | null
           slug: string
           total_surface_sqm: number | null
           website_url: string | null
@@ -663,7 +765,9 @@ export type Database = {
           country?: string
           created_at?: string
           description?: string | null
+          description_en?: string | null
           editorial_mdx?: string | null
+          editorial_mdx_en?: string | null
           editorial_updated_at?: string | null
           gallery?: Json
           google_maps_url?: string | null
@@ -674,6 +778,8 @@ export type Database = {
           name: string
           photo_url?: string | null
           postal_code?: string | null
+          seo_description_en?: string | null
+          seo_title_en?: string | null
           slug: string
           total_surface_sqm?: number | null
           website_url?: string | null
@@ -684,7 +790,9 @@ export type Database = {
           country?: string
           created_at?: string
           description?: string | null
+          description_en?: string | null
           editorial_mdx?: string | null
+          editorial_mdx_en?: string | null
           editorial_updated_at?: string | null
           gallery?: Json
           google_maps_url?: string | null
@@ -695,6 +803,8 @@ export type Database = {
           name?: string
           photo_url?: string | null
           postal_code?: string | null
+          seo_description_en?: string | null
+          seo_title_en?: string | null
           slug?: string
           total_surface_sqm?: number | null
           website_url?: string | null
@@ -705,13 +815,21 @@ export type Database = {
     Views: {
       salons_ordered: {
         Row: {
+          alert_flag: boolean | null
+          category: Database["public"]["Enums"]["salon_category"] | null
+          category_to_confirm: boolean | null
           city: string | null
+          co_organizer_name: string | null
           country: string | null
           cover_image_url: string | null
           created_at: string | null
+          dates_confirmed: boolean | null
           description: string | null
           description_search: string | null
+          edition_number: number | null
           edition_year: number | null
+          editorial_mdx: string | null
+          editorial_updated_at: string | null
           end_date: string | null
           estimated_exhibitors: number | null
           estimated_visitors: number | null
@@ -720,10 +838,14 @@ export type Database = {
           is_agoris_certified: boolean | null
           is_locked: boolean | null
           is_premium: boolean | null
+          last_human_check_at: string | null
+          last_ia_update_at: string | null
           last_scraped_at: string | null
+          locked_fields: Json | null
           logo_url: string | null
           name: string | null
           name_search: string | null
+          notes_internes: string | null
           organizer_email: string | null
           organizer_name: string | null
           scraper_conflicts: Json | null
@@ -742,13 +864,21 @@ export type Database = {
           website_url: string | null
         }
         Insert: {
+          alert_flag?: boolean | null
+          category?: Database["public"]["Enums"]["salon_category"] | null
+          category_to_confirm?: boolean | null
           city?: string | null
+          co_organizer_name?: string | null
           country?: string | null
           cover_image_url?: string | null
           created_at?: string | null
+          dates_confirmed?: boolean | null
           description?: string | null
           description_search?: never
+          edition_number?: number | null
           edition_year?: number | null
+          editorial_mdx?: string | null
+          editorial_updated_at?: string | null
           end_date?: string | null
           estimated_exhibitors?: number | null
           estimated_visitors?: number | null
@@ -757,10 +887,14 @@ export type Database = {
           is_agoris_certified?: boolean | null
           is_locked?: boolean | null
           is_premium?: boolean | null
+          last_human_check_at?: string | null
+          last_ia_update_at?: string | null
           last_scraped_at?: string | null
+          locked_fields?: Json | null
           logo_url?: string | null
           name?: string | null
           name_search?: never
+          notes_internes?: string | null
           organizer_email?: string | null
           organizer_name?: string | null
           scraper_conflicts?: Json | null
@@ -779,13 +913,21 @@ export type Database = {
           website_url?: string | null
         }
         Update: {
+          alert_flag?: boolean | null
+          category?: Database["public"]["Enums"]["salon_category"] | null
+          category_to_confirm?: boolean | null
           city?: string | null
+          co_organizer_name?: string | null
           country?: string | null
           cover_image_url?: string | null
           created_at?: string | null
+          dates_confirmed?: boolean | null
           description?: string | null
           description_search?: never
+          edition_number?: number | null
           edition_year?: number | null
+          editorial_mdx?: string | null
+          editorial_updated_at?: string | null
           end_date?: string | null
           estimated_exhibitors?: number | null
           estimated_visitors?: number | null
@@ -794,10 +936,14 @@ export type Database = {
           is_agoris_certified?: boolean | null
           is_locked?: boolean | null
           is_premium?: boolean | null
+          last_human_check_at?: string | null
+          last_ia_update_at?: string | null
           last_scraped_at?: string | null
+          locked_fields?: Json | null
           logo_url?: string | null
           name?: string | null
           name_search?: never
+          notes_internes?: string | null
           organizer_email?: string | null
           organizer_name?: string | null
           scraper_conflicts?: Json | null
@@ -929,7 +1075,17 @@ export type Database = {
       provider_tier: "free" | "premium"
       review_role: "exposant" | "visiteur" | "organisateur"
       review_target_type: "salon" | "provider"
-      salon_frequency: "annuel" | "bisannuel" | "ponctuel" | "triennal"
+      salon_category:
+        | "salon_professionnel"
+        | "salon_grand_public"
+        | "congres"
+        | "autres"
+      salon_frequency:
+        | "annuel"
+        | "bisannuel"
+        | "ponctuel"
+        | "triennal"
+        | "semestriel"
       salon_status: "draft" | "review" | "published" | "cancelled" | "postponed"
       tag_category: "audience" | "trend" | "value" | "sector"
     }
@@ -944,12 +1100,12 @@ export type Tables<
   DefaultSchemaTableNameOrOptions extends
     | keyof (DefaultSchema["Tables"] & DefaultSchema["Views"])
     | { schema: keyof DatabaseWithoutInternals },
-  TableName extends DefaultSchemaTableNameOrOptions extends {
+  TableName extends (DefaultSchemaTableNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
     ? keyof (DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"] &
         DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Views"])
-    : never = never,
+    : never) = never,
 > = DefaultSchemaTableNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }
@@ -972,11 +1128,11 @@ export type TablesInsert<
   DefaultSchemaTableNameOrOptions extends
     | keyof DefaultSchema["Tables"]
     | { schema: keyof DatabaseWithoutInternals },
-  TableName extends DefaultSchemaTableNameOrOptions extends {
+  TableName extends (DefaultSchemaTableNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
     ? keyof DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"]
-    : never = never,
+    : never) = never,
 > = DefaultSchemaTableNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }
@@ -996,11 +1152,11 @@ export type TablesUpdate<
   DefaultSchemaTableNameOrOptions extends
     | keyof DefaultSchema["Tables"]
     | { schema: keyof DatabaseWithoutInternals },
-  TableName extends DefaultSchemaTableNameOrOptions extends {
+  TableName extends (DefaultSchemaTableNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
     ? keyof DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"]
-    : never = never,
+    : never) = never,
 > = DefaultSchemaTableNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }
@@ -1020,11 +1176,11 @@ export type Enums<
   DefaultSchemaEnumNameOrOptions extends
     | keyof DefaultSchema["Enums"]
     | { schema: keyof DatabaseWithoutInternals },
-  EnumName extends DefaultSchemaEnumNameOrOptions extends {
+  EnumName extends (DefaultSchemaEnumNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
     ? keyof DatabaseWithoutInternals[DefaultSchemaEnumNameOrOptions["schema"]]["Enums"]
-    : never = never,
+    : never) = never,
 > = DefaultSchemaEnumNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }
@@ -1036,11 +1192,11 @@ export type CompositeTypes<
   PublicCompositeTypeNameOrOptions extends
     | keyof DefaultSchema["CompositeTypes"]
     | { schema: keyof DatabaseWithoutInternals },
-  CompositeTypeName extends PublicCompositeTypeNameOrOptions extends {
+  CompositeTypeName extends (PublicCompositeTypeNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
     ? keyof DatabaseWithoutInternals[PublicCompositeTypeNameOrOptions["schema"]]["CompositeTypes"]
-    : never = never,
+    : never) = never,
 > = PublicCompositeTypeNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }
@@ -1049,9 +1205,6 @@ export type CompositeTypes<
     ? DefaultSchema["CompositeTypes"][PublicCompositeTypeNameOrOptions]
     : never
 export const Constants = {
-  graphql_public: {
-    Enums: {},
-  },
   public: {
     Enums: {
       provider_category: [
@@ -1067,7 +1220,19 @@ export const Constants = {
       provider_tier: ["free", "premium"],
       review_role: ["exposant", "visiteur", "organisateur"],
       review_target_type: ["salon", "provider"],
-      salon_frequency: ["annuel", "bisannuel", "ponctuel", "triennal"],
+      salon_category: [
+        "salon_professionnel",
+        "salon_grand_public",
+        "congres",
+        "autres",
+      ],
+      salon_frequency: [
+        "annuel",
+        "bisannuel",
+        "ponctuel",
+        "triennal",
+        "semestriel",
+      ],
       salon_status: ["draft", "review", "published", "cancelled", "postponed"],
       tag_category: ["audience", "trend", "value", "sector"],
     },
