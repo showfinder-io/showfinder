@@ -1,0 +1,263 @@
+{
+  "3d-print-lyon": {
+    "outcome": "rejected",
+    "at": "2026-09-21",
+    "from": {
+      "start_date": "2026-06-02",
+      "end_date": "2026-06-04"
+    },
+    "to": null,
+    "source_url": "https://www.3dprint-exhibition-lyon.com",
+    "reasons": [
+      "écart de 468 jours incohérent avec la fréquence annuel (max 460)"
+    ]
+  },
+  "bijorhca-paris": {
+    "outcome": "applied",
+    "at": "2026-09-21",
+    "from": {
+      "start_date": "2026-09-05",
+      "end_date": "2026-09-07"
+    },
+    "to": {
+      "start_date": "2027-01-16",
+      "end_date": "2027-01-18",
+      "edition_year": 2027
+    },
+    "source_url": "https://wsn-events.com/events/bijorhca",
+    "reasons": []
+  },
+  "foire-chalons-en-champagne": {
+    "outcome": "applied",
+    "at": "2026-09-21",
+    "from": {
+      "start_date": "2026-08-28",
+      "end_date": "2026-09-07"
+    },
+    "to": {
+      "start_date": "2027-08-27",
+      "end_date": "2027-09-06",
+      "edition_year": 2027
+    },
+    "source_url": "https://www.foiredechalons.com/",
+    "reasons": []
+  },
+  "innov-agri-ondes": {
+    "outcome": "rejected",
+    "at": "2026-09-21",
+    "from": {
+      "start_date": "2026-09-09",
+      "end_date": "2026-09-10"
+    },
+    "to": null,
+    "source_url": "https://www.innovagri.com/accueil-grugies",
+    "reasons": [
+      "changement de ville ou de lieu : arbitrage humain requis",
+      "ville du handoff (Grugies) différente de la fiche (Ondes)"
+    ]
+  },
+  "interfiliere-paris": {
+    "outcome": "applied",
+    "at": "2026-09-21",
+    "from": {
+      "start_date": "2026-09-05",
+      "end_date": "2026-09-07"
+    },
+    "to": {
+      "start_date": "2027-01-16",
+      "end_date": "2027-01-18",
+      "edition_year": 2027
+    },
+    "source_url": "https://wsn-events.com/events/interfiliere-paris",
+    "reasons": []
+  },
+  "japan-expo-paris": {
+    "outcome": "applied",
+    "at": "2026-09-21",
+    "from": {
+      "start_date": "2026-07-09",
+      "end_date": "2026-07-12"
+    },
+    "to": {
+      "start_date": "2027-07-08",
+      "end_date": "2027-07-11",
+      "edition_year": 2027
+    },
+    "source_url": "https://www.japan-expo-paris.com",
+    "reasons": []
+  },
+  "makeup-in-paris": {
+    "outcome": "applied",
+    "at": "2026-09-21",
+    "from": {
+      "start_date": "2026-06-17",
+      "end_date": "2026-06-18"
+    },
+    "to": {
+      "start_date": "2027-06-16",
+      "end_date": "2027-06-17",
+      "edition_year": 2027
+    },
+    "source_url": "https://www.makeup-in-paris.com",
+    "reasons": []
+  },
+  "plastic-expo-lyon": {
+    "outcome": "applied",
+    "at": "2026-09-21",
+    "from": {
+      "start_date": "2026-06-02",
+      "end_date": "2026-06-05"
+    },
+    "to": {
+      "start_date": "2029-06-05",
+      "end_date": "2029-06-08",
+      "edition_year": 2029
+    },
+    "source_url": "https://www.f-i-p.com",
+    "reasons": []
+  },
+  "playtime-paris": {
+    "outcome": "rejected",
+    "at": "2026-09-21",
+    "from": {
+      "start_date": "2026-06-27",
+      "end_date": "2026-06-29"
+    },
+    "to": null,
+    "source_url": "https://www.iloveplaytime.com/playtime-paris/",
+    "reasons": [
+      "la citation ne porte pas l'année et les jours annoncés"
+    ]
+  },
+  "premiere-vision-paris": {
+    "outcome": "applied",
+    "at": "2026-09-21",
+    "from": {
+      "start_date": "2026-09-01",
+      "end_date": "2026-09-03"
+    },
+    "to": {
+      "start_date": "2027-01-26",
+      "end_date": "2027-01-28",
+      "edition_year": 2027
+    },
+    "source_url": "https://paris.premierevision.com/en",
+    "reasons": []
+  },
+  "restau-co-paris": {
+    "outcome": "applied",
+    "at": "2026-09-21",
+    "from": {
+      "start_date": "2026-06-17",
+      "end_date": "2026-06-17"
+    },
+    "to": {
+      "start_date": "2027-06-16",
+      "end_date": "2027-06-16",
+      "edition_year": 2027
+    },
+    "source_url": "https://www.salonrestauco.com/evenement",
+    "reasons": []
+  },
+  "salon-etudiant-ile-de-france": {
+    "outcome": "applied",
+    "at": "2026-09-21",
+    "from": {
+      "start_date": "2026-01-30",
+      "end_date": "2026-02-01"
+    },
+    "to": {
+      "start_date": "2027-01-29",
+      "end_date": "2027-01-30",
+      "edition_year": 2027
+    },
+    "source_url": "https://salon-de-l-etudiant-en-ile-de-france-paris.salon.letudiant.fr",
+    "reasons": []
+  },
+  "salon-habitat-bordeaux": {
+    "outcome": "rejected",
+    "at": "2026-09-21",
+    "from": {
+      "start_date": "2026-03-06",
+      "end_date": "2026-03-08"
+    },
+    "to": null,
+    "source_url": "https://leopro.fr/salon-habitat-deco-bordeaux/",
+    "reasons": [
+      "source_url injoignable à la relecture"
+    ]
+  },
+  "smarter-e-europe-munich": {
+    "outcome": "applied",
+    "at": "2026-09-21",
+    "from": {
+      "start_date": "2026-06-23",
+      "end_date": "2026-06-25"
+    },
+    "to": {
+      "start_date": "2027-06-08",
+      "end_date": "2027-06-10",
+      "edition_year": 2027
+    },
+    "source_url": "https://www.thesmartere.de/home",
+    "reasons": []
+  },
+  "snack-show": {
+    "outcome": "applied",
+    "at": "2026-09-21",
+    "from": {
+      "start_date": "2026-04-01",
+      "end_date": "2026-04-02"
+    },
+    "to": {
+      "start_date": "2027-03-24",
+      "end_date": "2027-03-25",
+      "edition_year": 2027
+    },
+    "source_url": "https://www.snackshow.com",
+    "reasons": []
+  },
+  "texworld-paris": {
+    "outcome": "applied",
+    "at": "2026-09-21",
+    "from": {
+      "start_date": "2026-08-31",
+      "end_date": "2026-09-02"
+    },
+    "to": {
+      "start_date": "2027-01-25",
+      "end_date": "2027-01-27",
+      "edition_year": 2027
+    },
+    "source_url": "https://texworld-paris.fr.messefrankfurt.com/paris/en.html",
+    "reasons": []
+  },
+  "vivatech": {
+    "outcome": "rejected",
+    "at": "2026-09-21",
+    "from": {
+      "start_date": "2026-06-17",
+      "end_date": "2026-06-20"
+    },
+    "to": null,
+    "source_url": "https://vivatech.com/",
+    "reasons": [
+      "source_url injoignable à la relecture"
+    ]
+  },
+  "whos-next-paris": {
+    "outcome": "applied",
+    "at": "2026-09-21",
+    "from": {
+      "start_date": "2026-09-05",
+      "end_date": "2026-09-07"
+    },
+    "to": {
+      "start_date": "2027-01-16",
+      "end_date": "2027-01-18",
+      "edition_year": 2027
+    },
+    "source_url": "https://wsn-events.com/events/whos-next",
+    "reasons": []
+  }
+}
