@@ -1,0 +1,19 @@
+{
+  "slug": "maison-objet-paris",
+  "name": "Maison&Objet Paris",
+  "status": "a-arbitrer",
+  "checked_at": "2026-09-21",
+  "current": {
+    "start_date": "2026-09-10",
+    "end_date": "2026-09-14",
+    "edition_year": 2026,
+    "city": "Paris",
+    "venue": "Paris Nord Villepinte"
+  },
+  "next": null,
+  "source_url": null,
+  "quote": null,
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "Le site officiel maison-objet.com renvoie systematiquement une page de challenge Incapsula (anti-bot), sur toutes les pages testees (accueil, /en/paris, /fr/paris, /en/paris/practical-information), a la fois via curl avec en-tete navigateur et via l'outil de recuperation web : aucun contenu exploitable recupere. Recherche d'un site organisateur alternatif (SAFI, filiale d'Ateliers d'Art de France et RX France) : pas de domaine public distinct avec des dates trouve. Verification manuelle par un humain avec un navigateur necessaire pour retrouver la date de la prochaine edition."
+}

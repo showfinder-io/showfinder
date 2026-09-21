@@ -2,6 +2,21 @@
 
 Rapport alimenté chaque lundi par la routine cloud agoris-roll-2027-watch (détection des fiches publiées à édition passée, vérification des dates de la prochaine édition sur les sites officiels, handoffs dans handoffs/). Depuis le 2026-09-21 : la routine merge sa PR elle-même, puis .github/workflows/roll-apply.yml applique en base les roll-pret qui passent les garde-fous (scripts/roll-guards.ts). Résultats et rejets dans journal.json, refresh éditorial des fiches roulées via scripts/roll-apply-handoffs.ts --queue.
 
+## Lot du 2026-09-21 (complément, 6 fiches)
+
+Second lot traité le même jour, en dehors du rythme hebdomadaire habituel, pour poursuivre le rattrapage du stock de fiches périmées.
+
+| Slug | Ancienneté | Statut | Prochaine édition / raison | Source |
+|------|-----------:|--------|------------------------------|--------|
+| maison-objet-paris | 7 jours | a-arbitrer | Site officiel bloqué par une protection anti-bot (Incapsula) sur toutes les pages testées, aucune donnée récupérable ; aucun site organisateur alternatif (SAFI) trouvé | https://www.maison-objet.com |
+| enerj-meeting-lyon | 6 jours | non-annoncee | Site à jour sur l'édition 2026 (Palais de la Bourse) ; le menu annonce Paris/Marseille/Nantes 2027 mais aucune date 2027 pour Lyon | https://lyon.enerj-meeting.com |
+| big-data-ai-paris | 5 jours | roll-pret | 29 et 30 septembre 2027, Paris Expo Porte de Versailles (lieu inchangé) | https://www.bigdataparis.com |
+| journees-du-courtage | 5 jours | roll-pret | 14 et 15 septembre 2027, Palais des Congrès Paris (lieu inchangé, 26e édition) | https://www.lesjourneesducourtage.com/informations-pratiques |
+| innorobo-by-sido | 4 jours | a-arbitrer | 15 et 16 septembre 2027 annoncés, mais changement de lieu à Lyon : Centre de Congrès → Eurexpo Lyon | https://www.sido-lyon.com |
+| iftm-top-resa | 4 jours | non-annoncee | Site à jour sur la 47e édition 2026 ; aucune date 2027 publiée, pages infos-pratiques/dates en 404 | https://www.iftm.fr |
+
+Reste à traiter : 6 fiches périmées
+
 ## Lot du 2026-09-21
 
 | Slug | Ancienneté | Statut | Prochaine édition / raison | Source |

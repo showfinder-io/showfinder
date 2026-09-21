@@ -1,0 +1,19 @@
+{
+  "slug": "enerj-meeting-lyon",
+  "name": "EnerJ-meeting Lyon",
+  "status": "non-annoncee",
+  "checked_at": "2026-09-21",
+  "current": {
+    "start_date": "2026-09-15",
+    "end_date": "2026-09-15",
+    "edition_year": 2026,
+    "city": "Lyon",
+    "venue": "Palais de la Bourse"
+  },
+  "next": null,
+  "source_url": "https://lyon.enerj-meeting.com",
+  "quote": "Édition Lyon 2026",
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "Site officiel vivant, a jour sur l'edition du 15/09/2026 (titre de page : « EnerJ-meeting Lyon 15/09/2026 »). Le menu du site liste les autres villes du reseau avec leur prochaine annee (Paris 2027, Marseille 2027, Nantes 2027) mais Lyon n'apparait que sous « Edition Lyon 2026 » : aucune date 2027 publiee pour Lyon a ce jour."
+}

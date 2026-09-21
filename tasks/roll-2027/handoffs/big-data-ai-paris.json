@@ -1,0 +1,25 @@
+{
+  "slug": "big-data-ai-paris",
+  "name": "Big Data & AI Paris",
+  "status": "roll-pret",
+  "checked_at": "2026-09-21",
+  "current": {
+    "start_date": "2026-09-15",
+    "end_date": "2026-09-16",
+    "edition_year": 2026,
+    "city": "Paris",
+    "venue": "Paris Expo Porte de Versailles"
+  },
+  "next": {
+    "start_date": "2027-09-29",
+    "end_date": "2027-09-30",
+    "edition_year": 2027,
+    "city": "Paris",
+    "venue": "Paris Expo Porte de Versailles"
+  },
+  "source_url": "https://www.bigdataparis.com",
+  "quote": "29 et 30 septembre 2027 [...] Paris Expo Porte de Versailles (bloc d'informations \"show info\" affiche dans l'en-tete de la page d'accueil)",
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "Dates et lieu de la prochaine edition lus dans le bloc d'informations de l'en-tete du site officiel, meme ville et meme lieu que l'edition actuelle. Ecart de 12,5 mois entre la fin de l'edition 2026 et le debut de l'edition 2027, coherent avec la frequence annuelle."
+}
