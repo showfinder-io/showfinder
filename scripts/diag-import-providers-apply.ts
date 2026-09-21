@@ -7,10 +7,15 @@
  *
  * Garde-fou (même esprit que la règle #13) : seuls les prestataires dont le site
  * répond en 200 avec le nom présent sont importés (scripts/diag-verify-providers.ts,
- * résultat dans scripts/output/verify-providers-2026-09-20.csv). Écartés :
- *  - agence-bosco, alris-communication, la-p-tite-histoire : pas de site web dans le fichier
- *  - l-as-decors : certificat TLS invalide en https, 404 en http (2026-09-21)
- *  - bouvry-gilles : 404 "Site non trouvé" (2026-09-21)
+ * résultat dans scripts/output/verify-providers-2026-09-20.csv). Écarté :
+ *  - bouvry-gilles : 404 "Site non trouvé" (2026-09-21), aucun autre site trouvé (LinkedIn seul)
+ * Sites retrouvés par recherche web le 2026-09-21 et ajoutés au seed (absents ou morts dans
+ * le fichier), chacun recoupé avec l'adresse du fichier :
+ *  - agence-bosco : agence-bosco.fr (Le Rheu 35650 sur la page)
+ *  - alris-communication : alris.com (La Ciotat 13600 sur la page)
+ *  - la-p-tite-histoire : laptitehistoire.com (page contact : rue de l'Armorique 75015 Paris,
+ *    téléphone repris de cette page)
+ *  - l-as-decors : lasdecors.fr remplace lasdecors.com (mort), Méru 60110 sur la page
  * Confirmé à la main (fetch Node en échec, curl 200 + title "Atelier Design") : atelier-design.
  * Corrigé dans le seed : aliance-mobilier (.fr redirige vers aliance-mobilier.com).
  *
@@ -29,13 +34,7 @@ import { createClient } from "@supabase/supabase-js";
 const sb = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPABASE_SERVICE_ROLE_KEY!);
 const APPLY = process.argv.includes("--apply");
 
-const EXCLUDED = new Set([
-  "agence-bosco",
-  "alris-communication",
-  "la-p-tite-histoire",
-  "l-as-decors",
-  "bouvry-gilles",
-]);
+const EXCLUDED = new Set(["bouvry-gilles"]);
 const SLUG_ALIASES: Record<string, string> = { magnum: "magnum-lyon" };
 const FIELDS = ["company_name", "category", "description", "city", "website_url", "email", "phone", "logo_url"] as const;
 
