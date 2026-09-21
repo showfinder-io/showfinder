@@ -6,7 +6,6 @@ import { siteConfig } from "@/lib/config";
 import {
   getProviderBySlug,
   getAllProviderSlugs,
-  getSalonsByProvider,
   PROVIDER_CATEGORY_LABELS,
 } from "@/lib/queries";
 import {
@@ -121,10 +120,9 @@ export default async function ProviderPage({ params }: Props) {
   const provider = await getProviderBySlug(slug);
   if (!provider) notFound();
 
-  const [salons, hubs] = await Promise.all([
-    getSalonsByProvider(provider.id),
-    getHubsForProvider(provider.category, provider.department ?? null),
-  ]);
+  // Pas de bloc « salons où ce prestataire est référencé » : les prestataires ne sont plus
+  // rattachés aux salons (décision Nicolas 2026-09-21), seul le maillage vers les hubs reste.
+  const hubs = await getHubsForProvider(provider.category, provider.department ?? null);
   const specialties = provider.specialties ?? [];
   const memberships = provider.memberships ?? [];
 
@@ -323,37 +321,19 @@ export default async function ProviderPage({ params }: Props) {
         </div>
       </section>
 
-      {/* Maillage : salons rattachés et pages hub du métier */}
-      {(salons.length > 0 || hubs.length > 0) && (
-        <section className="mt-10 grid gap-8 sm:grid-cols-2">
-          {salons.length > 0 && (
-            <div>
-              <h2 className="font-serif text-xl text-prune">{t("salonsHeading")}</h2>
-              <ul className="mt-3 space-y-2">
-                {salons.map((salon) => (
-                  <li key={salon.slug}>
-                    <Link href={`/salons/${salon.slug}`} className="text-sm text-accent hover:text-accent-hover transition-colors">
-                      {salon.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-          {hubs.length > 0 && (
-            <div>
-              <h2 className="font-serif text-xl text-prune">{t("hubsHeading")}</h2>
-              <ul className="mt-3 space-y-2">
-                {hubs.map((h) => (
-                  <li key={h.slug}>
-                    <Link href={`/prestataires/${h.slug}`} className="text-sm text-accent hover:text-accent-hover transition-colors">
-                      {hubField(h, "h1", locale)}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
+      {/* Maillage : pages hub du métier */}
+      {hubs.length > 0 && (
+        <section className="mt-10">
+          <h2 className="font-serif text-xl text-prune">{t("hubsHeading")}</h2>
+          <ul className="mt-3 space-y-2">
+            {hubs.map((h) => (
+              <li key={h.slug}>
+                <Link href={`/prestataires/${h.slug}`} className="text-sm text-accent hover:text-accent-hover transition-colors">
+                  {hubField(h, "h1", locale)}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </section>
       )}
 

@@ -39,11 +39,11 @@
   "providers": {
     "badgeLabel": "Service provider marketplace",
     "title": "Organise your stand",
-    "description": "Stand builders, caterers, audiovisual, photographers: find recommended service providers for {salonName}.",
+    "description": "Stand builders, furniture, audiovisual, caterers: find your service providers for {salonName}, near your company or near the venue.",
     "cta": "View service providers",
     "drawerTitle": "Service providers for {salonName}",
     "loading": "Loading…",
-    "empty": "No service providers listed for this trade show yet.",
+    "empty": "No service providers listed yet.",
     "areYouProvider": "Are you a service provider?",
     "contactUs": "Contact us",
     "verifiedAriaLabel": "Verified service provider",
@@ -58,6 +58,28 @@
       "hebergement": "Accommodation",
       "location_mobilier": "Furniture rental",
       "autre": "Other"
+    },
+    "intro": "All listed service providers are shown, in an order that changes every day. Pick a stand builder near your company, and other trades near the venue.",
+    "seeAll": "See all: {category}",
+    "scope": {
+      "exhibitorDepartment": "Near your company: {zone} first, then the rest of the region.",
+      "exhibitorRegion": "Near your company: {zone}.",
+      "exhibitorWidened": "No stand builder listed in your region yet: showing all of France.",
+      "venueDepartment": "Near the venue: {zone} first, then the rest of the region.",
+      "venueRegion": "Venue region: {zone}.",
+      "venueWidened": "No service provider listed in the venue's region ({zone}) yet: showing all of France."
+    },
+    "venueToggle": {
+      "label": "Service provider area, stand builders excluded",
+      "near": "Near the venue",
+      "all": "All of France"
+    },
+    "zoneField": {
+      "legend": "Where is your company based?",
+      "postalCode": "Postal code",
+      "region": "Or your region",
+      "anyRegion": "All regions",
+      "invalid": "Postal code not recognised."
     }
   },
   "reviews": {

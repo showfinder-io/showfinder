@@ -583,7 +583,10 @@ export const PROVIDER_CATEGORY_LABELS: Record<string, string> = {
 
 export type ProviderFilters = {
   category?: string;
+  // Ancien filtre par ville exacte : plus proposé dans l'UI, conservé pour les anciens liens ?city=
   city?: string;
+  // Proximité : tous les départements de la région de la zone (cf. src/lib/geo-fr.ts)
+  departments?: string[];
 };
 
 export async function getProviders(filters: ProviderFilters = {}) {
@@ -596,6 +599,7 @@ export async function getProviders(filters: ProviderFilters = {}) {
     .order("company_name");
   if (filters.category) query = query.eq("category", filters.category as never);
   if (filters.city) query = query.eq("city", filters.city);
+  if (filters.departments) query = query.in("department", filters.departments);
   const { data, error } = await query;
   if (error) throw error;
   return (data ?? []) as ProviderRow[];
@@ -612,6 +616,11 @@ export async function getProviderBySlug(slug: string) {
   return data as ProviderRow;
 }
 
+/**
+ * Décision Nicolas 2026-09-21 : on ne rattache plus les prestataires aux salons, le drawer montre
+ * tout le monde avec un filtre de proximité (getProviderDrawerData). Cette requête et
+ * getSalonsByProvider ne sont plus appelées : elles restent pour le futur is_featured payant.
+ */
 export async function getProvidersBySalon(salonId: string) {
   const supabase = await createClient();
   const { data, error } = await supabase
@@ -647,16 +656,41 @@ export async function getAllProviderSlugs() {
   return (data ?? []).map((p) => p.slug);
 }
 
-export async function getProviderCities() {
+/** Départements qui comptent au moins un prestataire (régions proposées dans le filtre de zone). */
+export async function getProviderDepartments() {
   const supabase = await createClient();
   const { data, error } = await supabase
     .from("providers")
-    .select("city")
-    .not("city", "is", null)
-    .order("city");
+    .select("department")
+    .not("department", "is", null);
   if (error) throw error;
-  const cities = [...new Set((data ?? []).map((p) => p.city).filter(Boolean))];
-  return cities as string[];
+  return [...new Set((data ?? []).map((p) => p.department))] as string[];
+}
+
+export type DrawerProvider = Pick<
+  ProviderRow,
+  "id" | "slug" | "company_name" | "category" | "city" | "is_verified" | "subscription_tier"
+> & { department: string | null };
+
+/**
+ * Données du drawer « Organiser mon stand » : tous les prestataires (version allégée) et le code
+ * postal du lieu du salon, qui sert de préfiltre de proximité hors standistes. Pas de code postal
+ * pour un salon étranger ou un lieu non renseigné : le drawer n'applique alors aucun préfiltre.
+ */
+export async function getProviderDrawerData(salonId: string) {
+  const supabase = createStaticClient();
+  const [providersRes, salonRes] = await Promise.all([
+    supabase
+      .from("providers")
+      .select("id, slug, company_name, category, city, department, is_verified, subscription_tier"),
+    supabase.from("salons").select("country, venues(postal_code)").eq("id", salonId).maybeSingle(),
+  ]);
+  if (providersRes.error) throw providersRes.error;
+  const salon = salonRes.data as { country: string | null; venues: { postal_code: string | null } | null } | null;
+  return {
+    providers: (providersRes.data ?? []) as DrawerProvider[],
+    venuePostalCode: salon?.country === "FR" ? salon.venues?.postal_code ?? null : null,
+  };
 }
 
 // Tous les slugs de secteurs (pour generateStaticParams)

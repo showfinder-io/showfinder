@@ -45,12 +45,18 @@
     "allDatesShort": "All"
   },
   "providerSort": {
-    "notoriety": "Notoriety",
+    "notoriety": "Today's selection",
     "name": "Name (A-Z)",
     "category": "Category",
     "city": "City",
     "allCategories": "All categories",
-    "categoryLabel": "Category:"
+    "categoryLabel": "Category:",
+    "zoneLabel": "Area:",
+    "allZones": "All of France",
+    "postalCode": "Postal code",
+    "postalCodeSubmit": "Apply",
+    "postalCodeInvalid": "Postal code not recognised.",
+    "regions": "Regions"
   },
   "venueSort": {
     "surfaceDesc": "Surface area (descending)",

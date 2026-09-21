@@ -7,7 +7,7 @@
     "countLabelOne": "service provider listed in France.",
     "countLabelMany": "service providers listed in France.",
     "emptyResult": "No service provider matches your criteria.",
-    "emptyHint": "Try a different category or city",
+    "emptyHint": "Try a different category or a wider area",
     "banner": {
       "eyebrow": "Suppliers · Register",
       "heading": "List your business",
@@ -15,7 +15,8 @@
       "ctaPrimary": "Create a profile",
       "ctaSecondary": "or discover Agoris Premium"
     },
-    "hubsLabel": "Providers by trade and city"
+    "hubsLabel": "Providers by trade and city",
+    "zoneNote": "Area: {zone}. The department first, then the rest of the region."
   },
   "categories": {
     "standiste": "Stand builder",
@@ -57,7 +58,6 @@
       "leads_france": "LEADS France",
       "prestalians": "Prestalians"
     },
-    "salonsHeading": "Trade shows where this provider is listed",
     "hubsHeading": "See also"
   },
   "hub": {

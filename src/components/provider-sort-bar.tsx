@@ -1,8 +1,10 @@
 "use client";
 
-import { useRouter, useSearchParams } from "next/navigation";
-import { useCallback, useMemo, useTransition } from "react";
+import { useSearchParams } from "next/navigation";
+import { useCallback, useMemo, useState, useTransition } from "react";
 import { useTranslations } from "next-intl";
+import { useRouter } from "@/i18n/navigation";
+import { getRegion, parseZone, zoneLabel, zoneParam } from "@/lib/geo-fr";
 import {
   Popover,
   PopoverTrigger,
@@ -13,7 +15,8 @@ import {
 type ProviderSortBarProps = {
   total: number;
   categories: Array<{ value: string; label: string }>;
-  cities: string[];
+  // Codes des régions qui comptent au moins un prestataire (on ne propose pas de région vide)
+  regions: string[];
 };
 
 type SortOption = {
@@ -27,7 +30,7 @@ type SortOption = {
  * Aligné stylistiquement sur SortBar (salons), mais filtres en live via searchParams.
  * Typo mono small caps, séparateurs ·, popovers éditoriaux.
  */
-export function ProviderSortBar({ total, categories, cities }: ProviderSortBarProps) {
+export function ProviderSortBar({ total, categories, regions }: ProviderSortBarProps) {
   const t = useTranslations("filters");
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -35,7 +38,11 @@ export function ProviderSortBar({ total, categories, cities }: ProviderSortBarPr
 
   const currentSort = searchParams.get("sort") ?? "notoriety";
   const currentCategory = searchParams.get("category") ?? "";
-  const currentCity = searchParams.get("city") ?? "";
+  // Proximité sans géocodage : code postal -> département -> région (src/lib/geo-fr.ts)
+  const currentZone = parseZone(searchParams.get("zone"));
+  const [zoneOpen, setZoneOpen] = useState(false);
+  const [postalInput, setPostalInput] = useState("");
+  const [postalInvalid, setPostalInvalid] = useState(false);
 
   const SORT_OPTIONS: SortOption[] = useMemo(() => [
     { value: "notoriety", label: t("providerSort.notoriety"), shortLabel: t("providerSort.notoriety") },
@@ -56,6 +63,8 @@ export function ProviderSortBar({ total, categories, cities }: ProviderSortBarPr
   const updateParam = useCallback(
     (key: string, value: string, defaultValue = "") => {
       const params = new URLSearchParams(searchParams.toString());
+      // L'ancien filtre ?city= (liens hérités) n'a plus de contrôle dans la barre : la zone le remplace
+      if (key === "zone") params.delete("city");
       if (value && value !== defaultValue) {
         params.set(key, value);
       } else {
@@ -184,50 +193,101 @@ export function ProviderSortBar({ total, categories, cities }: ProviderSortBarPr
         <span className="text-prune/30">·</span>
 
         <span className="flex items-center gap-1.5">
-          <span className="text-prune/55">{t("sort.city")}</span>
-          <Popover>
+          <span className="text-prune/55">{t("providerSort.zoneLabel")}</span>
+          <Popover open={zoneOpen} onOpenChange={setZoneOpen}>
             <PopoverTrigger className="inline-flex items-center gap-1 rounded-sm px-1 py-0.5 text-prune transition-colors hover:bg-prune/5 focus-visible:bg-prune/5">
-              <span className="max-w-[16ch] truncate">{currentCity || t("allShort")}</span>
+              <span className="max-w-[22ch] truncate">
+                {currentZone ? zoneLabel(currentZone) : t("providerSort.allZones")}
+              </span>
               <span aria-hidden className="text-prune/50">
                 ▾
               </span>
             </PopoverTrigger>
             <PopoverContent className="max-h-[60vh] overflow-y-auto">
-              <ul className="flex flex-col">
+              <form
+                className="mb-2 border-b border-prune/10 px-2.5 pb-3 pt-1.5"
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  const zone = parseZone(postalInput);
+                  setPostalInvalid(!zone);
+                  if (!zone) return;
+                  updateParam("zone", zoneParam(zone));
+                  setPostalInput("");
+                  setZoneOpen(false);
+                }}
+              >
+                <label className="block text-[11px] uppercase tracking-[0.14em] text-prune/55">
+                  {t("providerSort.postalCode")}
+                  <span className="mt-1 flex gap-2">
+                    <input
+                      type="text"
+                      inputMode="numeric"
+                      autoComplete="postal-code"
+                      maxLength={5}
+                      value={postalInput}
+                      onChange={(e) => {
+                        setPostalInput(e.target.value.replace(/\D/g, "").slice(0, 5));
+                        setPostalInvalid(false);
+                      }}
+                      // Entrée valide explicitement : on ne dépend pas de la soumission implicite du navigateur
+                      onKeyDown={(e) => {
+                        if (e.key !== "Enter") return;
+                        e.preventDefault();
+                        e.currentTarget.form?.requestSubmit();
+                      }}
+                      aria-invalid={postalInvalid}
+                      className="h-10 w-full min-w-0 rounded-sm border border-prune/30 bg-papier px-2 text-base normal-case tracking-normal text-prune focus:border-prune focus:outline-none"
+                    />
+                    <button
+                      type="submit"
+                      className="h-10 shrink-0 rounded-sm border border-prune px-3 text-[13px] normal-case tracking-normal text-prune transition-colors hover:bg-prune hover:text-papier"
+                    >
+                      {t("providerSort.postalCodeSubmit")}
+                    </button>
+                  </span>
+                </label>
+                {postalInvalid && (
+                  <p role="alert" className="mt-1.5 text-[12px] normal-case tracking-normal text-prune">
+                    {t("providerSort.postalCodeInvalid")}
+                  </p>
+                )}
+              </form>
+              <ul className="flex flex-col" aria-label={t("providerSort.regions")}>
                 <li>
                   <PopoverClose
-                    onClick={() => updateParam("city", "")}
+                    onClick={() => updateParam("zone", "")}
                     className={`flex w-full items-center justify-between rounded-sm px-2.5 py-1.5 text-left text-[13px] normal-case tracking-normal transition-colors hover:bg-prune/5 ${
-                      !currentCity ? "font-medium text-prune" : "text-prune/70"
+                      !currentZone ? "font-medium text-prune" : "text-prune/70"
                     }`}
                   >
-                    <span>{t("allCities")}</span>
-                    {!currentCity && (
+                    <span>{t("providerSort.allZones")}</span>
+                    {!currentZone && (
                       <span className="text-ocre" aria-hidden>
                         ●
                       </span>
                     )}
                   </PopoverClose>
                 </li>
-                {cities.map((city) => (
-                  <li key={city}>
-                    <PopoverClose
-                      onClick={() => updateParam("city", city)}
-                      className={`flex w-full items-center justify-between rounded-sm px-2.5 py-1.5 text-left text-[13px] normal-case tracking-normal transition-colors hover:bg-prune/5 ${
-                        currentCity === city
-                          ? "font-medium text-prune"
-                          : "text-prune/70"
-                      }`}
-                    >
-                      <span>{city}</span>
-                      {currentCity === city && (
-                        <span className="text-ocre" aria-hidden>
-                          ●
-                        </span>
-                      )}
-                    </PopoverClose>
-                  </li>
-                ))}
+                {regions.map((code) => {
+                  const active = currentZone?.region === code && !currentZone.department;
+                  return (
+                    <li key={code}>
+                      <PopoverClose
+                        onClick={() => updateParam("zone", `r${code}`)}
+                        className={`flex w-full items-center justify-between rounded-sm px-2.5 py-1.5 text-left text-[13px] normal-case tracking-normal transition-colors hover:bg-prune/5 ${
+                          active ? "font-medium text-prune" : "text-prune/70"
+                        }`}
+                      >
+                        <span>{getRegion(code)?.name}</span>
+                        {active && (
+                          <span className="text-ocre" aria-hidden>
+                            ●
+                          </span>
+                        )}
+                      </PopoverClose>
+                    </li>
+                  );
+                })}
               </ul>
             </PopoverContent>
           </Popover>

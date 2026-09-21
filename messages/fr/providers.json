@@ -7,7 +7,7 @@
     "countLabelOne": "prestataire référencé en France.",
     "countLabelMany": "prestataires référencés en France.",
     "emptyResult": "Aucun prestataire ne correspond à vos critères.",
-    "emptyHint": "Essayez une autre catégorie ou ville",
+    "emptyHint": "Essayez une autre catégorie ou une zone plus large",
     "banner": {
       "eyebrow": "Prestataires · Référencement",
       "heading": "Référencez votre activité",
@@ -15,7 +15,8 @@
       "ctaPrimary": "Créer un profil",
       "ctaSecondary": "ou découvrir Agoris Premium"
     },
-    "hubsLabel": "Prestataires par métier et par ville"
+    "hubsLabel": "Prestataires par métier et par ville",
+    "zoneNote": "Zone : {zone}. Le département d'abord, puis le reste de la région."
   },
   "categories": {
     "standiste": "Standiste",
@@ -57,7 +58,6 @@
       "leads_france": "LEADS France",
       "prestalians": "Prestalians"
     },
-    "salonsHeading": "Salons où ce prestataire est référencé",
     "hubsHeading": "Voir aussi"
   },
   "hub": {
