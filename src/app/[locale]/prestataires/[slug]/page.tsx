@@ -6,8 +6,17 @@ import { siteConfig } from "@/lib/config";
 import {
   getProviderBySlug,
   getAllProviderSlugs,
+  getSalonsByProvider,
   PROVIDER_CATEGORY_LABELS,
 } from "@/lib/queries";
+import {
+  getAllProviderHubs,
+  getHubsForProvider,
+  getProviderHubBySlug,
+  getProvidersForHub,
+  isHubIndexable,
+} from "@/lib/provider-hubs";
+import { ProviderHubView, hubField } from "@/components/provider-hub-view";
 import { CategoryBadge } from "@/components/category-badge";
 import { QuoteRequest } from "@/components/quote-request";
 import { JsonLd } from "@/components/json-ld";
@@ -22,6 +31,9 @@ import {
   BadgeCheck,
   ExternalLink,
   Star,
+  Map as MapIcon,
+  CalendarDays,
+  Users,
 } from "lucide-react";
 
 type Props = {
@@ -29,8 +41,9 @@ type Props = {
 };
 
 export async function generateStaticParams() {
-  const slugs = await getAllProviderSlugs();
-  return slugs.map((slug) => ({ slug }));
+  // Fiches prestataires et pages hub métier x zone partagent /prestataires/[slug]
+  const [slugs, hubs] = await Promise.all([getAllProviderSlugs(), getAllProviderHubs()]);
+  return [...hubs.map((h) => h.slug), ...slugs].map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -39,6 +52,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     getTranslations({ locale, namespace: "providers.detail" }),
     getTranslations({ locale, namespace: "providers.categories" }),
   ]);
+  const hub = await getProviderHubBySlug(slug);
+  if (hub) {
+    const hubProviders = await getProvidersForHub(hub);
+    return {
+      title: hubField(hub, "seo_title", locale),
+      description: hubField(hub, "seo_description", locale),
+      robots: isHubIndexable(hub, hubProviders.length) ? { index: true, follow: true } : { index: false, follow: true },
+      alternates: buildAlternates(`/prestataires/${slug}`, locale),
+    };
+  }
+
   const provider = await getProviderBySlug(slug);
   if (!provider) return { title: t("metaNotFound") };
 
@@ -55,7 +79,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${provider.company_name} - ${label}`,
     description: description || t("metaDescriptionFallback", { companyName: provider.company_name, label, siteName: siteConfig.name }),
-    robots: { index: false, follow: true },
+    // Indexable uniquement si le flag est posé (lot test puis élargissement selon GSC),
+    // cf. migration 20260921100000. Le reste demeure en noindex,follow (audit du 2026-06-01).
+    robots: provider.seo_indexable ? { index: true, follow: true } : { index: false, follow: true },
     alternates: buildAlternates(`/prestataires/${slug}`, locale),
   };
 }
@@ -79,8 +105,28 @@ export default async function ProviderPage({ params }: Props) {
     getTranslations({ locale, namespace: "providers.detail" }),
     getTranslations({ locale, namespace: "providers.categories" }),
   ]);
+  const hub = await getProviderHubBySlug(slug);
+  if (hub) {
+    const [hubProviders, allHubs] = await Promise.all([getProvidersForHub(hub), getAllProviderHubs()]);
+    return (
+      <ProviderHubView
+        hub={hub}
+        providers={hubProviders}
+        otherHubs={allHubs.filter((h) => h.slug !== hub.slug)}
+        locale={locale}
+      />
+    );
+  }
+
   const provider = await getProviderBySlug(slug);
   if (!provider) notFound();
+
+  const [salons, hubs] = await Promise.all([
+    getSalonsByProvider(provider.id),
+    getHubsForProvider(provider.category, provider.department ?? null),
+  ]);
+  const specialties = provider.specialties ?? [];
+  const memberships = provider.memberships ?? [];
 
   // Phase 2 i18n : description traduite si dispo en EN, sinon FR.
   const description =
@@ -114,9 +160,13 @@ export default async function ProviderPage({ params }: Props) {
     providerJsonLd.address = {
       "@type": "PostalAddress",
       addressLocality: provider.city,
+      ...(provider.postal_code ? { postalCode: provider.postal_code } : {}),
       addressCountry: "FR",
     };
   }
+  if (provider.founded_year) providerJsonLd.foundingDate = String(provider.founded_year);
+  if (specialties.length > 0) providerJsonLd.knowsAbout = specialties;
+  if (provider.zone_intervention) providerJsonLd.areaServed = provider.zone_intervention;
   if (provider.review_count > 0 && provider.avg_rating > 0) {
     providerJsonLd.aggregateRating = {
       "@type": "AggregateRating",
@@ -176,8 +226,21 @@ export default async function ProviderPage({ params }: Props) {
 
       {/* Infos */}
       <section className="mt-8">
-        {description && (
-          <p className="leading-relaxed text-muted">{description}</p>
+        {description &&
+          description.split(/\n{2,}/).map((paragraph, i) => (
+            <p key={i} className={`leading-relaxed text-muted ${i > 0 ? "mt-4" : ""}`}>
+              {paragraph}
+            </p>
+          ))}
+
+        {specialties.length > 0 && (
+          <ul className="mt-6 flex flex-wrap gap-2" aria-label={t("fieldSpecialties")}>
+            {specialties.map((specialty) => (
+              <li key={specialty} className="rounded-full border border-prune/20 px-3 py-1 text-xs text-prune">
+                {specialty}
+              </li>
+            ))}
+          </ul>
         )}
 
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
@@ -187,6 +250,35 @@ export default async function ProviderPage({ params }: Props) {
               <div>
                 <p className="text-sm font-medium">{t("fieldCity")}</p>
                 <p className="text-sm text-muted">{provider.city}</p>
+              </div>
+            </div>
+          )}
+          {provider.zone_intervention && (
+            <div className="flex items-start gap-3">
+              <MapIcon className="mt-0.5 h-4 w-4 text-muted" />
+              <div>
+                <p className="text-sm font-medium">{t("fieldZone")}</p>
+                <p className="text-sm text-muted">{provider.zone_intervention}</p>
+              </div>
+            </div>
+          )}
+          {provider.founded_year && (
+            <div className="flex items-start gap-3">
+              <CalendarDays className="mt-0.5 h-4 w-4 text-muted" />
+              <div>
+                <p className="text-sm font-medium">{t("fieldFounded")}</p>
+                <p className="text-sm text-muted">{provider.founded_year}</p>
+              </div>
+            </div>
+          )}
+          {memberships.length > 0 && (
+            <div className="flex items-start gap-3">
+              <Users className="mt-0.5 h-4 w-4 text-muted" />
+              <div>
+                <p className="text-sm font-medium">{t("fieldMemberships")}</p>
+                <p className="text-sm text-muted">
+                  {memberships.map((m) => t(`memberships.${m}` as Parameters<typeof t>[0])).join(", ")}
+                </p>
               </div>
             </div>
           )}
@@ -230,6 +322,40 @@ export default async function ProviderPage({ params }: Props) {
           )}
         </div>
       </section>
+
+      {/* Maillage : salons rattachés et pages hub du métier */}
+      {(salons.length > 0 || hubs.length > 0) && (
+        <section className="mt-10 grid gap-8 sm:grid-cols-2">
+          {salons.length > 0 && (
+            <div>
+              <h2 className="font-serif text-xl text-prune">{t("salonsHeading")}</h2>
+              <ul className="mt-3 space-y-2">
+                {salons.map((salon) => (
+                  <li key={salon.slug}>
+                    <Link href={`/salons/${salon.slug}`} className="text-sm text-accent hover:text-accent-hover transition-colors">
+                      {salon.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {hubs.length > 0 && (
+            <div>
+              <h2 className="font-serif text-xl text-prune">{t("hubsHeading")}</h2>
+              <ul className="mt-3 space-y-2">
+                {hubs.map((h) => (
+                  <li key={h.slug}>
+                    <Link href={`/prestataires/${h.slug}`} className="text-sm text-accent hover:text-accent-hover transition-colors">
+                      {hubField(h, "h1", locale)}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </section>
+      )}
 
       {/* Demander un devis */}
       <section className="mt-10">

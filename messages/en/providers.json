@@ -4,8 +4,8 @@
     "metaDescription": "Find the best service providers for your trade show on {siteName}: stand builders, caterers, audiovisual, photographers.",
     "eyebrow": "Event service providers",
     "heading": "Suppliers",
-    "countLabelOne": "service provider listed in France, audited.",
-    "countLabelMany": "service providers listed in France, audited.",
+    "countLabelOne": "service provider listed in France.",
+    "countLabelMany": "service providers listed in France.",
     "emptyResult": "No service provider matches your criteria.",
     "emptyHint": "Try a different category or city",
     "banner": {
@@ -14,7 +14,8 @@
       "description": "Are you a stand builder, caterer, audiovisual technician or photographer? Join the Agoris directory and connect with the organisers of B2B trade shows audited by our team.",
       "ctaPrimary": "Create a profile",
       "ctaSecondary": "or discover Agoris Premium"
-    }
+    },
+    "hubsLabel": "Providers by trade and city"
   },
   "categories": {
     "standiste": "Stand builder",
@@ -47,6 +48,25 @@
     "fieldPhone": "Phone",
     "ctaNotPremium": "Are you this supplier?",
     "ctaNotPremiumLink": "Switch to Premium",
-    "ctaNotPremiumSuffix": "to be featured on trade show listings."
+    "ctaNotPremiumSuffix": "to be featured on trade show listings.",
+    "fieldSpecialties": "Specialities",
+    "fieldZone": "Area served",
+    "fieldFounded": "Founded",
+    "fieldMemberships": "Memberships",
+    "memberships": {
+      "leads_france": "LEADS France",
+      "prestalians": "Prestalians"
+    },
+    "salonsHeading": "Trade shows where this provider is listed",
+    "hubsHeading": "See also"
+  },
+  "hub": {
+    "breadcrumbHome": "Home",
+    "breadcrumbProviders": "Providers",
+    "eyebrow": "Trade show providers",
+    "editorialUpdate": "Updated {date}",
+    "countLabelOne": "listed provider",
+    "countLabelMany": "listed providers",
+    "otherHubsHeading": "Other trades and cities"
   }
 }

@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { siteConfig, CITY_INDEX_MIN_SALONS } from "@/lib/config";
 import { createStaticClient } from "@/lib/supabase/static";
+import { getAllProviderHubs, getProvidersForHub, isHubIndexable } from "@/lib/provider-hubs";
 import { getAllPosts } from "@/lib/blog";
 import { getEditorialSectorSlugs } from "@/lib/sector-content";
 import { getEditorialSalonSlugs } from "@/lib/salon-content";
@@ -177,8 +178,33 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     );
   }
 
-  // Prestataires : hors sitemap (toutes les pages sont en noindex,follow).
-  // Le hub /prestataires est un listing sans contenu éditorial, idem.
+  // Prestataires : seules les fiches au flag seo_indexable et les pages hub indexables
+  // (contenu éditorial + assez de prestataires) entrent au sitemap, même règle que côté page.
+  // Le listing /prestataires reste hors sitemap (pas de contenu éditorial).
+  const [indexableProviders, hubs] = await Promise.all([
+    supabase.from("providers").select("slug, updated_at").eq("seo_indexable", true),
+    getAllProviderHubs(),
+  ]);
+  for (const provider of indexableProviders.data ?? []) {
+    entries.push(
+      ...entry(`/prestataires/${provider.slug}`, {
+        lastModified: new Date(provider.updated_at),
+        changeFrequency: "monthly",
+        priority: 0.4,
+      })
+    );
+  }
+  for (const hub of hubs) {
+    const hubProviders = await getProvidersForHub(hub);
+    if (!isHubIndexable(hub, hubProviders.length)) continue;
+    entries.push(
+      ...entry(`/prestataires/${hub.slug}`, {
+        lastModified: hub.editorial_updated_at ? new Date(hub.editorial_updated_at) : now,
+        changeFrequency: "weekly",
+        priority: 0.7,
+      })
+    );
+  }
 
   // Blog
   const posts = getAllPosts();
