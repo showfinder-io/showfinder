@@ -32,6 +32,7 @@ Tout le contenu a été rédigé sur sources (site officiel, fiche LEADS France 
 
 ## Points à trancher
 
+- [x] Décision Julien 2026-09-21 : DB Schenker et Pico dé-vérifiés (scripts/diag-unverify-providers-apply.ts), fiches et liens salons conservés.
 - [ ] DB Schenker (`db-schenker-paris`) : dbschenker.com redirige vers dsv.com, aucune entité événementielle française identifiable. Fiche du seed d'avril, marquée vérifiée, rattachée à SIAL et Eurosatory. La garder, la dé-vérifier ou la retirer ?
 - [ ] Pico International France (`pico-international-paris`) : le site est le site corporate mondial du groupe, aucune trace d'entité française. Même question.
 - [ ] GL Events Venues (`gl-events-venues-lyon`) : gestionnaire de sites, pas standiste. Catégorie à revoir (ou fiche à remplacer par l'entité du groupe qui construit des stands).
@@ -41,3 +42,30 @@ Tout le contenu a été rédigé sur sources (site officiel, fiche LEADS France 
 - [ ] Gilles Bouvry : site mort, non importé.
 - [ ] Noms repassés en casse normale d'après la graphie des sites (56 fiches) : quelques choix à valider, par exemple « axial design », « Live & co », « Des Pas En Avant », « 2B ».
 - [ ] Rattachement des prestataires aux salons (drawer « Organiser mon stand ») : règle à définir.
+
+## Request Indexing GSC (décision Julien 2026-09-21 : lancé sans attendre la relecture)
+
+Soumis le 2026-09-21 (quota du jour atteint à la 11e URL) :
+- [x] /prestataires/standistes-paris
+- [x] /prestataires/standistes-lyon
+- [x] /prestataires/standistes
+- [x] /prestataires/location-mobilier-evenementiel
+- [x] /prestataires/prestataires-audiovisuel-paris
+- [x] /prestataires/aktuel
+- [x] /prestataires/alises
+- [x] /prestataires/design-location
+- [x] /prestataires/aliance-mobilier
+- [x] /prestataires/alive-group
+
+Reste à soumettre (11, soit deux jours de quota) :
+- [ ] /prestataires/lenotre-paris (GSC affiche encore l'ancien état "exclue par noindex", normal avant recrawl)
+- [ ] /prestataires/potel-et-chabot-paris
+- [ ] /prestataires/novelty-paris
+- [ ] /prestataires/dushow-paris
+- [ ] /prestataires/videlio-paris
+- [ ] /prestataires/magnum-lyon
+- [ ] /prestataires/expocom-paris
+- [ ] /prestataires/affaire-d-idees
+- [ ] /prestataires/alphaexpo
+- [ ] /prestataires/aukare
+- [ ] /prestataires/axial-design
