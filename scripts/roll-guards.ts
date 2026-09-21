@@ -76,7 +76,7 @@ export function quoteFoundInPage(html: string, quote: string): boolean {
   return q.length >= 12 && normalizeText(htmlToText(html)).includes(q);
 }
 
-const MONTHS: string[][] = [
+export const MONTHS: string[][] = [
   ["janvier", "january", "jan", "janv"], ["fevrier", "february", "feb", "fev", "fevr"], ["mars", "march", "mar"],
   ["avril", "april", "apr", "avr"], ["mai", "may"], ["juin", "june", "jun"], ["juillet", "july", "jul", "juil"],
   ["aout", "august", "aug"], ["septembre", "september", "sep", "sept"], ["octobre", "october", "oct"],
