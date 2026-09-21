@@ -925,6 +925,7 @@ export type Database = {
         | "transport"
         | "hebergement"
         | "autre"
+        | "location_mobilier"
       provider_tier: "free" | "premium"
       review_role: "exposant" | "visiteur" | "organisateur"
       review_target_type: "salon" | "provider"
@@ -1061,6 +1062,7 @@ export const Constants = {
         "transport",
         "hebergement",
         "autre",
+        "location_mobilier",
       ],
       provider_tier: ["free", "premium"],
       review_role: ["exposant", "visiteur", "organisateur"],

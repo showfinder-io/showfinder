@@ -69,6 +69,7 @@ const PROVIDER_SCHEMA_TYPE: Record<string, string> = {
   transport: "LocalBusiness",
   av_technique: "LocalBusiness",
   standiste: "LocalBusiness",
+  location_mobilier: "LocalBusiness",
   autre: "LocalBusiness",
 };
 
