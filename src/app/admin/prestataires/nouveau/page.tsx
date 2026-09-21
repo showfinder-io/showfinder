@@ -12,6 +12,7 @@ const CATEGORY_OPTIONS = [
   { value: "photographe", label: "Photographe" },
   { value: "transport", label: "Transport" },
   { value: "hebergement", label: "Hébergement" },
+  { value: "location_mobilier", label: "Location de mobilier" },
   { value: "autre", label: "Autre" },
 ];
 

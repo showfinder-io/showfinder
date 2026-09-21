@@ -18,10 +18,10 @@ type ProviderCategoryBadgeProps = {
  * Slugs (côté DB) → token Tailwind correspondant dans globals.css.
  *
  * Seuls les slugs présents en DB (enum `provider_category`) sont mappés ici.
- * Les autres tokens (mobilier, signaletique, securite, animation, rh) existent
+ * Les autres tokens (decoration, signaletique, securite, animation, rh) existent
  * en CSS en anticipation, mais ne sont pas câblés tant que l'enum DB n'est pas étendu.
  *
- * Mapping métier `transport` → palette `logistique` (cohérence éditoriale).
+ * Mapping métier `transport` → palette `logistique`, `location_mobilier` → palette `mobilier`.
  */
 const CATEGORY_COLORS: Record<string, string> = {
   standiste:
@@ -36,6 +36,8 @@ const CATEGORY_COLORS: Record<string, string> = {
     "bg-provider-photo text-ivoire border-provider-photo/30",
   transport:
     "bg-provider-logistique text-ivoire border-provider-logistique/30",
+  location_mobilier:
+    "bg-provider-mobilier text-ivoire border-provider-mobilier/30",
 };
 
 const DEFAULT_COLORS =

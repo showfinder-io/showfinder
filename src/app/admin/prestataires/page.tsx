@@ -9,6 +9,7 @@ const PROVIDER_CATEGORY_LABELS: Record<string, string> = {
   photographe: "Photographe",
   transport: "Transport",
   hebergement: "Hébergement",
+  location_mobilier: "Location de mobilier",
   autre: "Autre",
 };
 

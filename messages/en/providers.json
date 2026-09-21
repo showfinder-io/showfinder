@@ -23,6 +23,7 @@
     "photographe": "Photographer",
     "transport": "Transport",
     "hebergement": "Accommodation",
+    "location_mobilier": "Furniture rental",
     "autre": "Other"
   },
   "quoteRequest": {

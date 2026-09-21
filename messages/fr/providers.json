@@ -23,6 +23,7 @@
     "photographe": "Photographe",
     "transport": "Transport",
     "hebergement": "Hébergement",
+    "location_mobilier": "Location de mobilier",
     "autre": "Autre"
   },
   "quoteRequest": {
