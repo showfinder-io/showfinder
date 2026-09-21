@@ -124,3 +124,10 @@ Fichier source : scripts/seeds/prestataires-2026-09-20.json (78 lignes, l'onglet
 - [ ] G6. description_en absente pour les nouveaux (46 descriptions FR sur 71) : passe de traduction à prévoir ; 25 fiches sans description du tout
 - [ ] G7. Logos : logo_url pointe vers leads-france.com / prestalians.fr (hotlink). Non affichés dans l'UI aujourd'hui (uniquement JSON-LD image), aucun bucket Storage n'existe. À ré-héberger le jour où l'UI affiche les logos
 - [ ] G8. bouvry-gilles à renvoyer à Nicolas (site mort)
+
+## Volet H : visibilité GEO (2026-09-21, scripts/diag-geo-visibility.ts)
+- [x] H1. Collecte 52 prompts x 3 moteurs (gpt-5.4-mini, claude-haiku-4-5, gemini-flash-latest, recherche web activée) + détection des domaines cités + juge de couverture Haiku. Baseline : agoris.io cité dans 28 réponses sur 156 (OpenAI 6/52, Anthropic 5/52, Gemini 17/52)
+- [ ] H2. Juge Jev (TypeSafe) écrit mais NON testé : TYPESAFE_API_KEY absente de .env.local (elle vit sur le VPS, /opt/veille-ia/.env). Une fois la clé posée : relancer avec --rejudge
+- [ ] H3. Le juge de couverture ne voit que les URLs : faux trou sur "finale nationale de labour" (la page existe : /salons/terres-de-jim). Lui passer aussi les seo_title
+- [ ] H4. Des pages /en sont citées en réponse à des questions en français (sitevi-montpellier, artibat-rennes, cprint-lyon...) : à investiguer côté hreflang / canonical
+- [ ] H5. Trous de couverture réels : 8 questions prestataires (standiste par parc, mobilier, traiteur, AV, hôtesses), prix moyen au m2, "site qui compare ou certifie les salons". Zéro citation sur la famille décision exposant hors 1 article blog
