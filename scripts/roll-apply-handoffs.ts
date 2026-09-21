@@ -18,7 +18,7 @@ import { appendFileSync, readdirSync, readFileSync, writeFileSync } from "node:f
 import { join } from "node:path";
 import { createClient } from "@supabase/supabase-js";
 import { getIndexNowKey, localizedUrls, submitIndexNow } from "../src/lib/indexnow";
-import { checkHandoff, pageCarriesDates, quoteFoundInPage, type Handoff, type SalonRow } from "./roll-guards";
+import { checkHandoff, MONTHS, normalizeText, pageCarriesDates, quoteFoundInPage, type Handoff, type SalonRow } from "./roll-guards";
 
 if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) {
   console.error("NEXT_PUBLIC_SUPABASE_URL et SUPABASE_SERVICE_ROLE_KEY requis (.env.local en local, secrets GitHub en CI).");
@@ -53,18 +53,33 @@ async function fetchPage(url: string): Promise<string | null> {
   }
 }
 
-/** File éditoriale : fiches roulées dont le MDX parle encore surtout de l'ancienne édition (heuristique). */
+/**
+ * File éditoriale : fiches roulées dont le texte n'a pas suivi. Critère : le bloc
+ * d'ouverture du MDX ("À retenir") ne porte pas la date de début de l'édition
+ * courante (jour, mois, année), ou le seo_title porte encore une autre année. Compter les mentions de l'ancienne
+ * année ne marche pas : une fiche rafraîchie cite légitimement le bilan passé.
+ */
 async function printQueue(journal: Journal) {
   const slugs = Object.keys(journal).filter((s) => journal[s].outcome === "applied");
   if (!slugs.length) return console.log("File édito vide : aucune fiche roulée au journal.");
-  const { data, error } = await sb.from("salons").select("slug,edition_year,editorial_mdx,seo_title").in("slug", slugs);
+  const { data, error } = await sb.from("salons").select("slug,edition_year,start_date,editorial_mdx,seo_title").in("slug", slugs);
   if (error) throw new Error(error.message);
+  let stale = 0;
   for (const s of data ?? []) {
-    const count = (y: number) => (String(s.editorial_mdx ?? "").match(new RegExp(String(y), "g")) ?? []).length;
-    const year = Number(s.edition_year);
-    const stale = count(year - 1) > count(year) || String(s.seo_title ?? "").includes(String(year - 1));
-    if (stale) console.log(`À REFRESH ${s.slug} : MDX ${count(year - 1)}x ${year - 1} vs ${count(year)}x ${year}${s.seo_title ? ` | seo_title: ${s.seo_title}` : ""}`);
+    const year = String(s.edition_year);
+    const reasons: string[] = [];
+    const opening = new Set(normalizeText(String(s.editorial_mdx ?? "").slice(0, 700)).replace(/\b1er\b/g, "1").split(" "));
+    const start = String(s.start_date);
+    const dated = opening.has(start.slice(0, 4)) && opening.has(String(Number(start.slice(8, 10)))) && MONTHS[Number(start.slice(5, 7)) - 1].some((m) => opening.has(m));
+    if (!dated) reasons.push(`ouverture du MDX sans la date de début (${start})`);
+    const titleYears: string[] = String(s.seo_title ?? "").match(/\b20\d{2}\b/g) ?? [];
+    if (titleYears.length && !titleYears.includes(year)) reasons.push(`seo_title sur ${titleYears.join(", ")}`);
+    if (reasons.length) {
+      stale++;
+      console.log(`À REFRESH ${s.slug} : ${reasons.join(" ; ")}`);
+    }
   }
+  console.log(`${stale} fiche(s) à rafraîchir sur ${slugs.length} roulée(s).`);
 }
 
 async function main() {
