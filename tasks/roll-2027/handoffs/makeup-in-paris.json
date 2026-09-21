@@ -1,0 +1,25 @@
+{
+  "slug": "makeup-in-paris",
+  "name": "MakeUp in Paris",
+  "status": "roll-pret",
+  "checked_at": "2026-09-14",
+  "current": {
+    "start_date": "2026-06-17",
+    "end_date": "2026-06-18",
+    "edition_year": 2026,
+    "city": "Paris",
+    "venue": "Carrousel du Louvre"
+  },
+  "next": {
+    "start_date": "2027-06-16",
+    "end_date": "2027-06-17",
+    "edition_year": 2027,
+    "city": "Paris",
+    "venue": "Carrousel du Louvre"
+  },
+  "source_url": "https://www.makeup-in-paris.com",
+  "quote": "Live the MakeUp in Paris experience! 16 & 17 June 2027, from 10am to 6pm at the Carrousel du Louvre.",
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "Dates de la prochaine édition clairement annoncées en page d'accueil : 16 et 17 juin 2027, même lieu (Carrousel du Louvre, Paris). Aucun changement de ville ou de lieu constaté."
+}
