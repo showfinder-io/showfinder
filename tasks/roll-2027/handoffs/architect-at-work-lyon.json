@@ -1,0 +1,25 @@
+{
+  "slug": "architect-at-work-lyon",
+  "name": "Architect@Work Lyon",
+  "status": "a-arbitrer",
+  "checked_at": "2026-09-21",
+  "current": {
+    "start_date": "2026-06-10",
+    "end_date": "2026-06-11",
+    "edition_year": 2026,
+    "city": "Lyon",
+    "venue": "Halle Tony Garnier"
+  },
+  "next": {
+    "start_date": null,
+    "end_date": null,
+    "edition_year": 2028,
+    "city": "Lyon",
+    "venue": null
+  },
+  "source_url": "https://www.architectatwork.com/fr/events/a@w-lyon",
+  "quote": "A@W Lyon Spring 2028 (liste officielle des editions du reseau Architect@Work, ou les autres villes ont des dates precises au format JJ-JJ.MM.AAAA et Lyon reste au stade \"Spring 2028\")",
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "website_url absent en base : site officiel retrouve via WebSearch (reseau A@WX, architectatwork.com), a ajouter en base. Le calendrier officiel place la prochaine edition de Lyon en \"Spring 2028\" sans dates precises, soit un saut d'environ 2 ans par rapport a une fiche marquee frequency=annuel : ecart de frequence a arbitrer, aucune date exploitable pour l'instant."
+}

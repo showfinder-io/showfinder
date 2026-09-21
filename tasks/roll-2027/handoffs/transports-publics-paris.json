@@ -1,0 +1,25 @@
+{
+  "slug": "transports-publics-paris",
+  "name": "Mobco",
+  "status": "a-arbitrer",
+  "checked_at": "2026-09-21",
+  "current": {
+    "start_date": "2026-06-09",
+    "end_date": "2026-06-11",
+    "edition_year": 2026,
+    "city": "Paris",
+    "venue": "Paris Expo Porte de Versailles"
+  },
+  "next": {
+    "start_date": "2027-03-31",
+    "end_date": "2027-04-01",
+    "edition_year": 2027,
+    "city": "Saint-Etienne",
+    "venue": "Parc Expo Auvergne-Rhone-Alpes"
+  },
+  "source_url": "https://mobco-expo.com/dates-lieu-et-acces/",
+  "quote": "Lieu Saint-Etienne Parc Expo Auvergne-Rhone-Alpes Boulevard Jules Janin, All. des Olympiades, 42000 Saint-Etienne / Dates et horaires d'ouverture Du 31 mars au 1 avril 2027",
+  "venue_changed": true,
+  "city_changed": true,
+  "notes": "Mobco est ne en 2026 de la fusion d'EuMo Expo et des RNTP ; le site explique que l'evenement alterne chaque annee entre Paris et les regions. Le changement de ville et de lieu pour 2027 est donc conforme au format annonce, mais reste a arbitrer editorialement (nom de fiche, ville affichee dans le catalogue Agoris)."
+}

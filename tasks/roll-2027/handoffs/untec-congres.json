@@ -1,0 +1,19 @@
+{
+  "slug": "untec-congres",
+  "name": "Salon Actes",
+  "status": "non-annoncee",
+  "checked_at": "2026-09-21",
+  "current": {
+    "start_date": "2026-06-03",
+    "end_date": "2026-06-05",
+    "edition_year": 2026,
+    "city": "Chartres",
+    "venue": "Parc des Expositions L'Iliade (edition 2026 uniquement, salon itinerant)"
+  },
+  "next": null,
+  "source_url": "https://www.actes-untec.com",
+  "quote": "Salon Actes 2026 - Journees nationales construction & amenagement ! (titre de la page d'accueil et de la page Informations pratiques, adresse toujours donnee comme Illiade de Chartres)",
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "Site vivant mais entierement fige sur l'edition 2026 (accueil, programme, informations pratiques) : aucune date ni ville 2027 publiee. Salon itinerant par nature, donc le lieu 2027 sera vraisemblablement different de Chartres une fois annonce."
+}
