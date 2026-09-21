@@ -1,0 +1,25 @@
+{
+  "slug": "restau-co-paris",
+  "name": "Restau'Co",
+  "status": "roll-pret",
+  "checked_at": "2026-09-21",
+  "current": {
+    "start_date": "2026-06-17",
+    "end_date": "2026-06-17",
+    "edition_year": 2026,
+    "city": "Paris",
+    "venue": "Paris Expo Porte de Versailles"
+  },
+  "next": {
+    "start_date": "2027-06-16",
+    "end_date": "2027-06-16",
+    "edition_year": 2027,
+    "city": "Paris",
+    "venue": "Paris Expo Porte de Versailles hall 5.1"
+  },
+  "source_url": "https://www.salonrestauco.com/evenement",
+  "quote": "L'evenement Restau'co PARIS EXPO Porte de Versailles hall 5.1 16 juin 2027 de 9h a 18h",
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "La page d'accueil affiche par ailleurs un bandeau ambigu \"Commercialisation Salon fin septembre !\" sans annee precisee, qui semble annoncer l'ouverture des inscriptions plutot que la date du salon : a verifier par un humain, la page dediee /evenement est plus explicite et coherente avec la frequence annuelle et le lieu habituel."
+}

@@ -1,0 +1,25 @@
+{
+  "slug": "premiere-vision-paris",
+  "name": "Première Vision Paris",
+  "status": "roll-pret",
+  "checked_at": "2026-09-14",
+  "current": {
+    "start_date": "2026-09-01",
+    "end_date": "2026-09-03",
+    "edition_year": 2026,
+    "city": "Paris",
+    "venue": "Paris Nord Villepinte"
+  },
+  "next": {
+    "start_date": "2027-01-26",
+    "end_date": "2027-01-28",
+    "edition_year": 2027,
+    "city": "Paris",
+    "venue": "Paris Nord Villepinte"
+  },
+  "source_url": "https://paris.premierevision.com/en",
+  "quote": "Paris Nord Villepinte / NEXT EDITION / 26-28 January 2027",
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "Prochaine édition confirmée sur le sous-site officiel dédié à l'édition parisienne (paris.premierevision.com), le domaine racine premierevision.com étant fortement rendu en JavaScript et ne renvoyant pas les dates via curl. Prochaine édition : 26 au 28 janvier 2027, Paris Nord Villepinte. Ville et lieu inchangés."
+}

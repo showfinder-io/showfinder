@@ -1,0 +1,25 @@
+{
+  "slug": "foire-chalons-en-champagne",
+  "name": "Foire de Chalons-en-Champagne",
+  "status": "roll-pret",
+  "checked_at": "2026-09-14",
+  "current": {
+    "start_date": "2026-08-28",
+    "end_date": "2026-09-07",
+    "edition_year": 2026,
+    "city": "Chalons-en-Champagne",
+    "venue": "Parc des Expositions de Châlons-en-Champagne"
+  },
+  "next": {
+    "start_date": "2027-08-27",
+    "end_date": "2027-09-06",
+    "edition_year": 2027,
+    "city": "Chalons-en-Champagne",
+    "venue": "Parc des Expositions de Châlons-en-Champagne"
+  },
+  "source_url": "https://www.foiredechalons.com/",
+  "quote": "du 27 août au 06 septembre 2027 (visuel « 81e Édition (2027) » affiché sur la page d'accueil)",
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "La page d'accueil affiche clairement les dates de la 81e édition (27 août au 6 septembre 2027) mais le champ lieu du widget est vide. Le lieu retenu (Parc des Expositions de Châlons-en-Champagne) est confirmé par recoupement avec la page infos-pratiques/horaires-douverture du même site, qui décrit l'accès au Parc des Expositions, adresse 30 Avenue de Parc des Expositions. Foire fixe (non itinérante), pas de changement de ville ou de lieu attendu."
+}

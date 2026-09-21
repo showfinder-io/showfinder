@@ -1,0 +1,25 @@
+{
+  "slug": "eurosatory-paris",
+  "name": "Eurosatory",
+  "status": "a-arbitrer",
+  "checked_at": "2026-09-14",
+  "current": {
+    "start_date": "2026-06-15",
+    "end_date": "2026-06-19",
+    "edition_year": 2026,
+    "city": "Paris",
+    "venue": "Paris Nord Villepinte"
+  },
+  "next": {
+    "start_date": "2028-06-19",
+    "end_date": "2028-06-23",
+    "edition_year": 2028,
+    "city": "Paris",
+    "venue": null
+  },
+  "source_url": "https://www.eurosatory.com/",
+  "quote": "Bannière visuelle (image, sans texte HTML sélectionnable) affichée en page d'accueil (versions FR et EN) : « 19-23 JUIN 2028 / PARIS / LE MONDIAL DÉFENSE & SÉCURITÉ » (EN : « 19-23 JUNE 2028 / PARIS / THE GLOBAL EVENT FOR DEFENCE & SECURITY »).",
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "La fréquence bisannuelle est cohérente (édition 2026 puis 2028, ce n'est pas une anomalie). Les dates de la prochaine édition (19 au 23 juin 2028) et la ville (Paris) sont lisibles dans une bannière image sur la page d'accueil, mais le nom exact du site d'exposition n'apparaît nulle part en texte sur le site (probablement à nouveau Paris Nord Villepinte comme en 2026, mais ce n'est confirmé par aucune source officielle pour 2028). Lieu à confirmer avant publication."
+}

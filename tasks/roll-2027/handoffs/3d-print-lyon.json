@@ -1,0 +1,25 @@
+{
+  "slug": "3d-print-lyon",
+  "name": "3D Print Congress & Exhibition",
+  "status": "roll-pret",
+  "checked_at": "2026-09-21",
+  "current": {
+    "start_date": "2026-06-02",
+    "end_date": "2026-06-04",
+    "edition_year": 2027,
+    "city": "Lyon",
+    "venue": "Eurexpo Lyon"
+  },
+  "next": {
+    "start_date": "2027-09-15",
+    "end_date": "2027-09-16",
+    "edition_year": 2027,
+    "city": "Lyon",
+    "venue": "Eurexpo Lyon"
+  },
+  "source_url": "https://www.3dprint-exhibition-lyon.com",
+  "quote": "15 et 16 septembre 2027 - Eurexpo - Lyon",
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "Anomalie a verifier : le champ edition_year est deja a 2027 en base alors que les dates stockees (2 au 4 juin 2026) sont celles de l'edition passee. Le site officiel confirme la prochaine edition les 15 et 16 septembre 2027 a Eurexpo Lyon, mais le format passe de 3 jours en juin a 2 jours en septembre : changement de calendrier a signaler, meme ville et meme lieu."
+}
