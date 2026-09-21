@@ -31,7 +31,9 @@ function lint(out: HubOut, dossierRaw: string): string[] {
   const allowed = new Set<string>([
     ...dossier.venues_in_zone, ...dossier.published_salons_in_zone, ...dossier.sibling_hubs,
   ].map((x: { internal_link: string }) => x.internal_link).concat(["/prestataires", "/salons", "/contact"]));
-  for (const [field, text] of [["editorial_mdx", out.editorial_mdx], ["editorial_mdx_en", out.editorial_mdx_en]] as const) {
+  const missingEn = (["h1_en", "seo_title_en", "seo_description_en", "editorial_mdx_en"] as const).filter((f) => !out[f]?.trim());
+  if (missingEn.length) errors.push(`traduction EN absente : ${missingEn.join(", ")} (étape traducteur)`);
+  for (const [field, text] of [["editorial_mdx", out.editorial_mdx ?? ""], ["editorial_mdx_en", out.editorial_mdx_en ?? ""]] as const) {
     if (/[<{}]/.test(text)) errors.push(`${field} : "<", "{" ou "}" brut`);
     if (/^\s*\|.*\|\s*$/m.test(text)) errors.push(`${field} : table pipe`);
     for (const m of text.matchAll(/\]\((\/[^)\s]*)\)/g)) if (!allowed.has(m[1])) errors.push(`${field} : lien interne hors dossier ${m[1]}`);
