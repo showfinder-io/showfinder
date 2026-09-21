@@ -45,12 +45,18 @@
     "allDatesShort": "Toutes"
   },
   "providerSort": {
-    "notoriety": "Notoriété",
+    "notoriety": "Sélection du jour",
     "name": "Nom (A-Z)",
     "category": "Catégorie",
     "city": "Ville",
     "allCategories": "Toutes les catégories",
-    "categoryLabel": "Catégorie :"
+    "categoryLabel": "Catégorie :",
+    "zoneLabel": "Zone :",
+    "allZones": "Toute la France",
+    "postalCode": "Code postal",
+    "postalCodeSubmit": "Valider",
+    "postalCodeInvalid": "Code postal non reconnu.",
+    "regions": "Régions"
   },
   "venueSort": {
     "surfaceDesc": "Surface (décroissant)",

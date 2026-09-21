@@ -5,7 +5,7 @@ import { getTranslations } from "next-intl/server";
 import { siteConfig } from "@/lib/config";
 import {
   getProviders,
-  getProviderCities,
+  getProviderDepartments,
   PROVIDER_CATEGORY_LABELS,
   type ProviderRow,
 } from "@/lib/queries";
@@ -16,6 +16,17 @@ import { ProviderSortBar } from "@/components/provider-sort-bar";
 import { SectionTitle } from "@/components/section-title";
 import { buildAlternates } from "@/lib/i18n-metadata";
 import type { AppLocale } from "@/i18n/routing";
+import {
+  departmentsOfRegion,
+  getDepartment,
+  parisDayIndex,
+  parseZone,
+  rotateDaily,
+  splitByZone,
+  zoneLabel,
+  REGIONS,
+  type Zone,
+} from "@/lib/geo-fr";
 
 export async function generateMetadata({
   params,
@@ -39,7 +50,8 @@ type Props = {
 
 /**
  * Tri appliqué côté serveur (post-fetch) :
- *  - notoriety (défaut) : ordre natif renvoyé par getProviders (premium → verified → name)
+ *  - notoriety (défaut, libellé « Sélection du jour ») : premium devant, puis rotation
+ *    quotidienne déterministe ; avec une zone, le département passe avant le reste de la région
  *  - name     : A-Z par company_name
  *  - category : groupé par catégorie (label localisé), puis A-Z dans chaque
  *  - city     : groupé par ville (nulls last), puis A-Z dans chaque
@@ -47,7 +59,8 @@ type Props = {
 function sortProviders(
   providers: ProviderRow[],
   sort: string,
-  categoryLabels: Record<string, string>
+  categoryLabels: Record<string, string>,
+  zone: Zone | null
 ): ProviderRow[] {
   if (sort === "name") {
     return [...providers].sort((a, b) =>
@@ -80,7 +93,11 @@ function sortProviders(
       });
     });
   }
-  return providers; // notoriety default = ordre natif (premium → verified → name)
+  // Pas d'aléatoire : l'ordre tourne chaque jour, identique pour tous les visiteurs du jour
+  const dayIndex = parisDayIndex();
+  if (!zone) return rotateDaily(providers, dayIndex);
+  const split = splitByZone(providers, zone);
+  return [...rotateDaily(split.department, dayIndex), ...rotateDaily(split.region, dayIndex)];
 }
 
 export default async function PrestatairesPage({ params: pageParams, searchParams }: Props) {
@@ -93,6 +110,7 @@ export default async function PrestatairesPage({ params: pageParams, searchParam
   const params = await searchParams;
   const category = params.category ?? "";
   const city = params.city ?? "";
+  const zone = parseZone(params.zone);
   const sort = params.sort ?? "notoriety";
 
   // Labels de catégories localisés (Phase 2 i18n) : fallback sur les labels FR
@@ -104,13 +122,21 @@ export default async function PrestatairesPage({ params: pageParams, searchParam
     ])
   );
 
-  const [providersRaw, cities, hubs] = await Promise.all([
-    getProviders({ category: category || undefined, city: city || undefined }),
-    getProviderCities(),
+  const [providersRaw, providerDepartments, hubs] = await Promise.all([
+    getProviders({
+      category: category || undefined,
+      city: city || undefined,
+      departments: zone ? departmentsOfRegion(zone.region) : undefined,
+    }),
+    getProviderDepartments(),
     getAllProviderHubs(),
   ]);
 
-  const providers = sortProviders(providersRaw, sort, categoryLabels);
+  const providers = sortProviders(providersRaw, sort, categoryLabels, zone);
+
+  // Régions proposées dans le filtre : celles qui comptent au moins un prestataire
+  const populatedRegions = new Set(providerDepartments.map((d) => getDepartment(d)?.region));
+  const regions = REGIONS.filter((r) => populatedRegions.has(r.code)).map((r) => r.code);
 
   const categories = Object.entries(categoryLabels).map(
     ([value, label]) => ({ value, label })
@@ -151,9 +177,13 @@ export default async function PrestatairesPage({ params: pageParams, searchParam
           <ProviderSortBar
             total={providers.length}
             categories={categories}
-            cities={cities}
+            regions={regions}
           />
         </Suspense>
+
+        {zone?.department && sort === "notoriety" && providers.length > 0 && (
+          <p className="mb-6 text-sm text-muted">{t("zoneNote", { zone: zoneLabel(zone) })}</p>
+        )}
 
         {providers.length > 0 ? (
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">

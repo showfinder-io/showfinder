@@ -41,7 +41,7 @@ Tout le contenu a été rédigé sur sources (site officiel, fiche LEADS France 
 - [ ] Pech'Up : fichier = Beauvallon, mentions légales = Millery (69 dans les deux cas).
 - [ ] Gilles Bouvry : site mort, non importé.
 - [ ] Noms repassés en casse normale d'après la graphie des sites (56 fiches) : quelques choix à valider, par exemple « axial design », « Live & co », « Des Pas En Avant », « 2B ».
-- [ ] Rattachement des prestataires aux salons (drawer « Organiser mon stand ») : règle à définir.
+- [x] Rattachement des prestataires aux salons (drawer « Organiser mon stand ») : tranché par Nicolas le 2026-09-21, pas de rattachement. Le drawer montre tous les prestataires avec un filtre de proximité (standistes : siège de l'exposant ; autres métiers : lieu du salon) et une rotation quotidienne. Détail : tasks/todo.md G4.
 
 ## Request Indexing GSC (décision Julien 2026-09-21 : lancé sans attendre la relecture)
 

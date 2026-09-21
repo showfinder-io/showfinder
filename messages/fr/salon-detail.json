@@ -39,11 +39,11 @@
   "providers": {
     "badgeLabel": "Marketplace prestataires",
     "title": "Organiser votre salon",
-    "description": "Standistes, traiteurs, audiovisuel, photographes : trouvez les prestataires recommandés pour {salonName}.",
+    "description": "Standistes, mobilier, audiovisuel, traiteurs : trouvez vos prestataires pour {salonName}, près de votre entreprise ou près du salon.",
     "cta": "Voir les prestataires",
     "drawerTitle": "Prestataires pour {salonName}",
     "loading": "Chargement…",
-    "empty": "Pas encore de prestataires référencés pour ce salon.",
+    "empty": "Pas encore de prestataires référencés.",
     "areYouProvider": "Vous êtes prestataire ?",
     "contactUs": "Contactez-nous",
     "verifiedAriaLabel": "Prestataire vérifié",
@@ -58,6 +58,28 @@
       "hebergement": "Hébergement",
       "location_mobilier": "Location de mobilier",
       "autre": "Autres"
+    },
+    "intro": "Tous les prestataires référencés sont présentés, dans un ordre qui change chaque jour. Le standiste se choisit près de votre entreprise, les autres métiers près du lieu du salon.",
+    "seeAll": "Tout voir : {category}",
+    "scope": {
+      "exhibitorDepartment": "Près de votre entreprise : {zone} d'abord, puis le reste de la région.",
+      "exhibitorRegion": "Près de votre entreprise : {zone}.",
+      "exhibitorWidened": "Aucun standiste référencé dans votre région pour l'instant : sélection France entière.",
+      "venueDepartment": "Près du salon : {zone} d'abord, puis le reste de la région.",
+      "venueRegion": "Région du salon : {zone}.",
+      "venueWidened": "Aucun prestataire référencé dans la région du salon ({zone}) pour l'instant : sélection France entière."
+    },
+    "venueToggle": {
+      "label": "Zone des prestataires, hors standistes",
+      "near": "Près du salon",
+      "all": "Toute la France"
+    },
+    "zoneField": {
+      "legend": "Où est votre entreprise ?",
+      "postalCode": "Code postal",
+      "region": "Ou votre région",
+      "anyRegion": "Toutes les régions",
+      "invalid": "Code postal non reconnu."
     }
   },
   "reviews": {
