@@ -26,6 +26,7 @@
     "visiterLeSite": "Visiter le site"
   },
   "frequency": {
+    "semestriel": "Semestriel (2 fois par an)",
     "annuel": "Annuel",
     "bisannuel": "Bisannuel (tous les 2 ans)",
     "triennal": "Triennal (tous les 3 ans)",
