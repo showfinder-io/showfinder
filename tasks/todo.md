@@ -117,10 +117,10 @@ Constat 2026-09-09 (GA4 28 j) : google/organic 892 sessions, bing/organic 275, d
 Fichier source : scripts/seeds/prestataires-2026-09-20.json (78 lignes, l'onglet Légende du xlsx en annonce 95 : écart non expliqué, à demander à Nicolas). Décision Julien 2026-09-21 : upsert, les 12 prestataires existants et leurs 24 liens salon_providers sont conservés.
 
 - [x] G1. Catégorie `location_mobilier` : migration 20260921000000 + types, badge (token provider-mobilier), admin, messages FR/EN, JSON-LD
-- [x] G2. Vérification sites (scripts/diag-verify-providers.ts) : 73 importables, 5 écartés (agence-bosco, alris-communication, la-p-tite-histoire sans site ; l-as-decors et bouvry-gilles site mort)
-- [ ] G3. Import : scripts/diag-import-providers-apply.ts --apply, APRÈS déploiement du code (sinon libellé de catégorie manquant en prod)
+- [x] G2. Vérification sites (scripts/diag-verify-providers.ts) : 73 importables d'emblée, puis 4 sites retrouvés par recherche web le 2026-09-21 (agence-bosco.fr, alris.com, laptitehistoire.com, lasdecors.fr, chacun recoupé avec l'adresse du fichier). Reste écarté : bouvry-gilles (site mort, LinkedIn seul)
+- [x] G3. Import appliqué en prod le 2026-09-21 : 75 inserts + 2 lignes complétées (merci-gustave, magnum-lyon), 87 prestataires en base
 - [ ] G4. Aucun des 71 nouveaux n'est rattaché à un salon (salon_providers) : ils n'apparaissent que dans /prestataires, pas dans le drawer "Organiser mon stand". Règle de rattachement à définir avec Nicolas
 - [ ] G5. Noms en capitales dans les annuaires sources (3D ACTIONS, AFFAIRE D'IDÉES...) importés tels quels : casse à reprendre à la main dans l'admin (choix éditorial, pas devinable pour les acronymes)
 - [ ] G6. description_en absente pour les nouveaux (46 descriptions FR sur 71) : passe de traduction à prévoir ; 25 fiches sans description du tout
 - [ ] G7. Logos : logo_url pointe vers leads-france.com / prestalians.fr (hotlink). Non affichés dans l'UI aujourd'hui (uniquement JSON-LD image), aucun bucket Storage n'existe. À ré-héberger le jour où l'UI affiche les logos
-- [ ] G8. 5 écartés à renvoyer à Nicolas pour site web valide
+- [ ] G8. bouvry-gilles à renvoyer à Nicolas (site mort)
