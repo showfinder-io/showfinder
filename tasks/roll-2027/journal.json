@@ -1,15 +1,19 @@
 {
   "3d-print-lyon": {
-    "outcome": "rejected",
+    "outcome": "applied",
     "at": "2026-09-21",
     "from": {
       "start_date": "2026-06-02",
       "end_date": "2026-06-04"
     },
-    "to": null,
+    "to": {
+      "start_date": "2027-09-15",
+      "end_date": "2027-09-16",
+      "edition_year": 2027
+    },
     "source_url": "https://www.3dprint-exhibition-lyon.com",
     "reasons": [
-      "écart de 468 jours incohérent avec la fréquence annuel (max 460)"
+      "arbitrage en session : relecture mécanique : '15 et 16 septembre 2027 Eurexpo Lyon' ; rejet automatique dû au seul écart de 468 jours (passage de juin à septembre, format 2 jours)"
     ]
   },
   "bijorhca-paris": {
@@ -117,16 +121,20 @@
     "reasons": []
   },
   "playtime-paris": {
-    "outcome": "rejected",
+    "outcome": "applied",
     "at": "2026-09-21",
     "from": {
       "start_date": "2026-06-27",
       "end_date": "2026-06-29"
     },
-    "to": null,
+    "to": {
+      "start_date": "2027-01-30",
+      "end_date": "2027-02-01",
+      "edition_year": 2027
+    },
     "source_url": "https://www.iloveplaytime.com/playtime-paris/",
     "reasons": [
-      "la citation ne porte pas l'année et les jours annoncés"
+      "arbitrage en session : navigateur : 'NEXT EDITION, JANUARY 30 – FEBRUARY 1', Parc Floral de Paris ; année non écrite sur la page, déduite des brochures BROCHURE-PARIS-2027.pdf mises en ligne en août 2026 (samedi au lundi, cohérent)"
     ]
   },
   "premiere-vision-paris": {
@@ -175,17 +183,19 @@
     "reasons": []
   },
   "salon-habitat-bordeaux": {
-    "outcome": "rejected",
+    "outcome": "applied",
     "at": "2026-09-21",
     "from": {
       "start_date": "2026-03-06",
       "end_date": "2026-03-08"
     },
-    "to": null,
+    "to": {
+      "start_date": "2027-03-05",
+      "end_date": "2027-03-07",
+      "edition_year": 2027
+    },
     "source_url": "https://leopro.fr/salon-habitat-deco-bordeaux/",
-    "reasons": [
-      "source_url injoignable à la relecture"
-    ]
+    "reasons": []
   },
   "smarter-e-europe-munich": {
     "outcome": "applied",
@@ -233,16 +243,20 @@
     "reasons": []
   },
   "vivatech": {
-    "outcome": "rejected",
+    "outcome": "applied",
     "at": "2026-09-21",
     "from": {
       "start_date": "2026-06-17",
       "end_date": "2026-06-20"
     },
-    "to": null,
+    "to": {
+      "start_date": "2027-06-16",
+      "end_date": "2027-06-19",
+      "edition_year": 2027
+    },
     "source_url": "https://vivatech.com/",
     "reasons": [
-      "source_url injoignable à la relecture"
+      "arbitrage en session : navigateur : Schema.org Event 'VivaTech 2027' startDate 2027-06-16 endDate 2027-06-19, Paris Expo Porte de Versailles ; texte visible '16-19 June 2027' (le site répond 403 aux robots)"
     ]
   },
   "whos-next-paris": {
@@ -289,5 +303,107 @@
     },
     "source_url": "https://www.lesjourneesducourtage.com/informations-pratiques",
     "reasons": []
+  },
+  "eurosatory-paris": {
+    "outcome": "applied",
+    "at": "2026-09-21",
+    "from": {
+      "start_date": "2026-06-15",
+      "end_date": "2026-06-19"
+    },
+    "to": {
+      "start_date": "2028-06-19",
+      "end_date": "2028-06-23",
+      "edition_year": 2028
+    },
+    "source_url": "https://www.eurosatory.com/",
+    "reasons": [
+      "arbitrage en session : navigateur : image officielle bloc-date-2028.png '19-23 JUIN 2028, PARIS' ; rythme bisannuel cohérent ; lieu non reconfirmé par le site, inchangé en base"
+    ]
+  },
+  "foire-de-paris": {
+    "outcome": "applied",
+    "at": "2026-09-21",
+    "from": {
+      "start_date": "2026-04-30",
+      "end_date": "2026-05-11"
+    },
+    "to": {
+      "start_date": "2027-04-30",
+      "end_date": "2027-05-10",
+      "edition_year": 2027
+    },
+    "source_url": "https://www.comexposium.com/newsroom/presse/nos-evenements/agenda-des-evenements/foire-de-paris/",
+    "reasons": [
+      "arbitrage en session : relecture mécanique de l'agenda de l'organisateur Comexposium : '30 Avr 2027 - 10 Mai 2027, Paris' (foiredeparis.fr répond 403) ; lieu non reconfirmé, inchangé en base"
+    ]
+  },
+  "ready-for-it-monaco": {
+    "outcome": "applied",
+    "at": "2026-09-21",
+    "from": {
+      "start_date": "2026-06-02",
+      "end_date": "2026-06-04"
+    },
+    "to": {
+      "start_date": "2027-06-01",
+      "end_date": "2027-06-03",
+      "edition_year": 2027
+    },
+    "source_url": "https://www.comexposium.com/newsroom/presse/nos-evenements/agenda-des-evenements/ready-for-it/",
+    "reasons": [
+      "arbitrage en session : relecture mécanique de l'agenda de l'organisateur Comexposium : '1 Juin 2027 - 3 Juin 2027, Monaco' (ready-for-it.com répond 403) ; lieu non reconfirmé, inchangé en base"
+    ]
+  },
+  "maison-objet-paris": {
+    "outcome": "applied",
+    "at": "2026-09-21",
+    "from": {
+      "start_date": "2026-09-10",
+      "end_date": "2026-09-14"
+    },
+    "to": {
+      "start_date": "2027-01-14",
+      "end_date": "2027-01-18",
+      "edition_year": 2027
+    },
+    "source_url": "https://www.maison-objet.com/paris",
+    "reasons": [
+      "arbitrage en session : navigateur (anti-robot Incapsula) : '10-14 septembre 2026, 14-18 janvier 2027, Parc des expositions Paris Nord Villepinte'"
+    ]
+  },
+  "salon-mondial-du-tourisme-paris": {
+    "outcome": "applied",
+    "at": "2026-09-21",
+    "from": {
+      "start_date": "2026-03-12",
+      "end_date": "2026-03-15"
+    },
+    "to": {
+      "start_date": "2027-03-11",
+      "end_date": "2027-03-14",
+      "edition_year": 2027
+    },
+    "source_url": "https://www.salons-du-tourisme.com/fr-FR/Mondial-Paris",
+    "reasons": [
+      "arbitrage en session : navigateur : 'Salon Mondial du Tourisme – Paris 2027, 11 - 14 mars 2027, Paris Expo Porte de Versailles' ; classé site-mort car l'ancien domaine ne résout plus, le salon a changé de domaine"
+    ]
+  },
+  "innorobo-by-sido": {
+    "outcome": "applied",
+    "at": "2026-09-21",
+    "from": {
+      "start_date": "2026-09-16",
+      "end_date": "2026-09-17"
+    },
+    "to": {
+      "start_date": "2027-09-15",
+      "end_date": "2027-09-16",
+      "edition_year": 2027
+    },
+    "source_url": "https://www.sido-lyon.com/",
+    "reasons": [
+      "arbitrage en session : relecture mécanique : 'Rendez-vous les 15 et 16 septembre 2027 à Eurexpo Lyon pour la 13e édition' ; changement de lieu dans la même ville (Centre de Congrès de Lyon vers Eurexpo Lyon)"
+    ]
   }
 }
