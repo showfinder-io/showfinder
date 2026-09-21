@@ -259,5 +259,35 @@
     },
     "source_url": "https://wsn-events.com/events/whos-next",
     "reasons": []
+  },
+  "big-data-ai-paris": {
+    "outcome": "applied",
+    "at": "2026-09-21",
+    "from": {
+      "start_date": "2026-09-15",
+      "end_date": "2026-09-16"
+    },
+    "to": {
+      "start_date": "2027-09-29",
+      "end_date": "2027-09-30",
+      "edition_year": 2027
+    },
+    "source_url": "https://www.bigdataparis.com",
+    "reasons": []
+  },
+  "journees-du-courtage": {
+    "outcome": "applied",
+    "at": "2026-09-21",
+    "from": {
+      "start_date": "2026-09-15",
+      "end_date": "2026-09-16"
+    },
+    "to": {
+      "start_date": "2027-09-14",
+      "end_date": "2027-09-15",
+      "edition_year": 2027
+    },
+    "source_url": "https://www.lesjourneesducourtage.com/informations-pratiques",
+    "reasons": []
   }
 }
