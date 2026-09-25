@@ -370,9 +370,12 @@ export async function getSalonBySlug(slug: string) {
     )
     .eq("slug", slug)
     .eq("status", "published")
-    .single();
+    .maybeSingle();
 
-  if (error || !data) return null;
+  // 0 ligne = fiche absente (404). Une erreur Supabase remonte : en SSG, un
+  // notFound() sur erreur transitoire figerait un 404 jusqu'au déploiement suivant.
+  if (error) throw error;
+  if (!data) return null;
 
   // Cast en unknown d'abord : les types Supabase générés ne connaissent pas
   // encore les colonnes _en (description_en, seo_title_en, seo_description_en)
@@ -522,11 +525,12 @@ export async function getAllOrganizerSlugs(): Promise<string[]> {
  */
 export async function getSalonsByOrganizer(slug: string) {
   const supabase = await createClient();
-  const { data } = await supabase
+  const { data, error } = await supabase
     .from("salons")
     .select("id, organizer_name")
     .eq("status", "published")
     .not("organizer_name", "is", null);
+  if (error) throw error;
 
   const matching = (data ?? []).filter(
     (s) => slugifyCity((s as { organizer_name: string }).organizer_name) === slug
@@ -611,8 +615,9 @@ export async function getProviderBySlug(slug: string) {
     .from("providers")
     .select("*")
     .eq("slug", slug)
-    .single();
-  if (error || !data) return null;
+    .maybeSingle();
+  if (error) throw error;
+  if (!data) return null;
   return data as ProviderRow;
 }
 
@@ -716,9 +721,10 @@ export async function getSectorBySlug(slug: string) {
     .from("sectors")
     .select("*")
     .eq("slug", slug)
-    .single();
+    .maybeSingle();
 
-  if (error || !data) return null;
+  if (error) throw error;
+  if (!data) return null;
   return data as unknown as SectorRow;
 }
 
@@ -858,9 +864,10 @@ export async function getVenueBySlug(slug: string) {
     .from("venues")
     .select("*")
     .eq("slug", slug)
-    .single();
+    .maybeSingle();
 
-  if (error || !data) return null;
+  if (error) throw error;
+  if (!data) return null;
   return data as VenueRow;
 }
 
