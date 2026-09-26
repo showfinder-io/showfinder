@@ -21,21 +21,25 @@ const PUBLISH = process.argv.includes("--publish");
 const HANDOFF = join(process.cwd(), "handoff/cohorte-trafic");
 const slugs = process.argv.slice(2).filter((a) => !a.startsWith("--"));
 
-async function ensureVenue(h: Record<string, unknown>): Promise<string> {
+// Renvoie l'id du lieu et ses coordonnées, reportées sur la fiche salon
+// (venue_lat / venue_lng) qu'il s'agisse d'un lieu existant ou créé.
+async function ensureVenue(h: Record<string, unknown>): Promise<{ id: string; lat: number | null; lng: number | null }> {
   const venueSlug = h.venue_slug as string;
-  const { data: v } = await sb.from("venues").select("id").eq("slug", venueSlug).maybeSingle();
-  if (v) return v.id as string;
+  const { data: v } = await sb.from("venues").select("id,lat,lng").eq("slug", venueSlug).maybeSingle();
+  if (v) return { id: v.id as string, lat: (v.lat as number | null) ?? null, lng: (v.lng as number | null) ?? null };
   const vc = h.venue_create as Record<string, unknown> | undefined;
   if (!vc) throw new Error(`venue ${venueSlug} introuvable et pas de venue_create`);
-  console.log(`  CREATE venue ${vc.slug} (${vc.name}, ${vc.city})`);
-  if (!APPLY) return "dry-run-venue-id";
+  const lat = (vc.lat as number | undefined) ?? null;
+  const lng = (vc.lng as number | undefined) ?? null;
+  console.log(`  CREATE venue ${vc.slug} (${vc.name}, ${vc.city}, ${lat}/${lng})`);
+  if (!APPLY) return { id: "dry-run-venue-id", lat, lng };
   const { data: nv, error } = await sb
     .from("venues")
-    .insert({ slug: vc.slug, name: vc.name, city: vc.city, country: vc.country ?? "FR", address: vc.address ?? null } as never)
+    .insert({ slug: vc.slug, name: vc.name, city: vc.city, country: vc.country ?? "FR", address: vc.address ?? null, lat, lng } as never)
     .select("id")
     .single();
   if (error) throw new Error(`venue ${vc.slug}: ${error.message}`);
-  return nv.id as string;
+  return { id: nv.id as string, lat, lng };
 }
 
 async function main() {
@@ -85,12 +89,12 @@ async function main() {
     // insertion sans venue plutôt qu'un venue inventé (règle #13). À compléter au roll.
     const hasVenue = Boolean(h.venue_slug || h.venue_create);
     if (!hasVenue) console.log(`  WARN ${slug}: aucun venue (lieu non annoncé), insertion avec venue null`);
-    const venueId = hasVenue ? await ensureVenue(h) : null;
+    const venue = hasVenue ? await ensureVenue(h) : null;
     const row = {
       slug, name: h.name, edition_year: h.edition_year, edition_number: h.edition_number ?? null,
       start_date: h.start_date, end_date: h.end_date, dates_confirmed: h.dates_confirmed ?? false,
-      city: h.city, venue: h.venue_name ?? null, venue_id: venueId,
-      venue_lat: h.venue_create?.lat ?? null, venue_lng: h.venue_create?.lng ?? null,
+      city: h.city, venue: h.venue_name ?? null, venue_id: venue?.id ?? null,
+      venue_lat: venue?.lat ?? null, venue_lng: venue?.lng ?? null,
       country: h.country ?? "FR", website_url: h.website_url,
       organizer_name: h.organizer_name ?? null, co_organizer_name: h.co_organizer_name ?? null,
       frequency: h.frequency ?? null,

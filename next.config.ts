@@ -34,6 +34,17 @@ const nextConfig: NextConfig = {
       ...auditCatalogueRedirects.map((r) => ({ ...r, permanent: true })),
       // GSC 2026-08 : 404 sur des slugs canoniques dont la fiche est en draft.
       // À RETIRER si la fiche correspondante repasse en published (cf. tasks/todo.md).
+      // SEPAG : salon fusionné en 2020 dans RSD3 (CCI Drôme-Ardèche), fiche dépubliée le 2026-09-25.
+      {
+        source: "/salons/sepag",
+        destination: "/secteurs/agroalimentaire",
+        permanent: true,
+      },
+      {
+        source: "/en/salons/sepag",
+        destination: "/en/secteurs/agroalimentaire",
+        permanent: true,
+      },
       {
         source: "/salons/sima-paris",
         destination: "/secteurs/agriculture",
