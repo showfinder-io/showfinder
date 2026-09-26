@@ -1,4 +1,4 @@
-# Reprise : cohorte P2 de la shortlist 2 (état au 2026-09-25 soir)
+# Reprise : cohorte P2 de la shortlist 2 (état au 2026-09-26)
 
 30 fiches P2 de `tasks/cohorte-trafic-shortlist-2.md`, en 4 lots. Brief complet : `handoff/cohorte-trafic/BRIEF-sl2-p2.md` (hors git, dossier handoff ignoré). Handoffs : `handoff/cohorte-trafic/<slug>.json`, reviews : `handoff/cohorte-trafic/reviews-sl2-p2/<slug>.pass{1,2}.md`, états avant correction : `handoff/cohorte-trafic/_prev/`.
 
@@ -10,22 +10,15 @@ writer (Opus) → pass-1 (Sonnet) → correcteur si corrections (Sonnet) → pas
 - Insertion : `./node_modules/.bin/tsx --env-file=.env.local scripts/diag-cohorte-trafic-apply.ts [--apply|--publish] <slugs>` (draft d'abord, `--publish` ensuite, IndexNow automatique au publish). Le script reporte maintenant les coordonnées du lieu sur la fiche et sur les lieux créés.
 - Prompts : chaque agent lit le BRIEF ; consigne ajoutée le 2026-09-25 après incident : aucune donnée personnelle (e-mail de l'utilisateur) envoyée à un service tiers, User-Agent Nominatim générique.
 
-## Lot A (8 fiches, janvier à début mars 2027)
+## Lot A (8 fiches) : PUBLIÉ le 2026-09-26
 
-| slug | état |
-|---|---|
-| chr-pro-expo-grand-est | PRÊT (pass-1 et pass-2 OK, EN fait) |
-| salon-see | PRÊT |
-| congres-atec-its-france | PRÊT (nom retenu « Congrès Mobil'in Pulse (ex-ATEC ITS France) ») |
-| premiere-classe | PRÊT. Champs sur la session du 2-5 octobre 2026 : PUBLIER AVANT LE 2 OCTOBRE, sinon la fiche affiche une session passée |
-| iode | PRÊT |
-| urbest | pass-2 OK. Reste : spot-fix optionnel seo_title 61 car. → « Urbest 2027 : salon des maires du Grand Est, 13-14 janv. » (56 car.), puis traduction EN |
-| bisou | pass-2 OK avec 2 MINEUR (footer BudgetTable à harmoniser avec le tarif d'angle reformulé ; exposants nommés attribués « à l'édition 2027 » non vérifiable, neutraliser). Reste : correcteur, puis traduction EN |
-| rencontres-amrae | pass-1 : 1 MINEUR (seo_title 62 car.) + 1 spot-fix (règle mal citée dans alerts). Reste : correcteur, pass-2, traduction EN |
+chr-pro-expo-grand-est, salon-see, congres-atec-its-france (nom retenu « Congrès Mobil'in Pulse (ex-ATEC ITS France) »), premiere-classe (session du 2-5 octobre 2026), iode, urbest, bisou, rencontres-amrae. Toutes passées pass-1 et pass-2, traduites en EN, contrôle automatique OK, pages FR/EN en 200 sur le serveur de prod local, IndexNow 202 (16 URL).
 
-Puis : insertion draft des 8, `npm run build`, contrôle local (`preview_start agoris-prod-local`, pages FR/EN 200, title, H1, MDX rendu), `--publish`, PR, Request Indexing GSC.
+Corrections finales : urbest seo_title raccourci (spot-fix pass-2) ; bisou footer BudgetTable harmonisé et exposants datés de la consultation (fin septembre 2026) au lieu de « édition 2027 » ; rencontres-amrae seo_title raccourci et référence de règle corrigée dans alerts, pass-2 BON sans correction.
 
-Nouveaux lieux créés par le lot A : docks-de-paris (SEE), parc-expo-chorus-vannes (IODE), beffroi-de-montrouge (Mobil'in Pulse), jardin-des-tuileries (Premiere Classe), centre international de Deauville (AMRAE).
+Nouveaux lieux créés : docks-de-paris, beffroi-de-montrouge, jardin-des-tuileries, parc-expo-chorus-vannes, centre-international-de-deauville.
+
+Reste : Request Indexing GSC des 8 fiches ; premiere-classe devra être roulée après le 5 octobre (routine roll).
 
 ## Lots B, C, D (slugs vérifiés sans collision, cadrage dans la shortlist, section P2)
 
