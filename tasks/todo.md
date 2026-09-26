@@ -50,6 +50,7 @@ Cible : fiches FR en position 5-15 avec CTR < 1,5% et impressions significatives
   - Reste, découvertes non indexées (10) : bim-world-paris destination-montagnes europropre medfit-marseille medi-nov-connection-lyon paris-space-week salon-infirmier-paris sifer smarter-e-europe-munich viteff
   - Erreur au dernier crawl, 200 aujourd'hui (Googlebot compris) : 5xx franchise-expo-lyon (crawl 18/06) et mwc-barcelona (27/06) ; 404 learning-technologies-paris (16/09) et world-nuclear-exhibition (22/09). Cause des 404 de septembre non établie (logs Vercel hors scope CLI)
   - Crawlée non indexée (1) : nordbat-lille (édition 2028)
+  - Cohorte P2 lot A publiée le 2026-09-26, à pousser par Claude dès que le quota GSC le permet (décision Julien) : premiere-classe (prioritaire, session du 2-5 octobre) urbest congres-atec-its-france bisou iode rencontres-amrae chr-pro-expo-grand-est salon-see
 
 ## Volet E : roll 2027 (passer les fiches 2026 expirées à l'édition suivante)
 
