@@ -40,6 +40,7 @@ let failed = 0;
 for (const slug of slugs) {
   const errs: string[] = [];
   const warns: string[] = [];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- handoff JSON brut, chaque champ est validé ci-dessous
   let h: Record<string, any>;
   try { h = JSON.parse(readFileSync(`${DIR}/${slug}.json`, "utf8")); } catch (e) { console.log(`FAIL ${slug}: ${(e as Error).message}`); failed++; continue; }
   for (const k of [...REQUIRED, ...(EN ? REQUIRED_EN : [])]) if (h[k] === undefined || h[k] === null || h[k] === "") errs.push(`clé ${k} manquante`);
