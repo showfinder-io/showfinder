@@ -20,9 +20,20 @@ Nouveaux lieux créés : docks-de-paris, beffroi-de-montrouge, jardin-des-tuiler
 
 Reste : Request Indexing GSC des 8 fiches ; premiere-classe devra être roulée après le 5 octobre (routine roll).
 
-## Lots B, C, D (slugs vérifiés sans collision, cadrage dans la shortlist, section P2)
+## Lot B (8 fiches) : PUBLIÉ le 2026-09-26
 
-- Lot B (mars 2027) : one-to-one-retail-ecommerce (Monaco, site dédié en 403), congres-des-audioprothesistes, minalogic-business-meetings, contaminexpo, c-brand, shop-le-salon, enviropro-grand-ouest, sitem
+one-to-one-retail-ecommerce, congres-des-audioprothesistes, minalogic-business-meetings, contaminexpo, c-brand, shop-le-salon, enviropro-grand-ouest, sitem. Writers Opus, pass-1 et pass-2 Sonnet, traduction EN, contrôle automatique OK, pages FR/EN en 200 sur le serveur de prod local, IndexNow 202 (16 URL). Aucun lieu créé.
+
+Écarts au cadrage relevés par les writers : numéro d'édition Audioprothésistes non affiché (null, pas « 47e ») ; One to One 16e et non 15e (le site affiche 16ème en FR et 17th en EN, 16 retenu d'après le Grimaldi Forum) ; Minalogic « +500 / +1 400 » remplacés par le bilan 2026 (440 participants, 1 247 rendez-vous) ; ContaminExpo bisannuel (années impaires) avec bilans 2023 et 2025 publiés ; SITEM bilan 2026 publié (4 816 visiteurs, 175 exposants) ; SHOP! Le Salon ex-salon MPV, pas d'édition en 2024 ; ENVIROpro « 300+ exposants » = texte gabarit, écarté.
+
+Décisions Julien 2026-09-26 : ENVIROpro Grand-Ouest `frequency` = null (éditions 2022, 2024, 2025, 2027 : rythme irrégulier, la fiche n'affiche pas de fréquence ; `diag-cohorte-p2-check.mts` admet désormais null) ; édition « ENVIROpro Grand-Ouest Rennes » (Glaz Arena, 17-18 juin 2028) : fiche distincte ou bascule à décider plus tard, mentionnée au conditionnel.
+
+Liens croisés RR37 ajoutés à la publication : c-brand ↔ shop-le-salon (co-localisés, Pavillon 5).
+
+Reste : Request Indexing GSC des 8 fiches (file D14 de tasks/todo.md).
+
+## Lots C, D (slugs vérifiés sans collision, cadrage dans la shortlist, section P2)
+
 - Lot C (avril-juin 2027) : paris-cafe-festival, tech-for-industry-show, france-air-expo, cycl-eau-bordeaux, sepem-martigues (nom officiel « SEPEM Martigues », étiquette Sud-Est, La Halle de Martigues, 8-9 juin 2027), documation, digital-workplace-paris
 - Lot D (fin juin 2027 à 2028) : euroforest, enviropro-toulouse, salon-funeraire, composites-meetings-europe, vs-pack, enviropro-sud-ouest, enviropro-nord
 

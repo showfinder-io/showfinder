@@ -22,7 +22,7 @@ const SALONS = new Set<string>(pub.salons_publies.map(first));
 const LIEUX = new Set<string>(pub.lieux.map(first));
 const SECTEURS = new Set<string>(pub.secteurs_valides.map(first));
 const ALLOWED = new Set(["HistoryTable", "BudgetTable", "DataMissing"]);
-const REQUIRED = ["slug", "name", "edition_year", "start_date", "end_date", "city", "website_url", "organizer_name", "frequency", "category", "sector_slugs", "description", "seo_title", "seo_description", "editorial_mdx", "alerts"];
+const REQUIRED = ["slug", "name", "edition_year", "start_date", "end_date", "city", "website_url", "organizer_name", "category", "sector_slugs", "description", "seo_title", "seo_description", "editorial_mdx", "alerts"];
 const REQUIRED_EN = ["description_en", "seo_title_en", "seo_description_en", "editorial_mdx_en"];
 
 async function checkMdx(src: string, venueCreated: string | null, errs: string[], label: string) {
@@ -46,7 +46,9 @@ for (const slug of slugs) {
   for (const k of [...REQUIRED, ...(EN ? REQUIRED_EN : [])]) if (h[k] === undefined || h[k] === null || h[k] === "") errs.push(`clé ${k} manquante`);
   if (h.slug !== slug) errs.push(`slug ${h.slug} != ${slug}`);
   if (!["salon_professionnel", "salon_grand_public", "congres", "autres"].includes(h.category)) errs.push(`category ${h.category}`);
-  if (!["annuel", "bisannuel", "semestriel", "ponctuel"].includes(h.frequency)) errs.push(`frequency ${h.frequency}`);
+  // frequency null admis : rythme irrégulier, la fiche n'affiche alors aucune fréquence (décision Julien 2026-09-26)
+  if (!("frequency" in h)) errs.push("clé frequency manquante");
+  else if (h.frequency !== null && !["annuel", "bisannuel", "semestriel", "ponctuel"].includes(h.frequency)) errs.push(`frequency ${h.frequency}`);
   for (const s of h.sector_slugs ?? []) if (!SECTEURS.has(s)) errs.push(`secteur ${s} invalide`);
   if (!(h.sector_slugs?.length >= 1 && h.sector_slugs.length <= 3)) errs.push("1 à 3 secteurs");
   if (!(h.start_date <= h.end_date)) errs.push("start_date > end_date");
