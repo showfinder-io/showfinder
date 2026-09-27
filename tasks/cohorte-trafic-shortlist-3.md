@@ -14,12 +14,23 @@ Règle appliquée strictement (CLAUDE.md #13) : aucun salon retenu sans lecture 
 
 **Tri des drafts du même jour.** Les 49 fiches draft ont été triées (handoff/drafts-triage-2026-09-27/) : 16 doublons de fiches publiées (tous déjà redirigés en 301 depuis juin), 10 salons arrêtés, 7 fantômes du seed, 5 en attente d'édition annoncée, 4 incertains, 1 seule fiche relancée en pipeline (SOFINS, ex-draft expodefensa-paris). rh-lyon, d'abord classé pipeline, est en réalité en sommeil depuis l'annulation de 2024 (dates de Préventica Lyon confondues).
 
-## Points à trancher (Julien)
+## Points tranchés (Julien, 2026-09-27)
+
+Les 4 propositions ci-dessous sont validées telles quelles : fiches Weyou séparées avec la co-localisation dite dans chaque fiche ; congrès médicaux en `salon_professionnel` ; une fiche par ville pour Rest'Hôtel et ENVIROpro ; Coutellia conservé seulement si le writer établit la dimension pro sur source primaire (sinon écarté). Ordre de rédaction : selon le scoring volume x concurrence (audits/scoring-candidats-2026-09-27, cf. tasks/strategie-longue-traine-2026-09-27.md), la vague 1 restant prioritaire pour les éditions imminentes.
 
 1. **Grappe Weyou à Cannes (7 fiches)** : Workplace, Health Center, Interior & Exterior Design (co-localisés fin novembre 2026), IT & Cybersecurity et Hotel & Restaurant (co-localisés fin mars 2027), Transports & Logistics et All4Customer Cannes (co-localisés fin septembre 2027). Format rendez-vous d'affaires à hosted buyers, même modèle que Heavent Cannes déjà publié. Proposition : fiches séparées (sites, marques et chiffres distincts), co-localisation dite dans chaque fiche, comme Première Classe et Who's Next.
 2. **Congrès médicaux avec exposition (6)** : SFRO, Carrefour Pathologie, JFHOD, JRO, SFD, SOFCOT. Exposition vérifiée pour chacun. Proposition : catégorie `salon_professionnel` (précédent AMRAE, Audioprothésistes), format congrès précisé dans le texte.
 3. **Réseaux régionaux** : Rest'Hôtel (Brest, La Teste, Tours, Caen ; un vérificateur n'a trouvé que 3 éditions sur la page réseau, La Teste confirmée sur sa page dédiée) et ENVIROpro Nord Dunkerque (édition distincte de Douai 2028, déjà en shortlist 2) : une fiche par ville, comme le réseau SEPEM.
 4. **Coutellia (Thiers)** : audience mixte (coutellerie d'art), 230 exposants. À garder seulement si la dimension pro est établie par le writer.
+
+## Ordre de rédaction : scoring volume x concurrence (2026-09-27)
+
+Méthode : pour les 44 salons ci-dessous et les 14 des lots C et D de la shortlist 2, volume Google Ads France du nom (nom, nom + année, salon + nom ; nom seul écarté quand il est ambigu) et SERP "nom année" (DataForSEO, 2,83 USD). Chacun des 579 résultats du top 10 a été classé par Jev (TypeSafe) : officiel, agrégateur, média, institutionnel, exposant, réseau social, hors sujet. Concurrents = pages tierces consacrées au salon (agrégateurs, médias, institutionnels), résultats à confiance < 0,4 exclus, site officiel repéré par son domaine. Score = demande mensuelle / (1 + concurrents). Tier A : au moins 100 recherches par mois et au plus 4 concurrents ; B : au moins 30 recherches ; C : le reste. Détail : `audits/scoring-candidats-2026-09-27/scoring.csv` (local).
+
+- **Tier A (17), à rédiger en premier** : JFHOD (720/mois, 0 concurrent), Congrès de la SOFCOT (1 600, 2), Documation (260, 0), Techinnov (880, 3), SFRO (590, 2), Tech For Industry Show (390, 1), SFD (140, 0), Euroforest (390, 2), Paris Café Festival (480, 3), Devoxx France (390, 3), Mifa (480, 4), All4Customer Cannes (110, 1), Vrac Tech (170, 3), World AI Cannes Festival (210, 4), SATIS (140, 3), Horesta (140, 4), Carrefour Pathologie (110, 3).
+- **Tier B (17)** : demande réelle mais concurrence plus dense (SETT, Salon Funéraire, France Air Expo, Coutellia, Salon Alpin, Eurocoat...) ou demande de 30 à 90 recherches par mois.
+- **Tier C (24)** : moins de 30 recherches par mois sur le nom (réseau Rest'Hôtel, la plupart des salons Weyou de Cannes, Rolling Stock Days, Assises CNCC, Cycl'Eau, Lyon Security Forum...). À rédiger après les tiers A et B, ou seulement si la fiche sert un maillage (filière, lieu).
+- Urgence : dans le tier A, SFRO (4-6 novembre), SATIS (4-5 novembre), Vrac Tech (17-19 novembre) et Carrefour Pathologie (18-20 novembre) ont lieu dans moins de 2 mois : premier lot.
 
 ## Reste de la shortlist 2 non rédigé
 
