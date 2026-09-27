@@ -25,7 +25,7 @@ export function formatDateRange(
   startDate: string | null,
   endDate: string | null
 ): string {
-  if (!startDate) return "Dates a confirmer";
+  if (!startDate) return "Dates à confirmer";
   if (!endDate) return formatDate(startDate);
 
   const start = new Date(startDate);
