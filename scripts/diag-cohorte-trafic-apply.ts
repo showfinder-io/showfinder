@@ -73,7 +73,10 @@ async function main() {
   for (const slug of slugs) {
     const h = JSON.parse(readFileSync(join(HANDOFF, `${slug}.json`), "utf8"));
     if (h.slug !== slug) throw new Error(`${slug}: slug du handoff (${h.slug}) différent`);
+    // Édition annoncée sans jour exact (cas techinnov) : dates nulles admises si dates_confirmed=false
+    const undated = h.dates_confirmed === false && h.start_date == null && h.end_date == null;
     for (const k of ["name", "start_date", "end_date", "city", "website_url", "editorial_mdx", "seo_title", "seo_description", "description", "editorial_mdx_en", "seo_title_en"]) {
+      if (undated && (k === "start_date" || k === "end_date")) continue;
       if (!h[k]) throw new Error(`${slug}: champ ${k} manquant ou vide dans le handoff`);
     }
     // Enum DB salon_category (lot 4 : un writer avait écrit "salon_pro", insert refusé en plein lot)
