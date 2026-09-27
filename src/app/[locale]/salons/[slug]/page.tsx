@@ -114,6 +114,7 @@ export default async function SalonPage({ params }: Props) {
   const { slug, locale } = await params;
   const salon = await getSalonBySlug(slug);
   const t = await getTranslations({ locale, namespace: "salon-detail" });
+  const tCommon = await getTranslations({ locale, namespace: "common" });
 
   if (!salon) notFound();
 
@@ -280,7 +281,14 @@ export default async function SalonPage({ params }: Props) {
           <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted">
             <div className="flex items-center gap-2">
               <Calendar className="h-4 w-4" aria-hidden="true" />
-              <span>{formatDateRange(salon.start_date, salon.end_date)}</span>
+              <span>
+                {formatDateRange(
+                  salon.start_date,
+                  salon.end_date,
+                  locale,
+                  tCommon("datesPending")
+                )}
+              </span>
             </div>
             {salon.venue && (
               <div className="flex items-center gap-2">
