@@ -1,0 +1,19 @@
+{
+  "slug": "sfar-congres-paris",
+  "name": "Congrès SFAR",
+  "status": "non-annoncee",
+  "checked_at": "2026-09-28",
+  "current": {
+    "start_date": "2026-09-16",
+    "end_date": "2026-09-18",
+    "edition_year": 2026,
+    "city": "Paris",
+    "venue": "Palais des Congrès de Paris"
+  },
+  "next": null,
+  "source_url": "https://www.sfar-lecongres.com/",
+  "quote": null,
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "Le site n'affiche que le congrès 2026, déjà passé au moment de la vérification. Aucune date annoncée pour l'édition 2027 à ce jour."
+}

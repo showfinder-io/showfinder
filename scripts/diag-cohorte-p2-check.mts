@@ -43,7 +43,14 @@ for (const slug of slugs) {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any -- handoff JSON brut, chaque champ est validé ci-dessous
   let h: Record<string, any>;
   try { h = JSON.parse(readFileSync(`${DIR}/${slug}.json`, "utf8")); } catch (e) { console.log(`FAIL ${slug}: ${(e as Error).message}`); failed++; continue; }
-  for (const k of [...REQUIRED, ...(EN ? REQUIRED_EN : [])]) if (h[k] === undefined || h[k] === null || h[k] === "") errs.push(`clé ${k} manquante`);
+  // Édition annoncée sans jour exact (cas solscope, techinnov) : dates nulles admises
+  // si dates_confirmed vaut false, jamais de date fictive.
+  const undated = h.dates_confirmed === false && h.start_date == null && h.end_date == null;
+  if (undated) warns.push("dates nulles (édition annoncée sans jour exact)");
+  for (const k of [...REQUIRED, ...(EN ? REQUIRED_EN : [])]) {
+    if (undated && (k === "start_date" || k === "end_date")) continue;
+    if (h[k] === undefined || h[k] === null || h[k] === "") errs.push(`clé ${k} manquante`);
+  }
   if (h.slug !== slug) errs.push(`slug ${h.slug} != ${slug}`);
   if (!["salon_professionnel", "salon_grand_public", "congres", "autres"].includes(h.category)) errs.push(`category ${h.category}`);
   // frequency null admis : rythme irrégulier, la fiche n'affiche alors aucune fréquence (décision Julien 2026-09-26)
@@ -51,8 +58,8 @@ for (const slug of slugs) {
   else if (h.frequency !== null && !["annuel", "bisannuel", "semestriel", "ponctuel"].includes(h.frequency)) errs.push(`frequency ${h.frequency}`);
   for (const s of h.sector_slugs ?? []) if (!SECTEURS.has(s)) errs.push(`secteur ${s} invalide`);
   if (!(h.sector_slugs?.length >= 1 && h.sector_slugs.length <= 3)) errs.push("1 à 3 secteurs");
-  if (!(h.start_date <= h.end_date)) errs.push("start_date > end_date");
-  if (h.start_date < "2026-09-25") errs.push(`start_date passée (${h.start_date})`);
+  if (!undated && !(h.start_date <= h.end_date)) errs.push("start_date > end_date");
+  if (!undated && h.start_date < "2026-09-25") errs.push(`start_date passée (${h.start_date})`);
   const venueCreated = h.venue_create?.slug ?? null;
   if (h.venue_slug && !LIEUX.has(h.venue_slug) && h.venue_slug !== venueCreated) errs.push(`venue_slug ${h.venue_slug} inconnu sans venue_create`);
   if (h.venue_create && LIEUX.has(h.venue_create.slug)) errs.push(`venue_create ${h.venue_create.slug} existe déjà`);

@@ -405,5 +405,33 @@
     "reasons": [
       "arbitrage en session : relecture mécanique : 'Rendez-vous les 15 et 16 septembre 2027 à Eurexpo Lyon pour la 13e édition' ; changement de lieu dans la même ville (Centre de Congrès de Lyon vers Eurexpo Lyon)"
     ]
+  },
+  "reeduca-paris": {
+    "outcome": "rejected",
+    "at": "2026-09-28",
+    "from": {
+      "start_date": "2026-09-17",
+      "end_date": "2026-09-19"
+    },
+    "to": null,
+    "source_url": "https://www.salonreeduca.com/fr-fr/Informations-Pratiques1.html",
+    "reasons": [
+      "source_url injoignable à la relecture"
+    ]
+  },
+  "space-rennes": {
+    "outcome": "applied",
+    "at": "2026-09-28",
+    "from": {
+      "start_date": "2026-09-15",
+      "end_date": "2026-09-17"
+    },
+    "to": {
+      "start_date": "2027-09-14",
+      "end_date": "2027-09-16",
+      "edition_year": 2027
+    },
+    "source_url": "https://www.space.fr/fr/",
+    "reasons": []
   }
 }

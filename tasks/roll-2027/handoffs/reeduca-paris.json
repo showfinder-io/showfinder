@@ -1,0 +1,25 @@
+{
+  "slug": "reeduca-paris",
+  "name": "Rééduca",
+  "status": "roll-pret",
+  "checked_at": "2026-09-28",
+  "current": {
+    "start_date": "2026-09-17",
+    "end_date": "2026-09-19",
+    "edition_year": 2026,
+    "city": "Paris",
+    "venue": "Paris Expo Porte de Versailles"
+  },
+  "next": {
+    "start_date": "2027-09-30",
+    "end_date": "2027-10-02",
+    "edition_year": 2027,
+    "city": "Paris",
+    "venue": "Paris Expo Porte de Versailles, Pavillon 5.2 et 5.3"
+  },
+  "source_url": "https://www.salonreeduca.com/fr-fr/Informations-Pratiques1.html",
+  "quote": "30 sept - 2 oct 2027",
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "Dates trouvées dans l'en-tête du site et la page Informations Pratiques. Le reste du site affiche encore le contenu éditorial de l'édition 2026, mais les dates 2027 sont publiées sans ambiguïté. Lieu inchangé (Porte de Versailles), pavillon précisé."
+}
