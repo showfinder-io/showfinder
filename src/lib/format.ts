@@ -1,85 +1,11 @@
 // Formatage des dates et nombres pour l'affichage
 
-const dateFormatter = new Intl.DateTimeFormat("fr-FR", {
-  day: "numeric",
-  month: "long",
-  year: "numeric",
-});
-
-const shortDateFormatter = new Intl.DateTimeFormat("fr-FR", {
-  day: "numeric",
-  month: "short",
-});
-
-export function formatDate(dateStr: string | null): string {
-  if (!dateStr) return "";
-  return dateFormatter.format(new Date(dateStr));
-}
-
-export function formatDateShort(dateStr: string | null): string {
-  if (!dateStr) return "";
-  return shortDateFormatter.format(new Date(dateStr));
-}
-
-export function formatDateRange(
-  startDate: string | null,
-  endDate: string | null
-): string {
-  if (!startDate) return "Dates à confirmer";
-  if (!endDate) return formatDate(startDate);
-
-  const start = new Date(startDate);
-  const end = new Date(endDate);
-
-  // Meme mois : "17 - 21 octobre 2026"
-  if (
-    start.getMonth() === end.getMonth() &&
-    start.getFullYear() === end.getFullYear()
-  ) {
-    return `${start.getDate()} - ${formatDate(endDate)}`;
-  }
-
-  // Mois differents : "28 sept. - 1 oct. 2026"
-  return `${formatDateShort(startDate)} - ${formatDate(endDate)}`;
-}
-
-/**
- * Variante avec flèche → comme séparateur, pour les visuels de marque
- * (SalonVisual). Conserve la logique de compression mois/année.
- */
-export function formatDateRangeArrow(
-  startDate: string | null,
-  endDate: string | null
-): string {
-  if (!startDate) return "Dates à confirmer";
-  if (!endDate) return formatDate(startDate);
-
-  const start = new Date(startDate);
-  const end = new Date(endDate);
-
-  if (
-    start.getMonth() === end.getMonth() &&
-    start.getFullYear() === end.getFullYear()
-  ) {
-    return `${start.getDate()} → ${formatDate(endDate)}`;
-  }
-
-  return `${formatDateShort(startDate)} → ${formatDate(endDate)}`;
-}
-
-/**
- * Helpers locale-aware pour la Phase 2 i18n.
- * Utilisent la locale fournie en paramètre (ex: "fr-FR" ou "en-GB").
- * Les fonctions sans suffixe _locale restent câblées sur fr-FR pour
- * la compatibilité avec le code existant (fallback FR).
- */
-
 /** Locale BCP-47 à utiliser pour Intl selon la locale next-intl ("fr" | "en"). */
 export function toIntlLocale(locale: string): string {
   return locale === "en" ? "en-GB" : "fr-FR";
 }
 
-export function formatDateLocale(dateStr: string | null, locale: string): string {
+export function formatDate(dateStr: string | null, locale: string): string {
   if (!dateStr) return "";
   return new Intl.DateTimeFormat(toIntlLocale(locale), {
     day: "numeric",
@@ -88,7 +14,7 @@ export function formatDateLocale(dateStr: string | null, locale: string): string
   }).format(new Date(dateStr));
 }
 
-export function formatDateShortLocale(dateStr: string | null, locale: string): string {
+export function formatDateShort(dateStr: string | null, locale: string): string {
   if (!dateStr) return "";
   return new Intl.DateTimeFormat(toIntlLocale(locale), {
     day: "numeric",
@@ -96,14 +22,46 @@ export function formatDateShortLocale(dateStr: string | null, locale: string): s
   }).format(new Date(dateStr));
 }
 
-export function formatDateRangeLocale(
+/**
+ * `pendingLabel` : libellé affiché sans date de début, fourni par l'appelant
+ * depuis messages/ (clé common.datesPending).
+ */
+export function formatDateRange(
   startDate: string | null,
   endDate: string | null,
   locale: string,
-  pendingLabel: string = locale === "en" ? "Dates to be confirmed" : "Dates à confirmer"
+  pendingLabel: string
 ): string {
   if (!startDate) return pendingLabel;
-  if (!endDate) return formatDateLocale(startDate, locale);
+  if (!endDate) return formatDate(startDate, locale);
+
+  const start = new Date(startDate);
+  const end = new Date(endDate);
+
+  // Meme mois : "17 - 21 octobre 2026" / "17 - 21 October 2026"
+  if (
+    start.getMonth() === end.getMonth() &&
+    start.getFullYear() === end.getFullYear()
+  ) {
+    return `${start.getDate()} - ${formatDate(endDate, locale)}`;
+  }
+
+  // Mois differents : "28 sept. - 1 oct. 2026" / "28 Sept - 1 October 2026"
+  return `${formatDateShort(startDate, locale)} - ${formatDate(endDate, locale)}`;
+}
+
+/**
+ * Variante avec flèche → comme séparateur, pour les visuels de marque
+ * (SalonVisual). Conserve la logique de compression mois/année.
+ */
+export function formatDateRangeArrow(
+  startDate: string | null,
+  endDate: string | null,
+  locale: string,
+  pendingLabel: string
+): string {
+  if (!startDate) return pendingLabel;
+  if (!endDate) return formatDate(startDate, locale);
 
   const start = new Date(startDate);
   const end = new Date(endDate);
@@ -112,10 +70,10 @@ export function formatDateRangeLocale(
     start.getMonth() === end.getMonth() &&
     start.getFullYear() === end.getFullYear()
   ) {
-    return `${start.getDate()} - ${formatDateLocale(endDate, locale)}`;
+    return `${start.getDate()} → ${formatDate(endDate, locale)}`;
   }
 
-  return `${formatDateShortLocale(startDate, locale)} - ${formatDateLocale(endDate, locale)}`;
+  return `${formatDateShort(startDate, locale)} → ${formatDate(endDate, locale)}`;
 }
 
 /**

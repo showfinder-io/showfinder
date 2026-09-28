@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { formatDateRange, formatNumber } from "@/lib/format";
 import { SectorBadge } from "@/components/sector-badge";
 import { AgorisCertifiedBadge } from "@/components/agoris-certified-badge";
@@ -21,6 +21,8 @@ type SalonCardProps = {
  */
 export async function SalonCard({ salon }: SalonCardProps) {
   const t = await getTranslations("card.salon");
+  const tCommon = await getTranslations("common");
+  const locale = await getLocale();
 
   const isPast =
     !!salon.start_date &&
@@ -98,7 +100,12 @@ export async function SalonCard({ salon }: SalonCardProps) {
             label={t("statDates")}
             value={
               salon.start_date
-                ? formatDateRange(salon.start_date, salon.end_date)
+                ? formatDateRange(
+                    salon.start_date,
+                    salon.end_date,
+                    locale,
+                    tCommon("datesPending")
+                  )
                 : null
             }
           />

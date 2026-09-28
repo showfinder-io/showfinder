@@ -2,6 +2,7 @@
   "connexion": "Connexion",
   "deconnexion": "Déconnexion",
   "loggedInAs": "Connecté en tant que",
+  "datesPending": "Dates à confirmer",
   "loading": "Chargement en cours",
   "photoPlaceholder": "[ Photo · {label} · à venir ]",
   "starRating": "{count, plural, one {# étoile} other {# étoiles}}",

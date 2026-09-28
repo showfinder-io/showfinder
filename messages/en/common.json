@@ -2,6 +2,7 @@
   "connexion": "Sign in",
   "deconnexion": "Sign out",
   "loggedInAs": "Signed in as",
+  "datesPending": "Dates to be confirmed",
   "loading": "Loading",
   "photoPlaceholder": "[ Photo · {label} · coming soon ]",
   "starRating": "{count, plural, one {# star} other {# stars}}",
