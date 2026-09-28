@@ -1,0 +1,25 @@
+{
+  "slug": "space-rennes",
+  "name": "SPACE",
+  "status": "roll-pret",
+  "checked_at": "2026-09-28",
+  "current": {
+    "start_date": "2026-09-15",
+    "end_date": "2026-09-17",
+    "edition_year": 2026,
+    "city": "Rennes",
+    "venue": "Parc Expo Rennes"
+  },
+  "next": {
+    "start_date": "2027-09-14",
+    "end_date": "2027-09-16",
+    "edition_year": 2027,
+    "city": "Rennes",
+    "venue": "Rennes parc expo"
+  },
+  "source_url": "https://www.space.fr/fr/",
+  "quote": "Rendez-vous les 14.15.16 septembre 2027, à Rennes parc expo, France.",
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "Annonce trouvée dans le message de clôture de l'édition 2026 sur la page d'accueil. Ville et lieu inchangés par rapport à la fiche actuelle, écart cohérent avec la fréquence annuelle."
+}

@@ -1,0 +1,19 @@
+{
+  "slug": "paris-retail-week",
+  "name": "NRF Retail's Big Show Europe",
+  "status": "non-annoncee",
+  "checked_at": "2026-09-28",
+  "current": {
+    "start_date": "2026-09-15",
+    "end_date": "2026-09-17",
+    "edition_year": 2026,
+    "city": "Paris",
+    "venue": "Paris Expo Porte de Versailles"
+  },
+  "next": null,
+  "source_url": "https://www.nrfbigshoweurope.com/en",
+  "quote": null,
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "La page d'accueil n'affiche que l'édition 2026, déjà passée, avec un message de remerciement post-événement ('THANK YOU FOR COMING TO NRF EUROPE!'). Aucune date annoncée pour la prochaine édition à ce jour."
+}
