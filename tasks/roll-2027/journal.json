@@ -407,17 +407,19 @@
     ]
   },
   "reeduca-paris": {
-    "outcome": "rejected",
+    "outcome": "applied",
     "at": "2026-09-28",
     "from": {
       "start_date": "2026-09-17",
       "end_date": "2026-09-19"
     },
-    "to": null,
-    "source_url": "https://www.salonreeduca.com/fr-fr/Informations-Pratiques1.html",
-    "reasons": [
-      "source_url injoignable à la relecture"
-    ]
+    "to": {
+      "start_date": "2027-09-30",
+      "end_date": "2027-10-02",
+      "edition_year": 2027
+    },
+    "source_url": "https://www.salonreeduca.com/",
+    "reasons": []
   },
   "space-rennes": {
     "outcome": "applied",
