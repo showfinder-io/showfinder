@@ -10,7 +10,8 @@
 //   ├── queries.csv        top 1500 requêtes
 //   ├── pages.csv          top 1500 pages
 //   ├── by-gabarit.csv     agrégat par gabarit de page
-//   └── countries.csv      top 50 pays
+//   ├── countries.csv      top 50 pays
+//   └── queries-by-page.csv  top 5000 couples (requête, page)
 //
 // Usage : ./node_modules/.bin/tsx scripts/gsc-baseline-export.ts
 //
@@ -346,6 +347,31 @@ async function main() {
   );
   console.log(`  ${countries.length} lignes\n`);
 
+  // 6. Couples (requête, page) : queries.csv et pages.csv sont chacun agrégés
+  // sur une seule dimension, sans ce croisement on ne sait pas quelle requête
+  // nourrit quelle page. Appel en dernier et non bloquant : un échec ici ne
+  // doit pas faire sauter la baseline.
+  console.log("→ Couples requête × page (max 5000)...");
+  let queriesByPage: GscPerformanceRow[] | null = null;
+  try {
+    queriesByPage = await queryPerformance({
+      siteUrl,
+      startDate: START,
+      endDate: END,
+      dimensions: ["query", "page"],
+      rowLimit: 5000,
+    });
+    writeFileSync(
+      path.join(outDir, "queries-by-page.csv"),
+      rowsToCsv(queriesByPage, ["query", "page"])
+    );
+    console.log(`  ${queriesByPage.length} lignes\n`);
+  } catch (err) {
+    console.warn(
+      `  ⚠️ queries-by-page.csv non généré : ${(err as Error).message}\n`
+    );
+  }
+
   // ─── Summary text ───
   const totalClicks = daily.reduce((s, r) => s + r.clicks, 0);
   const totalImpressions = daily.reduce((s, r) => s + r.impressions, 0);
@@ -413,6 +439,9 @@ async function main() {
     `  ${outDir}/pages.csv          ${pages.length} lignes`,
     `  ${outDir}/by-gabarit.csv     ${byGabarit.length} lignes`,
     `  ${outDir}/countries.csv      ${countries.length} lignes`,
+    `  ${outDir}/queries-by-page.csv ${
+      queriesByPage ? `${queriesByPage.length} lignes` : "échec, non généré"
+    }`,
     ``,
   ].join("\n");
 
