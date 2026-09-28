@@ -1,0 +1,19 @@
+{
+  "slug": "salon-vegetal-angers",
+  "name": "Salon du Végétal",
+  "status": "non-annoncee",
+  "checked_at": "2026-09-28",
+  "current": {
+    "start_date": "2026-09-15",
+    "end_date": "2026-09-17",
+    "edition_year": 2026,
+    "city": "Angers",
+    "venue": "Parc des Expositions d'Angers"
+  },
+  "next": null,
+  "source_url": "https://www.salonduvegetal.com/",
+  "quote": null,
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "Salon biennal. Le site n'affiche que l'édition 2026, sans mention d'une prochaine édition (attendue en 2028). Aucune date annoncée à ce jour."
+}

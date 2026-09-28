@@ -2,6 +2,19 @@
 
 Rapport alimenté chaque lundi par la routine cloud agoris-roll-2027-watch (détection des fiches publiées à édition passée, vérification des dates de la prochaine édition sur les sites officiels, handoffs dans handoffs/). Depuis le 2026-09-21 : la routine merge sa PR elle-même, puis .github/workflows/roll-apply.yml applique en base les roll-pret qui passent les garde-fous (scripts/roll-guards.ts). Résultats et rejets dans journal.json, refresh éditorial des fiches roulées via scripts/roll-apply-handoffs.ts --queue.
 
+## Lot du 2026-09-28
+
+| Slug | Ancienneté | Statut | Prochaine édition / raison | Source |
+|------|-----------:|--------|------------------------------|--------|
+| paris-retail-week | 11 jours | non-annoncee | Site (NRF Retail's Big Show Europe) figé sur l'édition passée du 15-17 septembre 2026, message de remerciement post-événement, aucune date 2027 annoncée | https://www.nrfbigshoweurope.com/en |
+| salon-vegetal-angers | 11 jours | non-annoncee | Salon biennal, site figé sur l'édition 2026, aucune date annoncée pour 2028 | https://www.salonduvegetal.com |
+| space-rennes | 11 jours | roll-pret | 14 au 16 septembre 2027, Rennes parc expo (ville et lieu inchangés) | https://www.space.fr/fr/ |
+| sfar-congres-paris | 10 jours | non-annoncee | Site figé sur le congrès 2026 (déjà passé), aucune date 2027 annoncée | https://www.sfar-lecongres.com |
+| reeduca-paris | 9 jours | roll-pret | 30 septembre au 2 octobre 2027, Paris Expo Porte de Versailles (lieu inchangé, pavillon 5.2/5.3 précisé) | https://www.salonreeduca.com/fr-fr/Informations-Pratiques1.html |
+| paris-design-week | 9 jours | a-arbitrer | Domaine redirigé vers maison-objet.com/paris-design-week, protection anti-bot (Incapsula) bloque toute lecture (curl et WebFetch), site non mort mais illisible | https://www.parisdesignweek.fr |
+
+Reste à traiter : 4 fiches périmées
+
 ## Lot du 2026-09-21 (complément, 6 fiches)
 
 Second lot traité le même jour, en dehors du rythme hebdomadaire habituel, pour poursuivre le rattrapage du stock de fiches périmées.

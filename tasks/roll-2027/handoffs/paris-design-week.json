@@ -1,0 +1,19 @@
+{
+  "slug": "paris-design-week",
+  "name": "Paris Design Week",
+  "status": "a-arbitrer",
+  "checked_at": "2026-09-28",
+  "current": {
+    "start_date": "2026-09-10",
+    "end_date": "2026-09-19",
+    "edition_year": 2026,
+    "city": "Paris",
+    "venue": "Divers lieux Paris"
+  },
+  "next": null,
+  "source_url": null,
+  "quote": null,
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "Le domaine parisdesignweek.fr redirige vers maison-objet.com/paris-design-week, protégé par une protection anti-bot (Incapsula) qui renvoie une page de challenge JS ou un 503 avec tous les outils disponibles (curl, WebFetch). Impossible de lire les dates de la prochaine édition depuis une source officielle. Le site n'est pas mort (il répond), donc pas de recherche via WebSearch pour les dates. A vérifier manuellement."
+}
