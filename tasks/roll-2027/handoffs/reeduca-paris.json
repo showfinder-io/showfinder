@@ -17,9 +17,9 @@
     "city": "Paris",
     "venue": "Paris Expo Porte de Versailles, Pavillon 5.2 et 5.3"
   },
-  "source_url": "https://www.salonreeduca.com/fr-fr/Informations-Pratiques1.html",
+  "source_url": "https://www.salonreeduca.com/",
   "quote": "30 sept - 2 oct 2027",
   "venue_changed": false,
   "city_changed": false,
-  "notes": "Dates trouvées dans l'en-tête du site et la page Informations Pratiques. Le reste du site affiche encore le contenu éditorial de l'édition 2026, mais les dates 2027 sont publiées sans ambiguïté. Lieu inchangé (Porte de Versailles), pavillon précisé."
+  "notes": "Dates trouvées dans l'en-tête du site et la page Informations Pratiques. Le reste du site affiche encore le contenu éditorial de l'édition 2026, mais les dates 2027 sont publiées sans ambiguïté. Lieu inchangé (Porte de Versailles), pavillon précisé. Source repointée le 2026-09-28 sur la page d accueil (Informations-Pratiques1.html répond 404) : elle affiche \"30 sept - 2 oct 2027\" et Porte de Versailles, Pavillon 5.2 et 5.3."
 }
