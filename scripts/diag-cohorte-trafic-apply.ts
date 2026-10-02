@@ -60,7 +60,7 @@ async function main() {
       published.push(slug);
     }
     // IndexNow (Bing, Yandex, Ecosia...) : notification des URLs FR + EN
-    // fraîchement publiées. Jamais bloquant : sans clé, simple "skipped".
+    // fraîchement publiées. Jamais bloquant : un échec est seulement journalisé.
     // NB : les pages sont en SSG, la notification n'a de sens qu'une fois le
     // déploiement Vercel effectif ; relancer scripts/indexnow-submit.ts si besoin.
     if (published.length) {
