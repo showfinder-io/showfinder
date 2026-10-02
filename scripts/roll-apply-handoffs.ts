@@ -17,7 +17,7 @@
 import { appendFileSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { createClient } from "@supabase/supabase-js";
-import { getIndexNowKey, localizedUrls, submitIndexNow } from "../src/lib/indexnow";
+import { localizedUrls, submitIndexNow } from "../src/lib/indexnow";
 import { checkHandoff, MONTHS, normalizeText, pageCarriesDates, quoteFoundInPage, type Handoff, type SalonRow } from "./roll-guards";
 
 if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) {
@@ -151,7 +151,7 @@ async function main() {
 
   if (APPLY) {
     writeFileSync(JOURNAL, JSON.stringify(journal, null, 2) + "\n");
-    if (applied.length && getIndexNowKey()) {
+    if (applied.length) {
       const res = await submitIndexNow(applied.flatMap((s) => localizedUrls(`/salons/${s}`)));
       console.log("IndexNow :", JSON.stringify(res));
     }

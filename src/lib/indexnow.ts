@@ -7,11 +7,15 @@
  * d'URLs (max 10 000 par appel). La clé est vérifiée par les moteurs en
  * lisant `keyLocation` sur notre hôte (route src/app/indexnow-key.txt).
  *
- * La clé vit dans INDEXNOW_KEY (variable d'environnement, jamais en dur).
- * Sans clé, `submitIndexNow` ne fait rien et le signale : aucun appel
- * réseau, aucune erreur bloquante (la publication ne doit jamais échouer à
- * cause d'IndexNow).
+ * Clé en dur, exception assumée à la règle "jamais de clé en dur" (décision
+ * Julien 2026-10-02) : une clé IndexNow n'est pas un secret, le protocole
+ * impose de la publier en clair à keyLocation pour prouver le contrôle du
+ * domaine. Elle remplace INDEXNOW_KEY, qui n'a jamais pu être posée sur
+ * Vercel (projet visible du seul compte propriétaire). Les échecs ne sont
+ * jamais bloquants (la publication ne doit jamais échouer à cause d'IndexNow).
  */
+
+const INDEXNOW_KEY = "55f138f0a93fb9f23df2ea0cd6c866d6";
 
 const INDEXNOW_ENDPOINT = "https://api.indexnow.org/IndexNow";
 const MAX_URLS_PER_CALL = 10_000;
@@ -26,10 +30,9 @@ export function getSiteUrl(): string {
   return (process.env.NEXT_PUBLIC_APP_URL || "https://www.agoris.io").replace(/\/$/, "");
 }
 
-/** Clé IndexNow courante, ou null si non configurée. */
-export function getIndexNowKey(): string | null {
-  const key = process.env.INDEXNOW_KEY?.trim();
-  return key && key.length >= 8 ? key : null;
+/** Clé IndexNow (publique par conception, servie sur /indexnow-key.txt). */
+export function getIndexNowKey(): string {
+  return INDEXNOW_KEY;
 }
 
 /** Construit les URLs FR + EN pour un chemin sans préfixe de locale ("/salons/sial-paris"). */
@@ -45,7 +48,6 @@ export function localizedUrls(path: string): string[] {
  */
 export async function submitIndexNow(urls: string[]): Promise<IndexNowResult> {
   const key = getIndexNowKey();
-  if (!key) return { status: "skipped", reason: "INDEXNOW_KEY absente" };
 
   const site = getSiteUrl();
   const host = new URL(site).host;

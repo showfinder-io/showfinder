@@ -9,7 +9,7 @@
  *   ./node_modules/.bin/tsx scripts/indexnow-submit.ts --sitemap          # tout le sitemap live
  *   ... --dry-run pour lister sans envoyer.
  *
- * Requiert INDEXNOW_KEY (même valeur que sur Vercel, cf. src/lib/indexnow.ts).
+ * Clé IndexNow : constante publique de src/lib/indexnow.ts.
  */
 import { getSiteUrl, localizedUrls, submitIndexNow } from "../src/lib/indexnow";
 
