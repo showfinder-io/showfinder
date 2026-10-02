@@ -8,7 +8,9 @@
  *    c'est ce que voit l'utilisateur par défaut, et le coût est porté par la
  *    recherche web, pas par le modèle.
  * 2. Détection par le code : domaines cités, mention d'Agoris, concurrents.
- * 3. Jugement (Haiku) : une page Agoris existante répond-elle à la question ?
+ * 3. Jugement (Jev ou Haiku) : une page Agoris existante répond-elle à la
+ *    question ? Le juge voit l'URL et le <title> de chaque page (un slug seul
+ *    ne dit pas qu'une fiche répond, ex. terres-de-jim pour la finale de labour).
  *    "aucune" = trou de couverture pour le backlog éditorial.
  *
  * Lecture seule, aucun accès DB. Les réponses brutes sont mises en cache :
@@ -59,6 +61,7 @@ type Answer = {
   error?: string;
 };
 type Coverage = { url: string | null; confidence: string };
+type Page = { url: string; title: string };
 
 const args = process.argv.slice(2);
 const flag = (name: string) => {
@@ -177,14 +180,34 @@ const ASK: Record<Engine, (p: string) => Promise<Omit<Answer, "promptId" | "engi
 
 // ─── Jugement : couverture par une page Agoris existante ───────────────
 
-async function loadSitePages(): Promise<string[]> {
+// <title> de chaque page FR, lu sur le site (= seo_title pour une fiche), mis en
+// cache par jour pour ne pas refaire ~400 requêtes à chaque relance.
+async function loadSitePages(date: string): Promise<Page[]> {
   const xml = await (await fetch(`https://www.${SITE}/sitemap.xml`)).text();
-  return [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)]
+  const urls = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)]
     .map((m) => m[1])
     .filter((u) => !u.includes("/en/") && !u.endsWith("/en"));
+  const cachePath = `scripts/output/geo-page-titles-${date}.json`;
+  const cache: Record<string, string> = existsSync(cachePath) ? JSON.parse(readFileSync(cachePath, "utf-8")) : {};
+  const todo = urls.filter((u) => !(u in cache));
+  for (let i = 0; i < todo.length; i += 8) {
+    await Promise.all(
+      todo.slice(i, i + 8).map(async (u) => {
+        try {
+          const html = await (await fetch(u)).text();
+          const t = html.match(/<title[^>]*>([^<]*)<\/title>/i)?.[1] ?? "";
+          cache[u] = t.replace(/&amp;/g, "&").replace(/&#x27;|&#39;/g, "'").replace(/&quot;/g, '"').trim();
+        } catch {
+          cache[u] = "";
+        }
+      })
+    );
+  }
+  writeFileSync(cachePath, JSON.stringify(cache, null, 2));
+  return urls.map((url) => ({ url, title: cache[url] ?? "" }));
 }
 
-async function judgeCoverage(prompt: string, pages: string[]): Promise<Coverage> {
+async function judgeCoverage(prompt: string, pages: Page[]): Promise<Coverage> {
   const json = await post(
     "https://api.anthropic.com/v1/messages",
     { "x-api-key": process.env.ANTHROPIC_API_KEY!, "anthropic-version": "2023-06-01" },
@@ -196,9 +219,9 @@ async function judgeCoverage(prompt: string, pages: string[]): Promise<Coverage>
           type: "text",
           text:
             "Voici la liste des pages publiées du site agoris.io (annuaire éditorial des salons professionnels français). " +
-            "Pour la question posée, désigne LA page dont le sujet répond le plus directement à la question, d'après son URL. " +
+            "Pour la question posée, désigne LA page dont le sujet répond le plus directement à la question, d'après son URL et son titre. " +
             'Si aucune page ne traite ce sujet, réponds null. Réponds uniquement en JSON : {"url": "<url exacte de la liste>" | null, "confidence": "haute" | "moyenne" | "faible"}.\n\n' +
-            pages.join("\n"),
+            pages.map((p) => `${p.url} | ${p.title}`).join("\n"),
           cache_control: { type: "ephemeral" },
         },
       ],
@@ -209,7 +232,7 @@ async function judgeCoverage(prompt: string, pages: string[]): Promise<Coverage>
   try {
     const parsed = JSON.parse(raw.slice(raw.indexOf("{"), raw.lastIndexOf("}") + 1));
     // Garde-fou : une URL hors liste est une invention du juge, on la rejette.
-    const url = parsed.url && pages.includes(parsed.url) ? parsed.url : null;
+    const url = parsed.url && pages.some((p) => p.url === parsed.url) ? parsed.url : null;
     return { url, confidence: String(parsed.confidence ?? "") };
   } catch {
     return { url: null, confidence: "illisible" };
@@ -219,7 +242,7 @@ async function judgeCoverage(prompt: string, pages: string[]): Promise<Coverage>
 // Variante Jev (TypeSafe), utilisée si TYPESAFE_API_KEY est présente. Jev choisit
 // parmi des options (255 max) au lieu de générer : le code présélectionne donc
 // les candidates. Toutes les pages hors fiches salon, plus les fiches dont le
-// slug partage un mot avec la question. Contrat d'API repris de
+// slug ou le titre partage un mot avec la question. Contrat d'API repris de
 // ~/MIA-second-brain/tools/veille-ia/judge.py.
 const tokens = (s: string) =>
   s
@@ -229,17 +252,19 @@ const tokens = (s: string) =>
     .split(/[^a-z0-9]+/)
     .filter((t) => t.length >= 4 && !["salon", "salons", "quel", "quels", "quelles", "sont", "2026", "2027"].includes(t));
 
-async function judgeCoverageJev(prompt: string, pages: string[]): Promise<Coverage> {
+async function judgeCoverageJev(prompt: string, pages: Page[]): Promise<Coverage> {
   const words = new Set(tokens(prompt));
   const candidates = pages
-    .filter((u) => !u.includes("/salons/") || tokens(u.split("/salons/")[1]).some((t) => words.has(t)))
+    .filter(
+      (p) => !p.url.includes("/salons/") || tokens(`${p.url.split("/salons/")[1]} ${p.title}`).some((t) => words.has(t))
+    )
     .slice(0, 250);
   const criteria: Record<string, string> = {
     none: "No page in the list is about the subject of the question.",
   };
-  for (const u of candidates) {
-    const p = new URL(u).pathname || "/";
-    criteria[p] = `Page of the French trade show directory agoris.io at path ${p}`;
+  for (const c of candidates) {
+    const p = new URL(c.url).pathname || "/";
+    criteria[p] = `Page of the French trade show directory agoris.io at path ${p}, titled "${c.title}"`;
   }
   const json = await post(
     "https://api.typesafe.ai/v1/systemone",
@@ -251,14 +276,14 @@ async function judgeCoverageJev(prompt: string, pages: string[]): Promise<Covera
         coverage: {
           type: "choice",
           instructions:
-            "Which page of the site most directly answers the French-language `question`, judging by the subject its URL path describes?",
+            "Which page of the site most directly answers the French-language `question`, judging by the subject its URL path and title describe?",
           criteria,
         },
       },
     }
   );
   const a = json.answers.coverage;
-  const url = a.choice === "none" ? null : candidates.find((u) => (new URL(u).pathname || "/") === a.choice) ?? null;
+  const url = a.choice === "none" ? null : candidates.find((c) => (new URL(c.url).pathname || "/") === a.choice)?.url ?? null;
   return { url, confidence: `jev ${Number(a.confidence).toFixed(2)}` };
 }
 
@@ -278,7 +303,7 @@ async function main() {
     : { answers: [], coverage: {} };
   const save = () => writeFileSync(rawPath, JSON.stringify(store, null, 2));
 
-  const pages = noJudge ? [] : await loadSitePages();
+  const pages = noJudge ? [] : await loadSitePages(date);
   if (!noJudge) console.log(`${pages.length} pages FR dans le sitemap`);
 
   for (const [i, p] of prompts.entries()) {
