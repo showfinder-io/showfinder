@@ -51,12 +51,13 @@ export async function getSectorContent(
       ? (raw.description_en as string)
       : null) ?? (raw.description as string | null);
 
+  const period = sectorTitlePeriod(new Date());
   return {
     frontmatter: {
       title:
         locale === "en"
-          ? `${name} Trade Shows: 2026 Sector Analysis in France`
-          : `Salons ${name} : analyse 2026 du secteur en France`,
+          ? `${name} Trade Shows: ${period} Sector Analysis in France`
+          : `Salons ${name} : analyse ${period} du secteur en France`,
       description:
         description ??
         (locale === "en"
@@ -66,6 +67,17 @@ export async function getSectorContent(
     },
     content: mdx,
   };
+}
+
+/**
+ * Période affichée dans le titre des pages secteur : l'année en cours de
+ * janvier à août, puis "année-année suivante" à partir de septembre, quand
+ * les recherches basculent vers l'année suivante (ex. "2026-2027" en
+ * octobre 2026, "2027" en mars 2027). Calculée au rendu de la page.
+ */
+export function sectorTitlePeriod(now: Date): string {
+  const year = now.getFullYear();
+  return now.getMonth() >= 8 ? `${year}-${year + 1}` : `${year}`;
 }
 
 /**
