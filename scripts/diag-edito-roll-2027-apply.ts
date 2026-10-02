@@ -93,7 +93,8 @@ async function main() {
       console.log(`REJET ${slug} :\n  - ${issues.join("\n  - ")}`);
       continue;
     }
-    const patch: Record<string, unknown> = { editorial_mdx: fr, editorial_mdx_en: en };
+    // editorial_updated_at alimente la mention "mise à jour <mois>" de la fiche.
+    const patch: Record<string, unknown> = { editorial_mdx: fr, editorial_mdx_en: en, editorial_updated_at: new Date().toISOString() };
     for (const f of SEO_FIELDS) if (input[f] !== null) patch[f] = meta[f];
     console.log(`UPDATE ${slug} : FR ${input.editorial_mdx.length}c -> ${fr.length}c | EN ${String(input.editorial_mdx_en).length}c -> ${en.length}c | SEO ${Object.keys(patch).filter((k) => k.startsWith("seo")).join(",") || "inchangé"}`);
     if (APPLY) {
