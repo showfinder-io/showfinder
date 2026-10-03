@@ -16,12 +16,12 @@ export async function GET(request: Request) {
 
     const supabase = await createClient();
 
-    const { data, error } = await supabase
-      .from("alerts")
-      .select("id, alert_type, salon_slug, sector_slug, created_at")
-      .eq("email", email.trim().toLowerCase())
-      .eq("is_active", true)
-      .order("created_at", { ascending: false });
+    // Fonction SECURITY DEFINER limitée à l'e-mail fourni : la table alerts
+    // n'est plus lisible avec la clé publique (migration 20261003020000).
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const { data, error } = await (supabase as any).rpc("alerts_for_email", {
+      p_email: email.trim().toLowerCase(),
+    });
 
     if (error) {
       console.error("Erreur lecture alertes:", error);
@@ -55,11 +55,11 @@ export async function PATCH(request: Request) {
 
     const supabase = await createClient();
 
-    const { error } = await supabase
-      .from("alerts")
-      .update({ is_active: false })
-      .eq("id", alertId)
-      .eq("email", email.trim().toLowerCase());
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const { error } = await (supabase as any).rpc("alert_unsubscribe", {
+      p_id: alertId,
+      p_email: email.trim().toLowerCase(),
+    });
 
     if (error) {
       console.error("Erreur désactivation alerte:", error);

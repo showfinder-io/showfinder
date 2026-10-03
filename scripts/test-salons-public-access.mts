@@ -1,5 +1,5 @@
 /**
- * Régression : ce que la clé publique (anon) peut lire sur `salons`.
+ * Régression : ce que la clé publique (anon) peut lire sur `salons` et les tables à données personnelles.
  * Garde la migration 20261003000000_salons_internal_columns_private :
  *  - colonnes internes (notes_internes, scraper_conflicts, locked_fields,
  *    alert_flag) illisibles, sur la table comme sur la vue salons_ordered ;
@@ -33,6 +33,14 @@ const pub = await anon.from("salons").select(SALON_PUBLIC_COLUMNS).eq("status", 
 check(!pub.error && (pub.data ?? []).length === 3, "colonnes publiques lisibles");
 const view = await anon.from("salons_ordered" as never).select("id, slug, sort_key").eq("status", "published").limit(3);
 check(!view.error && (view.data ?? []).length === 3, "vue salons_ordered lisible");
+
+// Données personnelles (migration 20261003020000) : rien de lisible en anon.
+for (const table of ["alerts", "quotes", "reports", "contact_messages"]) {
+  const r = await anon.from(table as never).select("id").limit(1);
+  check(!!r.error || (r.data ?? []).length === 0, `${table} : aucune ligne lisible par anon`);
+}
+const unsub = await anon.rpc("alerts_for_email" as never, { p_email: "personne-inexistante@example.invalid" } as never);
+check(!unsub.error, "désinscription : alerts_for_email accessible à anon");
 
 console.log(failed ? `${failed} échec(s)` : "tout est OK");
 process.exit(failed ? 1 : 0);
