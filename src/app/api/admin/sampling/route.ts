@@ -5,6 +5,7 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { isAdmin } from "@/lib/admin";
+import { withSalonInternals } from "@/lib/salon-columns";
 
 const SIX_MONTHS_MS = 1000 * 60 * 60 * 24 * 30 * 6;
 
@@ -25,7 +26,7 @@ export async function GET() {
   const { data, error } = await supabase
     .from("salons")
     .select(
-      "id, slug, name, status, start_date, end_date, city, venue, organizer_name, last_human_check_at, last_ia_update_at, alert_flag, locked_fields"
+      "id, slug, name, status, start_date, end_date, city, venue, organizer_name, last_human_check_at, last_ia_update_at"
     )
     .not("editorial_mdx", "is", null)
     .or(
@@ -40,7 +41,7 @@ export async function GET() {
   // Shuffle + take 5 (Postgres ORDER BY random() coûte cher sur grandes tables,
   // donc on récupère 50 candidats et on shuffle côté serveur).
   const shuffled = [...(data ?? [])].sort(() => Math.random() - 0.5);
-  const sample = shuffled.slice(0, 5);
+  const sample = await withSalonInternals(supabase, shuffled.slice(0, 5));
 
   return NextResponse.json({
     sample,

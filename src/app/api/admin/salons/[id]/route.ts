@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { isAdmin } from "@/lib/admin";
+import { SALON_PUBLIC_COLUMNS, withSalonInternals } from "@/lib/salon-columns";
 
 export async function GET(
   _request: NextRequest,
@@ -15,7 +16,7 @@ export async function GET(
 
   const { data, error } = await supabase
     .from("salons")
-    .select("*, salon_sectors(sector_id)")
+    .select(`${SALON_PUBLIC_COLUMNS}, salon_sectors(sector_id)`)
     .eq("id", id)
     .single();
 
@@ -24,8 +25,9 @@ export async function GET(
   }
 
   // Aplatir les sector_ids dans un tableau simple pour le formulaire
+  const [withInternals] = await withSalonInternals(supabase, [data as unknown as { id: string }]);
   const salonWithSectors = {
-    ...data,
+    ...withInternals,
     sector_ids: (data.salon_sectors as { sector_id: string }[] | null ?? []).map((ss) => ss.sector_id),
   };
 
@@ -60,7 +62,7 @@ export async function PUT(
     .from("salons")
     .update(body)
     .eq("id", id)
-    .select()
+    .select(SALON_PUBLIC_COLUMNS)
     .single();
 
   if (error) {
