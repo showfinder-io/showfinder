@@ -110,6 +110,17 @@ export type SalonFilters = {
 // ------------------------------------------------------------
 
 /**
+ * Colonnes des listes de salons (cartes, similaires, villes, lieux) lues dans
+ * la vue salons_ordered. Tout sauf editorial_mdx (MDX complet, inutile aux
+ * cartes) et les colonnes de recherche : mesuré le 2026-10-03, la requête de
+ * liste était la plus coûteuse de la base (pg_stat_statements : 242 000 appels,
+ * 37 % du temps SQL) et renvoyait 271 Ko pour 20 cartes, 60 Ko sans le MDX.
+ * La vue n'expose pas les colonnes _en (s.* figé à sa création).
+ */
+const SALON_LIST_SELECT =
+  "id, slug, name, edition_year, description, start_date, end_date, city, venue, venue_lat, venue_lng, country, website_url, organizer_name, organizer_email, frequency, estimated_exhibitors, estimated_visitors, is_premium, status, logo_url, cover_image_url, seo_title, seo_description, created_at, updated_at, venue_id, is_locked, source_url, last_scraped_at, scraper_conflicts, is_agoris_certified, co_organizer_name, edition_number, locked_fields, notes_internes, last_human_check_at, last_ia_update_at, alert_flag, editorial_updated_at, category, category_to_confirm, dates_confirmed, salon_sectors(sector_id, sectors(id, slug, name))";
+
+/**
  * Normalise une chaîne de recherche pour la rendre agnostique aux accents et à la casse.
  * Utilisée pour matcher contre les colonnes `name_search` et `description_search` de la view
  * `salons_ordered`, déjà stockées en lower(unaccent(...)).
@@ -131,7 +142,7 @@ export async function getSalons(filters: SalonFilters = {}) {
   // View salons_ordered : expose un sort_key qui encode "upcoming ASC puis past DESC"
   let query = supabase
     .from("salons_ordered" as unknown as "salons")
-    .select("*, salon_sectors(sector_id, sectors(id, slug, name))", {
+    .select(SALON_LIST_SELECT, {
       count: "exact",
     })
     .eq("status", "published");
@@ -280,7 +291,7 @@ async function getSalonsById(
 
   let query = supabase
     .from("salons_ordered" as unknown as "salons")
-    .select("*, salon_sectors(sector_id, sectors(id, slug, name))", {
+    .select(SALON_LIST_SELECT, {
       count: "exact",
     })
     .eq("status", "published")
@@ -462,7 +473,7 @@ export async function getSimilarSalons(
 
   const { data, error } = await supabase
     .from("salons_ordered" as unknown as "salons")
-    .select("*, salon_sectors(sector_id, sectors(id, slug, name))")
+    .select(SALON_LIST_SELECT)
     .eq("status", "published")
     .in("id", salonIds)
     .order("sort_key" as never, { ascending: true })
@@ -734,7 +745,7 @@ export async function getSalonsByCity(city: string) {
 
   const { data, error } = await supabase
     .from("salons_ordered" as unknown as "salons")
-    .select("*, salon_sectors(sector_id, sectors(id, slug, name))")
+    .select(SALON_LIST_SELECT)
     .eq("status", "published")
     .eq("city", city)
     .order("sort_key" as never, { ascending: true });
@@ -876,7 +887,7 @@ export async function getSalonsByVenue(venueId: string) {
 
   const { data, error } = await supabase
     .from("salons_ordered" as unknown as "salons")
-    .select("*, salon_sectors(sector_id, sectors(id, slug, name))")
+    .select(SALON_LIST_SELECT)
     .eq("status", "published")
     .eq("venue_id", venueId)
     .order("sort_key" as never, { ascending: true });
