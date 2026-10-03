@@ -1,6 +1,7 @@
 import { createClient } from "@/lib/supabase/server";
 import { createStaticClient } from "@/lib/supabase/static";
 import { slugifyCity } from "@/lib/format";
+import { SALON_PUBLIC_COLUMNS } from "@/lib/salon-columns";
 
 // Types helpers
 export type SalonCategory =
@@ -118,7 +119,7 @@ export type SalonFilters = {
  * La vue n'expose pas les colonnes _en (s.* figé à sa création).
  */
 const SALON_LIST_SELECT =
-  "id, slug, name, edition_year, description, start_date, end_date, city, venue, venue_lat, venue_lng, country, website_url, organizer_name, organizer_email, frequency, estimated_exhibitors, estimated_visitors, is_premium, status, logo_url, cover_image_url, seo_title, seo_description, created_at, updated_at, venue_id, is_locked, source_url, last_scraped_at, scraper_conflicts, is_agoris_certified, co_organizer_name, edition_number, locked_fields, notes_internes, last_human_check_at, last_ia_update_at, alert_flag, editorial_updated_at, category, category_to_confirm, dates_confirmed, salon_sectors(sector_id, sectors(id, slug, name))";
+  "id, slug, name, edition_year, description, start_date, end_date, city, venue, venue_lat, venue_lng, country, website_url, organizer_name, organizer_email, frequency, estimated_exhibitors, estimated_visitors, is_premium, status, logo_url, cover_image_url, seo_title, seo_description, created_at, updated_at, venue_id, is_locked, source_url, last_scraped_at, is_agoris_certified, co_organizer_name, edition_number, last_human_check_at, last_ia_update_at, editorial_updated_at, category, category_to_confirm, dates_confirmed, salon_sectors(sector_id, sectors(id, slug, name))";
 
 /**
  * Normalise une chaîne de recherche pour la rendre agnostique aux accents et à la casse.
@@ -377,7 +378,7 @@ export async function getSalonBySlug(slug: string) {
   const { data, error } = await supabase
     .from("salons")
     .select(
-      "*, venues(slug), salon_sectors(sector_id, sectors(id, slug, name)), salon_tags(id, label, category, color)"
+      `${SALON_PUBLIC_COLUMNS}, venues(slug), salon_sectors(sector_id, sectors(id, slug, name)), salon_tags(id, label, category, color)`
     )
     .eq("slug", slug)
     .eq("status", "published")

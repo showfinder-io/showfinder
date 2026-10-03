@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { isAdmin } from "@/lib/admin";
+import { SALON_PUBLIC_COLUMNS } from "@/lib/salon-columns";
 
 export async function GET(request: NextRequest) {
   if (!(await isAdmin())) {
@@ -32,7 +33,7 @@ export async function GET(request: NextRequest) {
     query,
     supabase
       .from("salons")
-      .select("*", { count: "exact", head: true })
+      .select("id", { count: "exact", head: true })
       .eq("is_locked", true),
   ]);
 
@@ -64,7 +65,7 @@ export async function POST(request: NextRequest) {
   const { data, error } = await supabase
     .from("salons")
     .insert(body)
-    .select()
+    .select(SALON_PUBLIC_COLUMNS)
     .single();
 
   if (error) {
