@@ -8,7 +8,7 @@
  * Usage : ./node_modules/.bin/tsx --env-file=.env.local scripts/test-salons-public-access.mts
  */
 import { createClient } from "@supabase/supabase-js";
-import * as columns from "../src/lib/salon-columns.ts";
+import * as columns from "../src/lib/salon-columns";
 
 // Module TS chargé en CommonJS : les exports nommés sont sous default.
 const { SALON_INTERNAL_COLUMNS, SALON_PUBLIC_COLUMNS } = ((columns as unknown as { default?: typeof columns }).default ?? columns);
