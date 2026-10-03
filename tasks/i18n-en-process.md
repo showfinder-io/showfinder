@@ -50,3 +50,8 @@ Pipeline writer/reviewer (workflow connu, fan-out sur N agents, prioriser par tr
 ## Points encore ouverts
 - Politique de fallback exacte pour une page sans `_en` (cacher en EN vs servir FR avec hreflang) : à trancher en Phase 0.
 - Faut-il traduire le blog MDX (dans /content) en plus du contenu DB ? À confirmer.
+
+
+## Format monétaire (décision 2026-10-03)
+
+En anglais : « €4,500 », « ~€12,000 », « €2,500-€8,000 », « €4,500 excl. VAT » (symbole avant le montant, virgule des milliers). Jamais « 4,500 € » ni « 4 500 € » ni « 4,500 euros ». Harmonisation automatique : scripts/lib-en-currency.mjs.

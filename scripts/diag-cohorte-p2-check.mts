@@ -10,13 +10,15 @@
  *
  * Usage : ./node_modules/.bin/tsx scripts/diag-cohorte-p2-check.mts [--en] slug1 slug2 ...
  */
-import { readFileSync } from "node:fs";
+import { readdirSync, readFileSync } from "node:fs";
 import { compile } from "@mdx-js/mdx";
 
 const DIR = "handoff/cohorte-trafic";
 const EN = process.argv.includes("--en");
 const slugs = process.argv.slice(2).filter((a) => !a.startsWith("--"));
-const pub = JSON.parse(readFileSync(`${DIR}/published-slugs-2026-09-25.json`, "utf8"));
+// Liste de slugs publiés la plus récente (published-slugs-AAAA-MM-JJ.json, régénérée à chaque cohorte).
+const latestSlugs = readdirSync(DIR).filter((f) => /^published-slugs-\d{4}-\d{2}-\d{2}\.json$/.test(f)).sort().at(-1)!;
+const pub = JSON.parse(readFileSync(`${DIR}/${latestSlugs}`, "utf8"));
 const first = (l: string) => l.split(" | ")[0];
 const SALONS = new Set<string>(pub.salons_publies.map(first));
 const LIEUX = new Set<string>(pub.lieux.map(first));
