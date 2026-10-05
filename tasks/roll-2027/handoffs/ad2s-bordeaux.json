@@ -1,0 +1,19 @@
+{
+  "slug": "ad2s-bordeaux",
+  "name": "AD2S",
+  "status": "non-annoncee",
+  "checked_at": "2026-10-05",
+  "current": {
+    "start_date": "2026-09-22",
+    "end_date": "2026-09-24",
+    "edition_year": 2026,
+    "city": "Mérignac",
+    "venue": "Base aérienne 106"
+  },
+  "next": null,
+  "source_url": "https://ad2s-bordeaux.com/index.php/fr/",
+  "quote": "22-24 septembre 2026, Base Aérienne 106 Bordeaux-Mérignac",
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "Site vivant mais entièrement centré sur le bilan de l'édition 2026 (programme, intervenants, chiffres clés). Aucune mention de 2027 ou 2028, alors que le salon est biennal."
+}

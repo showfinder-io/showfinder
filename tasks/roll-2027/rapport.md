@@ -2,6 +2,19 @@
 
 Rapport alimenté chaque lundi par la routine cloud agoris-roll-2027-watch (détection des fiches publiées à édition passée, vérification des dates de la prochaine édition sur les sites officiels, handoffs dans handoffs/). Depuis le 2026-09-21 : la routine merge sa PR elle-même, puis .github/workflows/roll-apply.yml applique en base les roll-pret qui passent les garde-fous (scripts/roll-guards.ts). Résultats et rejets dans journal.json, refresh éditorial des fiches roulées via scripts/roll-apply-handoffs.ts --queue.
 
+## Lot du 2026-10-05
+
+| Slug | Ancienneté | Statut | Prochaine édition / raison | Source |
+|------|-----------:|--------|------------------------------|--------|
+| cfia-toulouse | 11 jours | non-annoncee | Site biennal, mentionne "rendez-vous en 2028" sans jour ni mois précis | https://toulouse.cfiaexpo.com/fr |
+| assises-port-du-futur | 11 jours | non-annoncee | Salon itinérant (ville différente chaque année), site figé sur l'édition 2026 à Strasbourg, aucune date ni ville 2027 annoncée | https://www.portdufutur.fr/ |
+| ad2s-bordeaux | 11 jours | non-annoncee | Site biennal entièrement centré sur le bilan 2026, aucune mention de 2027/2028 | https://ad2s-bordeaux.com/index.php/fr/ |
+| sepem-toulouse | 11 jours | non-annoncee | Site biennal, dates publiées pour d'autres villes du réseau SEPEM mais aucune pour Toulouse | https://toulouse.sepem-industries.com/ |
+| silmo-paris | 7 jours | a-arbitrer | Site officiel bloqué par une protection anti-bot (HTTP 403 sur toutes les pages testées), aucun site organisateur alternatif avec des dates 2027 trouvé | https://www.silmoparis.com |
+| natexpo-paris | 6 jours | a-arbitrer | 26 au 28 septembre 2027 annoncés, mais changement de ville et de lieu : Eurexpo Lyon → Paris Expo Porte de Versailles (le salon alterne Paris/Lyon) | https://www.natexpo.com |
+
+Reste à traiter : 11 fiches périmées
+
 ## Lot du 2026-09-28
 
 | Slug | Ancienneté | Statut | Prochaine édition / raison | Source |
