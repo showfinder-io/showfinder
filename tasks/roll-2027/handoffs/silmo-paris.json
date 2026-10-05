@@ -1,0 +1,19 @@
+{
+  "slug": "silmo-paris",
+  "name": "SILMO",
+  "status": "a-arbitrer",
+  "checked_at": "2026-10-05",
+  "current": {
+    "start_date": "2026-09-25",
+    "end_date": "2026-09-28",
+    "edition_year": 2026,
+    "city": "Paris",
+    "venue": "Paris Nord Villepinte"
+  },
+  "next": null,
+  "source_url": "https://www.silmoparis.com",
+  "quote": null,
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "Site officiel vivant mais entièrement bloqué par une protection anti-bot (HTTP 403 sur toutes les pages testées, curl et WebFetch). Organisateur Comexposium : aucune page agenda ou newsroom trouvée avec des dates 2027 pour SILMO. Aucune donnée vérifiable récupérable à ce jour."
+}

@@ -1,0 +1,25 @@
+{
+  "slug": "natexpo-paris",
+  "name": "Natexpo",
+  "status": "a-arbitrer",
+  "checked_at": "2026-10-05",
+  "current": {
+    "start_date": "2026-09-28",
+    "end_date": "2026-09-29",
+    "edition_year": 2026,
+    "city": "Lyon",
+    "venue": "Eurexpo Lyon"
+  },
+  "next": {
+    "start_date": "2027-09-26",
+    "end_date": "2027-09-28",
+    "edition_year": 2027,
+    "city": "Paris",
+    "venue": "Paris Expo Porte de Versailles"
+  },
+  "source_url": "https://www.natexpo.com",
+  "quote": "Rendez-vous du 26 au 28 septembre 2027 à Paris Expo Porte de Versailles",
+  "venue_changed": true,
+  "city_changed": true,
+  "notes": "Natexpo alterne Paris et Lyon : la fiche actuelle (édition 2026, Eurexpo Lyon) doit basculer vers Paris Expo Porte de Versailles pour 2027. Changement de ville et de lieu confirmé par le site officiel : arbitrage humain requis, jamais roll-pret."
+}

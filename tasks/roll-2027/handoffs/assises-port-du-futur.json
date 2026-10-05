@@ -1,0 +1,19 @@
+{
+  "slug": "assises-port-du-futur",
+  "name": "Assises Port du futur",
+  "status": "non-annoncee",
+  "checked_at": "2026-10-05",
+  "current": {
+    "start_date": "2026-09-23",
+    "end_date": "2026-09-24",
+    "edition_year": 2026,
+    "city": "Strasbourg",
+    "venue": "Gare fluviale de Strasbourg"
+  },
+  "next": null,
+  "source_url": "https://www.portdufutur.fr/",
+  "quote": "Après Sète en 2023, Dunkerque en 2024 et Le Havre en 2025, le Cerema vous donne rendez vous les mercredi 23 et jeudi 24 septembre 2026 à Strasbourg pour la 16eme édition des assises port du futur",
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "Salon itinérant organisé par le Cerema, ville différente chaque année. Site figé sur l'édition 2026 à Strasbourg, aucune date ni ville annoncée pour 2027."
+}
