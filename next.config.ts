@@ -358,6 +358,22 @@ const nextConfig: NextConfig = {
         destination: "/en/salons/go-entrepreneurs-paris",
         permanent: true,
       },
+      // Mobco (todo E5bis, 2026-10-10) : Transports Publics / European Mobility
+      // Expo fusionné avec les RNTP sous le nom Mobco, salon itinérant (Paris
+      // puis régions). RR39 : slug sans ville. Slug DB renommé par
+      // scripts/diag-mobco-rename-apply.ts ; la destination de
+      // transports-publics-paris-2026 dans redirects-slug-year.json est
+      // corrigée en conséquence (pas de chaîne de 301).
+      {
+        source: "/salons/transports-publics-paris",
+        destination: "/salons/mobco",
+        permanent: true,
+      },
+      {
+        source: "/en/salons/transports-publics-paris",
+        destination: "/en/salons/mobco",
+        permanent: true,
+      },
       // Cohorte trafic lot 2 (2026-08-04) : le Salon Bois Énergie s'est arrêté
       // en 2020, absorbé dans Bio360 (RR33, confirmé par 3 sources : page À
       // propos bio360expo.com + presse spécialisée). Fiche salon-bois-energie
