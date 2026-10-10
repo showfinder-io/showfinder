@@ -374,6 +374,20 @@ const nextConfig: NextConfig = {
         destination: "/en/salons/mobco",
         permanent: true,
       },
+      // Innovagri (todo H8, 2026-10-10) : marque unique itinérante (Ondes 2026,
+      // Grugies 2027), graphie unifiée par NGPA. RR39 : slug sans ville. Slug
+      // DB renommé par scripts/diag-innovagri-rename-apply.ts ; destination de
+      // innov-agri-ondes-2026 corrigée dans redirects-slug-year.json.
+      {
+        source: "/salons/innov-agri-ondes",
+        destination: "/salons/innovagri",
+        permanent: true,
+      },
+      {
+        source: "/en/salons/innov-agri-ondes",
+        destination: "/en/salons/innovagri",
+        permanent: true,
+      },
       // Cohorte trafic lot 2 (2026-08-04) : le Salon Bois Énergie s'est arrêté
       // en 2020, absorbé dans Bio360 (RR33, confirmé par 3 sources : page À
       // propos bio360expo.com + presse spécialisée). Fiche salon-bois-energie
