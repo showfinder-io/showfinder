@@ -1,8 +1,8 @@
 {
   "slug": "preventica-paris",
   "name": "Preventica Paris",
-  "status": "non-annoncee",
-  "checked_at": "2026-09-11",
+  "status": "roll-pret",
+  "checked_at": "2026-10-12",
   "current": {
     "start_date": "2025-06-10",
     "end_date": "2025-06-12",
@@ -10,10 +10,16 @@
     "city": "Paris",
     "venue": "Paris Expo Porte de Versailles"
   },
-  "next": null,
-  "source_url": "https://www.preventica.com",
-  "quote": "Les rendez-vous 2026 LYON 06 > 08 oct CASABLANCA 10 > 12 NOV Rétrospective BORDEAUX 14 > 16 oct 2025 PARIS 10 > 12 juin 2025",
+  "next": {
+    "start_date": "2027-06-01",
+    "end_date": "2027-06-03",
+    "edition_year": 2027,
+    "city": "Paris",
+    "venue": "Paris Expo Porte de Versailles"
+  },
+  "source_url": "https://www.preventica.com/salon/paris-2027",
+  "quote": "PRÉVENTICA PARIS 01 > 03 juin 2027",
   "venue_changed": false,
   "city_changed": false,
-  "notes": "Le site liste les éditions 2026 à Rennes, Lyon et Casablanca. Paris n'apparaît que dans la rétrospective des éditions passées (juin 2025), sans date de retour annoncée. Salon bisannuel qui alterne les villes, aucune page dédiée Paris trouvée (404 sur /salon/paris)."
+  "notes": "Nouvelle page dédiée /salon/paris-2027 trouvée (l'ancienne page paris-2025 citée dans le handoff du 2026-09-11 n'était qu'une rétrospective). Dates confirmées avec l'année explicite. Le lieu n'est pas reconfirmé sur la page ni sur la page /visiter associée, repris inchangé depuis la fiche en base, cohérent avec le rythme bisannuel (Preventica fait tourner plusieurs éditions régionales simultanées : Paris, Lyon, Montpellier, Casablanca)."
 }

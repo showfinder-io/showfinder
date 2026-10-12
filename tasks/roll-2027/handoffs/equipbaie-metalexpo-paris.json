@@ -1,0 +1,19 @@
+{
+  "slug": "equipbaie-metalexpo-paris",
+  "name": "Equipbaie Metalexpo",
+  "status": "a-arbitrer",
+  "checked_at": "2026-10-12",
+  "current": {
+    "start_date": "2026-09-28",
+    "end_date": "2026-10-01",
+    "edition_year": 2026,
+    "city": "Paris",
+    "venue": "Paris Expo Porte de Versailles"
+  },
+  "next": null,
+  "source_url": "https://www.equipbaie.com",
+  "quote": "Equipbaie - Métalexpo s'associe à Batimat pour l'édition 2024 ! ... L'édition 2024 : Equipbaie-Métalexpo by Batimat (lien vers https://www.batimat.com/fr-fr/le-salon/equipbaie-metalexpo)",
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "Le site officiel equipbaie.com est figé depuis l'annonce de l'édition 2024 et annonce la fusion du salon avec Batimat (« s'associe à Batimat »). Le site de Batimat confirme : 3 pavillons dédiés à Equipbaie au sein de Batimat. Prochaine édition probable alignée sur Batimat 2028 (2 au 5 octobre 2028, Paris Expo Porte de Versailles, lieu inchangé), mais arbitrage humain requis pour décider si Equipbaie-Métalexpo garde une fiche autonome ou doit être fusionnée/redirigée vers la fiche Batimat."
+}

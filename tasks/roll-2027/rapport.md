@@ -2,6 +2,19 @@
 
 Rapport alimenté chaque lundi par la routine cloud agoris-roll-2027-watch (détection des fiches publiées à édition passée, vérification des dates de la prochaine édition sur les sites officiels, handoffs dans handoffs/). Depuis le 2026-09-21 : la routine merge sa PR elle-même, puis .github/workflows/roll-apply.yml applique en base les roll-pret qui passent les garde-fous (scripts/roll-guards.ts). Résultats et rejets dans journal.json, refresh éditorial des fiches roulées via scripts/roll-apply-handoffs.ts --queue.
 
+## Lot du 2026-10-12
+
+| Slug | Ancienneté | Statut | Prochaine édition / raison | Source |
+|------|-----------:|--------|------------------------------|--------|
+| preventica-paris | 487 jours | roll-pret | 1 au 3 juin 2027, Paris Expo Porte de Versailles (ville et lieu inchangés, nouvelle page dédiée /salon/paris-2027) | https://www.preventica.com/salon/paris-2027 |
+| salon-energie-habitat-colmar | 203 jours | non-annoncee | Revérification : site toujours figé sur l'édition 2026 déjà en base, aucune date 2027 annoncée | https://www.energiehabitat-colmar.com |
+| luxe-pack-monaco | 12 jours | a-arbitrer | 4 au 6 octobre 2027, Grimaldi Forum (ville et lieu inchangés), mais le salon devient « LUXE PACK WORLD » : arbitrage sur le nom requis | https://www.luxepackmonaco.com |
+| aerospace-test-development-show | 12 jours | a-arbitrer | Page contradictoire : encarts « 28-29 September 2027 » contre texte et Schema.org « 29-30 September 2027 », même lieu (MEETT Toulouse) | https://aerotestdevelopmentshow.com |
+| equipbaie-metalexpo-paris | 11 jours | a-arbitrer | Site figé depuis 2024, annonce la fusion du salon avec Batimat ; arbitrage requis pour savoir si la fiche reste autonome | https://www.equipbaie.com |
+| batimat | 11 jours | a-arbitrer | 2 au 5 octobre 2028 confirmé, mais changement de lieu : Paris Nord Villepinte → Paris Expo Porte de Versailles | https://www.batimat.com |
+
+Reste à traiter : 18 fiches périmées
+
 ## Lot du 2026-10-05
 
 | Slug | Ancienneté | Statut | Prochaine édition / raison | Source |
