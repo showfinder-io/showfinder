@@ -48,16 +48,15 @@
   },
   "innov-agri-ondes": {
     "outcome": "rejected",
-    "at": "2026-09-21",
+    "at": "2026-10-12",
     "from": {
-      "start_date": "2026-09-09",
-      "end_date": "2026-09-10"
+      "start_date": null,
+      "end_date": null
     },
     "to": null,
     "source_url": "https://www.innovagri.com/accueil-grugies",
     "reasons": [
-      "changement de ville ou de lieu : arbitrage humain requis",
-      "ville du handoff (Grugies) différente de la fiche (Ondes)"
+      "fiche introuvable en base"
     ]
   },
   "interfiliere-paris": {
@@ -434,6 +433,21 @@
       "edition_year": 2027
     },
     "source_url": "https://www.space.fr/fr/",
+    "reasons": []
+  },
+  "preventica-paris": {
+    "outcome": "applied",
+    "at": "2026-10-12",
+    "from": {
+      "start_date": "2025-06-10",
+      "end_date": "2025-06-12"
+    },
+    "to": {
+      "start_date": "2027-06-01",
+      "end_date": "2027-06-03",
+      "edition_year": 2027
+    },
+    "source_url": "https://www.preventica.com/salon/paris-2027",
     "reasons": []
   }
 }
