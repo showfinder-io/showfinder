@@ -1,0 +1,25 @@
+{
+  "slug": "ideobain",
+  "name": "Ideobain",
+  "status": "a-arbitrer",
+  "checked_at": "2026-10-19",
+  "current": {
+    "start_date": "2026-09-28",
+    "end_date": "2026-10-01",
+    "edition_year": 2026,
+    "city": "Paris",
+    "venue": "Paris Nord Villepinte"
+  },
+  "next": {
+    "start_date": "2028-10-02",
+    "end_date": "2028-10-05",
+    "edition_year": 2028,
+    "city": "Paris",
+    "venue": "Paris Expo, Porte de Versailles"
+  },
+  "source_url": "https://www.ideobain.com",
+  "quote": "02 au 05 octobre 2028 Paris Expo, Porte de Versailles",
+  "venue_changed": true,
+  "city_changed": false,
+  "notes": "Premier traitement de cette fiche. La bannière du site annonce 2028 (pas 2027) à Paris Expo Porte de Versailles, alors que les données structurées (JSON-LD showInfo) de la même page donnent startDate/endDate 2026-09-28/2026-10-01, soit l'édition qui vient de se terminer, et le menu Programme parle encore de 'Conférences 2026' et 'Speakers 2026'. Le salon est bisannuel donc 2028 serait cohérent avec le rythme, mais le changement de lieu (Villepinte en base vers Porte de Versailles annoncée) et la page visiblement non remise à jour (incohérence 2026/2028) imposent l'arbitrage humain. Aucune mention de 2027 nulle part sur le site, cohérent avec la fréquence bisannuelle."
+}
