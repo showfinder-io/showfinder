@@ -1,1 +1,25 @@
-{"slug": "sibca-paris", "name": "SIBCA", "status": "non-annoncee", "checked_at": "2026-09-14", "current": {"start_date": "2026-09-01", "end_date": "2026-09-03", "edition_year": 2026, "city": "Paris", "venue": "Grand Palais"}, "next": null, "source_url": "https://www.sibca.fr", "quote": "SIBCA - Le Salon de l'Immobilier Bas Carbone - Grand Palais > 1 au 3 septembre 2026", "venue_changed": false, "city_changed": false, "notes": "Le site officiel est vivant mais reste entièrement centré sur l'édition 2026 (menu ÉDITION 2026, footer ©2026), y compris sur la page dédiée /fr/edition. Aucune date de prochaine édition ni mention de 2027 n'a été trouvée sur les pages consultées."}
+{
+  "slug": "sibca-paris",
+  "name": "SIBCA",
+  "status": "roll-pret",
+  "checked_at": "2026-10-19",
+  "current": {
+    "start_date": "2026-09-01",
+    "end_date": "2026-09-03",
+    "edition_year": 2026,
+    "city": "Paris",
+    "venue": "Grand Palais"
+  },
+  "next": {
+    "start_date": "2027-09-01",
+    "end_date": "2027-09-03",
+    "edition_year": 2027,
+    "city": "Paris",
+    "venue": "Grand Palais"
+  },
+  "source_url": "http://sibca.fr/",
+  "quote": "SAVE THE DATE 01-03 septembre 2027 Paris - Grand Palais",
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "Revérification du 2026-10-19 (handoff précédent du 2026-09-14 avait plus de 28 jours, était alors non-annoncee). Le site a publié depuis une bannière SAVE THE DATE claire pour 2027, même ville et même lieu que l'édition actuelle. Note technique : https://www.sibca.fr redirige (301) vers http://sibca.fr/, qui est la page effectivement lue."
+}

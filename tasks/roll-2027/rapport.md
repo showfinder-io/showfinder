@@ -2,6 +2,19 @@
 
 Rapport alimenté chaque lundi par la routine cloud agoris-roll-2027-watch (détection des fiches publiées à édition passée, vérification des dates de la prochaine édition sur les sites officiels, handoffs dans handoffs/). Depuis le 2026-09-21 : la routine merge sa PR elle-même, puis .github/workflows/roll-apply.yml applique en base les roll-pret qui passent les garde-fous (scripts/roll-guards.ts). Résultats et rejets dans journal.json, refresh éditorial des fiches roulées via scripts/roll-apply-handoffs.ts --queue.
 
+## Lot du 2026-10-19
+
+| Slug | Ancienneté | Statut | Prochaine édition / raison | Source |
+|------|-----------:|--------|------------------------------|--------|
+| comic-con-france | 183 jours | non-annoncee | Revérification : site toujours figé sur l'édition 2026 déjà en base, aucune date 2027 annoncée | https://comiccon.fr/ |
+| salon-agriculture-nouvelle-aquitaine | 141 jours | non-annoncee | Revérification : site toujours figé sur l'édition 2026 déjà en base, aucune date 2027 annoncée | https://www.foiredebordeaux.com/salon-agriculture |
+| sibca-paris | 46 jours | roll-pret | 1 au 3 septembre 2027, Grand Palais (ville et lieu inchangés) | http://sibca.fr/ |
+| cannes-yachting-festival | 36 jours | roll-pret | 7 au 12 septembre 2027, Cannes Vieux Port & Port Canto (ville et lieu inchangés, le site précise que le Festival se déroule depuis toujours entre ces deux sites) | https://www.cannesyachtingfestival.com/ |
+| terres-de-jim | 36 jours | non-annoncee | Revérification : salon itinérant, site toujours figé sur l'édition 2026 déjà en base, aucune date ni ville 2027 annoncée | https://www.lesterresdejim.com/ |
+| ideobain | 18 jours | a-arbitrer | Bannière annonce 2 au 5 octobre 2028 (le salon est bisannuel, cohérent) mais changement de lieu : Paris Nord Villepinte → Paris Expo Porte de Versailles, et page incohérente (données structurées encore sur l'édition 2026) | https://www.ideobain.com |
+
+Reste à traiter : 26 fiches périmées
+
 ## Lot du 2026-10-12
 
 | Slug | Ancienneté | Statut | Prochaine édition / raison | Source |
