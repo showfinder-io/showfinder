@@ -449,5 +449,33 @@
     },
     "source_url": "https://www.preventica.com/salon/paris-2027",
     "reasons": []
+  },
+  "cannes-yachting-festival": {
+    "outcome": "applied",
+    "at": "2026-10-19",
+    "from": {
+      "start_date": "2026-09-08",
+      "end_date": "2026-09-13"
+    },
+    "to": {
+      "start_date": "2027-09-07",
+      "end_date": "2027-09-12",
+      "edition_year": 2027
+    },
+    "source_url": "https://www.cannesyachtingfestival.com/",
+    "reasons": []
+  },
+  "sibca-paris": {
+    "outcome": "rejected",
+    "at": "2026-10-19",
+    "from": {
+      "start_date": "2026-09-01",
+      "end_date": "2026-09-03"
+    },
+    "to": null,
+    "source_url": "http://sibca.fr/",
+    "reasons": [
+      "source_url absente ou non https"
+    ]
   }
 }
