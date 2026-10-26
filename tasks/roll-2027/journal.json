@@ -477,5 +477,50 @@
     "reasons": [
       "source_url absente ou non https"
     ]
+  },
+  "interclima": {
+    "outcome": "applied",
+    "at": "2026-10-26",
+    "from": {
+      "start_date": "2026-09-28",
+      "end_date": "2026-10-01"
+    },
+    "to": {
+      "start_date": "2028-10-02",
+      "end_date": "2028-10-05",
+      "edition_year": 2028
+    },
+    "source_url": "https://www.interclima.com",
+    "reasons": []
+  },
+  "produrable-paris": {
+    "outcome": "applied",
+    "at": "2026-10-26",
+    "from": {
+      "start_date": "2026-09-30",
+      "end_date": "2026-10-01"
+    },
+    "to": {
+      "start_date": "2027-10-13",
+      "end_date": "2027-10-14",
+      "edition_year": 2027
+    },
+    "source_url": "https://www.produrable.com/",
+    "reasons": []
+  },
+  "tfwa-world-exhibition": {
+    "outcome": "applied",
+    "at": "2026-10-26",
+    "from": {
+      "start_date": "2026-09-27",
+      "end_date": "2026-10-01"
+    },
+    "to": {
+      "start_date": "2027-10-03",
+      "end_date": "2027-10-07",
+      "edition_year": 2027
+    },
+    "source_url": "https://www.tfwa.com/tfwa-world-exhibition-conference",
+    "reasons": []
   }
 }
