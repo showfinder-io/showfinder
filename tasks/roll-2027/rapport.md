@@ -2,6 +2,19 @@
 
 Rapport alimenté chaque lundi par la routine cloud agoris-roll-2027-watch (détection des fiches publiées à édition passée, vérification des dates de la prochaine édition sur les sites officiels, handoffs dans handoffs/). Depuis le 2026-09-21 : la routine merge sa PR elle-même, puis .github/workflows/roll-apply.yml applique en base les roll-pret qui passent les garde-fous (scripts/roll-guards.ts). Résultats et rejets dans journal.json, refresh éditorial des fiches roulées via scripts/roll-apply-handoffs.ts --queue.
 
+## Lot du 2026-10-26
+
+| Slug | Ancienneté | Statut | Prochaine édition / raison | Source |
+|------|-----------:|--------|------------------------------|--------|
+| untec-congres | 143 jours | a-arbitrer | Le site affiche désormais « Salon Actes 2027 » avec une nouvelle adresse à Dijon (Parc des Expositions et Congrès de Dijon), contre Chartres en 2026 : changement de ville confirmé pour ce salon itinérant, aucune date précise encore publiée | https://www.actes-untec.com/informations-pratiques |
+| enerj-meeting-lyon | 41 jours | non-annoncee | Revérification : site toujours figé sur « Édition Lyon 2026 », les autres villes du réseau (Paris, Marseille, Nantes) annoncent déjà 2027 mais pas Lyon | https://lyon.enerj-meeting.com |
+| tfwa-world-exhibition | 25 jours | roll-pret | 3 au 7 octobre 2027, Palais des Festivals et des Congrès, Cannes (ville et lieu inchangés) | https://www.tfwa.com/tfwa-world-exhibition-conference |
+| interclima | 25 jours | roll-pret | 2 au 5 octobre 2028, Paris Expo Porte de Versailles (ville et lieu inchangés, écart cohérent avec la fréquence bisannuelle) | https://www.interclima.com |
+| les-assises-dechets-nantes | 25 jours | non-annoncee | Site vivant, édition 2026 encore affichée en vedette, aucune date pour la prochaine édition (bisannuelle, attendue en 2028) | https://www.assises-dechets.org/ |
+| produrable-paris | 25 jours | roll-pret | 13 et 14 octobre 2027, Palais des Congrès, Paris (ville et lieu inchangés, édition anniversaire des 20 ans) | https://www.produrable.com/ |
+
+Reste à traiter : 26 fiches périmées
+
 ## Lot du 2026-10-19
 
 | Slug | Ancienneté | Statut | Prochaine édition / raison | Source |

@@ -1,0 +1,19 @@
+{
+  "slug": "les-assises-dechets-nantes",
+  "name": "Assises Nationales des Dechets",
+  "status": "non-annoncee",
+  "checked_at": "2026-10-26",
+  "current": {
+    "start_date": "2026-09-30",
+    "end_date": "2026-10-01",
+    "edition_year": 2026,
+    "city": "Nantes",
+    "venue": "Cite des Congres de Nantes"
+  },
+  "next": null,
+  "source_url": "https://www.assises-dechets.org/",
+  "quote": null,
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "Site officiel vivant, l'edition 2026 (19e edition, 30/09-01/10/2026) est encore affichee en vedette sur la page d'accueil et la page programme. Aucune date, ville ni venue pour la prochaine edition (bisannuelle, attendue en 2028) n'est publiee a ce jour."
+}

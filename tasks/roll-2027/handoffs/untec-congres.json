@@ -1,8 +1,8 @@
 {
   "slug": "untec-congres",
   "name": "Salon Actes",
-  "status": "non-annoncee",
-  "checked_at": "2026-09-21",
+  "status": "a-arbitrer",
+  "checked_at": "2026-10-26",
   "current": {
     "start_date": "2026-06-03",
     "end_date": "2026-06-05",
@@ -10,10 +10,16 @@
     "city": "Chartres",
     "venue": "Parc des Expositions L'Iliade (edition 2026 uniquement, salon itinerant)"
   },
-  "next": null,
-  "source_url": "https://www.actes-untec.com",
-  "quote": "Salon Actes 2026 - Journees nationales construction & amenagement ! (titre de la page d'accueil et de la page Informations pratiques, adresse toujours donnee comme Illiade de Chartres)",
-  "venue_changed": false,
-  "city_changed": false,
-  "notes": "Site vivant mais entierement fige sur l'edition 2026 (accueil, programme, informations pratiques) : aucune date ni ville 2027 publiee. Salon itinerant par nature, donc le lieu 2027 sera vraisemblablement different de Chartres une fois annonce."
+  "next": {
+    "start_date": null,
+    "end_date": null,
+    "edition_year": 2027,
+    "city": "Dijon",
+    "venue": "Parc des Expositions et Congres de Dijon"
+  },
+  "source_url": "https://www.actes-untec.com/informations-pratiques",
+  "quote": "Salon Actes 2027 - Informations pratiques (...) Adresse d'Actes Parc des Expositions et Congres de Dijon 3 boulevard de Champagne CS 67827 - 21078 DIJON CEDEX France",
+  "venue_changed": true,
+  "city_changed": true,
+  "notes": "Le site a bascule sur Salon Actes 2027 et donne desormais Dijon comme adresse, contre Chartres en 2026 : changement de ville confirme pour ce salon itinerant. Aucune date precise de l'edition 2027 n'est encore publiee. A arbitrer, jamais roll-pret vu le changement de ville."
 }
