@@ -49,6 +49,11 @@ Non-critères : pas d'obligation de résultat sur la position (mesurée à J+28,
 - 2026-10-29 (go Julien « Oui, tout le site ») : lot maillage codé. Hub secteur : 20 cartes puis liste compacte de tous les autres salons de la filière. Similaires : à venir d'abord, puis secteurs partagés, même ville, départage par hash stable. Chantier 1 prévenu par message. `npm run build` vert. Recrawl du build local (`inlinks-local-apres.json`) : fiches sans lien depuis un hub secteur 99 → 17 (dont comic-con-france et japan-expo-paris, sans secteur en base, le reste = anciens slugs redirigés) ; fiches sans lien depuis une autre fiche 182 → 71 ; maximum de liens « similaires » reçus 80 → 14.
 - 2026-10-29 : migration `20261029000000_sector_pop_culture_salons.sql` (comic-con-france et japan-expo-paris → art-culture). Écriture en base refusée par le contrôle de sécurité de la session : à appliquer par Julien avec `scripts/diag-sector-pop-culture-apply.ts --apply` (dry-run vérifié : 2 liens à créer).
 
+- 2026-10-29 : PR #167 mergée (squash 217f741), CI verte après correction d'un `any` dans le script Jev ; statut Vercel success à 15:11 UTC, liste compacte vue dans le HTML de prod. Chantier 1 prévenu de la date.
+- 2026-10-29 : lot MDX. Seule fiche prioritaire actionnable : foire-agricole-tarbes (dates 2027 en base, MDX sur 2026). Les autres pages en tête ont une édition 2027 non annoncée (comic-con-france, sfar-congres-paris, paris-games-week) ou en arbitrage roll (architect-at-work-lyon, mai 2028). Process : writer Opus (refresh-pret), reviewer 1 (5 corrections), reviewer 2 (3 corrections), arbitrage éditeur (budget 750 000 € et subventions retirés faute de source primaire, surface non rattachée à 2027), correcteur-traducteur FR+EN. Dry-run `diag-edito-roll-2027-apply.ts --dir handoff/page2-page1-edito` OK. Écriture en base : à lancer par Julien (todo K3).
+- 2026-10-29 : Request Indexing /secteurs/tech-numerique (toast vu). Suivi dans `tasks/todo.md`, volet K.
+- 2026-10-29 : mesure J+28 inscrite (todo K6, le 2026-11-30, fenêtre 2026-10-30 → 2026-11-26).
+
 ## Problèmes ouverts
 
 - Maillage site entier : affecte aussi les 38 pages du test CTR du chantier 1 (décision Julien 2026-10-29, chantier 1 prévenu, date de déploiement à lui transmettre).
@@ -57,4 +62,4 @@ Non-critères : pas d'obligation de résultat sur la position (mesurée à J+28,
 
 ## Prochaine action
 
-PR du lot maillage, merge à CI verte, vérification du déploiement, puis lot MDX.
+Julien applique K2 et K3 (écritures en base) ; ensuite Request Indexing de la file K4 au fil du quota, puis mesure K6 le 2026-11-30.
