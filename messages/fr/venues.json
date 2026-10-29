@@ -25,6 +25,11 @@
     "upcomingEmpty": "Aucun salon à venir dans ce lieu pour le moment.",
     "pastHeading": "Salons passés",
     "pastLabelOne": "salon passé",
-    "pastLabelMany": "salons passés"
+    "pastLabelMany": "salons passés",
+    "metaTitleUpcoming": "{venue} : {count, plural, one {# salon à venir} other {# salons à venir}} et accès",
+    "metaTitleNoUpcoming": "{venue} : salons, accès et infos pratiques",
+    "metaDescriptionUpcoming": "{count, plural, one {# salon à venir} other {# salons à venir}}, prochain : {salon} le {date}.",
+    "venueProvidersHeading": "Prestataires pour exposer ici",
+    "venueProvidersIntro": "Les prestataires référencés par Agoris pour préparer un stand dans ce lieu."
   }
 }
