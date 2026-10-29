@@ -69,14 +69,22 @@ Classement : score = volume de recherche mensuel France du nom (DataForSEO Googl
 - 2026-10-29 : `scripts/diag-sl5-pipeline.py` exécuté : dedup Jev (aucun doublon, max 0,48), capture curl (44/45 pages, Itechmer en 500, Mondial Secours via pdftotext), vérification Jev (37 avec édition à venir et dates concordantes ≥ 0,85), volumes + SERP DataForSEO (0,18 USD), `scoring.csv`.
 - 2026-10-29 : proposition écrite dans `tasks/cohorte-trafic-shortlist-5.md` : lot 1 de 23 fiches, lot 2 de 12, 10 écartés.
 
+- 2026-10-29 : rédaction des 35 fiches (writer Opus, pass-1 Sonnet + correction, pass-2 Sonnet indépendante + correction + EN), par sous-agents en vagues de 20 au plus (pas de workflow). Check `diag-cohorte-p2-check.mts --en` : 0 erreur sur les 35. Contrôle Jev `diag-sl5-pipeline.py contenu` : les 70 corps FR et EN décrivent leur salon (0,95 à 0,99), chaque review a sa trace dans `alerts`.
+- 2026-10-29 : insertion en draft (35/35 lues en base, MDX FR et EN, SEO présents, aucun tiret cadratin), puis publication en bloc. IndexNow 70 URLs, statut 200. Les 70 URLs FR et EN répondent 200 en prod, titres vérifiés sur 3 fiches.
+
 ## Décisions
 
-(en attente : validation de la shortlist par Julien ; arbitrages demandés : périmètre lot 1 seul ou lots 1+2, Vapexpo oui/non, rédaction par workflow)
+- 2026-10-29, Julien : lots 1 et 2 validés (35 fiches). Vapexpo inclus (hypothèse annoncée, consigne éditoriale : aucune allégation de santé, aucune promotion de produit).
+- Rédaction par sous-agents plutôt que par workflow (non demandé explicitement). Relecture et correction regroupées dans un même agent (3 agents par fiche au lieu de 5), les reviewers restant indépendants du writer et la pass-2 de la pass-1.
+- Congrès avec exposition : catégorie salon_professionnel (convention). Pour un congrès, estimated_visitors peut porter les participants du dernier bilan, année dite.
+- Lieu 2027 non lu sur une source datée : venue null, lieu de l'édition précédente cité comme tel (BTP Expo et Empreinte Expo Amiens, CNDP).
+- Séries régionales : une fiche par ville, liens sœurs posés à la publication.
 
 ## Problèmes ouverts
 
-- Rédaction de 30 à 40 fiches = environ 120 à 160 appels d'agents (writer, 2 reviews, corrections, EN). Les cohortes précédentes passaient par un workflow ; à confirmer avec Julien au moment de la validation.
+- Écrasement entre agents parallèles : le corps SF2H s'est retrouvé dans le handoff de l'Encéphale, et les corrections pass-1 de Vapexpo ont disparu du JSON. Rattrapés par la pass-1 (Encéphale) et la pass-2 (Vapexpo), puis contrôlés par Jev sur les 35. Pour une prochaine cohorte : un fichier de sortie par agent, ou un workflow.
+- Arbitrages Julien non bloquants : voir `tasks/cohorte-trafic-shortlist-5.md` (category_to_confirm, frequency null, organisateur Préventica, BudgetTable indicatif).
 
 ## Prochaine action
 
-Attendre la validation de Julien sur `tasks/cohorte-trafic-shortlist-5.md`, puis lancer la rédaction (writer + 2 reviewers).
+Request Indexing GSC des 10 premières fiches de la file D23 (`tasks/todo.md`) au prochain quota (2026-10-30 ; tentative du 2026-10-29 refusée, « Quota Exceeded » dès la première URL).

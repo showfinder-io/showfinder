@@ -397,8 +397,52 @@ def step_score():
     print(f"scoring.csv : {len(rows)} lignes")
 
 
+# ─── contenu ────────────────────────────────────────────────────────────
+# Garde-fou après rédaction : un corps MDX de la fiche SF2H s'est retrouvé
+# dans le handoff de l'Encéphale (writers en parallèle). Jev vérifie que
+# chaque corps FR et EN décrit bien le salon de son handoff ; le script
+# compare aussi les corrections annoncées en review aux traces dans alerts.
+
+def step_contenu():
+    lots = load("lots.json")
+    hdir = os.path.join(ROOT, "handoff", "cohorte-trafic")
+    rows = []
+    for slug in lots["lot1"] + lots["lot2"]:
+        path = os.path.join(hdir, f"{slug}.json")
+        if not os.path.exists(path):
+            rows.append({"slug": slug, "etat": "absent"})
+            continue
+        with open(path, encoding="utf-8") as f:
+            h = json.load(f)
+        if h.get("abandon"):
+            rows.append({"slug": slug, "etat": "abandon"})
+            continue
+        fiche = {k: h.get(k) for k in ("name", "city", "venue_name", "start_date", "end_date", "organizer_name")}
+        questions = {}
+        for lang, field in (("fr", "editorial_mdx"), ("en", "editorial_mdx_en")):
+            if h.get(field):
+                questions[f"corps_{lang}"] = {
+                    "type": "noul",
+                    "instructions": f"Le texte `corps_{lang}` décrit-il bien le salon de `fiche` (même nom, même ville, mêmes dates), et non un autre événement ?",
+                }
+        j = jev({"fiche": fiche, **{f"corps_{l}": h[f][:6000] for l, f in (("fr", "editorial_mdx"), ("en", "editorial_mdx_en")) if h.get(f)}}, questions)
+        alerts = " ".join(h.get("alerts") or [])
+        traces = {n: alerts.count(f"[corrigé pass-{n}") for n in (1, 2)}
+        reviews = {n: os.path.exists(os.path.join(hdir, "reviews-sl5", f"{slug}.pass{n}.md")) for n in (1, 2)}
+        rows.append({
+            "slug": slug, "etat": "ok",
+            **{k: round(v["noul"], 3) for k, v in j["answers"].items()},
+            "en": bool(h.get("editorial_mdx_en")), "pass1": reviews[1], "pass2": reviews[2],
+            "traces_p1": traces[1], "traces_p2": traces[2],
+        })
+    with open(os.path.join(DIR, "contenu.json"), "w", encoding="utf-8") as f:
+        json.dump(rows, f, ensure_ascii=False, indent=1)
+    for r in rows:
+        print(r)
+
+
 if __name__ == "__main__":
-    steps = {"dedup": step_dedup, "capture": step_capture, "verify": step_verify, "volumes": step_volumes, "serp": step_serp, "score": step_score}
+    steps = {"dedup": step_dedup, "capture": step_capture, "verify": step_verify, "volumes": step_volumes, "serp": step_serp, "score": step_score, "contenu": step_contenu}
     if len(sys.argv) != 2 or sys.argv[1] not in steps:
         sys.exit(f"Usage : {sys.argv[0]} {'|'.join(steps)}")
     steps[sys.argv[1]]()
