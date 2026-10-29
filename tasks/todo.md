@@ -249,8 +249,8 @@ Référence figée : 189 pages, 37 535 impressions, 253 clics, CTR 0,67 %, fenê
   `cd /Users/julienzakoian/Projects/showfinder/.claude/worktrees/jolly-hertz-b867d7 && set -a && source .env.local && set +a && ./node_modules/.bin/tsx scripts/diag-edito-roll-2027-apply.ts --apply --dir handoff/page2-page1-edito foire-agricole-tarbes`
   Puis merge suivant pour régénérer la page, et Request Indexing de /salons/foire-agricole-tarbes.
 - [ ] K4. Request Indexing GSC (quota partagé avec les chantiers 1 et 2, ~10/jour) :
-  - FAIT le 2026-10-29 (Chrome, toast « Indexing requested » vu) : /secteurs/tech-numerique, /salons/foire-agricole-tarbes, /secteurs/art-culture. /secteurs/agroalimentaire : test en direct bloqué plus de 3 min, annulé, reste en file.
-  - File : /secteurs/agroalimentaire, /salons/siae-le-bourget, /salons/reeduca-paris, /salons/milipol-paris, /secteurs/cosmetique-beaute, /villes/angers, /villes/lille, /salons/paris-photo, /salons/shop-le-salon.
+  - FAIT le 2026-10-29 (Chrome, toast « Indexing requested » vu) : /secteurs/tech-numerique, /salons/foire-agricole-tarbes, /secteurs/art-culture. /secteurs/agroalimentaire (seconde tentative), /salons/siae-le-bourget, /salons/reeduca-paris, /salons/milipol-paris, /secteurs/cosmetique-beaute, /villes/angers, /villes/lille : FAIT le 2026-10-29 aussi (toast vu pour chacune). « Quota Exceeded » sur /salons/paris-photo.
+  - Reste pour le prochain quota : /salons/paris-photo, /salons/shop-le-salon.
 - [ ] K5. Contenu bloqué par l'organisateur (rien à publier avant annonce, la routine roll les reprend) : comic-con-france, sfar-congres-paris, paris-games-week (éditions 2027 non annoncées) ; architect-at-work-lyon déjà en arbitrage roll (édition annoncée en mai 2028).
 - [ ] K6. MESURE J+28, à lancer le 2026-11-30 (fenêtre 2026-10-30 → 2026-11-26, lag GSC de 3 jours) :
   `cd /Users/julienzakoian/Projects/showfinder && ./node_modules/.bin/tsx scripts/diag-page2-page1-export.ts 2026-10-30 2026-11-26`

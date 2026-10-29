@@ -64,4 +64,4 @@ Non-critères : pas d'obligation de résultat sur la position (mesurée à J+28,
 
 ## Prochaine action
 
-Request Indexing de la file K4 au fil du quota (prochaine : /secteurs/agroalimentaire), puis mesure K6 le 2026-11-30.
+Request Indexing de la file K4 au fil du quota (reste : /salons/paris-photo, /salons/shop-le-salon ; 10 pages demandées le 2026-10-29, quota atteint), puis mesure K6 le 2026-11-30.
