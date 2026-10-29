@@ -1,0 +1,338 @@
+[
+  {
+    "page": "https://www.agoris.io/salons/sommet-elevage-clermont",
+    "clicks": 40,
+    "impressions": 5618,
+    "ctr": 0.00711997152011392,
+    "position": 10.28871484514062
+  },
+  {
+    "page": "https://www.agoris.io/salons/data-centre-world-paris",
+    "clicks": 8,
+    "impressions": 3229,
+    "ctr": 0.0024775472282440383,
+    "position": 7.2815113038092285
+  },
+  {
+    "page": "https://www.agoris.io/salons/congres-sfd",
+    "clicks": 30,
+    "impressions": 3146,
+    "ctr": 0.009535918626827717,
+    "position": 6.9475524475524475
+  },
+  {
+    "page": "https://www.agoris.io/salons/beauty-profs-marseille",
+    "clicks": 20,
+    "impressions": 3101,
+    "ctr": 0.0064495324089003546,
+    "position": 7.863592389551758
+  },
+  {
+    "page": "https://www.agoris.io/salons/mondial-auto-paris",
+    "clicks": 27,
+    "impressions": 2747,
+    "ctr": 0.009828904259191846,
+    "position": 8.344375682562795
+  },
+  {
+    "page": "https://www.agoris.io/salons/cplf",
+    "clicks": 10,
+    "impressions": 1881,
+    "ctr": 0.00531632110579479,
+    "position": 6.523657628920787
+  },
+  {
+    "page": "https://www.agoris.io/en/salons/amwc",
+    "clicks": 2,
+    "impressions": 1609,
+    "ctr": 0.001243008079552517,
+    "position": 6.613424487259167
+  },
+  {
+    "page": "https://www.agoris.io/salons/jdp-paris",
+    "clicks": 7,
+    "impressions": 1469,
+    "ctr": 0.004765146358066712,
+    "position": 7.0864533696392105
+  },
+  {
+    "page": "https://www.agoris.io/salons/gazelec-paris",
+    "clicks": 8,
+    "impressions": 1458,
+    "ctr": 0.0054869684499314125,
+    "position": 6.03840877914952
+  },
+  {
+    "page": "https://www.agoris.io/salons/smcl",
+    "clicks": 4,
+    "impressions": 1457,
+    "ctr": 0.002745367192862045,
+    "position": 9.471516815374056
+  },
+  {
+    "page": "https://www.agoris.io/salons/salon-alpin",
+    "clicks": 10,
+    "impressions": 1332,
+    "ctr": 0.0075075075075075074,
+    "position": 8
+  },
+  {
+    "page": "https://www.agoris.io/salons/viteff",
+    "clicks": 4,
+    "impressions": 1053,
+    "ctr": 0.003798670465337132,
+    "position": 8.915479582146249
+  },
+  {
+    "page": "https://www.agoris.io/salons/carrefour-pathologie",
+    "clicks": 5,
+    "impressions": 1011,
+    "ctr": 0.004945598417408506,
+    "position": 6.9347181008902075
+  },
+  {
+    "page": "https://www.agoris.io/salons/euroforest",
+    "clicks": 9,
+    "impressions": 944,
+    "ctr": 0.009533898305084746,
+    "position": 9.110169491525424
+  },
+  {
+    "page": "https://www.agoris.io/salons/cosmetagora-paris",
+    "clicks": 1,
+    "impressions": 912,
+    "ctr": 0.0010964912280701754,
+    "position": 6.1589912280701755
+  },
+  {
+    "page": "https://www.agoris.io/salons/congres-francais-urologie",
+    "clicks": 6,
+    "impressions": 909,
+    "ctr": 0.006600660066006601,
+    "position": 7.590759075907591
+  },
+  {
+    "page": "https://www.agoris.io/salons/euronaval-paris",
+    "clicks": 5,
+    "impressions": 869,
+    "ctr": 0.005753739930955121,
+    "position": 10.150747986191025
+  },
+  {
+    "page": "https://www.agoris.io/salons/salon-des-vins-de-loire",
+    "clicks": 2,
+    "impressions": 862,
+    "ctr": 0.002320185614849188,
+    "position": 7.327146171693736
+  },
+  {
+    "page": "https://www.agoris.io/salons/paris-sante-femmes",
+    "clicks": 7,
+    "impressions": 851,
+    "ctr": 0.008225616921269096,
+    "position": 7.498237367802585
+  },
+  {
+    "page": "https://www.agoris.io/salons/workplace-meetings-cannes",
+    "clicks": 7,
+    "impressions": 797,
+    "ctr": 0.00878293601003764,
+    "position": 6.7214554579673775
+  },
+  {
+    "page": "https://www.agoris.io/en/salons/jdp-paris",
+    "clicks": 5,
+    "impressions": 762,
+    "ctr": 0.006561679790026247,
+    "position": 5.410761154855643
+  },
+  {
+    "page": "https://www.agoris.io/salons/satis",
+    "clicks": 2,
+    "impressions": 733,
+    "ctr": 0.002728512960436562,
+    "position": 7.276944065484311
+  },
+  {
+    "page": "https://www.agoris.io/salons/devoxx-france",
+    "clicks": 3,
+    "impressions": 722,
+    "ctr": 0.004155124653739612,
+    "position": 7.295013850415512
+  },
+  {
+    "page": "https://www.agoris.io/salons/educatech-expo",
+    "clicks": 2,
+    "impressions": 719,
+    "ctr": 0.0027816411682892906,
+    "position": 6.966620305980529
+  },
+  {
+    "page": "https://www.agoris.io/salons/sofins",
+    "clicks": 3,
+    "impressions": 711,
+    "ctr": 0.004219409282700422,
+    "position": 5.710267229254571
+  },
+  {
+    "page": "https://www.agoris.io/salons/iode",
+    "clicks": 7,
+    "impressions": 703,
+    "ctr": 0.00995732574679943,
+    "position": 5.287339971550498
+  },
+  {
+    "page": "https://www.agoris.io/salons/les-assises-de-la-securite-monaco",
+    "clicks": 6,
+    "impressions": 670,
+    "ctr": 0.008955223880597015,
+    "position": 6.638805970149254
+  },
+  {
+    "page": "https://www.agoris.io/salons/rencontres-amrae",
+    "clicks": 0,
+    "impressions": 660,
+    "ctr": 0,
+    "position": 8.98030303030303
+  },
+  {
+    "page": "https://www.agoris.io/salons/energaia-montpellier",
+    "clicks": 2,
+    "impressions": 629,
+    "ctr": 0.003179650238473768,
+    "position": 11.70906200317965
+  },
+  {
+    "page": "https://www.agoris.io/salons/congres-francais-psychiatrie",
+    "clicks": 1,
+    "impressions": 626,
+    "ctr": 0.001597444089456869,
+    "position": 6.757188498402556
+  },
+  {
+    "page": "https://www.agoris.io/salons/innovagri",
+    "clicks": 6,
+    "impressions": 623,
+    "ctr": 0.009630818619582664,
+    "position": 9.426966292134832
+  },
+  {
+    "page": "https://www.agoris.io/lieux/parc-expo-chalons",
+    "clicks": 4,
+    "impressions": 616,
+    "ctr": 0.006493506493506494,
+    "position": 8.51461038961039
+  },
+  {
+    "page": "https://www.agoris.io/en/salons/satis",
+    "clicks": 5,
+    "impressions": 604,
+    "ctr": 0.008278145695364239,
+    "position": 5.526490066225166
+  },
+  {
+    "page": "https://www.agoris.io/salons/jfhod",
+    "clicks": 4,
+    "impressions": 598,
+    "ctr": 0.006688963210702341,
+    "position": 8.638795986622075
+  },
+  {
+    "page": "https://www.agoris.io/salons/europropre",
+    "clicks": 4,
+    "impressions": 591,
+    "ctr": 0.00676818950930626,
+    "position": 9.558375634517766
+  },
+  {
+    "page": "https://www.agoris.io/salons/exphotel-bordeaux",
+    "clicks": 0,
+    "impressions": 583,
+    "ctr": 0,
+    "position": 6.8593481989708405
+  },
+  {
+    "page": "https://www.agoris.io/lieux/grande-halle-d-auvergne",
+    "clicks": 5,
+    "impressions": 580,
+    "ctr": 0.008620689655172414,
+    "position": 11.168965517241379
+  },
+  {
+    "page": "https://www.agoris.io/en/salons/museum-connections",
+    "clicks": 4,
+    "impressions": 579,
+    "ctr": 0.0069084628670120895,
+    "position": 5.533678756476684
+  },
+  {
+    "page": "https://www.agoris.io/salons/congres-des-audioprothesistes",
+    "clicks": 5,
+    "impressions": 573,
+    "ctr": 0.008726003490401396,
+    "position": 6.268760907504363
+  },
+  {
+    "page": "https://www.agoris.io/salons/architect-at-work-nantes",
+    "clicks": 4,
+    "impressions": 572,
+    "ctr": 0.006993006993006993,
+    "position": 7.715034965034965
+  },
+  {
+    "page": "https://www.agoris.io/salons/sival-angers",
+    "clicks": 2,
+    "impressions": 571,
+    "ctr": 0.0035026269702276708,
+    "position": 8.577933450087565
+  },
+  {
+    "page": "https://www.agoris.io/en/salons/congres-sofcot",
+    "clicks": 5,
+    "impressions": 561,
+    "ctr": 0.008912655971479501,
+    "position": 6.586452762923352
+  },
+  {
+    "page": "https://www.agoris.io/salons/architect-at-work-paris",
+    "clicks": 3,
+    "impressions": 535,
+    "ctr": 0.005607476635514018,
+    "position": 9.300934579439252
+  },
+  {
+    "page": "https://www.agoris.io/en/lieux/paris-le-bourget",
+    "clicks": 1,
+    "impressions": 534,
+    "ctr": 0.0018726591760299626,
+    "position": 11.151685393258427
+  },
+  {
+    "page": "https://www.agoris.io/salons/tranofiliere-paris",
+    "clicks": 3,
+    "impressions": 525,
+    "ctr": 0.005714285714285714,
+    "position": 8.975238095238096
+  },
+  {
+    "page": "https://www.agoris.io/salons/ces-las-vegas",
+    "clicks": 2,
+    "impressions": 525,
+    "ctr": 0.0038095238095238095,
+    "position": 11.876190476190477
+  },
+  {
+    "page": "https://www.agoris.io/salons/europack-euromanut-lyon",
+    "clicks": 4,
+    "impressions": 523,
+    "ctr": 0.0076481835564053535,
+    "position": 8.908221797323137
+  },
+  {
+    "page": "https://www.agoris.io/salons/ad2s-bordeaux",
+    "clicks": 5,
+    "impressions": 520,
+    "ctr": 0.009615384615384616,
+    "position": 6.005769230769231
+  }
+]
