@@ -9,7 +9,7 @@ import {
   getSalonsBySector,
   getSectors,
 } from "@/lib/queries";
-import { slugifyCity } from "@/lib/format";
+import { formatDateRange, slugifyCity } from "@/lib/format";
 import { getSectorContent, formatEditorialMonthLocale } from "@/lib/sector-content";
 import { compileMdxContentSafe } from "@/lib/mdx";
 import { SalonCard } from "@/components/salon-card";
@@ -20,6 +20,9 @@ import { JsonLd } from "@/components/json-ld";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-jsonld";
 import { buildAlternates } from "@/lib/i18n-metadata";
 import type { AppLocale } from "@/i18n/routing";
+
+// Nombre de salons affichés en cartes ; la suite passe en liste compacte
+const CARD_COUNT = 20;
 
 type Props = {
   params: Promise<{ slug: string; locale: AppLocale }>;
@@ -87,8 +90,11 @@ export default async function SecteurPage({ params }: Props) {
 
   const t = await getTranslations({ locale, namespace: "sectors.detail" });
 
+  // Tous les salons de la filière : les 20 premiers en cartes, les suivants en
+  // liste compacte. Sans cela, une fiche au-delà du 20e rang n'avait aucun lien
+  // depuis son hub (pas de page 2).
   const [result, sectorContent, allSectors] = await Promise.all([
-    getSalonsBySector(slug),
+    getSalonsBySector(slug, { pageSize: 1000 }),
     // Phase 2 i18n : retourne le MDX EN si disponible, sinon FR.
     getSectorContent(slug, locale),
     getSectors(),
@@ -104,6 +110,10 @@ export default async function SecteurPage({ params }: Props) {
   const sectorDescription =
     (locale === "en" && sector.description_en ? sector.description_en : null) ??
     sector.description;
+
+  const cardSalons = result.salons.slice(0, CARD_COUNT);
+  const moreSalons = result.salons.slice(CARD_COUNT);
+  const tCommon = await getTranslations({ locale, namespace: "common" });
 
   // Villes de la filière (dédupliquées via les salons listés) : maillage
   // croisé secteur → pages ville.
@@ -216,9 +226,9 @@ export default async function SecteurPage({ params }: Props) {
           <AlertSubscribe type="sector" slug={slug} label={sector.name} />
         </div>
 
-        {result.salons.length > 0 ? (
+        {cardSalons.length > 0 ? (
           <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {result.salons.map((salon) => (
+            {cardSalons.map((salon) => (
               <SalonCard key={salon.id} salon={salon} />
             ))}
           </div>
@@ -228,6 +238,31 @@ export default async function SecteurPage({ params }: Props) {
               {t("emptyShows")}
               <em className="not-italic text-ocre">.</em>
             </p>
+          </div>
+        )}
+
+        {/* Suite de la filière en liste compacte : un lien par fiche */}
+        {moreSalons.length > 0 && (
+          <div className="mt-16">
+            <h3 className="font-serif text-xl font-semibold tracking-tight text-prune">
+              {t("moreShowsHeading")}
+            </h3>
+            <ul className="mt-6 grid gap-x-8 gap-y-3 text-sm sm:grid-cols-2">
+              {moreSalons.map((salon) => (
+                <li key={salon.id}>
+                  <Link
+                    href={`/salons/${salon.slug}`}
+                    className="text-prune underline decoration-prune/30 underline-offset-2 transition-colors hover:decoration-prune"
+                  >
+                    {salon.name}
+                  </Link>
+                  <span className="text-muted">
+                    {salon.city ? ` · ${salon.city}` : ""}
+                    {` · ${formatDateRange(salon.start_date, salon.end_date, locale, tCommon("datesPending"))}`}
+                  </span>
+                </li>
+              ))}
+            </ul>
           </div>
         )}
       </section>

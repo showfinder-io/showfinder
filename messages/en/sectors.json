@@ -19,6 +19,7 @@
     "showsLabelOne": "trade show listed",
     "showsLabelMany": "trade shows listed",
     "emptyShows": "No trade shows in this sector at the moment",
+    "moreShowsHeading": "All trade shows in this sector",
     "citiesHeading": "Cities in this sector",
     "cityLink": "Trade shows in {city}",
     "otherSectorsHeading": "Explore other sectors"

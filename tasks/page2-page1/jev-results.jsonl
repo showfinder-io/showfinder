@@ -1,0 +1,176 @@
+{"url":"/salons/air-drone-bordeaux","query":"uav show bordeaux","impressions":4,"position":15.75,"reponse":"oui","reponse_conf":0.76,"intention":"info_salon","intention_conf":0.54}
+{"url":"/salons/learning-technologies-paris","query":"apolearn","impressions":3,"position":14.333333333333334,"reponse":"non","reponse_conf":0.53,"intention":"info_salon","intention_conf":0.8}
+{"url":"/blog/salons-professionnels-declin-ou-renaissance","query":"salons retail en europe perte de temps toujours les mêmes prestataires","impressions":13,"position":16.23076923076923,"reponse":"partiel","reponse_conf":0.8,"intention":"autre","intention_conf":0.7}
+{"url":"/salons/affaire-de-cadeaux","query":"affaire de cadeaux","impressions":3,"position":15.666666666666666,"reponse":"oui","reponse_conf":0.97,"intention":"info_salon","intention_conf":1}
+{"url":"/salons/affaire-de-cadeaux","query":"standiste pour le salon affaires de cadeaux 2026","impressions":16,"position":18.25,"reponse":"partiel","reponse_conf":0.69,"intention":"prestataire","intention_conf":0.99}
+{"url":"/salons/air-drone-bordeaux","query":"salon du drone 2024","impressions":23,"position":19,"reponse":"partiel","reponse_conf":0.76,"intention":"edition_passee","intention_conf":0.95}
+{"url":"/salons/all4pack-paris","query":"all 4 pack","impressions":3,"position":12,"reponse":"oui","reponse_conf":0.46,"intention":"info_salon","intention_conf":0.95}
+{"url":"/salons/aps-paris","query":"salon aps","impressions":4,"position":15,"reponse":"oui","reponse_conf":0.74,"intention":"info_salon","intention_conf":1}
+{"url":"/salons/architect-at-work-lyon","query":"architect work lyon","impressions":38,"position":12.921052631578947,"reponse":"oui","reponse_conf":0.8,"intention":"info_salon","intention_conf":0.98}
+{"url":"/salons/artibat-rennes","query":"artibat 2026","impressions":7,"position":11.285714285714286,"reponse":"partiel","reponse_conf":0.91,"intention":"edition_passee","intention_conf":0.5}
+{"url":"/salons/bau-munich","query":"bauma 2027 munich","impressions":5,"position":11,"reponse":"oui","reponse_conf":0.41,"intention":"info_salon","intention_conf":1}
+{"url":"/salons/bepositive-lyon","query":"bepositive","impressions":8,"position":20,"reponse":"oui","reponse_conf":0.56,"intention":"info_salon","intention_conf":1}
+{"url":"/salons/cfia-toulouse","query":"cfia","impressions":4,"position":18,"reponse":"oui","reponse_conf":0.4,"intention":"info_salon","intention_conf":0.53}
+{"url":"/salons/cfia-toulouse","query":"salon cfia","impressions":3,"position":19.666666666666668,"reponse":"oui","reponse_conf":0.73,"intention":"info_salon","intention_conf":0.63}
+{"url":"/salons/comic-con-france","query":"comic con france","impressions":131,"position":18.022900763358777,"reponse":"oui","reponse_conf":0.82,"intention":"info_salon","intention_conf":1}
+{"url":"/salons/comic-con-france","query":"comic con frankrijk","impressions":3,"position":13,"reponse":"oui","reponse_conf":0.86,"intention":"info_salon","intention_conf":0.99}
+{"url":"/salons/comic-con-france","query":"comic con paris 2026","impressions":65,"position":17.953846153846154,"reponse":"partiel","reponse_conf":0.1,"intention":"info_salon","intention_conf":0.98}
+{"url":"/salons/comic-con-france","query":"comic convention paris 2026","impressions":7,"position":11,"reponse":"partiel","reponse_conf":0.14,"intention":"info_salon","intention_conf":0.88}
+{"url":"/salons/comic-con-france","query":"comiccon 2026","impressions":3,"position":13.666666666666666,"reponse":"oui","reponse_conf":0.56,"intention":"info_salon","intention_conf":0.98}
+{"url":"/salons/comic-con-france","query":"france comic con","impressions":6,"position":13.166666666666666,"reponse":"oui","reponse_conf":0.86,"intention":"info_salon","intention_conf":0.99}
+{"url":"/salons/congres-adf-paris","query":"adf paris 2026","impressions":5,"position":15.6,"reponse":"oui","reponse_conf":0.95,"intention":"info_salon","intention_conf":0.99}
+{"url":"/salons/congres-adf-paris","query":"congres dentaire paris","impressions":3,"position":12,"reponse":"oui","reponse_conf":0.92,"intention":"info_salon","intention_conf":0.63}
+{"url":"/salons/congres-adf-paris","query":"congrès adf 2026","impressions":5,"position":15.8,"reponse":"oui","reponse_conf":0.97,"intention":"info_salon","intention_conf":0.99}
+{"url":"/salons/congres-hlm","query":"standiste pour le congrès hlm h'expo 2026","impressions":20,"position":17.2,"reponse":"partiel","reponse_conf":0.76,"intention":"prestataire","intention_conf":0.98}
+{"url":"/salons/cphi-worldwide","query":"cphi messe","impressions":5,"position":15.6,"reponse":"oui","reponse_conf":0.73,"intention":"info_salon","intention_conf":1}
+{"url":"/salons/cphi-worldwide","query":"cphi paris","impressions":11,"position":19.545454545454547,"reponse":"partiel","reponse_conf":0.37,"intention":"info_salon","intention_conf":0.98}
+{"url":"/salons/cprint-lyon","query":"c!print lyon","impressions":4,"position":10.5,"reponse":"oui","reponse_conf":0.73,"intention":"info_salon","intention_conf":0.95}
+{"url":"/salons/cprint-lyon","query":"cprint lyon","impressions":10,"position":12.8,"reponse":"oui","reponse_conf":0.8,"intention":"info_salon","intention_conf":0.99}
+{"url":"/salons/cprint-lyon","query":"salon c print","impressions":4,"position":13.5,"reponse":"oui","reponse_conf":0.73,"intention":"info_salon","intention_conf":0.98}
+{"url":"/salons/digital-workplace-paris","query":"salon digital workplace 2024","impressions":5,"position":15.8,"reponse":"partiel","reponse_conf":0.91,"intention":"edition_passee","intention_conf":0.96}
+{"url":"/salons/elearning-expo-paris","query":"salon elearning","impressions":3,"position":16,"reponse":"oui","reponse_conf":0.62,"intention":"info_salon","intention_conf":0.87}
+{"url":"/salons/elearning-expo-paris","query":"salon elearning expo","impressions":8,"position":17.25,"reponse":"oui","reponse_conf":0.69,"intention":"info_salon","intention_conf":0.99}
+{"url":"/salons/euromaritime","query":"euromaritime","impressions":10,"position":15.3,"reponse":"oui","reponse_conf":0.8,"intention":"info_salon","intention_conf":1}
+{"url":"/salons/euromaritime","query":"salon maritime marseille","impressions":3,"position":14.333333333333334,"reponse":"oui","reponse_conf":0.43,"intention":"info_salon","intention_conf":0.87}
+{"url":"/salons/fitex-paris","query":"salon du fitness paris","impressions":4,"position":16.75,"reponse":"oui","reponse_conf":0.56,"intention":"info_salon","intention_conf":0.76}
+{"url":"/salons/foire-agricole-tarbes","query":"foire agricole de tarbes 2027","impressions":8,"position":11.125,"reponse":"oui","reponse_conf":0.86,"intention":"info_salon","intention_conf":1}
+{"url":"/salons/foire-agricole-tarbes","query":"foire agricole tarbes","impressions":5,"position":15.4,"reponse":"oui","reponse_conf":0.59,"intention":"info_salon","intention_conf":0.98}
+{"url":"/salons/foire-agricole-tarbes","query":"foire de tarbes 2026 programme","impressions":4,"position":11.5,"reponse":"partiel","reponse_conf":0.82,"intention":"info_salon","intention_conf":0.86}
+{"url":"/salons/foire-agricole-tarbes","query":"foire de tarbes 2027","impressions":19,"position":10.68421052631579,"reponse":"oui","reponse_conf":0.82,"intention":"info_salon","intention_conf":1}
+{"url":"/salons/foire-agricole-tarbes","query":"foire tarbes 2027","impressions":18,"position":10.944444444444445,"reponse":"oui","reponse_conf":0.82,"intention":"info_salon","intention_conf":0.99}
+{"url":"/salons/foire-agricole-tarbes","query":"salon de l agriculture tarbes 2027","impressions":8,"position":12,"reponse":"oui","reponse_conf":0.94,"intention":"info_salon","intention_conf":1}
+{"url":"/salons/foire-agricole-tarbes","query":"salon de l'agriculture tarbes","impressions":3,"position":13.666666666666666,"reponse":"oui","reponse_conf":0.8,"intention":"info_salon","intention_conf":0.98}
+{"url":"/salons/foire-agricole-tarbes","query":"salon de l'agriculture tarbes 2027","impressions":6,"position":10.666666666666666,"reponse":"oui","reponse_conf":0.91,"intention":"info_salon","intention_conf":1}
+{"url":"/salons/franchise-expo-lyon","query":"franchise city-event","impressions":3,"position":10.666666666666666,"reponse":"oui","reponse_conf":0.09,"intention":"info_salon","intention_conf":0.56}
+{"url":"/salons/franchise-expo-lyon","query":"salon de la franchise lyon","impressions":7,"position":20,"reponse":"oui","reponse_conf":0.52,"intention":"info_salon","intention_conf":0.71}
+{"url":"/salons/global-industrie-lyon","query":"salon tolexpo","impressions":10,"position":11.2,"reponse":"non","reponse_conf":0.92,"intention":"info_salon","intention_conf":0.92}
+{"url":"/salons/global-industrie-lyon","query":"tolexpo","impressions":15,"position":19.2,"reponse":"non","reponse_conf":0.82,"intention":"info_salon","intention_conf":0.88}
+{"url":"/salons/hr-technologies-france","query":"hr technologie","impressions":3,"position":17,"reponse":"oui","reponse_conf":0.89,"intention":"info_salon","intention_conf":0.94}
+{"url":"/salons/hr-technologies-france","query":"rh technologies","impressions":3,"position":20,"reponse":"oui","reponse_conf":0.85,"intention":"info_salon","intention_conf":0.98}
+{"url":"/salons/hr-technologies-france","query":"salon hr tech","impressions":3,"position":20,"reponse":"oui","reponse_conf":0.82,"intention":"info_salon","intention_conf":0.94}
+{"url":"/salons/innov-agri-ondes","query":"innov agri 2026","impressions":3,"position":11.666666666666666,"reponse":"partiel","reponse_conf":0.85,"intention":"info_salon","intention_conf":0.77}
+{"url":"/salons/innov-agri-ondes","query":"innov agri 2026 lieu","impressions":3,"position":10.666666666666666,"reponse":"partiel","reponse_conf":0.66,"intention":"lieu","intention_conf":0.71}
+{"url":"/salons/innov-agri-ondes","query":"innov agri 2026 nord","impressions":4,"position":10.5,"reponse":"partiel","reponse_conf":0.62,"intention":"info_salon","intention_conf":0.6}
+{"url":"/salons/innov-agri-ondes","query":"innov agri 2026 outarville","impressions":9,"position":11,"reponse":"non","reponse_conf":0.51,"intention":"info_salon","intention_conf":0.77}
+{"url":"/salons/innov-agri-ondes","query":"innov agri outarville 2026","impressions":15,"position":11.4,"reponse":"non","reponse_conf":0.48,"intention":"info_salon","intention_conf":0.72}
+{"url":"/salons/innov-agri-ondes","query":"salon innov agri 2026","impressions":3,"position":11,"reponse":"partiel","reponse_conf":0.77,"intention":"info_salon","intention_conf":0.82}
+{"url":"/salons/it-partners-paris","query":"itpartners","impressions":3,"position":17,"reponse":"oui","reponse_conf":0.88,"intention":"info_salon","intention_conf":1}
+{"url":"/salons/learning-technologies-paris","query":"e learning technology","impressions":4,"position":18.75,"reponse":"oui","reponse_conf":0.58,"intention":"info_salon","intention_conf":0.82}
+{"url":"/salons/learning-technologies-paris","query":"salon de la formation et du digital learning","impressions":4,"position":19.75,"reponse":"oui","reponse_conf":0.51,"intention":"info_salon","intention_conf":0.96}
+{"url":"/salons/learning-technologies-paris","query":"standiste pour le salon learning & hr 2027","impressions":22,"position":11.045454545454545,"reponse":"partiel","reponse_conf":0.22,"intention":"prestataire","intention_conf":0.99}
+{"url":"/salons/luxe-pack-monaco","query":"emballage monaco","impressions":8,"position":16,"reponse":"oui","reponse_conf":0.52,"intention":"info_salon","intention_conf":0.75}
+{"url":"/salons/luxe-pack-monaco","query":"luxepack monaco","impressions":9,"position":17.333333333333332,"reponse":"oui","reponse_conf":0.73,"intention":"info_salon","intention_conf":0.45}
+{"url":"/salons/milipol-paris","query":"exposants milipol paris","impressions":7,"position":14.714285714285714,"reponse":"partiel","reponse_conf":0.62,"intention":"info_salon","intention_conf":1}
+{"url":"/salons/milipol-paris","query":"milipol exposant","impressions":5,"position":19.6,"reponse":"partiel","reponse_conf":0.62,"intention":"info_salon","intention_conf":1}
+{"url":"/salons/milipol-paris","query":"milipol network","impressions":8,"position":19.125,"reponse":"partiel","reponse_conf":0.56,"intention":"info_salon","intention_conf":0.9}
+{"url":"/salons/milipol-paris","query":"milipol paris 2027","impressions":6,"position":11.5,"reponse":"oui","reponse_conf":1,"intention":"info_salon","intention_conf":1}
+{"url":"/salons/milipol-paris","query":"salon milipol 2027","impressions":5,"position":11.8,"reponse":"oui","reponse_conf":0.98,"intention":"info_salon","intention_conf":1}
+{"url":"/salons/mipcom","query":"mip 2026","impressions":3,"position":10.666666666666666,"reponse":"non","reponse_conf":0.3,"intention":"info_salon","intention_conf":0.83}
+{"url":"/salons/mipcom","query":"mip com","impressions":4,"position":18,"reponse":"oui","reponse_conf":0.69,"intention":"info_salon","intention_conf":0.75}
+{"url":"/salons/nordbat-lille","query":"batimat lille","impressions":4,"position":14.75,"reponse":"non","reponse_conf":0.56,"intention":"info_salon","intention_conf":0.75}
+{"url":"/salons/nordbat-lille","query":"nordbat","impressions":11,"position":17.818181818181817,"reponse":"oui","reponse_conf":0.27,"intention":"info_salon","intention_conf":0.98}
+{"url":"/salons/paris-games-week","query":"date paris games week 2026","impressions":3,"position":15.333333333333334,"reponse":"oui","reponse_conf":0.94,"intention":"info_salon","intention_conf":0.94}
+{"url":"/salons/paris-games-week","query":"date pgw","impressions":23,"position":14.608695652173912,"reponse":"oui","reponse_conf":0.19,"intention":"info_salon","intention_conf":0.96}
+{"url":"/salons/paris-games-week","query":"dates pgw","impressions":3,"position":11,"reponse":"oui","reponse_conf":0.64,"intention":"info_salon","intention_conf":0.98}
+{"url":"/salons/paris-games-week","query":"exposant paris games week","impressions":4,"position":12,"reponse":"partiel","reponse_conf":0.76,"intention":"info_salon","intention_conf":0.96}
+{"url":"/salons/paris-games-week","query":"paris game week 2026 date","impressions":3,"position":20.333333333333332,"reponse":"oui","reponse_conf":0.98,"intention":"info_salon","intention_conf":0.98}
+{"url":"/salons/paris-games-week","query":"paris games week 2026 invités","impressions":3,"position":20.333333333333332,"reponse":"partiel","reponse_conf":0.97,"intention":"info_salon","intention_conf":0.99}
+{"url":"/salons/paris-games-week","query":"paris games week 2026 programme","impressions":4,"position":19,"reponse":"partiel","reponse_conf":0.95,"intention":"info_salon","intention_conf":0.94}
+{"url":"/salons/paris-games-week","query":"paris games week lieu","impressions":4,"position":19,"reponse":"oui","reponse_conf":0.83,"intention":"lieu","intention_conf":0.82}
+{"url":"/salons/paris-games-week","query":"parking paris games week","impressions":3,"position":14.666666666666666,"reponse":"partiel","reponse_conf":0.91,"intention":"info_salon","intention_conf":0.28}
+{"url":"/salons/paris-games-week","query":"pgw 2026 programme","impressions":12,"position":10.75,"reponse":"partiel","reponse_conf":0.58,"intention":"info_salon","intention_conf":0.96}
+{"url":"/salons/paris-games-week","query":"pgw adresse","impressions":4,"position":13.25,"reponse":"partiel","reponse_conf":0.37,"intention":"lieu","intention_conf":0.8}
+{"url":"/salons/paris-games-week","query":"pgw dates","impressions":12,"position":10.666666666666666,"reponse":"oui","reponse_conf":0.86,"intention":"info_salon","intention_conf":0.98}
+{"url":"/salons/paris-games-week","query":"programme pgw 2026","impressions":12,"position":11.833333333333334,"reponse":"partiel","reponse_conf":0.74,"intention":"info_salon","intention_conf":0.98}
+{"url":"/salons/paris-games-week","query":"salon jeux vidéo paris 2026","impressions":3,"position":19.666666666666668,"reponse":"oui","reponse_conf":0.7,"intention":"info_salon","intention_conf":0.82}
+{"url":"/salons/paris-photo","query":"date paris photo","impressions":14,"position":13,"reponse":"oui","reponse_conf":1,"intention":"info_salon","intention_conf":1}
+{"url":"/salons/paris-photo","query":"dates paris photo 2026","impressions":4,"position":10.75,"reponse":"oui","reponse_conf":1,"intention":"info_salon","intention_conf":1}
+{"url":"/salons/paris-photo","query":"paris photo 2026","impressions":12,"position":16.166666666666664,"reponse":"oui","reponse_conf":0.98,"intention":"info_salon","intention_conf":1}
+{"url":"/salons/paris-photo","query":"paris photo dates","impressions":18,"position":10.555555555555555,"reponse":"oui","reponse_conf":1,"intention":"info_salon","intention_conf":1}
+{"url":"/salons/paris-photo","query":"paris photo foire","impressions":4,"position":11,"reponse":"oui","reponse_conf":0.98,"intention":"info_salon","intention_conf":1}
+{"url":"/salons/prodays","query":"salon du vélo 2027","impressions":7,"position":10.714285714285714,"reponse":"oui","reponse_conf":0.8,"intention":"info_salon","intention_conf":0.89}
+{"url":"/salons/produrable-paris","query":"pro durable","impressions":9,"position":13.11111111111111,"reponse":"oui","reponse_conf":0.76,"intention":"info_salon","intention_conf":0.98}
+{"url":"/salons/reeduca-paris","query":"reeduca","impressions":5,"position":16.8,"reponse":"oui","reponse_conf":0.85,"intention":"info_salon","intention_conf":1}
+{"url":"/salons/reeduca-paris","query":"rééduca","impressions":4,"position":12.5,"reponse":"oui","reponse_conf":0.86,"intention":"info_salon","intention_conf":0.99}
+{"url":"/salons/reeduca-paris","query":"rééduca 2025","impressions":3,"position":17.333333333333332,"reponse":"partiel","reponse_conf":0.89,"intention":"edition_passee","intention_conf":0.96}
+{"url":"/salons/reeduca-paris","query":"salon kine paris","impressions":3,"position":10.666666666666666,"reponse":"oui","reponse_conf":0.61,"intention":"info_salon","intention_conf":0.54}
+{"url":"/salons/reeduca-paris","query":"salon kiné 2026","impressions":4,"position":10.5,"reponse":"partiel","reponse_conf":0.74,"intention":"info_salon","intention_conf":0.56}
+{"url":"/salons/reeduca-paris","query":"salon reeduca","impressions":16,"position":17.875,"reponse":"oui","reponse_conf":0.83,"intention":"info_salon","intention_conf":1}
+{"url":"/salons/reeduca-paris","query":"salon reeduca 2026","impressions":4,"position":11.25,"reponse":"partiel","reponse_conf":0.89,"intention":"info_salon","intention_conf":0.48}
+{"url":"/salons/reeduca-paris","query":"salon rééduca","impressions":14,"position":17.285714285714285,"reponse":"oui","reponse_conf":0.88,"intention":"info_salon","intention_conf":0.99}
+{"url":"/salons/reeduca-paris","query":"standiste pour le salon reeduca 2026","impressions":25,"position":14.56,"reponse":"partiel","reponse_conf":0.58,"intention":"prestataire","intention_conf":0.95}
+{"url":"/salons/renodays","query":"renodays","impressions":3,"position":15.666666666666666,"reponse":"oui","reponse_conf":0.8,"intention":"info_salon","intention_conf":0.99}
+{"url":"/salons/salon-copropriete-paris","query":"salon de la copropriété 2026","impressions":9,"position":15.333333333333334,"reponse":"oui","reponse_conf":0.97,"intention":"info_salon","intention_conf":0.99}
+{"url":"/salons/salon-funeraire","query":"salon du funeraire","impressions":12,"position":16.166666666666664,"reponse":"oui","reponse_conf":0.91,"intention":"info_salon","intention_conf":0.94}
+{"url":"/salons/salon-funeraire","query":"salon funéraire paris","impressions":4,"position":11.5,"reponse":"non","reponse_conf":0.11,"intention":"info_salon","intention_conf":0.81}
+{"url":"/salons/salon-funeraire","query":"salon funéraire paris 2026","impressions":21,"position":11.761904761904763,"reponse":"partiel","reponse_conf":0.82,"intention":"info_salon","intention_conf":0.58}
+{"url":"/salons/salon-tourisme-voyages-lille","query":"salon du tourisme et des activités nature","impressions":15,"position":13.8,"reponse":"oui","reponse_conf":0.85,"intention":"info_salon","intention_conf":0.93}
+{"url":"/salons/salon-vignerons-independants-paris","query":"salon des vignerons indépendants paris 2026","impressions":14,"position":10.571428571428571,"reponse":"oui","reponse_conf":0.89,"intention":"info_salon","intention_conf":0.98}
+{"url":"/salons/salon-vignerons-independants-paris","query":"salon des vignerons indépendants paris 2026 porte de versailles","impressions":13,"position":13.76923076923077,"reponse":"oui","reponse_conf":0.37,"intention":"info_salon","intention_conf":0.96}
+{"url":"/salons/sepem-colmar","query":"sepem colmar 2026","impressions":5,"position":11.2,"reponse":"partiel","reponse_conf":0.95,"intention":"info_salon","intention_conf":0.87}
+{"url":"/salons/sepem-toulouse","query":"sepem toulouse","impressions":5,"position":12.4,"reponse":"oui","reponse_conf":0.77,"intention":"info_salon","intention_conf":0.45}
+{"url":"/salons/sfar-congres-paris","query":"congres sfar","impressions":5,"position":20,"reponse":"oui","reponse_conf":0.61,"intention":"edition_passee","intention_conf":0.41}
+{"url":"/salons/sfar-congres-paris","query":"congrès anesthésie 2026","impressions":3,"position":18.333333333333332,"reponse":"oui","reponse_conf":0.82,"intention":"info_salon","intention_conf":0.44}
+{"url":"/salons/sfar-congres-paris","query":"congrès sfar 2026","impressions":4,"position":13.5,"reponse":"oui","reponse_conf":0.82,"intention":"edition_passee","intention_conf":0.58}
+{"url":"/salons/sfar-congres-paris","query":"sfar","impressions":64,"position":14.40625,"reponse":"oui","reponse_conf":0.55,"intention":"info_salon","intention_conf":0.48}
+{"url":"/salons/sfar-congres-paris","query":"sfar congres","impressions":6,"position":17.5,"reponse":"oui","reponse_conf":0.76,"intention":"info_salon","intention_conf":0.48}
+{"url":"/salons/sfar-congres-paris","query":"sfar inscription","impressions":3,"position":11,"reponse":"partiel","reponse_conf":0.76,"intention":"info_salon","intention_conf":0.56}
+{"url":"/salons/sfar-congres-paris","query":"sfar le congres","impressions":4,"position":18.75,"reponse":"oui","reponse_conf":0.72,"intention":"info_salon","intention_conf":0.42}
+{"url":"/salons/sfar-congres-paris","query":"sfar paris","impressions":3,"position":13.333333333333334,"reponse":"oui","reponse_conf":0.69,"intention":"info_salon","intention_conf":0.63}
+{"url":"/salons/shop-le-salon","query":"salon de la plv","impressions":22,"position":20.227272727272727,"reponse":"oui","reponse_conf":0.49,"intention":"info_salon","intention_conf":0.93}
+{"url":"/salons/shop-le-salon","query":"salon marketing point de vente","impressions":19,"position":18.736842105263158,"reponse":"oui","reponse_conf":0.76,"intention":"info_salon","intention_conf":0.88}
+{"url":"/salons/siae-le-bourget","query":"billet salon du bourget 2027","impressions":5,"position":10.8,"reponse":"partiel","reponse_conf":0.86,"intention":"info_salon","intention_conf":0.87}
+{"url":"/salons/siae-le-bourget","query":"bourget 2025","impressions":4,"position":17.5,"reponse":"partiel","reponse_conf":0.92,"intention":"edition_passee","intention_conf":0.99}
+{"url":"/salons/siae-le-bourget","query":"bourget 2027","impressions":82,"position":10.695121951219512,"reponse":"oui","reponse_conf":0.98,"intention":"info_salon","intention_conf":1}
+{"url":"/salons/siae-le-bourget","query":"bourget salon 2027","impressions":10,"position":11.5,"reponse":"oui","reponse_conf":0.97,"intention":"info_salon","intention_conf":1}
+{"url":"/salons/siae-le-bourget","query":"paris air show 2025","impressions":3,"position":11.666666666666666,"reponse":"partiel","reponse_conf":0.92,"intention":"edition_passee","intention_conf":0.98}
+{"url":"/salons/siae-le-bourget","query":"paris air show 2027","impressions":6,"position":13.5,"reponse":"oui","reponse_conf":0.94,"intention":"info_salon","intention_conf":1}
+{"url":"/salons/siae-le-bourget","query":"salon aeronautique","impressions":4,"position":19.75,"reponse":"oui","reponse_conf":0.85,"intention":"info_salon","intention_conf":0.72}
+{"url":"/salons/siae-le-bourget","query":"salon aéronautique du bourget","impressions":4,"position":20,"reponse":"oui","reponse_conf":0.79,"intention":"info_salon","intention_conf":0.99}
+{"url":"/salons/siae-le-bourget","query":"salon bourget 2027","impressions":37,"position":11.594594594594595,"reponse":"oui","reponse_conf":0.98,"intention":"info_salon","intention_conf":1}
+{"url":"/salons/siae-le-bourget","query":"salon du bourget 2026","impressions":6,"position":11.333333333333334,"reponse":"partiel","reponse_conf":0.94,"intention":"info_salon","intention_conf":0.78}
+{"url":"/salons/siae-le-bourget","query":"salon du bourget prix","impressions":5,"position":11.4,"reponse":"partiel","reponse_conf":0.97,"intention":"info_salon","intention_conf":0.94}
+{"url":"/salons/siae-le-bourget","query":"siae 2027","impressions":32,"position":10.625,"reponse":"oui","reponse_conf":0.95,"intention":"info_salon","intention_conf":1}
+{"url":"/salons/siae-le-bourget","query":"siae 2027 dates","impressions":3,"position":10.666666666666666,"reponse":"oui","reponse_conf":0.94,"intention":"info_salon","intention_conf":1}
+{"url":"/salons/siae-le-bourget","query":"siae bourget 2027","impressions":11,"position":11.181818181818182,"reponse":"oui","reponse_conf":0.97,"intention":"info_salon","intention_conf":1}
+{"url":"/salons/siae-le-bourget","query":"siae le bourget 2027","impressions":15,"position":10.733333333333333,"reponse":"oui","reponse_conf":0.95,"intention":"info_salon","intention_conf":1}
+{"url":"/salons/siae-le-bourget","query":"standiste pour le salon siae 2027","impressions":22,"position":17.09090909090909,"reponse":"partiel","reponse_conf":0.74,"intention":"prestataire","intention_conf":0.99}
+{"url":"/salons/siae-le-bourget","query":"standiste siae 2027","impressions":20,"position":17.9,"reponse":"partiel","reponse_conf":0.7,"intention":"prestataire","intention_conf":0.87}
+{"url":"/salons/siprho","query":"foire de montpellier 2027","impressions":7,"position":11.142857142857142,"reponse":"oui","reponse_conf":0.56,"intention":"info_salon","intention_conf":0.89}
+{"url":"/salons/siprho","query":"standiste salon siprho","impressions":19,"position":17.57894736842105,"reponse":"partiel","reponse_conf":0.85,"intention":"prestataire","intention_conf":0.9}
+{"url":"/salons/solutions-cse","query":"salonsce","impressions":4,"position":16.75,"reponse":"oui","reponse_conf":0.74,"intention":"liste_salons","intention_conf":0.41}
+{"url":"/salons/tech-for-retail-paris","query":"envoyer l'équipe merchandising ou l'équipe informatique au salon retail de paris en septembre","impressions":4,"position":13.5,"reponse":"non","reponse_conf":0.34,"intention":"edition_passee","intention_conf":0.42}
+{"url":"/salons/trustech","query":"salon des paiements innovants","impressions":5,"position":13.4,"reponse":"non","reponse_conf":0.11,"intention":"info_salon","intention_conf":0.88}
+{"url":"/salons/world-nuclear-exhibition","query":"wne 2026","impressions":11,"position":12.545454545454545,"reponse":"partiel","reponse_conf":0.82,"intention":"info_salon","intention_conf":0.44}
+{"url":"/salons/world-nuclear-exhibition","query":"wne 2027","impressions":3,"position":14.333333333333334,"reponse":"oui","reponse_conf":0.79,"intention":"info_salon","intention_conf":0.88}
+{"url":"/secteurs/agroalimentaire","query":"liste des salons agroalimentaire 2026","impressions":11,"position":13.636363636363637,"reponse":"partiel","reponse_conf":0.37,"intention":"liste_salons","intention_conf":0.98}
+{"url":"/secteurs/agroalimentaire","query":"salon agroalimentaire 2026 france","impressions":4,"position":10.75,"reponse":"oui","reponse_conf":0.4,"intention":"liste_salons","intention_conf":0.92}
+{"url":"/secteurs/agroalimentaire","query":"salon agroalimentaire france 2026","impressions":3,"position":17,"reponse":"partiel","reponse_conf":0.27,"intention":"liste_salons","intention_conf":0.81}
+{"url":"/secteurs/automobile","query":"salon carrosserie industrielle","impressions":7,"position":14.857142857142858,"reponse":"partiel","reponse_conf":0.69,"intention":"liste_salons","intention_conf":0.59}
+{"url":"/secteurs/cosmetique-beaute","query":"salon cosmetic 2022","impressions":17,"position":18.470588235294116,"reponse":"partiel","reponse_conf":0.88,"intention":"edition_passee","intention_conf":0.96}
+{"url":"/secteurs/cosmetique-beaute","query":"salon cosmétique paris","impressions":4,"position":12.5,"reponse":"partiel","reponse_conf":0.58,"intention":"liste_salons","intention_conf":0.83}
+{"url":"/secteurs/cosmetique-beaute","query":"salon industrie cosmétique","impressions":11,"position":16.727272727272727,"reponse":"oui","reponse_conf":0.4,"intention":"liste_salons","intention_conf":0.81}
+{"url":"/secteurs/franchise-commerce","query":"salon retail commercial","impressions":8,"position":20.125,"reponse":"oui","reponse_conf":0.2,"intention":"liste_salons","intention_conf":0.87}
+{"url":"/secteurs/tech-numerique","query":"salon crm","impressions":11,"position":15.363636363636363,"reponse":"partiel","reponse_conf":0.45,"intention":"info_salon","intention_conf":0.6}
+{"url":"/secteurs/tech-numerique","query":"salon digital","impressions":11,"position":19.545454545454547,"reponse":"oui","reponse_conf":0.2,"intention":"liste_salons","intention_conf":0.83}
+{"url":"/secteurs/tech-numerique","query":"salon digital 2018","impressions":18,"position":14.88888888888889,"reponse":"partiel","reponse_conf":0.69,"intention":"edition_passee","intention_conf":0.95}
+{"url":"/secteurs/tech-numerique","query":"salon digital marketing","impressions":18,"position":16.666666666666664,"reponse":"partiel","reponse_conf":0.53,"intention":"liste_salons","intention_conf":0.47}
+{"url":"/secteurs/tech-numerique","query":"salon digital paris","impressions":11,"position":14.181818181818182,"reponse":"partiel","reponse_conf":0.66,"intention":"info_salon","intention_conf":0.54}
+{"url":"/secteurs/tech-numerique","query":"salon digitalisation","impressions":3,"position":20.333333333333332,"reponse":"partiel","reponse_conf":0.35,"intention":"liste_salons","intention_conf":0.64}
+{"url":"/secteurs/tech-numerique","query":"salon digitalisation industrie","impressions":24,"position":18.5,"reponse":"partiel","reponse_conf":0.43,"intention":"liste_salons","intention_conf":0.63}
+{"url":"/secteurs/tech-numerique","query":"salon du digital","impressions":6,"position":16.5,"reponse":"partiel","reponse_conf":0.37,"intention":"liste_salons","intention_conf":0.58}
+{"url":"/secteurs/tech-numerique","query":"salon du marketing digital","impressions":7,"position":14.428571428571429,"reponse":"partiel","reponse_conf":0.52,"intention":"info_salon","intention_conf":0.65}
+{"url":"/secteurs/tech-numerique","query":"salon marketing digital","impressions":14,"position":17.714285714285715,"reponse":"partiel","reponse_conf":0.38,"intention":"liste_salons","intention_conf":0.56}
+{"url":"/secteurs/tech-numerique","query":"salon marketing digital 2018","impressions":12,"position":15.75,"reponse":"partiel","reponse_conf":0.56,"intention":"edition_passee","intention_conf":0.96}
+{"url":"/secteurs/tech-numerique","query":"salon relation clients","impressions":4,"position":17.75,"reponse":"non","reponse_conf":0.59,"intention":"liste_salons","intention_conf":0.51}
+{"url":"/secteurs/tech-numerique","query":"salon tech 2023","impressions":16,"position":15,"reponse":"partiel","reponse_conf":0.76,"intention":"edition_passee","intention_conf":0.94}
+{"url":"/secteurs/tech-numerique","query":"salon web marketing","impressions":6,"position":14,"reponse":"partiel","reponse_conf":0.51,"intention":"info_salon","intention_conf":0.45}
+{"url":"/secteurs/tech-numerique","query":"salon webmarketing","impressions":3,"position":13.333333333333334,"reponse":"partiel","reponse_conf":0.55,"intention":"info_salon","intention_conf":0.65}
+{"url":"/secteurs/tech-numerique","query":"salons digitaux","impressions":12,"position":13.75,"reponse":"oui","reponse_conf":0.45,"intention":"liste_salons","intention_conf":0.96}
+{"url":"/villes/angers","query":"salon angers","impressions":20,"position":12.05,"reponse":"oui","reponse_conf":0.92,"intention":"liste_salons","intention_conf":0.99}
+{"url":"/villes/douai","query":"douai salon","impressions":8,"position":13.125,"reponse":"oui","reponse_conf":0.88,"intention":"liste_salons","intention_conf":0.98}
+{"url":"/villes/douai","query":"salon a douai","impressions":4,"position":10.75,"reponse":"oui","reponse_conf":0.92,"intention":"liste_salons","intention_conf":0.99}
+{"url":"/villes/lille","query":"salon lille","impressions":9,"position":16.11111111111111,"reponse":"oui","reponse_conf":0.88,"intention":"liste_salons","intention_conf":0.98}
+{"url":"/villes/lille","query":"salons lille","impressions":4,"position":14.25,"reponse":"oui","reponse_conf":0.97,"intention":"liste_salons","intention_conf":1}
+{"url":"/villes/lille","query":"salons professionnels","impressions":3,"position":12,"reponse":"oui","reponse_conf":0.33,"intention":"liste_salons","intention_conf":0.99}
+{"url":"/villes/marseille","query":"salons professionnels","impressions":3,"position":20.333333333333332,"reponse":"oui","reponse_conf":0.4,"intention":"liste_salons","intention_conf":0.99}

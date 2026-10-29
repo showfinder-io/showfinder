@@ -1,0 +1,4018 @@
+{
+ "window": "2026-09-30/2026-10-27",
+ "band": "position arrondie 11-20 [10.5;20.5)",
+ "bandCount": 193,
+ "frozenInBand": 4,
+ "pages": [
+  {
+   "url": "/salons/siae-le-bourget",
+   "imp": 2332,
+   "clicks": 16,
+   "pos": 12.8,
+   "ctr": 0.69,
+   "pot": 288,
+   "queries": [
+    [
+     "bourget 2027",
+     82,
+     10.7
+    ],
+    [
+     "salon bourget 2027",
+     37,
+     11.6
+    ],
+    [
+     "siae 2027",
+     32,
+     10.6
+    ],
+    [
+     "standiste pour le salon siae 2027",
+     22,
+     17.1
+    ],
+    [
+     "standiste siae 2027",
+     20,
+     17.9
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/salons/comic-con-france",
+   "imp": 753,
+   "clicks": 1,
+   "pos": 20.1,
+   "ctr": 0.13,
+   "pot": 223,
+   "queries": [
+    [
+     "comic con france",
+     131,
+     18
+    ],
+    [
+     "comic con paris 2026",
+     65,
+     18
+    ],
+    [
+     "comic convention paris 2026",
+     7,
+     11
+    ],
+    [
+     "france comic con",
+     6,
+     13.2
+    ],
+    [
+     "comic con frankrijk",
+     3,
+     13
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/secteurs/tech-numerique",
+   "imp": 608,
+   "clicks": 2,
+   "pos": 17.5,
+   "ctr": 0.33,
+   "pot": 181,
+   "queries": [
+    [
+     "salon digitalisation industrie",
+     24,
+     18.5
+    ],
+    [
+     "salon digital 2018",
+     18,
+     14.9
+    ],
+    [
+     "salon digital marketing",
+     18,
+     16.7
+    ],
+    [
+     "salon tech 2023",
+     16,
+     15
+    ],
+    [
+     "salon marketing digital",
+     14,
+     17.7
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/salons/paris-games-week",
+   "imp": 2400,
+   "clicks": 21,
+   "pos": 12.1,
+   "ctr": 0.88,
+   "pot": 121,
+   "queries": [
+    [
+     "date pgw",
+     23,
+     14.6
+    ],
+    [
+     "pgw 2026 programme",
+     12,
+     10.8
+    ],
+    [
+     "pgw dates",
+     12,
+     10.7
+    ],
+    [
+     "programme pgw 2026",
+     12,
+     11.8
+    ],
+    [
+     "exposant paris games week",
+     4,
+     12
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/lieux/meett-toulouse",
+   "imp": 670,
+   "clicks": 2,
+   "pos": 12.7,
+   "ctr": 0.3,
+   "pot": 120,
+   "queries": [
+    [
+     "salon toulouse meet",
+     22,
+     11.3
+    ],
+    [
+     "meett adresse",
+     18,
+     11.4
+    ],
+    [
+     "salon meet toulouse",
+     12,
+     11.1
+    ],
+    [
+     "meet toulouse adresse",
+     7,
+     10.9
+    ],
+    [
+     "adresse meett toulouse",
+     6,
+     10.7
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/salons/sfar-congres-paris",
+   "imp": 309,
+   "clicks": 0,
+   "pos": 12.8,
+   "ctr": 0,
+   "pot": 104,
+   "queries": [
+    [
+     "sfar",
+     64,
+     14.4
+    ],
+    [
+     "sfar congres",
+     6,
+     17.5
+    ],
+    [
+     "congres sfar",
+     5,
+     20
+    ],
+    [
+     "congrès sfar 2026",
+     4,
+     13.5
+    ],
+    [
+     "sfar le congres",
+     4,
+     18.8
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/salons/reeduca-paris",
+   "imp": 277,
+   "clicks": 2,
+   "pos": 10.7,
+   "ctr": 0.72,
+   "pot": 81,
+   "queries": [
+    [
+     "standiste pour le salon reeduca 2026",
+     25,
+     14.6
+    ],
+    [
+     "salon reeduca",
+     16,
+     17.9
+    ],
+    [
+     "salon rééduca",
+     14,
+     17.3
+    ],
+    [
+     "reeduca",
+     5,
+     16.8
+    ],
+    [
+     "rééduca",
+     4,
+     12.5
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/salons/foire-agricole-tarbes",
+   "imp": 392,
+   "clicks": 3,
+   "pos": 10.6,
+   "ctr": 0.77,
+   "pot": 77,
+   "queries": [
+    [
+     "foire de tarbes 2027",
+     19,
+     10.7
+    ],
+    [
+     "foire tarbes 2027",
+     18,
+     10.9
+    ],
+    [
+     "foire agricole de tarbes 2027",
+     8,
+     11.1
+    ],
+    [
+     "salon de l agriculture tarbes 2027",
+     8,
+     12
+    ],
+    [
+     "salon de l'agriculture tarbes 2027",
+     6,
+     10.7
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/lieux/parc-expositions-montpellier",
+   "imp": 274,
+   "clicks": 2,
+   "pos": 15.3,
+   "ctr": 0.73,
+   "pot": 71,
+   "queries": [
+    [
+     "parc expo montpellier",
+     20,
+     13.7
+    ],
+    [
+     "parc des expos montpellier",
+     10,
+     16.3
+    ],
+    [
+     "parc des expositions montpellier",
+     10,
+     16.1
+    ],
+    [
+     "salon professionnel montpellier",
+     5,
+     18.4
+    ],
+    [
+     "parc des expo montpellier",
+     4,
+     18.5
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/en/salons/web-summit-lisbonne",
+   "imp": 1349,
+   "clicks": 3,
+   "pos": 14.3,
+   "ctr": 0.22,
+   "pot": 61,
+   "queries": [
+    [
+     "websummit",
+     26,
+     16
+    ],
+    [
+     "web summit lisbon location",
+     7,
+     13
+    ],
+    [
+     "web summit dates",
+     5,
+     12.2
+    ],
+    [
+     "web summit 2026 lisbon",
+     4,
+     10.8
+    ],
+    [
+     "web summit exhibitors",
+     3,
+     10.7
+    ]
+   ],
+   "cannib": [
+    {
+     "q": "websummit",
+     "others": [
+      [
+       "/salons/web-summit-lisbonne",
+       34,
+       6.9
+      ]
+     ]
+    },
+    {
+     "q": "web summit date",
+     "others": [
+      [
+       "/salons/web-summit-lisbonne",
+       5,
+       6.2
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "url": "/salons/paris-photo",
+   "imp": 370,
+   "clicks": 3,
+   "pos": 12.8,
+   "ctr": 0.81,
+   "pot": 53,
+   "queries": [
+    [
+     "paris photo dates",
+     18,
+     10.6
+    ],
+    [
+     "date paris photo",
+     14,
+     13
+    ],
+    [
+     "paris photo 2026",
+     12,
+     16.2
+    ],
+    [
+     "dates paris photo 2026",
+     4,
+     10.8
+    ],
+    [
+     "paris photo foire",
+     4,
+     11
+    ]
+   ],
+   "cannib": [
+    {
+     "q": "paris photo dates",
+     "others": [
+      [
+       "/en/salons/paris-photo",
+       9,
+       10.1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "url": "/lieux/alpexpo-grenoble",
+   "imp": 291,
+   "clicks": 4,
+   "pos": 14.2,
+   "ctr": 1.37,
+   "pot": 52,
+   "queries": [
+    [
+     "alpexpo",
+     35,
+     16.9
+    ],
+    [
+     "salons professionnels grenoble",
+     7,
+     15.7
+    ],
+    [
+     "alpes expo",
+     6,
+     14.2
+    ],
+    [
+     "salon alpexpo grenoble",
+     3,
+     14
+    ],
+    [
+     "spl alpexpo",
+     1,
+     11
+    ]
+   ],
+   "cannib": [
+    {
+     "q": "salons professionnels grenoble",
+     "others": [
+      [
+       "/villes/grenoble",
+       11,
+       18.3
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "url": "/salons/innov-agri-ondes",
+   "imp": 273,
+   "clicks": 2,
+   "pos": 12.1,
+   "ctr": 0.73,
+   "pot": 45,
+   "queries": [
+    [
+     "innov agri outarville 2026",
+     15,
+     11.4
+    ],
+    [
+     "innov agri 2026 outarville",
+     9,
+     11
+    ],
+    [
+     "innov agri 2026 nord",
+     4,
+     10.5
+    ],
+    [
+     "innov agri 2026",
+     3,
+     11.7
+    ],
+    [
+     "innov agri 2026 lieu",
+     3,
+     10.7
+    ]
+   ],
+   "cannib": [
+    {
+     "q": "innov agri 2026",
+     "others": [
+      [
+       "/en/salons/innov-agri-ondes",
+       8,
+       38.4
+      ]
+     ]
+    },
+    {
+     "q": "innov-agri 2026",
+     "others": [
+      [
+       "/salons/innovagri",
+       11,
+       20.4
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "url": "/en/prestataires/prestataires-audiovisuel-paris",
+   "imp": 166,
+   "clicks": 0,
+   "pos": 19.9,
+   "ctr": 0,
+   "pot": 45,
+   "queries": [
+    [
+     "audiovisual rental",
+     31,
+     13.5
+    ],
+    [
+     "audio visual hire",
+     3,
+     11.3
+    ],
+    [
+     "hire audio visual equipment",
+     3,
+     10.7
+    ],
+    [
+     "broadcasting equipment rental",
+     2,
+     20
+    ],
+    [
+     "audio visual equipment hire",
+     1,
+     18
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/lieux/fiera-milano",
+   "imp": 455,
+   "clicks": 6,
+   "pos": 15.5,
+   "ctr": 1.32,
+   "pot": 44,
+   "queries": [
+    [
+     "fiera milano city",
+     11,
+     18.5
+    ],
+    [
+     "fiera milano s.p.a.",
+     6,
+     19
+    ],
+    [
+     "fiera a rho",
+     5,
+     11
+    ],
+    [
+     "fiera rho",
+     3,
+     11.3
+    ],
+    [
+     "fieramilanocity",
+     3,
+     16.3
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/salons/shop-le-salon",
+   "imp": 194,
+   "clicks": 1,
+   "pos": 14.8,
+   "ctr": 0.52,
+   "pot": 44,
+   "queries": [
+    [
+     "salon de la plv",
+     22,
+     20.2
+    ],
+    [
+     "salon marketing point de vente",
+     19,
+     18.7
+    ],
+    [
+     "shop salon",
+     2,
+     13
+    ],
+    [
+     "salon shop 2026",
+     1,
+     20
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/secteurs/cosmetique-beaute",
+   "imp": 181,
+   "clicks": 1,
+   "pos": 10.5,
+   "ctr": 0.55,
+   "pot": 42,
+   "queries": [
+    [
+     "salon cosmetic 2022",
+     17,
+     18.5
+    ],
+    [
+     "salon industrie cosmétique",
+     11,
+     16.7
+    ],
+    [
+     "salon cosmétique paris",
+     4,
+     12.5
+    ],
+    [
+     "salon cosmetique",
+     2,
+     15.5
+    ],
+    [
+     "salon cosmétique",
+     2,
+     15.5
+    ]
+   ],
+   "cannib": [
+    {
+     "q": "salon cosmetic 2022",
+     "others": [
+      [
+       "/en/secteurs/cosmetique-beaute",
+       16,
+       70
+      ],
+      [
+       "/salons/cosmetic-360",
+       16,
+       49.6
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "url": "/salons/salon-funeraire",
+   "imp": 269,
+   "clicks": 0,
+   "pos": 11.8,
+   "ctr": 0,
+   "pot": 39,
+   "queries": [
+    [
+     "salon funéraire paris 2026",
+     21,
+     11.8
+    ],
+    [
+     "salon du funeraire",
+     12,
+     16.2
+    ],
+    [
+     "salon funéraire paris",
+     4,
+     11.5
+    ],
+    [
+     "salon du funéraire",
+     1,
+     16
+    ],
+    [
+     "salon du funéraire paris",
+     1,
+     13
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/salons/architect-at-work-lyon",
+   "imp": 197,
+   "clicks": 0,
+   "pos": 12.8,
+   "ctr": 0,
+   "pot": 38,
+   "queries": [
+    [
+     "architect work lyon",
+     38,
+     12.9
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/salons/learning-technologies-paris",
+   "imp": 333,
+   "clicks": 2,
+   "pos": 11.4,
+   "ctr": 0.6,
+   "pot": 37,
+   "queries": [
+    [
+     "standiste pour le salon learning & hr 2027",
+     22,
+     11
+    ],
+    [
+     "e learning technology",
+     4,
+     18.8
+    ],
+    [
+     "salon de la formation et du digital learning",
+     4,
+     19.8
+    ],
+    [
+     "apolearn",
+     3,
+     14.3
+    ],
+    [
+     "digital learning salon",
+     2,
+     19.5
+    ]
+   ],
+   "cannib": [
+    {
+     "q": "standiste pour le salon learning & hr 2027",
+     "others": [
+      [
+       "/salons/hr-technologies-france",
+       17,
+       27.9
+      ]
+     ]
+    },
+    {
+     "q": "oui",
+     "others": [
+      [
+       "/salons/festival-livre-paris",
+       7,
+       2.6
+      ],
+      [
+       "/salons/siae-le-bourget",
+       5,
+       4.4
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "url": "/salons/milipol-paris",
+   "imp": 298,
+   "clicks": 5,
+   "pos": 16.7,
+   "ctr": 1.68,
+   "pot": 33,
+   "queries": [
+    [
+     "milipol network",
+     8,
+     19.1
+    ],
+    [
+     "exposants milipol paris",
+     7,
+     14.7
+    ],
+    [
+     "milipol paris 2027",
+     6,
+     11.5
+    ],
+    [
+     "milipol exposant",
+     5,
+     19.6
+    ],
+    [
+     "salon milipol 2027",
+     5,
+     11.8
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/salons/air-drone-bordeaux",
+   "imp": 367,
+   "clicks": 4,
+   "pos": 16.7,
+   "ctr": 1.09,
+   "pot": 31,
+   "queries": [
+    [
+     "salon du drone 2024",
+     23,
+     19
+    ],
+    [
+     "uav show bordeaux",
+     4,
+     15.8
+    ],
+    [
+     "salon du drone paris",
+     2,
+     15
+    ],
+    [
+     "salon du drone 2026",
+     1,
+     15
+    ],
+    [
+     "salon du drone 2026 france",
+     1,
+     18
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/salons/salon-vignerons-independants-paris",
+   "imp": 665,
+   "clicks": 8,
+   "pos": 16.6,
+   "ctr": 1.2,
+   "pot": 28,
+   "queries": [
+    [
+     "salon des vignerons indépendants paris 2026",
+     14,
+     10.6
+    ],
+    [
+     "salon des vignerons indépendants paris 2026 porte de versailles",
+     13,
+     13.8
+    ],
+    [
+     "salon vignerons indépendants paris 2026",
+     1,
+     17
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/salons/siprho",
+   "imp": 252,
+   "clicks": 1,
+   "pos": 10.6,
+   "ctr": 0.4,
+   "pot": 28,
+   "queries": [
+    [
+     "standiste salon siprho",
+     19,
+     17.6
+    ],
+    [
+     "foire de montpellier 2027",
+     7,
+     11.1
+    ],
+    [
+     "parc des expositions montpellier",
+     1,
+     16
+    ],
+    [
+     "salon sipro",
+     1,
+     15
+    ]
+   ],
+   "cannib": [
+    {
+     "q": "parc des expositions montpellier",
+     "others": [
+      [
+       "/lieux/parc-expositions-montpellier",
+       10,
+       16.1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "url": "/en/prestataires/standistes-lyon",
+   "imp": 659,
+   "clicks": 0,
+   "pos": 12.4,
+   "ctr": 0,
+   "pot": 28,
+   "queries": [
+    [
+     "exhibition stand builder grenoble",
+     7,
+     18.7
+    ],
+    [
+     "stand builder reims",
+     6,
+     13.2
+    ],
+    [
+     "exhibition stand builder in lyon",
+     5,
+     17.4
+    ],
+    [
+     "standbouw lyon",
+     5,
+     16.6
+    ],
+    [
+     "stand design lyon",
+     4,
+     12.8
+    ]
+   ],
+   "cannib": [
+    {
+     "q": "stand builder reims",
+     "others": [
+      [
+       "/en/prestataires/standistes",
+       9,
+       8.6
+      ]
+     ]
+    },
+    {
+     "q": "stand design lyon",
+     "others": [
+      [
+       "/prestataires/standistes-lyon",
+       47,
+       22.2
+      ]
+     ]
+    },
+    {
+     "q": "exhibition stand manufacturer france",
+     "others": [
+      [
+       "/en/prestataires/standistes",
+       45,
+       22.5
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "url": "/en/lieux/paris-expo-porte-de-versailles",
+   "imp": 378,
+   "clicks": 1,
+   "pos": 14.5,
+   "ctr": 0.26,
+   "pot": 27,
+   "queries": [
+    [
+     "professional trade show porte de versailles",
+     9,
+     11.6
+    ],
+    [
+     "paris expo porte de versailles",
+     8,
+     19.6
+    ],
+    [
+     "professional trade show paris",
+     3,
+     17
+    ],
+    [
+     "expo 2028 paris",
+     1,
+     11
+    ],
+    [
+     "foire porte de versailles",
+     1,
+     20
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/villes/angers",
+   "imp": 90,
+   "clicks": 1,
+   "pos": 11.5,
+   "ctr": 1.11,
+   "pot": 25,
+   "queries": [
+    [
+     "salon angers",
+     20,
+     12.1
+    ],
+    [
+     "salon de the angers",
+     2,
+     10.5
+    ],
+    [
+     "salons professionnels",
+     2,
+     15.5
+    ],
+    [
+     "les salons",
+     1,
+     11
+    ]
+   ],
+   "cannib": [
+    {
+     "q": "salons professionnels",
+     "others": [
+      [
+       "/villes/paris",
+       24,
+       23.3
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "url": "/salons/global-industrie-lyon",
+   "imp": 303,
+   "clicks": 0,
+   "pos": 14.1,
+   "ctr": 0,
+   "pot": 25,
+   "queries": [
+    [
+     "tolexpo",
+     15,
+     19.2
+    ],
+    [
+     "salon tolexpo",
+     10,
+     11.2
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/prestataires/novelty-paris",
+   "imp": 270,
+   "clicks": 0,
+   "pos": 12.6,
+   "ctr": 0,
+   "pot": 24,
+   "queries": [
+    [
+     "novelty france",
+     12,
+     19.5
+    ],
+    [
+     "noveltys",
+     7,
+     15
+    ],
+    [
+     "prestataire technique audiovisuel paris",
+     3,
+     13.3
+    ],
+    [
+     "meilleur prestataire technique audiovisuel paris",
+     1,
+     19
+    ],
+    [
+     "prestataire technique événementiel normandie",
+     1,
+     17
+    ]
+   ],
+   "cannib": [
+    {
+     "q": "prestataire technique audiovisuel paris",
+     "others": [
+      [
+       "/prestataires/prestataires-audiovisuel-paris",
+       21,
+       43.8
+      ]
+     ]
+    },
+    {
+     "q": "meilleur prestataire technique audiovisuel paris",
+     "others": [
+      [
+       "/prestataires/prestataires-audiovisuel-paris",
+       21,
+       42.2
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "url": "/salons/congres-hlm",
+   "imp": 704,
+   "clicks": 13,
+   "pos": 10.5,
+   "ctr": 1.85,
+   "pot": 23,
+   "queries": [
+    [
+     "standiste pour le congrès hlm h'expo 2026",
+     20,
+     17.2
+    ],
+    [
+     "congres hlm",
+     2,
+     11.5
+    ],
+    [
+     "congrès hlm toulouse",
+     1,
+     11
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/en/lieux/paris-nord-villepinte",
+   "imp": 413,
+   "clicks": 2,
+   "pos": 11.7,
+   "ctr": 0.48,
+   "pot": 22,
+   "queries": [
+    [
+     "nord villepinte",
+     15,
+     17.8
+    ],
+    [
+     "paris expo villepinte",
+     3,
+     15.3
+    ],
+    [
+     "centro de exposições paris nord villepinte",
+     1,
+     15
+    ],
+    [
+     "paris nord villepinte exhibition centre google maps",
+     1,
+     11
+    ],
+    [
+     "paris nord villepinte hall 7",
+     1,
+     12
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/secteurs/agroalimentaire",
+   "imp": 597,
+   "clicks": 9,
+   "pos": 15.3,
+   "ctr": 1.51,
+   "pot": 21,
+   "queries": [
+    [
+     "liste des salons agroalimentaire 2026",
+     11,
+     13.6
+    ],
+    [
+     "salon agroalimentaire 2026 france",
+     4,
+     10.8
+    ],
+    [
+     "salon agroalimentaire france 2026",
+     3,
+     17
+    ],
+    [
+     "salon agroalimentaire europe",
+     2,
+     18.5
+    ],
+    [
+     "salon sial 2027",
+     1,
+     11
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/salons/cphi-worldwide",
+   "imp": 418,
+   "clicks": 2,
+   "pos": 13.3,
+   "ctr": 0.48,
+   "pot": 21,
+   "queries": [
+    [
+     "cphi paris",
+     11,
+     19.5
+    ],
+    [
+     "cphi messe",
+     5,
+     15.6
+    ],
+    [
+     "cphi milan parking",
+     2,
+     10.5
+    ],
+    [
+     "cphi 2028",
+     1,
+     11
+    ],
+    [
+     "cphi awards",
+     1,
+     13
+    ]
+   ],
+   "cannib": [
+    {
+     "q": "oui",
+     "others": [
+      [
+       "/salons/festival-livre-paris",
+       7,
+       2.6
+      ],
+      [
+       "/salons/siae-le-bourget",
+       5,
+       4.4
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "url": "/salons/luxe-pack-monaco",
+   "imp": 291,
+   "clicks": 0,
+   "pos": 11.8,
+   "ctr": 0,
+   "pot": 21,
+   "queries": [
+    [
+     "luxepack monaco",
+     9,
+     17.3
+    ],
+    [
+     "emballage monaco",
+     8,
+     16
+    ],
+    [
+     "packaging monaco",
+     2,
+     18
+    ],
+    [
+     "luxe pack 2026 monaco",
+     1,
+     11
+    ],
+    [
+     "salon packaging monaco",
+     1,
+     18
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/salons/affaire-de-cadeaux",
+   "imp": 132,
+   "clicks": 3,
+   "pos": 11.9,
+   "ctr": 2.27,
+   "pot": 20,
+   "queries": [
+    [
+     "standiste pour le salon affaires de cadeaux 2026",
+     16,
+     18.3
+    ],
+    [
+     "affaire de cadeaux",
+     3,
+     15.7
+    ],
+    [
+     "salon cadeaux d'affaires",
+     1,
+     20
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/villes/lille",
+   "imp": 53,
+   "clicks": 0,
+   "pos": 19.7,
+   "ctr": 0,
+   "pot": 19,
+   "queries": [
+    [
+     "salon lille",
+     9,
+     16.1
+    ],
+    [
+     "salons lille",
+     4,
+     14.3
+    ],
+    [
+     "salons professionnels",
+     3,
+     12
+    ],
+    [
+     "installation salon professionel nord",
+     1,
+     14
+    ],
+    [
+     "lille salon",
+     1,
+     11
+    ]
+   ],
+   "cannib": [
+    {
+     "q": "salons professionnels",
+     "others": [
+      [
+       "/villes/paris",
+       24,
+       23.3
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "url": "/salons/congres-adf-paris",
+   "imp": 264,
+   "clicks": 2,
+   "pos": 12.7,
+   "ctr": 0.76,
+   "pot": 18,
+   "queries": [
+    [
+     "adf paris 2026",
+     5,
+     15.6
+    ],
+    [
+     "congrès adf 2026",
+     5,
+     15.8
+    ],
+    [
+     "congres dentaire paris",
+     3,
+     12
+    ],
+    [
+     "adf",
+     2,
+     12
+    ],
+    [
+     "adf date",
+     1,
+     19
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/salons/world-nuclear-exhibition",
+   "imp": 158,
+   "clicks": 1,
+   "pos": 15.7,
+   "ctr": 0.63,
+   "pot": 18,
+   "queries": [
+    [
+     "wne 2026",
+     11,
+     12.5
+    ],
+    [
+     "wne 2027",
+     3,
+     14.3
+    ],
+    [
+     "salon wne 2027",
+     2,
+     10.5
+    ],
+    [
+     "nuclear world",
+     1,
+     18
+    ],
+    [
+     "wne 2023",
+     1,
+     11
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/salons/cprint-lyon",
+   "imp": 194,
+   "clicks": 0,
+   "pos": 12,
+   "ctr": 0,
+   "pot": 18,
+   "queries": [
+    [
+     "cprint lyon",
+     10,
+     12.8
+    ],
+    [
+     "c!print lyon",
+     4,
+     10.5
+    ],
+    [
+     "salon c print",
+     4,
+     13.5
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/salons/artibat-rennes",
+   "imp": 342,
+   "clicks": 2,
+   "pos": 15.2,
+   "ctr": 0.58,
+   "pot": 17,
+   "queries": [
+    [
+     "artibat 2026",
+     7,
+     11.3
+    ],
+    [
+     "artibat 2027",
+     2,
+     18.5
+    ],
+    [
+     "artibat exposants",
+     2,
+     14
+    ],
+    [
+     "artibat rennes 2026",
+     2,
+     12.5
+    ],
+    [
+     "date artibat 2026",
+     2,
+     11
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/salons/salon-tourisme-voyages-lille",
+   "imp": 272,
+   "clicks": 2,
+   "pos": 10.6,
+   "ctr": 0.74,
+   "pot": 17,
+   "queries": [
+    [
+     "salon du tourisme et des activités nature",
+     15,
+     13.8
+    ],
+    [
+     "tourissima",
+     2,
+     18
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/salons/elearning-expo-paris",
+   "imp": 109,
+   "clicks": 0,
+   "pos": 16.7,
+   "ctr": 0,
+   "pot": 17,
+   "queries": [
+    [
+     "salon elearning expo",
+     8,
+     17.3
+    ],
+    [
+     "salon elearning",
+     3,
+     16
+    ],
+    [
+     "digital learning salon",
+     2,
+     18.5
+    ],
+    [
+     "innovative learning",
+     2,
+     20
+    ],
+    [
+     "le salon de la formation et du digital learning",
+     2,
+     14.5
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/salons/nordbat-lille",
+   "imp": 91,
+   "clicks": 0,
+   "pos": 12.7,
+   "ctr": 0,
+   "pot": 17,
+   "queries": [
+    [
+     "nordbat",
+     11,
+     17.8
+    ],
+    [
+     "batimat lille",
+     4,
+     14.8
+    ],
+    [
+     "nord bat",
+     1,
+     15
+    ],
+    [
+     "nordbat lille",
+     1,
+     18
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/salons/hr-technologies-france",
+   "imp": 316,
+   "clicks": 0,
+   "pos": 15.1,
+   "ctr": 0,
+   "pot": 15,
+   "queries": [
+    [
+     "hr technologie",
+     3,
+     17
+    ],
+    [
+     "rh technologies",
+     3,
+     20
+    ],
+    [
+     "salon hr tech",
+     3,
+     20
+    ],
+    [
+     "hr technology",
+     2,
+     12.5
+    ],
+    [
+     "salon hr technologies",
+     2,
+     18
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/en/lieux/parc-expo-metz",
+   "imp": 105,
+   "clicks": 0,
+   "pos": 16.8,
+   "ctr": 0,
+   "pot": 14,
+   "queries": [
+    [
+     "metz expo",
+     12,
+     10.6
+    ],
+    [
+     "foire expo metz programme",
+     1,
+     13
+    ],
+    [
+     "metz expo evenements",
+     1,
+     11
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/salons/franchise-expo-lyon",
+   "imp": 333,
+   "clicks": 3,
+   "pos": 15.7,
+   "ctr": 0.9,
+   "pot": 13,
+   "queries": [
+    [
+     "salon de la franchise lyon",
+     7,
+     20
+    ],
+    [
+     "franchise city-event",
+     3,
+     10.7
+    ],
+    [
+     "salon franchise lyon yves rocher",
+     2,
+     16
+    ],
+    [
+     "franchise expo lyon",
+     1,
+     12
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/en/salons/salon-du-fromage",
+   "imp": 97,
+   "clicks": 1,
+   "pos": 13.2,
+   "ctr": 1.03,
+   "pot": 13,
+   "queries": [
+    [
+     "paris expo porte de versailles cheese show",
+     7,
+     13.1
+    ],
+    [
+     "cheese show versailles",
+     6,
+     14.7
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/blog/salons-professionnels-declin-ou-renaissance",
+   "imp": 15,
+   "clicks": 0,
+   "pos": 14.6,
+   "ctr": 0,
+   "pot": 13,
+   "queries": [
+    [
+     "salons retail en europe perte de temps toujours les mêmes prestataires",
+     13,
+     16.2
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/lieux/parc-expo-colmar",
+   "imp": 266,
+   "clicks": 0,
+   "pos": 14.8,
+   "ctr": 0,
+   "pot": 13,
+   "queries": [
+    [
+     "salon colmar",
+     7,
+     12.9
+    ],
+    [
+     "halle aux vins colmar",
+     3,
+     17.7
+    ],
+    [
+     "salon colmar parc expo",
+     2,
+     11
+    ],
+    [
+     "parc des expositions colmar adresse",
+     1,
+     20
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/salons/euromaritime",
+   "imp": 78,
+   "clicks": 0,
+   "pos": 11.3,
+   "ctr": 0,
+   "pot": 13,
+   "queries": [
+    [
+     "euromaritime",
+     10,
+     15.3
+    ],
+    [
+     "salon maritime marseille",
+     3,
+     14.3
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/salons/produrable-paris",
+   "imp": 137,
+   "clicks": 1,
+   "pos": 11.6,
+   "ctr": 0.73,
+   "pot": 12,
+   "queries": [
+    [
+     "pro durable",
+     9,
+     13.1
+    ],
+    [
+     "salon produrable 2026",
+     2,
+     11
+    ],
+    [
+     "salon produrable paris",
+     1,
+     18
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/villes/douai",
+   "imp": 106,
+   "clicks": 1,
+   "pos": 11.1,
+   "ctr": 0.94,
+   "pot": 12,
+   "queries": [
+    [
+     "douai salon",
+     8,
+     13.1
+    ],
+    [
+     "salon a douai",
+     4,
+     10.8
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/en/lieux/parc-chanot-marseille",
+   "imp": 201,
+   "clicks": 0,
+   "pos": 11.2,
+   "ctr": 0,
+   "pot": 11,
+   "queries": [
+    [
+     "parc chanot marseille",
+     5,
+     17.6
+    ],
+    [
+     "marseille parc chanot",
+     2,
+     18.5
+    ],
+    [
+     "le parc chanot marseille",
+     1,
+     13
+    ],
+    [
+     "marseille - parc chanot",
+     1,
+     12
+    ],
+    [
+     "parc chanot marseille capacité",
+     1,
+     12
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/salons/mipcom",
+   "imp": 666,
+   "clicks": 7,
+   "pos": 13.4,
+   "ctr": 1.05,
+   "pot": 10,
+   "queries": [
+    [
+     "mip com",
+     4,
+     18
+    ],
+    [
+     "mip 2026",
+     3,
+     10.7
+    ],
+    [
+     "mipcom 2020",
+     2,
+     17
+    ],
+    [
+     "mipcom 2026 map",
+     1,
+     20
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/salons/salon-copropriete-paris",
+   "imp": 361,
+   "clicks": 6,
+   "pos": 11.6,
+   "ctr": 1.66,
+   "pot": 10,
+   "queries": [
+    [
+     "salon de la copropriété 2026",
+     9,
+     15.3
+    ],
+    [
+     "salon porte de versailles novembre 2026",
+     1,
+     11
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/salons/bau-munich",
+   "imp": 253,
+   "clicks": 2,
+   "pos": 14.5,
+   "ctr": 0.79,
+   "pot": 10,
+   "queries": [
+    [
+     "bauma 2027 munich",
+     5,
+     11
+    ],
+    [
+     "salon bau munich",
+     2,
+     12
+    ],
+    [
+     "bau münchen 2027 aussteller",
+     1,
+     11
+    ],
+    [
+     "bauma münchen 2027",
+     1,
+     12
+    ],
+    [
+     "salon bauma 2027",
+     1,
+     12
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/en/salons/shop-le-salon",
+   "imp": 139,
+   "clicks": 1,
+   "pos": 13.2,
+   "ctr": 0.72,
+   "pot": 10,
+   "queries": [
+    [
+     "shop le salon 2026",
+     10,
+     17.4
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/salons/bepositive-lyon",
+   "imp": 88,
+   "clicks": 0,
+   "pos": 13.6,
+   "ctr": 0,
+   "pot": 10,
+   "queries": [
+    [
+     "bepositive",
+     8,
+     20
+    ],
+    [
+     "salon bepositive",
+     2,
+     18
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/secteurs/franchise-commerce",
+   "imp": 214,
+   "clicks": 3,
+   "pos": 12.8,
+   "ctr": 1.4,
+   "pot": 8,
+   "queries": [
+    [
+     "salon retail commercial",
+     8,
+     20.1
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/salons/solutions-cse",
+   "imp": 270,
+   "clicks": 6,
+   "pos": 16.7,
+   "ctr": 2.22,
+   "pot": 7,
+   "queries": [
+    [
+     "salonsce",
+     4,
+     16.8
+    ],
+    [
+     "salon cse 2027",
+     2,
+     11.5
+    ],
+    [
+     "salon cse lille grand palais",
+     1,
+     17
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/salons/cfia-toulouse",
+   "imp": 282,
+   "clicks": 2,
+   "pos": 13.9,
+   "ctr": 0.71,
+   "pot": 7,
+   "queries": [
+    [
+     "cfia",
+     4,
+     18
+    ],
+    [
+     "salon cfia",
+     3,
+     19.7
+    ]
+   ],
+   "cannib": [
+    {
+     "q": "cfia",
+     "others": [
+      [
+       "/en/salons/cfia-toulouse",
+       5,
+       25.2
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "url": "/en/salons/equip-hotel-paris",
+   "imp": 366,
+   "clicks": 1,
+   "pos": 14.1,
+   "ctr": 0.27,
+   "pot": 7,
+   "queries": [
+    [
+     "equiphotel",
+     5,
+     17
+    ],
+    [
+     "equip'hotel",
+     2,
+     17
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/salons/prodays",
+   "imp": 164,
+   "clicks": 1,
+   "pos": 14.9,
+   "ctr": 0.61,
+   "pot": 7,
+   "queries": [
+    [
+     "salon du vélo 2027",
+     7,
+     10.7
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/en/salons/air-drone-bordeaux",
+   "imp": 97,
+   "clicks": 0,
+   "pos": 10.9,
+   "ctr": 0,
+   "pot": 7,
+   "queries": [
+    [
+     "uav show 2026",
+     4,
+     13.3
+    ],
+    [
+     "salon du drone paris 2023",
+     2,
+     15
+    ],
+    [
+     "drone bordeaux",
+     1,
+     13
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/secteurs/automobile",
+   "imp": 45,
+   "clicks": 0,
+   "pos": 17.9,
+   "ctr": 0,
+   "pot": 7,
+   "queries": [
+    [
+     "salon carrosserie industrielle",
+     7,
+     14.9
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/en/salons/cannes-lions",
+   "imp": 1894,
+   "clicks": 8,
+   "pos": 14.1,
+   "ctr": 0.42,
+   "pot": 6,
+   "queries": [
+    [
+     "lions festival cannes",
+     3,
+     20
+    ],
+    [
+     "cannes",
+     1,
+     15
+    ],
+    [
+     "cannes festival of creativity",
+     1,
+     16
+    ],
+    [
+     "comment sinscrire ?",
+     1,
+     11
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/salons/all4pack-paris",
+   "imp": 269,
+   "clicks": 4,
+   "pos": 19.9,
+   "ctr": 1.49,
+   "pot": 6,
+   "queries": [
+    [
+     "all 4 pack",
+     3,
+     12
+    ],
+    [
+     "standiste pour le salon all4pack 2027",
+     2,
+     17
+    ],
+    [
+     "all4 pack",
+     1,
+     20
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/en/salons/ish-francfort",
+   "imp": 140,
+   "clicks": 1,
+   "pos": 16.3,
+   "ctr": 0.71,
+   "pot": 6,
+   "queries": [
+    [
+     "ish exhibition",
+     5,
+     20.4
+    ],
+    [
+     "oui",
+     1,
+     12
+    ]
+   ],
+   "cannib": [
+    {
+     "q": "oui",
+     "others": [
+      [
+       "/salons/festival-livre-paris",
+       7,
+       2.6
+      ],
+      [
+       "/salons/siae-le-bourget",
+       5,
+       4.4
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "url": "/salons/iftm-top-resa",
+   "imp": 211,
+   "clicks": 1,
+   "pos": 15,
+   "ctr": 0.47,
+   "pot": 6,
+   "queries": [
+    [
+     "iftm badge gratuit",
+     2,
+     17.5
+    ],
+    [
+     "top resa deauville",
+     2,
+     10.5
+    ],
+    [
+     "horaire iftm",
+     1,
+     12
+    ],
+    [
+     "top resa",
+     1,
+     20
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/en/blog/comment-choisir-salon-a-visiter",
+   "imp": 31,
+   "clicks": 0,
+   "pos": 14.9,
+   "ctr": 0,
+   "pot": 6,
+   "queries": [
+    [
+     "how to choose a trade show",
+     6,
+     20.3
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/salons/sepem-toulouse",
+   "imp": 61,
+   "clicks": 0,
+   "pos": 16.5,
+   "ctr": 0,
+   "pot": 6,
+   "queries": [
+    [
+     "sepem toulouse",
+     5,
+     12.4
+    ],
+    [
+     "sepem 2026",
+     1,
+     15
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/salons/trustech",
+   "imp": 60,
+   "clicks": 0,
+   "pos": 15.2,
+   "ctr": 0,
+   "pot": 6,
+   "queries": [
+    [
+     "salon des paiements innovants",
+     5,
+     13.4
+    ],
+    [
+     "trustech 2024",
+     1,
+     20
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/en/salons/comic-con-france",
+   "imp": 93,
+   "clicks": 1,
+   "pos": 17,
+   "ctr": 1.08,
+   "pot": 5,
+   "queries": [
+    [
+     "comic convention paris 2026 date",
+     1,
+     11
+    ],
+    [
+     "comiccon",
+     1,
+     15
+    ],
+    [
+     "comicon france",
+     1,
+     12
+    ],
+    [
+     "france comic con 2026",
+     1,
+     20
+    ],
+    [
+     "salon comics",
+     1,
+     11
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/salons/cosmetic-360",
+   "imp": 315,
+   "clicks": 1,
+   "pos": 11.2,
+   "ctr": 0.32,
+   "pot": 5,
+   "queries": [
+    [
+     "cosmetic 360 paris 2026",
+     2,
+     17
+    ],
+    [
+     "parelux",
+     2,
+     16
+    ],
+    [
+     "cosmetic 360 2027",
+     1,
+     11
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/salons/digital-workplace-paris",
+   "imp": 74,
+   "clicks": 1,
+   "pos": 13.4,
+   "ctr": 1.35,
+   "pot": 5,
+   "queries": [
+    [
+     "salon digital workplace 2024",
+     5,
+     15.8
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/en/secteurs/cosmetique-beaute",
+   "imp": 206,
+   "clicks": 0,
+   "pos": 17.1,
+   "ctr": 0,
+   "pot": 5,
+   "queries": [
+    [
+     "cosmetic manufacturers trade show",
+     2,
+     17
+    ],
+    [
+     "beauty trade show",
+     1,
+     15
+    ],
+    [
+     "france beauty tools market",
+     1,
+     18
+    ],
+    [
+     "what about in cosmetics",
+     1,
+     15
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/salons/sepem-colmar",
+   "imp": 214,
+   "clicks": 0,
+   "pos": 11.4,
+   "ctr": 0,
+   "pot": 5,
+   "queries": [
+    [
+     "sepem colmar 2026",
+     5,
+     11.2
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/salons/fitex-paris",
+   "imp": 446,
+   "clicks": 2,
+   "pos": 11.7,
+   "ctr": 0.45,
+   "pot": 4,
+   "queries": [
+    [
+     "salon du fitness paris",
+     4,
+     16.8
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/salons/tech-for-retail-paris",
+   "imp": 252,
+   "clicks": 2,
+   "pos": 13.2,
+   "ctr": 0.79,
+   "pot": 4,
+   "queries": [
+    [
+     "envoyer l'équipe merchandising ou l'équipe informatique au salon retail de paris en septembre",
+     4,
+     13.5
+    ]
+   ],
+   "cannib": [
+    {
+     "q": "envoyer l'équipe merchandising ou l'équipe informatique au salon retail de paris en septembre",
+     "others": [
+      [
+       "/en/salons/paris-retail-week",
+       6,
+       43.2
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "url": "/salons/aps-paris",
+   "imp": 294,
+   "clicks": 1,
+   "pos": 11.1,
+   "ctr": 0.34,
+   "pot": 4,
+   "queries": [
+    [
+     "salon aps",
+     4,
+     15
+    ]
+   ],
+   "cannib": [
+    {
+     "q": "salon aps",
+     "others": [
+      [
+       "/en/salons/aps-paris",
+       8,
+       3.8
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "url": "/en/prestataires/magnum-lyon",
+   "imp": 73,
+   "clicks": 0,
+   "pos": 10.9,
+   "ctr": 0,
+   "pot": 4,
+   "queries": [
+    [
+     "magnum gonesse",
+     4,
+     11
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/lieux/parc-expo-angers",
+   "imp": 99,
+   "clicks": 0,
+   "pos": 10.6,
+   "ctr": 0,
+   "pot": 4,
+   "queries": [
+    [
+     "parc d exposition angers",
+     2,
+     17.5
+    ],
+    [
+     "capacité",
+     1,
+     12
+    ],
+    [
+     "salon à angers",
+     1,
+     20
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/lieux/parc-expo-tarbes",
+   "imp": 92,
+   "clicks": 0,
+   "pos": 15,
+   "ctr": 0,
+   "pot": 4,
+   "queries": [
+    [
+     "parc exposition tarbes",
+     4,
+     19.3
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/salons/it-partners-paris",
+   "imp": 275,
+   "clicks": 0,
+   "pos": 12.5,
+   "ctr": 0,
+   "pot": 4,
+   "queries": [
+    [
+     "itpartners",
+     3,
+     17
+    ],
+    [
+     "partners salon",
+     1,
+     17
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/salons/salon-agriculture-nouvelle-aquitaine",
+   "imp": 70,
+   "clicks": 0,
+   "pos": 11.6,
+   "ctr": 0,
+   "pot": 4,
+   "queries": [
+    [
+     "salon agriculture bordeaux 2026",
+     2,
+     11.5
+    ],
+    [
+     "aquitanima 2026",
+     1,
+     17
+    ],
+    [
+     "salon de l'agriculture bordeaux",
+     1,
+     14
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/villes/marseille",
+   "imp": 67,
+   "clicks": 0,
+   "pos": 18.3,
+   "ctr": 0,
+   "pot": 4,
+   "queries": [
+    [
+     "salons professionnels",
+     3,
+     20.3
+    ],
+    [
+     "salon exposant",
+     1,
+     11
+    ]
+   ],
+   "cannib": [
+    {
+     "q": "salons professionnels",
+     "others": [
+      [
+       "/villes/paris",
+       24,
+       23.3
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "url": "/en/salons/gourmet-selection",
+   "imp": 102,
+   "clicks": 0,
+   "pos": 10.8,
+   "ctr": 0,
+   "pot": 3,
+   "queries": [
+    [
+     "gourmet selection trade show",
+     2,
+     19.5
+    ],
+    [
+     "gourmet selection 2026",
+     1,
+     20
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/lieux/espace-mayenne",
+   "imp": 206,
+   "clicks": 0,
+   "pos": 17.4,
+   "ctr": 0,
+   "pot": 3,
+   "queries": [
+    [
+     "parc expo laval",
+     1,
+     18
+    ],
+    [
+     "salle espace mayenne",
+     1,
+     19
+    ],
+    [
+     "velodrome laval",
+     1,
+     16
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/salons/renodays",
+   "imp": 83,
+   "clicks": 0,
+   "pos": 15.5,
+   "ctr": 0,
+   "pot": 3,
+   "queries": [
+    [
+     "renodays",
+     3,
+     15.7
+    ]
+   ],
+   "cannib": [
+    {
+     "q": "renodays",
+     "others": [
+      [
+       "/en/salons/renodays",
+       9,
+       4.6
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "url": "/salons/cycl-eau-bordeaux",
+   "imp": 152,
+   "clicks": 5,
+   "pos": 11.2,
+   "ctr": 3.29,
+   "pot": 2,
+   "queries": [
+    [
+     "cycl'eau bordeaux",
+     2,
+     11.5
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/salons/congres-esthetique-spa",
+   "imp": 162,
+   "clicks": 2,
+   "pos": 13,
+   "ctr": 1.23,
+   "pot": 2,
+   "queries": [
+    [
+     "congres de l esthétique",
+     2,
+     16.5
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/en/prestataires/lenotre-paris",
+   "imp": 17,
+   "clicks": 0,
+   "pos": 12.6,
+   "ctr": 0,
+   "pot": 2,
+   "queries": [
+    [
+     "lenôtre traiteur",
+     2,
+     19.5
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/en/salons/artibat-rennes",
+   "imp": 26,
+   "clicks": 0,
+   "pos": 14.7,
+   "ctr": 0,
+   "pot": 2,
+   "queries": [
+    [
+     "artibat exposants",
+     1,
+     14
+    ],
+    [
+     "artibat rennes 2026 date",
+     1,
+     11
+    ]
+   ],
+   "cannib": [
+    {
+     "q": "artibat rennes 2026 date",
+     "others": [
+      [
+       "/salons/artibat-rennes",
+       9,
+       10.2
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "url": "/en/salons/bio360-expo",
+   "imp": 30,
+   "clicks": 0,
+   "pos": 10.9,
+   "ctr": 0,
+   "pot": 2,
+   "queries": [
+    [
+     "bio360 expo 2026 bio360 e",
+     1,
+     12
+    ],
+    [
+     "en 2027",
+     1,
+     11
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/en/salons/japan-expo-paris",
+   "imp": 71,
+   "clicks": 0,
+   "pos": 20.4,
+   "ctr": 0,
+   "pot": 2,
+   "queries": [
+    [
+     "japan touch paris 2026",
+     2,
+     11
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/en/salons/paris-photo",
+   "imp": 69,
+   "clicks": 0,
+   "pos": 15.1,
+   "ctr": 0,
+   "pot": 2,
+   "queries": [
+    [
+     "festival photo paris 2026",
+     1,
+     17
+    ],
+    [
+     "paris photo 2026",
+     1,
+     20
+    ]
+   ],
+   "cannib": [
+    {
+     "q": "paris photo 2026",
+     "others": [
+      [
+       "/salons/paris-photo",
+       12,
+       16.2
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "url": "/salons/espritmeuble-paris",
+   "imp": 163,
+   "clicks": 0,
+   "pos": 12.9,
+   "ctr": 0,
+   "pot": 2,
+   "queries": [
+    [
+     "esprit meuble 2026",
+     1,
+     18
+    ],
+    [
+     "liste des exposants",
+     1,
+     19
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/salons/itb-berlin",
+   "imp": 94,
+   "clicks": 0,
+   "pos": 18,
+   "ctr": 0,
+   "pot": 2,
+   "queries": [
+    [
+     "berlin itb",
+     2,
+     12
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/salons/open-source-experience",
+   "imp": 180,
+   "clicks": 0,
+   "pos": 10.6,
+   "ctr": 0,
+   "pot": 2,
+   "queries": [
+    [
+     "salon open source paris",
+     2,
+     11.5
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/salons/journees-du-courtage",
+   "imp": 395,
+   "clicks": 4,
+   "pos": 12.1,
+   "ctr": 1.01,
+   "pot": 1,
+   "queries": [
+    [
+     "les journées du courtage paris",
+     1,
+     11
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/salons/cfia-rennes",
+   "imp": 557,
+   "clicks": 3,
+   "pos": 14,
+   "ctr": 0.54,
+   "pot": 1,
+   "queries": [
+    [
+     "cfia exposants",
+     1,
+     17
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/salons/medica-dusseldorf",
+   "imp": 157,
+   "clicks": 2,
+   "pos": 11.9,
+   "ctr": 1.27,
+   "pot": 1,
+   "queries": [
+    [
+     "medica 2026 dusseldorf",
+     1,
+     15
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/salons/medi-nov-connection-lyon",
+   "imp": 47,
+   "clicks": 1,
+   "pos": 12.1,
+   "ctr": 2.13,
+   "pot": 1,
+   "queries": [
+    [
+     "proximum sas",
+     1,
+     14
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/salons/sibca-paris",
+   "imp": 63,
+   "clicks": 1,
+   "pos": 12.7,
+   "ctr": 1.59,
+   "pot": 1,
+   "queries": [
+    [
+     "sibca paris",
+     1,
+     15
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/en/lieux/palais-de-tokyo",
+   "imp": 17,
+   "clicks": 0,
+   "pos": 11.5,
+   "ctr": 0,
+   "pot": 1,
+   "queries": [
+    [
+     "13 avenue du président wilson 75116 paris",
+     1,
+     11
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/en/lieux/parc-expo-rennes",
+   "imp": 57,
+   "clicks": 0,
+   "pos": 11.3,
+   "ctr": 0,
+   "pot": 1,
+   "queries": [
+    [
+     "parc expo bruz",
+     1,
+     16
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/en/prestataires/alphaexpo",
+   "imp": 28,
+   "clicks": 0,
+   "pos": 13.5,
+   "ctr": 0,
+   "pot": 1,
+   "queries": [
+    [
+     "stand builder grenoble",
+     1,
+     20
+    ]
+   ],
+   "cannib": [
+    {
+     "q": "stand builder grenoble",
+     "others": [
+      [
+       "/en/prestataires/standistes-lyon",
+       7,
+       5.7
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "url": "/en/salons/batimat",
+   "imp": 159,
+   "clicks": 0,
+   "pos": 14.1,
+   "ctr": 0,
+   "pot": 1,
+   "queries": [
+    [
+     "batimat paris 2027",
+     1,
+     18
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/en/salons/bepositive-lyon",
+   "imp": 19,
+   "clicks": 0,
+   "pos": 12.6,
+   "ctr": 0,
+   "pot": 1,
+   "queries": [
+    [
+     "bepositive 2027",
+     1,
+     20
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/en/salons/cyber-show-paris",
+   "imp": 60,
+   "clicks": 0,
+   "pos": 14.8,
+   "ctr": 0,
+   "pot": 1,
+   "queries": [
+    [
+     "is it free",
+     1,
+     12
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/en/salons/laval-virtual",
+   "imp": 47,
+   "clicks": 0,
+   "pos": 19.1,
+   "ctr": 0,
+   "pot": 1,
+   "queries": [
+    [
+     "virtual 2027",
+     1,
+     11
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/en/secteurs/franchise-commerce",
+   "imp": 39,
+   "clicks": 0,
+   "pos": 12.1,
+   "ctr": 0,
+   "pot": 1,
+   "queries": [
+    [
+     "retailer trade show",
+     1,
+     17
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/prestataires/design-location",
+   "imp": 562,
+   "clicks": 0,
+   "pos": 12.8,
+   "ctr": 0,
+   "pot": 1,
+   "queries": [
+    [
+     "quels fournisseurs offrent une gamme variée de mobilier empire et contemporain en location ?",
+     1,
+     20
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/salons/all4customer-cannes",
+   "imp": 106,
+   "clicks": 0,
+   "pos": 11.7,
+   "ctr": 0,
+   "pot": 1,
+   "queries": [
+    [
+     "one to one cannes",
+     1,
+     18
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/salons/immo-congres-fnaim",
+   "imp": 73,
+   "clicks": 0,
+   "pos": 11,
+   "ctr": 0,
+   "pot": 1,
+   "queries": [
+    [
+     "fnaim salon",
+     1,
+     11
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/salons/jec-world",
+   "imp": 83,
+   "clicks": 0,
+   "pos": 20.2,
+   "ctr": 0,
+   "pot": 1,
+   "queries": [
+    [
+     "jec world 2027",
+     1,
+     14
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/salons/plastic-expo-lyon",
+   "imp": 74,
+   "clicks": 0,
+   "pos": 11.3,
+   "ctr": 0,
+   "pot": 1,
+   "queries": [
+    [
+     "fip salon",
+     1,
+     12
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/salons/smarter-e-europe-munich",
+   "imp": 34,
+   "clicks": 0,
+   "pos": 17,
+   "ctr": 0,
+   "pot": 1,
+   "queries": [
+    [
+     "the smarter e europe",
+     1,
+     20
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/secteurs/immobilier",
+   "imp": 40,
+   "clicks": 0,
+   "pos": 18.3,
+   "ctr": 0,
+   "pot": 1,
+   "queries": [
+    [
+     "salon real estate",
+     1,
+     11
+    ]
+   ],
+   "cannib": []
+  },
+  {
+   "url": "/blog/marche-salons-professionnels-france-chiffres",
+   "imp": 263,
+   "clicks": 14,
+   "pos": 14.8,
+   "ctr": 5.32,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/secteurs/defense-securite",
+   "imp": 120,
+   "clicks": 7,
+   "pos": 11.5,
+   "ctr": 5.83,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/secteurs/sport-outdoor",
+   "imp": 136,
+   "clicks": 4,
+   "pos": 14.5,
+   "ctr": 2.94,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/salons/mif-expo",
+   "imp": 189,
+   "clicks": 3,
+   "pos": 15.8,
+   "ctr": 1.59,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/en/villes/aubervilliers",
+   "imp": 7,
+   "clicks": 2,
+   "pos": 14.6,
+   "ctr": 28.57,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/salons/degre-zero-marseille",
+   "imp": 45,
+   "clicks": 2,
+   "pos": 14.2,
+   "ctr": 4.44,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/salons/natexpo-paris",
+   "imp": 108,
+   "clicks": 2,
+   "pos": 20.1,
+   "ctr": 1.85,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/salons/salon-du-chocolat-paris",
+   "imp": 264,
+   "clicks": 2,
+   "pos": 13.1,
+   "ctr": 0.76,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/salons/salon-du-dessin",
+   "imp": 69,
+   "clicks": 2,
+   "pos": 13.2,
+   "ctr": 2.9,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/blog/preparer-visite-salon-professionnel",
+   "imp": 43,
+   "clicks": 1,
+   "pos": 12.6,
+   "ctr": 2.33,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/en/lieux/centre-de-congres-de-lyon",
+   "imp": 11,
+   "clicks": 1,
+   "pos": 11.4,
+   "ctr": 9.09,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/en/salons/france-air-expo",
+   "imp": 22,
+   "clicks": 1,
+   "pos": 12.5,
+   "ctr": 4.55,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/en/salons/paris-design-week",
+   "imp": 108,
+   "clicks": 1,
+   "pos": 20.2,
+   "ctr": 0.93,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/en/salons/salon-sme-paris",
+   "imp": 109,
+   "clicks": 1,
+   "pos": 10.6,
+   "ctr": 0.92,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/en/salons/snack-show",
+   "imp": 75,
+   "clicks": 1,
+   "pos": 14.6,
+   "ctr": 1.33,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/en/salons/tech-ovin-bellac",
+   "imp": 9,
+   "clicks": 1,
+   "pos": 13.6,
+   "ctr": 11.11,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/en/villes/montpellier",
+   "imp": 6,
+   "clicks": 1,
+   "pos": 14.5,
+   "ctr": 16.67,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/lieux/parc-expo-metz",
+   "imp": 35,
+   "clicks": 1,
+   "pos": 11.4,
+   "ctr": 2.86,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/salons/documation",
+   "imp": 150,
+   "clicks": 1,
+   "pos": 13.5,
+   "ctr": 0.67,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/salons/go-entrepreneurs-paris",
+   "imp": 252,
+   "clicks": 1,
+   "pos": 14.1,
+   "ctr": 0.4,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/secteurs/decoration-habitat",
+   "imp": 34,
+   "clicks": 1,
+   "pos": 17.2,
+   "ctr": 2.94,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/villes/toulouse",
+   "imp": 31,
+   "clicks": 1,
+   "pos": 10.8,
+   "ctr": 3.23,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/blog/top-salons-agroalimentaire-2026",
+   "imp": 13,
+   "clicks": 0,
+   "pos": 12.4,
+   "ctr": 0,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/blog/visiter-salon-vaut-il-le-deplacement",
+   "imp": 9,
+   "clicks": 0,
+   "pos": 15.9,
+   "ctr": 0,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/en/blog/preparer-stand-salon-professionnel",
+   "imp": 2,
+   "clicks": 0,
+   "pos": 13.5,
+   "ctr": 0,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/en/blog/preparer-visite-salon-professionnel",
+   "imp": 29,
+   "clicks": 0,
+   "pos": 19.2,
+   "ctr": 0,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/en/lieux/messe-munchen",
+   "imp": 45,
+   "clicks": 0,
+   "pos": 11.8,
+   "ctr": 0,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/en/lieux/parc-des-expositions-de-strasbourg",
+   "imp": 96,
+   "clicks": 0,
+   "pos": 20.5,
+   "ctr": 0,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/en/salons/cprint-lyon",
+   "imp": 8,
+   "clicks": 0,
+   "pos": 14.6,
+   "ctr": 0,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/en/salons/eurocoat",
+   "imp": 101,
+   "clicks": 0,
+   "pos": 11.9,
+   "ctr": 0,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/en/salons/foire-chalons-en-champagne",
+   "imp": 8,
+   "clicks": 0,
+   "pos": 12.8,
+   "ctr": 0,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/en/salons/hr-technologies-france",
+   "imp": 36,
+   "clicks": 0,
+   "pos": 10.8,
+   "ctr": 0,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/en/salons/hyvolution-paris",
+   "imp": 15,
+   "clicks": 0,
+   "pos": 16,
+   "ctr": 0,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/en/salons/iftm-top-resa",
+   "imp": 4,
+   "clicks": 0,
+   "pos": 20.3,
+   "ctr": 0,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/en/salons/luxe-pack-monaco",
+   "imp": 31,
+   "clicks": 0,
+   "pos": 12.2,
+   "ctr": 0,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/en/salons/mif-expo",
+   "imp": 94,
+   "clicks": 0,
+   "pos": 12.5,
+   "ctr": 0,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/en/salons/navexpo",
+   "imp": 18,
+   "clicks": 0,
+   "pos": 16.6,
+   "ctr": 0,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/en/salons/pepites-et-papilles-bordeaux",
+   "imp": 15,
+   "clicks": 0,
+   "pos": 10.8,
+   "ctr": 0,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/en/salons/pharmagora-plus",
+   "imp": 48,
+   "clicks": 0,
+   "pos": 19.2,
+   "ctr": 0,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/en/salons/piscine-global-lyon",
+   "imp": 14,
+   "clicks": 0,
+   "pos": 10.8,
+   "ctr": 0,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/en/salons/produrable-paris",
+   "imp": 18,
+   "clicks": 0,
+   "pos": 11.9,
+   "ctr": 0,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/en/salons/salon-funeraire",
+   "imp": 59,
+   "clicks": 0,
+   "pos": 12.5,
+   "ctr": 0,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/en/salons/sepem-douai",
+   "imp": 11,
+   "clicks": 0,
+   "pos": 12.5,
+   "ctr": 0,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/en/salons/seta-paris",
+   "imp": 96,
+   "clicks": 0,
+   "pos": 10.5,
+   "ctr": 0,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/en/salons/sirha-mediterranee",
+   "imp": 14,
+   "clicks": 0,
+   "pos": 11.1,
+   "ctr": 0,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/en/salons/sitevi-montpellier",
+   "imp": 188,
+   "clicks": 0,
+   "pos": 14.9,
+   "ctr": 0,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/en/salons/solar-solutions-international-amsterdam",
+   "imp": 18,
+   "clicks": 0,
+   "pos": 16.2,
+   "ctr": 0,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/en/salons/solutions-cse",
+   "imp": 141,
+   "clicks": 0,
+   "pos": 20.4,
+   "ctr": 0,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/en/salons/solutions-rh",
+   "imp": 19,
+   "clicks": 0,
+   "pos": 10.7,
+   "ctr": 0,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/en/salons/tranofiliere-paris",
+   "imp": 30,
+   "clicks": 0,
+   "pos": 11.9,
+   "ctr": 0,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/en/salons/workspace-expo-paris",
+   "imp": 31,
+   "clicks": 0,
+   "pos": 20.4,
+   "ctr": 0,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/en/secteurs/art-culture",
+   "imp": 7,
+   "clicks": 0,
+   "pos": 11.1,
+   "ctr": 0,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/en/secteurs/mode-textile",
+   "imp": 4,
+   "clicks": 0,
+   "pos": 15.3,
+   "ctr": 0,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/en/secteurs/tourisme-hotellerie",
+   "imp": 11,
+   "clicks": 0,
+   "pos": 10.8,
+   "ctr": 0,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/lieux/centre-de-congres-de-lyon",
+   "imp": 45,
+   "clicks": 0,
+   "pos": 10.8,
+   "ctr": 0,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/lieux/lille-grand-palais",
+   "imp": 7,
+   "clicks": 0,
+   "pos": 12.6,
+   "ctr": 0,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/lieux/parc-des-expositions-de-bordeaux",
+   "imp": 113,
+   "clicks": 0,
+   "pos": 12.9,
+   "ctr": 0,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/salons/art-paris",
+   "imp": 66,
+   "clicks": 0,
+   "pos": 15.7,
+   "ctr": 0,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/salons/djazagro-alger",
+   "imp": 43,
+   "clicks": 0,
+   "pos": 13.3,
+   "ctr": 0,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/salons/enerj-meeting-lyon",
+   "imp": 107,
+   "clicks": 0,
+   "pos": 11.4,
+   "ctr": 0,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/salons/eurocoat",
+   "imp": 17,
+   "clicks": 0,
+   "pos": 16.4,
+   "ctr": 0,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/salons/open-energies-lyon",
+   "imp": 19,
+   "clicks": 0,
+   "pos": 18.5,
+   "ctr": 0,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/salons/paris-retail-week",
+   "imp": 33,
+   "clicks": 0,
+   "pos": 12.7,
+   "ctr": 0,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/salons/piscine-global-lyon",
+   "imp": 206,
+   "clicks": 0,
+   "pos": 16.1,
+   "ctr": 0,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/salons/salon-etudiant-ile-de-france",
+   "imp": 46,
+   "clicks": 0,
+   "pos": 13.1,
+   "ctr": 0,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/salons/sepem-douai",
+   "imp": 77,
+   "clicks": 0,
+   "pos": 10.5,
+   "ctr": 0,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/salons/sirha-bake-snack",
+   "imp": 127,
+   "clicks": 0,
+   "pos": 10.7,
+   "ctr": 0,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/salons/sitl",
+   "imp": 57,
+   "clicks": 0,
+   "pos": 14,
+   "ctr": 0,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/salons/smahrt-toulouse",
+   "imp": 32,
+   "clicks": 0,
+   "pos": 14.5,
+   "ctr": 0,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  },
+  {
+   "url": "/villes/monaco",
+   "imp": 1,
+   "clicks": 0,
+   "pos": 11,
+   "ctr": 0,
+   "pot": 0,
+   "queries": [],
+   "cannib": []
+  }
+ ]
+}

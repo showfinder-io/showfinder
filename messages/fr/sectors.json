@@ -19,6 +19,7 @@
     "showsLabelOne": "salon référencé",
     "showsLabelMany": "salons référencés",
     "emptyShows": "Aucun salon dans cette filière pour le moment",
+    "moreShowsHeading": "Tous les salons de la filière",
     "citiesHeading": "Les villes de la filière",
     "cityLink": "Salons à {city}",
     "otherSectorsHeading": "Explorer d'autres filières"
