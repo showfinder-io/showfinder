@@ -9,7 +9,7 @@ Test de CTR mesurable sur les fiches très vues mais peu cliquées (impr. >= 500
 1. Liste figée dans `tasks/ctr-test-48/liste-figee.md` : **fait** (48 pages, 52 403 impr., 309 clics, CTR 0,59 %).
 2. Référence mesurée par page (clics, impr., CTR, position, 28 j) : **fait** (`baseline-2026-09-30_2026-10-27.json`).
 3. Diagnostic par page : top requêtes classées navigationnelle / informationnelle / transactionnelle par Jev, éditions passées exclues : **fait** (`intentions-jev.json`, jev-1.14.0).
-4. Nouveaux titres et descriptions passés par le process writer + 2 reviewers, zéro donnée factuelle absente de la base, pas d'em dash, accents vérifiés.
+4. Nouveaux titres et descriptions passés par le process writer + 2 reviewers, zéro donnée factuelle absente de la base, pas d'em dash, accents vérifiés : **fait** (`titres.json`).
 5. Titres déployés en prod : migration appliquée, PR mergée, date de déploiement vérifiée via le statut Vercel du commit, et titre lu dans le HTML de prod sur un échantillon.
 6. Mesure J+28 inscrite dans `tasks/todo.md` avec sa date et sa règle de décision.
 
@@ -35,6 +35,11 @@ Test de CTR mesurable sur les fiches très vues mais peu cliquées (impr. >= 500
 - 2026-10-29 : tirage reproductible (`scripts/diag-ctr-test-48-split.mjs`, graine `ctr-test-48-2026-10-29`, `groupes.json`). Traités : 19 pages, 16 511 impr., 76 clics, CTR 0,46 %. Témoins : 19 pages, 22 089 impr., 131 clics, CTR 0,59 %. Exclues : 7 éditions passées + 3 lieux (rendus à la session ctr-prest-lieux, message envoyé).
 - 2026-10-29 : classement Jev (`scripts/diag-ctr-test-48-jev.mjs`) des requêtes couvrant 80 % des impressions de chaque page (20 max), 38 pages. Sur 16 010 impressions classées : navigationnelle 92 %, informationnelle 6,5 %, transactionnelle 1 %, hors sujet 0,6 %. 31 requêtes à confiance < 0,6 (variantes génériques type « congrès urologie 2026 »), sans effet sur le constat.
 
+- 2026-10-29 : writer (1 passe, `writer-out.json`) puis 2 reviewers indépendants (`review-A.json` : 9 à corriger dont 1 grave ; `review-B.json` : 5 à corriger). Corrections consolidées sur 11 pages (`titres.json`) : tarifs datés qui expirent pendant la mesure retirés (CPLF 440 € au 12 nov., badges Euronaval, 460 € Paris Santé Femmes, badge gratuit SMCL), dates remises dans les titles de SOFINS et JFHOD, nom tapé en tête pour le CFP (« congrès de psychiatrie »), « annoncé » respecté sur Prod&Pack, année ajoutée aux chiffres passés (Museum Connections). Chaque fait modifié revérifié par grep dans le dossier de la page. Longueurs : titles 54-60, descriptions 138-155, aucun tiret long.
+- 2026-10-29 15:04 UTC : 19 fiches mises à jour en base via `scripts/ctr-test-48-apply.ts` et relues (contrôle OK). Migration versionnée avec rollback : `supabase/migrations/20261029000000_ctr_test_48_seo_titles.sql`. Les fiches sont en SSG : les nouvelles metas ne sont servies qu'au déploiement prod suivant.
+- 2026-10-29 : `npm run build` OK.
+- Note : energaia-montpellier avait été retitrée le 2026-09-25 (passe CTR n°2, todo C6) ; sa mesure C6 est donc arrêtée au 2026-10-27.
+
 ## Constat du diagnostic
 
 Ces pages sont vues sur des requêtes de marque où le site officiel est en tête : le CTR bas est en grande partie structurel. Le levier testable est un titre qui promet ce que l'officiel ne donne pas (vue indépendante : à qui s'adresse le salon, dates et lieu exacts, conseils pour exposer). Attendu réaliste : un gain modeste, d'où le témoin pour le distinguer du bruit.
@@ -45,6 +50,8 @@ Ces pages sont vues sur des requêtes de marque où le site officiel est en têt
 - « Budget exposant » : angle demandé, mais à n'utiliser que si le prix est en base ou dans le MDX validé (BudgetTable). Sinon, pas de chiffre.
 - Le roll 2027 automatique ne touche pas le SEO (règle 14e) mais peut changer les dates d'une fiche éligible pendant la mesure : à surveiller dans `tasks/roll-2027/journal.json`.
 
+- **Maillage interne modifié pendant le test (chantier 3, page2-vers-page1, validé par Julien le 2026-10-29)** : hubs secteurs non plafonnés + « salons similaires » par proximité thématique, site entier. Touche traités et témoins de la même façon (le témoin absorbe l'effet commun), mais peut déplacer des positions : appliquer D5 et noter la date de déploiement prod que la session chantier 3 communiquera.
+
 ## Prochaine action
 
-Rédaction writer + 2 reviewers sur les 19 pages traitées (règles dans le brief writer).
+PR vers main, merge CI verte, relever la date de déploiement prod (statut Vercel du commit) et vérifier les titles dans le HTML de prod.

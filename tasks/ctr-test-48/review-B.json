@@ -1,0 +1,169 @@
+[
+  {
+    "page": "/en/salons/amwc",
+    "verdict": "ok",
+    "problemes": [],
+    "notes": "Mineur, non bloquant : (1) le titre « the congress leaves Monaco, who attends » est une suite de deux fragments peu naturelle en anglais ; proposition « AMWC 2027 Cannes: the move from Monaco and who attends » (54 car.). (2) « pass prices » : le MDX (BudgetTable footer) donne €260 et €850 « until 29 October 2026 », échéance déjà atteinte à la date du test ; la description ne chiffre pas, donc pas de violation de la règle 10, mais le corps de page présentera un tarif périmé. Faits vérifiés : 1-3 avril 2027, Palais des Festivals, changement de ville (Key facts), 19.53 % dermatologues (Visitor quality, arrondi 19.5 %), section budget présente. Longueurs 57/150."
+  },
+  {
+    "page": "/en/salons/jdp-paris",
+    "verdict": "ok",
+    "problemes": [],
+    "notes": "Faits vérifiés par grep : 1-5 déc. (Key facts), exposition 2-4 déc. uniquement, 7,275 participants en 2025 (cohérent avec HistoryTable), 68 exposants au plan. Les tarifs d'inscription (€250/€580 avant le 1er novembre, puis €300/€630) changent le 2 novembre, mais ni le title ni la description ne chiffrent : OK règle 10. Longueurs 54/148."
+  },
+  {
+    "page": "/en/salons/museum-connections",
+    "verdict": "ok",
+    "problemes": [],
+    "notes": "Faits vérifiés : 12-13 janv. 2027 hall 5.2, 42 % musées et fondations (6,332 participants 2026), 403 exposants dont 44 % internationaux (cohérent entre Key facts, sections et HistoryTable). « badge prices » sans montant : le badge gratuit expire le 31 octobre 2026 mais n'est pas cité, OK règle 10. Longueurs 54/150. Mineur : « visitors » dans la description pour 6,332 « participants » (le MDX dit participants dont exposants non précisés)."
+  },
+  {
+    "page": "/salons/architect-at-work-nantes",
+    "verdict": "ok",
+    "problemes": [],
+    "notes": "Faits vérifiés : 19-20 nov. 2026, Hall XXL La Beaujoire, sur invitation, jury, huit conférences. Longueur titre 60 (limite haute). Observation générale : l'événement a lieu le 19-20 novembre, donc la page est passée pour les 6 dernières semaines de la mesure (title et description restent vrais, pas de tarif ni d'échéance cités)."
+  },
+  {
+    "page": "/salons/congres-francais-psychiatrie",
+    "verdict": "ok",
+    "problemes": [],
+    "notes": "Faits vérifiés : 18e, 2-5 déc. 2026, Strasbourg, thème « Politique », sessions partenaires jeudi/vendredi 16h40-17h40, public (psychiatres, internes, infirmiers). « tarifs » sans montant : le tarif de 590 € expire le 20 novembre 2026 mais n'est pas cité, OK règle 10. Titre 60 (limite haute). Requête dominante « congres psychiatrie strasbourg » (49) contre « cfp strasbourg 2026 » (38) : le titre porte « CFP 2026 Strasbourg : congrès de psychiatrie », qui couvre les deux."
+  },
+  {
+    "page": "/salons/cosmetagora-paris",
+    "verdict": "ok",
+    "problemes": [],
+    "notes": "Faits vérifiés : 12-13 janv. 2027 (9h30-18h), Espace Champerret, 5 510 visiteurs en 2026 (cohérent bullet, section et HistoryTable), Prix de la Formulation, section « Combien ça coûte d'exposer » présente (indicative). Longueurs 58/153. La ville (Paris) n'est pas dans le title mais aucune requête ne la porte."
+  },
+  {
+    "page": "/salons/cplf",
+    "verdict": "a_corriger",
+    "problemes": [
+      {
+        "texte": "Description : « inscription médecin à 440 € jusqu'au 12 nov. »",
+        "regle": "10 (rien qui périme avant le 2026-12-31)",
+        "preuve": "MDX Préparer sa venue : « S'inscrire jusqu'au 12 novembre 2026 pour le premier tarif réduit : 440 € TTC pour un médecin ... Jusqu'au 12 janvier 2027, ces tarifs passent à 560 € ». Le tarif cité et son échéance expirent le 12 novembre 2026, soit 7 semaines avant la fin de la mesure : la description deviendrait fausse en SERP.",
+        "correction_proposee": "31e CPLF du 29 au 31 janv. 2027 au Parc Chanot : thème du sommeil, tarifs d'inscription par profil, 80 partenaires au 10 octobre, exposition intégrée. (150 car.)"
+      },
+      {
+        "texte": "Description : « 80 partenaires inscrits début octobre » (dans la même phrase)",
+        "regle": "1 / 10 (mineur)",
+        "preuve": "MDX Exposants notables : « affiche 80 partenaires au 10 octobre 2026 ; ... la liste s'allonge donc jusqu'au congrès ». Chiffre daté qui sera dépassé ; garder la date exacte (« au 10 octobre ») plutôt que « début octobre ».",
+        "correction_proposee": "Intégré dans la proposition ci-dessus."
+      }
+    ],
+    "notes": "Le reste est exact : 31e, 29-31 janv. 2027, Parc Chanot, thème « Le sommeil dans tous ses états ». Le title « CPLF 2027 Marseille : inscription, tarifs et exposants » (54) est bien aligné sur « cplf 2027 inscription » et reste sans montant."
+  },
+  {
+    "page": "/salons/educatech-expo",
+    "verdict": "ok",
+    "problemes": [],
+    "notes": "Faits vérifiés : 2-4 déc. 2026 Pavillon 7 Porte de Versailles, badge gratuit sur demande en ligne, accès réservé aux professionnels, rendez-vous exposants/porteurs de projets les 2 et 3 décembre. Longueurs 55/153. Le title commence par « Educatech 2026 » (requête dominante) alors que la base dit « Educatech Expo » : acceptable."
+  },
+  {
+    "page": "/salons/energaia-montpellier",
+    "verdict": "ok",
+    "problemes": [],
+    "notes": "Faits vérifiés : 9-10 déc. 2026 Parc des Expositions de Montpellier, 5 marchés, 120 tables rondes et pitchs (« par édition »), badge pro gratuit, rétroplanning exposant. Le MDX se contredit sur 22 500 / 22 600 participants et 551 / 560+ exposants en 2025, mais title et description ne citent aucun de ces chiffres : OK règle 11. Longueurs 58/148."
+  },
+  {
+    "page": "/salons/euronaval-paris",
+    "verdict": "a_corriger",
+    "problemes": [
+      {
+        "texte": "Description : « tarifs des badges » (et title « badges ») sur un salon qui se tient du 3 au 6 novembre 2026",
+        "regle": "10 (rien qui périme avant le 2026-12-31) et pertinence",
+        "preuve": "MDX Sur place : « Tarif standard (10 septembre au 2 novembre) : 110 € TTC », « Tarif sur place (à partir du 3 novembre) : 300 € TTC ». Les fenêtres tarifaires sont closes au plus tard le 6 novembre : la promesse « tarifs des badges » est sans objet pendant les 8 dernières semaines de la mesure. Les requêtes (horaires, exposants) sont aussi informationnelles pré-événement.",
+        "correction_proposee": "Description : 30e Euronaval du 3 au 6 nov. 2026, Hall 6 de Paris Nord Villepinte : horaires, accès RER B, salon réservé aux pros, 150 délégations officielles visées. (151 car.) Title inchangé acceptable (« badges » sans tarif) ; à défaut « Euronaval 2026 : horaires, accès et public à Villepinte »."
+      }
+    ],
+    "notes": "Faits vérifiés : 30e, Hall 6, horaires 9h-17h30 (9h-16h le vendredi), RER B Parc des Expositions, 150 délégations (cible 2026 et bilan 2024). La requête « euronaval » (22 impr.) est à la position 32,9 : peu de potentiel de clic quel que soit le title."
+  },
+  {
+    "page": "/salons/europack-euromanut-lyon",
+    "verdict": "ok",
+    "problemes": [],
+    "notes": "Faits vérifiés : « Salon biennal : pas d'édition 2026 », 4e édition annoncée du 16 au 18 nov. 2027 à Eurexpo Lyon, rebrandé en 2020-2021, 15 931 visiteurs en 2025 (cohérent bullet, section, HistoryTable). Mineur : le MDX qualifie ce chiffre de « annoncé par l'organisateur, pas de certification OJS » et la date 2027 d'« annoncée » ; la description les énonce sans réserve (« revient du 16 au 18 nov. 2027 », « 15 931 visiteurs en 2025 »). Si la règle 1 est lue strictement, ajouter « annoncé » : « ... est annoncé du 16 au 18 nov. 2027 ... » (longueur à recontrôler, 147 actuellement). La base porte dates_confirmed: true. Le title traite bien les requêtes « 2026 » qui rapportent les seuls clics. « cfia lyon » (31 impr.) n'est pas couvert, choix défendable (co-localisation abandonnée)."
+  },
+  {
+    "page": "/salons/iode",
+    "verdict": "ok",
+    "problemes": [],
+    "notes": "Faits vérifiés : 27-28 janv. 2027 Le Chorus, 66 % de gérants de camping parmi les visiteurs 2026, BudgetTable « Tarifs officiels HT du dossier d'inscription IODE 2027 », accès pro gratuit sur inscription. Longueurs 55/155 (description à la limite haute). Le title commence par « Salon IODE 2027 », forme tapée (« salon iode »)."
+  },
+  {
+    "page": "/salons/jfhod",
+    "verdict": "a_corriger",
+    "problemes": [
+      {
+        "texte": "Title « JFHOD 2027 : dates, tarifs d'inscription et exposition » : le mot « dates » sans les dates, alors que les requêtes portent « jfhod 2027 date » (19 impr.) et que le title actuel les affichait",
+        "regle": "Pertinence pour le clic (omission des dates alors que les requêtes les portent)",
+        "preuve": "Tableau GSC : « jfhod 2027 date | 19 | informationnelle », « jfhod 2027 | 33 », « jfhod | 23 ». MDX : « du jeudi 11 au dimanche 14 mars 2027 ». Un résultat qui affiche la date répond directement à la requête, un résultat qui annonce « dates » sans les donner n'apporte rien de plus que le site officiel.",
+        "correction_proposee": "JFHOD 2027 : 11-14 mars, tarifs d'inscription et exposition (59 car.)"
+      },
+      {
+        "texte": "Description : « 490 € pour un membre jusqu'au 21 févr. » : « membre » sans préciser de quoi",
+        "regle": "1 (exactitude, mineur)",
+        "preuve": "MDX : « tarif A ... 490 euros TTC pour un membre d'un partenaire scientifique à jour de cotisation, 670 euros pour un non-membre ». Le tarif est valable jusqu'au 21 février 2027, donc sans risque de péremption avant le 31/12/2026.",
+        "correction_proposee": "Du 11 au 14 mars 2027 au Palais des Congrès de Paris : 490 € pour un membre d'une société partenaire jusqu'au 21 févr., 4 964 participants en 2026. (147 car.)"
+      }
+    ],
+    "notes": "Faits vérifiés : 4 964 participants en 2026 (dont 776 exposants comptés, cohérent partout), sessions partenaires, section « Qui expose »."
+  },
+  {
+    "page": "/salons/paris-sante-femmes",
+    "verdict": "a_corriger",
+    "problemes": [
+      {
+        "texte": "Description : « 460 € pour un médecin membre »",
+        "regle": "10 (risque d'échéance) / 1 (dans le doute, pas de chiffre)",
+        "preuve": "MDX Budget : « depuis le 23 septembre 2026, 460 euros pour un médecin ... membre du CNGOF ... et 730 euros pour un non-membre ». Le tarif est présenté comme un palier (« depuis le 23 septembre »), sans date de fin dans le dossier, pour un congrès qui s'ouvre le 2 décembre : rien ne garantit qu'il tienne jusqu'au 31 décembre. Je ne peux pas le prouver (inconnu), d'où un risque et non un fait.",
+        "correction_proposee": "Pari(s) Santé Femmes du 2 au 4 déc. 2026, nouveau lieu au Palais des Congrès : 22 sociétés savantes, tarifs par profil, symposiums industriels. (143 car.)"
+      }
+    ],
+    "notes": "Faits vérifiés : 2-4 déc. 2026, changement de lieu (CNIT en 2024-2025), 22 sociétés savantes, symposiums industriels dans le synopsis préliminaire. Title (58) bien aligné sur « paris santé femme 2026 » et « cngof 2026 »."
+  },
+  {
+    "page": "/salons/rencontres-amrae",
+    "verdict": "ok",
+    "problemes": [],
+    "notes": "Faits vérifiés : 34e, 3-5 févr. 2027 CID Deauville, 800 risk managers sur 3 840 congressistes en 2025 (bullet et Pour l'exposant concordent). « tarifs d'inscription » sans montant : le tarif préférentiel a expiré le 23 octobre 2026 mais n'est pas cité. Mineur : le title promet « programme » alors que le MDX dit que le détail des ateliers et des plénières 2027 n'est pas publié ; seule la trame par jour existe (section Programme conférences). Défendable, à ne pas durcir. Longueurs 58/153."
+  },
+  {
+    "page": "/salons/smcl",
+    "verdict": "ok",
+    "problemes": [],
+    "notes": "Faits vérifiés : 32e, 24-26 nov. 2026 Pavillon 7, premier salon du cycle municipal 2026-2032, badge gratuit pour élus et agents sur pré-inscription, 1 380 exposants en 2025 (cohérent Bilan, HistoryTable et analyse). Observation générale : l'événement se termine le 26 novembre, donc « badge » devient sans objet pour la fin de la mesure, mais sans tarif ni échéance cités ce n'est pas une violation de la règle 10. Longueurs 55/154."
+  },
+  {
+    "page": "/salons/sofins",
+    "verdict": "a_corriger",
+    "problemes": [
+      {
+        "texte": "Title « SOFINS 2027 Bordeaux : dates, accès pro et démonstrations » : les dates du salon ont disparu du title",
+        "regle": "Pertinence pour le clic (omission des dates alors que les requêtes les portent) et règle 9",
+        "preuve": "Tableau GSC : « sofins 2027 date | 94 impr. | 2 clics | pos 6.8 » : ce sont les seuls clics de la page, obtenus avec un title actuel qui contient « 6-8 avril ». Le nouveau title écrit « dates » sans les donner et perd l'élément qui convertissait. MDX : « du mardi 6 au jeudi 8 avril 2027 ».",
+        "correction_proposee": "SOFINS 2027 Bordeaux : 6-8 avril, accès pro, démonstrations (59 car.). Ce title garde la date, reste différent de l'actuel (« salon des forces spéciales ») grâce à l'angle accès pro et démonstrations."
+      },
+      {
+        "texte": "Description : « Badges pros dès nov. 2026 »",
+        "regle": "1 (exactitude, mineur)",
+        "preuve": "MDX : « Les inscriptions visiteurs ouvrent en novembre 2026 » ; le MDX ne parle pas de badges émis en novembre mais d'ouverture d'inscription. Valable jusqu'au 31/12 (pas de péremption).",
+        "correction_proposee": "« Inscription pro dès novembre » (ex. : 8e SOFINS du 6 au 8 avril 2027 : le salon biennal des forces spéciales quitte Souge pour le Parc des Expositions de Bordeaux. Inscription pro dès nov. : à ajuster pour rester sous 155 car.)."
+      }
+    ],
+    "notes": "Faits vérifiés : 8e, 6-8 avril 2027, biennal années impaires, changement de site (sept premières éditions à Souge), zones de test à Bordeaux."
+  },
+  {
+    "page": "/salons/viteff",
+    "verdict": "ok",
+    "problemes": [],
+    "notes": "Faits vérifiés : prochaine édition 12-14 oct. 2027 au Millesium, tous les deux ans années impaires (donc pas d'édition 2026), 350 exposants et 18 000 visiteurs en 2025 (cohérent, tendance 20 000+ en 2021 et 21 000+ en 2023 non contradictoire). Le title répond aux requêtes « viteff 2026 » (249) et « viteff epernay 2026 » (122). Mineur : « dates et infos » est du remplissage ; longueurs 59/152."
+  },
+  {
+    "page": "/salons/workplace-meetings-cannes",
+    "verdict": "ok",
+    "problemes": [],
+    "notes": "Faits vérifiés : 24-26 nov. 2026 Palais des Festivals, rendez-vous préprogrammés de 15 minutes, 130 exposants et 300 hosted buyers affichés par le site (« annoncés » conservé), candidature Hosted Buyers et section exposant. Longueurs 57/154. Observation générale : événement terminé le 26 novembre, pas de tarif cité."
+  }
+]
