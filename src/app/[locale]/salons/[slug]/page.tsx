@@ -119,7 +119,7 @@ export default async function SalonPage({ params }: Props) {
   if (!salon) notFound();
 
   const sectorIds = salon.sectors.map((s) => s.id);
-  const similarSalons = await getSimilarSalons(salon.id, sectorIds, 3);
+  const similarSalons = await getSimilarSalons(salon.id, sectorIds, 3, salon.city);
 
   // MDX éditorial (Bloc 2 → Bloc 9 du modèle Nicolas v3). Présent uniquement
   // pour les fiches Agoris Certified passées par la pipeline éditoriale.

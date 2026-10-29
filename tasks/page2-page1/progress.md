@@ -46,13 +46,15 @@ Non-critères : pas d'obligation de résultat sur la position (mesurée à J+28,
 - 2026-10-29 : jugement Jev des 176 couples page × requête ≥ 3 impressions (seuil abaissé de 5 à 3 : 88 % des impressions en bande au lieu de 76 %, coût négligeable), 153 616 tokens en entrée. Potentiel utile 1 585 impressions sur 53 pages. Détail et tableau dans `priorisation.md`.
 - 2026-10-29 : liens entrants relevés sur les 510 pages FR de production (`inlinks-2026-10-29.json`). Deux défauts structurels : hub secteur plafonné à 20 salons sans pagination, bloc « salons similaires » qui concentre les liens sur les salons les plus proches dans le temps (voir `priorisation.md`).
 - 2026-10-29 : cannibalisation : rien à corriger (paires FR/EN, innov-agri-ondes déjà redirigée).
+- 2026-10-29 (go Julien « Oui, tout le site ») : lot maillage codé. Hub secteur : 20 cartes puis liste compacte de tous les autres salons de la filière. Similaires : à venir d'abord, puis secteurs partagés, même ville, départage par hash stable. Chantier 1 prévenu par message. `npm run build` vert. Recrawl du build local (`inlinks-local-apres.json`) : fiches sans lien depuis un hub secteur 99 → 17 (dont comic-con-france et japan-expo-paris, sans secteur en base, le reste = anciens slugs redirigés) ; fiches sans lien depuis une autre fiche 182 → 71 ; maximum de liens « similaires » reçus 80 → 14.
+- 2026-10-29 : migration `20261029000000_sector_pop_culture_salons.sql` (comic-con-france et japan-expo-paris → art-culture). Écriture en base refusée par le contrôle de sécurité de la session : à appliquer par Julien avec `scripts/diag-sector-pop-culture-apply.ts --apply` (dry-run vérifié : 2 liens à créer).
 
 ## Problèmes ouverts
 
-- **Maillage site entier contre test du chantier 1** : corriger les deux défauts change les liens entrants de toutes les fiches, y compris les 38 pages du test CTR (traitées et témoins). Leur témoin est aléatoire, l'effet tombe sur les deux bras, mais une page qui bouge de plus de 2 rangs y est déclarée non concluante (leur D5). Décision demandée à Julien.
+- Maillage site entier : affecte aussi les 38 pages du test CTR du chantier 1 (décision Julien 2026-10-29, chantier 1 prévenu, date de déploiement à lui transmettre).
 
 - **Plafond du chantier** : si toute la liste passait en positions 4-10 au CTR observé de cette bande (1,38 %), on obtiendrait ~518 clics / 28 j contre 253, soit environ +265. Estimation à partir des moyennes, non confirmée. À comparer avec l'écart de ~5 300 sessions vers l'objectif 10 000.
 
 ## Prochaine action
 
-Décision de Julien sur le maillage site entier, puis implémentation du lot maillage.
+PR du lot maillage, merge à CI verte, vérification du déploiement, puis lot MDX.

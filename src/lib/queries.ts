@@ -450,10 +450,27 @@ export async function getCities() {
   return cities as string[];
 }
 
+// Hash FNV-1a 32 bits : départage stable des salons similaires
+function stableHash(s: string): number {
+  let h = 0x811c9dc5;
+  for (let i = 0; i < s.length; i++) {
+    h ^= s.charCodeAt(i);
+    h = Math.imul(h, 0x01000193);
+  }
+  return h >>> 0;
+}
+
+/**
+ * Salons similaires : à venir d'abord, puis le plus de secteurs partagés, puis
+ * même ville, et un départage stable propre à chaque fiche. Avant le
+ * 2026-10-29, le tri par date seule envoyait les liens de toutes les fiches
+ * d'un secteur vers les 3 mêmes salons (80 liens pour l'un, 0 pour 182 fiches).
+ */
 export async function getSimilarSalons(
   salonId: string,
   sectorIds: string[],
-  limit = 4
+  limit = 4,
+  city: string | null = null
 ) {
   if (sectorIds.length === 0) return [];
 
@@ -466,29 +483,51 @@ export async function getSimilarSalons(
     .in("sector_id", sectorIds)
     .neq("salon_id", salonId);
 
-  const salonIds = [
-    ...new Set((salonSectors ?? []).map((ss) => ss.salon_id)),
-  ];
+  const sharedCount = new Map<string, number>();
+  for (const ss of salonSectors ?? []) {
+    sharedCount.set(ss.salon_id, (sharedCount.get(ss.salon_id) ?? 0) + 1);
+  }
 
-  if (salonIds.length === 0) return [];
+  if (sharedCount.size === 0) return [];
 
   const { data, error } = await supabase
     .from("salons_ordered" as unknown as "salons")
     .select(SALON_LIST_SELECT)
     .eq("status", "published")
-    .in("id", salonIds)
-    .order("sort_key" as never, { ascending: true })
-    .limit(limit);
+    .in("id", [...sharedCount.keys()]);
 
   if (error) throw error;
 
-  return (data ?? []).map((salon) => {
-    const sectors = (salon.salon_sectors as Array<{ sectors: SectorSummary }>)
-      .map((ss) => ss.sectors)
-      .filter(Boolean);
-    const { salon_sectors: _, ...rest } = salon;
-    return { ...rest, sectors } as SalonWithSectors;
-  });
+  const today = new Date().toISOString().slice(0, 10);
+  // Dates inconnues : édition à venir non datée
+  const isUpcoming = (s: { start_date: string | null; end_date: string | null }) =>
+    (s.end_date ?? s.start_date ?? today) >= today;
+
+  return (data ?? [])
+    .map((salon) => {
+      const sectors = (salon.salon_sectors as Array<{ sectors: SectorSummary }>)
+        .map((ss) => ss.sectors)
+        .filter(Boolean);
+      const { salon_sectors: _, ...rest } = salon;
+      return { ...rest, sectors } as SalonWithSectors;
+    })
+    .map((s) => ({
+      s,
+      key: [
+        isUpcoming(s) ? 0 : 1,
+        -(sharedCount.get(s.id) ?? 0),
+        city && s.city === city ? 0 : 1,
+        stableHash(`${salonId}:${s.id}`),
+      ],
+    }))
+    .sort((a, b) => {
+      for (let i = 0; i < a.key.length; i++) {
+        if (a.key[i] !== b.key[i]) return a.key[i] - b.key[i];
+      }
+      return 0;
+    })
+    .slice(0, limit)
+    .map(({ s }) => s);
 }
 
 // Utilise le client statique (pas de cookies) pour generateStaticParams
