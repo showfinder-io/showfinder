@@ -54,6 +54,8 @@ Non-critères : pas d'obligation de résultat sur la position (mesurée à J+28,
 - 2026-10-29 : Request Indexing /secteurs/tech-numerique (toast vu). Suivi dans `tasks/todo.md`, volet K.
 - 2026-10-29 : mesure J+28 inscrite (todo K6, le 2026-11-30, fenêtre 2026-10-30 → 2026-11-26).
 
+- 2026-10-29 : K2 et K3 appliqués par Julien, vérifiés (dry-runs à vide, pages de prod à jour). Request Indexing de /salons/foire-agricole-tarbes et /secteurs/art-culture (toasts vus).
+
 ## Problèmes ouverts
 
 - Maillage site entier : affecte aussi les 38 pages du test CTR du chantier 1 (décision Julien 2026-10-29, chantier 1 prévenu, date de déploiement à lui transmettre).
@@ -62,4 +64,4 @@ Non-critères : pas d'obligation de résultat sur la position (mesurée à J+28,
 
 ## Prochaine action
 
-Julien applique K2 et K3 (écritures en base) ; ensuite Request Indexing de la file K4 au fil du quota, puis mesure K6 le 2026-11-30.
+Request Indexing de la file K4 au fil du quota (prochaine : /secteurs/agroalimentaire), puis mesure K6 le 2026-11-30.
