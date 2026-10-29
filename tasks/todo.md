@@ -229,3 +229,22 @@ Référence : tasks/trafic-ia/baseline-2026-10.md (GA4 2026-08-01 au 2026-10-28,
   `cd /Users/julienzakoian/Projects/showfinder && ./node_modules/.bin/tsx scripts/diag-trafic-ia.ts --from 2026-08-01`
   Sortie : résumé stdout + `audits/trafic-ia-<date>/*.csv` (non versionné). Comparer au tableau hebdomadaire et aux deux quinzaines de baseline-2026-10.md, ajouter une section datée au fichier de référence (nouveau fichier `baseline-<AAAA-MM>.md`), chiffres observés seulement. Accès : jeton `~/Projects/glyphe/.secrets/google-oauth-token-gsc-ga4.json`.
   À relire à chaque mesure : sources IA nouvelles dans la liste imprimée, sessions `(direct)` avec utm d'assistant (0 à la baseline), pages d'entrée IA faibles en GSC (19 à la baseline).
+
+## Volet K : pages en position 11-20 vers la première page (2026-10-29, `tasks/page2-page1/`)
+
+Référence figée : 189 pages, 37 535 impressions, 253 clics, CTR 0,67 %, fenêtre GSC 2026-09-30 → 2026-10-27 (`reference.md`). Priorisation Jev : `priorisation.md`.
+
+- [x] K1. Lot maillage EN PROD le 2026-10-29 à 15:11 UTC (PR showfinder-io/showfinder#167, commit 217f741, statut Vercel success, liste vue dans le HTML de prod) : hub secteur complet (20 cartes + liste compacte), salons similaires par proximité. Recrawl du build : fiches sans lien de hub secteur 99 → 17, sans lien de fiche 182 → 71, max de liens « similaires » 80 → 14. Chantier 1 prévenu (événement commun à ses deux bras).
+- [ ] K2. À LANCER PAR JULIEN (écriture en base refusée par le contrôle de sécurité de la session) : rattacher comic-con-france et japan-expo-paris au secteur art-culture (migration `20261029000000_sector_pop_culture_salons.sql`, dry-run vérifié : 2 liens) :
+  `cd /Users/julienzakoian/Projects/showfinder/.claude/worktrees/jolly-hertz-b867d7 && ./node_modules/.bin/tsx --env-file=.env.local scripts/diag-sector-pop-culture-apply.ts --apply`
+  Puis redéployer (les hubs sont SSG) : tout merge suivant suffit.
+- [ ] K3. À LANCER PAR JULIEN : refresh MDX FR+EN de foire-agricole-tarbes (MDX resté sur 2026 alors que la fiche est roulée au 11-14 mars 2027). Process complet : writer Opus, 2 reviewers Sonnet indépendants (5 et 3 corrections), correcteur-traducteur Sonnet ; budget 750 000 € et subventions retirés faute de source primaire. Fichiers dans `handoff/page2-page1-edito/` du worktree jolly-hertz-b867d7 (gitignoré). Dry-run vérifié (compilation, composants, liens, année) :
+  `cd /Users/julienzakoian/Projects/showfinder/.claude/worktrees/jolly-hertz-b867d7 && set -a && source .env.local && set +a && ./node_modules/.bin/tsx scripts/diag-edito-roll-2027-apply.ts --apply --dir handoff/page2-page1-edito foire-agricole-tarbes`
+  Puis merge suivant pour régénérer la page, et Request Indexing de /salons/foire-agricole-tarbes.
+- [ ] K4. Request Indexing GSC (quota partagé avec les chantiers 1 et 2, ~10/jour) :
+  - FAIT le 2026-10-29 (Chrome, toast « Indexing requested » vu) : /secteurs/tech-numerique.
+  - File : /secteurs/agroalimentaire, /salons/siae-le-bourget, /salons/reeduca-paris, /salons/milipol-paris, /secteurs/cosmetique-beaute, /villes/angers, /villes/lille, /salons/paris-photo, /salons/shop-le-salon, puis /salons/foire-agricole-tarbes après K3 et /secteurs/art-culture après K2.
+- [ ] K5. Contenu bloqué par l'organisateur (rien à publier avant annonce, la routine roll les reprend) : comic-con-france, sfar-congres-paris, paris-games-week (éditions 2027 non annoncées) ; architect-at-work-lyon déjà en arbitrage roll (édition annoncée en mai 2028).
+- [ ] K6. MESURE J+28, à lancer le 2026-11-30 (fenêtre 2026-10-30 → 2026-11-26, lag GSC de 3 jours) :
+  `cd /Users/julienzakoian/Projects/showfinder && ./node_modules/.bin/tsx scripts/diag-page2-page1-export.ts 2026-10-30 2026-11-26`
+  Comparer page par page à `tasks/page2-page1/reference.json` : position, clics, impressions, nombre de pages passées en position ≤ 10. Groupes : 53 pages priorisées, autres pages modifiables de la liste, et pages /lieux et /prestataires (témoin partiel, hors maillage du chantier 2 mais touchées par le maillage site entier). Comparer aussi à l'évolution des pages en position 4-10 de la même période pour corriger la saisonnalité. Les éditions de mars 2027 (Tarbes) vont monter mécaniquement en demande : lire leur gain avec cette réserve.
