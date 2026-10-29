@@ -38,12 +38,21 @@ Non-critères : pas d'obligation de résultat sur la position (mesurée à J+28,
 - 2026-10-29 : bande 11-20 = position arrondie [10,5 ; 20,5[, parce que c'est la définition qui redonne les 193 pages et 39 803 impressions du brief.
 - 2026-10-29 : la liste est figée sur l'export du jour ; elle ne sera pas recalculée en cours de chantier (sinon la mesure J+28 n'a plus de référence stable).
 
-## Problèmes ouverts (à valider par Julien)
+- 2026-10-29 (validé par Julien) : liste figée OK. Les 28 pages `/lieux` et `/prestataires` sont hors périmètre modifiable (chantier 2), gardées comme témoin. Les 69 pages EN ne sont touchées que par ricochet (MDX EN des fiches FR enrichies, maillage commun).
 
-- **Recouvrement avec le chantier 2** (CTR prestataires et lieux) : 28 pages de la liste sont des `/lieux` ou `/prestataires`. Proposition : les exclure du périmètre modifiable ici (ils restent dans la référence comme témoin).
-- **Pages EN** (69 pages) : proposition de les garder dans la liste, mais de ne les toucher que par ricochet (MDX EN des fiches FR enrichies, maillage commun).
+## Fait
+
+- 2026-10-29 : référence figée (commit 4dc2beb).
+- 2026-10-29 : jugement Jev des 176 couples page × requête ≥ 3 impressions (seuil abaissé de 5 à 3 : 88 % des impressions en bande au lieu de 76 %, coût négligeable), 153 616 tokens en entrée. Potentiel utile 1 585 impressions sur 53 pages. Détail et tableau dans `priorisation.md`.
+- 2026-10-29 : liens entrants relevés sur les 510 pages FR de production (`inlinks-2026-10-29.json`). Deux défauts structurels : hub secteur plafonné à 20 salons sans pagination, bloc « salons similaires » qui concentre les liens sur les salons les plus proches dans le temps (voir `priorisation.md`).
+- 2026-10-29 : cannibalisation : rien à corriger (paires FR/EN, innov-agri-ondes déjà redirigée).
+
+## Problèmes ouverts
+
+- **Maillage site entier contre test du chantier 1** : corriger les deux défauts change les liens entrants de toutes les fiches, y compris les 38 pages du test CTR (traitées et témoins). Leur témoin est aléatoire, l'effet tombe sur les deux bras, mais une page qui bouge de plus de 2 rangs y est déclarée non concluante (leur D5). Décision demandée à Julien.
+
 - **Plafond du chantier** : si toute la liste passait en positions 4-10 au CTR observé de cette bande (1,38 %), on obtiendrait ~518 clics / 28 j contre 253, soit environ +265. Estimation à partir des moyennes, non confirmée. À comparer avec l'écart de ~5 300 sessions vers l'objectif 10 000.
 
 ## Prochaine action
 
-Attendre la validation de Julien sur la liste figée et les deux exclusions proposées, puis lancer la priorisation Jev.
+Décision de Julien sur le maillage site entier, puis implémentation du lot maillage.
