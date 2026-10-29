@@ -211,3 +211,12 @@ Contexte : agoris.io hors ligne le 2026-09-26 au matin jusqu'à 13h15 (PostgREST
 - [ ] (2026-10-10, vu pendant E5bis) `salon-habitat-design-saint-etienne` : venue_lat/venue_lng = 45.7275 / 4.952, soit Eurexpo Lyon (Chassieu), pas Saint-Étienne. Le lieu parc-expo-saint-etienne n'a ni coordonnées ni code postal. À corriger sur source (Nominatim) avec le lieu
 
 - [x] (corrigé le 2026-09-28, handoff/corrections-2026-09-28 + scripts/diag-corrections-2026-09-28-apply.ts, correcteur + reviewer Sonnet) Fiche publiée `business-hydro` : affirme qu'Alpexpo n'a pas de politique RSE, or https://www.alpexpo.com/rse décrit une démarche ISO 20121 (objectif septembre 2026). Bloc RSE à corriger via le process writer + reviewers
+
+## Volet J : trafic venant des assistants IA (2026-10-29, mesure seule)
+
+Référence : tasks/trafic-ia/baseline-2026-10.md (GA4 2026-08-01 au 2026-10-28, 732 sessions IA sur 9 610, 7,6 %). Décision Julien 2026-10-29 : on mesure, pas de chantier de contenu dédié.
+
+- [ ] Mesure mensuelle, le 1er de chaque mois (premier passage : 2026-11-30, pour couvrir novembre). Commande exacte, lecture seule :
+  `cd /Users/julienzakoian/Projects/showfinder && ./node_modules/.bin/tsx scripts/diag-trafic-ia.ts --from 2026-08-01`
+  Sortie : résumé stdout + `audits/trafic-ia-<date>/*.csv` (non versionné). Comparer au tableau hebdomadaire et aux deux quinzaines de baseline-2026-10.md, ajouter une section datée au fichier de référence (nouveau fichier `baseline-<AAAA-MM>.md`), chiffres observés seulement. Accès : jeton `~/Projects/glyphe/.secrets/google-oauth-token-gsc-ga4.json`.
+  À relire à chaque mesure : sources IA nouvelles dans la liste imprimée, sessions `(direct)` avec utm d'assistant (0 à la baseline), pages d'entrée IA faibles en GSC (19 à la baseline).
