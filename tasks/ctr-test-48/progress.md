@@ -53,7 +53,7 @@ Ces pages sont vues sur des requêtes de marque où le site officiel est en têt
 - « Budget exposant » : angle demandé, mais à n'utiliser que si le prix est en base ou dans le MDX validé (BudgetTable). Sinon, pas de chiffre.
 - Le roll 2027 automatique ne touche pas le SEO (règle 14e) mais peut changer les dates d'une fiche éligible pendant la mesure : à surveiller dans `tasks/roll-2027/journal.json`.
 
-- **Maillage interne modifié pendant le test (chantier 3, page2-vers-page1, validé par Julien le 2026-10-29)** : hubs secteurs non plafonnés + « salons similaires » par proximité thématique, site entier. Touche traités et témoins de la même façon (le témoin absorbe l'effet commun), mais peut déplacer des positions : appliquer D5 et noter la date de déploiement prod que la session chantier 3 communiquera.
+- **Maillage interne modifié pendant le test (chantier 3, page2-vers-page1, validé par Julien le 2026-10-29)** : hubs secteurs non plafonnés + « salons similaires » par proximité thématique, site entier. Touche traités et témoins de la même façon (le témoin absorbe l'effet commun), mais peut déplacer des positions : appliquer D5 Déployé en prod le 2026-10-29 à 15:11 UTC (#167, commit 217f741), soit en même temps que les titres : il s'applique à toute la fenêtre de mesure.
 
 ## Prochaine action
 
