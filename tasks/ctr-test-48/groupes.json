@@ -1,0 +1,315 @@
+{
+  "seed": "ctr-test-48-2026-10-29",
+  "treated": [
+    {
+      "page": "/salons/smcl",
+      "slug": "smcl",
+      "locale": "fr",
+      "end_date": "2026-11-26",
+      "stratum": "pendant"
+    },
+    {
+      "page": "/salons/congres-francais-psychiatrie",
+      "slug": "congres-francais-psychiatrie",
+      "locale": "fr",
+      "end_date": "2026-12-05",
+      "stratum": "pendant"
+    },
+    {
+      "page": "/salons/paris-sante-femmes",
+      "slug": "paris-sante-femmes",
+      "locale": "fr",
+      "end_date": "2026-12-04",
+      "stratum": "pendant"
+    },
+    {
+      "page": "/salons/euronaval-paris",
+      "slug": "euronaval-paris",
+      "locale": "fr",
+      "end_date": "2026-11-06",
+      "stratum": "pendant"
+    },
+    {
+      "page": "/salons/energaia-montpellier",
+      "slug": "energaia-montpellier",
+      "locale": "fr",
+      "end_date": "2026-12-10",
+      "stratum": "pendant"
+    },
+    {
+      "page": "/salons/workplace-meetings-cannes",
+      "slug": "workplace-meetings-cannes",
+      "locale": "fr",
+      "end_date": "2026-11-26",
+      "stratum": "pendant"
+    },
+    {
+      "page": "/salons/architect-at-work-nantes",
+      "slug": "architect-at-work-nantes",
+      "locale": "fr",
+      "end_date": "2026-11-20",
+      "stratum": "pendant"
+    },
+    {
+      "page": "/en/salons/jdp-paris",
+      "slug": "jdp-paris",
+      "locale": "en",
+      "end_date": "2026-12-05",
+      "stratum": "pendant"
+    },
+    {
+      "page": "/salons/educatech-expo",
+      "slug": "educatech-expo",
+      "locale": "fr",
+      "end_date": "2026-12-04",
+      "stratum": "pendant"
+    },
+    {
+      "page": "/salons/viteff",
+      "slug": "viteff",
+      "locale": "fr",
+      "end_date": "2027-10-14",
+      "stratum": "apres"
+    },
+    {
+      "page": "/salons/jfhod",
+      "slug": "jfhod",
+      "locale": "fr",
+      "end_date": "2027-03-14",
+      "stratum": "apres"
+    },
+    {
+      "page": "/salons/rencontres-amrae",
+      "slug": "rencontres-amrae",
+      "locale": "fr",
+      "end_date": "2027-02-05",
+      "stratum": "apres"
+    },
+    {
+      "page": "/salons/europack-euromanut-lyon",
+      "slug": "europack-euromanut-lyon",
+      "locale": "fr",
+      "end_date": "2027-11-18",
+      "stratum": "apres"
+    },
+    {
+      "page": "/salons/iode",
+      "slug": "iode",
+      "locale": "fr",
+      "end_date": "2027-01-28",
+      "stratum": "apres"
+    },
+    {
+      "page": "/salons/cosmetagora-paris",
+      "slug": "cosmetagora-paris",
+      "locale": "fr",
+      "end_date": "2027-01-13",
+      "stratum": "apres"
+    },
+    {
+      "page": "/salons/cplf",
+      "slug": "cplf",
+      "locale": "fr",
+      "end_date": "2027-01-31",
+      "stratum": "apres"
+    },
+    {
+      "page": "/salons/sofins",
+      "slug": "sofins",
+      "locale": "fr",
+      "end_date": "2027-04-08",
+      "stratum": "apres"
+    },
+    {
+      "page": "/en/salons/museum-connections",
+      "slug": "museum-connections",
+      "locale": "en",
+      "end_date": "2027-01-13",
+      "stratum": "apres"
+    },
+    {
+      "page": "/en/salons/amwc",
+      "slug": "amwc",
+      "locale": "en",
+      "end_date": "2027-04-03",
+      "stratum": "apres"
+    }
+  ],
+  "control": [
+    {
+      "page": "/salons/data-centre-world-paris",
+      "slug": "data-centre-world-paris",
+      "locale": "fr",
+      "end_date": "2026-11-19",
+      "stratum": "pendant"
+    },
+    {
+      "page": "/salons/beauty-profs-marseille",
+      "slug": "beauty-profs-marseille",
+      "locale": "fr",
+      "end_date": "2026-11-15",
+      "stratum": "pendant"
+    },
+    {
+      "page": "/en/salons/satis",
+      "slug": "satis",
+      "locale": "en",
+      "end_date": "2026-11-05",
+      "stratum": "pendant"
+    },
+    {
+      "page": "/salons/salon-alpin",
+      "slug": "salon-alpin",
+      "locale": "fr",
+      "end_date": "2026-11-12",
+      "stratum": "pendant"
+    },
+    {
+      "page": "/salons/congres-francais-urologie",
+      "slug": "congres-francais-urologie",
+      "locale": "fr",
+      "end_date": "2026-11-21",
+      "stratum": "pendant"
+    },
+    {
+      "page": "/salons/carrefour-pathologie",
+      "slug": "carrefour-pathologie",
+      "locale": "fr",
+      "end_date": "2026-11-20",
+      "stratum": "pendant"
+    },
+    {
+      "page": "/en/salons/congres-sofcot",
+      "slug": "congres-sofcot",
+      "locale": "en",
+      "end_date": "2026-11-13",
+      "stratum": "pendant"
+    },
+    {
+      "page": "/salons/satis",
+      "slug": "satis",
+      "locale": "fr",
+      "end_date": "2026-11-05",
+      "stratum": "pendant"
+    },
+    {
+      "page": "/salons/jdp-paris",
+      "slug": "jdp-paris",
+      "locale": "fr",
+      "end_date": "2026-12-05",
+      "stratum": "pendant"
+    },
+    {
+      "page": "/salons/congres-sfd",
+      "slug": "congres-sfd",
+      "locale": "fr",
+      "end_date": "2027-04-02",
+      "stratum": "apres"
+    },
+    {
+      "page": "/salons/euroforest",
+      "slug": "euroforest",
+      "locale": "fr",
+      "end_date": "2027-06-19",
+      "stratum": "apres"
+    },
+    {
+      "page": "/salons/congres-des-audioprothesistes",
+      "slug": "congres-des-audioprothesistes",
+      "locale": "fr",
+      "end_date": "2027-03-12",
+      "stratum": "apres"
+    },
+    {
+      "page": "/salons/devoxx-france",
+      "slug": "devoxx-france",
+      "locale": "fr",
+      "end_date": "2027-04-09",
+      "stratum": "apres"
+    },
+    {
+      "page": "/salons/sival-angers",
+      "slug": "sival-angers",
+      "locale": "fr",
+      "end_date": "2027-01-14",
+      "stratum": "apres"
+    },
+    {
+      "page": "/salons/innovagri",
+      "slug": "innovagri",
+      "locale": "fr",
+      "end_date": "2027-06-03",
+      "stratum": "apres"
+    },
+    {
+      "page": "/salons/ces-las-vegas",
+      "slug": "ces-las-vegas",
+      "locale": "fr",
+      "end_date": "2027-01-09",
+      "stratum": "apres"
+    },
+    {
+      "page": "/salons/salon-des-vins-de-loire",
+      "slug": "salon-des-vins-de-loire",
+      "locale": "fr",
+      "end_date": "2027-02-02",
+      "stratum": "apres"
+    },
+    {
+      "page": "/salons/europropre",
+      "slug": "europropre",
+      "locale": "fr",
+      "end_date": "2027-03-18",
+      "stratum": "apres"
+    },
+    {
+      "page": "/salons/exphotel-bordeaux",
+      "slug": "exphotel-bordeaux",
+      "locale": "fr",
+      "end_date": "2027-11-23",
+      "stratum": "apres"
+    }
+  ],
+  "excluded": [
+    {
+      "page": "/salons/sommet-elevage-clermont",
+      "reason": "édition passée (2026-10-09)"
+    },
+    {
+      "page": "/salons/mondial-auto-paris",
+      "reason": "édition passée (2026-10-18)"
+    },
+    {
+      "page": "/salons/gazelec-paris",
+      "reason": "édition passée (2026-10-14)"
+    },
+    {
+      "page": "/salons/les-assises-de-la-securite-monaco",
+      "reason": "édition passée (2026-10-10)"
+    },
+    {
+      "page": "/lieux/parc-expo-chalons",
+      "reason": "lieu, rendu au chantier CTR prestataires et lieux"
+    },
+    {
+      "page": "/lieux/grande-halle-d-auvergne",
+      "reason": "lieu, rendu au chantier CTR prestataires et lieux"
+    },
+    {
+      "page": "/salons/architect-at-work-paris",
+      "reason": "édition passée (2026-10-22)"
+    },
+    {
+      "page": "/en/lieux/paris-le-bourget",
+      "reason": "lieu, rendu au chantier CTR prestataires et lieux"
+    },
+    {
+      "page": "/salons/tranofiliere-paris",
+      "reason": "édition passée (2026-10-04)"
+    },
+    {
+      "page": "/salons/ad2s-bordeaux",
+      "reason": "édition passée (2026-09-24)"
+    }
+  ]
+}
