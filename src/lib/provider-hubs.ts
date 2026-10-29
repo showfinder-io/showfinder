@@ -52,3 +52,22 @@ export async function getHubsForProvider(category: string, department: string | 
     .filter((h) => h.departments.length === 0 || (department !== null && h.departments.includes(department)))
     .sort((a, b) => Number(a.departments.length === 0) - Number(b.departments.length === 0) || a.slug.localeCompare(b.slug));
 }
+
+/**
+ * Hubs à proposer sur une fiche lieu (maillage lieu vers hub) : par métier, le hub qui couvre le
+ * département du lieu, à défaut le hub national. Indexables uniquement. Rien pour un lieu étranger.
+ */
+export async function getHubsForVenueDepartment(department: string | null): Promise<ProviderHubRow[]> {
+  if (!department) return [];
+  const hubs = await getAllProviderHubs();
+  const byCategory = new Map<string, ProviderHubRow>();
+  for (const hub of hubs) {
+    const local = hub.departments.includes(department);
+    if (!local && hub.departments.length > 0) continue;
+    const current = byCategory.get(hub.category);
+    if (!current || (local && current.departments.length === 0)) byCategory.set(hub.category, hub);
+  }
+  const candidates = [...byCategory.values()];
+  const counts = await Promise.all(candidates.map(async (h) => (await getProvidersForHub(h)).length));
+  return candidates.filter((h, i) => isHubIndexable(h, counts[i]));
+}

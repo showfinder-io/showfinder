@@ -9,7 +9,7 @@ import {
   getSalonsByVenue,
   type VenueGalleryItem,
 } from "@/lib/queries";
-import { formatNumber, slugifyCity } from "@/lib/format";
+import { formatDate, formatNumber, slugifyCity } from "@/lib/format";
 import { compileMdxContentSafe } from "@/lib/mdx";
 import { mdxComponents } from "@/components/mdx-components";
 import { SalonCard } from "@/components/salon-card";
@@ -17,6 +17,9 @@ import { JsonLd } from "@/components/json-ld";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-jsonld";
 import { VenueOutboundLink } from "@/components/venue-outbound-link";
 import { buildAlternates } from "@/lib/i18n-metadata";
+import { getHubsForVenueDepartment } from "@/lib/provider-hubs";
+import { departmentFromPostalCode } from "@/lib/geo-fr";
+import { hubField } from "@/components/provider-hub-view";
 import type { AppLocale } from "@/i18n/routing";
 import {
   MapPin,
@@ -29,6 +32,20 @@ import {
 type Props = {
   params: Promise<{ slug: string; locale: AppLocale }>;
 };
+
+// Separer salons a venir / passes (partagé entre la page et ses metadata)
+function splitSalons<T extends { start_date: string | null }>(salons: T[]) {
+  const today = new Date().toISOString().split("T")[0];
+  return {
+    upcoming: salons.filter((s) => !s.start_date || s.start_date >= today),
+    past: salons.filter((s) => s.start_date && s.start_date < today),
+  };
+}
+
+// Comparaison nom / ville insensible aux accents et à la casse
+function normalizeForMatch(s: string): string {
+  return s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+}
 
 // SSG : pre-render toutes les pages venue
 export async function generateStaticParams() {
@@ -54,17 +71,34 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     (locale === "en" && venue.description_en ? venue.description_en : null) ??
     venue.description;
 
+  // Chantier CTR lieux (2026-10-29) : 85 % des requêtes visibles cherchent le
+  // lieu lui-même (accès, halls), pas un agenda. Le title nomme le lieu, la
+  // ville seulement si le nom ne la contient pas, puis le nombre de salons à
+  // venir ; la meta commence par le prochain salon. Données en base uniquement.
+  const { upcoming } = splitSalons(await getSalonsByVenue(venue.id));
+  const nextSalon = upcoming.find((s) => s.start_date);
+  const venueLabel = normalizeForMatch(venue.name).includes(normalizeForMatch(venue.city))
+    ? venue.name
+    : `${venue.name}, ${venue.city}`;
   const title =
     seoTitle ??
-    (locale === "en"
-      ? `Trade Shows at ${venue.name}, ${venue.city}`
-      : `Salons à ${venue.name}, ${venue.city}`);
-  const description =
-    seoDescription ??
+    (upcoming.length > 0
+      ? t("metaTitleUpcoming", { venue: venueLabel, count: upcoming.length })
+      : t("metaTitleNoUpcoming", { venue: venueLabel }));
+  const fallbackDescription =
     venueDescription ??
     (locale === "en"
       ? `Discover all professional trade shows at ${venue.name} (${venue.city}) on ${siteConfig.name}.`
       : `Découvrez tous les salons professionnels au ${venue.name} (${venue.city}) sur ${siteConfig.name}.`);
+  const description =
+    seoDescription ??
+    (nextSalon
+      ? `${t("metaDescriptionUpcoming", {
+          count: upcoming.length,
+          salon: nextSalon.name,
+          date: formatDate(nextSalon.start_date, locale),
+        })} ${fallbackDescription}`
+      : fallbackDescription);
 
   // Un lieu n'est indexable que si la fiche est riche : description >= 80 chars
   // + adresse + surface. Sinon coquille vide : noindex,follow.
@@ -96,7 +130,13 @@ export default async function VenuePage({ params }: Props) {
 
   const t = await getTranslations({ locale, namespace: "venues.detail" });
 
-  const salons = await getSalonsByVenue(venue.id);
+  const [salons, hubs] = await Promise.all([
+    getSalonsByVenue(venue.id),
+    // Maillage lieu vers hubs prestataires du département (lieux français uniquement)
+    getHubsForVenueDepartment(
+      venue.country === "FR" ? departmentFromPostalCode(venue.postal_code) : null
+    ),
+  ]);
 
   // Phase 2 i18n : description et MDX avec fallback FR si la colonne EN est nulle.
   const venueDescription =
@@ -116,12 +156,7 @@ export default async function VenuePage({ params }: Props) {
     ? venue.gallery
     : [];
 
-  // Separer salons a venir / passes
-  const today = new Date().toISOString().split("T")[0];
-  const upcoming = salons.filter(
-    (s) => !s.start_date || s.start_date >= today
-  );
-  const past = salons.filter((s) => s.start_date && s.start_date < today);
+  const { upcoming, past } = splitSalons(salons);
 
   // Schema.org Place : lieu d'exposition. On enrichit avec PostalAddress et
   // GeoCoordinates uniquement si on a les données — pas de fabrication.
@@ -304,6 +339,28 @@ export default async function VenuePage({ params }: Props) {
           </div>
         )}
       </section>
+
+      {/* Hubs prestataires du département : préparer son stand dans ce lieu */}
+      {hubs.length > 0 && (
+        <section className="mt-10">
+          <h2 className="font-serif text-2xl font-bold tracking-tight">
+            {t("venueProvidersHeading")}
+          </h2>
+          <p className="mt-1 text-sm text-muted">{t("venueProvidersIntro")}</p>
+          <ul className="mt-6 flex flex-wrap gap-3">
+            {hubs.map((hub) => (
+              <li key={hub.slug}>
+                <Link
+                  href={`/prestataires/${hub.slug}`}
+                  className="inline-block rounded-full border border-prune px-4 py-2 text-sm text-prune transition-colors hover:bg-prune/5"
+                >
+                  {hubField(hub, "h1", locale)}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       {/* Salons passes */}
       {past.length > 0 && (

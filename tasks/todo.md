@@ -211,3 +211,9 @@ Contexte : agoris.io hors ligne le 2026-09-26 au matin jusqu'à 13h15 (PostgREST
 - [ ] (2026-10-10, vu pendant E5bis) `salon-habitat-design-saint-etienne` : venue_lat/venue_lng = 45.7275 / 4.952, soit Eurexpo Lyon (Chassieu), pas Saint-Étienne. Le lieu parc-expo-saint-etienne n'a ni coordonnées ni code postal. À corriger sur source (Nominatim) avec le lieu
 
 - [x] (corrigé le 2026-09-28, handoff/corrections-2026-09-28 + scripts/diag-corrections-2026-09-28-apply.ts, correcteur + reviewer Sonnet) Fiche publiée `business-hydro` : affirme qu'Alpexpo n'a pas de politique RSE, or https://www.alpexpo.com/rse décrit une démarche ISO 20121 (objectif septembre 2026). Bloc RSE à corriger via le process writer + reviewers
+
+## Chantier CTR prestataires et lieux (2026-10-29)
+
+Détail : `tasks/ctr-prestataires-lieux/progress.md` et `diagnostic.md`. Livré : title et meta des fiches lieux (nombre de salons à venir, prochain salon, ville si absente du nom), titles EN des 3 hubs standistes ("Exhibition stand builders"), bloc de liens fiche lieu vers les hubs prestataires du département.
+
+- [ ] Mesure J+28 : le 2026-11-26 si déployé le 2026-10-29 (sinon date de déploiement + 28 j). Même méthode : `node tasks/ctr-prestataires-lieux/gsc-export.mjs <sortie>` après avoir remplacé les dates par la fenêtre de 28 j qui commence le lendemain du déploiement, mêmes filtres regex, mêmes 20 pages que la référence. Comparer à la référence (prestataires 8 703 imp / 13 clics / pos 29,0 ; lieux 8 614 / 40 / pos 13,6). Succès : CTR en hausse sur les pages lieux à position stable (écart < 2 places), clics des deux gabarits au-dessus de 53, position des hubs FR (41,8 en référence) en baisse. Noter aussi les 3 lieux confiés par le chantier 1 (parc-expo-chalons, grande-halle-d-auvergne, /en/lieux/paris-le-bourget).
