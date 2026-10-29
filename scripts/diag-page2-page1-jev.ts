@@ -74,7 +74,13 @@ const QUESTIONS = {
   },
 };
 
-async function judge(c: (typeof couples)[number], attempt = 0): Promise<any> {
+type Choice = { choice: string; confidence: number };
+type JevResponse = {
+  answers: { reponse: Choice; intention: Choice };
+  usage: { input_tokens: number; output_tokens: number };
+};
+
+async function judge(c: (typeof couples)[number], attempt = 0): Promise<JevResponse> {
   const page = { url: `https://www.agoris.io${c.url}`, ...(await pageIdentity(c.url)) };
   const res = await fetch("https://api.typesafe.ai/v1/systemone", {
     method: "POST",
