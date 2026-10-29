@@ -10,8 +10,8 @@ Test de CTR mesurable sur les fiches très vues mais peu cliquées (impr. >= 500
 2. Référence mesurée par page (clics, impr., CTR, position, 28 j) : **fait** (`baseline-2026-09-30_2026-10-27.json`).
 3. Diagnostic par page : top requêtes classées navigationnelle / informationnelle / transactionnelle par Jev, éditions passées exclues : **fait** (`intentions-jev.json`, jev-1.14.0).
 4. Nouveaux titres et descriptions passés par le process writer + 2 reviewers, zéro donnée factuelle absente de la base, pas d'em dash, accents vérifiés : **fait** (`titres.json`).
-5. Titres déployés en prod : migration appliquée, PR mergée, date de déploiement vérifiée via le statut Vercel du commit, et titre lu dans le HTML de prod sur un échantillon.
-6. Mesure J+28 inscrite dans `tasks/todo.md` avec sa date et sa règle de décision.
+5. Titres déployés en prod : migration appliquée, PR mergée, date de déploiement vérifiée via le statut Vercel du commit, et titre lu dans le HTML de prod sur un échantillon : **fait**.
+6. Mesure J+28 inscrite dans `tasks/todo.md` avec sa date et sa règle de décision : **fait** (volet E1, 2026-11-29).
 
 ## Plan
 
@@ -40,6 +40,9 @@ Test de CTR mesurable sur les fiches très vues mais peu cliquées (impr. >= 500
 - 2026-10-29 : `npm run build` OK.
 - Note : energaia-montpellier avait été retitrée le 2026-09-25 (passe CTR n°2, todo C6) ; sa mesure C6 est donc arrêtée au 2026-10-27.
 
+- 2026-10-29 : PR showfinder-io/showfinder#168 squash-mergée à 15:08:59 UTC (commit 851e03f). Statut Vercel du commit : « Deployment has completed » à 15:10:36 UTC, déploiement Production créé à 15:10:37 UTC. **Date de déploiement effective : 2026-10-29.**
+- 2026-10-29 : contrôle HTML de prod (www.agoris.io) : `<title>` et meta description conformes à `titres.json` sur 19/19 pages traitées ; témoin congres-sfd inchangé.
+
 ## Constat du diagnostic
 
 Ces pages sont vues sur des requêtes de marque où le site officiel est en tête : le CTR bas est en grande partie structurel. Le levier testable est un titre qui promet ce que l'officiel ne donne pas (vue indépendante : à qui s'adresse le salon, dates et lieu exacts, conseils pour exposer). Attendu réaliste : un gain modeste, d'où le témoin pour le distinguer du bruit.
@@ -54,4 +57,4 @@ Ces pages sont vues sur des requêtes de marque où le site officiel est en têt
 
 ## Prochaine action
 
-PR vers main, merge CI verte, relever la date de déploiement prod (statut Vercel du commit) et vérifier les titles dans le HTML de prod.
+Le 2026-11-29 : mesure J+28 (tasks/todo.md, volet E1), fenêtre 2026-10-30 → 2026-11-26.
