@@ -41,7 +41,7 @@ from concurrent.futures import ThreadPoolExecutor
 import requests
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DIR = os.path.join(ROOT, "handoff", "shortlist-5")
+DIR = os.path.join(ROOT, "handoff", os.environ.get("SL_DIR", "shortlist-5"))
 SRC = os.path.join(DIR, "sources")
 DFS_ENV_PATH = os.path.expanduser("~/.claude/skills/seo-geo/.env")
 UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0 Safari/537.36"
@@ -428,7 +428,7 @@ def step_contenu():
         j = jev({"fiche": fiche, **{f"corps_{l}": h[f][:6000] for l, f in (("fr", "editorial_mdx"), ("en", "editorial_mdx_en")) if h.get(f)}}, questions)
         alerts = " ".join(h.get("alerts") or [])
         traces = {n: alerts.count(f"[corrigé pass-{n}") for n in (1, 2)}
-        reviews = {n: os.path.exists(os.path.join(hdir, "reviews-sl5", f"{slug}.pass{n}.md")) for n in (1, 2)}
+        reviews = {n: os.path.exists(os.path.join(hdir, os.environ.get("SL_REVIEWS", "reviews-sl5"), f"{slug}.pass{n}.md")) for n in (1, 2)}
         rows.append({
             "slug": slug, "etat": "ok",
             **{k: round(v["noul"], 3) for k, v in j["answers"].items()},
