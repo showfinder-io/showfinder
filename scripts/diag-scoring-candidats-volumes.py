@@ -30,7 +30,8 @@ import sys
 import requests
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-OUT_DIR = os.path.join(ROOT, "audits", "scoring-candidats-2026-09-27")
+# Dossier de travail : variable SCORING_DIR, sinon l'ancien chemin par défaut
+OUT_DIR = os.environ.get("SCORING_DIR") or os.path.join(ROOT, "audits", "scoring-candidats-2026-09-27")
 DFS_ENV_PATH = os.path.expanduser("~/.claude/skills/seo-geo/.env")
 CANDIDATES_PATH = os.path.join(OUT_DIR, "candidates.json")
 
