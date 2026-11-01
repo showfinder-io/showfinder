@@ -50,4 +50,4 @@ Go Julien du 2026-10-30 : produire la shortlist 6 (objectif 50 fiches), recherch
 
 ## Prochaine action
 
-Request Indexing GSC de journees-sfnv puis ricai au prochain quota, puis la file de tasks/todo.md (D23, D24).
+Request Indexing terminé le 2026-11-01 : seule wind-for-goods n'était pas indexée, soumise ce jour (recalcul, tasks/todo.md). Reste à décider : les arbitrages listés en D24.

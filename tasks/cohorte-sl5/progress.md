@@ -87,4 +87,4 @@ Classement : score = volume de recherche mensuel France du nom (DataForSEO Googl
 
 ## Prochaine action
 
-Request Indexing GSC des 10 premières fiches de la file D23 (`tasks/todo.md`) au prochain quota (2026-10-30 ; tentative du 2026-10-29 refusée, « Quota Exceeded » dès la première URL).
+Request Indexing terminé le 2026-11-01 (recalcul D14, `tasks/todo.md`). Reste à décider : les reliquats et arbitrages listés en D23.
