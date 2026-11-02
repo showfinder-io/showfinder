@@ -522,5 +522,20 @@
     },
     "source_url": "https://www.tfwa.com/tfwa-world-exhibition-conference",
     "reasons": []
+  },
+  "premiere-classe": {
+    "outcome": "applied",
+    "at": "2026-11-02",
+    "from": {
+      "start_date": "2026-10-02",
+      "end_date": "2026-10-05"
+    },
+    "to": {
+      "start_date": "2027-03-05",
+      "end_date": "2027-03-08",
+      "edition_year": 2027
+    },
+    "source_url": "https://wsn-events.com/events/premiere-classe",
+    "reasons": []
   }
 }
