@@ -2,6 +2,19 @@
 
 Rapport alimenté chaque lundi par la routine cloud agoris-roll-2027-watch (détection des fiches publiées à édition passée, vérification des dates de la prochaine édition sur les sites officiels, handoffs dans handoffs/). Depuis le 2026-09-21 : la routine merge sa PR elle-même, puis .github/workflows/roll-apply.yml applique en base les roll-pret qui passent les garde-fous (scripts/roll-guards.ts). Résultats et rejets dans journal.json, refresh éditorial des fiches roulées via scripts/roll-apply-handoffs.ts --queue.
 
+## Lot du 2026-11-02
+
+| Slug | Ancienneté | Statut | Prochaine édition / raison | Source |
+|------|-----------:|--------|------------------------------|--------|
+| paris-retail-week | 46 jours | a-arbitrer | Changement de ville annoncé : retour « à Amsterdam fin septembre 2028 », aucune date précise, écart de plus de 15 mois | https://www.nrfbigshoweurope.com/en |
+| salon-vegetal-angers | 46 jours | non-annoncee | Revérification : site toujours figé sur l'édition 2026 (biennal, prochaine édition attendue 2028, aucune date publiée) | https://www.salonduvegetal.com |
+| sfar-congres-paris | 45 jours | non-annoncee | Revérification : site SPA toujours limité à l'édition 2026, aucune annonce de l'édition 2027 | https://www.sfar-lecongres.com/ |
+| micronora-besancon | 31 jours | non-annoncee | Site, page Presse et page Infos pratiques consultés : aucune date publiée pour la prochaine édition (biennal) | https://www.micronora.com |
+| tranofiliere-paris | 29 jours | a-arbitrer | 4 au 7 mars 2027 annoncé, mais changement de lieu : Palais de Tokyo → Palais Brongniart | https://www.tranoi.com |
+| premiere-classe | 28 jours | roll-pret | 5 au 8 mars 2027, Jardin des Tuileries, Paris (ville et lieu inchangés, salon semestriel) | https://wsn-events.com/events/premiere-classe |
+
+Reste à traiter : 26 fiches périmées
+
 ## Lot du 2026-10-26
 
 | Slug | Ancienneté | Statut | Prochaine édition / raison | Source |

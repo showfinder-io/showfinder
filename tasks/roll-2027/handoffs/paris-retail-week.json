@@ -1,8 +1,8 @@
 {
   "slug": "paris-retail-week",
   "name": "NRF Retail's Big Show Europe",
-  "status": "non-annoncee",
-  "checked_at": "2026-09-28",
+  "status": "a-arbitrer",
+  "checked_at": "2026-11-02",
   "current": {
     "start_date": "2026-09-15",
     "end_date": "2026-09-17",
@@ -12,8 +12,8 @@
   },
   "next": null,
   "source_url": "https://www.nrfbigshoweurope.com/en",
-  "quote": null,
-  "venue_changed": false,
-  "city_changed": false,
-  "notes": "La page d'accueil n'affiche que l'édition 2026, déjà passée, avec un message de remerciement post-événement ('THANK YOU FOR COMING TO NRF EUROPE!'). Aucune date annoncée pour la prochaine édition à ce jour."
+  "quote": "Retail's Big Show Europe will return to Amsterdam in late September 2028, reimagined around what European retailers and exhibitors told us they need: a more focused, more connected show, more valuable for everyone who takes part.",
+  "venue_changed": true,
+  "city_changed": true,
+  "notes": "Le salon change de ville et quitte Paris : le site annonce un retour à Amsterdam fin septembre 2028, soit un changement de ville et un écart de plus de 15 mois par rapport à la fin de l'édition 2026. Aucune date précise (jour) n'est donnée pour 2028. À arbitrer manuellement, possible refonte de la fiche (nouvelle ville) plutôt qu'un simple roll de dates."
 }
