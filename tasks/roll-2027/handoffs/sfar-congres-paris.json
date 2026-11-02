@@ -1,6 +1,6 @@
 {
   "slug": "sfar-congres-paris",
-  "name": "Congres SFAR",
+  "name": "Congrès SFAR",
   "status": "non-annoncee",
   "checked_at": "2026-11-02",
   "current": {
@@ -8,12 +8,12 @@
     "end_date": "2026-09-18",
     "edition_year": 2026,
     "city": "Paris",
-    "venue": "Palais des Congres de Paris"
+    "venue": "Palais des Congrès de Paris"
   },
   "next": null,
   "source_url": "https://www.sfar-lecongres.com/",
-  "quote": "Le congres annuel de la SFAR aura lieu au Palais des congres de la Porte Maillot a Paris",
+  "quote": "Le congrès annuel de la SFAR aura lieu au Palais des congrès de la Porte Maillot à Paris",
   "venue_changed": false,
   "city_changed": false,
-  "notes": "Revalidation du handoff du 2026-09-28 (plus de 28 jours). Site SPA (inwink) toujours limite a l'edition 2026 (16-18 septembre, Palais des Congres Porte Maillot). Aucune annonce de l'edition 2027 ; le site renvoie vers sfar.org ou sfarlecongres@hopscotch.one pour la suite."
+  "notes": "Revalidation du handoff du 2026-09-28 (plus de 28 jours). Site SPA (inwink) toujours limité à l'édition 2026 (16-18 septembre, Palais des Congrès Porte Maillot). Aucune annonce de l'édition 2027 ; le site renvoie vers sfar.org ou sfarlecongres@hopscotch.one pour la suite."
 }
