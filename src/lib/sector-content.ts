@@ -1,4 +1,4 @@
-import { createClient } from "@/lib/supabase/server";
+import { createStaticClient } from "@/lib/supabase/static";
 
 export type SectorContentFrontmatter = {
   title: string;
@@ -21,7 +21,7 @@ export async function getSectorContent(
   slug: string,
   locale: string = "fr"
 ): Promise<SectorContent | null> {
-  const supabase = await createClient();
+  const supabase = createStaticClient();
   // Les colonnes _en ne sont pas encore dans les types Supabase générés.
   // On utilise select("*") et on lit via cast pour éviter SelectQueryError.
   const { data } = await supabase
@@ -85,7 +85,7 @@ export function sectorTitlePeriod(now: Date): string {
  * Utilisé par le sitemap pour ne référencer que les pages travaillées.
  */
 export async function getEditorialSectorSlugs(): Promise<string[]> {
-  const supabase = await createClient();
+  const supabase = createStaticClient();
   const { data } = await supabase
     .from("sectors")
     .select("slug")

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { siteConfig } from "@/lib/config";
 import { getSectors } from "@/lib/queries";
 import { buildAlternates } from "@/lib/i18n-metadata";
@@ -25,6 +25,7 @@ export default async function SecteursPage({
 }: {
   params: Promise<{ locale: AppLocale }>;
 }) {
+  setRequestLocale((await params).locale);
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "sectors.listing" });
   const sectors = await getSectors();

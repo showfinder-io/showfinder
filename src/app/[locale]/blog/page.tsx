@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { getAllPosts } from "@/lib/blog";
 import { PhotoPlaceholder } from "@/components/photo-placeholder";
 import { SectionTitle } from "@/components/section-title";
@@ -26,6 +26,7 @@ export default async function BlogPage({
 }: {
   params: Promise<{ locale: AppLocale }>;
 }) {
+  setRequestLocale((await params).locale);
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "blog" });
   const posts = getAllPosts(locale);

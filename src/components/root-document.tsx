@@ -1,14 +1,21 @@
 import type { Metadata } from "next";
 import { Inter, Fraunces, JetBrains_Mono } from "next/font/google";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
+import { Toaster } from "sonner";
 import { siteConfig } from "@/lib/config";
 import { GoogleAnalytics } from "@/components/google-analytics";
-import { cn } from "@/lib/utils";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
-import { NextIntlClientProvider } from "next-intl";
-import { getLocale, getMessages } from "next-intl/server";
-import { Toaster } from "sonner";
-import "./globals.css";
+import { cn } from "@/lib/utils";
+import "@/app/globals.css";
+
+// Document HTML commun aux deux layouts racine : src/app/[locale]/layout.tsx
+// (pages publiques, rendu statique) et src/app/(internal)/layout.tsx (admin,
+// connexion, inscription, alertes). Le layout racine unique lisait la locale
+// via getLocale() (en-têtes de requête), ce qui rendait tout le site dynamique
+// (incident quota CPU Vercel du 2026-11-02). La locale arrive désormais en
+// paramètre, connue au build.
 
 const inter = Inter({
   subsets: ["latin"],
@@ -35,7 +42,7 @@ const jetbrainsMono = JetBrains_Mono({
   weight: ["400", "500"],
 });
 
-export const metadata: Metadata = {
+export const rootMetadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   // Icons : 3 fichiers statiques en /public, pas de route dynamique.
   // Safari macOS a un cache favicon agressif et déteste les routes app/icon.tsx
@@ -59,30 +66,23 @@ export const metadata: Metadata = {
     : {}),
 };
 
-export default async function RootLayout({
+export async function RootDocument({
+  locale,
   children,
-}: Readonly<{
+}: {
+  locale: string;
   children: React.ReactNode;
-}>) {
-  // Locale resolue par next-intl (depuis le segment [locale] ou, pour les
-  // routes app-internes a la racine, la locale par defaut FR). On la pose sur
-  // <html lang> pour que les pages EN portent bien lang="en" quand l'EN est
-  // active, sans dupliquer le <html> (qui doit rester unique au niveau racine
-  // pour ne pas casser les routes internes).
-  const locale = await getLocale();
+}) {
   // Messages passes EXPLICITEMENT au provider client : sans ca, les composants
   // client du Header/Footer (mobile-nav, footer, selecteur) ne recoivent pas les
-  // messages de la locale et retombent en FR sur /en. getMessages() resout la
-  // locale courante via request.ts (EN pour /en, FR sinon).
-  const messages = await getMessages();
+  // messages de la locale et retombent en FR sur /en.
+  const messages = await getMessages({ locale });
   return (
     <html lang={locale} className={cn(inter.variable, fraunces.variable, jetbrainsMono.variable)}>
       <body className="flex min-h-screen flex-col bg-sable text-prune font-sans antialiased">
-        {/* Provider i18n au niveau racine : le Header (et son selecteur de
-            langue) ainsi que le Footer ont besoin du contexte next-intl, y
-            compris sur les routes app-internes a la racine. Pour ces routes la
-            locale resolue est FR (defaut, cf. src/i18n/request.ts). Les pages
-            localisees ont en plus leur propre provider via [locale]/layout. */}
+        {/* Provider i18n : le Header (et son selecteur de langue) ainsi que
+            le Footer ont besoin du contexte next-intl. Les routes internes
+            passent la locale FR (cf. src/app/(internal)/layout.tsx). */}
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Header />
           <main className="flex-1">{children}</main>

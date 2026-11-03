@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { siteConfig } from "@/lib/config";
 import {
   getProviderBySlug,
@@ -99,6 +99,7 @@ const PROVIDER_SCHEMA_TYPE: Record<string, string> = {
 };
 
 export default async function ProviderPage({ params }: Props) {
+  setRequestLocale((await params).locale);
   const { slug, locale } = await params;
   const [t, tCat] = await Promise.all([
     getTranslations({ locale, namespace: "providers.detail" }),

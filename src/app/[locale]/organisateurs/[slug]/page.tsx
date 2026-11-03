@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { siteConfig } from "@/lib/config";
 import { getAllOrganizerSlugs, getSalonsByOrganizer } from "@/lib/queries";
 import { SalonCard } from "@/components/salon-card";
@@ -41,6 +41,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function OrganisateurPage({ params }: Props) {
+  setRequestLocale((await params).locale);
   const { slug, locale } = await params;
   const t = await getTranslations({ locale, namespace: "organisateurs.detail" });
   const result = await getSalonsByOrganizer(slug);

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { siteConfig } from "@/lib/config";
 import {
   getProviders,
@@ -101,6 +101,7 @@ function sortProviders(
 }
 
 export default async function PrestatairesPage({ params: pageParams, searchParams }: Props) {
+  setRequestLocale((await pageParams).locale);
   const { locale } = await pageParams;
   const [t, tCat] = await Promise.all([
     getTranslations({ locale, namespace: "providers.listing" }),
