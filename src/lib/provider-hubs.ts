@@ -1,4 +1,3 @@
-import { createClient } from "@/lib/supabase/server";
 import { createStaticClient } from "@/lib/supabase/static";
 import type { Database } from "@/types/database";
 import type { ProviderRow } from "@/lib/queries";
@@ -12,7 +11,7 @@ type ProviderCategory = Database["public"]["Enums"]["provider_category"];
  * fiches prestataires : la page [slug] cherche d'abord un hub, puis un prestataire.
  */
 export async function getProviderHubBySlug(slug: string): Promise<ProviderHubRow | null> {
-  const supabase = await createClient();
+  const supabase = createStaticClient();
   const { data } = await supabase.from("provider_hubs").select("*").eq("slug", slug).maybeSingle();
   return data ?? null;
 }

@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { siteConfig } from "@/lib/config";
 import { getVenues, type VenueRow } from "@/lib/queries";
-import { createClient } from "@/lib/supabase/server";
+import { createStaticClient } from "@/lib/supabase/static";
 import { VenueCard } from "@/components/venue-card";
 import { VenueSortBar } from "@/components/venue-sort-bar";
 import { SectionTitle } from "@/components/section-title";
@@ -67,6 +67,7 @@ function sortVenues(venues: VenueRow[], sort: string): VenueRow[] {
 }
 
 export default async function LieuxPage({ params, searchParams }: Props) {
+  setRequestLocale((await params).locale);
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "venues.listing" });
 
@@ -74,7 +75,7 @@ export default async function LieuxPage({ params, searchParams }: Props) {
   const city = sp.city ?? "";
   const sort = sp.sort ?? "surface-desc";
 
-  const supabase = await createClient();
+  const supabase = createStaticClient();
   const [venuesRaw, salonVenuesRes] = await Promise.all([
     getVenues(),
     supabase

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { SectionTitle } from "@/components/section-title";
 import { buildAlternates } from "@/lib/i18n-metadata";
 import type { AppLocale } from "@/i18n/routing";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
 export async function generateMetadata({
   params,
@@ -19,7 +19,8 @@ export async function generateMetadata({
   };
 }
 
-export default async function MentionsPage() {
+export default async function MentionsPage({ params }: { params: Promise<{ locale: string }> }) {
+  setRequestLocale((await params).locale);
   const t = await getTranslations("legal");
 
   return (

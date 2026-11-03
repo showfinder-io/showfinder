@@ -1,6 +1,7 @@
 import { ImageResponse } from "next/og";
 
-// Convention Next.js : opengraph-image.tsx à la racine génère l'OG par défaut
+// Convention Next.js : opengraph-image.tsx sous [locale] (layout racine des
+// pages publiques, qui porte metadataBase) génère l'OG par défaut
 // utilisée pour la home et toute route qui n'override pas son propre OG.
 // Variante par-salon prévue plus tard dans src/app/salons/[slug]/opengraph-image.tsx.
 
