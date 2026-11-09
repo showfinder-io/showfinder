@@ -2,6 +2,19 @@
 
 Rapport alimenté chaque lundi par la routine cloud agoris-roll-2027-watch (détection des fiches publiées à édition passée, vérification des dates de la prochaine édition sur les sites officiels, handoffs dans handoffs/). Depuis le 2026-09-21 : la routine merge sa PR elle-même, puis .github/workflows/roll-apply.yml applique en base les roll-pret qui passent les garde-fous (scripts/roll-guards.ts). Résultats et rejets dans journal.json, refresh éditorial des fiches roulées via scripts/roll-apply-handoffs.ts --queue.
 
+## Lot du 2026-11-09
+
+| Slug | Ancienneté | Statut | Prochaine édition / raison | Source |
+|------|-----------:|--------|------------------------------|--------|
+| sepem-toulouse | 46 jours | non-annoncee | Revérification : site confirme une prochaine édition en 2028 (bisannuel, cohérent) mais sans date précise (jour/mois) | https://toulouse.sepem-industries.com/ |
+| ad2s-bordeaux | 46 jours | roll-pret | 26 au 28 septembre 2028, Base aérienne 106, Mérignac (ville et lieu inchangés, écart cohérent avec la fréquence bisannuelle) | https://www.ad2s-bordeaux.com/infos-pratiques/ |
+| cfia-toulouse | 46 jours | non-annoncee | Revérification : site confirme une prochaine édition en 2028 (bisannuel, cohérent) mais sans date précise (jour/mois) | https://toulouse.cfiaexpo.com/fr |
+| assises-port-du-futur | 46 jours | non-annoncee | Revérification : site toujours figé sur l'édition 2026 déjà tenue (23-24 septembre), aucune date 2027/2028 annoncée | https://www.portdufutur.fr/ |
+| business-hydro | 33 jours | non-annoncee | Préinscriptions ouvertes pour l'édition 2027 mais aucune date ni lieu encore publiés | https://businesshydro.fr/preinscriptions-salon-business-hydro-2027/ |
+| preventica-lyon | 32 jours | non-annoncee | Salon multi-sites : calendrier 2027 publié (Paris, Montpellier, Casablanca) mais Lyon n'y figure pas, aucune date annoncée pour Lyon | https://www.preventica.com |
+
+Reste à traiter : 33 fiches périmées
+
 ## Lot du 2026-11-02
 
 | Slug | Ancienneté | Statut | Prochaine édition / raison | Source |
