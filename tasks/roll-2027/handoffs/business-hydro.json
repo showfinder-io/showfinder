@@ -1,0 +1,19 @@
+{
+  "slug": "business-hydro",
+  "name": "Business Hydro",
+  "status": "non-annoncee",
+  "checked_at": "2026-11-09",
+  "current": {
+    "start_date": "2026-10-06",
+    "end_date": "2026-10-07",
+    "edition_year": 2026,
+    "city": "Grenoble",
+    "venue": "Alpexpo"
+  },
+  "next": null,
+  "source_url": "https://businesshydro.fr/preinscriptions-salon-business-hydro-2027/",
+  "quote": null,
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "Premier passage (pas de handoff antérieur). Le site est vivant et ouvre une page de préinscription pour « Salon Business Hydro 2027 » (formulaire de contact exposant, emplacement « identique à 2026 (selon l'agencement du salon 2027) »), mais ne publie encore aucune date ni ville/lieu précis pour cette édition 2027."
+}
