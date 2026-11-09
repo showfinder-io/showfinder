@@ -537,5 +537,20 @@
     },
     "source_url": "https://wsn-events.com/events/premiere-classe",
     "reasons": []
+  },
+  "ad2s-bordeaux": {
+    "outcome": "applied",
+    "at": "2026-11-09",
+    "from": {
+      "start_date": "2026-09-22",
+      "end_date": "2026-09-24"
+    },
+    "to": {
+      "start_date": "2028-09-26",
+      "end_date": "2028-09-28",
+      "edition_year": 2028
+    },
+    "source_url": "https://www.ad2s-bordeaux.com/infos-pratiques/",
+    "reasons": []
   }
 }
