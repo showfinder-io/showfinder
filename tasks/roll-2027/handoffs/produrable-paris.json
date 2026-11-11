@@ -1,0 +1,25 @@
+{
+  "slug": "produrable-paris",
+  "name": "Produrable",
+  "status": "roll-pret",
+  "checked_at": "2026-10-26",
+  "current": {
+    "start_date": "2026-09-30",
+    "end_date": "2026-10-01",
+    "edition_year": 2026,
+    "city": "Paris",
+    "venue": "Palais des Congres"
+  },
+  "next": {
+    "start_date": "2027-10-13",
+    "end_date": "2027-10-14",
+    "edition_year": 2027,
+    "city": "Paris",
+    "venue": "Palais des Congres"
+  },
+  "source_url": "https://www.produrable.com/",
+  "quote": "EDITION ANNIVERSAIRE pour les 20 ans 13 & 14 octobre 2027 Palais des Congres, Paris",
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "Banniere d'accueil du site officiel annoncant explicitement la prochaine edition : 13 et 14 octobre 2027, Palais des Congres, Paris, meme ville et meme venue que l'edition 2026. Un bouton d'inscription visiteur est deja actif sous cette banniere."
+}

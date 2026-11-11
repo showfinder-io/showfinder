@@ -170,11 +170,23 @@ async function d14() {
   }
 }
 
+// H7 : statut d'indexation des 5 pages secteur FR soumises le 2026-10-05.
+async function h7() {
+  for (const slug of ["agriculture", "franchise-commerce", "sante-pharma", "decoration-habitat", "mode-textile"]) {
+    const r = await api<Inspection>("https://searchconsole.googleapis.com/v1/urlInspection/index:inspect", {
+      inspectionUrl: `https://www.agoris.io/secteurs/${slug}`, siteUrl: SITE,
+    });
+    const st = r.inspectionResult?.indexStatusResult ?? {};
+    console.log(`${slug} : ${st.coverageState ?? "?"} (dernier crawl ${st.lastCrawlTime ?? "aucun"})`);
+  }
+}
+
 (async () => {
   mkdirSync(OUT, { recursive: true });
-  // Argument optionnel : c5 | d5bis | d14 pour ne lancer qu'une mesure
+  // Argument optionnel : c5 | d5bis | d14 | h7 pour ne lancer qu'une mesure
   const only = process.argv[2];
   if (!only || only === "c5") await c5();
   if (!only || only === "d5bis") await d5bis();
   if (!only || only === "d14") await d14();
+  if (only === "h7") await h7();
 })();

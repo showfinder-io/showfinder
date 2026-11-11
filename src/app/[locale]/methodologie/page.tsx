@@ -3,7 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { compileMdxContent } from "@/lib/mdx";
 import { SectionTitle } from "@/components/section-title";
 import { buildAlternates } from "@/lib/i18n-metadata";
@@ -54,6 +54,7 @@ export default async function MethodologiePage({
 }: {
   params: Promise<{ locale: AppLocale }>;
 }) {
+  setRequestLocale((await params).locale);
   const { locale } = await params;
   const { frontmatter, content } = getMethodologie();
   const Content = await compileMdxContent(content);

@@ -1,0 +1,287 @@
+[
+  {
+    "page": "/en/salons/amwc",
+    "field_title": "seo_title_en",
+    "field_description": "seo_description_en",
+    "title": "AMWC 2027 Cannes: the congress leaves Monaco, who attends",
+    "description": "AMWC moves from Monaco to the Palais des Festivals, 1-3 April 2027. Audience profile (19.5% dermatologists in 2026), pass prices and exhibitor budget.",
+    "sources": [
+      "AMWC 2027, Cannes → requête « amwc cannes 2027 » (354 impr.), base edition_year 2027, city Cannes",
+      "leaves Monaco → MDX Key facts : « This is a change of city: previous editions were held in Monaco »",
+      "1-3 April 2027, Palais des Festivals → base start/end_date 2027-04-01/03, venue ; MDX : « from Thursday 1 to Saturday 3 April 2027, at the Palais des Festivals et des Congrès »",
+      "19.5% dermatologists in 2026 → MDX Visitor quality : « 19.53% dermatologists »",
+      "pass prices → MDX BudgetTable footer : « Sponsored Workshops and Exhibition pass is listed at €260 ... Scientific Programme pass at €850 »",
+      "exhibitor budget → MDX section « How much does it cost to exhibit » (BudgetTable)"
+    ]
+  },
+  {
+    "page": "/en/salons/jdp-paris",
+    "field_title": "seo_title_en",
+    "field_description": "seo_description_en",
+    "title": "JDP 2026 Paris: exhibition hours, fees and who attends",
+    "description": "JDP 2026, 1-5 December at the Palais des Congrès: exhibition open 2-4 December only, 7,275 participants in 2025, registration fees and who exhibits.",
+    "sources": [
+      "JDP 2026 Paris → requêtes « jdp 2026 » (142), « jdp paris 2026 » ; base edition_year 2026, city Paris",
+      "1-5 December, Palais des Congrès → base dates 2026-12-01/05, venue",
+      "exhibition open 2-4 December only → MDX Key facts : « The exhibition takes place on level 2, Hall Maillot, from Wednesday 2 to Friday 4 December 2026 only »",
+      "7,275 participants in 2025 → MDX : « 2025 results: 7,275 participants »",
+      "registration fees → MDX For decision-maker visitors : « €250 for an SFD member and €580 for a non-member ... »",
+      "who exhibits → MDX sections « Who exhibits », « Notable exhibitors » (68 names)",
+      "who attends → MDX Visitor quality : dermatologists, residents, GP Forum, Nurses Forum"
+    ]
+  },
+  {
+    "page": "/en/salons/museum-connections",
+    "field_title": "seo_title_en",
+    "field_description": "seo_description_en",
+    "title": "Museum Connections 2027 Paris: who visits, why exhibit",
+    "description": "12-13 January 2027, Porte de Versailles hall 5.2: 42% of 2026 visitors from museums and foundations, 403 exhibitors (44% international), badge prices.",
+    "sources": [
+      "Museum Connections 2027 Paris → requête « museum connections 2027 » (144) ; base edition_year 2027, city Paris",
+      "12-13 January 2027, hall 5.2 → MDX : « Tuesday 12 and Wednesday 13 January 2027, at Paris Expo Porte de Versailles, hall 5.2 »",
+      "42% of 2026 visitors from museums and foundations → MDX Quality of the audience : « 42% museums and foundations »",
+      "403 exhibitors (44% international) → MDX : « 44% of the 403 exhibitors in 2026 came from abroad »",
+      "badge prices → MDX : « free badge until 31 October 2026, €30 until 11 January 2027, €40 on show days »",
+      "why exhibit → MDX sections « Preparing your visit / For the exhibitor » et « How much it costs to exhibit »"
+    ]
+  },
+  {
+    "page": "/salons/architect-at-work-nantes",
+    "field_title": "seo_title",
+    "field_description": "seo_description",
+    "title": "Architect@Work Nantes 2026 : accès sur invitation, exposants",
+    "description": "19 et 20 nov. 2026, Hall XXL de La Beaujoire : rendez-vous sur invitation pour architectes et prescripteurs, innovations choisies par un jury, conférences.",
+    "sources": [
+      "Architect@Work Nantes 2026 → requêtes « architect at work nantes 2026 » (80), « architect@work nantes » (45) ; base name, edition_year 2026",
+      "accès sur invitation, architectes et prescripteurs → MDX À retenir : « c'est un rendez-vous sur invitation, réservé aux architectes, architectes d'intérieur et autres prescripteurs de la construction »",
+      "19 et 20 nov. 2026, Hall XXL de La Beaujoire → MDX : « du jeudi 19 au vendredi 20 novembre 2026, de 10h à 19h, dans le Hall XXL du Parc des Expositions de La Beaujoire »",
+      "innovations choisies par un jury → MDX : « Les produits présentés sont des innovations sélectionnées par un jury »",
+      "exposants → MDX : « la liste officielle de l'édition 2026 compte 46 exposants »",
+      "conférences → MDX Programme conférences : « huit interventions en français, quatre par jour »"
+    ]
+  },
+  {
+    "page": "/salons/congres-francais-psychiatrie",
+    "field_title": "seo_title",
+    "field_description": "seo_description",
+    "title": "CFP 2026 Strasbourg : congrès de psychiatrie, public, tarifs",
+    "description": "Congrès Français de Psychiatrie du 2 au 5 déc. 2026 à Strasbourg : psychiatres, internes, infirmiers, thème « Politique », tarifs et sessions partenaires.",
+    "sources": [
+      "CFP 2026 Strasbourg → requêtes « cfp strasbourg 2026 » (38), « cfp strasbourg » (26), « congres psychiatrie strasbourg » (49) ; MDX : « Le Congrès Français de Psychiatrie (CFP) » ; base edition_year 2026, city Strasbourg",
+      "du 2 au 5 déc. 2026 → base dates 2026-12-02/05 ; MDX : « du mercredi 2 au samedi 5 décembre 2026 »",
+      "psychiatres, internes, infirmiers → MDX À retenir : « réunit psychiatres, internes, psychologues, infirmiers et acteurs du médico-social »",
+      "thème « Politique » → MDX : « Le thème retenu est « Politique » »",
+      "tarifs → MDX Pour le visiteur décideur : « 590 € TTC pour un médecin ou pharmacien au plein tarif ... »",
+      "sessions partenaires → MDX : « Sessions partenaires le jeudi 3 et le vendredi 4 décembre, de 16h40 à 17h40 »"
+    ]
+  },
+  {
+    "page": "/salons/cosmetagora-paris",
+    "field_title": "seo_title",
+    "field_description": "seo_description",
+    "title": "Cosmetagora 2027 : le salon de la formulation, 12-13 janv.",
+    "description": "12 et 13 janv. 2027, Espace Champerret : formulateurs, R&D, fournisseurs d'ingrédients, 5 510 visiteurs en 2026, Prix de la Formulation, budget exposant.",
+    "sources": [
+      "Cosmetagora 2027 → requête « cosmetagora 2027 » (354) ; base edition_year 2027",
+      "salon de la formulation → MDX : « le rendez-vous technique et scientifique dédié à la formulation cosmétique »",
+      "12-13 janv., Espace Champerret → MDX : « les 12 et 13 janvier 2027 (9h30-18h), à l'Espace Champerret »",
+      "formulateurs, R&D, fournisseurs d'ingrédients → MDX Qualité du visitorat : « professionnels de la formulation et de la R&D cosmétique » ; « (formulateurs, R&D, fournisseurs d'ingrédients) »",
+      "5 510 visiteurs en 2026 → MDX : « Audience 2026 (bilan organisateur) : 5 510 visiteurs »",
+      "Prix de la Formulation → MDX : « L'événement décerne le Prix de la Formulation »",
+      "budget exposant → MDX section « Combien ça coûte d'exposer » (BudgetTable indicative)"
+    ]
+  },
+  {
+    "page": "/salons/cplf",
+    "field_title": "seo_title",
+    "field_description": "seo_description",
+    "title": "CPLF 2027 Marseille : inscription, tarifs et exposants",
+    "description": "31e CPLF du 29 au 31 janv. 2027 au Parc Chanot : thème du sommeil, inscription médecin à 440 € jusqu'au 12 nov., 80 partenaires inscrits début octobre.",
+    "sources": [
+      "CPLF 2027 Marseille → requêtes « cplf 2027 » (814), « cplf marseille » ; base edition_year 2027, city Marseille",
+      "inscription, tarifs → requêtes « cplf 2027 inscription », « inscription cplf 2027 » ; MDX : « S'inscrire jusqu'au 12 novembre 2026 pour le premier tarif réduit : 440 € TTC pour un médecin »",
+      "31e, du 29 au 31 janv. 2027, Parc Chanot → MDX : « la 31e, du vendredi 29 au dimanche 31 janvier 2027, à Marseille Parc Chanot »",
+      "thème du sommeil → MDX : « Thème principal de l'édition : « Le sommeil dans tous ses états » »",
+      "80 partenaires début octobre → MDX : « la liste des partenaires compte 80 partenaires début octobre 2026 »",
+      "exposants → MDX section « Exposants notables »"
+    ]
+  },
+  {
+    "page": "/salons/educatech-expo",
+    "field_title": "seo_title",
+    "field_description": "seo_description",
+    "title": "Educatech 2026 : salon pro du numérique éducatif, Paris",
+    "description": "Educatech Expo du 2 au 4 déc. 2026, Pavillon 7 Porte de Versailles : badge gratuit réservé aux pros, rendez-vous d'affaires avec les porteurs de projets.",
+    "sources": [
+      "Educatech 2026 → requête « educatech 2026 » (185) ; base name Educatech Expo, edition_year 2026",
+      "salon pro du numérique éducatif → MDX : « le salon professionnel de l'innovation pédagogique et du numérique éducatif »",
+      "du 2 au 4 déc. 2026, Pavillon 7 Porte de Versailles → MDX : « du mercredi 2 au vendredi 4 décembre 2026, au Paris Expo Porte de Versailles, Pavillon 7 »",
+      "badge gratuit réservé aux pros → MDX : « Le badge est gratuit, sur demande en ligne » ; « L'accès est réservé aux professionnels »",
+      "rendez-vous d'affaires avec les porteurs de projets → MDX : « Les rendez-vous entre exposants et porteurs de projets se tiennent sur les stands, le mercredi 2 et le jeudi 3 décembre »"
+    ]
+  },
+  {
+    "page": "/salons/energaia-montpellier",
+    "field_title": "seo_title",
+    "field_description": "seo_description",
+    "title": "Energaia 2026 : le forum des EnR du grand sud, Montpellier",
+    "description": "9 et 10 déc. 2026 au Parc des Expositions de Montpellier : 5 marchés des EnR, 120 tables rondes et pitchs, badge pro gratuit, conseils pour exposer.",
+    "sources": [
+      "Energaia 2026 → requête « energaia 2026 » (140) ; base name Energaia, edition_year 2026",
+      "forum des EnR du grand sud, Montpellier → MDX : « EnerGaïa est le forum des énergies renouvelables du grand sud, à Montpellier »",
+      "9 et 10 déc. 2026, Parc des Expositions de Montpellier → MDX : « Prochaine édition : 9-10 décembre 2026, Parc des Expositions de Montpellier »",
+      "5 marchés des EnR → MDX : « Couvre toute la filière EnR sur 5 marchés (énergie, bâtiment, agriculture, industrie, mobilité) »",
+      "120 tables rondes et pitchs → MDX : « 120 tables rondes et pitchs par édition »",
+      "badge pro gratuit → MDX : « Badge visiteur : gratuit, réservé aux professionnels, inscription obligatoire »",
+      "conseils pour exposer → MDX section « Préparer sa venue / Pour l'exposant » (rétroplanning J-9 mois à J-6 semaines)"
+    ]
+  },
+  {
+    "page": "/salons/euronaval-paris",
+    "field_title": "seo_title",
+    "field_description": "seo_description",
+    "title": "Euronaval 2026 : horaires, badges et accès à Villepinte",
+    "description": "30e Euronaval du 3 au 6 nov. 2026, Hall 6 de Paris Nord Villepinte : horaires, tarifs des badges, accès RER B, salon réservé aux pros et délégations.",
+    "sources": [
+      "Euronaval 2026 → requêtes « euronaval », « euronaval horaires », « euronaval 2026 horaires » ; base edition_year 2026",
+      "30e, du 3 au 6 nov. 2026, Hall 6 de Paris Nord Villepinte → MDX : « la 30e édition ... du mardi 3 au vendredi 6 novembre 2026 à Paris Nord Villepinte, Hall 6 »",
+      "horaires → MDX : « Mardi 3, mercredi 4 et jeudi 5 novembre de 9h à 17h30. Vendredi 6 novembre de 9h à 16h »",
+      "tarifs des badges → MDX : « Tarif standard (10 septembre au 2 novembre) : 110 € TTC ; Tarif sur place : 300 € TTC »",
+      "accès RER B → MDX : « RER B, station « Parc des Expositions » »",
+      "réservé aux pros et délégations → MDX : « Accès réservé aux professionnels » ; « 150 délégations officielles »"
+    ]
+  },
+  {
+    "page": "/salons/europack-euromanut-lyon",
+    "field_title": "seo_title",
+    "field_description": "seo_description",
+    "title": "Prod&Pack 2027 : pas d'édition 2026, salon emballage Lyon",
+    "description": "Ex-Europack Euromanut, le salon biennal de l'emballage et de la manutention revient du 16 au 18 nov. 2027 à Eurexpo Lyon. 15 931 visiteurs en 2025.",
+    "sources": [
+      "Prod&Pack 2027 → requêtes « prod&pack 2026 », « prod and pack 2026 », « europack euromanut », « salon emballage lyon 2026 » ; base name Prod&Pack, edition_year 2027. Requête « cfia lyon » non reprise en tête : MDX « La co-localisation avec CFIA ... a été abandonnée »",
+      "pas d'édition 2026 → MDX : « Salon biennal : pas d'édition 2026 »",
+      "ex-Europack Euromanut → MDX : « Le salon Europack Euromanut CFIA a été rebrandé Prod&Pack en 2020-2021 »",
+      "emballage et manutention → MDX : « process et équipements de production, emballages et conditionnements, manutention » ; base name/description actuelle",
+      "du 16 au 18 nov. 2027 à Eurexpo Lyon → MDX : « la 4e édition est annoncée du 16 au 18 novembre 2027 à Eurexpo Lyon »",
+      "15 931 visiteurs en 2025 → MDX : « Édition 2025 : 15 931 visiteurs »"
+    ]
+  },
+  {
+    "page": "/salons/iode",
+    "field_title": "seo_title",
+    "field_description": "seo_description",
+    "title": "Salon IODE 2027 Vannes : tarifs des stands, public visé",
+    "description": "27 et 28 janv. 2027 au Chorus de Vannes : 66 % de gérants de camping parmi les visiteurs 2026, grille de stands publiée, accès pro gratuit sur inscription.",
+    "sources": [
+      "Salon IODE 2027 Vannes → requêtes « salon iode » (124), « salon iode 2027 », « salon iode vannes » ; base edition_year 2027, city Vannes",
+      "27 et 28 janv. 2027 au Chorus → MDX : « mercredi 27 et jeudi 28 janvier 2027, au Parc des Expositions Le Chorus, à Vannes »",
+      "66 % de gérants de camping parmi les visiteurs 2026 → MDX : « 66 % des visiteurs étaient gérants de camping »",
+      "grille de stands publiée → MDX BudgetTable : « Tarifs officiels HT du dossier d'inscription IODE 2027 publié sur le site du salon »",
+      "accès pro gratuit sur inscription → MDX : « Accès réservé aux professionnels, gratuit sur inscription après validation par l'organisation »",
+      "public visé → MDX : « Il s'adresse d'abord aux gérants de campings, puis aux hôteliers, gîtes et chambres d'hôtes »"
+    ]
+  },
+  {
+    "page": "/salons/jfhod",
+    "field_title": "seo_title",
+    "field_description": "seo_description",
+    "title": "JFHOD 2027 : dates, tarifs d'inscription et exposition",
+    "description": "Du 11 au 14 mars 2027 au Palais des Congrès de Paris : 490 € pour un membre jusqu'au 21 févr., 4 964 participants en 2026, sessions partenaires.",
+    "sources": [
+      "JFHOD 2027 → requêtes « jfhod 2027 », « jfhod 2027 date » ; base edition_year 2027",
+      "du 11 au 14 mars 2027, Palais des Congrès de Paris → MDX : « du jeudi 11 au dimanche 14 mars 2027, au Palais des Congrès de Paris »",
+      "490 € pour un membre jusqu'au 21 févr. → MDX : « S'inscrire au tarif A, valable jusqu'au 21 février 2027 : 490 euros TTC pour un membre d'un partenaire scientifique »",
+      "4 964 participants en 2026 → MDX : « Bilan de l'édition 2026 : 4 964 participants »",
+      "sessions partenaires → MDX : « ateliers partenaires à l'heure du déjeuner, symposiums partenaires en fin de journée, matinales partenaires »",
+      "exposition → MDX section « Qui expose »"
+    ]
+  },
+  {
+    "page": "/salons/paris-sante-femmes",
+    "field_title": "seo_title",
+    "field_description": "seo_description",
+    "title": "Paris Santé Femmes 2026 : congrès CNGOF, tarifs, exposants",
+    "description": "Pari(s) Santé Femmes du 2 au 4 déc. 2026, nouveau lieu au Palais des Congrès : 22 sociétés savantes, 460 € pour un médecin membre, symposiums industriels.",
+    "sources": [
+      "Paris Santé Femmes 2026 → requêtes « paris santé femme 2026 » (107), « cngof 2026 » (67) ; base name Pari(s) Santé Femmes, edition_year 2026",
+      "congrès CNGOF → MDX : « le congrès annuel du Collège National des Gynécologues et Obstétriciens Français (CNGOF) »",
+      "du 2 au 4 déc. 2026, nouveau lieu au Palais des Congrès → MDX : « du mercredi 2 au vendredi 4 décembre 2026, au Palais des Congrès de Paris ... C'est un changement de lieu »",
+      "22 sociétés savantes → MDX : « le CNGOF réunit autour de lui 22 sociétés savantes »",
+      "460 € pour un médecin membre → MDX : « depuis le 23 septembre 2026, 460 euros pour un médecin ou autre professionnel de santé membre du CNGOF ou d'une société partenaire »",
+      "symposiums industriels, exposants → MDX : « Le synopsis préliminaire prévoit des symposiums industriels » ; section « Exposants notables »"
+    ]
+  },
+  {
+    "page": "/salons/rencontres-amrae",
+    "field_title": "seo_title",
+    "field_description": "seo_description",
+    "title": "AMRAE 2027 Deauville : programme, tarifs, profil du public",
+    "description": "34es Rencontres AMRAE du 3 au 5 févr. 2027 au CID : 800 risk managers sur 3 840 congressistes en 2025, tarifs d'inscription, conseils pour les exposants.",
+    "sources": [
+      "AMRAE 2027 Deauville → requête « amrae 2027 » (269) ; base edition_year 2027, city Deauville",
+      "34es Rencontres, du 3 au 5 févr. 2027 au CID → MDX : « la 34e, du mercredi 3 au vendredi 5 février 2027, au Centre International de Deauville »",
+      "800 risk managers sur 3 840 congressistes en 2025 → MDX : « en 2025, sur 3 840 congressistes, 800 étaient des risk managers »",
+      "tarifs d'inscription → MDX : « 704 € HT pour un membre AMRAE-FERMA (899 € HT ensuite) et 1 301 € HT pour un autre participant »",
+      "programme → MDX section « Programme conférences » (trame 2027)",
+      "conseils pour les exposants → MDX section « Préparer sa venue / Pour l'exposant »"
+    ]
+  },
+  {
+    "page": "/salons/smcl",
+    "field_title": "seo_title",
+    "field_description": "seo_description",
+    "title": "SMCL 2026 : Salon des Maires, badge, exposants et accès",
+    "description": "32e Salon des Maires, 24-26 nov. 2026, Pavillon 7 Porte de Versailles : 1er salon après les municipales, badge gratuit pour élus, 1 380 exposants en 2025.",
+    "sources": [
+      "SMCL 2026 → requête « smcl 2026 » (97) ; MDX : « Salon des Maires et des Collectivités Locales (SMCL) » ; base edition_year 2026",
+      "32e, 24-26 nov. 2026, Pavillon 7 Porte de Versailles → MDX : « 32e édition ... du 24 au 26 novembre 2026, Paris Expo Porte de Versailles, Pavillon 7 »",
+      "1er salon après les municipales → MDX : « premier salon du cycle municipal 2026-2032 après les élections municipales de mars 2026 »",
+      "badge gratuit pour élus → MDX : « Badge visiteur : gratuit pour les élus et agents territoriaux sur pré-inscription »",
+      "1 380 exposants en 2025 → MDX : « Bilan 2025 ... 1 380 exposants »",
+      "accès, exposants → requêtes « badge salon des maires 2026 », « salon des maires exposants » ; MDX sections « Sur place », « Exposants notables »"
+    ]
+  },
+  {
+    "page": "/salons/sofins",
+    "field_title": "seo_title",
+    "field_description": "seo_description",
+    "title": "SOFINS 2027 Bordeaux : dates, accès pro et démonstrations",
+    "description": "8e SOFINS du 6 au 8 avril 2027 : le salon biennal des forces spéciales quitte Souge pour le Parc des Expositions de Bordeaux. Badges pros dès nov. 2026.",
+    "sources": [
+      "SOFINS 2027 Bordeaux → requêtes « sofins 2027 » (103), « sofins 2027 date » (94) ; base edition_year 2027, city Bordeaux",
+      "8e, du 6 au 8 avril 2027 → MDX : « la 8e, du mardi 6 au jeudi 8 avril 2027 »",
+      "salon biennal des forces spéciales → MDX : « SOFINS ... est le salon des forces spéciales » ; « Fréquence biennale, les années impaires »",
+      "quitte Souge pour le Parc des Expositions de Bordeaux → MDX : « C'est un changement de site : les sept premières éditions se sont tenues au camp militaire de Souge »",
+      "Badges pros dès nov. 2026 → MDX : « Accès strictement réservé aux professionnels ... Les inscriptions visiteurs ouvrent en novembre 2026 »",
+      "démonstrations → MDX : « La démonstration est l'ADN du salon » ; zones de test à Bordeaux"
+    ]
+  },
+  {
+    "page": "/salons/viteff",
+    "field_title": "seo_title",
+    "field_description": "seo_description",
+    "title": "VITeff 2027 Épernay : pas d'édition en 2026, dates et infos",
+    "description": "Salon biennal des technologies des vins effervescents : prochaine édition du 12 au 14 oct. 2027 au Millesium, 350 exposants et 18 000 visiteurs en 2025.",
+    "sources": [
+      "VITeff 2027 Épernay → requêtes « viteff 2026 » (249), « viteff epernay 2026 » (122), « viteff 2027 » ; base edition_year 2027, city Épernay",
+      "pas d'édition en 2026 → MDX : « Fréquence : tous les deux ans, après la vendange, sur les années impaires » ; base frequency bisannuel",
+      "technologies des vins effervescents → MDX : « le seul salon international consacré aux technologies des vins effervescents »",
+      "du 12 au 14 oct. 2027 au Millesium → MDX : « Prochaine édition du mardi 12 au jeudi 14 octobre 2027 au Millesium d'Épernay »",
+      "350 exposants et 18 000 visiteurs en 2025 → MDX : « Bilan de la 18e édition ... : 350 exposants et 18 000 visiteurs »"
+    ]
+  },
+  {
+    "page": "/salons/workplace-meetings-cannes",
+    "field_title": "seo_title",
+    "field_description": "seo_description",
+    "title": "Workplace Meetings Cannes 2026 : hosted buyers, exposants",
+    "description": "24 au 26 nov. 2026 au Palais des Festivals : rendez-vous one to one de 15 min, 300 hosted buyers et 130 exposants annoncés, comment candidater ou exposer.",
+    "sources": [
+      "Workplace Meetings Cannes 2026 → requêtes « workplace meetings cannes » (80), « workplace meeting cannes 2026 » (65) ; base edition_year 2026",
+      "24 au 26 nov. 2026 au Palais des Festivals → MDX : « les 24, 25 et 26 novembre 2026 au Palais des Festivals et des Congrès de Cannes »",
+      "rendez-vous one to one de 15 min → MDX : « des rendez-vous préprogrammés de 15 minutes »",
+      "300 hosted buyers et 130 exposants annoncés → MDX : « Pour 2026, le site affiche 130 exposants et 300 hosted buyers »",
+      "comment candidater ou exposer → MDX : « Candidater au programme Hosted Buyers » ; section « Préparer sa venue / Pour l'exposant »"
+    ]
+  }
+]

@@ -2,6 +2,84 @@
 
 Rapport alimenté chaque lundi par la routine cloud agoris-roll-2027-watch (détection des fiches publiées à édition passée, vérification des dates de la prochaine édition sur les sites officiels, handoffs dans handoffs/). Depuis le 2026-09-21 : la routine merge sa PR elle-même, puis .github/workflows/roll-apply.yml applique en base les roll-pret qui passent les garde-fous (scripts/roll-guards.ts). Résultats et rejets dans journal.json, refresh éditorial des fiches roulées via scripts/roll-apply-handoffs.ts --queue.
 
+## Lot du 2026-11-09
+
+| Slug | Ancienneté | Statut | Prochaine édition / raison | Source |
+|------|-----------:|--------|------------------------------|--------|
+| sepem-toulouse | 46 jours | non-annoncee | Revérification : site confirme une prochaine édition en 2028 (bisannuel, cohérent) mais sans date précise (jour/mois) | https://toulouse.sepem-industries.com/ |
+| ad2s-bordeaux | 46 jours | roll-pret | 26 au 28 septembre 2028, Base aérienne 106, Mérignac (ville et lieu inchangés, écart cohérent avec la fréquence bisannuelle) | https://www.ad2s-bordeaux.com/infos-pratiques/ |
+| cfia-toulouse | 46 jours | non-annoncee | Revérification : site confirme une prochaine édition en 2028 (bisannuel, cohérent) mais sans date précise (jour/mois) | https://toulouse.cfiaexpo.com/fr |
+| assises-port-du-futur | 46 jours | non-annoncee | Revérification : site toujours figé sur l'édition 2026 déjà tenue (23-24 septembre), aucune date 2027/2028 annoncée | https://www.portdufutur.fr/ |
+| business-hydro | 33 jours | non-annoncee | Préinscriptions ouvertes pour l'édition 2027 mais aucune date ni lieu encore publiés | https://businesshydro.fr/preinscriptions-salon-business-hydro-2027/ |
+| preventica-lyon | 32 jours | non-annoncee | Salon multi-sites : calendrier 2027 publié (Paris, Montpellier, Casablanca) mais Lyon n'y figure pas, aucune date annoncée pour Lyon | https://www.preventica.com |
+
+Reste à traiter : 33 fiches périmées
+
+## Lot du 2026-11-02
+
+| Slug | Ancienneté | Statut | Prochaine édition / raison | Source |
+|------|-----------:|--------|------------------------------|--------|
+| paris-retail-week | 46 jours | a-arbitrer | Changement de ville annoncé : retour « à Amsterdam fin septembre 2028 », aucune date précise, écart de plus de 15 mois | https://www.nrfbigshoweurope.com/en |
+| salon-vegetal-angers | 46 jours | non-annoncee | Revérification : site toujours figé sur l'édition 2026 (biennal, prochaine édition attendue 2028, aucune date publiée) | https://www.salonduvegetal.com |
+| sfar-congres-paris | 45 jours | non-annoncee | Revérification : site SPA toujours limité à l'édition 2026, aucune annonce de l'édition 2027 | https://www.sfar-lecongres.com/ |
+| micronora-besancon | 31 jours | non-annoncee | Site, page Presse et page Infos pratiques consultés : aucune date publiée pour la prochaine édition (biennal) | https://www.micronora.com |
+| tranofiliere-paris | 29 jours | a-arbitrer | 4 au 7 mars 2027 annoncé, mais changement de lieu : Palais de Tokyo → Palais Brongniart | https://www.tranoi.com |
+| premiere-classe | 28 jours | roll-pret | 5 au 8 mars 2027, Jardin des Tuileries, Paris (ville et lieu inchangés, salon semestriel) | https://wsn-events.com/events/premiere-classe |
+
+Reste à traiter : 26 fiches périmées
+
+## Lot du 2026-10-26
+
+| Slug | Ancienneté | Statut | Prochaine édition / raison | Source |
+|------|-----------:|--------|------------------------------|--------|
+| untec-congres | 143 jours | a-arbitrer | Le site affiche désormais « Salon Actes 2027 » avec une nouvelle adresse à Dijon (Parc des Expositions et Congrès de Dijon), contre Chartres en 2026 : changement de ville confirmé pour ce salon itinérant, aucune date précise encore publiée | https://www.actes-untec.com/informations-pratiques |
+| enerj-meeting-lyon | 41 jours | non-annoncee | Revérification : site toujours figé sur « Édition Lyon 2026 », les autres villes du réseau (Paris, Marseille, Nantes) annoncent déjà 2027 mais pas Lyon | https://lyon.enerj-meeting.com |
+| tfwa-world-exhibition | 25 jours | roll-pret | 3 au 7 octobre 2027, Palais des Festivals et des Congrès, Cannes (ville et lieu inchangés) | https://www.tfwa.com/tfwa-world-exhibition-conference |
+| interclima | 25 jours | roll-pret | 2 au 5 octobre 2028, Paris Expo Porte de Versailles (ville et lieu inchangés, écart cohérent avec la fréquence bisannuelle) | https://www.interclima.com |
+| les-assises-dechets-nantes | 25 jours | non-annoncee | Site vivant, édition 2026 encore affichée en vedette, aucune date pour la prochaine édition (bisannuelle, attendue en 2028) | https://www.assises-dechets.org/ |
+| produrable-paris | 25 jours | roll-pret | 13 et 14 octobre 2027, Palais des Congrès, Paris (ville et lieu inchangés, édition anniversaire des 20 ans) | https://www.produrable.com/ |
+
+Reste à traiter : 26 fiches périmées
+
+## Lot du 2026-10-19
+
+| Slug | Ancienneté | Statut | Prochaine édition / raison | Source |
+|------|-----------:|--------|------------------------------|--------|
+| comic-con-france | 183 jours | non-annoncee | Revérification : site toujours figé sur l'édition 2026 déjà en base, aucune date 2027 annoncée | https://comiccon.fr/ |
+| salon-agriculture-nouvelle-aquitaine | 141 jours | non-annoncee | Revérification : site toujours figé sur l'édition 2026 déjà en base, aucune date 2027 annoncée | https://www.foiredebordeaux.com/salon-agriculture |
+| sibca-paris | 46 jours | roll-pret | 1 au 3 septembre 2027, Grand Palais (ville et lieu inchangés) | http://sibca.fr/ |
+| cannes-yachting-festival | 36 jours | roll-pret | 7 au 12 septembre 2027, Cannes Vieux Port & Port Canto (ville et lieu inchangés, le site précise que le Festival se déroule depuis toujours entre ces deux sites) | https://www.cannesyachtingfestival.com/ |
+| terres-de-jim | 36 jours | non-annoncee | Revérification : salon itinérant, site toujours figé sur l'édition 2026 déjà en base, aucune date ni ville 2027 annoncée | https://www.lesterresdejim.com/ |
+| ideobain | 18 jours | a-arbitrer | Bannière annonce 2 au 5 octobre 2028 (le salon est bisannuel, cohérent) mais changement de lieu : Paris Nord Villepinte → Paris Expo Porte de Versailles, et page incohérente (données structurées encore sur l'édition 2026) | https://www.ideobain.com |
+
+Reste à traiter : 26 fiches périmées
+
+## Lot du 2026-10-12
+
+| Slug | Ancienneté | Statut | Prochaine édition / raison | Source |
+|------|-----------:|--------|------------------------------|--------|
+| preventica-paris | 487 jours | roll-pret | 1 au 3 juin 2027, Paris Expo Porte de Versailles (ville et lieu inchangés, nouvelle page dédiée /salon/paris-2027) | https://www.preventica.com/salon/paris-2027 |
+| salon-energie-habitat-colmar | 203 jours | non-annoncee | Revérification : site toujours figé sur l'édition 2026 déjà en base, aucune date 2027 annoncée | https://www.energiehabitat-colmar.com |
+| luxe-pack-monaco | 12 jours | a-arbitrer | 4 au 6 octobre 2027, Grimaldi Forum (ville et lieu inchangés), mais le salon devient « LUXE PACK WORLD » : arbitrage sur le nom requis | https://www.luxepackmonaco.com |
+| aerospace-test-development-show | 12 jours | a-arbitrer | Page contradictoire : encarts « 28-29 September 2027 » contre texte et Schema.org « 29-30 September 2027 », même lieu (MEETT Toulouse) | https://aerotestdevelopmentshow.com |
+| equipbaie-metalexpo-paris | 11 jours | a-arbitrer | Site figé depuis 2024, annonce la fusion du salon avec Batimat ; arbitrage requis pour savoir si la fiche reste autonome | https://www.equipbaie.com |
+| batimat | 11 jours | a-arbitrer | 2 au 5 octobre 2028 confirmé, mais changement de lieu : Paris Nord Villepinte → Paris Expo Porte de Versailles | https://www.batimat.com |
+
+Reste à traiter : 18 fiches périmées
+
+## Lot du 2026-10-05
+
+| Slug | Ancienneté | Statut | Prochaine édition / raison | Source |
+|------|-----------:|--------|------------------------------|--------|
+| cfia-toulouse | 11 jours | non-annoncee | Site biennal, mentionne "rendez-vous en 2028" sans jour ni mois précis | https://toulouse.cfiaexpo.com/fr |
+| assises-port-du-futur | 11 jours | non-annoncee | Salon itinérant (ville différente chaque année), site figé sur l'édition 2026 à Strasbourg, aucune date ni ville 2027 annoncée | https://www.portdufutur.fr/ |
+| ad2s-bordeaux | 11 jours | non-annoncee | Site biennal entièrement centré sur le bilan 2026, aucune mention de 2027/2028 | https://ad2s-bordeaux.com/index.php/fr/ |
+| sepem-toulouse | 11 jours | non-annoncee | Site biennal, dates publiées pour d'autres villes du réseau SEPEM mais aucune pour Toulouse | https://toulouse.sepem-industries.com/ |
+| silmo-paris | 7 jours | a-arbitrer | Site officiel bloqué par une protection anti-bot (HTTP 403 sur toutes les pages testées), aucun site organisateur alternatif avec des dates 2027 trouvé | https://www.silmoparis.com |
+| natexpo-paris | 6 jours | a-arbitrer | 26 au 28 septembre 2027 annoncés, mais changement de ville et de lieu : Eurexpo Lyon → Paris Expo Porte de Versailles (le salon alterne Paris/Lyon) | https://www.natexpo.com |
+
+Reste à traiter : 11 fiches périmées
+
 ## Lot du 2026-09-28
 
 | Slug | Ancienneté | Statut | Prochaine édition / raison | Source |

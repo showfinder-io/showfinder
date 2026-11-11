@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { getAllPosts, getPostBySlug } from "@/lib/blog";
 import { compileMdxContent } from "@/lib/mdx";
 import { buildAlternates } from "@/lib/i18n-metadata";
@@ -42,6 +42,7 @@ export async function generateMetadata({
 }
 
 export default async function BlogPostPage({ params }: PageProps) {
+  setRequestLocale((await params).locale);
   const { slug, locale } = await params;
   const post = getPostBySlug(slug, locale);
 

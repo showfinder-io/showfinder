@@ -21,6 +21,12 @@ const PUBLISH = process.argv.includes("--publish");
 const HANDOFF = join(process.cwd(), "handoff/cohorte-trafic");
 const slugs = process.argv.slice(2).filter((a) => !a.startsWith("--"));
 
+// Code postal lu dans l'adresse sourcée du handoff quand le writer ne l'a pas
+// isolé (sans lui, le drawer prestataires n'a pas de préfiltre, cf. todo G4ter).
+function postalCodeOf(address: unknown): string | null {
+  return typeof address === "string" ? (address.match(/\b(\d{5})\b/)?.[1] ?? null) : null;
+}
+
 // Renvoie l'id du lieu et ses coordonnées, reportées sur la fiche salon
 // (venue_lat / venue_lng) qu'il s'agisse d'un lieu existant ou créé.
 async function ensureVenue(h: Record<string, unknown>): Promise<{ id: string; lat: number | null; lng: number | null }> {
@@ -31,11 +37,11 @@ async function ensureVenue(h: Record<string, unknown>): Promise<{ id: string; la
   if (!vc) throw new Error(`venue ${venueSlug} introuvable et pas de venue_create`);
   const lat = (vc.lat as number | undefined) ?? null;
   const lng = (vc.lng as number | undefined) ?? null;
-  console.log(`  CREATE venue ${vc.slug} (${vc.name}, ${vc.city}, ${lat}/${lng})`);
+  console.log(`  CREATE venue ${vc.slug} (${vc.name}, ${vc.city}, CP ${vc.postal_code ?? postalCodeOf(vc.address)}, ${lat}/${lng})`);
   if (!APPLY) return { id: "dry-run-venue-id", lat, lng };
   const { data: nv, error } = await sb
     .from("venues")
-    .insert({ slug: vc.slug, name: vc.name, city: vc.city, country: vc.country ?? "FR", address: vc.address ?? null, lat, lng } as never)
+    .insert({ slug: vc.slug, name: vc.name, city: vc.city, country: vc.country ?? "FR", address: vc.address ?? null, postal_code: vc.postal_code ?? postalCodeOf(vc.address), lat, lng } as never)
     .select("id")
     .single();
   if (error) throw new Error(`venue ${vc.slug}: ${error.message}`);

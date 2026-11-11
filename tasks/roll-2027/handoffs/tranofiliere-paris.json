@@ -1,0 +1,25 @@
+{
+  "slug": "tranofiliere-paris",
+  "name": "Tranoï",
+  "status": "a-arbitrer",
+  "checked_at": "2026-11-02",
+  "current": {
+    "start_date": "2026-10-01",
+    "end_date": "2026-10-04",
+    "edition_year": 2026,
+    "city": "Paris",
+    "venue": "Palais de Tokyo"
+  },
+  "next": {
+    "start_date": "2027-03-04",
+    "end_date": "2027-03-07",
+    "edition_year": 2027,
+    "city": "Paris",
+    "venue": "Palais Brongniart"
+  },
+  "source_url": "https://www.tranoi.com",
+  "quote": "TRANOÏ PARIS 4 - 7 MARCH 2027 ... Palais Brongniart, PARIS",
+  "venue_changed": true,
+  "city_changed": false,
+  "notes": "Le site annonce Tranoï Paris Fall/Winter 27-28 du 4 au 7 mars 2027 au Palais Brongniart, alors que la fiche actuelle indique le Palais de Tokyo comme lieu. Changement de lieu constaté (venue_changed=true) : à arbitrer avant tout roll, même si les dates sont claires."
+}

@@ -1,8 +1,8 @@
 {
   "slug": "cannes-yachting-festival",
   "name": "Cannes Yachting Festival",
-  "status": "non-annoncee",
-  "checked_at": "2026-09-14",
+  "status": "roll-pret",
+  "checked_at": "2026-10-19",
   "current": {
     "start_date": "2026-09-08",
     "end_date": "2026-09-13",
@@ -10,10 +10,16 @@
     "city": "Cannes",
     "venue": "Vieux Port de Cannes"
   },
-  "next": null,
+  "next": {
+    "start_date": "2027-09-07",
+    "end_date": "2027-09-12",
+    "edition_year": 2027,
+    "city": "Cannes",
+    "venue": "Vieux Port de Cannes"
+  },
   "source_url": "https://www.cannesyachtingfestival.com/",
-  "quote": null,
+  "quote": "7 -12 sept. 2027 Cannes – Vieux Port & Port Canto",
   "venue_changed": false,
   "city_changed": false,
-  "notes": "Site officiel vivant et à jour sur l'édition 2026 (8-13 septembre, Vieux Port & Port Canto). Aucune date pour 2027 trouvée sur la page d'accueil, infos-pratiques, exposer, espace-exposant, presse, ni dans le sitemap.xml (fr-fr.single-sitemap.xml) : pas de page dédiée à une prochaine édition à ce jour."
+  "notes": "Revérification du 2026-10-19 (handoff précédent du 2026-09-14 avait plus de 28 jours, était alors non-annoncee). La bannière annonce désormais clairement le 7 au 12 septembre 2027 à Cannes. Le site précise 'Vieux Port & Port Canto', mais la page détaille que le Festival se déroule depuis toujours entre ces deux sites ('Réparti entre le Vieux Port et le Port Canto, le Festival réunit...') : pas un changement de lieu, juste un nom plus complet du même site que celui déjà en base."
 }

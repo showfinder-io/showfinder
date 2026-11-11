@@ -1,0 +1,25 @@
+{
+  "slug": "tfwa-world-exhibition",
+  "name": "TFWA World Exhibition & Conference",
+  "status": "roll-pret",
+  "checked_at": "2026-10-26",
+  "current": {
+    "start_date": "2026-09-27",
+    "end_date": "2026-10-01",
+    "edition_year": 2026,
+    "city": "Cannes",
+    "venue": "Palais des Festivals et des Congres"
+  },
+  "next": {
+    "start_date": "2027-10-03",
+    "end_date": "2027-10-07",
+    "edition_year": 2027,
+    "city": "Cannes",
+    "venue": "Palais des Festivals et des Congres"
+  },
+  "source_url": "https://www.tfwa.com/tfwa-world-exhibition-conference",
+  "quote": "Sunday 3 October to Thursday 7 October 2027. All you need to know about duty free and travel retail's global summit held annually in Cannes.",
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "Donnee JSON-LD (schema.org Event) de la page officielle : dates du 3 au 7 octobre 2027 a Cannes, ville identique, ecart cohérent avec frequency annuel. Le nom precis du lieu n'est pas repete mot pour mot sur cette page mais rien n'indique de changement de venue."
+}

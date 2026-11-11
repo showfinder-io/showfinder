@@ -1,3 +1,4 @@
+import { setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -70,6 +71,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function VillePage({ params }: Props) {
+  setRequestLocale((await params).locale);
   const { slug } = await params;
   const city = await findCityBySlug(slug);
 

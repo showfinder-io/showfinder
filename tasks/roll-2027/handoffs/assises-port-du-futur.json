@@ -1,0 +1,19 @@
+{
+  "slug": "assises-port-du-futur",
+  "name": "Assises Port du futur",
+  "status": "non-annoncee",
+  "checked_at": "2026-11-09",
+  "current": {
+    "start_date": "2026-09-23",
+    "end_date": "2026-09-24",
+    "edition_year": 2026,
+    "city": "Strasbourg",
+    "venue": "Gare fluviale de Strasbourg"
+  },
+  "next": null,
+  "source_url": "https://www.portdufutur.fr/",
+  "quote": null,
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "Revérification du handoff du 2026-10-05 (plus de 28 jours). Le site est vivant mais ne présente encore que l'édition 2026 (23-24 septembre à Strasbourg, déjà tenue) : aucune date ni ville n'est annoncée pour une prochaine édition."
+}

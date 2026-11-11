@@ -1,0 +1,19 @@
+{
+  "slug": "cfia-toulouse",
+  "name": "CFIA Toulouse",
+  "status": "non-annoncee",
+  "checked_at": "2026-11-09",
+  "current": {
+    "start_date": "2026-09-22",
+    "end_date": "2026-09-24",
+    "edition_year": 2026,
+    "city": "Toulouse",
+    "venue": "MEETT Toulouse"
+  },
+  "next": null,
+  "source_url": "https://toulouse.cfiaexpo.com/fr",
+  "quote": "& rendez-vous en 2028 !",
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "Revérification du handoff du 2026-10-05 (plus de 28 jours). Le site confirme une prochaine édition en 2028, cohérent avec la fréquence bisannuelle de la fiche, mais aucune date précise (jour/mois) n'est publiée à ce jour."
+}

@@ -1,0 +1,25 @@
+{
+  "slug": "ad2s-bordeaux",
+  "name": "AD2S",
+  "status": "roll-pret",
+  "checked_at": "2026-11-09",
+  "current": {
+    "start_date": "2026-09-22",
+    "end_date": "2026-09-24",
+    "edition_year": 2026,
+    "city": "Mérignac",
+    "venue": "Base aérienne 106"
+  },
+  "next": {
+    "start_date": "2028-09-26",
+    "end_date": "2028-09-28",
+    "edition_year": 2028,
+    "city": "Mérignac",
+    "venue": "Base aérienne 106"
+  },
+  "source_url": "https://www.ad2s-bordeaux.com/infos-pratiques/",
+  "quote": "26-28 septembre 2028 Bordeaux",
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "Revérification du handoff du 2026-10-05 (plus de 28 jours, était alors non-annoncee) : le site publie désormais des dates précises. Écart de 24 mois cohérent avec la fréquence bisannuelle de la fiche. Le site affiche « Bordeaux » comme raccourci de marque (nom de l'événement « AD2S Bordeaux ») pour la Base aérienne 106 à Mérignac : la même page infos pratiques confirme ce lieu exact (« BASE AÉRIENNE 106 - Entrée BEUTRE, Avenue de l'Argonne, 33700 Mérignac ») pour l'édition 2026, sans indication de changement de lieu pour 2028."
+}

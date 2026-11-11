@@ -10,7 +10,8 @@
  */
 import { readFileSync, appendFileSync, existsSync } from "node:fs";
 
-const DIR = "audits/scoring-candidats-2026-09-27";
+// Dossier de travail : variable SCORING_DIR, sinon l'ancien chemin par défaut
+const DIR = process.env.SCORING_DIR ?? "audits/scoring-candidats-2026-09-27";
 const OUT = `${DIR}/jev-results.jsonl`;
 const KEY = process.env.TYPESAFE_API_KEY;
 if (!KEY) throw new Error("TYPESAFE_API_KEY absent de l'environnement");

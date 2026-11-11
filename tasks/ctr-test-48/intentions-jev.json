@@ -1,0 +1,2308 @@
+{
+  "/salons/smcl": {
+    "group": "treated",
+    "model": "jev-1.14.0",
+    "page_impressions": 393,
+    "queries": [
+      {
+        "query": "smcl 2026",
+        "impressions": 97,
+        "clicks": 0,
+        "position": 2.5257731958762886,
+        "intent": "navigationnelle",
+        "confidence": 0.97
+      },
+      {
+        "query": "salon smcl 2026",
+        "impressions": 29,
+        "clicks": 0,
+        "position": 7,
+        "intent": "navigationnelle",
+        "confidence": 0.96
+      },
+      {
+        "query": "salon des maires 2025",
+        "impressions": 28,
+        "clicks": 0,
+        "position": 43.392857142857146,
+        "intent": "navigationnelle",
+        "confidence": 0.73
+      },
+      {
+        "query": "salon des maires et des collectivités locales",
+        "impressions": 28,
+        "clicks": 0,
+        "position": 21.642857142857142,
+        "intent": "navigationnelle",
+        "confidence": 0.99
+      },
+      {
+        "query": "smcl",
+        "impressions": 21,
+        "clicks": 0,
+        "position": 13.333333333333334,
+        "intent": "navigationnelle",
+        "confidence": 1
+      },
+      {
+        "query": "standiste pour le salon smcl 2026",
+        "impressions": 21,
+        "clicks": 0,
+        "position": 13.285714285714286,
+        "intent": "transactionnelle",
+        "confidence": 1
+      },
+      {
+        "query": "badge salon des maires 2026",
+        "impressions": 19,
+        "clicks": 0,
+        "position": 5.7368421052631575,
+        "intent": "informationnelle",
+        "confidence": 0.92
+      },
+      {
+        "query": "salon des maires",
+        "impressions": 15,
+        "clicks": 0,
+        "position": 27.4,
+        "intent": "navigationnelle",
+        "confidence": 0.89
+      },
+      {
+        "query": "inscription salon des maires 2026",
+        "impressions": 11,
+        "clicks": 0,
+        "position": 8.09090909090909,
+        "intent": "informationnelle",
+        "confidence": 0.91
+      },
+      {
+        "query": "salon des maires exposants",
+        "impressions": 10,
+        "clicks": 0,
+        "position": 11.4,
+        "intent": "informationnelle",
+        "confidence": 0.37
+      },
+      {
+        "query": "congrès des maires 2026",
+        "impressions": 7,
+        "clicks": 1,
+        "position": 3,
+        "intent": "informationnelle",
+        "confidence": 0.21
+      },
+      {
+        "query": "salon des maires 2026 exposants",
+        "impressions": 7,
+        "clicks": 0,
+        "position": 9.428571428571429,
+        "intent": "informationnelle",
+        "confidence": 0.56
+      },
+      {
+        "query": "salon des maires 2026",
+        "impressions": 6,
+        "clicks": 0,
+        "position": 17.833333333333332,
+        "intent": "navigationnelle",
+        "confidence": 0.75
+      },
+      {
+        "query": "standiste salon des maires",
+        "impressions": 6,
+        "clicks": 0,
+        "position": 24,
+        "intent": "transactionnelle",
+        "confidence": 0.72
+      },
+      {
+        "query": "date salon des maires 2024",
+        "impressions": 5,
+        "clicks": 0,
+        "position": 35.2,
+        "intent": "informationnelle",
+        "confidence": 0.73
+      },
+      {
+        "query": "salon des collectivités locales",
+        "impressions": 5,
+        "clicks": 0,
+        "position": 22.4,
+        "intent": "navigationnelle",
+        "confidence": 0.49
+      }
+    ]
+  },
+  "/salons/congres-francais-psychiatrie": {
+    "group": "treated",
+    "model": "jev-1.14.0",
+    "page_impressions": 269,
+    "queries": [
+      {
+        "query": "congres psychiatrie strasbourg",
+        "impressions": 49,
+        "clicks": 0,
+        "position": 7,
+        "intent": "navigationnelle",
+        "confidence": 0.81
+      },
+      {
+        "query": "cfp strasbourg 2026",
+        "impressions": 38,
+        "clicks": 0,
+        "position": 7.868421052631579,
+        "intent": "navigationnelle",
+        "confidence": 0.93
+      },
+      {
+        "query": "congres francais de psychiatrie 2026 strasbourg",
+        "impressions": 28,
+        "clicks": 0,
+        "position": 7.178571428571429,
+        "intent": "navigationnelle",
+        "confidence": 0.92
+      },
+      {
+        "query": "cfp strasbourg",
+        "impressions": 26,
+        "clicks": 0,
+        "position": 7,
+        "intent": "navigationnelle",
+        "confidence": 0.97
+      },
+      {
+        "query": "congres psychiatrie strasbourg 2026",
+        "impressions": 17,
+        "clicks": 0,
+        "position": 7,
+        "intent": "navigationnelle",
+        "confidence": 0.83
+      },
+      {
+        "query": "congrès psychiatrie 2026 strasbourg",
+        "impressions": 17,
+        "clicks": 0,
+        "position": 7.117647058823529,
+        "intent": "navigationnelle",
+        "confidence": 0.8
+      },
+      {
+        "query": "congres cfp strasbourg",
+        "impressions": 9,
+        "clicks": 0,
+        "position": 5.777777777777778,
+        "intent": "navigationnelle",
+        "confidence": 0.96
+      },
+      {
+        "query": "cfp psychiatrie",
+        "impressions": 8,
+        "clicks": 0,
+        "position": 2,
+        "intent": "navigationnelle",
+        "confidence": 0.56
+      },
+      {
+        "query": "congrès de psychiatrie strasbourg",
+        "impressions": 8,
+        "clicks": 0,
+        "position": 6.375,
+        "intent": "navigationnelle",
+        "confidence": 0.88
+      },
+      {
+        "query": "cfp 2026 strasbourg",
+        "impressions": 7,
+        "clicks": 0,
+        "position": 7.285714285714286,
+        "intent": "navigationnelle",
+        "confidence": 0.85
+      },
+      {
+        "query": "congres francais de psychiatrie 2026",
+        "impressions": 7,
+        "clicks": 0,
+        "position": 7.857142857142857,
+        "intent": "navigationnelle",
+        "confidence": 0.95
+      },
+      {
+        "query": "congres francais psychiatrie",
+        "impressions": 6,
+        "clicks": 0,
+        "position": 5.166666666666667,
+        "intent": "navigationnelle",
+        "confidence": 0.92
+      }
+    ]
+  },
+  "/salons/paris-sante-femmes": {
+    "group": "treated",
+    "model": "jev-1.14.0",
+    "page_impressions": 456,
+    "queries": [
+      {
+        "query": "paris santé femme 2026",
+        "impressions": 107,
+        "clicks": 0,
+        "position": 6.5233644859813085,
+        "intent": "navigationnelle",
+        "confidence": 0.92
+      },
+      {
+        "query": "paris sante femme",
+        "impressions": 71,
+        "clicks": 0,
+        "position": 6.154929577464789,
+        "intent": "navigationnelle",
+        "confidence": 0.99
+      },
+      {
+        "query": "cngof 2026",
+        "impressions": 67,
+        "clicks": 0,
+        "position": 8.029850746268657,
+        "intent": "navigationnelle",
+        "confidence": 0.45
+      },
+      {
+        "query": "congrès cngof 2026",
+        "impressions": 34,
+        "clicks": 0,
+        "position": 9.029411764705882,
+        "intent": "navigationnelle",
+        "confidence": 0.47
+      },
+      {
+        "query": "congrès paris santé femme 2026",
+        "impressions": 30,
+        "clicks": 0,
+        "position": 8.4,
+        "intent": "navigationnelle",
+        "confidence": 0.81
+      },
+      {
+        "query": "paris santé femme 2026 inscription",
+        "impressions": 28,
+        "clicks": 0,
+        "position": 9.25,
+        "intent": "informationnelle",
+        "confidence": 0.97
+      },
+      {
+        "query": "paris santé femme",
+        "impressions": 23,
+        "clicks": 0,
+        "position": 7.173913043478261,
+        "intent": "navigationnelle",
+        "confidence": 0.93
+      },
+      {
+        "query": "sante femme congres",
+        "impressions": 18,
+        "clicks": 0,
+        "position": 9.055555555555555,
+        "intent": "informationnelle",
+        "confidence": 0.19
+      }
+    ]
+  },
+  "/salons/euronaval-paris": {
+    "group": "treated",
+    "model": "jev-1.14.0",
+    "page_impressions": 101,
+    "queries": [
+      {
+        "query": "euronaval",
+        "impressions": 22,
+        "clicks": 0,
+        "position": 32.90909090909091,
+        "intent": "navigationnelle",
+        "confidence": 1
+      },
+      {
+        "query": "standiste pour le salon euronaval 2026",
+        "impressions": 22,
+        "clicks": 0,
+        "position": 32.68181818181819,
+        "intent": "transactionnelle",
+        "confidence": 1
+      },
+      {
+        "query": "euronaval horaires",
+        "impressions": 16,
+        "clicks": 0,
+        "position": 8,
+        "intent": "informationnelle",
+        "confidence": 1
+      },
+      {
+        "query": "euronaval 2025",
+        "impressions": 8,
+        "clicks": 0,
+        "position": 34.375,
+        "intent": "navigationnelle",
+        "confidence": 0.8
+      },
+      {
+        "query": "salon naval",
+        "impressions": 6,
+        "clicks": 0,
+        "position": 22,
+        "intent": "hors_sujet",
+        "confidence": 0.67
+      },
+      {
+        "query": "euronaval exposants",
+        "impressions": 5,
+        "clicks": 0,
+        "position": 8,
+        "intent": "informationnelle",
+        "confidence": 0.97
+      },
+      {
+        "query": "euronaval 2026 horaires",
+        "impressions": 4,
+        "clicks": 0,
+        "position": 8.75,
+        "intent": "informationnelle",
+        "confidence": 1
+      }
+    ]
+  },
+  "/salons/energaia-montpellier": {
+    "group": "treated",
+    "model": "jev-1.14.0",
+    "page_impressions": 284,
+    "queries": [
+      {
+        "query": "energaia 2026",
+        "impressions": 140,
+        "clicks": 0,
+        "position": 8.514285714285714,
+        "intent": "navigationnelle",
+        "confidence": 0.95
+      },
+      {
+        "query": "energaia montpellier 2026",
+        "impressions": 24,
+        "clicks": 0,
+        "position": 9.166666666666666,
+        "intent": "navigationnelle",
+        "confidence": 0.99
+      },
+      {
+        "query": "energaia",
+        "impressions": 22,
+        "clicks": 0,
+        "position": 20.954545454545453,
+        "intent": "navigationnelle",
+        "confidence": 0.99
+      },
+      {
+        "query": "standiste pour le forum energaïa 2026",
+        "impressions": 21,
+        "clicks": 0,
+        "position": 32.76190476190476,
+        "intent": "transactionnelle",
+        "confidence": 0.99
+      },
+      {
+        "query": "salon energaia 2026",
+        "impressions": 20,
+        "clicks": 0,
+        "position": 9.35,
+        "intent": "navigationnelle",
+        "confidence": 0.92
+      },
+      {
+        "query": "standiste salon energaia",
+        "impressions": 11,
+        "clicks": 0,
+        "position": 13.454545454545455,
+        "intent": "transactionnelle",
+        "confidence": 0.99
+      }
+    ]
+  },
+  "/salons/workplace-meetings-cannes": {
+    "group": "treated",
+    "model": "jev-1.14.0",
+    "page_impressions": 376,
+    "queries": [
+      {
+        "query": "workplace meetings cannes",
+        "impressions": 80,
+        "clicks": 0,
+        "position": 4.825,
+        "intent": "navigationnelle",
+        "confidence": 0.99
+      },
+      {
+        "query": "workplace meeting cannes 2026",
+        "impressions": 65,
+        "clicks": 0,
+        "position": 6.523076923076923,
+        "intent": "navigationnelle",
+        "confidence": 0.93
+      },
+      {
+        "query": "workplace cannes",
+        "impressions": 54,
+        "clicks": 0,
+        "position": 6.203703703703703,
+        "intent": "navigationnelle",
+        "confidence": 0.97
+      },
+      {
+        "query": "workplace meeting cannes",
+        "impressions": 43,
+        "clicks": 0,
+        "position": 5.906976744186046,
+        "intent": "navigationnelle",
+        "confidence": 0.97
+      },
+      {
+        "query": "workplace cannes 2026",
+        "impressions": 38,
+        "clicks": 0,
+        "position": 6.894736842105263,
+        "intent": "navigationnelle",
+        "confidence": 0.97
+      },
+      {
+        "query": "salon workplace cannes",
+        "impressions": 25,
+        "clicks": 0,
+        "position": 6.32,
+        "intent": "navigationnelle",
+        "confidence": 0.93
+      }
+    ]
+  },
+  "/salons/architect-at-work-nantes": {
+    "group": "treated",
+    "model": "jev-1.14.0",
+    "page_impressions": 238,
+    "queries": [
+      {
+        "query": "architect at work nantes 2026",
+        "impressions": 80,
+        "clicks": 0,
+        "position": 9.3,
+        "intent": "navigationnelle",
+        "confidence": 0.89
+      },
+      {
+        "query": "architect@work nantes",
+        "impressions": 45,
+        "clicks": 0,
+        "position": 8.844444444444445,
+        "intent": "navigationnelle",
+        "confidence": 0.99
+      },
+      {
+        "query": "architect at work nantes",
+        "impressions": 37,
+        "clicks": 0,
+        "position": 8.54054054054054,
+        "intent": "navigationnelle",
+        "confidence": 0.99
+      },
+      {
+        "query": "architect work nantes 2026",
+        "impressions": 26,
+        "clicks": 0,
+        "position": 9.615384615384615,
+        "intent": "navigationnelle",
+        "confidence": 0.96
+      },
+      {
+        "query": "architecte at work nantes",
+        "impressions": 25,
+        "clicks": 0,
+        "position": 8.68,
+        "intent": "navigationnelle",
+        "confidence": 0.99
+      }
+    ]
+  },
+  "/en/salons/jdp-paris": {
+    "group": "treated",
+    "model": "jev-1.14.0",
+    "page_impressions": 403,
+    "queries": [
+      {
+        "query": "jdp 2026",
+        "impressions": 142,
+        "clicks": 1,
+        "position": 5.302816901408451,
+        "intent": "navigationnelle",
+        "confidence": 0.87
+      },
+      {
+        "query": "jdp paris 2026",
+        "impressions": 68,
+        "clicks": 0,
+        "position": 4.985294117647059,
+        "intent": "navigationnelle",
+        "confidence": 0.95
+      },
+      {
+        "query": "jdp paris",
+        "impressions": 43,
+        "clicks": 0,
+        "position": 4.534883720930233,
+        "intent": "navigationnelle",
+        "confidence": 1
+      },
+      {
+        "query": "jdp 2026 dates",
+        "impressions": 42,
+        "clicks": 0,
+        "position": 6.619047619047619,
+        "intent": "informationnelle",
+        "confidence": 1
+      },
+      {
+        "query": "jdp 2026 paris",
+        "impressions": 27,
+        "clicks": 0,
+        "position": 5.074074074074074,
+        "intent": "navigationnelle",
+        "confidence": 0.93
+      },
+      {
+        "query": "jdp",
+        "impressions": 15,
+        "clicks": 0,
+        "position": 7.333333333333333,
+        "intent": "navigationnelle",
+        "confidence": 1
+      }
+    ]
+  },
+  "/salons/educatech-expo": {
+    "group": "treated",
+    "model": "jev-1.14.0",
+    "page_impressions": 385,
+    "queries": [
+      {
+        "query": "educatech 2026",
+        "impressions": 185,
+        "clicks": 0,
+        "position": 6.4,
+        "intent": "navigationnelle",
+        "confidence": 0.95
+      },
+      {
+        "query": "educatech expo 2026",
+        "impressions": 76,
+        "clicks": 0,
+        "position": 5.7631578947368425,
+        "intent": "navigationnelle",
+        "confidence": 0.97
+      },
+      {
+        "query": "salon educatech 2026",
+        "impressions": 43,
+        "clicks": 0,
+        "position": 6.465116279069767,
+        "intent": "navigationnelle",
+        "confidence": 0.96
+      },
+      {
+        "query": "standiste pour le salon educatech expo 2026",
+        "impressions": 16,
+        "clicks": 0,
+        "position": 20.5625,
+        "intent": "transactionnelle",
+        "confidence": 0.99
+      }
+    ]
+  },
+  "/salons/viteff": {
+    "group": "treated",
+    "model": "jev-1.14.0",
+    "page_impressions": 522,
+    "queries": [
+      {
+        "query": "viteff 2026",
+        "impressions": 249,
+        "clicks": 0,
+        "position": 10.899598393574298,
+        "intent": "navigationnelle",
+        "confidence": 0.84
+      },
+      {
+        "query": "viteff epernay 2026",
+        "impressions": 122,
+        "clicks": 0,
+        "position": 11.163934426229508,
+        "intent": "navigationnelle",
+        "confidence": 0.89
+      },
+      {
+        "query": "viteff 2027",
+        "impressions": 63,
+        "clicks": 1,
+        "position": 5.079365079365079,
+        "intent": "navigationnelle",
+        "confidence": 0.8
+      }
+    ]
+  },
+  "/salons/jfhod": {
+    "group": "treated",
+    "model": "jev-1.14.0",
+    "page_impressions": 112,
+    "queries": [
+      {
+        "query": "jfhod 2027",
+        "impressions": 33,
+        "clicks": 0,
+        "position": 9.818181818181818,
+        "intent": "navigationnelle",
+        "confidence": 0.84
+      },
+      {
+        "query": "jfhod",
+        "impressions": 23,
+        "clicks": 0,
+        "position": 7.826086956521739,
+        "intent": "navigationnelle",
+        "confidence": 1
+      },
+      {
+        "query": "jfhod 2027 date",
+        "impressions": 19,
+        "clicks": 0,
+        "position": 8.894736842105264,
+        "intent": "informationnelle",
+        "confidence": 1
+      },
+      {
+        "query": "jfod 2027",
+        "impressions": 7,
+        "clicks": 0,
+        "position": 10.285714285714286,
+        "intent": "navigationnelle",
+        "confidence": 0.73
+      },
+      {
+        "query": "jfohd 2027",
+        "impressions": 6,
+        "clicks": 0,
+        "position": 10.833333333333334,
+        "intent": "navigationnelle",
+        "confidence": 0.76
+      },
+      {
+        "query": "gife 2027",
+        "impressions": 5,
+        "clicks": 0,
+        "position": 7,
+        "intent": "hors_sujet",
+        "confidence": 0.88
+      }
+    ]
+  },
+  "/salons/rencontres-amrae": {
+    "group": "treated",
+    "model": "jev-1.14.0",
+    "page_impressions": 336,
+    "queries": [
+      {
+        "query": "amrae 2027",
+        "impressions": 269,
+        "clicks": 0,
+        "position": 9.635687732342008,
+        "intent": "navigationnelle",
+        "confidence": 0.87
+      }
+    ]
+  },
+  "/salons/europack-euromanut-lyon": {
+    "group": "treated",
+    "model": "jev-1.14.0",
+    "page_impressions": 285,
+    "queries": [
+      {
+        "query": "cfia lyon",
+        "impressions": 31,
+        "clicks": 0,
+        "position": 8.64516129032258,
+        "intent": "navigationnelle",
+        "confidence": 0.95
+      },
+      {
+        "query": "salon de l'emballage 2023 lyon",
+        "impressions": 26,
+        "clicks": 0,
+        "position": 6.461538461538462,
+        "intent": "navigationnelle",
+        "confidence": 0.73
+      },
+      {
+        "query": "salon emballage lyon 2026",
+        "impressions": 25,
+        "clicks": 2,
+        "position": 3.84,
+        "intent": "navigationnelle",
+        "confidence": 0.84
+      },
+      {
+        "query": "europack euromanut",
+        "impressions": 24,
+        "clicks": 0,
+        "position": 8.541666666666668,
+        "intent": "navigationnelle",
+        "confidence": 0.97
+      },
+      {
+        "query": "prod&pack 2026",
+        "impressions": 21,
+        "clicks": 1,
+        "position": 4,
+        "intent": "navigationnelle",
+        "confidence": 0.95
+      },
+      {
+        "query": "cfia lyon 2021",
+        "impressions": 21,
+        "clicks": 0,
+        "position": 16.19047619047619,
+        "intent": "navigationnelle",
+        "confidence": 0.92
+      },
+      {
+        "query": "salon packaging lyon",
+        "impressions": 21,
+        "clicks": 0,
+        "position": 24.61904761904762,
+        "intent": "navigationnelle",
+        "confidence": 0.77
+      },
+      {
+        "query": "euromanut",
+        "impressions": 20,
+        "clicks": 0,
+        "position": 7.25,
+        "intent": "navigationnelle",
+        "confidence": 0.93
+      },
+      {
+        "query": "salon de l emballage 2023 lyon",
+        "impressions": 20,
+        "clicks": 0,
+        "position": 7.3,
+        "intent": "navigationnelle",
+        "confidence": 0.69
+      },
+      {
+        "query": "prod and pack 2026",
+        "impressions": 18,
+        "clicks": 0,
+        "position": 5.444444444444445,
+        "intent": "navigationnelle",
+        "confidence": 0.92
+      },
+      {
+        "query": "salon de lemballage 2026 lyon",
+        "impressions": 13,
+        "clicks": 0,
+        "position": 4.461538461538462,
+        "intent": "navigationnelle",
+        "confidence": 0.88
+      }
+    ]
+  },
+  "/salons/iode": {
+    "group": "treated",
+    "model": "jev-1.14.0",
+    "page_impressions": 336,
+    "queries": [
+      {
+        "query": "salon iode",
+        "impressions": 124,
+        "clicks": 0,
+        "position": 4.64516129032258,
+        "intent": "navigationnelle",
+        "confidence": 1
+      },
+      {
+        "query": "salon iode 2027",
+        "impressions": 72,
+        "clicks": 0,
+        "position": 3.9583333333333335,
+        "intent": "navigationnelle",
+        "confidence": 0.95
+      },
+      {
+        "query": "salon iode vannes",
+        "impressions": 63,
+        "clicks": 0,
+        "position": 5.825396825396825,
+        "intent": "navigationnelle",
+        "confidence": 0.99
+      },
+      {
+        "query": "iode salon",
+        "impressions": 41,
+        "clicks": 0,
+        "position": 4.268292682926829,
+        "intent": "navigationnelle",
+        "confidence": 1
+      }
+    ]
+  },
+  "/salons/cosmetagora-paris": {
+    "group": "treated",
+    "model": "jev-1.14.0",
+    "page_impressions": 563,
+    "queries": [
+      {
+        "query": "cosmetagora 2027",
+        "impressions": 354,
+        "clicks": 0,
+        "position": 5.019774011299435,
+        "intent": "navigationnelle",
+        "confidence": 0.81
+      },
+      {
+        "query": "cosmetagora",
+        "impressions": 132,
+        "clicks": 0,
+        "position": 7.659090909090909,
+        "intent": "navigationnelle",
+        "confidence": 0.99
+      }
+    ]
+  },
+  "/salons/cplf": {
+    "group": "treated",
+    "model": "jev-1.14.0",
+    "page_impressions": 1263,
+    "queries": [
+      {
+        "query": "cplf 2027",
+        "impressions": 814,
+        "clicks": 0,
+        "position": 5.986486486486487,
+        "intent": "navigationnelle",
+        "confidence": 0.92
+      },
+      {
+        "query": "congrès pneumologie 2027",
+        "impressions": 63,
+        "clicks": 0,
+        "position": 7.063492063492063,
+        "intent": "navigationnelle",
+        "confidence": 0.79
+      },
+      {
+        "query": "cplf 2027 inscription",
+        "impressions": 46,
+        "clicks": 0,
+        "position": 8.73913043478261,
+        "intent": "informationnelle",
+        "confidence": 0.97
+      },
+      {
+        "query": "congres cplf 2027",
+        "impressions": 43,
+        "clicks": 0,
+        "position": 6.093023255813954,
+        "intent": "navigationnelle",
+        "confidence": 0.89
+      },
+      {
+        "query": "cplf marseille",
+        "impressions": 39,
+        "clicks": 0,
+        "position": 6.435897435897436,
+        "intent": "navigationnelle",
+        "confidence": 0.97
+      },
+      {
+        "query": "inscription cplf 2027",
+        "impressions": 26,
+        "clicks": 0,
+        "position": 7.038461538461538,
+        "intent": "informationnelle",
+        "confidence": 0.97
+      }
+    ]
+  },
+  "/salons/sofins": {
+    "group": "treated",
+    "model": "jev-1.14.0",
+    "page_impressions": 370,
+    "queries": [
+      {
+        "query": "sofins 2027",
+        "impressions": 103,
+        "clicks": 0,
+        "position": 6.203883495145631,
+        "intent": "navigationnelle",
+        "confidence": 0.8
+      },
+      {
+        "query": "sofins 2027 date",
+        "impressions": 94,
+        "clicks": 2,
+        "position": 6.76595744680851,
+        "intent": "informationnelle",
+        "confidence": 1
+      },
+      {
+        "query": "sofins 2026",
+        "impressions": 64,
+        "clicks": 0,
+        "position": 7.265625,
+        "intent": "navigationnelle",
+        "confidence": 0.89
+      },
+      {
+        "query": "sof science olympiad date 2026",
+        "impressions": 40,
+        "clicks": 0,
+        "position": 1,
+        "intent": "hors_sujet",
+        "confidence": 0.43
+      }
+    ]
+  },
+  "/en/salons/museum-connections": {
+    "group": "treated",
+    "model": "jev-1.14.0",
+    "page_impressions": 235,
+    "queries": [
+      {
+        "query": "museum connections 2027",
+        "impressions": 144,
+        "clicks": 0,
+        "position": 5.111111111111111,
+        "intent": "navigationnelle",
+        "confidence": 0.95
+      },
+      {
+        "query": "museum connections",
+        "impressions": 27,
+        "clicks": 0,
+        "position": 5.2592592592592595,
+        "intent": "navigationnelle",
+        "confidence": 1
+      },
+      {
+        "query": "museum connections paris 2027",
+        "impressions": 25,
+        "clicks": 0,
+        "position": 5.16,
+        "intent": "navigationnelle",
+        "confidence": 0.96
+      }
+    ]
+  },
+  "/en/salons/amwc": {
+    "group": "treated",
+    "model": "jev-1.14.0",
+    "page_impressions": 965,
+    "queries": [
+      {
+        "query": "amwc cannes 2027",
+        "impressions": 354,
+        "clicks": 0,
+        "position": 7.443502824858757,
+        "intent": "navigationnelle",
+        "confidence": 0.85
+      },
+      {
+        "query": "amwc cannes",
+        "impressions": 250,
+        "clicks": 1,
+        "position": 6.412,
+        "intent": "navigationnelle",
+        "confidence": 0.99
+      },
+      {
+        "query": "amwc 2027",
+        "impressions": 153,
+        "clicks": 0,
+        "position": 6.686274509803922,
+        "intent": "navigationnelle",
+        "confidence": 0.95
+      },
+      {
+        "query": "amwc 2027 cannes",
+        "impressions": 52,
+        "clicks": 0,
+        "position": 6.25,
+        "intent": "navigationnelle",
+        "confidence": 0.89
+      }
+    ]
+  },
+  "/salons/data-centre-world-paris": {
+    "group": "control",
+    "model": "jev-1.14.0",
+    "page_impressions": 1747,
+    "queries": [
+      {
+        "query": "data center world paris 2026",
+        "impressions": 372,
+        "clicks": 0,
+        "position": 7.381720430107527,
+        "intent": "navigationnelle",
+        "confidence": 0.93
+      },
+      {
+        "query": "salon data center paris 2026",
+        "impressions": 264,
+        "clicks": 0,
+        "position": 6.393939393939394,
+        "intent": "navigationnelle",
+        "confidence": 0.92
+      },
+      {
+        "query": "data centre world paris 2026",
+        "impressions": 131,
+        "clicks": 0,
+        "position": 8.648854961832061,
+        "intent": "navigationnelle",
+        "confidence": 0.96
+      },
+      {
+        "query": "salon du data center 2026",
+        "impressions": 97,
+        "clicks": 0,
+        "position": 6.536082474226804,
+        "intent": "navigationnelle",
+        "confidence": 0.88
+      },
+      {
+        "query": "dcw paris 2026",
+        "impressions": 95,
+        "clicks": 0,
+        "position": 7.957894736842105,
+        "intent": "navigationnelle",
+        "confidence": 0.97
+      },
+      {
+        "query": "data centre world paris",
+        "impressions": 77,
+        "clicks": 0,
+        "position": 8.337662337662337,
+        "intent": "navigationnelle",
+        "confidence": 0.99
+      },
+      {
+        "query": "datacenter world",
+        "impressions": 72,
+        "clicks": 0,
+        "position": 7.972222222222222,
+        "intent": "navigationnelle",
+        "confidence": 0.63
+      },
+      {
+        "query": "data center world paris",
+        "impressions": 61,
+        "clicks": 0,
+        "position": 8.098360655737704,
+        "intent": "navigationnelle",
+        "confidence": 0.96
+      },
+      {
+        "query": "datacenter world paris 2026",
+        "impressions": 60,
+        "clicks": 0,
+        "position": 7.55,
+        "intent": "navigationnelle",
+        "confidence": 0.85
+      },
+      {
+        "query": "standiste pour le salon data centre world 2026",
+        "impressions": 37,
+        "clicks": 0,
+        "position": 5.135135135135135,
+        "intent": "transactionnelle",
+        "confidence": 1
+      },
+      {
+        "query": "salon data center",
+        "impressions": 34,
+        "clicks": 0,
+        "position": 15.441176470588236,
+        "intent": "navigationnelle",
+        "confidence": 0.56
+      },
+      {
+        "query": "salon datacenter paris",
+        "impressions": 34,
+        "clicks": 0,
+        "position": 10.147058823529411,
+        "intent": "navigationnelle",
+        "confidence": 0.87
+      },
+      {
+        "query": "salon data center paris",
+        "impressions": 32,
+        "clicks": 0,
+        "position": 9.59375,
+        "intent": "navigationnelle",
+        "confidence": 0.84
+      },
+      {
+        "query": "dc world paris",
+        "impressions": 29,
+        "clicks": 0,
+        "position": 9.137931034482758,
+        "intent": "navigationnelle",
+        "confidence": 0.95
+      },
+      {
+        "query": "salon dcw 2026",
+        "impressions": 28,
+        "clicks": 0,
+        "position": 4.928571428571429,
+        "intent": "navigationnelle",
+        "confidence": 0.93
+      }
+    ]
+  },
+  "/salons/beauty-profs-marseille": {
+    "group": "control",
+    "model": "jev-1.14.0",
+    "page_impressions": 1875,
+    "queries": [
+      {
+        "query": "beauty prof marseille 2026",
+        "impressions": 1065,
+        "clicks": 3,
+        "position": 8.607511737089201,
+        "intent": "navigationnelle",
+        "confidence": 0.91
+      },
+      {
+        "query": "bp marseille 2026",
+        "impressions": 121,
+        "clicks": 1,
+        "position": 6.851239669421488,
+        "intent": "navigationnelle",
+        "confidence": 0.96
+      },
+      {
+        "query": "beauty profs marseille 2026",
+        "impressions": 74,
+        "clicks": 0,
+        "position": 7.945945945945946,
+        "intent": "navigationnelle",
+        "confidence": 0.95
+      },
+      {
+        "query": "salon esthétique marseille parc chanot",
+        "impressions": 71,
+        "clicks": 0,
+        "position": 8.28169014084507,
+        "intent": "informationnelle",
+        "confidence": 0.6
+      },
+      {
+        "query": "beauty prof",
+        "impressions": 65,
+        "clicks": 0,
+        "position": 8.538461538461538,
+        "intent": "navigationnelle",
+        "confidence": 0.93
+      },
+      {
+        "query": "salon de l'esthétique marseille 2026",
+        "impressions": 62,
+        "clicks": 0,
+        "position": 7.225806451612903,
+        "intent": "navigationnelle",
+        "confidence": 0.41
+      },
+      {
+        "query": "beauty profs marseille",
+        "impressions": 47,
+        "clicks": 0,
+        "position": 5.574468085106383,
+        "intent": "navigationnelle",
+        "confidence": 0.99
+      }
+    ]
+  },
+  "/en/salons/satis": {
+    "group": "control",
+    "model": "jev-1.14.0",
+    "page_impressions": 182,
+    "queries": [
+      {
+        "query": "satis 2026",
+        "impressions": 45,
+        "clicks": 1,
+        "position": 5.311111111111111,
+        "intent": "navigationnelle",
+        "confidence": 0.88
+      },
+      {
+        "query": "satis paris",
+        "impressions": 42,
+        "clicks": 0,
+        "position": 6.166666666666667,
+        "intent": "navigationnelle",
+        "confidence": 0.99
+      },
+      {
+        "query": "satis paris 2026",
+        "impressions": 24,
+        "clicks": 0,
+        "position": 7.208333333333333,
+        "intent": "navigationnelle",
+        "confidence": 0.96
+      },
+      {
+        "query": "satis show",
+        "impressions": 19,
+        "clicks": 0,
+        "position": 4.526315789473684,
+        "intent": "navigationnelle",
+        "confidence": 0.92
+      },
+      {
+        "query": "satis 2026 dates",
+        "impressions": 7,
+        "clicks": 0,
+        "position": 4.142857142857142,
+        "intent": "informationnelle",
+        "confidence": 1
+      },
+      {
+        "query": "satis dates",
+        "impressions": 7,
+        "clicks": 0,
+        "position": 3.142857142857143,
+        "intent": "informationnelle",
+        "confidence": 0.99
+      },
+      {
+        "query": "satis 2026 paris",
+        "impressions": 6,
+        "clicks": 0,
+        "position": 9,
+        "intent": "navigationnelle",
+        "confidence": 0.89
+      }
+    ]
+  },
+  "/salons/salon-alpin": {
+    "group": "control",
+    "model": "jev-1.14.0",
+    "page_impressions": 623,
+    "queries": [
+      {
+        "query": "salon alpin albertville 2026",
+        "impressions": 432,
+        "clicks": 0,
+        "position": 8.965277777777779,
+        "intent": "navigationnelle",
+        "confidence": 0.92
+      },
+      {
+        "query": "salon alpin 2026",
+        "impressions": 116,
+        "clicks": 0,
+        "position": 9.086206896551724,
+        "intent": "navigationnelle",
+        "confidence": 0.93
+      }
+    ]
+  },
+  "/salons/congres-francais-urologie": {
+    "group": "control",
+    "model": "jev-1.14.0",
+    "page_impressions": 247,
+    "queries": [
+      {
+        "query": "congres urologie paris 2026",
+        "impressions": 35,
+        "clicks": 0,
+        "position": 9.057142857142857,
+        "intent": "navigationnelle",
+        "confidence": 0.64
+      },
+      {
+        "query": "programme cfu 2026",
+        "impressions": 17,
+        "clicks": 1,
+        "position": 7.470588235294118,
+        "intent": "informationnelle",
+        "confidence": 1
+      },
+      {
+        "query": "cfu paris 2026",
+        "impressions": 15,
+        "clicks": 0,
+        "position": 6.2,
+        "intent": "navigationnelle",
+        "confidence": 0.88
+      },
+      {
+        "query": "congrès urologie",
+        "impressions": 15,
+        "clicks": 0,
+        "position": 28.866666666666667,
+        "intent": "informationnelle",
+        "confidence": 0.19
+      },
+      {
+        "query": "cfu 2026 urologie",
+        "impressions": 13,
+        "clicks": 0,
+        "position": 9.615384615384615,
+        "intent": "navigationnelle",
+        "confidence": 0.79
+      },
+      {
+        "query": "congrès urologie 2026",
+        "impressions": 12,
+        "clicks": 0,
+        "position": 11.083333333333334,
+        "intent": "navigationnelle",
+        "confidence": 0.49
+      },
+      {
+        "query": "cfu paris",
+        "impressions": 11,
+        "clicks": 0,
+        "position": 4.727272727272727,
+        "intent": "navigationnelle",
+        "confidence": 0.96
+      },
+      {
+        "query": "cfu urologie",
+        "impressions": 10,
+        "clicks": 0,
+        "position": 7.5,
+        "intent": "navigationnelle",
+        "confidence": 0.85
+      },
+      {
+        "query": "congres francais d'urologie",
+        "impressions": 10,
+        "clicks": 0,
+        "position": 10,
+        "intent": "navigationnelle",
+        "confidence": 0.97
+      },
+      {
+        "query": "congrès cfu 2026",
+        "impressions": 9,
+        "clicks": 0,
+        "position": 5.888888888888889,
+        "intent": "navigationnelle",
+        "confidence": 0.71
+      },
+      {
+        "query": "congres cfu",
+        "impressions": 7,
+        "clicks": 0,
+        "position": 6.428571428571429,
+        "intent": "navigationnelle",
+        "confidence": 0.85
+      },
+      {
+        "query": "congrès cfu",
+        "impressions": 7,
+        "clicks": 0,
+        "position": 6.714285714285714,
+        "intent": "navigationnelle",
+        "confidence": 0.8
+      },
+      {
+        "query": "cfu 2026",
+        "impressions": 6,
+        "clicks": 0,
+        "position": 7.666666666666667,
+        "intent": "navigationnelle",
+        "confidence": 0.89
+      },
+      {
+        "query": "cfu 2026 programme",
+        "impressions": 6,
+        "clicks": 0,
+        "position": 7,
+        "intent": "informationnelle",
+        "confidence": 0.99
+      },
+      {
+        "query": "congres uro 2026",
+        "impressions": 6,
+        "clicks": 0,
+        "position": 8.833333333333332,
+        "intent": "navigationnelle",
+        "confidence": 0.32
+      },
+      {
+        "query": "congrès urologie 2026 paris",
+        "impressions": 6,
+        "clicks": 0,
+        "position": 9.666666666666666,
+        "intent": "navigationnelle",
+        "confidence": 0.57
+      },
+      {
+        "query": "cfu congres 2026",
+        "impressions": 5,
+        "clicks": 0,
+        "position": 9.2,
+        "intent": "navigationnelle",
+        "confidence": 0.56
+      },
+      {
+        "query": "congrès afu 2026",
+        "impressions": 5,
+        "clicks": 0,
+        "position": 9.6,
+        "intent": "hors_sujet",
+        "confidence": 0.32
+      },
+      {
+        "query": "afu congres 2026",
+        "impressions": 4,
+        "clicks": 0,
+        "position": 9,
+        "intent": "hors_sujet",
+        "confidence": 0.33
+      }
+    ]
+  },
+  "/salons/carrefour-pathologie": {
+    "group": "control",
+    "model": "jev-1.14.0",
+    "page_impressions": 492,
+    "queries": [
+      {
+        "query": "carrefour pathologie 2026",
+        "impressions": 127,
+        "clicks": 0,
+        "position": 6.574803149606299,
+        "intent": "navigationnelle",
+        "confidence": 0.89
+      },
+      {
+        "query": "carrefour pathologie",
+        "impressions": 122,
+        "clicks": 0,
+        "position": 7.557377049180328,
+        "intent": "navigationnelle",
+        "confidence": 0.99
+      },
+      {
+        "query": "carrefour de pathologie 2026",
+        "impressions": 78,
+        "clicks": 0,
+        "position": 6.961538461538462,
+        "intent": "navigationnelle",
+        "confidence": 0.93
+      },
+      {
+        "query": "programme carrefour pathologie 2026",
+        "impressions": 48,
+        "clicks": 1,
+        "position": 6.479166666666667,
+        "intent": "informationnelle",
+        "confidence": 1
+      },
+      {
+        "query": "carrefour pathologie 2026 programme",
+        "impressions": 39,
+        "clicks": 1,
+        "position": 5.512820512820513,
+        "intent": "informationnelle",
+        "confidence": 1
+      }
+    ]
+  },
+  "/en/salons/congres-sofcot": {
+    "group": "control",
+    "model": "jev-1.14.0",
+    "page_impressions": 178,
+    "queries": [
+      {
+        "query": "sofcot 2026",
+        "impressions": 88,
+        "clicks": 0,
+        "position": 8.71590909090909,
+        "intent": "navigationnelle",
+        "confidence": 0.91
+      },
+      {
+        "query": "sofcot congress",
+        "impressions": 22,
+        "clicks": 0,
+        "position": 6.409090909090909,
+        "intent": "navigationnelle",
+        "confidence": 0.97
+      },
+      {
+        "query": "sofcot 2026 cannes",
+        "impressions": 14,
+        "clicks": 0,
+        "position": 8.642857142857142,
+        "intent": "navigationnelle",
+        "confidence": 0.95
+      },
+      {
+        "query": "sofcot 2027",
+        "impressions": 10,
+        "clicks": 0,
+        "position": 7.9,
+        "intent": "navigationnelle",
+        "confidence": 0.53
+      },
+      {
+        "query": "sofcot 2026 programme",
+        "impressions": 8,
+        "clicks": 0,
+        "position": 8.25,
+        "intent": "informationnelle",
+        "confidence": 1
+      },
+      {
+        "query": "sofcot cannes",
+        "impressions": 6,
+        "clicks": 0,
+        "position": 8,
+        "intent": "navigationnelle",
+        "confidence": 0.97
+      }
+    ]
+  },
+  "/salons/satis": {
+    "group": "control",
+    "model": "jev-1.14.0",
+    "page_impressions": 316,
+    "queries": [
+      {
+        "query": "salon satis",
+        "impressions": 89,
+        "clicks": 0,
+        "position": 7.101123595505618,
+        "intent": "navigationnelle",
+        "confidence": 0.95
+      },
+      {
+        "query": "satis salon",
+        "impressions": 55,
+        "clicks": 0,
+        "position": 7.5636363636363635,
+        "intent": "navigationnelle",
+        "confidence": 0.97
+      },
+      {
+        "query": "satis paris",
+        "impressions": 44,
+        "clicks": 0,
+        "position": 8.363636363636363,
+        "intent": "navigationnelle",
+        "confidence": 0.99
+      },
+      {
+        "query": "satis 2026",
+        "impressions": 15,
+        "clicks": 0,
+        "position": 9.466666666666667,
+        "intent": "navigationnelle",
+        "confidence": 0.8
+      },
+      {
+        "query": "satis date",
+        "impressions": 15,
+        "clicks": 0,
+        "position": 6.8,
+        "intent": "informationnelle",
+        "confidence": 0.99
+      },
+      {
+        "query": "satis 2026 dates",
+        "impressions": 14,
+        "clicks": 0,
+        "position": 6.071428571428571,
+        "intent": "informationnelle",
+        "confidence": 1
+      },
+      {
+        "query": "satis salon audiovisuel",
+        "impressions": 14,
+        "clicks": 0,
+        "position": 6.571428571428571,
+        "intent": "navigationnelle",
+        "confidence": 0.56
+      },
+      {
+        "query": "satis",
+        "impressions": 11,
+        "clicks": 0,
+        "position": 27.363636363636363,
+        "intent": "navigationnelle",
+        "confidence": 0.99
+      }
+    ]
+  },
+  "/salons/jdp-paris": {
+    "group": "control",
+    "model": "jev-1.14.0",
+    "page_impressions": 695,
+    "queries": [
+      {
+        "query": "jdp 2026",
+        "impressions": 182,
+        "clicks": 0,
+        "position": 6.774725274725275,
+        "intent": "navigationnelle",
+        "confidence": 0.88
+      },
+      {
+        "query": "journées dermatologiques de paris 2026",
+        "impressions": 49,
+        "clicks": 0,
+        "position": 6.755102040816326,
+        "intent": "navigationnelle",
+        "confidence": 0.87
+      },
+      {
+        "query": "date jdp 2026",
+        "impressions": 40,
+        "clicks": 0,
+        "position": 8.025,
+        "intent": "informationnelle",
+        "confidence": 1
+      },
+      {
+        "query": "programme jdp 2026",
+        "impressions": 28,
+        "clicks": 0,
+        "position": 6.464285714285714,
+        "intent": "informationnelle",
+        "confidence": 1
+      },
+      {
+        "query": "jdp 2027",
+        "impressions": 27,
+        "clicks": 0,
+        "position": 1.2592592592592593,
+        "intent": "navigationnelle",
+        "confidence": 0.67
+      },
+      {
+        "query": "jdp 2026 inscription",
+        "impressions": 26,
+        "clicks": 0,
+        "position": 9.192307692307692,
+        "intent": "informationnelle",
+        "confidence": 0.97
+      },
+      {
+        "query": "jdp paris 2026",
+        "impressions": 26,
+        "clicks": 0,
+        "position": 5.884615384615385,
+        "intent": "navigationnelle",
+        "confidence": 0.93
+      },
+      {
+        "query": "congrès jdp 2026",
+        "impressions": 25,
+        "clicks": 0,
+        "position": 4.32,
+        "intent": "navigationnelle",
+        "confidence": 0.51
+      },
+      {
+        "query": "jdp paris",
+        "impressions": 22,
+        "clicks": 0,
+        "position": 7,
+        "intent": "navigationnelle",
+        "confidence": 0.93
+      },
+      {
+        "query": "jdp paris 2027",
+        "impressions": 19,
+        "clicks": 1,
+        "position": 2.947368421052632,
+        "intent": "navigationnelle",
+        "confidence": 0.83
+      },
+      {
+        "query": "jdp2026",
+        "impressions": 19,
+        "clicks": 0,
+        "position": 6.631578947368421,
+        "intent": "navigationnelle",
+        "confidence": 0.85
+      },
+      {
+        "query": "jdp 2026 programme",
+        "impressions": 17,
+        "clicks": 0,
+        "position": 7.235294117647059,
+        "intent": "informationnelle",
+        "confidence": 0.99
+      },
+      {
+        "query": "standiste pour le salon jdp 2026",
+        "impressions": 13,
+        "clicks": 0,
+        "position": 8.307692307692307,
+        "intent": "transactionnelle",
+        "confidence": 0.97
+      },
+      {
+        "query": "journee dermatologique de paris 2026",
+        "impressions": 12,
+        "clicks": 0,
+        "position": 6.916666666666667,
+        "intent": "navigationnelle",
+        "confidence": 0.45
+      },
+      {
+        "query": "journées dermatologiques de paris",
+        "impressions": 12,
+        "clicks": 0,
+        "position": 6.333333333333333,
+        "intent": "navigationnelle",
+        "confidence": 0.84
+      },
+      {
+        "query": "standiste pour le salon jird 2026",
+        "impressions": 11,
+        "clicks": 0,
+        "position": 34.45454545454545,
+        "intent": "transactionnelle",
+        "confidence": 0.55
+      },
+      {
+        "query": "jdp",
+        "impressions": 10,
+        "clicks": 0,
+        "position": 13.4,
+        "intent": "navigationnelle",
+        "confidence": 0.65
+      },
+      {
+        "query": "jdp dermatologie",
+        "impressions": 10,
+        "clicks": 0,
+        "position": 8.6,
+        "intent": "navigationnelle",
+        "confidence": 0.49
+      },
+      {
+        "query": "jdp 2026 paris",
+        "impressions": 9,
+        "clicks": 0,
+        "position": 7.444444444444445,
+        "intent": "navigationnelle",
+        "confidence": 0.79
+      }
+    ]
+  },
+  "/salons/congres-sfd": {
+    "group": "control",
+    "model": "jev-1.14.0",
+    "page_impressions": 2138,
+    "queries": [
+      {
+        "query": "sfd 2027",
+        "impressions": 1168,
+        "clicks": 5,
+        "position": 7.346746575342466,
+        "intent": "navigationnelle",
+        "confidence": 0.91
+      },
+      {
+        "query": "congrès sfd 2027",
+        "impressions": 246,
+        "clicks": 2,
+        "position": 6.686991869918699,
+        "intent": "navigationnelle",
+        "confidence": 0.92
+      },
+      {
+        "query": "sfd 2027 lille",
+        "impressions": 146,
+        "clicks": 3,
+        "position": 5.013698630136986,
+        "intent": "navigationnelle",
+        "confidence": 0.96
+      },
+      {
+        "query": "sfd lille 2027",
+        "impressions": 127,
+        "clicks": 0,
+        "position": 4.307086614173228,
+        "intent": "navigationnelle",
+        "confidence": 0.96
+      },
+      {
+        "query": "sfd lille",
+        "impressions": 61,
+        "clicks": 1,
+        "position": 6.934426229508197,
+        "intent": "navigationnelle",
+        "confidence": 0.97
+      }
+    ]
+  },
+  "/salons/euroforest": {
+    "group": "control",
+    "model": "jev-1.14.0",
+    "page_impressions": 470,
+    "queries": [
+      {
+        "query": "salon forestier 2027",
+        "impressions": 92,
+        "clicks": 0,
+        "position": 9.75,
+        "intent": "navigationnelle",
+        "confidence": 0.51
+      },
+      {
+        "query": "euroforest saint bonnet de joux",
+        "impressions": 79,
+        "clicks": 0,
+        "position": 11.139240506329115,
+        "intent": "navigationnelle",
+        "confidence": 0.99
+      },
+      {
+        "query": "euroforest 2027 date",
+        "impressions": 76,
+        "clicks": 2,
+        "position": 10.644736842105264,
+        "intent": "informationnelle",
+        "confidence": 1
+      },
+      {
+        "query": "euroforest 2027 lieu",
+        "impressions": 70,
+        "clicks": 0,
+        "position": 10.457142857142857,
+        "intent": "informationnelle",
+        "confidence": 1
+      },
+      {
+        "query": "euro forest",
+        "impressions": 35,
+        "clicks": 0,
+        "position": 11.228571428571428,
+        "intent": "navigationnelle",
+        "confidence": 0.87
+      },
+      {
+        "query": "euroforest",
+        "impressions": 34,
+        "clicks": 0,
+        "position": 9.058823529411764,
+        "intent": "navigationnelle",
+        "confidence": 1
+      }
+    ]
+  },
+  "/salons/congres-des-audioprothesistes": {
+    "group": "control",
+    "model": "jev-1.14.0",
+    "page_impressions": 169,
+    "queries": [
+      {
+        "query": "congres audioprothesiste 2027",
+        "impressions": 67,
+        "clicks": 1,
+        "position": 4.343283582089552,
+        "intent": "navigationnelle",
+        "confidence": 0.91
+      },
+      {
+        "query": "congrès audioprothésiste 2027",
+        "impressions": 26,
+        "clicks": 0,
+        "position": 5,
+        "intent": "navigationnelle",
+        "confidence": 0.91
+      },
+      {
+        "query": "congres des audioprothesistes",
+        "impressions": 21,
+        "clicks": 0,
+        "position": 8.095238095238095,
+        "intent": "navigationnelle",
+        "confidence": 0.99
+      },
+      {
+        "query": "agenda audioprothésiste",
+        "impressions": 16,
+        "clicks": 0,
+        "position": 22.5,
+        "intent": "informationnelle",
+        "confidence": 0.93
+      },
+      {
+        "query": "congrès des audioprothésistes 2027",
+        "impressions": 15,
+        "clicks": 0,
+        "position": 4.266666666666667,
+        "intent": "navigationnelle",
+        "confidence": 0.88
+      }
+    ]
+  },
+  "/salons/devoxx-france": {
+    "group": "control",
+    "model": "jev-1.14.0",
+    "page_impressions": 466,
+    "queries": [
+      {
+        "query": "devoxx 2027",
+        "impressions": 325,
+        "clicks": 1,
+        "position": 6,
+        "intent": "navigationnelle",
+        "confidence": 0.81
+      },
+      {
+        "query": "devoxx france 2027",
+        "impressions": 67,
+        "clicks": 1,
+        "position": 6.08955223880597,
+        "intent": "navigationnelle",
+        "confidence": 0.88
+      }
+    ]
+  },
+  "/salons/sival-angers": {
+    "group": "control",
+    "model": "jev-1.14.0",
+    "page_impressions": 339,
+    "queries": [
+      {
+        "query": "sival 2027",
+        "impressions": 204,
+        "clicks": 0,
+        "position": 7.200980392156863,
+        "intent": "navigationnelle",
+        "confidence": 0.95
+      },
+      {
+        "query": "sival angers 2027",
+        "impressions": 31,
+        "clicks": 0,
+        "position": 8.419354838709676,
+        "intent": "navigationnelle",
+        "confidence": 0.96
+      },
+      {
+        "query": "sival",
+        "impressions": 18,
+        "clicks": 0,
+        "position": 27.11111111111111,
+        "intent": "navigationnelle",
+        "confidence": 1
+      },
+      {
+        "query": "sival 2027 angers",
+        "impressions": 16,
+        "clicks": 0,
+        "position": 6.5625,
+        "intent": "navigationnelle",
+        "confidence": 0.96
+      },
+      {
+        "query": "salon du végétal 2027",
+        "impressions": 15,
+        "clicks": 0,
+        "position": 6.4,
+        "intent": "navigationnelle",
+        "confidence": 0.41
+      }
+    ]
+  },
+  "/salons/innovagri": {
+    "group": "control",
+    "model": "jev-1.14.0",
+    "page_impressions": 372,
+    "queries": [
+      {
+        "query": "innovagri 2027",
+        "impressions": 128,
+        "clicks": 1,
+        "position": 8.828125,
+        "intent": "navigationnelle",
+        "confidence": 0.92
+      },
+      {
+        "query": "innov agri 2027",
+        "impressions": 116,
+        "clicks": 1,
+        "position": 9.198275862068966,
+        "intent": "navigationnelle",
+        "confidence": 0.93
+      },
+      {
+        "query": "innov agri 2027 lieu",
+        "impressions": 16,
+        "clicks": 0,
+        "position": 6.6875,
+        "intent": "informationnelle",
+        "confidence": 0.97
+      },
+      {
+        "query": "innov-agri 2027",
+        "impressions": 16,
+        "clicks": 0,
+        "position": 9.5625,
+        "intent": "navigationnelle",
+        "confidence": 0.96
+      },
+      {
+        "query": "innovagri",
+        "impressions": 13,
+        "clicks": 0,
+        "position": 11.923076923076923,
+        "intent": "navigationnelle",
+        "confidence": 0.99
+      },
+      {
+        "query": "innov agri",
+        "impressions": 11,
+        "clicks": 0,
+        "position": 17.454545454545453,
+        "intent": "navigationnelle",
+        "confidence": 0.96
+      }
+    ]
+  },
+  "/salons/ces-las-vegas": {
+    "group": "control",
+    "model": "jev-1.14.0",
+    "page_impressions": 284,
+    "queries": [
+      {
+        "query": "ces 2027 date",
+        "impressions": 79,
+        "clicks": 0,
+        "position": 7.1265822784810124,
+        "intent": "informationnelle",
+        "confidence": 1
+      },
+      {
+        "query": "ces 2027",
+        "impressions": 45,
+        "clicks": 0,
+        "position": 9.688888888888888,
+        "intent": "navigationnelle",
+        "confidence": 0.77
+      },
+      {
+        "query": "ces las vegas",
+        "impressions": 40,
+        "clicks": 0,
+        "position": 23.325,
+        "intent": "navigationnelle",
+        "confidence": 0.97
+      },
+      {
+        "query": "date ces 2027",
+        "impressions": 37,
+        "clicks": 0,
+        "position": 7.108108108108108,
+        "intent": "informationnelle",
+        "confidence": 1
+      },
+      {
+        "query": "ces las vegas 2018",
+        "impressions": 21,
+        "clicks": 0,
+        "position": 44.476190476190474,
+        "intent": "navigationnelle",
+        "confidence": 0.51
+      },
+      {
+        "query": "ces las vegas 2027",
+        "impressions": 8,
+        "clicks": 0,
+        "position": 18.125,
+        "intent": "navigationnelle",
+        "confidence": 0.83
+      }
+    ]
+  },
+  "/salons/salon-des-vins-de-loire": {
+    "group": "control",
+    "model": "jev-1.14.0",
+    "page_impressions": 357,
+    "queries": [
+      {
+        "query": "salon des vins de loire 2027",
+        "impressions": 172,
+        "clicks": 0,
+        "position": 6.133720930232558,
+        "intent": "navigationnelle",
+        "confidence": 0.84
+      },
+      {
+        "query": "salon des vins angers 2027",
+        "impressions": 41,
+        "clicks": 0,
+        "position": 6.341463414634147,
+        "intent": "navigationnelle",
+        "confidence": 0.88
+      },
+      {
+        "query": "la levée de la loire 2027",
+        "impressions": 31,
+        "clicks": 0,
+        "position": 9.64516129032258,
+        "intent": "hors_sujet",
+        "confidence": 0.83
+      },
+      {
+        "query": "salon vin angers 2027",
+        "impressions": 29,
+        "clicks": 0,
+        "position": 6.620689655172414,
+        "intent": "navigationnelle",
+        "confidence": 0.92
+      },
+      {
+        "query": "salon des vins de loire",
+        "impressions": 21,
+        "clicks": 0,
+        "position": 7.857142857142857,
+        "intent": "navigationnelle",
+        "confidence": 0.99
+      }
+    ]
+  },
+  "/salons/europropre": {
+    "group": "control",
+    "model": "jev-1.14.0",
+    "page_impressions": 344,
+    "queries": [
+      {
+        "query": "europropre 2027",
+        "impressions": 123,
+        "clicks": 0,
+        "position": 5.560975609756097,
+        "intent": "navigationnelle",
+        "confidence": 0.89
+      },
+      {
+        "query": "salon europropre 2027",
+        "impressions": 44,
+        "clicks": 0,
+        "position": 5,
+        "intent": "navigationnelle",
+        "confidence": 0.93
+      },
+      {
+        "query": "salon du nettoyage paris 2027",
+        "impressions": 40,
+        "clicks": 1,
+        "position": 5.5,
+        "intent": "navigationnelle",
+        "confidence": 0.57
+      },
+      {
+        "query": "europropre service",
+        "impressions": 25,
+        "clicks": 0,
+        "position": 23.64,
+        "intent": "informationnelle",
+        "confidence": 0.35
+      },
+      {
+        "query": "salon du nettoyage paris",
+        "impressions": 25,
+        "clicks": 0,
+        "position": 21.4,
+        "intent": "navigationnelle",
+        "confidence": 0.49
+      },
+      {
+        "query": "salon de la propreté",
+        "impressions": 24,
+        "clicks": 0,
+        "position": 30.875,
+        "intent": "navigationnelle",
+        "confidence": 0.25
+      }
+    ]
+  },
+  "/salons/exphotel-bordeaux": {
+    "group": "control",
+    "model": "jev-1.14.0",
+    "page_impressions": 222,
+    "queries": [
+      {
+        "query": "exphotel",
+        "impressions": 62,
+        "clicks": 0,
+        "position": 6.806451612903226,
+        "intent": "navigationnelle",
+        "confidence": 1
+      },
+      {
+        "query": "exp'hotel bordeaux",
+        "impressions": 27,
+        "clicks": 0,
+        "position": 7.37037037037037,
+        "intent": "navigationnelle",
+        "confidence": 1
+      },
+      {
+        "query": "exphotel 2026",
+        "impressions": 24,
+        "clicks": 0,
+        "position": 7,
+        "intent": "navigationnelle",
+        "confidence": 0.99
+      },
+      {
+        "query": "exp'hôtel bordeaux 2026",
+        "impressions": 21,
+        "clicks": 0,
+        "position": 5.761904761904762,
+        "intent": "navigationnelle",
+        "confidence": 0.99
+      },
+      {
+        "query": "expo hotel bordeaux",
+        "impressions": 21,
+        "clicks": 0,
+        "position": 7.333333333333333,
+        "intent": "navigationnelle",
+        "confidence": 0.96
+      },
+      {
+        "query": "exphotel 2027",
+        "impressions": 16,
+        "clicks": 0,
+        "position": 3.625,
+        "intent": "navigationnelle",
+        "confidence": 0.93
+      },
+      {
+        "query": "exp'hotel",
+        "impressions": 10,
+        "clicks": 0,
+        "position": 5.9,
+        "intent": "navigationnelle",
+        "confidence": 0.99
+      }
+    ]
+  }
+}

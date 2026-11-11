@@ -1,0 +1,19 @@
+{
+  "slug": "micronora-besancon",
+  "name": "Micronora",
+  "status": "non-annoncee",
+  "checked_at": "2026-11-02",
+  "current": {
+    "start_date": "2026-09-29",
+    "end_date": "2026-10-02",
+    "edition_year": 2026,
+    "city": "Besancon",
+    "venue": "Micropolis Besançon"
+  },
+  "next": null,
+  "source_url": "https://www.micronora.com",
+  "quote": "Du 29 septembre au 02 octobre 2026",
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "Salon biennal. Page d'accueil, page Presse et page Infos pratiques consultées : toutes ne mentionnent que l'édition 2026 (Parc des Expositions Micropolis, Besançon). Aucune date annoncée pour la prochaine édition."
+}

@@ -1,0 +1,25 @@
+{
+  "slug": "luxe-pack-monaco",
+  "name": "Luxe Pack Monaco",
+  "status": "a-arbitrer",
+  "checked_at": "2026-10-12",
+  "current": {
+    "start_date": "2026-09-28",
+    "end_date": "2026-09-30",
+    "edition_year": 2026,
+    "city": "Monaco",
+    "venue": "Grimaldi Forum"
+  },
+  "next": {
+    "start_date": "2027-10-04",
+    "end_date": "2027-10-06",
+    "edition_year": 2027,
+    "city": "Monaco",
+    "venue": "Grimaldi Forum"
+  },
+  "source_url": "https://www.luxepackmonaco.com",
+  "quote": "Grimaldi Forum | 4-6 oct. 2027 / En 2027, LUXE PACK Monaco devient LUXE PACK WORLD et ouvre un nouveau chapitre de son histoire.",
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "Ville et lieu inchangés (Monaco, Grimaldi Forum) et dates confirmées, mais le salon change de nom pour « LUXE PACK WORLD » à partir de 2027. Cette routine ne touche jamais au nom ni au slug : arbitrage humain requis pour décider si la fiche est roulée sous le nom actuel, renommée, ou traitée comme une nouvelle entité."
+}

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { siteConfig } from "@/lib/config";
 import {
   getSalonBySlug,
@@ -111,6 +111,7 @@ function pitchFrom(description: string | null): string | null {
 }
 
 export default async function SalonPage({ params }: Props) {
+  setRequestLocale((await params).locale);
   const { slug, locale } = await params;
   const salon = await getSalonBySlug(slug);
   const t = await getTranslations({ locale, namespace: "salon-detail" });
@@ -119,7 +120,7 @@ export default async function SalonPage({ params }: Props) {
   if (!salon) notFound();
 
   const sectorIds = salon.sectors.map((s) => s.id);
-  const similarSalons = await getSimilarSalons(salon.id, sectorIds, 3);
+  const similarSalons = await getSimilarSalons(salon.id, sectorIds, 3, salon.city);
 
   // MDX éditorial (Bloc 2 → Bloc 9 du modèle Nicolas v3). Présent uniquement
   // pour les fiches Agoris Certified passées par la pipeline éditoriale.

@@ -1,4 +1,3 @@
-import { createClient } from "@/lib/supabase/server";
 import { createStaticClient } from "@/lib/supabase/static";
 import { slugifyCity } from "@/lib/format";
 import { SALON_PUBLIC_COLUMNS } from "@/lib/salon-columns";
@@ -135,7 +134,7 @@ function normalizeSearch(s: string): string {
 }
 
 export async function getSalons(filters: SalonFilters = {}) {
-  const supabase = await createClient();
+  const supabase = createStaticClient();
   const page = filters.page ?? 1;
   const pageSize = filters.pageSize ?? 20;
   const offset = (page - 1) * pageSize;
@@ -256,7 +255,7 @@ export async function getSalonsBySector(
 ) {
   const slugs = sectorSlug.split(",").map((s) => s.trim()).filter(Boolean);
   if (slugs.length === 0) return { salons: [], total: 0, page: 1, pageSize: 20 };
-  const supabase = await createClient();
+  const supabase = createStaticClient();
 
   // Recuperer les IDs des secteurs
   const { data: sectorRows } = await supabase
@@ -285,7 +284,7 @@ async function getSalonsById(
   ids: string[],
   filters: Omit<SalonFilters, "sector"> = {}
 ) {
-  const supabase = await createClient();
+  const supabase = createStaticClient();
   const page = filters.page ?? 1;
   const pageSize = filters.pageSize ?? 20;
   const offset = (page - 1) * pageSize;
@@ -369,7 +368,7 @@ async function getSalonsById(
 }
 
 export async function getSalonBySlug(slug: string) {
-  const supabase = await createClient();
+  const supabase = createStaticClient();
 
   // Select avec `*` : retourne toutes les colonnes y compris les colonnes
   // _en de la Phase 2 i18n (description_en, seo_title_en, seo_description_en).
@@ -417,7 +416,7 @@ export async function getSalonBySlug(slug: string) {
 }
 
 export async function getSectors() {
-  const supabase = await createClient();
+  const supabase = createStaticClient();
 
   // On sélectionne aussi les colonnes _en (Phase 2 i18n) pour que la liste
   // /secteurs puisse afficher le contenu localisé. Le picking FR/EN se fait
@@ -434,7 +433,7 @@ export async function getSectors() {
 }
 
 export async function getCities() {
-  const supabase = await createClient();
+  const supabase = createStaticClient();
 
   const { data, error } = await supabase
     .from("salons")
@@ -450,14 +449,31 @@ export async function getCities() {
   return cities as string[];
 }
 
+// Hash FNV-1a 32 bits : départage stable des salons similaires
+function stableHash(s: string): number {
+  let h = 0x811c9dc5;
+  for (let i = 0; i < s.length; i++) {
+    h ^= s.charCodeAt(i);
+    h = Math.imul(h, 0x01000193);
+  }
+  return h >>> 0;
+}
+
+/**
+ * Salons similaires : à venir d'abord, puis le plus de secteurs partagés, puis
+ * même ville, et un départage stable propre à chaque fiche. Avant le
+ * 2026-10-29, le tri par date seule envoyait les liens de toutes les fiches
+ * d'un secteur vers les 3 mêmes salons (80 liens pour l'un, 0 pour 182 fiches).
+ */
 export async function getSimilarSalons(
   salonId: string,
   sectorIds: string[],
-  limit = 4
+  limit = 4,
+  city: string | null = null
 ) {
   if (sectorIds.length === 0) return [];
 
-  const supabase = await createClient();
+  const supabase = createStaticClient();
 
   // Trouver les salons qui partagent au moins un secteur
   const { data: salonSectors } = await supabase
@@ -466,29 +482,51 @@ export async function getSimilarSalons(
     .in("sector_id", sectorIds)
     .neq("salon_id", salonId);
 
-  const salonIds = [
-    ...new Set((salonSectors ?? []).map((ss) => ss.salon_id)),
-  ];
+  const sharedCount = new Map<string, number>();
+  for (const ss of salonSectors ?? []) {
+    sharedCount.set(ss.salon_id, (sharedCount.get(ss.salon_id) ?? 0) + 1);
+  }
 
-  if (salonIds.length === 0) return [];
+  if (sharedCount.size === 0) return [];
 
   const { data, error } = await supabase
     .from("salons_ordered" as unknown as "salons")
     .select(SALON_LIST_SELECT)
     .eq("status", "published")
-    .in("id", salonIds)
-    .order("sort_key" as never, { ascending: true })
-    .limit(limit);
+    .in("id", [...sharedCount.keys()]);
 
   if (error) throw error;
 
-  return (data ?? []).map((salon) => {
-    const sectors = (salon.salon_sectors as Array<{ sectors: SectorSummary }>)
-      .map((ss) => ss.sectors)
-      .filter(Boolean);
-    const { salon_sectors: _, ...rest } = salon;
-    return { ...rest, sectors } as SalonWithSectors;
-  });
+  const today = new Date().toISOString().slice(0, 10);
+  // Dates inconnues : édition à venir non datée
+  const isUpcoming = (s: { start_date: string | null; end_date: string | null }) =>
+    (s.end_date ?? s.start_date ?? today) >= today;
+
+  return (data ?? [])
+    .map((salon) => {
+      const sectors = (salon.salon_sectors as Array<{ sectors: SectorSummary }>)
+        .map((ss) => ss.sectors)
+        .filter(Boolean);
+      const { salon_sectors: _, ...rest } = salon;
+      return { ...rest, sectors } as SalonWithSectors;
+    })
+    .map((s) => ({
+      s,
+      key: [
+        isUpcoming(s) ? 0 : 1,
+        -(sharedCount.get(s.id) ?? 0),
+        city && s.city === city ? 0 : 1,
+        stableHash(`${salonId}:${s.id}`),
+      ],
+    }))
+    .sort((a, b) => {
+      for (let i = 0; i < a.key.length; i++) {
+        if (a.key[i] !== b.key[i]) return a.key[i] - b.key[i];
+      }
+      return 0;
+    })
+    .slice(0, limit)
+    .map(({ s }) => s);
 }
 
 // Utilise le client statique (pas de cookies) pour generateStaticParams
@@ -536,7 +574,7 @@ export async function getAllOrganizerSlugs(): Promise<string[]> {
  * Null si aucun salon ne correspond au slug.
  */
 export async function getSalonsByOrganizer(slug: string) {
-  const supabase = await createClient();
+  const supabase = createStaticClient();
   const { data, error } = await supabase
     .from("salons")
     .select("id, organizer_name")
@@ -606,7 +644,7 @@ export type ProviderFilters = {
 };
 
 export async function getProviders(filters: ProviderFilters = {}) {
-  const supabase = await createClient();
+  const supabase = createStaticClient();
   let query = supabase
     .from("providers")
     .select("*")
@@ -622,7 +660,7 @@ export async function getProviders(filters: ProviderFilters = {}) {
 }
 
 export async function getProviderBySlug(slug: string) {
-  const supabase = await createClient();
+  const supabase = createStaticClient();
   const { data, error } = await supabase
     .from("providers")
     .select("*")
@@ -639,7 +677,7 @@ export async function getProviderBySlug(slug: string) {
  * getSalonsByProvider ne sont plus appelées : elles restent pour le futur is_featured payant.
  */
 export async function getProvidersBySalon(salonId: string) {
-  const supabase = await createClient();
+  const supabase = createStaticClient();
   const { data, error } = await supabase
     .from("salon_providers")
     .select("is_featured, providers(*)")
@@ -654,7 +692,7 @@ export async function getProvidersBySalon(salonId: string) {
 
 /** Salons publiés auxquels un prestataire est rattaché (maillage fiche prestataire vers fiches salon). */
 export async function getSalonsByProvider(providerId: string) {
-  const supabase = await createClient();
+  const supabase = createStaticClient();
   const { data, error } = await supabase
     .from("salon_providers")
     .select("salons(slug, name, status)")
@@ -675,7 +713,7 @@ export async function getAllProviderSlugs() {
 
 /** Départements qui comptent au moins un prestataire (régions proposées dans le filtre de zone). */
 export async function getProviderDepartments() {
-  const supabase = await createClient();
+  const supabase = createStaticClient();
   const { data, error } = await supabase
     .from("providers")
     .select("department")
@@ -724,7 +762,7 @@ export async function getAllSectorSlugs() {
 
 // Recuperer un secteur par slug
 export async function getSectorBySlug(slug: string) {
-  const supabase = await createClient();
+  const supabase = createStaticClient();
 
   // Les colonnes _en (Phase 2 i18n) ne sont pas encore dans les types Supabase
   // générés : on utilise select("*") et on cast en SectorRow qui les déclare
@@ -742,7 +780,7 @@ export async function getSectorBySlug(slug: string) {
 
 // Salons filtres par ville
 export async function getSalonsByCity(city: string) {
-  const supabase = await createClient();
+  const supabase = createStaticClient();
 
   const { data, error } = await supabase
     .from("salons_ordered" as unknown as "salons")
@@ -766,7 +804,7 @@ export async function getSalonsByCity(city: string) {
 // décroissant. Sert au maillage interne (bloc "autres villes") et au seuil
 // d'indexabilité des pages ville.
 export async function getCityCounts() {
-  const supabase = await createClient();
+  const supabase = createStaticClient();
 
   const { data, error } = await supabase
     .from("salons")
@@ -841,7 +879,7 @@ export type VenueRow = {
 };
 
 export async function getVenues() {
-  const supabase = await createClient();
+  const supabase = createStaticClient();
 
   const { data, error } = await supabase
     .from("venues")
@@ -854,7 +892,7 @@ export async function getVenues() {
 
 // Lieux d'exposition d'une ville (maillage interne page ville → fiches lieu)
 export async function getVenuesByCity(city: string) {
-  const supabase = await createClient();
+  const supabase = createStaticClient();
 
   const { data, error } = await supabase
     .from("venues")
@@ -870,7 +908,7 @@ export async function getVenuesByCity(city: string) {
 }
 
 export async function getVenueBySlug(slug: string) {
-  const supabase = await createClient();
+  const supabase = createStaticClient();
 
   const { data, error } = await supabase
     .from("venues")
@@ -884,7 +922,7 @@ export async function getVenueBySlug(slug: string) {
 }
 
 export async function getSalonsByVenue(venueId: string) {
-  const supabase = await createClient();
+  const supabase = createStaticClient();
 
   const { data, error } = await supabase
     .from("salons_ordered" as unknown as "salons")
@@ -936,7 +974,7 @@ export async function getReviewsByTarget(
   targetType: "salon" | "provider",
   targetId: string
 ) {
-  const supabase = await createClient();
+  const supabase = createStaticClient();
 
   const { data, error } = await supabase
     .from("reviews")
@@ -953,7 +991,7 @@ export async function getAverageRating(
   targetType: "salon" | "provider",
   targetId: string
 ): Promise<{ average: number; count: number }> {
-  const supabase = await createClient();
+  const supabase = createStaticClient();
 
   const { data, error } = await supabase
     .from("reviews")

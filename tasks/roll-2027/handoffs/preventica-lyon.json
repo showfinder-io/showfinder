@@ -1,0 +1,19 @@
+{
+  "slug": "preventica-lyon",
+  "name": "Preventica Lyon",
+  "status": "non-annoncee",
+  "checked_at": "2026-11-09",
+  "current": {
+    "start_date": "2026-10-06",
+    "end_date": "2026-10-08",
+    "edition_year": 2026,
+    "city": "Lyon",
+    "venue": "Eurexpo Lyon"
+  },
+  "next": null,
+  "source_url": "https://www.preventica.com",
+  "quote": "Les rendez-vous 2027 PARIS 01 > 03 juin MONTPELLIER 28 > 30 sept CASABLANCA 10 > 12 NOV ... Rétrospective LYON 06 > 08 oct 2026",
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "Premier passage (pas de handoff antérieur). Preventica est une marque multi-sites avec une édition par ville à des dates différentes chaque année. Le calendrier 2027 publié sur la page d'accueil ne mentionne que Paris, Montpellier et Casablanca ; Lyon n'apparaît qu'en rétrospective pour l'édition d'octobre 2026 déjà tenue. Aucune date Lyon 2027 n'est annoncée à ce jour."
+}

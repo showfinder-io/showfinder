@@ -1,0 +1,19 @@
+{
+  "slug": "aerospace-test-development-show",
+  "name": "Aerospace Test & Development Show",
+  "status": "a-arbitrer",
+  "checked_at": "2026-10-12",
+  "current": {
+    "start_date": "2026-09-29",
+    "end_date": "2026-09-30",
+    "edition_year": 2026,
+    "city": "Toulouse",
+    "venue": "MEETT Toulouse"
+  },
+  "next": null,
+  "source_url": "https://aerotestdevelopmentshow.com",
+  "quote": "28-29 September 2027, Hall 7, MEETT, Toulouse, France (encart dates, répété deux fois) contre « From 29-30 September 2027 The Aerospace Test and Development Show will bring together » (corps de la page), le balisage Schema.org Event indiquant startDate 2027-09-29T10:00:00Z",
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "Ville et lieu (MEETT Toulouse) confirmés inchangés pour 2027, mais la page se contredit elle-même sur les jours exacts : 28-29 selon les encarts de dates, 29-30 selon le texte éditorial et le balisage Schema.org. Impossible de trancher entre les deux sans contact organisateur."
+}

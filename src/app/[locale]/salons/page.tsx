@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { siteConfig } from "@/lib/config";
 import {
   getSalons,
@@ -73,6 +73,7 @@ export async function generateMetadata({
 }
 
 export default async function SalonsPage({ params: paramsPromise, searchParams }: Props) {
+  setRequestLocale((await paramsPromise).locale);
   const { locale } = await paramsPromise;
   const params = await searchParams;
   const t = await getTranslations({ locale, namespace: "salons" });

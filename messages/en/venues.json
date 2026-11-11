@@ -25,6 +25,11 @@
     "upcomingEmpty": "No upcoming trade shows at this venue at the moment.",
     "pastHeading": "Past trade shows",
     "pastLabelOne": "past trade show",
-    "pastLabelMany": "past trade shows"
+    "pastLabelMany": "past trade shows",
+    "metaTitleUpcoming": "{venue}: {count, plural, one {# upcoming trade show} other {# upcoming trade shows}} and access",
+    "metaTitleNoUpcoming": "{venue}: trade shows, access and practical info",
+    "metaDescriptionUpcoming": "{count, plural, one {# upcoming trade show} other {# upcoming trade shows}}, next: {salon} on {date}.",
+    "venueProvidersHeading": "Suppliers for exhibiting here",
+    "venueProvidersIntro": "The suppliers listed by Agoris to prepare a stand at this venue."
   }
 }

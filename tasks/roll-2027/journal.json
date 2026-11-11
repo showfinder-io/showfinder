@@ -48,16 +48,15 @@
   },
   "innov-agri-ondes": {
     "outcome": "rejected",
-    "at": "2026-09-21",
+    "at": "2026-10-12",
     "from": {
-      "start_date": "2026-09-09",
-      "end_date": "2026-09-10"
+      "start_date": null,
+      "end_date": null
     },
     "to": null,
     "source_url": "https://www.innovagri.com/accueil-grugies",
     "reasons": [
-      "changement de ville ou de lieu : arbitrage humain requis",
-      "ville du handoff (Grugies) différente de la fiche (Ondes)"
+      "fiche introuvable en base"
     ]
   },
   "interfiliere-paris": {
@@ -434,6 +433,124 @@
       "edition_year": 2027
     },
     "source_url": "https://www.space.fr/fr/",
+    "reasons": []
+  },
+  "preventica-paris": {
+    "outcome": "applied",
+    "at": "2026-10-12",
+    "from": {
+      "start_date": "2025-06-10",
+      "end_date": "2025-06-12"
+    },
+    "to": {
+      "start_date": "2027-06-01",
+      "end_date": "2027-06-03",
+      "edition_year": 2027
+    },
+    "source_url": "https://www.preventica.com/salon/paris-2027",
+    "reasons": []
+  },
+  "cannes-yachting-festival": {
+    "outcome": "applied",
+    "at": "2026-10-19",
+    "from": {
+      "start_date": "2026-09-08",
+      "end_date": "2026-09-13"
+    },
+    "to": {
+      "start_date": "2027-09-07",
+      "end_date": "2027-09-12",
+      "edition_year": 2027
+    },
+    "source_url": "https://www.cannesyachtingfestival.com/",
+    "reasons": []
+  },
+  "sibca-paris": {
+    "outcome": "rejected",
+    "at": "2026-10-19",
+    "from": {
+      "start_date": "2026-09-01",
+      "end_date": "2026-09-03"
+    },
+    "to": null,
+    "source_url": "http://sibca.fr/",
+    "reasons": [
+      "source_url absente ou non https"
+    ]
+  },
+  "interclima": {
+    "outcome": "applied",
+    "at": "2026-10-26",
+    "from": {
+      "start_date": "2026-09-28",
+      "end_date": "2026-10-01"
+    },
+    "to": {
+      "start_date": "2028-10-02",
+      "end_date": "2028-10-05",
+      "edition_year": 2028
+    },
+    "source_url": "https://www.interclima.com",
+    "reasons": []
+  },
+  "produrable-paris": {
+    "outcome": "applied",
+    "at": "2026-10-26",
+    "from": {
+      "start_date": "2026-09-30",
+      "end_date": "2026-10-01"
+    },
+    "to": {
+      "start_date": "2027-10-13",
+      "end_date": "2027-10-14",
+      "edition_year": 2027
+    },
+    "source_url": "https://www.produrable.com/",
+    "reasons": []
+  },
+  "tfwa-world-exhibition": {
+    "outcome": "applied",
+    "at": "2026-10-26",
+    "from": {
+      "start_date": "2026-09-27",
+      "end_date": "2026-10-01"
+    },
+    "to": {
+      "start_date": "2027-10-03",
+      "end_date": "2027-10-07",
+      "edition_year": 2027
+    },
+    "source_url": "https://www.tfwa.com/tfwa-world-exhibition-conference",
+    "reasons": []
+  },
+  "premiere-classe": {
+    "outcome": "applied",
+    "at": "2026-11-02",
+    "from": {
+      "start_date": "2026-10-02",
+      "end_date": "2026-10-05"
+    },
+    "to": {
+      "start_date": "2027-03-05",
+      "end_date": "2027-03-08",
+      "edition_year": 2027
+    },
+    "source_url": "https://wsn-events.com/events/premiere-classe",
+    "reasons": []
+  },
+  "ad2s-bordeaux": {
+    "outcome": "applied",
+    "at": "2026-11-09",
+    "from": {
+      "start_date": "2026-09-22",
+      "end_date": "2026-09-24"
+    },
+    "to": {
+      "start_date": "2028-09-26",
+      "end_date": "2028-09-28",
+      "edition_year": 2028
+    },
+    "source_url": "https://www.ad2s-bordeaux.com/infos-pratiques/",
     "reasons": []
   }
 }

@@ -1,0 +1,172 @@
+[
+  {
+    "page": "/en/salons/amwc",
+    "verdict": "a_corriger",
+    "problemes": [
+      {
+        "texte": "the congress leaves Monaco",
+        "regle": "1/7 (severite: mineure)",
+        "preuve": "MDX: « The website does not say whether this move is permanent; the 2028 edition had not been announced at the time of writing. » « leaves » suggere un depart definitif.",
+        "correction_proposee": "AMWC 2027 Cannes: new city after Monaco, who attends (ou « moves to Cannes in 2027 »)."
+      }
+    ]
+  },
+  {
+    "page": "/en/salons/jdp-paris",
+    "verdict": "ok",
+    "problemes": []
+  },
+  {
+    "page": "/en/salons/museum-connections",
+    "verdict": "a_corriger",
+    "problemes": [
+      {
+        "texte": "403 exhibitors (44% international)",
+        "regle": "11 (severite: mineure)",
+        "preuve": "403 est le chiffre de l'edition 2026 (MDX: « 44% of the 403 exhibitors in 2026 »). Dans la description seul « 2026 visitors » porte l'annee; 403 pourrait se lire comme le chiffre de 2027 (HistoryTable 2027: exhibitors « upcoming »; la base met 403 en estimated_exhibitors).",
+        "correction_proposee": "…42% of 2026 visitors from museums and foundations, 403 exhibitors in 2026 (44% international), badge prices. (verifier la limite de 155 caracteres)"
+      }
+    ]
+  },
+  {
+    "page": "/salons/architect-at-work-nantes",
+    "verdict": "a_corriger",
+    "problemes": [
+      {
+        "texte": "Architect@Work Nantes 2026",
+        "regle": "3 (severite: mineure)",
+        "preuve": "Requete dominante: « architect at work nantes 2026 » (80 impr.) ; « architect@work nantes » n'est que 2e (45). Le title ecrit « @ » alors que la requete dominante est tapee « at ».",
+        "correction_proposee": "Soit garder (la marque s'ecrit Architect@Work et Google normalise), soit ajouter « Architect at Work » dans la description. Decision editoriale, pas un fait faux."
+      }
+    ]
+  },
+  {
+    "page": "/salons/congres-francais-psychiatrie",
+    "verdict": "a_corriger",
+    "problemes": [
+      {
+        "texte": "CFP 2026 Strasbourg : congrès de psychiatrie, public, tarifs",
+        "regle": "3",
+        "preuve": "Requetes GSC: « congres psychiatrie strasbourg » 49 (+17+17 variantes) et « congres francais de psychiatrie 2026 strasbourg » 28 = environ 111 impr. en nom complet, contre « cfp strasbourg 2026 » 38 + « cfp strasbourg » 26 + « congres cfp strasbourg » 9 = 73 en sigle. La requete la plus forte est le nom complet, pas le sigle.",
+        "correction_proposee": "Congrès de psychiatrie 2026 Strasbourg (CFP) : public, tarifs (verifier 45-60 car.) ; ou « Congrès Français de Psychiatrie 2026 : Strasbourg, tarifs »."
+      }
+    ]
+  },
+  {
+    "page": "/salons/cosmetagora-paris",
+    "verdict": "ok",
+    "problemes": []
+  },
+  {
+    "page": "/salons/cplf",
+    "verdict": "a_corriger",
+    "problemes": [
+      {
+        "texte": "inscription médecin à 440 € jusqu'au 12 nov.",
+        "regle": "10 (GRAVE)",
+        "preuve": "MDX: « S'inscrire jusqu'au 12 novembre 2026 pour le premier tarif réduit : 440 € TTC pour un médecin ... Jusqu'au 12 janvier 2027, ces tarifs passent à 560 € ». Le tarif et l'echeance expirent le 2026-11-12, avant le 2026-12-31 : faux en SERP des le 13 novembre.",
+        "correction_proposee": "31e CPLF du 29 au 31 janv. 2027 au Parc Chanot : thème du sommeil, tarifs d'inscription médecin, infirmier, interne, 80 partenaires inscrits début octobre. (supprimer 440 € et la date; recompter 130-155 car.)"
+      },
+      {
+        "texte": "80 partenaires inscrits début octobre",
+        "regle": "10/11 (severite: mineure)",
+        "preuve": "MDX: « affiche 80 partenaires au 10 octobre 2026 ; ... la liste s'allonge donc jusqu'au congrès ». Chiffre date, vrai mais perime en pratique pendant la mesure.",
+        "correction_proposee": "Optionnel: remplacer par « liste de partenaires et exposants »."
+      }
+    ]
+  },
+  {
+    "page": "/salons/educatech-expo",
+    "verdict": "ok",
+    "problemes": []
+  },
+  {
+    "page": "/salons/energaia-montpellier",
+    "verdict": "ok",
+    "problemes": []
+  },
+  {
+    "page": "/salons/euronaval-paris",
+    "verdict": "a_corriger",
+    "problemes": [
+      {
+        "texte": "horaires, tarifs des badges, accès RER B (title: horaires, badges et accès)",
+        "regle": "10",
+        "preuve": "Le salon se tient du 3 au 6 nov. 2026 (fin 2026-11-06), soit ~8 semaines avant la fin de la mesure. Les tarifs de badge du MDX sont des fenetres datees: « Tarif standard (10 septembre au 2 novembre) : 110 € TTC ; Tarif sur place (à partir du 3 novembre) : 300 € TTC ». Promesse horaires/badges/acces sans objet apres le 6 nov.",
+        "correction_proposee": "Title/description orientes bilan et vue de decision sans pratique datee, ex. « Euronaval 2026 : 30e édition, Hall 6 à Villepinte, délégations ». Ne citer que des faits du MDX (500+ exposants cibles 2026 avec qualificatif, 150 délégations, 79 pays en 2024 avec annee). Decision du caller si le test CTR doit couvrir l'apres-evenement."
+      }
+    ]
+  },
+  {
+    "page": "/salons/europack-euromanut-lyon",
+    "verdict": "ok",
+    "problemes": []
+  },
+  {
+    "page": "/salons/iode",
+    "verdict": "ok",
+    "problemes": []
+  },
+  {
+    "page": "/salons/jfhod",
+    "verdict": "a_corriger",
+    "problemes": [
+      {
+        "texte": "490 € pour un membre jusqu'au 21 févr.",
+        "regle": "1 (severite: mineure)",
+        "preuve": "MDX: « tarif A, valable jusqu'au 21 février 2027 : 490 euros TTC pour un membre d'un partenaire scientifique à jour de cotisation ». « un membre » seul est ambigu (membre de quoi) et sans annee sur l'echeance (2027).",
+        "correction_proposee": "…490 € pour un membre partenaire jusqu'au 21 févr. 2027… (verifier 130-155 car.). Echeance 21/02/2027 OK vis-a-vis de la regle 10."
+      }
+    ]
+  },
+  {
+    "page": "/salons/paris-sante-femmes",
+    "verdict": "ok",
+    "problemes": []
+  },
+  {
+    "page": "/salons/rencontres-amrae",
+    "verdict": "ok",
+    "problemes": []
+  },
+  {
+    "page": "/salons/smcl",
+    "verdict": "a_corriger",
+    "problemes": [
+      {
+        "texte": "badge gratuit pour élus (title: badge ... accès)",
+        "regle": "10 (severite: mineure, lecture stricte)",
+        "preuve": "Salon du 24 au 26 nov. 2026 (fin avant 2026-12-31): le badge gratuit sur pre-inscription (MDX « gratuit pour les élus et agents territoriaux sur pré-inscription ») devient une offre expiree pendant la mesure. Aussi « 1er salon après les municipales » est elliptique: le MDX dit « premier salon du cycle municipal 2026-2032 » / « premier SMCL post-élections ».",
+        "correction_proposee": "Remplacer par des faits non perimes: « 32e Salon des Maires … premier du cycle municipal 2026-2032, 1 380 exposants en 2025 »."
+      }
+    ]
+  },
+  {
+    "page": "/salons/sofins",
+    "verdict": "ok",
+    "problemes": []
+  },
+  {
+    "page": "/salons/viteff",
+    "verdict": "ok",
+    "problemes": []
+  },
+  {
+    "page": "/salons/workplace-meetings-cannes",
+    "verdict": "a_corriger",
+    "problemes": [
+      {
+        "texte": "24 au 26 nov. 2026 au Palais des Festivals : …",
+        "regle": "6 (severite: mineure)",
+        "preuve": "Phrase sans « Du » initial (« 24 au 26 nov. 2026 »), non grammaticale en francais.",
+        "correction_proposee": "Du 24 au 26 nov. 2026 au Palais des Festivals : … (recompter, 154 car. actuels, limite 155)."
+      },
+      {
+        "texte": "comment candidater ou exposer",
+        "regle": "10 (severite: mineure, lecture stricte)",
+        "preuve": "Evenement du 24 au 26 nov. 2026 (fin avant 2026-12-31); la candidature Hosted Buyers (MDX « Candidater au programme Hosted Buyers ») perd son objet apres l'evenement.",
+        "correction_proposee": "Remplacer par un fait durable du MDX (ex. notes de satisfaction declarees 4,13/5 exposants et 4,64/5 hosted buyers, avec qualificatif « déclarées par l'organisateur »)."
+      }
+    ]
+  }
+]

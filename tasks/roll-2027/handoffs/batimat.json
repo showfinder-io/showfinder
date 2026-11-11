@@ -1,0 +1,25 @@
+{
+  "slug": "batimat",
+  "name": "Batimat",
+  "status": "a-arbitrer",
+  "checked_at": "2026-10-12",
+  "current": {
+    "start_date": "2026-09-28",
+    "end_date": "2026-10-01",
+    "edition_year": 2026,
+    "city": "Paris",
+    "venue": "Paris Nord Villepinte"
+  },
+  "next": {
+    "start_date": "2028-10-02",
+    "end_date": "2028-10-05",
+    "edition_year": 2028,
+    "city": "Paris",
+    "venue": "Paris Expo, Porte de Versailles"
+  },
+  "source_url": "https://www.batimat.com",
+  "quote": "02/10/2028 - 05/10/2028 ... Paris Expo, Porte de Versailles",
+  "venue_changed": true,
+  "city_changed": false,
+  "notes": "Changement de lieu confirmé par le site officiel : Batimat quitte Paris Nord Villepinte pour Paris Expo Porte de Versailles en 2028 (écart bisannuel cohérent avec frequency=bisannuel en base). Règle stricte : venue_changed=true impose a-arbitrer, jamais roll-pret. À noter aussi : la page intègre désormais 3 pavillons dédiés à Equipbaie-Métalexpo (voir handoff equipbaie-metalexpo-paris, fusion des deux salons)."
+}

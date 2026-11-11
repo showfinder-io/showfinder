@@ -1,0 +1,25 @@
+{
+  "slug": "premiere-classe",
+  "name": "Premiere Classe",
+  "status": "roll-pret",
+  "checked_at": "2026-11-02",
+  "current": {
+    "start_date": "2026-10-02",
+    "end_date": "2026-10-05",
+    "edition_year": 2026,
+    "city": "Paris",
+    "venue": "Jardin des Tuileries"
+  },
+  "next": {
+    "start_date": "2027-03-05",
+    "end_date": "2027-03-08",
+    "edition_year": 2027,
+    "city": "Paris",
+    "venue": "Jardin des Tuileries"
+  },
+  "source_url": "https://wsn-events.com/events/premiere-classe",
+  "quote": "05-08 mars 2027 ... Lieu Paris, Jardin des Tuileries",
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "Salon semestriel : la page liste deux prochaines éditions (05-08 mars 2027 et 01-04 octobre 2027), toutes deux à Paris, Jardin des Tuileries. La plus proche de la fin de l'édition actuelle (05-08 mars 2027) est retenue, même ville et même lieu, écart de 5 mois cohérent avec le rythme semestriel."
+}

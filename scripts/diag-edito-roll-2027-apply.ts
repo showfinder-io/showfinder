@@ -10,7 +10,7 @@
  * changé depuis le dump d'entrée. Un champ SEO null à l'entrée reste null.
  *
  * Dry-run par défaut ; --apply pour écrire. Idempotent.
- * Usage : set -a && source .env.local && set +a && ./node_modules/.bin/tsx scripts/diag-edito-roll-2027-apply.ts [--apply] [slug ...]
+ * Usage : set -a && source .env.local && set +a && ./node_modules/.bin/tsx scripts/diag-edito-roll-2027-apply.ts [--apply] [--dir handoff/<chantier>] [slug ...]
  */
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
@@ -18,8 +18,10 @@ import { createClient } from "@supabase/supabase-js";
 
 const sb = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPABASE_SERVICE_ROLE_KEY!);
 const APPLY = process.argv.includes("--apply");
-const ONLY = process.argv.slice(2).filter((a) => !a.startsWith("--"));
-const DIR = join(process.cwd(), "handoff/edito-roll-2027");
+const ONLY = process.argv.slice(2).filter((a, i, all) => !a.startsWith("--") && all[i - 1] !== "--dir");
+// --dir permet de rejouer le même contrôle sur un autre chantier au même format (ex. handoff/edito-sl3c).
+const dirArg = process.argv.indexOf("--dir");
+const DIR = join(process.cwd(), dirArg > 0 ? process.argv[dirArg + 1] : "handoff/edito-roll-2027");
 const SEO_FIELDS = ["seo_title", "seo_description", "seo_title_en", "seo_description_en"] as const;
 
 const published: { salons: string[]; lieux: string[]; secteurs: string[] } = JSON.parse(readFileSync(join(DIR, "published-slugs.json"), "utf8"));
@@ -79,14 +81,15 @@ async function main() {
       if (meta[f] && String(meta[f]).includes("—")) issues.push(`${f} : tiret cadratin`);
     }
 
-    const { data: live, error } = await sb.from("salons").select("editorial_mdx,start_date").eq("slug", slug).single();
+    const { data: live, error } = await sb.from("salons").select("editorial_mdx,start_date,organizer_name").eq("slug", slug).single();
     if (error) throw new Error(`${slug}: ${error.message}`);
-    if (live.editorial_mdx === fr) {
+    const orgPending = !!meta.organizer_name && meta.organizer_name !== live.organizer_name;
+    if (live.editorial_mdx === fr && !orgPending) {
       console.log(`DÉJÀ APPLIQUÉ ${slug}`);
       ok++;
       continue;
     }
-    if (live.editorial_mdx !== input.editorial_mdx) issues.push("fiche modifiée en base depuis le dump d'entrée");
+    if (live.editorial_mdx !== input.editorial_mdx && live.editorial_mdx !== fr) issues.push("fiche modifiée en base depuis le dump d'entrée");
     if (live.start_date !== input.start_date) issues.push("dates modifiées en base depuis le dump d'entrée");
 
     if (issues.length) {
@@ -94,9 +97,12 @@ async function main() {
       continue;
     }
     // editorial_updated_at alimente la mention "mise à jour <mois>" de la fiche.
-    const patch: Record<string, unknown> = { editorial_mdx: fr, editorial_mdx_en: en, editorial_updated_at: new Date().toISOString() };
+    // MDX inchangé (correction d'organisateur seule) : on ne touche pas à la date de mise à jour éditoriale.
+    const patch: Record<string, unknown> = live.editorial_mdx === fr && String(input.editorial_mdx_en) === en ? {} : { editorial_mdx: fr, editorial_mdx_en: en, editorial_updated_at: new Date().toISOString() };
     for (const f of SEO_FIELDS) if (input[f] !== null) patch[f] = meta[f];
-    console.log(`UPDATE ${slug} : FR ${input.editorial_mdx.length}c -> ${fr.length}c | EN ${String(input.editorial_mdx_en).length}c -> ${en.length}c | SEO ${Object.keys(patch).filter((k) => k.startsWith("seo")).join(",") || "inchangé"}`);
+    // Correction d'organisateur sourcée par writer + reviewer (meta.organizer_name, null = inchangé).
+    if (meta.organizer_name && meta.organizer_name !== input.organizer_name) patch.organizer_name = meta.organizer_name;
+    console.log(`UPDATE ${slug} : FR ${input.editorial_mdx.length}c -> ${fr.length}c | EN ${String(input.editorial_mdx_en).length}c -> ${en.length}c | SEO ${Object.keys(patch).filter((k) => k.startsWith("seo")).join(",") || "inchangé"}${patch.organizer_name ? ` | organisateur -> ${patch.organizer_name}` : ""}`);
     if (APPLY) {
       const { error: upErr } = await sb.from("salons").update(patch as never).eq("slug", slug);
       if (upErr) throw new Error(`${slug}: ${upErr.message}`);
