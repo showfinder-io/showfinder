@@ -552,5 +552,141 @@
     },
     "source_url": "https://www.ad2s-bordeaux.com/infos-pratiques/",
     "reasons": []
+  },
+  "silmo-paris": {
+    "outcome": "applied",
+    "at": "2026-11-11",
+    "from": {
+      "start_date": "2026-09-25",
+      "end_date": "2026-09-28"
+    },
+    "to": {
+      "start_date": "2027-09-24",
+      "end_date": "2027-09-27",
+      "edition_year": 2027
+    },
+    "source_url": "https://www.silmoparis.com",
+    "reasons": [
+      "arbitrage en session (tasks/roll-2027/arbitrages-2026-11-11.md) : navigateur (Cloudflare bloque curl) : '24 > 27 SEPT. 2027', '- PARIS NORD VILLEPINTE' ; lieu inchangé"
+    ]
+  },
+  "medi-nov-connection-lyon": {
+    "outcome": "applied",
+    "at": "2026-11-11",
+    "from": {
+      "start_date": "2026-07-01",
+      "end_date": "2026-07-02"
+    },
+    "to": {
+      "start_date": "2027-06-30",
+      "end_date": "2027-07-01",
+      "edition_year": 2027
+    },
+    "source_url": "https://www.medinov-connection.com/",
+    "reasons": [
+      "arbitrage en session (tasks/roll-2027/arbitrages-2026-11-11.md) : relecture mécanique : 'Le 30 juin et 1er juillet 2027 au Centre de Congrès de Lyon', JSON-LD 2027-06-30 / 2027-07-01 concordant ; lieu inchangé"
+    ]
+  },
+  "aerospace-test-development-show": {
+    "outcome": "applied",
+    "at": "2026-11-11",
+    "from": {
+      "start_date": "2026-09-29",
+      "end_date": "2026-09-30"
+    },
+    "to": {
+      "start_date": "2027-09-28",
+      "end_date": "2027-09-29",
+      "edition_year": 2027
+    },
+    "source_url": "https://aerotestdevelopmentshow.com",
+    "reasons": [
+      "arbitrage en session (tasks/roll-2027/arbitrages-2026-11-11.md) : relecture mécanique : '28-29 September 2027, Hall 7, MEETT, Toulouse' quatre fois dans le texte ; JSON-LD écarté car incohérent (startDate 2027-09-29, endDate 2026-09-30) ; lieu inchangé"
+    ]
+  },
+  "batimat": {
+    "outcome": "applied",
+    "at": "2026-11-11",
+    "from": {
+      "start_date": "2026-09-28",
+      "end_date": "2026-10-01"
+    },
+    "to": {
+      "start_date": "2028-10-02",
+      "end_date": "2028-10-05",
+      "edition_year": 2028
+    },
+    "source_url": "https://www.batimat.com",
+    "reasons": [
+      "arbitrage en session (tasks/roll-2027/arbitrages-2026-11-11.md) : relecture mécanique : '02 au 05 octobre 2028 Paris, Porte de Versailles' ; rythme bisannuel cohérent ; changement de lieu Paris Nord Villepinte vers Paris Expo Porte de Versailles"
+    ]
+  },
+  "ideobain": {
+    "outcome": "applied",
+    "at": "2026-11-11",
+    "from": {
+      "start_date": "2026-09-28",
+      "end_date": "2026-10-01"
+    },
+    "to": {
+      "start_date": "2028-10-02",
+      "end_date": "2028-10-05",
+      "edition_year": 2028
+    },
+    "source_url": "https://www.ideobain.com",
+    "reasons": [
+      "arbitrage en session (tasks/roll-2027/arbitrages-2026-11-11.md) : relecture mécanique : '02 au 05 octobre 2028 Paris Expo, Porte de Versailles' (bannière et meta description) ; rythme bisannuel cohérent ; changement de lieu Paris Nord Villepinte vers Paris Expo Porte de Versailles"
+    ]
+  },
+  "natexpo-paris": {
+    "outcome": "applied",
+    "at": "2026-11-11",
+    "from": {
+      "start_date": "2026-09-28",
+      "end_date": "2026-09-29"
+    },
+    "to": {
+      "start_date": "2027-09-26",
+      "end_date": "2027-09-28",
+      "edition_year": 2027
+    },
+    "source_url": "https://www.natexpo.com",
+    "reasons": [
+      "arbitrage en session (tasks/roll-2027/arbitrages-2026-11-11.md) : relecture mécanique : 'Rendez-vous du 26 au 28 septembre 2027 à Paris Expo Porte de Versailles', 'Pavillon 7.2, Du dimanche 26 au mardi 28 septembre 2027' ; alternance Paris / Lyon, changement de ville et de lieu"
+    ]
+  },
+  "tranofiliere-paris": {
+    "outcome": "applied",
+    "at": "2026-11-11",
+    "from": {
+      "start_date": "2026-10-01",
+      "end_date": "2026-10-04"
+    },
+    "to": {
+      "start_date": "2027-03-04",
+      "end_date": "2027-03-07",
+      "edition_year": 2027
+    },
+    "source_url": "https://www.tranoi.com",
+    "reasons": [
+      "arbitrage en session (tasks/roll-2027/arbitrages-2026-11-11.md) : relecture mécanique : 'TRANOÏ PARIS Fall/Winter 27-28 4 to 7 March 2027', 'tranoï Paris 4 - 7 MARCH | Palais Brongniart, PARIS' ; deux éditions Paris par an (mars et fin septembre), frequency semestriel ; changement de lieu Palais de Tokyo vers Palais Brongniart"
+    ]
+  },
+  "luxe-pack-monaco": {
+    "outcome": "applied",
+    "at": "2026-11-11",
+    "from": {
+      "start_date": "2026-09-28",
+      "end_date": "2026-09-30"
+    },
+    "to": {
+      "start_date": "2027-10-04",
+      "end_date": "2027-10-06",
+      "edition_year": 2027
+    },
+    "source_url": "https://www.luxepackmonaco.com",
+    "reasons": [
+      "arbitrage en session (tasks/roll-2027/arbitrages-2026-11-11.md) : relecture mécanique : 'Grimaldi Forum | 4-6 oct. 2027', 'En 2027, LUXE PACK Monaco devient LUXE PACK WORLD' ; lieu inchangé, nom changé, slug conservé"
+    ]
   }
 }
