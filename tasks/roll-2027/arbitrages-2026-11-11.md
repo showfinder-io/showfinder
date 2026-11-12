@@ -28,10 +28,10 @@ Go Julien le 2026-11-11, appliqué par `scripts/diag-roll-arbitrages-2026-11-11-
 | silmo-paris | 24-27 sept. 2027, Paris Nord Villepinte | silmoparis.com (Chrome) : « 24 > 27 SEPT. 2027 », « PARIS NORD VILLEPINTE » | rien |
 | medi-nov-connection-lyon | 30 juin-1er juil. 2027, Centre de Congrès de Lyon | medinov-connection.com : texte + JSON-LD concordants | rien |
 | aerospace-test-development-show | 28-29 sept. 2027, MEETT Toulouse | « 28-29 September 2027, Hall 7, MEETT » 4 fois dans le texte. Le JSON-LD est incohérent (début 2027-09-29, fin 2026-09-30) : je l'écarte | rien |
-| batimat | 2-5 oct. 2028, Paris Expo Porte de Versailles | batimat.com : « 02 au 05 octobre 2028 Paris, Porte de Versailles » | lieu (Villepinte -> Porte de Versailles) |
-| ideobain | 2-5 oct. 2028, Paris Expo Porte de Versailles | ideobain.com : même formule que Batimat, meta description à jour | lieu |
+| batimat | 2-5 oct. 2028, Paris Expo Porte de Versailles | batimat.com : « 02 au 05 octobre 2028 Paris, Porte de Versailles » | lieu en base corrigé (Villepinte -> Porte de Versailles) : l'édition 2026 était déjà à Porte de Versailles (bilan RX du 14 octobre 2026), la base se trompait |
+| ideobain | 2-5 oct. 2028, Paris Expo Porte de Versailles | ideobain.com : même formule que Batimat, meta description à jour | lieu en base corrigé, même constat que Batimat (FAQ Idéobain 2026 : pavillon 7.2) |
 | natexpo-paris | 26-28 sept. 2027, Paris Expo Porte de Versailles (pavillon 7.2) | natexpo.com : « Du dimanche 26 au mardi 28 septembre 2027 » | ville (Lyon -> Paris) et lieu, alternance annuelle annoncée |
-| tranofiliere-paris (Tranoï) | 4-7 mars 2027, Palais Brongniart | tranoi.com : « 4 - 7 MARCH », « Palais Brongniart, PARIS » | lieu (Palais de Tokyo -> Brongniart) ; `frequency` annuel -> semestriel (deux éditions Paris par an : mars et fin septembre) |
+| tranofiliere-paris (Tranoï) | 4-7 mars 2027, Palais Brongniart | tranoi.com : « 4 - 7 MARCH », « Palais Brongniart, PARIS » | lieu en base corrigé (Palais de Tokyo -> Brongniart) : l'édition d'octobre 2026 était déjà au Palais Brongniart (tranoi.com/e/paris/fr), la base se trompait ; `frequency` annuel -> semestriel (deux éditions Paris par an : mars et fin septembre) |
 | luxe-pack-monaco | 4-6 oct. 2027, Grimaldi Forum | luxepackmonaco.com : « Grimaldi Forum \| 4-6 oct. 2027 » | `name` -> « Luxe Pack World » (le site : « En 2027, LUXE PACK Monaco devient LUXE PACK WORLD »), slug conservé |
 
 Tous les lieux cibles existent déjà dans `venues` : paris-expo-porte-de-versailles, palais-brongniart. Jours de semaine contrôlés, aucun incohérent.
