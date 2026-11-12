@@ -36,7 +36,9 @@ Go Julien le 2026-11-11, appliqué par `scripts/diag-roll-arbitrages-2026-11-11-
 
 Tous les lieux cibles existent déjà dans `venues` : paris-expo-porte-de-versailles, palais-brongniart. Jours de semaine contrôlés, aucun incohérent.
 
-## C. Il faut ta décision (6)
+## C. Il faut ta décision (6) : DÉCIDÉ le 2026-11-12
+
+Go Julien sur toutes les recommandations. Appliqué le 2026-11-12 : dépublication + 301 d'equipbaie-metalexpo-paris et paris-retail-week ; untec-congres, numeriquest-toulouse et architect-at-work-lyon avec leur texte refait dans le même lot (CLAUDE.md règle 14(f)). Reste paris-design-week : dates 2027 à lire par Julien.
 
 | Fiche | Constat (source relue) | Ma recommandation | Alternative |
 |---|---|---|---|
