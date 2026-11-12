@@ -38,6 +38,17 @@ export async function getProvidersForHub(hub: Pick<ProviderHubRow, "category" | 
   return (data ?? []) as ProviderRow[];
 }
 
+/**
+ * Jeton remplacé au rendu par le nombre de prestataires listés (relecture du 2026-11-12) :
+ * un chiffre écrit en dur dans le MDX ou les metas se périme à chaque ajout ou correction.
+ * Utilisable dans editorial_mdx(_en), seo_title(_en) et seo_description(_en).
+ */
+export const HUB_COUNT_TOKEN = "%%NOMBRE%%";
+
+export function fillHubCount(text: string, count: number): string {
+  return text.replaceAll(HUB_COUNT_TOKEN, String(count));
+}
+
 /** Un hub n'est indexable (robots + sitemap) qu'avec son contenu éditorial et assez de prestataires. */
 export function isHubIndexable(hub: ProviderHubRow, providerCount: number): boolean {
   return Boolean(hub.editorial_mdx?.trim()) && providerCount >= hub.min_providers;
