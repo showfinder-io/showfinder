@@ -45,6 +45,33 @@ const nextConfig: NextConfig = {
         destination: "/en/secteurs/agroalimentaire",
         permanent: true,
       },
+      // Arbitrages roll 2027 du 2026-11-11, partie C (go Julien du 2026-11-12,
+      // tasks/roll-2027/arbitrages-2026-11-11.md), fiches dépubliées :
+      // Equipbaie-Métalexpo est intégré à Batimat depuis 2024 (« Equipbaie-Métalexpo
+      // by Batimat ») ; NRF Retail's Big Show Europe (ex-Paris Retail Week) quitte
+      // Paris pour Amsterdam en 2028. Les redirects qui pointaient vers ces deux
+      // fiches (equipmag-paris, metal-expo-paris, ecommerce-paris-2026, -2026 de
+      // redirects-slug-year.json) sont repointés : pas de chaîne de 301.
+      {
+        source: "/salons/equipbaie-metalexpo-paris",
+        destination: "/salons/batimat",
+        permanent: true,
+      },
+      {
+        source: "/en/salons/equipbaie-metalexpo-paris",
+        destination: "/en/salons/batimat",
+        permanent: true,
+      },
+      {
+        source: "/salons/paris-retail-week",
+        destination: "/secteurs/franchise-commerce",
+        permanent: true,
+      },
+      {
+        source: "/en/salons/paris-retail-week",
+        destination: "/en/secteurs/franchise-commerce",
+        permanent: true,
+      },
       {
         source: "/salons/sima-paris",
         destination: "/secteurs/agriculture",
@@ -123,14 +150,14 @@ const nextConfig: NextConfig = {
       {
         // EquipMag absorbé par Paris Retail Week (puis NRF Retail's Big Show Europe)
         source: "/salons/equipmag-paris",
-        destination: "/salons/paris-retail-week",
+        destination: "/secteurs/franchise-commerce",
         permanent: true,
       },
       // Cohorte 9 (2026-06-13) : doublons / marques absorbées détectés
       {
         // Metal Expo n'est autonome qu'à partir de 2027 : composante d'EquipBaie Metalexpo en 2026
         source: "/salons/metal-expo-paris",
-        destination: "/salons/equipbaie-metalexpo-paris",
+        destination: "/salons/batimat",
         permanent: true,
       },
       {
@@ -278,7 +305,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/salons/ecommerce-paris-2026",
-        destination: "/salons/paris-retail-week",
+        destination: "/secteurs/franchise-commerce",
         permanent: true,
       },
       {
