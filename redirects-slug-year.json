@@ -217,7 +217,7 @@
   },
   {
     "source": "/salons/equipbaie-metalexpo-paris-2026",
-    "destination": "/salons/equipbaie-metalexpo-paris"
+    "destination": "/salons/batimat"
   },
   {
     "source": "/salons/equipmag-paris-2026",
@@ -557,7 +557,7 @@
   },
   {
     "source": "/salons/paris-retail-week-2026",
-    "destination": "/salons/paris-retail-week"
+    "destination": "/secteurs/franchise-commerce"
   },
   {
     "source": "/salons/paysalia-lyon-2027",
