@@ -20,6 +20,17 @@ jobs:
 
       - run: npm ci
 
+      # Cache de build Next.js (images optimisées, cache de fetch, artefacts
+      # Turbopack) : sans lui, chaque build CI repart à froid et relit toute la
+      # base pour regénérer les pages. Clé = lockfile + sources ; restore-keys
+      # réutilise le cache le plus proche quand seules les sources changent.
+      - uses: actions/cache@v4
+        with:
+          path: .next/cache
+          key: nextjs-${{ runner.os }}-${{ hashFiles('package-lock.json') }}-${{ hashFiles('src/**', 'content/**', 'messages/**', 'next.config.ts', '*.json') }}
+          restore-keys: |
+            nextjs-${{ runner.os }}-${{ hashFiles('package-lock.json') }}-
+
       - run: npm run lint
 
       - run: npm run build
