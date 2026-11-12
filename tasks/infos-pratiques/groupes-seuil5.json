@@ -1,0 +1,203 @@
+{
+  "seed": "infos-pratiques-2026-11-12",
+  "window": {
+    "start": "2026-10-13",
+    "end": "2026-11-09"
+  },
+  "size_per_group": 17,
+  "min_logistic_impressions": 5,
+  "eligible_count": 34,
+  "pool_size": 34,
+  "exclusion_criteria": {
+    "non_publie": "fiche absente de la liste des salons publiés",
+    "test_ctr_48": "tasks/ctr-test-48/groupes.json (treated, control, excluded)",
+    "page2_page1": "pages de la table tasks/page2-page1/priorisation.md (53)",
+    "refaite_11_12_nov": [
+      "silmo-paris",
+      "medi-nov-connection-lyon",
+      "aerospace-test-development-show",
+      "batimat",
+      "ideobain",
+      "natexpo-paris",
+      "tranofiliere-paris",
+      "luxe-pack-monaco",
+      "untec-congres",
+      "numeriquest-toulouse",
+      "architect-at-work-lyon",
+      "preventica-paris",
+      "cannes-yachting-festival",
+      "tfwa-world-exhibition",
+      "interclima",
+      "produrable-paris",
+      "premiere-classe",
+      "ad2s-bordeaux",
+      "one-to-one-retail-ecommerce",
+      "tech-for-retail-paris"
+    ],
+    "ctr_prestataires_lieux": "ne touche que /lieux et /prestataires : aucune fiche /salons à exclure",
+    "seuil": "impressions logistiques FR >= 5 sur la fenêtre"
+  },
+  "exclusion_counts": {
+    "non_publie": 6,
+    "test_ctr_48": 43,
+    "page2_page1": 43,
+    "refaite_11_12_nov": 15,
+    "logi_sous_seuil": 301
+  },
+  "appariement": "glouton par distance minimale sur (ln(1+imp logistiques), ln(1+imp totales), position/10) parmi les 88 fiches à plus fortes impressions logistiques ; tirage de la fiche traitée par paire avec mulberry32(hash(graine))",
+  "treated": [
+    "festival-livre-paris",
+    "expoprotection",
+    "sett",
+    "sirha-lyon",
+    "japan-expo-paris",
+    "salon-du-chocolat-paris",
+    "salon-international-de-la-lingerie",
+    "congres-sfro",
+    "wine-paris",
+    "rocalia-lyon",
+    "bijorhca-paris",
+    "siane-toulouse",
+    "jprs",
+    "jnep",
+    "autocar-expo",
+    "iftm-top-resa",
+    "congres-urgences-sfmu"
+  ],
+  "control": [
+    "sial-paris",
+    "agrimax-metz",
+    "journees-sfnv",
+    "pollutec-lyon",
+    "sia-paris",
+    "cosmetic-360",
+    "ricai",
+    "jnlf",
+    "maison-objet-paris",
+    "jfr-paris",
+    "intermat-paris",
+    "salon-sme-paris",
+    "step-by-pollutec-paris",
+    "jfk-congres",
+    "afvac-congres",
+    "foire-chalons-en-champagne",
+    "petrochymia"
+  ],
+  "pairs": [
+    {
+      "pair": 1,
+      "treated": "festival-livre-paris",
+      "control": "sial-paris",
+      "distance": 1.021
+    },
+    {
+      "pair": 2,
+      "treated": "expoprotection",
+      "control": "agrimax-metz",
+      "distance": 0.308
+    },
+    {
+      "pair": 3,
+      "treated": "sett",
+      "control": "journees-sfnv",
+      "distance": 2.07
+    },
+    {
+      "pair": 4,
+      "treated": "sirha-lyon",
+      "control": "pollutec-lyon",
+      "distance": 2.718
+    },
+    {
+      "pair": 5,
+      "treated": "japan-expo-paris",
+      "control": "sia-paris",
+      "distance": 0.73
+    },
+    {
+      "pair": 6,
+      "treated": "salon-du-chocolat-paris",
+      "control": "cosmetic-360",
+      "distance": 0.664
+    },
+    {
+      "pair": 7,
+      "treated": "salon-international-de-la-lingerie",
+      "control": "ricai",
+      "distance": 0.443
+    },
+    {
+      "pair": 8,
+      "treated": "congres-sfro",
+      "control": "jnlf",
+      "distance": 0.17
+    },
+    {
+      "pair": 9,
+      "treated": "wine-paris",
+      "control": "maison-objet-paris",
+      "distance": 0.631
+    },
+    {
+      "pair": 10,
+      "treated": "rocalia-lyon",
+      "control": "jfr-paris",
+      "distance": 0.535
+    },
+    {
+      "pair": 11,
+      "treated": "bijorhca-paris",
+      "control": "intermat-paris",
+      "distance": 1.407
+    },
+    {
+      "pair": 12,
+      "treated": "siane-toulouse",
+      "control": "salon-sme-paris",
+      "distance": 0.211
+    },
+    {
+      "pair": 13,
+      "treated": "jprs",
+      "control": "step-by-pollutec-paris",
+      "distance": 0.623
+    },
+    {
+      "pair": 14,
+      "treated": "jnep",
+      "control": "jfk-congres",
+      "distance": 0.82
+    },
+    {
+      "pair": 15,
+      "treated": "autocar-expo",
+      "control": "afvac-congres",
+      "distance": 0.247
+    },
+    {
+      "pair": 16,
+      "treated": "iftm-top-resa",
+      "control": "foire-chalons-en-champagne",
+      "distance": 0.452
+    },
+    {
+      "pair": 17,
+      "treated": "congres-urgences-sfmu",
+      "control": "petrochymia",
+      "distance": 0.321
+    }
+  ],
+  "fiches_edition_terminee_a_date": [
+    "expoprotection",
+    "sett",
+    "salon-du-chocolat-paris",
+    "congres-sfro",
+    "siane-toulouse",
+    "sial-paris",
+    "agrimax-metz",
+    "cosmetic-360",
+    "jfr-paris",
+    "salon-sme-paris"
+  ],
+  "fiches_sans_date_fin": []
+}
