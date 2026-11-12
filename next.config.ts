@@ -429,6 +429,31 @@ const nextConfig: NextConfig = {
         destination: "/en/salons/bio360-expo",
         permanent: true,
       },
+      // Relecture prestataires du 2026-11-12 (tasks/relecture-agent-prestataires-2026-11-12.md) :
+      // slugs du seed d'avril portant une ville fausse. Magnum est à Gonesse (95), Expocom à
+      // Metz (57). Slug = nom seul, convention de l'import du 2026-09-21. Slugs DB renommés par
+      // scripts/diag-prestataires-relecture-2026-11-12-apply.ts, qui attend que ces 301 soient
+      // actives en prod avant d'écrire. Aucun autre redirect ne vise ces URLs : pas de chaîne.
+      {
+        source: "/prestataires/magnum-lyon",
+        destination: "/prestataires/magnum",
+        permanent: true,
+      },
+      {
+        source: "/en/prestataires/magnum-lyon",
+        destination: "/en/prestataires/magnum",
+        permanent: true,
+      },
+      {
+        source: "/prestataires/expocom-paris",
+        destination: "/prestataires/expocom",
+        permanent: true,
+      },
+      {
+        source: "/en/prestataires/expocom-paris",
+        destination: "/en/prestataires/expocom",
+        permanent: true,
+      },
       // 12 guides éditoriaux Nicolas (2026-07-23) : preparer-stand-salon-professionnel.mdx
       // remplacé + budget-salon-professionnel.mdx renommé/étoffé en budget-stand-salon-professionnel.mdx
       {

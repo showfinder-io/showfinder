@@ -55,8 +55,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (hub) {
     const hubProviders = await getProvidersForHub(hub);
     return {
-      title: hubField(hub, "seo_title", locale),
-      description: hubField(hub, "seo_description", locale),
+      title: hubField(hub, "seo_title", locale, hubProviders.length),
+      description: hubField(hub, "seo_description", locale, hubProviders.length),
       robots: isHubIndexable(hub, hubProviders.length) ? { index: true, follow: true } : { index: false, follow: true },
       alternates: buildAlternates(`/prestataires/${slug}`, locale),
     };

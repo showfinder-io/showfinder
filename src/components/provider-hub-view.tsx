@@ -3,7 +3,7 @@ import { getTranslations } from "next-intl/server";
 import { siteConfig } from "@/lib/config";
 import { compileMdxContentSafe } from "@/lib/mdx";
 import { formatEditorialMonthLocale } from "@/lib/sector-content";
-import type { ProviderHubRow } from "@/lib/provider-hubs";
+import { fillHubCount, type ProviderHubRow } from "@/lib/provider-hubs";
 import type { ProviderRow } from "@/lib/queries";
 import { ProviderCard } from "@/components/provider-card";
 import { SectionTitle } from "@/components/section-title";
@@ -17,10 +17,19 @@ type ProviderHubViewProps = {
   locale: string;
 };
 
-/** Champ localisé d'un hub : version EN si présente, sinon FR. */
-export function hubField(hub: ProviderHubRow, field: "h1" | "seo_title" | "seo_description" | "zone_label", locale: string): string {
+/**
+ * Champ localisé d'un hub : version EN si présente, sinon FR. Avec `count`, le jeton
+ * HUB_COUNT_TOKEN est remplacé par le nombre de prestataires listés.
+ */
+export function hubField(
+  hub: ProviderHubRow,
+  field: "h1" | "seo_title" | "seo_description" | "zone_label",
+  locale: string,
+  count?: number,
+): string {
   const en = hub[`${field}_en` as const];
-  return (locale === "en" && en ? en : hub[field]) ?? "";
+  const value = (locale === "en" && en ? en : hub[field]) ?? "";
+  return count === undefined ? value : fillHubCount(value, count);
 }
 
 /**
@@ -30,7 +39,7 @@ export function hubField(hub: ProviderHubRow, field: "h1" | "seo_title" | "seo_d
 export async function ProviderHubView({ hub, providers, otherHubs, locale }: ProviderHubViewProps) {
   const t = await getTranslations({ locale, namespace: "providers.hub" });
   const mdx = (locale === "en" && hub.editorial_mdx_en ? hub.editorial_mdx_en : null) ?? hub.editorial_mdx;
-  const Content = mdx ? await compileMdxContentSafe(mdx) : null;
+  const Content = mdx ? await compileMdxContentSafe(fillHubCount(mdx, providers.length)) : null;
   const h1 = hubField(hub, "h1", locale);
 
   const itemListJsonLd = {
@@ -70,7 +79,7 @@ export async function ProviderHubView({ hub, providers, otherHubs, locale }: Pro
           {h1}
         </SectionTitle>
         <p className="mt-5 text-base leading-relaxed text-prune/85 md:text-lg">
-          {hubField(hub, "seo_description", locale)}
+          {hubField(hub, "seo_description", locale, providers.length)}
         </p>
         {Content && hub.editorial_updated_at && (
           <p className="mt-4 font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
