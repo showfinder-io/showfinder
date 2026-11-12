@@ -1,0 +1,2374 @@
+{
+  "window": {
+    "start": "2026-10-13",
+    "end": "2026-11-09"
+  },
+  "generated": "2026-11-12",
+  "gsc_rows": {
+    "pages": 831,
+    "page_query": 8910
+  },
+  "note": "Les requêtes anonymisées par Google n'apparaissent pas : chiffres logistiques = plancher. Motifs dans mesure.ts (LOGI_FR / LOGI_EN).",
+  "groups": {
+    "treated": {
+      "n": 17,
+      "total": {
+        "imp": 12352,
+        "clk": 181,
+        "ctr_pct": 1.465,
+        "pos": 11.28
+      },
+      "logistique": {
+        "imp": 769,
+        "clk": 22,
+        "ctr_pct": 2.861,
+        "pos": 13.51
+      }
+    },
+    "control": {
+      "n": 17,
+      "total": {
+        "imp": 10425,
+        "clk": 164,
+        "ctr_pct": 1.573,
+        "pos": 11.04
+      },
+      "logistique": {
+        "imp": 1160,
+        "clk": 58,
+        "ctr_pct": 5,
+        "pos": 9.08
+      }
+    }
+  },
+  "groups_en_info": {
+    "treated": {
+      "n": 17,
+      "total": {
+        "imp": 1325,
+        "clk": 14,
+        "ctr_pct": 1.057,
+        "pos": 7.07
+      },
+      "logistique": {
+        "imp": 10,
+        "clk": 0,
+        "ctr_pct": 0,
+        "pos": 6
+      }
+    },
+    "control": {
+      "n": 17,
+      "total": {
+        "imp": 1252,
+        "clk": 25,
+        "ctr_pct": 1.997,
+        "pos": 7.21
+      },
+      "logistique": {
+        "imp": 6,
+        "clk": 0,
+        "ctr_pct": 0,
+        "pos": 7.33
+      }
+    }
+  },
+  "treated": [
+    {
+      "slug": "festival-livre-paris",
+      "start_date": "2027-04-16",
+      "end_date": "2027-04-18",
+      "fr": {
+        "slug": "festival-livre-paris",
+        "total": {
+          "imp": 3077,
+          "clk": 40,
+          "pos": 9.223269418264543
+        },
+        "logi": {
+          "imp": 275,
+          "clk": 16,
+          "pos": 5.2,
+          "nq": 27
+        },
+        "top_logi_queries": [
+          {
+            "q": "salon du livre paris 2027 billetterie",
+            "imp": 128,
+            "clk": 5,
+            "pos": 5.5
+          },
+          {
+            "q": "festival du livre paris 2027 billetterie",
+            "imp": 89,
+            "clk": 11,
+            "pos": 5.3
+          },
+          {
+            "q": "l'ouverture de la billetterie",
+            "imp": 21,
+            "clk": 0,
+            "pos": 2.9
+          },
+          {
+            "q": "billetterie",
+            "imp": 5,
+            "clk": 0,
+            "pos": 3.2
+          },
+          {
+            "q": "la billetterie",
+            "imp": 4,
+            "clk": 0,
+            "pos": 3
+          },
+          {
+            "q": "ouverture de la billetterie",
+            "imp": 3,
+            "clk": 0,
+            "pos": 2.7
+          },
+          {
+            "q": "dates d'ouverture de la billetterie",
+            "imp": 2,
+            "clk": 0,
+            "pos": 3.5
+          },
+          {
+            "q": "quand ouvre la billetterie",
+            "imp": 2,
+            "clk": 0,
+            "pos": 3
+          }
+        ]
+      },
+      "en": {
+        "slug": "festival-livre-paris",
+        "total": {
+          "imp": 23,
+          "clk": 0,
+          "pos": 8.565217391304348
+        },
+        "logi": {
+          "imp": 0,
+          "clk": 0,
+          "pos": null,
+          "nq": 0
+        },
+        "top_logi_queries": []
+      }
+    },
+    {
+      "slug": "expoprotection",
+      "start_date": "2026-11-03",
+      "end_date": "2026-11-05",
+      "fr": {
+        "slug": "expoprotection",
+        "total": {
+          "imp": 1402,
+          "clk": 17,
+          "pos": 8.50570613409415
+        },
+        "logi": {
+          "imp": 165,
+          "clk": 0,
+          "pos": 8.62,
+          "nq": 14
+        },
+        "top_logi_queries": [
+          {
+            "q": "horaire expoprotection",
+            "imp": 54,
+            "clk": 0,
+            "pos": 8.4
+          },
+          {
+            "q": "expoprotection 2026 horaires",
+            "imp": 34,
+            "clk": 0,
+            "pos": 8.5
+          },
+          {
+            "q": "expoprotection 2026 horaire",
+            "imp": 30,
+            "clk": 0,
+            "pos": 8.6
+          },
+          {
+            "q": "expoprotection horaire",
+            "imp": 19,
+            "clk": 0,
+            "pos": 8.4
+          },
+          {
+            "q": "horaires expoprotection",
+            "imp": 14,
+            "clk": 0,
+            "pos": 7.6
+          },
+          {
+            "q": "expo protection 2026 horaire",
+            "imp": 4,
+            "clk": 0,
+            "pos": 8.8
+          },
+          {
+            "q": "expoprotection horaires",
+            "imp": 2,
+            "clk": 0,
+            "pos": 10
+          },
+          {
+            "q": "les horaires d'ouverture",
+            "imp": 2,
+            "clk": 0,
+            "pos": 4
+          }
+        ]
+      },
+      "en": {
+        "slug": "expoprotection",
+        "total": {
+          "imp": 32,
+          "clk": 0,
+          "pos": 10.0625
+        },
+        "logi": {
+          "imp": 0,
+          "clk": 0,
+          "pos": null,
+          "nq": 0
+        },
+        "top_logi_queries": []
+      }
+    },
+    {
+      "slug": "sett",
+      "start_date": "2026-11-03",
+      "end_date": "2026-11-05",
+      "fr": {
+        "slug": "sett",
+        "total": {
+          "imp": 1630,
+          "clk": 8,
+          "pos": 9.55521472392638
+        },
+        "logi": {
+          "imp": 91,
+          "clk": 0,
+          "pos": 9.05,
+          "nq": 10
+        },
+        "top_logi_queries": [
+          {
+            "q": "horaire salon sett montpellier",
+            "imp": 39,
+            "clk": 0,
+            "pos": 9
+          },
+          {
+            "q": "horaires sett montpellier",
+            "imp": 25,
+            "clk": 0,
+            "pos": 8.6
+          },
+          {
+            "q": "horaire sett montpellier",
+            "imp": 18,
+            "clk": 0,
+            "pos": 9.5
+          },
+          {
+            "q": "la liste des exposants",
+            "imp": 2,
+            "clk": 0,
+            "pos": 3.5
+          },
+          {
+            "q": "les exposants",
+            "imp": 2,
+            "clk": 0,
+            "pos": 4.5
+          },
+          {
+            "q": "exposants",
+            "imp": 1,
+            "clk": 0,
+            "pos": 3
+          },
+          {
+            "q": "horaire sett",
+            "imp": 1,
+            "clk": 0,
+            "pos": 11
+          },
+          {
+            "q": "horaires salon sett",
+            "imp": 1,
+            "clk": 0,
+            "pos": 10
+          }
+        ]
+      },
+      "en": {
+        "slug": "sett",
+        "total": {
+          "imp": 232,
+          "clk": 1,
+          "pos": 5.767241379310345
+        },
+        "logi": {
+          "imp": 0,
+          "clk": 0,
+          "pos": null,
+          "nq": 0
+        },
+        "top_logi_queries": []
+      }
+    },
+    {
+      "slug": "sirha-lyon",
+      "start_date": "2027-01-21",
+      "end_date": "2027-01-25",
+      "fr": {
+        "slug": "sirha-lyon",
+        "total": {
+          "imp": 476,
+          "clk": 13,
+          "pos": 33.13865546218487
+        },
+        "logi": {
+          "imp": 91,
+          "clk": 5,
+          "pos": 38.82,
+          "nq": 17
+        },
+        "top_logi_queries": [
+          {
+            "q": "code invitation sirha 2027",
+            "imp": 13,
+            "clk": 0,
+            "pos": 27.9
+          },
+          {
+            "q": "sirha lyon 2021 adresse",
+            "imp": 13,
+            "clk": 0,
+            "pos": 43.8
+          },
+          {
+            "q": "adresse sirha lyon",
+            "imp": 10,
+            "clk": 0,
+            "pos": 50.5
+          },
+          {
+            "q": "salon sirha lyon adresse",
+            "imp": 10,
+            "clk": 0,
+            "pos": 53.9
+          },
+          {
+            "q": "sirha lyon 2023 adresse",
+            "imp": 10,
+            "clk": 0,
+            "pos": 44.6
+          },
+          {
+            "q": "sirha lyon adresse",
+            "imp": 9,
+            "clk": 0,
+            "pos": 53.1
+          },
+          {
+            "q": "invitation gratuite sirha 2027",
+            "imp": 7,
+            "clk": 1,
+            "pos": 22.6
+          },
+          {
+            "q": "invitation sirha 2027",
+            "imp": 6,
+            "clk": 1,
+            "pos": 31.7
+          }
+        ]
+      },
+      "en": {
+        "slug": "sirha-lyon",
+        "total": {
+          "imp": 20,
+          "clk": 1,
+          "pos": 5.6
+        },
+        "logi": {
+          "imp": 0,
+          "clk": 0,
+          "pos": null,
+          "nq": 0
+        },
+        "top_logi_queries": []
+      }
+    },
+    {
+      "slug": "japan-expo-paris",
+      "start_date": "2027-07-08",
+      "end_date": "2027-07-11",
+      "fr": {
+        "slug": "japan-expo-paris",
+        "total": {
+          "imp": 884,
+          "clk": 5,
+          "pos": 25.652714932126695
+        },
+        "logi": {
+          "imp": 20,
+          "clk": 0,
+          "pos": 28,
+          "nq": 11
+        },
+        "top_logi_queries": [
+          {
+            "q": "exposant japan expo",
+            "imp": 4,
+            "clk": 0,
+            "pos": 18
+          },
+          {
+            "q": "ouverture billetterie japan expo 2027",
+            "imp": 3,
+            "clk": 0,
+            "pos": 1
+          },
+          {
+            "q": "adresse japan expo",
+            "imp": 2,
+            "clk": 0,
+            "pos": 70.5
+          },
+          {
+            "q": "japan expo adresse",
+            "imp": 2,
+            "clk": 0,
+            "pos": 62.5
+          },
+          {
+            "q": "japan expo exposant",
+            "imp": 2,
+            "clk": 0,
+            "pos": 46
+          },
+          {
+            "q": "japan expo horaires",
+            "imp": 2,
+            "clk": 0,
+            "pos": 24
+          },
+          {
+            "q": "horaire japan expo",
+            "imp": 1,
+            "clk": 0,
+            "pos": 10
+          },
+          {
+            "q": "horaires japan expo",
+            "imp": 1,
+            "clk": 0,
+            "pos": 17
+          }
+        ]
+      },
+      "en": {
+        "slug": "japan-expo-paris",
+        "total": {
+          "imp": 48,
+          "clk": 0,
+          "pos": 22
+        },
+        "logi": {
+          "imp": 0,
+          "clk": 0,
+          "pos": null,
+          "nq": 0
+        },
+        "top_logi_queries": []
+      }
+    },
+    {
+      "slug": "salon-du-chocolat-paris",
+      "start_date": "2026-10-28",
+      "end_date": "2026-11-01",
+      "fr": {
+        "slug": "salon-du-chocolat-paris",
+        "total": {
+          "imp": 345,
+          "clk": 2,
+          "pos": 14.2
+        },
+        "logi": {
+          "imp": 20,
+          "clk": 0,
+          "pos": 23.8,
+          "nq": 9
+        },
+        "top_logi_queries": [
+          {
+            "q": "horaires salon du chocolat paris 2026",
+            "imp": 8,
+            "clk": 0,
+            "pos": 8.4
+          },
+          {
+            "q": "salon du chocolat paris 2026 horaires",
+            "imp": 3,
+            "clk": 0,
+            "pos": 11
+          },
+          {
+            "q": "exposants salon du chocolat",
+            "imp": 2,
+            "clk": 0,
+            "pos": 38
+          },
+          {
+            "q": "salon du chocolat paris exposants",
+            "imp": 2,
+            "clk": 0,
+            "pos": 30.5
+          },
+          {
+            "q": "horaire salon du chocolat",
+            "imp": 1,
+            "clk": 0,
+            "pos": 71
+          },
+          {
+            "q": "horaires salon du chocolat",
+            "imp": 1,
+            "clk": 0,
+            "pos": 64
+          },
+          {
+            "q": "liste des exposants",
+            "imp": 1,
+            "clk": 0,
+            "pos": 7
+          },
+          {
+            "q": "salon du chocolat exposants",
+            "imp": 1,
+            "clk": 0,
+            "pos": 46
+          }
+        ]
+      },
+      "en": {
+        "slug": "salon-du-chocolat-paris",
+        "total": {
+          "imp": 1,
+          "clk": 0,
+          "pos": 11
+        },
+        "logi": {
+          "imp": 0,
+          "clk": 0,
+          "pos": null,
+          "nq": 0
+        },
+        "top_logi_queries": []
+      }
+    },
+    {
+      "slug": "salon-international-de-la-lingerie",
+      "start_date": "2027-01-16",
+      "end_date": "2027-01-18",
+      "fr": {
+        "slug": "salon-international-de-la-lingerie",
+        "total": {
+          "imp": 429,
+          "clk": 9,
+          "pos": 8.48018648018648
+        },
+        "logi": {
+          "imp": 17,
+          "clk": 0,
+          "pos": 7.88,
+          "nq": 3
+        },
+        "top_logi_queries": [
+          {
+            "q": "salon de la lingeri paris 2026 horaires",
+            "imp": 15,
+            "clk": 0,
+            "pos": 8.7
+          },
+          {
+            "q": "salon de la lingeri paris 2026 billetterie",
+            "imp": 1,
+            "clk": 0,
+            "pos": 1
+          },
+          {
+            "q": "tarif entree",
+            "imp": 1,
+            "clk": 0,
+            "pos": 2
+          }
+        ]
+      },
+      "en": {
+        "slug": "salon-international-de-la-lingerie",
+        "total": {
+          "imp": 34,
+          "clk": 0,
+          "pos": 7.705882352941177
+        },
+        "logi": {
+          "imp": 0,
+          "clk": 0,
+          "pos": null,
+          "nq": 0
+        },
+        "top_logi_queries": []
+      }
+    },
+    {
+      "slug": "congres-sfro",
+      "start_date": "2026-11-04",
+      "end_date": "2026-11-06",
+      "fr": {
+        "slug": "congres-sfro",
+        "total": {
+          "imp": 509,
+          "clk": 15,
+          "pos": 6.445972495088409
+        },
+        "logi": {
+          "imp": 15,
+          "clk": 0,
+          "pos": 9.47,
+          "nq": 10
+        },
+        "top_logi_queries": [
+          {
+            "q": "programme sfro 2026",
+            "imp": 4,
+            "clk": 0,
+            "pos": 9.3
+          },
+          {
+            "q": "sfro 2026 programme",
+            "imp": 3,
+            "clk": 0,
+            "pos": 9
+          },
+          {
+            "q": "congrès sfro 2026 programme",
+            "imp": 1,
+            "clk": 0,
+            "pos": 11
+          },
+          {
+            "q": "heure début",
+            "imp": 1,
+            "clk": 0,
+            "pos": 2
+          },
+          {
+            "q": "horraire d'ouverture",
+            "imp": 1,
+            "clk": 0,
+            "pos": 5
+          },
+          {
+            "q": "les tarifs d'inscription",
+            "imp": 1,
+            "clk": 0,
+            "pos": 1
+          },
+          {
+            "q": "plan en image",
+            "imp": 1,
+            "clk": 0,
+            "pos": 6
+          },
+          {
+            "q": "sfro programme",
+            "imp": 1,
+            "clk": 0,
+            "pos": 46
+          }
+        ]
+      },
+      "en": {
+        "slug": "congres-sfro",
+        "total": {
+          "imp": 398,
+          "clk": 7,
+          "pos": 5.540201005025126
+        },
+        "logi": {
+          "imp": 9,
+          "clk": 0,
+          "pos": 5.56,
+          "nq": 4
+        },
+        "top_logi_queries": [
+          {
+            "q": "sfro 2026 programme",
+            "imp": 4,
+            "clk": 0,
+            "pos": 4.5
+          },
+          {
+            "q": "sfro programme 2026",
+            "imp": 3,
+            "clk": 0,
+            "pos": 7.7
+          },
+          {
+            "q": "programme sfro 2026",
+            "imp": 1,
+            "clk": 0,
+            "pos": 2
+          },
+          {
+            "q": "sfro programme",
+            "imp": 1,
+            "clk": 0,
+            "pos": 7
+          }
+        ]
+      }
+    },
+    {
+      "slug": "wine-paris",
+      "start_date": "2027-02-15",
+      "end_date": "2027-02-17",
+      "fr": {
+        "slug": "wine-paris",
+        "total": {
+          "imp": 238,
+          "clk": 1,
+          "pos": 29.886554621848738
+        },
+        "logi": {
+          "imp": 9,
+          "clk": 0,
+          "pos": 34.22,
+          "nq": 5
+        },
+        "top_logi_queries": [
+          {
+            "q": "wine paris horaires",
+            "imp": 3,
+            "clk": 0,
+            "pos": 33.7
+          },
+          {
+            "q": "wine paris 2026 exposants",
+            "imp": 2,
+            "clk": 0,
+            "pos": 40.5
+          },
+          {
+            "q": "wine paris exposant",
+            "imp": 2,
+            "clk": 0,
+            "pos": 22
+          },
+          {
+            "q": "wine paris espace exposant",
+            "imp": 1,
+            "clk": 0,
+            "pos": 36
+          },
+          {
+            "q": "wine paris exposants",
+            "imp": 1,
+            "clk": 0,
+            "pos": 46
+          }
+        ]
+      },
+      "en": {
+        "slug": "wine-paris",
+        "total": {
+          "imp": 1,
+          "clk": 0,
+          "pos": 1
+        },
+        "logi": {
+          "imp": 0,
+          "clk": 0,
+          "pos": null,
+          "nq": 0
+        },
+        "top_logi_queries": []
+      }
+    },
+    {
+      "slug": "rocalia-lyon",
+      "start_date": "2027-11-30",
+      "end_date": "2027-12-02",
+      "fr": {
+        "slug": "rocalia-lyon",
+        "total": {
+          "imp": 128,
+          "clk": 2,
+          "pos": 15.765625
+        },
+        "logi": {
+          "imp": 14,
+          "clk": 0,
+          "pos": 81.29,
+          "nq": 2
+        },
+        "top_logi_queries": [
+          {
+            "q": "paysalia lyon 2023 adresse",
+            "imp": 13,
+            "clk": 0,
+            "pos": 85.3
+          },
+          {
+            "q": "eurexpo programme 2027",
+            "imp": 1,
+            "clk": 0,
+            "pos": 29
+          }
+        ]
+      },
+      "en": {
+        "slug": "rocalia-lyon",
+        "total": {
+          "imp": 7,
+          "clk": 0,
+          "pos": 6.285714285714286
+        },
+        "logi": {
+          "imp": 0,
+          "clk": 0,
+          "pos": null,
+          "nq": 0
+        },
+        "top_logi_queries": []
+      }
+    },
+    {
+      "slug": "bijorhca-paris",
+      "start_date": "2027-01-16",
+      "end_date": "2027-01-18",
+      "fr": {
+        "slug": "bijorhca-paris",
+        "total": {
+          "imp": 108,
+          "clk": 4,
+          "pos": 9.87037037037037
+        },
+        "logi": {
+          "imp": 7,
+          "clk": 1,
+          "pos": 9.86,
+          "nq": 5
+        },
+        "top_logi_queries": [
+          {
+            "q": "bijorhca badge gratuit",
+            "imp": 3,
+            "clk": 1,
+            "pos": 11.3
+          },
+          {
+            "q": "badge visiteur",
+            "imp": 1,
+            "clk": 0,
+            "pos": 6
+          },
+          {
+            "q": "bijorhca liste des exposants 2026",
+            "imp": 1,
+            "clk": 0,
+            "pos": 18
+          },
+          {
+            "q": "la liste des exposants",
+            "imp": 1,
+            "clk": 0,
+            "pos": 7
+          },
+          {
+            "q": "les horaires d'ouverture",
+            "imp": 1,
+            "clk": 0,
+            "pos": 4
+          }
+        ]
+      },
+      "en": {
+        "slug": "bijorhca-paris",
+        "total": {
+          "imp": 25,
+          "clk": 0,
+          "pos": 9.72
+        },
+        "logi": {
+          "imp": 1,
+          "clk": 0,
+          "pos": 10,
+          "nq": 1
+        },
+        "top_logi_queries": [
+          {
+            "q": "bijorhca badge gratuit",
+            "imp": 1,
+            "clk": 0,
+            "pos": 10
+          }
+        ]
+      }
+    },
+    {
+      "slug": "siane-toulouse",
+      "start_date": "2026-10-13",
+      "end_date": "2026-10-15",
+      "fr": {
+        "slug": "siane-toulouse",
+        "total": {
+          "imp": 655,
+          "clk": 13,
+          "pos": 7.244274809160306
+        },
+        "logi": {
+          "imp": 12,
+          "clk": 0,
+          "pos": 7,
+          "nq": 4
+        },
+        "top_logi_queries": [
+          {
+            "q": "siane exposants",
+            "imp": 8,
+            "clk": 0,
+            "pos": 8.1
+          },
+          {
+            "q": "liste des exposants",
+            "imp": 2,
+            "clk": 0,
+            "pos": 5.5
+          },
+          {
+            "q": "c’est jusqu’à quelle heure ?",
+            "imp": 1,
+            "clk": 0,
+            "pos": 2
+          },
+          {
+            "q": "la liste des exposants",
+            "imp": 1,
+            "clk": 0,
+            "pos": 6
+          }
+        ]
+      },
+      "en": {
+        "slug": "siane-toulouse",
+        "total": {
+          "imp": 2,
+          "clk": 0,
+          "pos": 5.5
+        },
+        "logi": {
+          "imp": 0,
+          "clk": 0,
+          "pos": null,
+          "nq": 0
+        },
+        "top_logi_queries": []
+      }
+    },
+    {
+      "slug": "jprs",
+      "start_date": "2027-03-25",
+      "end_date": "2027-03-27",
+      "fr": {
+        "slug": "jprs",
+        "total": {
+          "imp": 271,
+          "clk": 4,
+          "pos": 7.3357933579335795
+        },
+        "logi": {
+          "imp": 10,
+          "clk": 0,
+          "pos": 6.4,
+          "nq": 1
+        },
+        "top_logi_queries": [
+          {
+            "q": "jprs 2027 programme",
+            "imp": 10,
+            "clk": 0,
+            "pos": 6.4
+          }
+        ]
+      },
+      "en": {
+        "slug": "jprs",
+        "total": {
+          "imp": 6,
+          "clk": 0,
+          "pos": 5.5
+        },
+        "logi": {
+          "imp": 0,
+          "clk": 0,
+          "pos": null,
+          "nq": 0
+        },
+        "top_logi_queries": []
+      }
+    },
+    {
+      "slug": "jnep",
+      "start_date": "2027-05-27",
+      "end_date": "2027-05-28",
+      "fr": {
+        "slug": "jnep",
+        "total": {
+          "imp": 431,
+          "clk": 20,
+          "pos": 4.645011600928074
+        },
+        "logi": {
+          "imp": 6,
+          "clk": 0,
+          "pos": 2.33,
+          "nq": 4
+        },
+        "top_logi_queries": [
+          {
+            "q": "programme scientifique",
+            "imp": 2,
+            "clk": 0,
+            "pos": 2
+          },
+          {
+            "q": "tarifs d'inscription",
+            "imp": 2,
+            "clk": 0,
+            "pos": 3
+          },
+          {
+            "q": "programme",
+            "imp": 1,
+            "clk": 0,
+            "pos": 3
+          },
+          {
+            "q": "tarif,",
+            "imp": 1,
+            "clk": 0,
+            "pos": 1
+          }
+        ]
+      },
+      "en": {
+        "slug": "jnep",
+        "total": {
+          "imp": 275,
+          "clk": 1,
+          "pos": 9.007272727272728
+        },
+        "logi": {
+          "imp": 0,
+          "clk": 0,
+          "pos": null,
+          "nq": 0
+        },
+        "top_logi_queries": []
+      }
+    },
+    {
+      "slug": "autocar-expo",
+      "start_date": "2026-12-01",
+      "end_date": "2026-12-04",
+      "fr": {
+        "slug": "autocar-expo",
+        "total": {
+          "imp": 682,
+          "clk": 11,
+          "pos": 7.4853372434017595
+        },
+        "logi": {
+          "imp": 6,
+          "clk": 0,
+          "pos": 3,
+          "nq": 4
+        },
+        "top_logi_queries": [
+          {
+            "q": "liste complète des exposants",
+            "imp": 3,
+            "clk": 0,
+            "pos": 3.3
+          },
+          {
+            "q": "les horaires",
+            "imp": 1,
+            "clk": 0,
+            "pos": 2
+          },
+          {
+            "q": "liste des exposants",
+            "imp": 1,
+            "clk": 0,
+            "pos": 3
+          },
+          {
+            "q": "programme des conférences",
+            "imp": 1,
+            "clk": 0,
+            "pos": 3
+          }
+        ]
+      },
+      "en": {
+        "slug": "autocar-expo",
+        "total": {
+          "imp": 186,
+          "clk": 4,
+          "pos": 4.155913978494624
+        },
+        "logi": {
+          "imp": 0,
+          "clk": 0,
+          "pos": null,
+          "nq": 0
+        },
+        "top_logi_queries": []
+      }
+    },
+    {
+      "slug": "iftm-top-resa",
+      "start_date": "2027-10-05",
+      "end_date": "2027-10-07",
+      "fr": {
+        "slug": "iftm-top-resa",
+        "total": {
+          "imp": 195,
+          "clk": 1,
+          "pos": 13.892307692307693
+        },
+        "logi": {
+          "imp": 6,
+          "clk": 0,
+          "pos": 26,
+          "nq": 6
+        },
+        "top_logi_queries": [
+          {
+            "q": "badge gratuit iftm",
+            "imp": 1,
+            "clk": 0,
+            "pos": 14
+          },
+          {
+            "q": "badge iftm",
+            "imp": 1,
+            "clk": 0,
+            "pos": 35
+          },
+          {
+            "q": "iftm badge",
+            "imp": 1,
+            "clk": 0,
+            "pos": 41
+          },
+          {
+            "q": "iftm badge gratuit",
+            "imp": 1,
+            "clk": 0,
+            "pos": 17
+          },
+          {
+            "q": "iftm exposants",
+            "imp": 1,
+            "clk": 0,
+            "pos": 38
+          },
+          {
+            "q": "iftm horaire",
+            "imp": 1,
+            "clk": 0,
+            "pos": 11
+          }
+        ]
+      },
+      "en": {
+        "slug": "iftm-top-resa",
+        "total": {
+          "imp": 3,
+          "clk": 0,
+          "pos": 25
+        },
+        "logi": {
+          "imp": 0,
+          "clk": 0,
+          "pos": null,
+          "nq": 0
+        },
+        "top_logi_queries": []
+      }
+    },
+    {
+      "slug": "congres-urgences-sfmu",
+      "start_date": "2027-06-02",
+      "end_date": "2027-06-04",
+      "fr": {
+        "slug": "congres-urgences-sfmu",
+        "total": {
+          "imp": 892,
+          "clk": 16,
+          "pos": 7.2141255605381165
+        },
+        "logi": {
+          "imp": 5,
+          "clk": 0,
+          "pos": 3.8,
+          "nq": 2
+        },
+        "top_logi_queries": [
+          {
+            "q": "tarifs d'inscription",
+            "imp": 4,
+            "clk": 0,
+            "pos": 3
+          },
+          {
+            "q": "les tarifs d'inscription",
+            "imp": 1,
+            "clk": 0,
+            "pos": 7
+          }
+        ]
+      },
+      "en": {
+        "slug": "congres-urgences-sfmu",
+        "total": {
+          "imp": 32,
+          "clk": 0,
+          "pos": 6.6875
+        },
+        "logi": {
+          "imp": 0,
+          "clk": 0,
+          "pos": null,
+          "nq": 0
+        },
+        "top_logi_queries": []
+      }
+    }
+  ],
+  "control": [
+    {
+      "slug": "sial-paris",
+      "start_date": "2026-10-17",
+      "end_date": "2026-10-21",
+      "fr": {
+        "slug": "sial-paris",
+        "total": {
+          "imp": 2146,
+          "clk": 82,
+          "pos": 9.685927306616962
+        },
+        "logi": {
+          "imp": 716,
+          "clk": 54,
+          "pos": 8.39,
+          "nq": 29
+        },
+        "top_logi_queries": [
+          {
+            "q": "invitation gratuite sial 2026",
+            "imp": 357,
+            "clk": 25,
+            "pos": 6.7
+          },
+          {
+            "q": "sial 2026 code invitation",
+            "imp": 134,
+            "clk": 7,
+            "pos": 8.2
+          },
+          {
+            "q": "sial code invitation",
+            "imp": 62,
+            "clk": 6,
+            "pos": 9.1
+          },
+          {
+            "q": "code invitation sial 2026",
+            "imp": 61,
+            "clk": 7,
+            "pos": 7.9
+          },
+          {
+            "q": "sial paris 2026 invitation gratuite",
+            "imp": 23,
+            "clk": 0,
+            "pos": 9.2
+          },
+          {
+            "q": "sial paris 2026 invitation",
+            "imp": 22,
+            "clk": 4,
+            "pos": 17.1
+          },
+          {
+            "q": "invitation sial",
+            "imp": 8,
+            "clk": 0,
+            "pos": 18
+          },
+          {
+            "q": "invitation sial 2026",
+            "imp": 7,
+            "clk": 1,
+            "pos": 20.1
+          }
+        ]
+      },
+      "en": {
+        "slug": "sial-paris",
+        "total": {
+          "imp": 40,
+          "clk": 0,
+          "pos": 5.15
+        },
+        "logi": {
+          "imp": 0,
+          "clk": 0,
+          "pos": null,
+          "nq": 0
+        },
+        "top_logi_queries": []
+      }
+    },
+    {
+      "slug": "agrimax-metz",
+      "start_date": "2026-10-28",
+      "end_date": "2026-10-30",
+      "fr": {
+        "slug": "agrimax-metz",
+        "total": {
+          "imp": 1340,
+          "clk": 15,
+          "pos": 7.95
+        },
+        "logi": {
+          "imp": 223,
+          "clk": 1,
+          "pos": 7.49,
+          "nq": 17
+        },
+        "top_logi_queries": [
+          {
+            "q": "agrimax 2026 tarif",
+            "imp": 71,
+            "clk": 0,
+            "pos": 5.3
+          },
+          {
+            "q": "agrimax 2026 horaire",
+            "imp": 46,
+            "clk": 0,
+            "pos": 7.7
+          },
+          {
+            "q": "prix entree agrimax",
+            "imp": 37,
+            "clk": 0,
+            "pos": 8.3
+          },
+          {
+            "q": "agrimax exposants",
+            "imp": 19,
+            "clk": 1,
+            "pos": 8.4
+          },
+          {
+            "q": "horaire agrimax metz",
+            "imp": 16,
+            "clk": 0,
+            "pos": 10.6
+          },
+          {
+            "q": "horaires agrimax metz",
+            "imp": 10,
+            "clk": 0,
+            "pos": 10.8
+          },
+          {
+            "q": "agrimax horaire",
+            "imp": 7,
+            "clk": 0,
+            "pos": 9.4
+          },
+          {
+            "q": "adresse agrimax metz",
+            "imp": 4,
+            "clk": 0,
+            "pos": 9.3
+          }
+        ]
+      },
+      "en": {
+        "slug": "agrimax-metz",
+        "total": {
+          "imp": 142,
+          "clk": 8,
+          "pos": 4.823943661971831
+        },
+        "logi": {
+          "imp": 0,
+          "clk": 0,
+          "pos": null,
+          "nq": 0
+        },
+        "top_logi_queries": []
+      }
+    },
+    {
+      "slug": "journees-sfnv",
+      "start_date": "2026-12-02",
+      "end_date": "2026-12-04",
+      "fr": {
+        "slug": "journees-sfnv",
+        "total": {
+          "imp": 269,
+          "clk": 6,
+          "pos": 7.144981412639405
+        },
+        "logi": {
+          "imp": 33,
+          "clk": 0,
+          "pos": 7.48,
+          "nq": 3
+        },
+        "top_logi_queries": [
+          {
+            "q": "sfnv 2026 programme",
+            "imp": 24,
+            "clk": 0,
+            "pos": 7.7
+          },
+          {
+            "q": "programme sfnv 2026",
+            "imp": 8,
+            "clk": 0,
+            "pos": 7.6
+          },
+          {
+            "q": "tarifs",
+            "imp": 1,
+            "clk": 0,
+            "pos": 2
+          }
+        ]
+      },
+      "en": {
+        "slug": "journees-sfnv",
+        "total": {
+          "imp": 29,
+          "clk": 0,
+          "pos": 7.586206896551724
+        },
+        "logi": {
+          "imp": 2,
+          "clk": 0,
+          "pos": 9.5,
+          "nq": 1
+        },
+        "top_logi_queries": [
+          {
+            "q": "sfnv 2026 programme",
+            "imp": 2,
+            "clk": 0,
+            "pos": 9.5
+          }
+        ]
+      }
+    },
+    {
+      "slug": "pollutec-lyon",
+      "start_date": "2027-10-12",
+      "end_date": "2027-10-15",
+      "fr": {
+        "slug": "pollutec-lyon",
+        "total": {
+          "imp": 163,
+          "clk": 0,
+          "pos": 38.42944785276074
+        },
+        "logi": {
+          "imp": 7,
+          "clk": 0,
+          "pos": 16.43,
+          "nq": 2
+        },
+        "top_logi_queries": [
+          {
+            "q": "plan pollutec 2023",
+            "imp": 6,
+            "clk": 0,
+            "pos": 14.3
+          },
+          {
+            "q": "pollutec exposants",
+            "imp": 1,
+            "clk": 0,
+            "pos": 29
+          }
+        ]
+      },
+      "en": {
+        "slug": "pollutec-lyon",
+        "total": {
+          "imp": 33,
+          "clk": 0,
+          "pos": 39.78787878787879
+        },
+        "logi": {
+          "imp": 0,
+          "clk": 0,
+          "pos": null,
+          "nq": 0
+        },
+        "top_logi_queries": []
+      }
+    },
+    {
+      "slug": "sia-paris",
+      "start_date": "2027-02-27",
+      "end_date": "2027-03-07",
+      "fr": {
+        "slug": "sia-paris",
+        "total": {
+          "imp": 901,
+          "clk": 10,
+          "pos": 27.027746947835738
+        },
+        "logi": {
+          "imp": 42,
+          "clk": 0,
+          "pos": 12.21,
+          "nq": 7
+        },
+        "top_logi_queries": [
+          {
+            "q": "salon agriculture 2027 tarif",
+            "imp": 21,
+            "clk": 0,
+            "pos": 8.8
+          },
+          {
+            "q": "salon de l'agriculture 2027 tarif",
+            "imp": 15,
+            "clk": 0,
+            "pos": 10.1
+          },
+          {
+            "q": "salon de lagriculture 2027 tarif",
+            "imp": 2,
+            "clk": 0,
+            "pos": 8.5
+          },
+          {
+            "q": "le programme de la journée",
+            "imp": 1,
+            "clk": 0,
+            "pos": 15
+          },
+          {
+            "q": "les exposants",
+            "imp": 1,
+            "clk": 0,
+            "pos": 8
+          },
+          {
+            "q": "salon de l agriculture adresse",
+            "imp": 1,
+            "clk": 0,
+            "pos": 65
+          },
+          {
+            "q": "salon de l'agriculture adresse",
+            "imp": 1,
+            "clk": 0,
+            "pos": 72
+          }
+        ]
+      },
+      "en": {
+        "slug": "sia-paris",
+        "total": {
+          "imp": 1,
+          "clk": 0,
+          "pos": 8
+        },
+        "logi": {
+          "imp": 0,
+          "clk": 0,
+          "pos": null,
+          "nq": 0
+        },
+        "top_logi_queries": []
+      }
+    },
+    {
+      "slug": "cosmetic-360",
+      "start_date": "2026-10-14",
+      "end_date": "2026-10-15",
+      "fr": {
+        "slug": "cosmetic-360",
+        "total": {
+          "imp": 188,
+          "clk": 0,
+          "pos": 13.111702127659575
+        },
+        "logi": {
+          "imp": 26,
+          "clk": 0,
+          "pos": 3.19,
+          "nq": 5
+        },
+        "top_logi_queries": [
+          {
+            "q": "cosmetic 360 horaires",
+            "imp": 22,
+            "clk": 0,
+            "pos": 3.1
+          },
+          {
+            "q": "cosmetic 360 horaire",
+            "imp": 1,
+            "clk": 0,
+            "pos": 3
+          },
+          {
+            "q": "horaire cosmetic 360",
+            "imp": 1,
+            "clk": 0,
+            "pos": 6
+          },
+          {
+            "q": "horaires",
+            "imp": 1,
+            "clk": 0,
+            "pos": 4
+          },
+          {
+            "q": "horaires cosmetic 360",
+            "imp": 1,
+            "clk": 0,
+            "pos": 1
+          }
+        ]
+      },
+      "en": {
+        "slug": "cosmetic-360",
+        "total": {
+          "imp": 25,
+          "clk": 0,
+          "pos": 7.32
+        },
+        "logi": {
+          "imp": 0,
+          "clk": 0,
+          "pos": null,
+          "nq": 0
+        },
+        "top_logi_queries": []
+      }
+    },
+    {
+      "slug": "ricai",
+      "start_date": "2026-12-14",
+      "end_date": "2026-12-15",
+      "fr": {
+        "slug": "ricai",
+        "total": {
+          "imp": 616,
+          "clk": 1,
+          "pos": 6.1477272727272725
+        },
+        "logi": {
+          "imp": 19,
+          "clk": 0,
+          "pos": 6.32,
+          "nq": 2
+        },
+        "top_logi_queries": [
+          {
+            "q": "programme ricai 2026",
+            "imp": 18,
+            "clk": 0,
+            "pos": 6.4
+          },
+          {
+            "q": "programme ricai",
+            "imp": 1,
+            "clk": 0,
+            "pos": 5
+          }
+        ]
+      },
+      "en": {
+        "slug": "ricai",
+        "total": {
+          "imp": 115,
+          "clk": 2,
+          "pos": 4.921739130434783
+        },
+        "logi": {
+          "imp": 0,
+          "clk": 0,
+          "pos": null,
+          "nq": 0
+        },
+        "top_logi_queries": []
+      }
+    },
+    {
+      "slug": "jnlf",
+      "start_date": "2027-04-20",
+      "end_date": "2027-04-23",
+      "fr": {
+        "slug": "jnlf",
+        "total": {
+          "imp": 596,
+          "clk": 5,
+          "pos": 6.385906040268456
+        },
+        "logi": {
+          "imp": 14,
+          "clk": 0,
+          "pos": 8.14,
+          "nq": 2
+        },
+        "top_logi_queries": [
+          {
+            "q": "jnlf 2027 programme",
+            "imp": 13,
+            "clk": 0,
+            "pos": 7.9
+          },
+          {
+            "q": "programme scientifique",
+            "imp": 1,
+            "clk": 0,
+            "pos": 11
+          }
+        ]
+      },
+      "en": {
+        "slug": "jnlf",
+        "total": {
+          "imp": 116,
+          "clk": 1,
+          "pos": 5.267241379310345
+        },
+        "logi": {
+          "imp": 0,
+          "clk": 0,
+          "pos": null,
+          "nq": 0
+        },
+        "top_logi_queries": []
+      }
+    },
+    {
+      "slug": "maison-objet-paris",
+      "start_date": "2027-01-14",
+      "end_date": "2027-01-18",
+      "fr": {
+        "slug": "maison-objet-paris",
+        "total": {
+          "imp": 363,
+          "clk": 1,
+          "pos": 30.044077134986225
+        },
+        "logi": {
+          "imp": 15,
+          "clk": 0,
+          "pos": 41.07,
+          "nq": 11
+        },
+        "top_logi_queries": [
+          {
+            "q": "maison objet badge gratuit",
+            "imp": 3,
+            "clk": 0,
+            "pos": 41.3
+          },
+          {
+            "q": "maison et objet badge gratuit",
+            "imp": 2,
+            "clk": 0,
+            "pos": 44.5
+          },
+          {
+            "q": "maison et objet exposant",
+            "imp": 2,
+            "clk": 0,
+            "pos": 45
+          },
+          {
+            "q": "badge maison et objet",
+            "imp": 1,
+            "clk": 0,
+            "pos": 50
+          },
+          {
+            "q": "invitation salon maison et objet",
+            "imp": 1,
+            "clk": 0,
+            "pos": 46
+          },
+          {
+            "q": "les tarifs d'entrée",
+            "imp": 1,
+            "clk": 0,
+            "pos": 1
+          },
+          {
+            "q": "maison et objet 2026 exposants",
+            "imp": 1,
+            "clk": 0,
+            "pos": 3
+          },
+          {
+            "q": "maison et objet plan",
+            "imp": 1,
+            "clk": 0,
+            "pos": 61
+          }
+        ]
+      },
+      "en": {
+        "slug": "maison-objet-paris",
+        "total": {
+          "imp": 3,
+          "clk": 0,
+          "pos": 5.333333333333333
+        },
+        "logi": {
+          "imp": 0,
+          "clk": 0,
+          "pos": null,
+          "nq": 0
+        },
+        "top_logi_queries": []
+      }
+    },
+    {
+      "slug": "jfr-paris",
+      "start_date": "2026-10-08",
+      "end_date": "2026-10-11",
+      "fr": {
+        "slug": "jfr-paris",
+        "total": {
+          "imp": 178,
+          "clk": 1,
+          "pos": 16.971910112359552
+        },
+        "logi": {
+          "imp": 9,
+          "clk": 0,
+          "pos": 54.33,
+          "nq": 4
+        },
+        "top_logi_queries": [
+          {
+            "q": "jfr 2026 programme",
+            "imp": 4,
+            "clk": 0,
+            "pos": 47.3
+          },
+          {
+            "q": "jfr programme 2026",
+            "imp": 2,
+            "clk": 0,
+            "pos": 93
+          },
+          {
+            "q": "programme jfr",
+            "imp": 2,
+            "clk": 0,
+            "pos": 42.5
+          },
+          {
+            "q": "jfr programme",
+            "imp": 1,
+            "clk": 0,
+            "pos": 29
+          }
+        ]
+      },
+      "en": {
+        "slug": "jfr-paris",
+        "total": {
+          "imp": 92,
+          "clk": 2,
+          "pos": 11.315217391304348
+        },
+        "logi": {
+          "imp": 4,
+          "clk": 0,
+          "pos": 6.25,
+          "nq": 2
+        },
+        "top_logi_queries": [
+          {
+            "q": "jfr 2026 programme",
+            "imp": 3,
+            "clk": 0,
+            "pos": 5.3
+          },
+          {
+            "q": "programme jfr 2026",
+            "imp": 1,
+            "clk": 0,
+            "pos": 9
+          }
+        ]
+      }
+    },
+    {
+      "slug": "intermat-paris",
+      "start_date": "2027-04-21",
+      "end_date": "2027-04-24",
+      "fr": {
+        "slug": "intermat-paris",
+        "total": {
+          "imp": 170,
+          "clk": 0,
+          "pos": 21.629411764705882
+        },
+        "logi": {
+          "imp": 14,
+          "clk": 0,
+          "pos": 15.29,
+          "nq": 2
+        },
+        "top_logi_queries": [
+          {
+            "q": "intermat liste des exposants",
+            "imp": 7,
+            "clk": 0,
+            "pos": 13.4
+          },
+          {
+            "q": "prix entrée intermat",
+            "imp": 7,
+            "clk": 0,
+            "pos": 17.1
+          }
+        ]
+      },
+      "en": {
+        "slug": "intermat-paris",
+        "total": {
+          "imp": 2,
+          "clk": 0,
+          "pos": 4.5
+        },
+        "logi": {
+          "imp": 0,
+          "clk": 0,
+          "pos": null,
+          "nq": 0
+        },
+        "top_logi_queries": []
+      }
+    },
+    {
+      "slug": "salon-sme-paris",
+      "start_date": "2026-10-13",
+      "end_date": "2026-10-14",
+      "fr": {
+        "slug": "salon-sme-paris",
+        "total": {
+          "imp": 688,
+          "clk": 7,
+          "pos": 8.434593023255815
+        },
+        "logi": {
+          "imp": 10,
+          "clk": 0,
+          "pos": 7.7,
+          "nq": 3
+        },
+        "top_logi_queries": [
+          {
+            "q": "salon sme exposants",
+            "imp": 7,
+            "clk": 0,
+            "pos": 8.1
+          },
+          {
+            "q": "salon sme programme",
+            "imp": 2,
+            "clk": 0,
+            "pos": 7.5
+          },
+          {
+            "q": "c'est de quelle heure à quelle heure ?",
+            "imp": 1,
+            "clk": 0,
+            "pos": 5
+          }
+        ]
+      },
+      "en": {
+        "slug": "salon-sme-paris",
+        "total": {
+          "imp": 57,
+          "clk": 0,
+          "pos": 19.24561403508772
+        },
+        "logi": {
+          "imp": 0,
+          "clk": 0,
+          "pos": null,
+          "nq": 0
+        },
+        "top_logi_queries": []
+      }
+    },
+    {
+      "slug": "step-by-pollutec-paris",
+      "start_date": "2026-12-01",
+      "end_date": "2026-12-02",
+      "fr": {
+        "slug": "step-by-pollutec-paris",
+        "total": {
+          "imp": 168,
+          "clk": 4,
+          "pos": 4.892857142857142
+        },
+        "logi": {
+          "imp": 7,
+          "clk": 0,
+          "pos": 4.14,
+          "nq": 7
+        },
+        "top_logi_queries": [
+          {
+            "q": "entrée gratuite?",
+            "imp": 1,
+            "clk": 0,
+            "pos": 13
+          },
+          {
+            "q": "exposants",
+            "imp": 1,
+            "clk": 0,
+            "pos": 3
+          },
+          {
+            "q": "horaires",
+            "imp": 1,
+            "clk": 0,
+            "pos": 1
+          },
+          {
+            "q": "la billetterie",
+            "imp": 1,
+            "clk": 0,
+            "pos": 1
+          },
+          {
+            "q": "la liste des exposants",
+            "imp": 1,
+            "clk": 0,
+            "pos": 2
+          },
+          {
+            "q": "liste des conférenciers",
+            "imp": 1,
+            "clk": 0,
+            "pos": 7
+          },
+          {
+            "q": "liste des exposants",
+            "imp": 1,
+            "clk": 0,
+            "pos": 2
+          }
+        ]
+      },
+      "en": {
+        "slug": "step-by-pollutec-paris",
+        "total": {
+          "imp": 345,
+          "clk": 4,
+          "pos": 4.747826086956522
+        },
+        "logi": {
+          "imp": 0,
+          "clk": 0,
+          "pos": null,
+          "nq": 0
+        },
+        "top_logi_queries": []
+      }
+    },
+    {
+      "slug": "jfk-congres",
+      "start_date": "2027-05-19",
+      "end_date": "2027-05-22",
+      "fr": {
+        "slug": "jfk-congres",
+        "total": {
+          "imp": 924,
+          "clk": 8,
+          "pos": 6.373376623376624
+        },
+        "logi": {
+          "imp": 8,
+          "clk": 1,
+          "pos": 4.25,
+          "nq": 6
+        },
+        "top_logi_queries": [
+          {
+            "q": "les tarifs d'inscription",
+            "imp": 3,
+            "clk": 1,
+            "pos": 7.7
+          },
+          {
+            "q": "les tarifs",
+            "imp": 1,
+            "clk": 0,
+            "pos": 1
+          },
+          {
+            "q": "programme",
+            "imp": 1,
+            "clk": 0,
+            "pos": 3
+          },
+          {
+            "q": "quel est le tarif ?",
+            "imp": 1,
+            "clk": 0,
+            "pos": 1
+          },
+          {
+            "q": "tarif",
+            "imp": 1,
+            "clk": 0,
+            "pos": 3
+          },
+          {
+            "q": "tarifs d'inscription",
+            "imp": 1,
+            "clk": 0,
+            "pos": 3
+          }
+        ]
+      },
+      "en": {
+        "slug": "jfk-congres",
+        "total": {
+          "imp": 178,
+          "clk": 5,
+          "pos": 6.00561797752809
+        },
+        "logi": {
+          "imp": 0,
+          "clk": 0,
+          "pos": null,
+          "nq": 0
+        },
+        "top_logi_queries": []
+      }
+    },
+    {
+      "slug": "afvac-congres",
+      "start_date": "2026-11-26",
+      "end_date": "2026-11-28",
+      "fr": {
+        "slug": "afvac-congres",
+        "total": {
+          "imp": 562,
+          "clk": 9,
+          "pos": 8.254448398576512
+        },
+        "logi": {
+          "imp": 7,
+          "clk": 0,
+          "pos": 5,
+          "nq": 6
+        },
+        "top_logi_queries": [
+          {
+            "q": "afvac lille 2026 programme",
+            "imp": 2,
+            "clk": 0,
+            "pos": 11
+          },
+          {
+            "q": "horaires d'ouverture",
+            "imp": 1,
+            "clk": 0,
+            "pos": 3
+          },
+          {
+            "q": "la liste des exposants",
+            "imp": 1,
+            "clk": 0,
+            "pos": 1
+          },
+          {
+            "q": "les tarifs d'inscription",
+            "imp": 1,
+            "clk": 0,
+            "pos": 4
+          },
+          {
+            "q": "liste des exposants",
+            "imp": 1,
+            "clk": 0,
+            "pos": 1
+          },
+          {
+            "q": "noms des exposants",
+            "imp": 1,
+            "clk": 0,
+            "pos": 4
+          }
+        ]
+      },
+      "en": null
+    },
+    {
+      "slug": "foire-chalons-en-champagne",
+      "start_date": "2027-08-27",
+      "end_date": "2027-09-06",
+      "fr": {
+        "slug": "foire-chalons-en-champagne",
+        "total": {
+          "imp": 128,
+          "clk": 0,
+          "pos": 14.609375
+        },
+        "logi": {
+          "imp": 5,
+          "clk": 0,
+          "pos": 30.4,
+          "nq": 3
+        },
+        "top_logi_queries": [
+          {
+            "q": "exposant foire de chalons 2026",
+            "imp": 2,
+            "clk": 0,
+            "pos": 11
+          },
+          {
+            "q": "horaires foire de chalons",
+            "imp": 2,
+            "clk": 0,
+            "pos": 42
+          },
+          {
+            "q": "programme foire de chalons en champagne 2026",
+            "imp": 1,
+            "clk": 0,
+            "pos": 46
+          }
+        ]
+      },
+      "en": {
+        "slug": "foire-chalons-en-champagne",
+        "total": {
+          "imp": 2,
+          "clk": 0,
+          "pos": 30
+        },
+        "logi": {
+          "imp": 0,
+          "clk": 0,
+          "pos": null,
+          "nq": 0
+        },
+        "top_logi_queries": []
+      }
+    },
+    {
+      "slug": "petrochymia",
+      "start_date": "2026-11-25",
+      "end_date": "2026-11-26",
+      "fr": {
+        "slug": "petrochymia",
+        "total": {
+          "imp": 1025,
+          "clk": 15,
+          "pos": 4.320975609756097
+        },
+        "logi": {
+          "imp": 5,
+          "clk": 2,
+          "pos": 4,
+          "nq": 4
+        },
+        "top_logi_queries": [
+          {
+            "q": "liste des exposants",
+            "imp": 2,
+            "clk": 0,
+            "pos": 5
+          },
+          {
+            "q": "horaires prix",
+            "imp": 1,
+            "clk": 1,
+            "pos": 2
+          },
+          {
+            "q": "la liste des exposants",
+            "imp": 1,
+            "clk": 1,
+            "pos": 4
+          },
+          {
+            "q": "tarifs",
+            "imp": 1,
+            "clk": 0,
+            "pos": 4
+          }
+        ]
+      },
+      "en": {
+        "slug": "petrochymia",
+        "total": {
+          "imp": 72,
+          "clk": 3,
+          "pos": 4.277777777777778
+        },
+        "logi": {
+          "imp": 0,
+          "clk": 0,
+          "pos": null,
+          "nq": 0
+        },
+        "top_logi_queries": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,873 @@
+{
+  "window": {
+    "start": "2026-10-13",
+    "end": "2026-11-09"
+  },
+  "generated": "2026-11-12",
+  "gsc_rows": {
+    "pages": 831,
+    "page_query": 8910
+  },
+  "note": "Les requêtes anonymisées par Google n'apparaissent pas : chiffres logistiques = plancher. Motifs dans mesure.ts (LOGI_FR / LOGI_EN).",
+  "groups": {
+    "treated": {
+      "n": 5,
+      "total": {
+        "imp": 7355,
+        "clk": 77,
+        "ctr_pct": 1.047,
+        "pos": 11.57
+      },
+      "logistique": {
+        "imp": 593,
+        "clk": 16,
+        "ctr_pct": 2.698,
+        "pos": 7.87
+      }
+    },
+    "control": {
+      "n": 5,
+      "total": {
+        "imp": 4827,
+        "clk": 108,
+        "ctr_pct": 2.237,
+        "pos": 12.12
+      },
+      "logistique": {
+        "imp": 1018,
+        "clk": 55,
+        "ctr_pct": 5.403,
+        "pos": 8.42
+      }
+    }
+  },
+  "groups_en_info": {
+    "treated": {
+      "n": 5,
+      "total": {
+        "imp": 289,
+        "clk": 1,
+        "ctr_pct": 0.346,
+        "pos": 6.49
+      },
+      "logistique": {
+        "imp": 0,
+        "clk": 0,
+        "ctr_pct": null,
+        "pos": null
+      }
+    },
+    "control": {
+      "n": 5,
+      "total": {
+        "imp": 284,
+        "clk": 8,
+        "ctr_pct": 2.817,
+        "pos": 8.27
+      },
+      "logistique": {
+        "imp": 2,
+        "clk": 0,
+        "ctr_pct": 0,
+        "pos": 9.5
+      }
+    }
+  },
+  "treated": [
+    {
+      "slug": "festival-livre-paris",
+      "start_date": "2027-04-16",
+      "end_date": "2027-04-18",
+      "fr": {
+        "slug": "festival-livre-paris",
+        "total": {
+          "imp": 3077,
+          "clk": 40,
+          "pos": 9.223269418264543
+        },
+        "logi": {
+          "imp": 275,
+          "clk": 16,
+          "pos": 5.2,
+          "nq": 27
+        },
+        "top_logi_queries": [
+          {
+            "q": "salon du livre paris 2027 billetterie",
+            "imp": 128,
+            "clk": 5,
+            "pos": 5.5
+          },
+          {
+            "q": "festival du livre paris 2027 billetterie",
+            "imp": 89,
+            "clk": 11,
+            "pos": 5.3
+          },
+          {
+            "q": "l'ouverture de la billetterie",
+            "imp": 21,
+            "clk": 0,
+            "pos": 2.9
+          },
+          {
+            "q": "billetterie",
+            "imp": 5,
+            "clk": 0,
+            "pos": 3.2
+          },
+          {
+            "q": "la billetterie",
+            "imp": 4,
+            "clk": 0,
+            "pos": 3
+          },
+          {
+            "q": "ouverture de la billetterie",
+            "imp": 3,
+            "clk": 0,
+            "pos": 2.7
+          },
+          {
+            "q": "dates d'ouverture de la billetterie",
+            "imp": 2,
+            "clk": 0,
+            "pos": 3.5
+          },
+          {
+            "q": "quand ouvre la billetterie",
+            "imp": 2,
+            "clk": 0,
+            "pos": 3
+          }
+        ]
+      },
+      "en": {
+        "slug": "festival-livre-paris",
+        "total": {
+          "imp": 23,
+          "clk": 0,
+          "pos": 8.565217391304348
+        },
+        "logi": {
+          "imp": 0,
+          "clk": 0,
+          "pos": null,
+          "nq": 0
+        },
+        "top_logi_queries": []
+      }
+    },
+    {
+      "slug": "expoprotection",
+      "start_date": "2026-11-03",
+      "end_date": "2026-11-05",
+      "fr": {
+        "slug": "expoprotection",
+        "total": {
+          "imp": 1402,
+          "clk": 17,
+          "pos": 8.50570613409415
+        },
+        "logi": {
+          "imp": 165,
+          "clk": 0,
+          "pos": 8.62,
+          "nq": 14
+        },
+        "top_logi_queries": [
+          {
+            "q": "horaire expoprotection",
+            "imp": 54,
+            "clk": 0,
+            "pos": 8.4
+          },
+          {
+            "q": "expoprotection 2026 horaires",
+            "imp": 34,
+            "clk": 0,
+            "pos": 8.5
+          },
+          {
+            "q": "expoprotection 2026 horaire",
+            "imp": 30,
+            "clk": 0,
+            "pos": 8.6
+          },
+          {
+            "q": "expoprotection horaire",
+            "imp": 19,
+            "clk": 0,
+            "pos": 8.4
+          },
+          {
+            "q": "horaires expoprotection",
+            "imp": 14,
+            "clk": 0,
+            "pos": 7.6
+          },
+          {
+            "q": "expo protection 2026 horaire",
+            "imp": 4,
+            "clk": 0,
+            "pos": 8.8
+          },
+          {
+            "q": "expoprotection horaires",
+            "imp": 2,
+            "clk": 0,
+            "pos": 10
+          },
+          {
+            "q": "les horaires d'ouverture",
+            "imp": 2,
+            "clk": 0,
+            "pos": 4
+          }
+        ]
+      },
+      "en": {
+        "slug": "expoprotection",
+        "total": {
+          "imp": 32,
+          "clk": 0,
+          "pos": 10.0625
+        },
+        "logi": {
+          "imp": 0,
+          "clk": 0,
+          "pos": null,
+          "nq": 0
+        },
+        "top_logi_queries": []
+      }
+    },
+    {
+      "slug": "sett",
+      "start_date": "2026-11-03",
+      "end_date": "2026-11-05",
+      "fr": {
+        "slug": "sett",
+        "total": {
+          "imp": 1630,
+          "clk": 8,
+          "pos": 9.55521472392638
+        },
+        "logi": {
+          "imp": 91,
+          "clk": 0,
+          "pos": 9.05,
+          "nq": 10
+        },
+        "top_logi_queries": [
+          {
+            "q": "horaire salon sett montpellier",
+            "imp": 39,
+            "clk": 0,
+            "pos": 9
+          },
+          {
+            "q": "horaires sett montpellier",
+            "imp": 25,
+            "clk": 0,
+            "pos": 8.6
+          },
+          {
+            "q": "horaire sett montpellier",
+            "imp": 18,
+            "clk": 0,
+            "pos": 9.5
+          },
+          {
+            "q": "la liste des exposants",
+            "imp": 2,
+            "clk": 0,
+            "pos": 3.5
+          },
+          {
+            "q": "les exposants",
+            "imp": 2,
+            "clk": 0,
+            "pos": 4.5
+          },
+          {
+            "q": "exposants",
+            "imp": 1,
+            "clk": 0,
+            "pos": 3
+          },
+          {
+            "q": "horaire sett",
+            "imp": 1,
+            "clk": 0,
+            "pos": 11
+          },
+          {
+            "q": "horaires salon sett",
+            "imp": 1,
+            "clk": 0,
+            "pos": 10
+          }
+        ]
+      },
+      "en": {
+        "slug": "sett",
+        "total": {
+          "imp": 232,
+          "clk": 1,
+          "pos": 5.767241379310345
+        },
+        "logi": {
+          "imp": 0,
+          "clk": 0,
+          "pos": null,
+          "nq": 0
+        },
+        "top_logi_queries": []
+      }
+    },
+    {
+      "slug": "sia-paris",
+      "start_date": "2027-02-27",
+      "end_date": "2027-03-07",
+      "fr": {
+        "slug": "sia-paris",
+        "total": {
+          "imp": 901,
+          "clk": 10,
+          "pos": 27.027746947835738
+        },
+        "logi": {
+          "imp": 42,
+          "clk": 0,
+          "pos": 12.21,
+          "nq": 7
+        },
+        "top_logi_queries": [
+          {
+            "q": "salon agriculture 2027 tarif",
+            "imp": 21,
+            "clk": 0,
+            "pos": 8.8
+          },
+          {
+            "q": "salon de l'agriculture 2027 tarif",
+            "imp": 15,
+            "clk": 0,
+            "pos": 10.1
+          },
+          {
+            "q": "salon de lagriculture 2027 tarif",
+            "imp": 2,
+            "clk": 0,
+            "pos": 8.5
+          },
+          {
+            "q": "le programme de la journée",
+            "imp": 1,
+            "clk": 0,
+            "pos": 15
+          },
+          {
+            "q": "les exposants",
+            "imp": 1,
+            "clk": 0,
+            "pos": 8
+          },
+          {
+            "q": "salon de l agriculture adresse",
+            "imp": 1,
+            "clk": 0,
+            "pos": 65
+          },
+          {
+            "q": "salon de l'agriculture adresse",
+            "imp": 1,
+            "clk": 0,
+            "pos": 72
+          }
+        ]
+      },
+      "en": {
+        "slug": "sia-paris",
+        "total": {
+          "imp": 1,
+          "clk": 0,
+          "pos": 8
+        },
+        "logi": {
+          "imp": 0,
+          "clk": 0,
+          "pos": null,
+          "nq": 0
+        },
+        "top_logi_queries": []
+      }
+    },
+    {
+      "slug": "salon-du-chocolat-paris",
+      "start_date": "2026-10-28",
+      "end_date": "2026-11-01",
+      "fr": {
+        "slug": "salon-du-chocolat-paris",
+        "total": {
+          "imp": 345,
+          "clk": 2,
+          "pos": 14.2
+        },
+        "logi": {
+          "imp": 20,
+          "clk": 0,
+          "pos": 23.8,
+          "nq": 9
+        },
+        "top_logi_queries": [
+          {
+            "q": "horaires salon du chocolat paris 2026",
+            "imp": 8,
+            "clk": 0,
+            "pos": 8.4
+          },
+          {
+            "q": "salon du chocolat paris 2026 horaires",
+            "imp": 3,
+            "clk": 0,
+            "pos": 11
+          },
+          {
+            "q": "exposants salon du chocolat",
+            "imp": 2,
+            "clk": 0,
+            "pos": 38
+          },
+          {
+            "q": "salon du chocolat paris exposants",
+            "imp": 2,
+            "clk": 0,
+            "pos": 30.5
+          },
+          {
+            "q": "horaire salon du chocolat",
+            "imp": 1,
+            "clk": 0,
+            "pos": 71
+          },
+          {
+            "q": "horaires salon du chocolat",
+            "imp": 1,
+            "clk": 0,
+            "pos": 64
+          },
+          {
+            "q": "liste des exposants",
+            "imp": 1,
+            "clk": 0,
+            "pos": 7
+          },
+          {
+            "q": "salon du chocolat exposants",
+            "imp": 1,
+            "clk": 0,
+            "pos": 46
+          }
+        ]
+      },
+      "en": {
+        "slug": "salon-du-chocolat-paris",
+        "total": {
+          "imp": 1,
+          "clk": 0,
+          "pos": 11
+        },
+        "logi": {
+          "imp": 0,
+          "clk": 0,
+          "pos": null,
+          "nq": 0
+        },
+        "top_logi_queries": []
+      }
+    }
+  ],
+  "control": [
+    {
+      "slug": "sial-paris",
+      "start_date": "2026-10-17",
+      "end_date": "2026-10-21",
+      "fr": {
+        "slug": "sial-paris",
+        "total": {
+          "imp": 2146,
+          "clk": 82,
+          "pos": 9.685927306616962
+        },
+        "logi": {
+          "imp": 716,
+          "clk": 54,
+          "pos": 8.39,
+          "nq": 29
+        },
+        "top_logi_queries": [
+          {
+            "q": "invitation gratuite sial 2026",
+            "imp": 357,
+            "clk": 25,
+            "pos": 6.7
+          },
+          {
+            "q": "sial 2026 code invitation",
+            "imp": 134,
+            "clk": 7,
+            "pos": 8.2
+          },
+          {
+            "q": "sial code invitation",
+            "imp": 62,
+            "clk": 6,
+            "pos": 9.1
+          },
+          {
+            "q": "code invitation sial 2026",
+            "imp": 61,
+            "clk": 7,
+            "pos": 7.9
+          },
+          {
+            "q": "sial paris 2026 invitation gratuite",
+            "imp": 23,
+            "clk": 0,
+            "pos": 9.2
+          },
+          {
+            "q": "sial paris 2026 invitation",
+            "imp": 22,
+            "clk": 4,
+            "pos": 17.1
+          },
+          {
+            "q": "invitation sial",
+            "imp": 8,
+            "clk": 0,
+            "pos": 18
+          },
+          {
+            "q": "invitation sial 2026",
+            "imp": 7,
+            "clk": 1,
+            "pos": 20.1
+          }
+        ]
+      },
+      "en": {
+        "slug": "sial-paris",
+        "total": {
+          "imp": 40,
+          "clk": 0,
+          "pos": 5.15
+        },
+        "logi": {
+          "imp": 0,
+          "clk": 0,
+          "pos": null,
+          "nq": 0
+        },
+        "top_logi_queries": []
+      }
+    },
+    {
+      "slug": "agrimax-metz",
+      "start_date": "2026-10-28",
+      "end_date": "2026-10-30",
+      "fr": {
+        "slug": "agrimax-metz",
+        "total": {
+          "imp": 1340,
+          "clk": 15,
+          "pos": 7.95
+        },
+        "logi": {
+          "imp": 223,
+          "clk": 1,
+          "pos": 7.49,
+          "nq": 17
+        },
+        "top_logi_queries": [
+          {
+            "q": "agrimax 2026 tarif",
+            "imp": 71,
+            "clk": 0,
+            "pos": 5.3
+          },
+          {
+            "q": "agrimax 2026 horaire",
+            "imp": 46,
+            "clk": 0,
+            "pos": 7.7
+          },
+          {
+            "q": "prix entree agrimax",
+            "imp": 37,
+            "clk": 0,
+            "pos": 8.3
+          },
+          {
+            "q": "agrimax exposants",
+            "imp": 19,
+            "clk": 1,
+            "pos": 8.4
+          },
+          {
+            "q": "horaire agrimax metz",
+            "imp": 16,
+            "clk": 0,
+            "pos": 10.6
+          },
+          {
+            "q": "horaires agrimax metz",
+            "imp": 10,
+            "clk": 0,
+            "pos": 10.8
+          },
+          {
+            "q": "agrimax horaire",
+            "imp": 7,
+            "clk": 0,
+            "pos": 9.4
+          },
+          {
+            "q": "adresse agrimax metz",
+            "imp": 4,
+            "clk": 0,
+            "pos": 9.3
+          }
+        ]
+      },
+      "en": {
+        "slug": "agrimax-metz",
+        "total": {
+          "imp": 142,
+          "clk": 8,
+          "pos": 4.823943661971831
+        },
+        "logi": {
+          "imp": 0,
+          "clk": 0,
+          "pos": null,
+          "nq": 0
+        },
+        "top_logi_queries": []
+      }
+    },
+    {
+      "slug": "journees-sfnv",
+      "start_date": "2026-12-02",
+      "end_date": "2026-12-04",
+      "fr": {
+        "slug": "journees-sfnv",
+        "total": {
+          "imp": 269,
+          "clk": 6,
+          "pos": 7.144981412639405
+        },
+        "logi": {
+          "imp": 33,
+          "clk": 0,
+          "pos": 7.48,
+          "nq": 3
+        },
+        "top_logi_queries": [
+          {
+            "q": "sfnv 2026 programme",
+            "imp": 24,
+            "clk": 0,
+            "pos": 7.7
+          },
+          {
+            "q": "programme sfnv 2026",
+            "imp": 8,
+            "clk": 0,
+            "pos": 7.6
+          },
+          {
+            "q": "tarifs",
+            "imp": 1,
+            "clk": 0,
+            "pos": 2
+          }
+        ]
+      },
+      "en": {
+        "slug": "journees-sfnv",
+        "total": {
+          "imp": 29,
+          "clk": 0,
+          "pos": 7.586206896551724
+        },
+        "logi": {
+          "imp": 2,
+          "clk": 0,
+          "pos": 9.5,
+          "nq": 1
+        },
+        "top_logi_queries": [
+          {
+            "q": "sfnv 2026 programme",
+            "imp": 2,
+            "clk": 0,
+            "pos": 9.5
+          }
+        ]
+      }
+    },
+    {
+      "slug": "japan-expo-paris",
+      "start_date": "2027-07-08",
+      "end_date": "2027-07-11",
+      "fr": {
+        "slug": "japan-expo-paris",
+        "total": {
+          "imp": 884,
+          "clk": 5,
+          "pos": 25.652714932126695
+        },
+        "logi": {
+          "imp": 20,
+          "clk": 0,
+          "pos": 28,
+          "nq": 11
+        },
+        "top_logi_queries": [
+          {
+            "q": "exposant japan expo",
+            "imp": 4,
+            "clk": 0,
+            "pos": 18
+          },
+          {
+            "q": "ouverture billetterie japan expo 2027",
+            "imp": 3,
+            "clk": 0,
+            "pos": 1
+          },
+          {
+            "q": "adresse japan expo",
+            "imp": 2,
+            "clk": 0,
+            "pos": 70.5
+          },
+          {
+            "q": "japan expo adresse",
+            "imp": 2,
+            "clk": 0,
+            "pos": 62.5
+          },
+          {
+            "q": "japan expo exposant",
+            "imp": 2,
+            "clk": 0,
+            "pos": 46
+          },
+          {
+            "q": "japan expo horaires",
+            "imp": 2,
+            "clk": 0,
+            "pos": 24
+          },
+          {
+            "q": "horaire japan expo",
+            "imp": 1,
+            "clk": 0,
+            "pos": 10
+          },
+          {
+            "q": "horaires japan expo",
+            "imp": 1,
+            "clk": 0,
+            "pos": 17
+          }
+        ]
+      },
+      "en": {
+        "slug": "japan-expo-paris",
+        "total": {
+          "imp": 48,
+          "clk": 0,
+          "pos": 22
+        },
+        "logi": {
+          "imp": 0,
+          "clk": 0,
+          "pos": null,
+          "nq": 0
+        },
+        "top_logi_queries": []
+      }
+    },
+    {
+      "slug": "cosmetic-360",
+      "start_date": "2026-10-14",
+      "end_date": "2026-10-15",
+      "fr": {
+        "slug": "cosmetic-360",
+        "total": {
+          "imp": 188,
+          "clk": 0,
+          "pos": 13.111702127659575
+        },
+        "logi": {
+          "imp": 26,
+          "clk": 0,
+          "pos": 3.19,
+          "nq": 5
+        },
+        "top_logi_queries": [
+          {
+            "q": "cosmetic 360 horaires",
+            "imp": 22,
+            "clk": 0,
+            "pos": 3.1
+          },
+          {
+            "q": "cosmetic 360 horaire",
+            "imp": 1,
+            "clk": 0,
+            "pos": 3
+          },
+          {
+            "q": "horaire cosmetic 360",
+            "imp": 1,
+            "clk": 0,
+            "pos": 6
+          },
+          {
+            "q": "horaires",
+            "imp": 1,
+            "clk": 0,
+            "pos": 4
+          },
+          {
+            "q": "horaires cosmetic 360",
+            "imp": 1,
+            "clk": 0,
+            "pos": 1
+          }
+        ]
+      },
+      "en": {
+        "slug": "cosmetic-360",
+        "total": {
+          "imp": 25,
+          "clk": 0,
+          "pos": 7.32
+        },
+        "logi": {
+          "imp": 0,
+          "clk": 0,
+          "pos": null,
+          "nq": 0
+        },
+        "top_logi_queries": []
+      }
+    }
+  ]
+}

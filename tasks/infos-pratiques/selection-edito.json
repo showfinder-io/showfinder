@@ -1,0 +1,370 @@
+{
+  "window": {
+    "start": "2026-10-13",
+    "end": "2026-11-09"
+  },
+  "today": "2026-11-12",
+  "n": 44,
+  "upcoming": 379,
+  "pool": 275,
+  "excluded": {
+    "beauty-profs-marseille": "test CTR 48",
+    "jtse": "relecture EN",
+    "changenow-paris": "relecture EN",
+    "sival-angers": "test CTR 48",
+    "aeromart-toulouse": "relecture EN",
+    "workplace-meetings-cannes": "test CTR 48",
+    "bau-munich": "volet K",
+    "eurogin": "relecture EN",
+    "adf-pcd-paris": "relecture EN",
+    "salon-funeraire": "volet K",
+    "bioket": "relecture EN",
+    "bim-world-paris": "relecture EN",
+    "cannes-yachting-festival": "refaite 11-12 nov.",
+    "all4pack-paris": "volet K",
+    "iode": "test CTR 48",
+    "biofit": "relecture EN",
+    "reeduca-paris": "volet K",
+    "jfhod": "test CTR 48",
+    "ces-las-vegas": "test CTR 48",
+    "congres-adf-paris": "volet K",
+    "salon-tourisme-voyages-lille": "volet K",
+    "rencontres-amrae": "test CTR 48",
+    "congres-des-audioprothesistes": "test CTR 48",
+    "energaia-montpellier": "test CTR 48",
+    "viteff": "test CTR 48",
+    "siprho": "volet K",
+    "europack-euromanut-lyon": "test CTR 48",
+    "cannes-lions": "relecture EN",
+    "exphotel-bordeaux": "test CTR 48",
+    "natexpo-paris": "refaite 11-12 nov.",
+    "salon-des-vins-de-loire": "test CTR 48",
+    "siae-le-bourget": "volet K",
+    "tfwa-world-exhibition": "refaite 11-12 nov.",
+    "shop-le-salon": "volet K",
+    "ideobain": "refaite 11-12 nov.",
+    "medi-nov-connection-lyon": "refaite 11-12 nov.",
+    "nordbat-lille": "volet K",
+    "cprint-lyon": "volet K",
+    "sofins": "test CTR 48",
+    "bepositive-lyon": "volet K",
+    "carrefour-pathologie": "test CTR 48",
+    "fitex-paris": "volet K",
+    "arab-health-dubai": "relecture EN",
+    "euromaritime": "volet K",
+    "aerospace-test-development-show": "refaite 11-12 nov.",
+    "data-centre-world-paris": "test CTR 48",
+    "innovagri": "test CTR 48",
+    "elearning-expo-paris": "volet K",
+    "devoxx-france": "test CTR 48",
+    "foire-agricole-tarbes": "volet K",
+    "museum-connections": "test CTR 48",
+    "hr-technologies-france": "volet K",
+    "numeriquest-toulouse": "refaite 11-12 nov.",
+    "interclima": "refaite 11-12 nov.",
+    "europropre": "test CTR 48",
+    "it-partners-paris": "volet K",
+    "milipol-paris": "volet K",
+    "congres-sfd": "test CTR 48",
+    "paris-cafe-festival": "relecture EN",
+    "learning-technologies-paris": "volet K",
+    "aps-paris": "volet K",
+    "paris-photo": "volet K",
+    "produrable-paris": "volet K",
+    "vrac-tech": "relecture EN",
+    "cosmetagora-paris": "test CTR 48",
+    "prodays": "volet K",
+    "euroforest": "test CTR 48",
+    "salon-vignerons-independants-paris": "volet K",
+    "sepem-colmar": "volet K",
+    "sitl": "relecture EN",
+    "silmo-paris": "refaite 11-12 nov.",
+    "smcl": "test CTR 48",
+    "world-nuclear-exhibition": "volet K",
+    "revelations-grand-palais": "relecture EN",
+    "signal-week": "relecture EN",
+    "architect-at-work-nantes": "test CTR 48",
+    "luxe-pack-monaco": "volet K",
+    "affaire-de-cadeaux": "volet K",
+    "trustech": "relecture EN",
+    "jnep": "relecture EN",
+    "renodays": "volet K",
+    "jdp-paris": "test CTR 48",
+    "cplf": "test CTR 48",
+    "step-by-pollutec-paris": "relecture EN",
+    "autocar-expo": "relecture EN",
+    "congres-francais-urologie": "test CTR 48",
+    "one-to-one-retail-ecommerce": "refaite 11-12 nov.",
+    "educatech-expo": "test CTR 48",
+    "amwc": "test CTR 48",
+    "congres-francais-psychiatrie": "test CTR 48",
+    "jfk-congres": "relecture EN",
+    "paris-sante-femmes": "test CTR 48",
+    "tech-for-retail-paris": "refaite 11-12 nov.",
+    "batimat": "refaite 11-12 nov.",
+    "preventica-paris": "refaite 11-12 nov.",
+    "ad2s-bordeaux": "test CTR 48",
+    "espritmeuble-paris": "relecture EN",
+    "solutions-cse": "volet K",
+    "monaco-yacht-show": "relecture EN",
+    "tranofiliere-paris": "test CTR 48",
+    "world-quantum-cannes-festival": "relecture EN",
+    "imcas-world-congress": "relecture EN",
+    "premiere-classe": "refaite 11-12 nov.",
+    "congres-hlm": "volet K"
+  },
+  "en_top30": [
+    "cannes-lions",
+    "web-summit-lisbonne",
+    "imcas-world-congress",
+    "eurogin",
+    "arab-health-dubai",
+    "changenow-paris",
+    "equip-hotel-paris",
+    "trustech",
+    "congres-sfro",
+    "adf-pcd-paris",
+    "espritmeuble-paris",
+    "paris-cafe-festival",
+    "jtse",
+    "step-by-pollutec-paris",
+    "bim-world-paris",
+    "bioket",
+    "paris-retail-week",
+    "world-quantum-cannes-festival",
+    "jnep",
+    "revelations-grand-palais",
+    "sett",
+    "monaco-yacht-show",
+    "aeromart-toulouse",
+    "signal-week",
+    "vrac-tech",
+    "biofit",
+    "autocar-expo",
+    "solutions-cse",
+    "sitl",
+    "jfk-congres"
+  ],
+  "selected": [
+    {
+      "slug": "festival-livre-paris",
+      "imp_fr": 3077,
+      "imp_en": 23
+    },
+    {
+      "slug": "tech-elevage-la-roche-sur-yon",
+      "imp_fr": 3007,
+      "imp_en": 4
+    },
+    {
+      "slug": "devfest-nantes",
+      "imp_fr": 1621,
+      "imp_en": 27
+    },
+    {
+      "slug": "santexpo-paris",
+      "imp_fr": 1544,
+      "imp_en": 16
+    },
+    {
+      "slug": "hopipharm",
+      "imp_fr": 1348,
+      "imp_en": 154
+    },
+    {
+      "slug": "transformations-du-droit",
+      "imp_fr": 1337,
+      "imp_en": 72
+    },
+    {
+      "slug": "petrochymia",
+      "imp_fr": 1025,
+      "imp_en": 72
+    },
+    {
+      "slug": "mipim-cannes",
+      "imp_fr": 979,
+      "imp_en": 56
+    },
+    {
+      "slug": "japan-expo-paris",
+      "imp_fr": 884,
+      "imp_en": 48
+    },
+    {
+      "slug": "congres-urgences-sfmu",
+      "imp_fr": 892,
+      "imp_en": 32
+    },
+    {
+      "slug": "sia-paris",
+      "imp_fr": 901,
+      "imp_en": 1
+    },
+    {
+      "slug": "congres-reanimation",
+      "imp_fr": 806,
+      "imp_en": 35
+    },
+    {
+      "slug": "assises-cncc",
+      "imp_fr": 703,
+      "imp_en": 99
+    },
+    {
+      "slug": "rendez-vous-en-france",
+      "imp_fr": 625,
+      "imp_en": 152
+    },
+    {
+      "slug": "solicare",
+      "imp_fr": 629,
+      "imp_en": 108
+    },
+    {
+      "slug": "ricai",
+      "imp_fr": 616,
+      "imp_en": 115
+    },
+    {
+      "slug": "jnlf",
+      "imp_fr": 596,
+      "imp_en": 116
+    },
+    {
+      "slug": "solucop",
+      "imp_fr": 666,
+      "imp_en": 35
+    },
+    {
+      "slug": "la-levee-de-la-loire",
+      "imp_fr": 601,
+      "imp_en": 25
+    },
+    {
+      "slug": "salon-des-sports-parasports",
+      "imp_fr": 500,
+      "imp_en": 101
+    },
+    {
+      "slug": "funexpo-lyon",
+      "imp_fr": 599,
+      "imp_en": 0
+    },
+    {
+      "slug": "salon-herbe",
+      "imp_fr": 503,
+      "imp_en": 74
+    },
+    {
+      "slug": "congres-sfgm-tc",
+      "imp_fr": 468,
+      "imp_en": 98
+    },
+    {
+      "slug": "european-rotors",
+      "imp_fr": 564,
+      "imp_en": 0
+    },
+    {
+      "slug": "afvac-congres",
+      "imp_fr": 562,
+      "imp_en": 0
+    },
+    {
+      "slug": "tech-and-bio",
+      "imp_fr": 519,
+      "imp_en": 36
+    },
+    {
+      "slug": "sifa",
+      "imp_fr": 374,
+      "imp_en": 161
+    },
+    {
+      "slug": "cbc-toulouse",
+      "imp_fr": 403,
+      "imp_en": 121
+    },
+    {
+      "slug": "mifa-annecy",
+      "imp_fr": 367,
+      "imp_en": 134
+    },
+    {
+      "slug": "journees-techniques-biomedicales",
+      "imp_fr": 462,
+      "imp_en": 39
+    },
+    {
+      "slug": "sirha-lyon",
+      "imp_fr": 476,
+      "imp_en": 20
+    },
+    {
+      "slug": "patrimonia-paris",
+      "imp_fr": 462,
+      "imp_en": 34
+    },
+    {
+      "slug": "congres-esthetique-spa",
+      "imp_fr": 318,
+      "imp_en": 173
+    },
+    {
+      "slug": "salon-international-de-la-lingerie",
+      "imp_fr": 429,
+      "imp_en": 34
+    },
+    {
+      "slug": "business-industries-dijon",
+      "imp_fr": 387,
+      "imp_en": 66
+    },
+    {
+      "slug": "journees-du-courtage",
+      "imp_fr": 370,
+      "imp_en": 82
+    },
+    {
+      "slug": "mif-expo",
+      "imp_fr": 352,
+      "imp_en": 97
+    },
+    {
+      "slug": "global-industrie-lyon",
+      "imp_fr": 269,
+      "imp_en": 169
+    },
+    {
+      "slug": "journees-ihf",
+      "imp_fr": 279,
+      "imp_en": 154
+    },
+    {
+      "slug": "simi",
+      "imp_fr": 259,
+      "imp_en": 165
+    },
+    {
+      "slug": "workspace-expo-paris",
+      "imp_fr": 372,
+      "imp_en": 47
+    },
+    {
+      "slug": "urbest",
+      "imp_fr": 365,
+      "imp_en": 53
+    },
+    {
+      "slug": "journees-reflexions-ophtalmologiques",
+      "imp_fr": 352,
+      "imp_en": 65
+    },
+    {
+      "slug": "journees-cicatrisations",
+      "imp_fr": 382,
+      "imp_en": 25
+    }
+  ]
+}

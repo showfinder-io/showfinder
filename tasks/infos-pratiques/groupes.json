@@ -1,0 +1,103 @@
+{
+  "seed": "infos-pratiques-2026-11-12",
+  "window": {
+    "start": "2026-10-13",
+    "end": "2026-11-09"
+  },
+  "size_per_group": 5,
+  "min_logistic_impressions": 20,
+  "eligible_count": 11,
+  "pool_size": 11,
+  "exclusion_criteria": {
+    "non_publie": "fiche absente de la liste des salons publiés",
+    "test_ctr_48": "tasks/ctr-test-48/groupes.json (treated, control, excluded)",
+    "page2_page1": "pages de la table tasks/page2-page1/priorisation.md (53)",
+    "refaite_11_12_nov": [
+      "silmo-paris",
+      "medi-nov-connection-lyon",
+      "aerospace-test-development-show",
+      "batimat",
+      "ideobain",
+      "natexpo-paris",
+      "tranofiliere-paris",
+      "luxe-pack-monaco",
+      "untec-congres",
+      "numeriquest-toulouse",
+      "architect-at-work-lyon",
+      "preventica-paris",
+      "cannes-yachting-festival",
+      "tfwa-world-exhibition",
+      "interclima",
+      "produrable-paris",
+      "premiere-classe",
+      "ad2s-bordeaux",
+      "one-to-one-retail-ecommerce",
+      "tech-for-retail-paris"
+    ],
+    "ctr_prestataires_lieux": "ne touche que /lieux et /prestataires : aucune fiche /salons à exclure",
+    "seuil": "impressions logistiques FR >= 20 sur la fenêtre"
+  },
+  "exclusion_counts": {
+    "non_publie": 6,
+    "test_ctr_48": 43,
+    "page2_page1": 43,
+    "refaite_11_12_nov": 15,
+    "logi_sous_seuil": 324
+  },
+  "appariement": "glouton par distance minimale sur (ln(1+imp logistiques), ln(1+imp totales), position/10) parmi les 88 fiches à plus fortes impressions logistiques ; tirage de la fiche traitée par paire avec mulberry32(hash(graine))",
+  "treated": [
+    "festival-livre-paris",
+    "expoprotection",
+    "sett",
+    "sia-paris",
+    "salon-du-chocolat-paris"
+  ],
+  "control": [
+    "sial-paris",
+    "agrimax-metz",
+    "journees-sfnv",
+    "japan-expo-paris",
+    "cosmetic-360"
+  ],
+  "pairs": [
+    {
+      "pair": 1,
+      "treated": "festival-livre-paris",
+      "control": "sial-paris",
+      "distance": 1.021
+    },
+    {
+      "pair": 2,
+      "treated": "expoprotection",
+      "control": "agrimax-metz",
+      "distance": 0.308
+    },
+    {
+      "pair": 3,
+      "treated": "sett",
+      "control": "journees-sfnv",
+      "distance": 2.07
+    },
+    {
+      "pair": 4,
+      "treated": "sia-paris",
+      "control": "japan-expo-paris",
+      "distance": 0.73
+    },
+    {
+      "pair": 5,
+      "treated": "salon-du-chocolat-paris",
+      "control": "cosmetic-360",
+      "distance": 0.664
+    }
+  ],
+  "fiches_edition_terminee_a_date": [
+    "expoprotection",
+    "sett",
+    "salon-du-chocolat-paris",
+    "sial-paris",
+    "agrimax-metz",
+    "cosmetic-360"
+  ],
+  "fiches_sans_date_fin": []
+}
