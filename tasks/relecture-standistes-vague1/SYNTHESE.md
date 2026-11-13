@@ -26,7 +26,7 @@ Bilan : 10 fiches ouvertes à l'indexation, 2 restent en noindex.
 ## Effets de bord
 
 - Hubs : idee-fixe (50) et stand-by-me (84) sortent du hub standistes-paris par le filtre départemental (le hub compte les fiches par département).
-- merci-gustave reste listée dans les hubs (département 75 en base) alors que l'adresse parisienne n'est pas prouvée : à trancher par Julien (comme Pico).
+- merci-gustave : TRANCHÉ par Julien le 2026-11-13, sortie des hubs comme Pico (category standiste -> autre, e-mail remplacé par contact@mercigustave.co, scripts/diag-merci-gustave-hors-hubs-2026-11-13.ts). Reste en noindex ; ville Paris et département 75 toujours non prouvés en base.
 - stand-by-me : le site affiche aussi un bureau dans le 75019 ; la base suit le siège (P4).
 
 ## Reste
