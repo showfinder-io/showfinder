@@ -1,0 +1,419 @@
+[
+  {
+    "slug": "a-b",
+    "set": {
+      "seo_description": "STAND A+B, agence de stands à Courbevoie : conseil, design et 3D en interne, fabrication et installation pour salons, en France et à l'international.",
+      "seo_description_en": "STAND A+B is a stand agency in Courbevoie: advice, in-house design and 3D, plus manufacturing and installation for trade shows, in France and worldwide.",
+      "specialties_en": [
+        "exhibition strategy consulting",
+        "design and 3D modelling",
+        "stand manufacturing and installation",
+        "project management and event logistics"
+      ],
+      "zone_intervention_en": "France, Europe and international"
+    }
+  },
+  {
+    "slug": "agence-bosco",
+    "set": {
+      "seo_description": "Agence Bosco, agence d'agencement événementiel au Rheu (Ille-et-Vilaine) : gestion de stand, sous-traitance technique et bureau d'études, partout en France.",
+      "seo_description_en": "Agence Bosco is an event fit-out agency in Le Rheu (Ille-et-Vilaine): stand management, technical subcontracting and a design office, working across France.",
+      "specialties_en": [
+        "stand management",
+        "technical subcontracting",
+        "design office",
+        "technical event coordination"
+      ],
+      "zone_intervention_en": "France"
+    }
+  },
+  {
+    "slug": "aliance-mobilier",
+    "set": {
+      "seo_description": "Aliance Mobilier, location de mobilier événementiel à Saint-Orens-de-Gameville, près de Toulouse : assises, tables, comptoirs, packs, pour salons et congrès.",
+      "seo_description_en": "Aliance Mobilier hires out event furniture from Saint-Orens-de-Gameville, near Toulouse: seating, tables, counters and packs for trade shows and congresses.",
+      "specialties_en": [
+        "seating",
+        "tables",
+        "counters and storage",
+        "accessories",
+        "furniture packs and sets"
+      ],
+      "zone_intervention_en": "France and neighbouring countries"
+    }
+  },
+  {
+    "slug": "alphaexpo",
+    "set": {
+      "seo_description": "Alphaexpo, agence de stands sur mesure à Genas, près de Lyon, fondée en 2004 : stands traditionnels, modulaires et hybrides, en France et en Europe.",
+      "seo_description_en": "Alphaexpo, founded in 2004 in Genas near Lyon, designs custom traditional, modular and hybrid stands, plus event and retail fit-outs, in France and Europe.",
+      "specialties_en": [
+        "traditional stand",
+        "modular stand",
+        "hybrid stand",
+        "retail fit-out",
+        "temporary event spaces"
+      ],
+      "zone_intervention_en": "France and Europe"
+    }
+  },
+  {
+    "slug": "arc-et-typ",
+    "set": {
+      "seo_description": "Arc et Typ, agence parisienne fondée en 2002 (Paris 18e) : stands de salon, showrooms, espaces événementiels et corners retail, éphémères ou pérennes.",
+      "seo_description_en": "Arc et Typ, a Paris agency (18th) founded in 2002, designs trade show stands, showrooms, event spaces and retail corners, temporary or permanent.",
+      "specialties_en": [
+        "stand design",
+        "showrooms",
+        "retail space fit-out",
+        "event design"
+      ],
+      "zone_intervention_en": null
+    }
+  },
+  {
+    "slug": "athenee",
+    "set": {
+      "seo_description": "ATHENEE Concept, agence de stands à Versailles, active depuis 1982 : stands de salon sur mesure, agencement intérieur, scénographie, PLV, en France et Europe.",
+      "seo_description_en": "ATHENEE Concept, active since 1982 in Versailles, designs, builds and installs trade show stands, plus interior fit-out, event scenography and bespoke POS.",
+      "specialties_en": [
+        "custom exhibition stand design",
+        "interior fit-out",
+        "event scenography",
+        "bespoke POS displays"
+      ],
+      "zone_intervention_en": "France, Europe and international"
+    }
+  },
+  {
+    "slug": "axial-design",
+    "set": {
+      "seo_description": "axial design, agence d'architecture d'intérieur à Limonest, près de Lyon : stands sur mesure, identités de marque, accueils, bureaux et showrooms, ISO 20121.",
+      "seo_description_en": "axial design is an interior architecture agency in Limonest, near Lyon: custom stands, brand identities, reception areas, offices and showrooms, ISO 20121.",
+      "specialties_en": [
+        "interior architecture",
+        "custom stand",
+        "brand identity",
+        "workspace fit-out"
+      ],
+      "zone_intervention_en": null
+    }
+  },
+  {
+    "slug": "cap-linea",
+    "set": {
+      "seo_description": "Cap Linea, agence parisienne fondée en 2007 : stands d'exposition sur mesure, modulables, traditionnels et collectifs, en France et à l'international.",
+      "seo_description_en": "Cap Linea, a Paris agency founded in 2007, designs and builds custom, modular, traditional and collective exhibition stands in France and abroad.",
+      "specialties_en": [
+        "custom stands",
+        "modular stands",
+        "traditional stands",
+        "collective stands",
+        "event strategy consulting"
+      ],
+      "zone_intervention_en": "France and international"
+    }
+  },
+  {
+    "slug": "co-nect",
+    "set": {
+      "seo_description": "CO-NECT, groupe événementiel fondé en 1989 à Peujard, agences à Paris, Lyon et Bordeaux : stands sur mesure et éco-modulables, muséographie, ISO 20121.",
+      "seo_description_en": "CO-NECT, an event group founded in 1989 in Peujard with agencies in Paris, Lyon and Bordeaux: custom and eco-modular stands, museography, ISO 20121.",
+      "specialties_en": [
+        "custom stand",
+        "eco-modular stand",
+        "museography",
+        "outdoor fit-out"
+      ],
+      "zone_intervention_en": "Paris, Lyon and Bordeaux, across the whole country"
+    }
+  },
+  {
+    "slug": "design-location",
+    "set": {
+      "seo_description": "Design Location, location de mobilier événementiel et de matériel de bar à Goussainville, fondée en 2005, pour organisateurs de salons, congrès et agences.",
+      "seo_description_en": "Design Location, founded in 2005 in Goussainville, hires out furniture and bar equipment to trade show and congress organisers and event agencies.",
+      "specialties_en": [
+        "furniture hire",
+        "bar equipment hire",
+        "temporary space fit-out"
+      ],
+      "zone_intervention_en": "Paris and the provinces"
+    }
+  },
+  {
+    "slug": "equateur-expo",
+    "set": {
+      "seo_description": "Équateur Expo, agence de stands à Paris 18e : stands sur mesure, modulables et hybrides, bureau d'études intégré, en France et à l'international.",
+      "seo_description_en": "Équateur Expo is a stand design agency in Paris (18th arrondissement): custom, modular and hybrid stands with an in-house design office, in France and abroad.",
+      "specialties_en": [
+        "custom stands",
+        "modular stands",
+        "hybrid stands",
+        "professional space fit-out",
+        "in-house design office"
+      ],
+      "zone_intervention_en": "throughout France and internationally"
+    }
+  },
+  {
+    "slug": "evolu-stand",
+    "set": {
+      "seo_description": "EVOLU STAND, éditée par l'agence Galis à Saint-Thibault-des-Vignes : stands modulables des gammes MODULO, IMAGO et SOLUTIO, en France et à l'international.",
+      "seo_description_en": "EVOLU STAND, published by stand agency Galis in Saint-Thibault-des-Vignes, offers modular stand ranges MODULO, IMAGO and SOLUTIO, in France and abroad.",
+      "specialties_en": [
+        "modular stands",
+        "modulo",
+        "imago",
+        "solutio"
+      ],
+      "zone_intervention_en": "the national territory and internationally"
+    }
+  },
+  {
+    "slug": "expo-4",
+    "set": {
+      "seo_description": "Expo 4, fabricant de stands à Neuilly-sur-Marne fondé en 1995 : stands sur mesure, modulaires de 6 à 18 m² et portables, partout en France et en Europe.",
+      "seo_description_en": "Expo 4, a stand manufacturer in Neuilly-sur-Marne founded in 1995, makes custom, modular (6 to 18 sq m) and portable stands, across France and Europe.",
+      "specialties_en": [
+        "custom stands",
+        "modular stands",
+        "portable stands",
+        "shop fit-out"
+      ],
+      "zone_intervention_en": "France and Europe"
+    }
+  },
+  {
+    "slug": "fg-design",
+    "set": {
+      "seo_description": "FG Design, agence de stands à Boulogne-Billancourt, active depuis 1977 : stands sur mesure et modulaires, pavillons, chalets et showrooms, ISO 20121.",
+      "seo_description_en": "FG Design, a stand agency in Boulogne-Billancourt active since 1977, creates custom and modular stands, pavilions, chalets and showrooms, ISO 20121.",
+      "specialties_en": [
+        "custom stands",
+        "reusable modular stands",
+        "pavilions and chalets",
+        "retail and showroom fit-out"
+      ],
+      "zone_intervention_en": "France, Europe and international"
+    }
+  },
+  {
+    "slug": "go4expo",
+    "set": {
+      "seo_description": "Go4expo, standiste fondé en 2021 à Lunel-Viel (Hérault) : stands modulaires, portatifs et kits d'exposition réutilisables, en France et à l'international.",
+      "seo_description_en": "Go4expo, a stand builder founded in 2021 in Lunel-Viel (Hérault), makes reusable modular stands, portable stands and exhibition kits, in France and worldwide.",
+      "specialties_en": [
+        "modular stands",
+        "portable stands",
+        "exhibition kits",
+        "eco-responsible and reusable stands"
+      ],
+      "zone_intervention_en": "France, Europe, worldwide"
+    }
+  },
+  {
+    "slug": "id2stand",
+    "set": {
+      "seo_description": "ID2Stand, agence de stands à Lésigny (Seine-et-Marne), créée en 2011 : stands sur mesure fabriqués en France et modulables, du plan 3D au montage.",
+      "seo_description_en": "ID2Stand, a stand agency in Lésigny (Seine-et-Marne) created in 2011, offers custom stands made in France and modular stands, from 3D plans to set-up.",
+      "specialties_en": [
+        "custom stand",
+        "modular stand",
+        "space fit-out",
+        "3D design",
+        "stand storage"
+      ],
+      "zone_intervention_en": "France, Europe and international"
+    }
+  },
+  {
+    "slug": "l-architecture-communicante",
+    "set": {
+      "seo_description": "L'Architecture Communicante, agence du Perreux-sur-Marne (1996) : stands sur mesure, pop-up stores, espaces événementiels et agencements d'intérieur.",
+      "seo_description_en": "L'Architecture Communicante, a Le Perreux-sur-Marne agency founded in 1996: custom stands, pop-up stores, event spaces and interiors, in France and Europe.",
+      "specialties_en": [
+        "custom stands",
+        "pop-up stores",
+        "event and VIP spaces",
+        "interior fit-out"
+      ],
+      "zone_intervention_en": "France and Europe"
+    }
+  },
+  {
+    "slug": "laps-concept",
+    "set": {
+      "seo_description": "Laps Concept, agence d'agencement et de stands à Genas (Rhône), près d'Eurexpo Lyon : bureaux, magasins, showrooms et stands modulaires Easy Expo.",
+      "seo_description_en": "Laps Concept is a fit-out and stand design agency in Genas (Rhône), near Eurexpo Lyon: offices, shops, showrooms and Easy Expo modular stands.",
+      "specialties_en": [
+        "office, shop and showroom fit-out",
+        "modular stands",
+        "cabinet-making, joinery and metalwork"
+      ],
+      "zone_intervention_en": null
+    }
+  },
+  {
+    "slug": "magnum",
+    "set": {
+      "seo_description": "Magnum, prestataire technique audiovisuel à Gonesse, actif depuis 1986 : son, vidéo, lumière, structure et intégration LED pour événements, en Île-de-France.",
+      "seo_description_en": "Magnum, an audiovisual technical provider in Gonesse active since 1986, supplies sound, video, lighting, structures and LED integration in Île-de-France.",
+      "specialties_en": [
+        "sound",
+        "lighting",
+        "video",
+        "structure",
+        "LED integration"
+      ],
+      "zone_intervention_en": "Île-de-France"
+    }
+  },
+  {
+    "slug": "media-product",
+    "set": {
+      "seo_description": "Media Product, standiste à Saint-Bonnet-de-Mure près de Lyon, actif depuis 1988 : stands sur mesure, modulaires, displays et événements, ISO 20121.",
+      "seo_description_en": "Media Product, a stand builder near Lyon (Saint-Bonnet-de-Mure) active since 1988, makes custom and modular stands, displays and corporate events, ISO 20121.",
+      "specialties_en": [
+        "custom stand design for trade shows",
+        "modular stands and displays",
+        "bespoke corporate events",
+        "advice and analysis",
+        "assembly and dismantling"
+      ],
+      "zone_intervention_en": "all of France and internationally"
+    }
+  },
+  {
+    "slug": "pech-up",
+    "set": {
+      "seo_description": "Pech'Up, standiste à Millery (Rhône) créé en 2020 : stands modulaires réutilisables et hybrides de 9 à 300 m², à la vente ou à la location, en France.",
+      "seo_description_en": "Pech'Up, a stand builder in Millery (Rhône) created in 2020, makes reusable modular and hybrid stands from 9 to 300 sq m, for sale or hire, throughout France.",
+      "specialties_en": [
+        "modular stand",
+        "hybrid stand",
+        "space fit-out",
+        "stand hire",
+        "eco-responsibility"
+      ],
+      "zone_intervention_en": "France"
+    }
+  },
+  {
+    "slug": "potel-et-chabot-paris",
+    "set": {
+      "seo_description": "Potel et Chabot, maison de traiteur fondée à Paris en 1820, groupe certifié ISO 20121 : cocktails d'entreprise, conventions, congrès, repas assis, réceptions.",
+      "seo_description_en": "Potel et Chabot, a caterer founded in Paris in 1820, part of an ISO 20121 certified group: corporate cocktails, conventions, congresses, seated meals.",
+      "specialties_en": [
+        "corporate cocktail",
+        "convention and congress",
+        "seated meal",
+        "private reception"
+      ],
+      "zone_intervention_en": null
+    }
+  },
+  {
+    "slug": "stand-by-me",
+    "set": {
+      "seo_description": "Stand By Me, agence de stands sur mesure pour salons à Paris et au Thor, depuis 2008 : conception, fabrication en atelier, logistique et installation.",
+      "seo_description_en": "Stand By Me, based in Paris and Le Thor since 2008, designs custom stands for trade shows, covering workshop production, logistics and on-site installation.",
+      "specialties_en": [
+        "design and modelling",
+        "production and construction",
+        "logistics and installation",
+        "event services"
+      ],
+      "zone_intervention_en": "France and international"
+    }
+  },
+  {
+    "slug": "stik-co",
+    "set": {
+      "seo_description": "STIK&CO, agence de design événementiel à Courbevoie (bureaux à Paris et Toulouse) : stands sur mesure et modulaires, showrooms, pop-up stores, corners.",
+      "seo_description_en": "STIK&CO is an event design and architecture agency in Courbevoie with offices in Paris and Toulouse: custom and modular stands, showrooms and pop-up stores.",
+      "specialties_en": [
+        "custom stand",
+        "modular stand",
+        "showroom / pop-up store",
+        "space fit-out",
+        "experiential marketing"
+      ],
+      "zone_intervention_en": "France and international"
+    }
+  },
+  {
+    "slug": "technistand",
+    "set": {
+      "seo_description": "Technistand, standiste à Gagny (Seine-Saint-Denis) créé en 2012 : stands clés en main sur mesure, réutilisables et modulaires, de la conception au démontage.",
+      "seo_description_en": "Technistand, a stand builder in Gagny (Seine-Saint-Denis) created in 2012, delivers turnkey custom, reusable and modular stands, from design to dismantling.",
+      "specialties_en": [
+        "custom stands",
+        "reusable stands",
+        "modular stands",
+        "showroom fit-out",
+        "event decor"
+      ],
+      "zone_intervention_en": null
+    }
+  },
+  {
+    "slug": "trajectoire-expositions",
+    "set": {
+      "seo_description": "Trajectoire Expositions, agence de stands à Gentilly (Val-de-Marne), fondée en 1993 : stands sur mesure et hybrides, PLV, retail et stands réceptifs.",
+      "seo_description_en": "Trajectoire Expositions, a stand agency in Gentilly (Val-de-Marne) founded in 1993: custom and hybrid stands, POS, retail spaces and hospitality stands.",
+      "specialties_en": [
+        "custom stands",
+        "hybrid stands",
+        "POS, event and retail",
+        "hospitality stands"
+      ],
+      "zone_intervention_en": "France and abroad"
+    }
+  },
+  {
+    "slug": "un-amour-de-bonbon",
+    "set": {
+      "seo_description": "Un Amour de Bonbon, restauration événementielle à Saint-Maurice (Val-de-Marne), fondée en 1992 : stands sucrés et salés, foodtrucks et catering pour salons.",
+      "seo_description_en": "Un Amour de Bonbon, an event caterer in Saint-Maurice (Val-de-Marne) founded in 1992, offers sweet and savoury stands, food trucks and catering for shows.",
+      "specialties_en": [
+        "sweet stands",
+        "savoury stands",
+        "event catering",
+        "food trucks",
+        "event catering service"
+      ],
+      "zone_intervention_en": null
+    }
+  },
+  {
+    "slug": "videlio",
+    "set": {
+      "seo_description": "Videlio, intégrateur audiovisuel à Gennevilliers : intégration, pôle Videlio-Events, location de matériel, écrans géants, en France et à l'international.",
+      "seo_description_en": "Videlio, an audiovisual integrator and provider in Gennevilliers: integration, Videlio-Events, equipment hire and giant screens, in France and abroad.",
+      "specialties_en": [
+        "audiovisual integration",
+        "event service provider",
+        "indoor/outdoor giant screens",
+        "space scenography",
+        "equipment hire"
+      ],
+      "zone_intervention_en": "France and international"
+    }
+  },
+  {
+    "slug": "wmh-project",
+    "set": {
+      "seo_description": "WMH Project, agence d'expérience de marque à Courbevoie, équipes à Lyon, Marseille, Bordeaux et Toulouse : stands, pavillons, pop-up stores et événementiel.",
+      "seo_description_en": "WMH Project, a brand experience agency in Courbevoie with teams in Lyon, Marseille, Bordeaux and Toulouse: stands, pavilions, pop-up stores, corporate events.",
+      "specialties_en": [
+        "stands and pavilions",
+        "pop-up store",
+        "scenography",
+        "showroom",
+        "corporate events"
+      ],
+      "zone_intervention_en": "France and international"
+    }
+  }
+]

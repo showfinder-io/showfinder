@@ -1,0 +1,340 @@
+[
+  {
+    "slug": "2b",
+    "company_name": "2B",
+    "category": "standiste",
+    "description": "2B est une agence de design d'espaces basée à Clichy (Hauts-de-Seine), active depuis 1991. Elle conçoit des stands, showrooms et espaces événementiels en intégrant ingénierie de valeur, logistique et stockage à chaque projet. L'agence dispose d'un centre logistique à Beauchamp et d'une implantation à Ecully, près de Lyon, et intervient en France et à l'international. 2B est certifiée ISO 20121, certification renouvelée en 2026 et valable jusqu'en novembre 2028.",
+    "description_en": "2B is a spatial design agency based in Clichy (Hauts-de-Seine), active since 1991. It designs stands, showrooms and event spaces, integrating value engineering, logistics and storage into every project. The agency has a logistics centre in Beauchamp and a site in Ecully, near Lyon, and works in France and internationally. 2B is certified ISO 20121, a certification renewed in 2026 and valid until November 2028.",
+    "city": "Clichy",
+    "postal_code": "92110",
+    "department": "92",
+    "zone_intervention": "France et international",
+    "website_url": "https://www.2b.agency/",
+    "phone": "01 47 99 11 11",
+    "email": "contact@2b.agency",
+    "specialties": [
+      "design d'espaces éphémères",
+      "ingénierie de valeur",
+      "logistique événementielle",
+      "stockage de stands"
+    ],
+    "founded_year": 1991,
+    "memberships": [
+      "leads_france"
+    ],
+    "is_verified": false,
+    "seo_indexable": false
+  },
+  {
+    "slug": "agence-bosco",
+    "company_name": "Agence Bosco",
+    "category": "standiste",
+    "description": "Agence Bosco est une agence d'agencement événementiel basée au Rheu (Ille-et-Vilaine), fondée en 2016. Jean Bosco Nicolle y assure la gestion de stand : stockage, entretien, livraison, montage, démontage et reconditionnement. L'agence propose aussi de la sous-traitance technique pour d'autres agences et sociétés, ainsi qu'un bureau d'études pour la conception de projets de stand. Elle coordonne également les prestataires spécialisés en vidéo, sonorisation et éclairage pour ses clients, et intervient à travers la France.",
+    "description_en": "Agence Bosco is an event fit-out agency based in Le Rheu (Ille-et-Vilaine), founded in 2016. Jean Bosco Nicolle handles stand management: storage, upkeep, delivery, set-up, dismantling and reconditioning. The agency also offers technical subcontracting for other agencies and companies, as well as a design office for stand projects. It also coordinates specialist providers in video, sound and lighting for its clients, and works across France.",
+    "city": "Le Rheu",
+    "postal_code": "35650",
+    "department": "35",
+    "zone_intervention": "France",
+    "website_url": "https://agence-bosco.fr/",
+    "phone": null,
+    "email": null,
+    "specialties": [
+      "gestion de stand",
+      "sous-traitance technique",
+      "bureau d'études",
+      "coordination technique événementielle"
+    ],
+    "founded_year": 2016,
+    "memberships": [
+      "leads_france"
+    ],
+    "is_verified": false,
+    "seo_indexable": false
+  },
+  {
+    "slug": "alris-communication",
+    "company_name": "ALRIS COMMUNICATION",
+    "category": "standiste",
+    "description": "ALRIS COMMUNICATION est une agence de design éphémère basée à La Ciotat, spécialisée dans le stand et la signalétique pour les salons professionnels. L'entreprise propose une prise en charge globale, de la conception à l'installation, en réunissant dans un même lieu le studio graphique, le bureau d'études et l'atelier de production. Cet atelier s'étend sur 1950 m², réparti entre les espaces de création et d'impression et les espaces de fabrication et de stockage. ALRIS COMMUNICATION met en avant plusieurs engagements environnementaux : recyclage des chutes de production plutôt qu'incinération, encres d'impression sans solvants, et installation de panneaux solaires sur le toit de ses locaux. L'entreprise intervient sur des salons en France et à l'étranger.",
+    "description_en": "ALRIS COMMUNICATION is an ephemeral design agency based in La Ciotat, specialising in stands and signage for trade shows. The company offers an end-to-end service, from design to installation, bringing together the graphic studio, the design office and the production workshop in a single location. This workshop covers 1950 m², split between the creation and printing areas and the manufacturing and storage areas. ALRIS COMMUNICATION highlights several environmental commitments: recycling production offcuts rather than incinerating them, solvent-free printing inks, and solar panels installed on the roof of its premises. The company works on trade shows in France and abroad.",
+    "city": "La Ciotat",
+    "postal_code": "13600",
+    "department": "13",
+    "zone_intervention": "France et étranger",
+    "website_url": "https://www.alris.com/",
+    "phone": null,
+    "email": null,
+    "specialties": [
+      "stands sur mesure",
+      "signalétique",
+      "impression numérique grand format",
+      "PLV"
+    ],
+    "founded_year": 2000,
+    "memberships": [
+      "leads_france"
+    ],
+    "is_verified": false,
+    "seo_indexable": false
+  },
+  {
+    "slug": "expo-even",
+    "company_name": "EXPO'EVEN",
+    "category": "standiste",
+    "description": "EXPO'EVEN est une agence de design de stands basée à Labège, en Haute-Garonne. L'entreprise conçoit, conseille et réalise l'aménagement de stands d'exposition, du stand traditionnel au stand modulaire, de la conception jusqu'au montage. Elle réalise aussi des aménagements sur mesure de showrooms, de bureaux et de façades commerciales, et assure la régie et la coordination générale d'évènements professionnels. EXPO'EVEN intervient partout en France et à l'étranger.",
+    "description_en": "EXPO'EVEN is a stand design agency based in Labège, in the Haute-Garonne department. The company designs, advises on and carries out the fitting-out of exhibition stands, from traditional to modular stands, from design through to installation. It also carries out bespoke fit-outs of showrooms, offices and shopfronts, and provides production management and overall coordination of professional events. EXPO'EVEN operates throughout France and abroad.",
+    "city": "Labège",
+    "postal_code": "31670",
+    "department": "31",
+    "zone_intervention": "France et à l'étranger",
+    "website_url": "https://www.expoeven.com/",
+    "phone": "05 62 24 81 33",
+    "email": "accueil@expoeven.com",
+    "specialties": [
+      "stands traditionnels",
+      "stands modulaires",
+      "design d'espace",
+      "agencement sur mesure"
+    ],
+    "founded_year": null,
+    "memberships": [
+      "leads_france"
+    ],
+    "is_verified": false,
+    "seo_indexable": false
+  },
+  {
+    "slug": "galis",
+    "company_name": "Galis",
+    "category": "standiste",
+    "description": "Galis est une agence de conseil, de design d'espace et de réalisation de stands, basée à Saint-Thibault-des-Vignes en Seine-et-Marne. Fondée en 1973, elle propose trois types de stands : sur mesure, modulable et hybride, conçus et fabriqués dans son atelier intégré Galis Factory. Le groupe dispose aussi d'agences à Paris, Bordeaux, Lyon, Nice, Lille et Strasbourg et intervient sur les salons professionnels en France et en Europe.",
+    "description_en": "Galis is a consultancy, space design and stand-building agency based in Saint-Thibault-des-Vignes in Seine-et-Marne. Founded in 1973, it offers three types of stands: bespoke, modular and hybrid, designed and manufactured in its in-house workshop, Galis Factory. The group also has agencies in Paris, Bordeaux, Lyon, Nice, Lille and Strasbourg, and works on trade shows in France and Europe.",
+    "city": "St Thibault des Vignes",
+    "postal_code": "77400",
+    "department": "77",
+    "zone_intervention": "France et Europe",
+    "website_url": "https://www.galis.fr/",
+    "phone": "01 64 11 34 34",
+    "email": "hello-paris@bygalis.fr",
+    "specialties": [
+      "stands sur mesure",
+      "stands modulables",
+      "stands hybrides",
+      "fabrication en atelier intégré"
+    ],
+    "founded_year": 1973,
+    "memberships": [
+      "leads_france"
+    ],
+    "is_verified": false,
+    "seo_indexable": false
+  },
+  {
+    "slug": "hopen-design-stand",
+    "company_name": "Hopen Design+Stand",
+    "category": "standiste",
+    "description": "Hopen Design+Stand est une agence de conception et de fabrication de stands, basée à Gellainville, près de Chartres, fondée en 1991. Elle conçoit des stands sur mesure et des stands modulaires ainsi que des projets de retail et d'agencement d'espaces, avec un atelier de fabrication intégré dans ses locaux. L'entreprise installe ses réalisations en France, en Europe et dans le monde, avec un accompagnement complet de la conception à la logistique de montage et de démontage.",
+    "description_en": "Hopen Design+Stand is a stand design and manufacturing agency based in Gellainville, near Chartres, founded in 1991. It designs bespoke stands and modular stands, as well as retail and space fit-out projects, with an in-house manufacturing workshop on its premises. The company installs its work in France, in Europe and around the world, with full support from design through to build and dismantling logistics.",
+    "city": "Gellainville",
+    "postal_code": "28630",
+    "department": "28",
+    "zone_intervention": "France, Europe et le monde",
+    "website_url": "https://www.hopendesign.com/",
+    "phone": "02 37 30 00 06",
+    "email": "be@hopendesign.com",
+    "specialties": [
+      "stands sur mesure",
+      "stands modulaires",
+      "retail et agencement d'espaces",
+      "atelier de fabrication intégré"
+    ],
+    "founded_year": 1991,
+    "memberships": [
+      "leads_france"
+    ],
+    "is_verified": false,
+    "seo_indexable": false
+  },
+  {
+    "slug": "iboo-studio",
+    "company_name": "Iboo Studio",
+    "category": "standiste",
+    "description": "Iboo Studio est une agence de design de stands fondée en 2002. Elle conçoit des stands sur mesure, des stands éco-modulables réutilisables ainsi que des pavillons collectifs pour les groupements d'entreprises, et propose aussi des dispositifs digitaux (stand virtuel, hybride, réalité augmentée) en complément de ses stands physiques. Iboo Studio accompagne ses clients sur des salons en France, en Europe et dans le monde, de la conception à la logistique de montage, du démontage et du stockage.",
+    "description_en": "Iboo Studio is a stand design agency founded in 2002. It designs bespoke stands, reusable eco-modular stands and collective pavilions for groups of companies, and also offers digital solutions (virtual stand, hybrid, augmented reality) alongside its physical stands. Iboo Studio supports its clients at trade shows in France, in Europe and around the world, from design through to build, dismantling and storage logistics.",
+    "city": "Auray",
+    "postal_code": "56400",
+    "department": "56",
+    "zone_intervention": "France, Europe et le monde",
+    "website_url": "http://iboostudio.com/",
+    "phone": "02 97 58 33 71",
+    "email": null,
+    "specialties": [
+      "stand sur mesure",
+      "stand éco-modulable",
+      "pavillon collectif",
+      "dispositifs digitaux"
+    ],
+    "founded_year": 2002,
+    "memberships": [
+      "leads_france"
+    ],
+    "is_verified": false,
+    "seo_indexable": false
+  },
+  {
+    "slug": "id2stand",
+    "company_name": "ID2Stand",
+    "category": "standiste",
+    "description": "ID2Stand est une agence de conception et de fabrication de stands d'exposition, basée à Lésigny, en Seine-et-Marne, fondée en 2011 par Sandrine Discour. Elle conçoit des stands sur mesure, des stands modulables et des projets d'agencement d'espaces (showroom, corner, bureaux), fabriqués en France. Ses équipes interviennent sur les salons en France, en Europe et à l'international, de l'analyse du besoin à la construction, au montage, au démontage et au stockage du stand.",
+    "description_en": "ID2Stand is an exhibition stand design and manufacturing agency, based in Lésigny, in Seine-et-Marne, founded in 2011 by Sandrine Discour. It designs bespoke stands, modular stands and space fit-out projects (showroom, corner, offices), manufactured in France. Its teams work on trade shows in France, in Europe and internationally, from needs analysis through to construction, build, dismantling and storage of the stand.",
+    "city": "Lésigny",
+    "postal_code": "77150",
+    "department": "77",
+    "zone_intervention": "France, Europe et international",
+    "website_url": "https://www.id2stand.fr/",
+    "phone": "01 60 34 70 42",
+    "email": "info@id2stand.fr",
+    "specialties": [
+      "stand sur mesure",
+      "stand modulable",
+      "agencement d'espaces"
+    ],
+    "founded_year": 2011,
+    "memberships": [
+      "leads_france"
+    ],
+    "is_verified": false,
+    "seo_indexable": false
+  },
+  {
+    "slug": "keops-expositions",
+    "company_name": "KEOPS EXPOSITIONS",
+    "category": "standiste",
+    "description": "Keops conçoit des stands, des pop-up stores et des showrooms pour les salons professionnels, avec son agence au 4 rue Royale à Paris. L'agence a été fondée en 2000 et réalise des stands sur mesure pour l'automobile, la cosmétique, les vins et spiritueux, la pharmacie, la défense, l'innovation technologique et l'aéronautique. Elle a constitué une équipe dédiée aux vins et spiritueux, partenaire agréé Vinexpo depuis 2022, ainsi qu'une équipe pour la cosmétique et la santé. Keops accompagne aussi ses clients à l'étranger, partout dans le monde. L'agence est certifiée ISO 20121.",
+    "description_en": "Keops designs stands, pop-up stores and showrooms for trade shows, from its agency at 4 rue Royale in Paris. The agency was founded in 2000 and produces bespoke stands for the automotive, cosmetics, wines and spirits, pharmaceutical, defence, technology innovation and aeronautics sectors. It has set up a team dedicated to wines and spirits, an accredited Vinexpo partner since 2022, as well as a team for cosmetics and health. Keops also supports its clients abroad, all over the world. The agency is certified ISO 20121.",
+    "city": "Paris",
+    "postal_code": "75008",
+    "department": "75",
+    "zone_intervention": "international",
+    "website_url": "https://keops-event.com/",
+    "phone": null,
+    "email": null,
+    "specialties": [
+      "stands sur mesure",
+      "pop-up store",
+      "showroom",
+      "stands vins et spiritueux"
+    ],
+    "founded_year": 2000,
+    "memberships": [
+      "leads_france"
+    ],
+    "is_verified": false,
+    "seo_indexable": false
+  },
+  {
+    "slug": "pech-up",
+    "company_name": "Pech'Up",
+    "category": "standiste",
+    "description": "Pech'Up est une agence de conception de stands d'exposition implantée dans la région lyonnaise. Elle propose deux approches : le stand modulaire, réutilisable d'un salon à l'autre, et le stand hybride, qui combine des éléments modulaires avec des pièces sur mesure fabriquées dans son atelier de menuiserie intégré. L'agence réalise aussi des aménagements d'espace (showroom, corner, accueil). Elle intervient à Eurexpo Lyon et sur des salons partout en France ; sa page de réalisations cite des collaborations avec Rehau (salon Artibat), Würth Elektronik et B Mesure (salon Global Industrie). Pech'Up a été créée en 2020 par Lydie et François, et fait partie du réseau LEADS France.",
+    "description_en": "Pech'Up is an exhibition stand design agency based in the Lyon area. It offers two approaches: the modular stand, reusable from one trade show to the next, and the hybrid stand, which combines modular elements with bespoke pieces made in its in house joinery workshop. The agency also carries out space fit outs (showroom, corner, reception area). It works at Eurexpo Lyon and at trade shows throughout France; its portfolio page cites collaborations with Rehau (Artibat trade show), Würth Elektronik and B Mesure (Global Industrie trade show). Pech'Up was set up in 2020 by Lydie and François, and is part of the LEADS France network.",
+    "city": "Millery",
+    "postal_code": "69390",
+    "department": "69",
+    "zone_intervention": "France",
+    "website_url": "https://pechup.fr/",
+    "phone": "06 67 47 72 46",
+    "email": "lydie.pechmalbec@pechup.fr",
+    "specialties": [
+      "stand modulaire",
+      "stand hybride",
+      "aménagement d'espace",
+      "écoresponsabilité"
+    ],
+    "founded_year": 2020,
+    "memberships": [
+      "leads_france"
+    ],
+    "is_verified": false,
+    "seo_indexable": false
+  },
+  {
+    "slug": "technistand",
+    "company_name": "Technistand",
+    "category": "standiste",
+    "description": "Technistand est une agence de conception de stands d'exposition basée à Gagny, en Seine-Saint-Denis. Philippe Noirbent et son équipe y accompagnent les projets, de la conception à la réalisation. L'agence propose des stands traditionnels, modulaires ou réutilisables, ainsi que l'agencement de showrooms tenant compte de l'environnement architectural du lieu. Sur chaque projet, un chef de projet dédié est présent du début à la fin du montage, jusqu'à la livraison clé en main du stand.",
+    "description_en": "Technistand is an exhibition stand design agency based in Gagny, in Seine-Saint-Denis. Philippe Noirbent and his team support projects there, from design through to completion. The agency offers traditional, modular or reusable stands, as well as showroom fit-outs that take account of the architectural environment of the venue. On each project, a dedicated project manager is present from the start to the end of the build, through to the turnkey delivery of the stand.",
+    "city": "Gagny",
+    "postal_code": "93220",
+    "department": "93",
+    "zone_intervention": null,
+    "website_url": "https://www.technistand.com/",
+    "phone": "01 43 81 63 22",
+    "email": "technistand@technistand.com",
+    "specialties": [
+      "stand traditionnel",
+      "stand modulaire",
+      "stand réutilisable",
+      "agencement de showroom"
+    ],
+    "founded_year": 2012,
+    "memberships": [
+      "leads_france"
+    ],
+    "is_verified": false,
+    "seo_indexable": false
+  },
+  {
+    "slug": "versant",
+    "company_name": "Versant",
+    "category": "av_technique",
+    "description": "Versant est une entreprise de prestations techniques événementielles, rigging, ponts et lumières, basée à Nanterre. Son pôle Événementiel intervient sur l'accrochage en hauteur, l'habillage de stands et l'architecture lumière pour la mise en scène de salons, conventions et expositions. L'entreprise propose aussi de l'accrochage signalétique et des prestations de levage, avec palans manuels et palans moteurs. Selon le site, Versant est présente depuis 1989 dans le secteur des travaux en hauteur.",
+    "description_en": "Versant is a technical event services company, rigging, trusses and lighting, based in Nanterre. Its Events division works on overhead rigging, stand dressing and lighting design for the staging of trade shows, conventions and exhibitions. The company also offers signage rigging and lifting services, with manual and motorised hoists. According to the site, Versant has been present since 1989 in the working at height sector.",
+    "city": "Nanterre",
+    "postal_code": "92000",
+    "department": "92",
+    "zone_intervention": null,
+    "website_url": "https://www.versant-groupe.com/",
+    "phone": null,
+    "email": "mco@versantevenement.com",
+    "specialties": [
+      "rigging, ponts et lumières",
+      "accrochage en hauteur",
+      "architecture lumière",
+      "levage",
+      "accrochage signalétique"
+    ],
+    "founded_year": 1989,
+    "memberships": [
+      "prestalians"
+    ],
+    "is_verified": false,
+    "seo_indexable": false
+  },
+  {
+    "slug": "wmh-project",
+    "company_name": "WMH Project",
+    "category": "standiste",
+    "description": "WMH Project est une agence d'expérience de marque dont le siège, à Courbevoie (Hauts-de-Seine), est désigné \"Paris\" par l'entreprise, avec des bureaux à Lyon et à Bordeaux. Fondée en 1995, l'agence conçoit des dispositifs pour les salons professionnels : stands, pavillons, scénographies et showrooms, aux côtés d'expertises en événementiel, voyage d'affaires, contenu de marque et influence. Elle intervient pour des secteurs comme le luxe, la santé, la culture, la mobilité et les institutions publiques. WMH Project a le statut d'Entreprise à Mission.",
+    "description_en": "WMH Project is a brand experience agency whose head office, in Courbevoie (Hauts-de-Seine), is referred to as \"Paris\" by the company, with offices in Lyon and Bordeaux. Founded in 1995, the agency designs settings for trade shows: stands, pavilions, set design and showrooms, alongside expertise in events, business travel, brand content and influence. It works across sectors such as luxury, healthcare, culture, mobility and public institutions. WMH Project holds the status of Entreprise à Mission.",
+    "city": "Courbevoie",
+    "postal_code": "92400",
+    "department": "92",
+    "zone_intervention": null,
+    "website_url": "https://www.wmhproject.fr/",
+    "phone": null,
+    "email": null,
+    "specialties": [
+      "conception de stands et pavillons",
+      "organisation d'événements professionnels",
+      "stratégie de contenu de marque",
+      "influence et communication digitale"
+    ],
+    "founded_year": 1995,
+    "memberships": [
+      "leads_france"
+    ],
+    "is_verified": false,
+    "seo_indexable": false
+  }
+]

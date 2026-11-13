@@ -1,0 +1,409 @@
+[
+  {
+    "slug": "2b",
+    "set": {
+      "seo_description": "2B, agence de design d'espaces à Clichy depuis 1991 : stands sur mesure et modulaires, showrooms, location de stands et logistique en France et en Europe.",
+      "seo_description_en": "2B is a spatial design agency in Clichy, active since 1991. It builds bespoke and modular stands and showrooms, with logistics, across France and Europe.",
+      "specialties_en": [
+        "bespoke stands",
+        "modular stands",
+        "stand rental",
+        "value engineering",
+        "event logistics",
+        "stand storage"
+      ],
+      "zone_intervention_en": "France and Europe"
+    }
+  },
+  {
+    "slug": "adexpo",
+    "set": {
+      "seo_description": "adEXPO, agence d'agencement de stands à Reims depuis 1989 : stands sur mesure, structures Octanorm et mobilier événementiel, en France et en Europe.",
+      "seo_description_en": "adEXPO is a stand design agency in Reims, active since 1989. It makes bespoke and Octanorm modular stands and rents event furniture in France and Europe.",
+      "specialties_en": [
+        "bespoke stands",
+        "Octanorm modular stands",
+        "large-format graphics and signage",
+        "event furniture rental"
+      ],
+      "zone_intervention_en": "France, Europe and beyond"
+    }
+  },
+  {
+    "slug": "agence-procept",
+    "set": {
+      "seo_description": "Agence Procept, architecture événementielle à Paris, fondée en 2016 : agencement, installation générale, salons et stands, en France et à l'international.",
+      "seo_description_en": "Agence Procept, founded in 2016 in Paris, is an event architecture agency: fit-out, general installation, trade shows and stands, in France and abroad.",
+      "specialties_en": [
+        "event architecture",
+        "trade shows and stands",
+        "fit-out",
+        "general installation"
+      ],
+      "zone_intervention_en": "France and international"
+    }
+  },
+  {
+    "slug": "alises",
+    "set": {
+      "seo_description": "Alisés loue du mobilier pour foires, salons et expositions depuis 1992 : assises, tables, bars. Basée à Chalifert, livre en France et en Europe.",
+      "seo_description_en": "Alisés has rented furniture for fairs, trade shows and exhibitions since 1992: seating, tables, bars. Based in Chalifert, it delivers in France and Europe.",
+      "specialties_en": [
+        "seating",
+        "tables",
+        "desks and storage",
+        "counters and bars",
+        "accessories and lighting"
+      ],
+      "zone_intervention_en": "France and Europe"
+    }
+  },
+  {
+    "slug": "alris-communication",
+    "set": {
+      "seo_description": "ALRIS COMMUNICATION, standiste à La Ciotat, créé en 2000 : stands sur mesure, signalétique, PLV et impression grand format, en France et à l'étranger.",
+      "seo_description_en": "ALRIS COMMUNICATION is a stand builder in La Ciotat, founded in 2000: bespoke stands, signage, POS displays and large-format printing, in France and abroad.",
+      "specialties_en": [
+        "bespoke stands",
+        "signage",
+        "large-format digital printing",
+        "POS displays"
+      ],
+      "zone_intervention_en": "France and abroad"
+    }
+  },
+  {
+    "slug": "artpulsion",
+    "set": {
+      "seo_description": "Artpulsion, agence du Groupe Galis à Floirac, en Gironde : stands traditionnels sur mesure, stands hybrides modulaires et aménagements en France et en Europe.",
+      "seo_description_en": "Artpulsion, part of Groupe Galis in Floirac, Gironde, designs and builds bespoke, hybrid and modular exhibition stands across France and Europe.",
+      "specialties_en": [
+        "traditional stand",
+        "hybrid stand",
+        "space fit-out",
+        "exhibition stand design"
+      ],
+      "zone_intervention_en": "France and Europe"
+    }
+  },
+  {
+    "slug": "audace",
+    "set": {
+      "seo_description": "Audace conçoit et fabrique des stands d'exposition à Haute-Goulaine, près de Nantes : stands traditionnels, modulables et en tissu, avec une agence à Paris.",
+      "seo_description_en": "Audace designs and builds exhibition stands from Haute-Goulaine, near Nantes: traditional, modular and fabric stands, with an agency in Paris.",
+      "specialties_en": [
+        "traditional stand",
+        "modular stand",
+        "100% fabric Vision stand",
+        "space fit-out",
+        "foldable solutions"
+      ],
+      "zone_intervention_en": "France"
+    }
+  },
+  {
+    "slug": "big-bang",
+    "set": {
+      "seo_description": "BIG BANG, prestataire audiovisuel à Bondoufle depuis 1989 : structure et levage, éclairage, vidéo, son et distribution électrique, en France et en Europe.",
+      "seo_description_en": "BIG BANG is an audiovisual technical provider in Bondoufle, active since 1989: rigging, lighting, video, sound and power distribution in France and Europe.",
+      "specialties_en": [
+        "structure and rigging",
+        "lighting",
+        "video",
+        "sound",
+        "power distribution"
+      ],
+      "zone_intervention_en": "France and Europe"
+    }
+  },
+  {
+    "slug": "capsule-concept",
+    "set": {
+      "seo_description": "Capsule Concept, standiste à Saint-Quentin-Fallavier, près de Lyon : stands sur mesure et modulaires, menuiserie intégrée et agencement de magasins.",
+      "seo_description_en": "Capsule Concept is a stand builder in Saint-Quentin-Fallavier, near Lyon, with in-house joinery: bespoke and modular stands and shop fit-out.",
+      "specialties_en": [
+        "bespoke stands",
+        "modular stands",
+        "shop fit-out"
+      ],
+      "zone_intervention_en": "France and Europe"
+    }
+  },
+  {
+    "slug": "db-schenker-paris",
+    "set": {
+      "seo_description": "DB Schenker France, à Paris, propose une logistique événementielle internationale : transport, stockage et manutention de matériel d'exposition.",
+      "seo_description_en": "DB Schenker France, in Paris, provides international event logistics: transport, storage and handling of exhibition equipment for trade shows and events.",
+      "specialties_en": [],
+      "zone_intervention_en": null
+    }
+  },
+  {
+    "slug": "dushow",
+    "set": {
+      "seo_description": "Dushow, prestataire technique événementiel à Roissy : son, lumière, vidéo, structures scéniques et distribution électrique, avec bureau d'études intégré.",
+      "seo_description_en": "Dushow is an event technical provider in Roissy-en-France: sound, lighting, video, staging structures and power distribution, with an in-house design office.",
+      "specialties_en": [
+        "sound control",
+        "lighting control",
+        "video control",
+        "staging structures",
+        "power distribution"
+      ],
+      "zone_intervention_en": null
+    }
+  },
+  {
+    "slug": "esi",
+    "set": {
+      "seo_description": "Group ESI, logistique événementielle à Louvres : œuvres d'art, foires et salons, déménagements d'entreprise, douane, en France et à l'international.",
+      "seo_description_en": "Group ESI offers event transport and logistics from Louvres: fine art, trade fairs and shows, company moves and customs formalities, in France and abroad.",
+      "specialties_en": [
+        "fine art transport",
+        "handling",
+        "packing and crating",
+        "assembly and installation",
+        "France and international transport",
+        "customs formalities"
+      ],
+      "zone_intervention_en": "in France and internationally"
+    }
+  },
+  {
+    "slug": "ex-nihilo",
+    "set": {
+      "seo_description": "EX NIHILO, agence de design de stands aux Ulis, en Essonne, fondée en 2002 : stands traditionnels sur mesure et architecture commerciale (magasins, bureaux).",
+      "seo_description_en": "EX NIHILO is a stand design agency in Les Ulis, Essonne, founded in 2002: bespoke traditional stands and commercial architecture for shops and offices.",
+      "specialties_en": [
+        "bespoke traditional stands",
+        "commercial architecture",
+        "bespoke fit-outs"
+      ],
+      "zone_intervention_en": "France and Europe"
+    }
+  },
+  {
+    "slug": "expo-even",
+    "set": {
+      "seo_description": "EXPO'EVEN, agence de conception et réalisation de stands à Labège, en Haute-Garonne, depuis 2003 : stands traditionnels et modulaires, France et étranger.",
+      "seo_description_en": "EXPO'EVEN is a stand design and build agency in Labège, Haute-Garonne, active since 2003. It makes traditional and modular stands in France and abroad.",
+      "specialties_en": [
+        "traditional stands",
+        "modular stands",
+        "space design",
+        "event management and coordination"
+      ],
+      "zone_intervention_en": "France and abroad"
+    }
+  },
+  {
+    "slug": "galis",
+    "set": {
+      "seo_description": "Galis, agence de design de stands et d'événements fondée en 1973 à Saint-Thibault-des-Vignes : stands sur mesure, modulables et hybrides pour salons.",
+      "seo_description_en": "Galis is a stand and event design agency founded in 1973 in Saint-Thibault-des-Vignes. It designs bespoke, modular, hybrid stands for fairs and congresses.",
+      "specialties_en": [
+        "bespoke stands",
+        "modular stands",
+        "hybrid stands",
+        "in-house workshop production",
+        "events",
+        "retail design"
+      ],
+      "zone_intervention_en": "France and worldwide"
+    }
+  },
+  {
+    "slug": "hopen-design-stand",
+    "set": {
+      "seo_description": "Hopen Design+Stand, stands à Gellainville, près de Chartres, depuis 1991 : stands sur mesure, réutilisables et modulaires, en France et dans le monde.",
+      "seo_description_en": "Hopen Design+Stand has built stands since 1991 in Gellainville, near Chartres: bespoke, reusable and modular, installed in France, Europe and worldwide.",
+      "specialties_en": [
+        "bespoke stands",
+        "reusable stands",
+        "modular stands",
+        "retail and space fit-out"
+      ],
+      "zone_intervention_en": "France, Europe and worldwide"
+    }
+  },
+  {
+    "slug": "idee-fixe",
+    "set": {
+      "seo_description": "Idée Fixe conçoit et fabrique des stands et agencements depuis 1990, à Paris, Granville et Nantes. Certifiée ISO 20121, active en France et en Europe.",
+      "seo_description_en": "Idée Fixe has designed and built stands and interiors since 1990, with teams in Paris, Granville and Nantes. ISO 20121 certified, active in France and Europe.",
+      "specialties_en": [
+        "bespoke stands",
+        "sustainable space fit-out",
+        "pop-up stores",
+        "healthcare facility fit-out"
+      ],
+      "zone_intervention_en": "France, Europe and international"
+    }
+  },
+  {
+    "slug": "l-as-decors",
+    "set": {
+      "seo_description": "L'AS Décors, agence de stands et d'agencement créée en 1976, siège à Méru, dans l'Oise : stands sur mesure, éco-modulables, nomades et mobilier retail.",
+      "seo_description_en": "L'AS Décors, founded in 1976 and based in Méru, Oise, designs bespoke, eco-modular and nomadic stands and retail furniture, in France and abroad.",
+      "specialties_en": [
+        "premium stands",
+        "eco-modular stands",
+        "nomadic stands",
+        "bespoke retail fit-out",
+        "in-house joinery workshop"
+      ],
+      "zone_intervention_en": "France and international"
+    }
+  },
+  {
+    "slug": "lenotre-paris",
+    "set": {
+      "seo_description": "Lenôtre, maison de traiteur parisienne active depuis 1957 selon son site : réceptions d'entreprise, repas d'affaires, séminaires, cadeaux d'affaires.",
+      "seo_description_en": "Lenôtre is a Paris caterer, active since 1957 according to its website. It offers corporate receptions, business lunches, seminars and business gifts.",
+      "specialties_en": [
+        "savoury catering",
+        "receptions and large events",
+        "business gifts",
+        "consulting",
+        "team building"
+      ],
+      "zone_intervention_en": null
+    }
+  },
+  {
+    "slug": "maison-poirier",
+    "set": {
+      "seo_description": "Maison Poirier, traiteur événementiel à Bezons actif depuis 1977 selon son site : cocktails, déjeuners d'affaires, salons et congrès en Île-de-France.",
+      "seo_description_en": "Maison Poirier is an events caterer in Bezons, active since 1977 per its website: cocktails, business lunches, trade shows and congresses in Île-de-France.",
+      "specialties_en": [
+        "trade shows and exhibitions",
+        "corporate events",
+        "culinary entertainment",
+        "equipment hire",
+        "corporate catering"
+      ],
+      "zone_intervention_en": "Île-de-France"
+    }
+  },
+  {
+    "slug": "merci-gustave",
+    "set": {
+      "seo_description": "Merci Gustave conçoit et fabrique des stands d'exposition, avec des bureaux à Paris et à Montréal : stands modulaires, tubulaires, nomades et accessoires.",
+      "seo_description_en": "Merci Gustave designs and builds exhibition stands, with offices in Paris and Montreal: modular, tubular and nomadic stands, plus accessories.",
+      "specialties_en": [
+        "modular stand",
+        "tubular stand",
+        "nomadic stand",
+        "stand accessories"
+      ],
+      "zone_intervention_en": "France, Europe and North America"
+    }
+  },
+  {
+    "slug": "pico-international-paris",
+    "set": {
+      "seo_description": "Pico International France, à Paris : groupe international spécialisé dans la conception de stands et d'environnements de marque, présent dans 40 pays.",
+      "seo_description_en": "Pico International France, in Paris, is an international group specialising in the design of stands and brand environments, with a presence in 40 countries.",
+      "specialties_en": [],
+      "zone_intervention_en": null
+    }
+  },
+  {
+    "slug": "r2-stand-et-event",
+    "set": {
+      "seo_description": "R2 Stand et Event, basée à Paris avec une agence à Lyon : stands sur mesure et modulaires, pavillons, chalets, retail, en France et à l'étranger.",
+      "seo_description_en": "R2 Stand et Event, based in Paris with a Lyon agency, builds bespoke and modular stands, pavilions, chalets and retail fit-outs in France and abroad.",
+      "specialties_en": [
+        "bespoke stands",
+        "modular stands",
+        "pavilions / chalets",
+        "trade show organisation",
+        "retail fit-out"
+      ],
+      "zone_intervention_en": "France and international"
+    }
+  },
+  {
+    "slug": "stand-op",
+    "set": {
+      "seo_description": "Stand Op, fabricant de stands à Chauray, héritier de Volume Action : stands sur mesure, menuiserie numérique et agencement d'espaces événementiels.",
+      "seo_description_en": "Stand Op designs and builds stands in Chauray, evolved from Volume Action: bespoke stands, CNC joinery and fit-out of event spaces for several sectors.",
+      "specialties_en": [
+        "bespoke stands",
+        "CNC joinery",
+        "event space fit-out"
+      ],
+      "zone_intervention_en": null
+    }
+  },
+  {
+    "slug": "studecors",
+    "set": {
+      "seo_description": "STUDECORS, agence spécialisée dans le stand traditionnel et l'événementiel, à Ozoir-la-Ferrière, en Seine-et-Marne, créée en 2004 par Nathalie et Michel.",
+      "seo_description_en": "STUDECORS is an agency specialising in traditional stands and events, based in Ozoir-la-Ferrière, Seine-et-Marne, and founded in 2004 by Nathalie and Michel.",
+      "specialties_en": [
+        "traditional stand",
+        "events",
+        "writing and creativity"
+      ],
+      "zone_intervention_en": null
+    }
+  },
+  {
+    "slug": "technistyle",
+    "set": {
+      "seo_description": "TECHNISTYLE, design d'espaces, fondée en 1959 à Saint-Cloud : stand sur mesure, agencement, scénographie. Certifiée ISO 20121, en France et à l'étranger.",
+      "seo_description_en": "TECHNISTYLE is a spatial design agency founded in 1959 in Saint-Cloud: bespoke stands, fit-out and scenography in France and abroad. ISO 20121 certified.",
+      "specialties_en": [
+        "bespoke stands",
+        "office and shop fit-out",
+        "graphic design",
+        "event scenography"
+      ],
+      "zone_intervention_en": "France and abroad"
+    }
+  },
+  {
+    "slug": "triangle-expositions",
+    "set": {
+      "seo_description": "Triangle Expositions, agence fondée en 1994 dans les Yvelines : stands traditionnels et à étage, agencement de plateaux et points de vente pour salons.",
+      "seo_description_en": "Triangle Expositions, an agency founded in 1994 in the Yvelines, builds traditional and two-storey stands, floor fit-outs and sales points for trade shows.",
+      "specialties_en": [
+        "traditional stands",
+        "two-storey stands",
+        "floor fit-out",
+        "point of sale"
+      ],
+      "zone_intervention_en": "throughout France and often abroad"
+    }
+  },
+  {
+    "slug": "understand",
+    "set": {
+      "seo_description": "Understand, design d'espace à Collégien, en Seine-et-Marne : stands sur mesure, éco-modulables et ultra portables, pop-up stores, matériaux durables.",
+      "seo_description_en": "Understand is a spatial design agency in Collégien, Seine-et-Marne: bespoke, eco-modular and ultra-portable stands, and pop-up stores in durable materials.",
+      "specialties_en": [
+        "traditional stand",
+        "eco-modular stand",
+        "ultra-portable stand",
+        "space design",
+        "retail: pop-up store, corner, showroom"
+      ],
+      "zone_intervention_en": null
+    }
+  },
+  {
+    "slug": "wel-group",
+    "set": {
+      "seo_description": "WEL Group, logistique événementielle et d'œuvres d'art à Compans, créée en 2003 : transport aérien, maritime et terrestre, douane et stockage de 1600 m².",
+      "seo_description_en": "WEL Group, founded in 2003 in Compans, provides event and art logistics: air, sea and road transport, customs, and 1,600 m² of storage, in France and abroad.",
+      "specialties_en": [
+        "air, sea and road transport",
+        "event storage and warehousing",
+        "customs formalities",
+        "online stock management"
+      ],
+      "zone_intervention_en": "France, Europe and abroad"
+    }
+  }
+]

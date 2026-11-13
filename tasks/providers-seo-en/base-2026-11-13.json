@@ -1,0 +1,1409 @@
+[
+ {
+  "slug": "2b",
+  "company_name": "2B",
+  "category": "standiste",
+  "city": "Clichy",
+  "description": "2B est une agence de design d'espaces basée à Clichy, dans les Hauts-de-Seine, active depuis 1991. Elle conçoit et réalise des stands sur mesure et modulaires, des showrooms, des points de vente et des bureaux, et propose aussi la location de stands. Son offre couvre le design (plans, rendus 3D, signalétique), l'ingénierie de valeur, la logistique des transports et de l'installation, et le stockage du matériel entre deux événements. Les stands sont fabriqués dans l'atelier de l'agence par ses menuisiers, monteurs, électriciens et peintres. 2B dispose d'un centre logistique à Beauchamp et d'une implantation à Ecully, près de Lyon, et ses techniciens livrent et montent les stands partout en France et en Europe. Elle est certifiée ISO 20121 depuis 2016, certification renouvelée jusqu'en 2028, et a obtenu la médaille Gold EcoVadis en 2026.",
+  "description_en": "2B is a spatial design agency based in Clichy, in the Hauts-de-Seine department, active since 1991. It designs and builds bespoke and modular stands, showrooms, retail outlets and offices, and also offers stand rental. Its services cover design (plans, 3D renderings, signage), value engineering, logistics for transport and installation, and storage of equipment between events. Stands are built in the agency's own workshop by its joiners, fitters, electricians and painters. 2B has a logistics centre in Beauchamp and a site in Ecully, near Lyon, and its technicians deliver and install stands throughout France and Europe. It has been certified ISO 20121 since 2016, a certification renewed until 2028, and obtained the EcoVadis Gold medal in 2026.",
+  "specialties": [
+   "stands sur mesure",
+   "stands modulaires",
+   "location de stand",
+   "ingénierie de valeur",
+   "logistique événementielle",
+   "stockage de stands"
+  ],
+  "zone_intervention": "France et Europe",
+  "seo_indexable": false
+ },
+ {
+  "slug": "3d-actions",
+  "company_name": "3D actions",
+  "category": "standiste",
+  "city": "Lanvallay",
+  "description": "3D actions est une agence d'agencement de stands fondée en 2006, avec un siège en Bretagne à Lanvallay et une implantation en Occitanie à Beauzelle. Un studio de création basé à Toulouse assure le design et la modélisation 3D des projets, tandis que l'atelier fabrique les pièces du stand et en assure le montage, le démontage et le stockage entre deux salons. L'agence est intervenue notamment pour la CCI Hauts-de-France, la CCI Seine-et-Marne et la Région Centre-Val de Loire, sur des salons couvrant l'agroalimentaire, le médical, les transports, l'industrie, l'agriculture, l'immobilier, les cosmétiques et la défense.",
+  "description_en": "3D actions is a stand fit-out agency founded in 2006, with a head office in Brittany at Lanvallay and a site in Occitanie at Beauzelle. A creative studio based in Toulouse handles the design and 3D modelling of projects, while the workshop manufactures the stand's parts and handles its set-up, dismantling and storage between shows. The agency has worked for CCI Hauts-de-France, CCI Seine-et-Marne and the Région Centre-Val de Loire, on shows covering food and agriculture, medical, transport, industry, farming, property, cosmetics and defence.",
+  "specialties": [
+   "conception et fabrication de stands",
+   "bureau d'études design",
+   "atelier de fabrication",
+   "stockage de stands"
+  ],
+  "zone_intervention": null,
+  "seo_indexable": false
+ },
+ {
+  "slug": "a-b",
+  "company_name": "A+B",
+  "category": "standiste",
+  "city": "Courbevoie",
+  "description": "STAND A+B est une agence de conception de stands basée à Courbevoie (Hauts-de-Seine), immatriculée au registre du commerce de Nanterre. L'agence intervient sur les salons professionnels, congrès, showrooms, road-shows et pop-up stores, avec une offre intégrée : conseil en amont du projet, design et modélisation 3D en interne, fabrication et installation sur site tout corps d'état, jusqu'à la logistique de réutilisation des structures. STAND A+B suit ses projets en France, en Europe et dans le reste du monde.",
+  "description_en": "STAND A+B is a stand design agency based in Courbevoie (Hauts-de-Seine), registered with the Nanterre trade register. The agency works on trade shows, conferences, showrooms, road shows and pop-up stores, with an integrated offer: upfront project advice, in-house design and 3D modelling, on-site manufacturing and installation across all trades, through to logistics for reusing structures. STAND A+B follows its projects in France, Europe and the rest of the world.",
+  "specialties": [
+   "conseil en stratégie d'exposition",
+   "conception et modélisation 3D",
+   "fabrication et installation de stands",
+   "gestion de projet et logistique événementielle"
+  ],
+  "zone_intervention": "France, Europe et international",
+  "seo_indexable": false
+ },
+ {
+  "slug": "adexpo",
+  "company_name": "adEXPO",
+  "category": "standiste",
+  "city": "Reims",
+  "description": "adEXPO est une agence d'agencement et de design de stands d'exposition basée à Reims, active depuis 1989. L'entreprise conçoit et fabrique des stands sur mesure et des structures modulaires Octanorm dans son atelier de menuiserie bois et aluminium, complété par un atelier graphique pour l'impression grand format et la signalétique. Elle propose aussi la location de mobilier événementiel. adEXPO intervient pour des foires, salons et congrès en France, en Europe et au-delà, avec une agence secondaire à Paris, et appartient au réseau international OSPI (Octanorm Service Partner International) depuis 1996.",
+  "description_en": "adEXPO is an exhibition stand design and fit-out agency based in Reims, active since 1989. The company designs and manufactures bespoke stands and modular Octanorm structures in its wood and aluminium joinery workshop, complemented by a graphics workshop for large-format printing and signage. It also offers event furniture rental. adEXPO works on fairs, shows and conferences in France, Europe and beyond, with a secondary agency in Paris, and has belonged to the international OSPI network (Octanorm Service Partner International) since 1996.",
+  "specialties": [
+   "stands sur mesure",
+   "stands modulaires Octanorm",
+   "signalétique et graphisme grand format",
+   "location de mobilier événementiel"
+  ],
+  "zone_intervention": "France, Europe et au-delà",
+  "seo_indexable": false
+ },
+ {
+  "slug": "affaire-d-idees",
+  "company_name": "Affaire d'Idées",
+  "category": "standiste",
+  "city": "Genas",
+  "description": "Affaire d'Idées est une agence de conception et fabrication de stands basée à Genas, dans l'agglomération lyonnaise, fondée en 2010. L'agence réunit conception, fabrication et logistique dans un atelier de 1 200 m² où sont réalisés menuiserie, métallerie, impression et peinture, sans sous-traitance des étapes de production. Elle conçoit des stands modulaires ou sur mesure pour les salons professionnels, des scénographies pour événements d'entreprise, ainsi que des showrooms et espaces commerciaux. Affaire d'Idées est certifiée Better Stand niveau Argent, label dédié aux stands éco-conçus.",
+  "description_en": "Affaire d'Idées is a stand design and manufacturing agency based in Genas, in the Lyon metropolitan area, founded in 2010. The agency brings together design, manufacturing and logistics in a 1,200 m² workshop where joinery, metalwork, printing and painting are carried out, without outsourcing any production steps. It designs modular or bespoke stands for trade shows, staging for corporate events, as well as showrooms and retail spaces. Affaire d'Idées holds the Better Stand Silver certification, a label for eco-designed stands.",
+  "specialties": [
+   "stands sur mesure pour salons professionnels",
+   "scénographie événementielle d'entreprise",
+   "aménagement de showrooms",
+   "fabrication en atelier intégré"
+  ],
+  "zone_intervention": "France et international",
+  "seo_indexable": true
+ },
+ {
+  "slug": "agence-bosco",
+  "company_name": "Agence Bosco",
+  "category": "standiste",
+  "city": "Le Rheu",
+  "description": "Agence Bosco est une agence d'agencement événementiel basée au Rheu (Ille-et-Vilaine), immatriculée en 2016. Elle assure la gestion de stand : stockage, entretien, livraison, montage, démontage et reconditionnement. L'agence propose aussi de la sous-traitance technique pour d'autres agences et sociétés, ainsi qu'un bureau d'études pour la conception de projets de stand. Elle coordonne également les prestataires spécialisés en vidéo, sonorisation et éclairage, et accompagne des missions événementielles à travers la France.",
+  "description_en": "Agence Bosco is an event fit-out agency based in Le Rheu (Ille-et-Vilaine), registered in 2016. It handles stand management: storage, upkeep, delivery, set-up, dismantling and reconditioning. The agency also offers technical subcontracting for other agencies and companies, as well as a design office for stand projects. It also coordinates specialist providers in video, sound and lighting, and supports event assignments across France.",
+  "specialties": [
+   "gestion de stand",
+   "sous-traitance technique",
+   "bureau d'études",
+   "coordination technique événementielle"
+  ],
+  "zone_intervention": "France",
+  "seo_indexable": false
+ },
+ {
+  "slug": "agence-procept",
+  "company_name": "Agence Procept",
+  "category": "standiste",
+  "city": "Paris",
+  "description": "Agence Procept est une agence d'architecture événementielle installée 114 rue de Grenelle à Paris (75007). Fondée en 2016 par Alexis Cassin, elle conçoit et met en œuvre des projets d'architecture événementielle : agencement, installation générale et salons & stands sont les trois catégories de réalisations présentées sur son site. L'agence travaille pour des clients de secteurs variés : industrie, finance, art, sport, mode et luxe. Elle est certifiée ISO 20121, norme de management responsable des événements. Procept intervient en France et à l'international.",
+  "description_en": "Agence Procept is an event architecture agency based at 114 rue de Grenelle in Paris (75007). Founded in 2016 by Alexis Cassin, it designs and delivers event architecture projects: fit-out, general installation and trade shows and stands are the three categories of work presented on its website. The agency works for clients across a range of sectors: industry, finance, art, sport, fashion and luxury. It is certified to ISO 20121, the standard for sustainable event management. Procept operates in France and internationally.",
+  "specialties": [
+   "architecture événementielle",
+   "salons & stands",
+   "agencement",
+   "installation générale"
+  ],
+  "zone_intervention": "France et international",
+  "seo_indexable": true
+ },
+ {
+  "slug": "aktuel",
+  "company_name": "Aktuel",
+  "category": "location_mobilier",
+  "city": "Palaiseau",
+  "description": "Aktuel loue du mobilier événementiel : assises, tables, bars et buffets, comptoirs d'accueil et cloisons modulables. Spécialiste du B2B, l'entreprise accompagne les entreprises, agences et lieux événementiels ainsi que les organisateurs d'événements. Elle est basée à Palaiseau et dispose d'un second site dans les Alpes-Maritimes, à Grasse (agence de Cannes). Le catalogue est organisé par domaine d'usage (corporate, réceptif, mode, institutionnel, culturel) et par ambiance (lounge, scène, terrasse, stand et corner). Aktuel est certifiée ISO 20121 depuis 2019, norme de management responsable applicable aux événements. La marque fait partie du groupe Alive, qui réunit plusieurs enseignes du secteur événementiel.",
+  "description_en": "Aktuel hires out event furniture: seating, tables, bars and buffets, reception desks and modular partitions. A B2B specialist, the company supports businesses, agencies and event venues as well as event organisers. It is based in Palaiseau and has a second site in the Alpes-Maritimes, in Grasse (Cannes branch). The catalogue is organised by area of use (corporate, hospitality, fashion, institutional, cultural) and by setting (lounge, stage, terrace, stand and corner). Aktuel has been certified to ISO 20121 since 2019, the standard for sustainable event management. The brand is part of the Alive group, which brings together several event sector brands.",
+  "specialties": [
+   "assises",
+   "tables",
+   "bars et buffets",
+   "comptoirs d'accueil",
+   "cloisons b-fix"
+  ],
+  "zone_intervention": null,
+  "seo_indexable": true
+ },
+ {
+  "slug": "aliance-mobilier",
+  "company_name": "Aliance Mobilier",
+  "category": "location_mobilier",
+  "city": "Saint-Orens de Gameville",
+  "description": "Aliance Mobilier loue du mobilier événementiel, avec un positionnement de spécialiste à l'échelle européenne. L'entreprise est basée à Saint-Orens-de-Gameville (31650), près de Toulouse, et dispose d'un établissement secondaire à Châlons-en-Champagne. Le catalogue est organisé en plusieurs familles : assises, tables, comptoirs et rangements, accessoires, ainsi qu'une boutique de l'exposant proposant packs et ensembles de mobilier, personnalisation et signalétique, revêtements de sol. L'entreprise équipe des salons, foires, congrès et expositions professionnelles et intervient en France et dans les pays limitrophes.",
+  "description_en": "Aliance Mobilier hires out event furniture, positioning itself as a specialist at European scale. The company is based in Saint-Orens-de-Gameville (31650), near Toulouse, and has a secondary site in Châlons-en-Champagne. The catalogue is organised into several ranges: seating, tables, counters and storage, accessories, as well as an exhibitor shop offering furniture packs and sets, personalisation and signage, and floor coverings. The company equips trade shows, fairs, congresses and professional exhibitions and operates in France and neighbouring countries.",
+  "specialties": [
+   "assises",
+   "tables",
+   "comptoirs et rangements",
+   "accessoires",
+   "packs et ensembles mobilier"
+  ],
+  "zone_intervention": "France et pays limitrophes",
+  "seo_indexable": true
+ },
+ {
+  "slug": "alises",
+  "company_name": "Alisés",
+  "category": "location_mobilier",
+  "city": "Chalifert",
+  "description": "Alisés loue du mobilier pour les foires, salons et expositions. L'entreprise, spécialisée dans ce métier depuis 1992, est basée au 7 rue de la Persévérance à Chalifert (77144), après un déménagement récent depuis Croissy-Beaubourg. Le catalogue, qui compte 120 pages, est organisé en plusieurs familles : assises, tables, bureaux et rangements, comptoirs et bars, accessoires et luminaires, ensembles et packs. Alisés dispose d'entrepôts pour une surface totale de 8 000 m² de stockage à proximité des principaux lieux d'exposition, et assure des livraisons sur toute la France ainsi que sur l'Europe.",
+  "description_en": "Alisés hires out furniture for fairs, trade shows and exhibitions. The company, which has specialised in this field since 1992, is based at 7 rue de la Persévérance in Chalifert (77144), following a recent move from Croissy-Beaubourg. The catalogue, which runs to 120 pages, is organised into several ranges: seating, tables, desks and storage, counters and bars, accessories and lighting, sets and packs. Alisés has warehouses covering a total storage area of 8,000 m² close to the main exhibition venues, and delivers across France as well as to Europe.",
+  "specialties": [
+   "assises",
+   "tables",
+   "bureaux et rangements",
+   "comptoirs et bars",
+   "accessoires et luminaires"
+  ],
+  "zone_intervention": "France et Europe",
+  "seo_indexable": true
+ },
+ {
+  "slug": "alive-group",
+  "company_name": "Alive Group",
+  "category": "location_mobilier",
+  "city": "Tourcoing",
+  "description": "Alive Group est un groupe qui réunit 12 marques dans le secteur événementiel : prestations techniques événementielles multi-métiers (son, lumière, vidéo, mobilier, structures, décors sur mesure), traiteur avec Butterfly (labellisé Traiteur de France), intégration d'équipements audiovisuels avec Alive Technology, formation aux métiers de l'événementiel avec Alive School, et location de matériel audiovisuel de tournage. Le siège social est à Tourcoing (59200) et le groupe dispose d'un réseau d'agences en France (Lille, Gonesse, Brétigny-sur-Orge, Moissy-Cramayel, Antony, Angers, Lyon, Cannes) ainsi qu'à Lausanne en Suisse. Alive Group emploie 600 collaborateurs pour un chiffre d'affaires de 100 millions d'euros. Le groupe est certifié ISO 20 121.",
+  "description_en": "Alive Group is a group that brings together 12 brands in the events sector: multi-trade technical event services (sound, lighting, video, furniture, structures, bespoke sets), catering with Butterfly (labelled Traiteur de France), audiovisual equipment integration with Alive Technology, training in event industry professions with Alive School, and hire of audiovisual filming equipment. The registered office is in Tourcoing (59200) and the group has a network of agencies across France (Lille, Gonesse, Brétigny-sur-Orge, Moissy-Cramayel, Antony, Angers, Lyon, Cannes) as well as in Lausanne, Switzerland. Alive Group employs 600 staff for a turnover of 100 million euros. The group is certified to ISO 20121.",
+  "specialties": [
+   "événementiel technique multi-métiers",
+   "traiteur",
+   "intégration audiovisuelle",
+   "formation aux métiers de l'événementiel",
+   "location de matériel audiovisuel de tournage"
+  ],
+  "zone_intervention": "France, Suisse et international",
+  "seo_indexable": true
+ },
+ {
+  "slug": "alphaexpo",
+  "company_name": "Alphaexpo",
+  "category": "standiste",
+  "city": "Genas",
+  "description": "Alphaexpo est une agence de conception de stands sur mesure, fondée en 2004 par Pierre-Olivier Debard. L'agence est basée à Genas (69740), près de Lyon. Alphaexpo propose trois familles de stands (traditionnel, modulaire, hybride), ainsi que des prestations event (espaces éphémères, terrasses, showroom) et retail (vitrines, agencement magasin, mobilier événementiel). L'agence dispose de deux ateliers de fabrication intégrés et compte plus de 1500 projets réalisés pour plus de 500 clients en France et en Europe, parmi lesquels Ligier pour le Mondial de l'automobile (472 m²) et Vinci pour le salon Pollutec (138 m²). Les menuiseries d'Alphaexpo sont certifiées ISO 20121.",
+  "description_en": "Alphaexpo is a bespoke stand design agency, founded in 2004 by Pierre-Olivier Debard. The agency is based in Genas (69740), near Lyon. Alphaexpo offers three stand ranges (traditional, modular, hybrid), as well as event services (temporary spaces, terraces, showrooms) and retail services (window displays, shop fitting, event furniture). The agency has two in-house production workshops and has completed more than 1,500 projects for over 500 clients in France and Europe, including Ligier for the Mondial de l'automobile (472 m²) and Vinci for the Pollutec trade show (138 m²). Alphaexpo's joinery is certified to ISO 20121.",
+  "specialties": [
+   "stand traditionnel",
+   "stand modulaire",
+   "stand hybride",
+   "agencement retail",
+   "espaces événementiels éphémères"
+  ],
+  "zone_intervention": "France et Europe",
+  "seo_indexable": true
+ },
+ {
+  "slug": "alris-communication",
+  "company_name": "ALRIS COMMUNICATION",
+  "category": "standiste",
+  "city": "La Ciotat",
+  "description": "ALRIS COMMUNICATION, qui exerce sous l'enseigne ALRIS, est un standiste basé à La Ciotat, créé en 2000. L'entreprise conçoit, fabrique et installe des stands sur mesure, modulables et réutilisables, et produit aussi de la signalétique, de la PLV et des impressions numériques grand format. Ses locaux de 1 950 m² réunissent studio design, studio graphique, atelier d'impression grand format, atelier de fabrication de stands, atelier de menuiserie et d'électricité et stockage, avec un bureau d'études de concepteurs 3D. Chaque projet est suivi par un interlocuteur unique. ALRIS accompagne les exposants sur des salons en France et à l'étranger. Elle recycle ses bâches et ses chutes plutôt que de les incinérer, imprime avec des encres sans solvants, est certifiée Imprim'Vert depuis 2010 et a installé 140 panneaux solaires sur son toit.",
+  "description_en": "ALRIS COMMUNICATION, which trades as ALRIS, is a stand builder based in La Ciotat, founded in 2000. The company designs, builds and installs bespoke, modular and reusable stands, and also produces signage, point-of-sale displays and large-format digital printing. Its 1,950 m² premises bring together a design studio, a graphic studio, a large-format printing workshop, a stand manufacturing workshop, a joinery and electrical workshop and storage, with a design office of 3D designers. Each project is handled by a single point of contact. ALRIS supports exhibitors at trade shows in France and abroad. It recycles its banners and offcuts rather than incinerating them, prints with solvent-free inks, has held the Imprim'Vert certification since 2010 and has installed 140 solar panels on its roof.",
+  "specialties": [
+   "stands sur mesure",
+   "signalétique",
+   "impression numérique grand format",
+   "PLV"
+  ],
+  "zone_intervention": "France et étranger",
+  "seo_indexable": false
+ },
+ {
+  "slug": "ambs",
+  "company_name": "AMBS",
+  "category": "standiste",
+  "city": "Ablis",
+  "description": "AMBS est une menuiserie basée à Ablis, dans les Yvelines, spécialisée dans l'agencement et la fabrication de stands d'exposition pour les salons professionnels. L'entreprise réunit une équipe de dix personnes, menuisiers, peintres et électriciens, qui prend en charge chaque projet de la réception des plans à l'étude de faisabilité, jusqu'à la fabrication et au montage sur site. AMBS dispose de sa propre flotte de véhicules et d'engins de manutention pour assurer le transport entre l'atelier et les centres d'exposition, ainsi que d'un espace de stockage dédié aux remontages. Les équipes interviennent partout en France, en Europe et à l'international.",
+  "description_en": "AMBS is a joinery workshop based in Ablis, in the Yvelines department, specialising in the fitting-out and manufacture of exhibition stands for trade shows. The company brings together a team of ten people, joiners, painters and electricians, who handle each project from receiving the plans and the feasibility study through to manufacture and on-site assembly. AMBS has its own fleet of vehicles and handling equipment to manage transport between the workshop and exhibition centres, as well as a storage space dedicated to stand re-erection. The teams work throughout France, in Europe and internationally.",
+  "specialties": [
+   "fabrication de stands sur mesure",
+   "agencement de showrooms et bureaux",
+   "installation, transport et stockage",
+   "menuiserie"
+  ],
+  "zone_intervention": "France, Europe et international",
+  "seo_indexable": false
+ },
+ {
+  "slug": "arc-et-typ",
+  "company_name": "Arc et Typ",
+  "category": "standiste",
+  "city": "Paris",
+  "description": "Arc et Typ est une agence parisienne d'agencement d'espaces de vente et de conception de stands, dont le siège est dans le 18e arrondissement de Paris (75018). Fondée en 2002, elle conçoit des stands de salon, des showrooms, des espaces événementiels et des corners retail, en projets éphémères comme pérennes. Son offre réunit quatre expertises présentées sur son site : conseil et performance, stratégie et narration, design et graphisme, ingénierie et production. L'agence indique être présente à Paris, à Bordeaux et à Dubaï. Elle a obtenu la médaille Gold EcoVadis.",
+  "description_en": "Arc et Typ is a Paris-based agency specialising in the fit-out of retail spaces and the design of stands, with its head office in the 18th arrondissement of Paris (75018). Founded in 2002, it designs trade show stands, showrooms, event spaces and retail corners, as both ephemeral and permanent projects. Its offer brings together four areas of expertise presented on its website: consulting and performance, strategy and storytelling, design and graphics, engineering and production. The agency states that it is present in Paris, Bordeaux and Dubai. It has been awarded the EcoVadis Gold medal.",
+  "specialties": [
+   "conception de stands",
+   "showrooms",
+   "agencement d'espaces de vente",
+   "design événementiel"
+  ],
+  "zone_intervention": null,
+  "seo_indexable": true
+ },
+ {
+  "slug": "artpulsion",
+  "company_name": "Artpulsion",
+  "category": "standiste",
+  "city": "Floirac",
+  "description": "ARTPULSION est une agence du Groupe Galis basée à Floirac, en Gironde, qui conçoit, dessine et réalise des stands d'exposition depuis plus de trente ans. L'agence propose des stands traditionnels sur mesure, des stands hybrides modulaires et personnalisables, ainsi que des aménagements d'espaces flexibles et réutilisables. La fabrication est réalisée dans son atelier bordelais, et l'installation est assurée sur site par ses équipes, partout en France et en Europe. Parmi ses réalisations figurent des stands pour le Groupe Bollinger à Wine Paris, pour AANA au Salon de l'Agriculture et pour Oenodia à SITEVI.",
+  "description_en": "ARTPULSION is a Groupe Galis agency based in Floirac, in the Gironde department, which has been designing, drawing up and building exhibition stands for more than thirty years. The agency offers traditional custom-built stands, modular and customisable hybrid stands, as well as flexible and reusable space fit-outs. Manufacturing takes place in its Bordeaux workshop, and installation is carried out on site by its own teams, throughout France and Europe. Its work includes stands for Groupe Bollinger at Wine Paris, for AANA at the Salon de l'Agriculture and for Oenodia at SITEVI.",
+  "specialties": [
+   "stand traditionnel",
+   "stand hybride",
+   "aménagement",
+   "conception de stands d'exposition"
+  ],
+  "zone_intervention": "France et Europe",
+  "seo_indexable": false
+ },
+ {
+  "slug": "atelier-design",
+  "company_name": "Atelier Design",
+  "category": "standiste",
+  "city": "Gretz Armainvilliers",
+  "description": "ATELIER DESIGN est un concepteur et fabricant de stands d'exposition sur mesure, basé à Gretz-Armainvilliers, en Seine-et-Marne. Créée en 2006, l'entreprise réunit en interne la menuiserie et l'agencement, l'électricité, la tapisserie, l'audiovisuel, la signalétique, ainsi que le transport et la logistique de stands. Elle réalise des stands destinés aux acteurs de l'industrie pharmaceutique et médicale ainsi qu'au secteur aéronautique, et adapte ses équipes et ses moyens à des projets allant de 9 m² à plus de 500 m². Parmi ses réalisations figurent des stands pour Sanofi, notamment à l'occasion de VivaTech, et pour KPMG.",
+  "description_en": "ATELIER DESIGN designs and manufactures custom-built exhibition stands, based in Gretz-Armainvilliers, in Seine-et-Marne. Created in 2006, the company brings together in-house joinery and fitting-out, electrics, upholstery, audiovisual, signage, as well as stand transport and logistics. It builds stands for players in the pharmaceutical and medical industry as well as the aeronautics sector, adapting its teams and resources to projects ranging from 9 m² to more than 500 m². Its work includes stands for Sanofi, notably at VivaTech, and for KPMG.",
+  "specialties": [
+   "stands d'exposition sur mesure",
+   "menuiserie et agencement",
+   "signalétique",
+   "stands pharmaceutique et médical"
+  ],
+  "zone_intervention": "France et Europe",
+  "seo_indexable": false
+ },
+ {
+  "slug": "athenee",
+  "company_name": "ATHENEE",
+  "category": "standiste",
+  "city": "Versailles",
+  "description": "ATHENEE Concept est une agence de conception de stands basée à Versailles, active depuis 1982. Elle conçoit, fabrique et installe des stands pour des salons professionnels en France, en Europe et à l'international, et intervient également en agencement intérieur, scénographie événementielle et PLV sur mesure. Les projets proposés vont de 9 m² à plus de 2 000 m², en location ou en vente. Côté matériaux, l'agence privilégie le bois et a intégré une activité de menuiserie à sa production. Parmi ses réalisations figurent des stands pour EDILIANS au salon BATIMAT, pour SODIAAL au salon SIA et pour HILDING ANDERS au salon Esprit Meuble.",
+  "description_en": "ATHENEE Concept is a stand design agency based in Versailles, active since 1982. It designs, manufactures and installs stands for trade shows in France, Europe and internationally, and also works in interior fit-out, event scenography and custom point-of-sale display. Projects range from 9 m² to more than 2,000 m², for hire or for sale. In terms of materials, the agency favours wood and has built joinery into its production. Its work includes stands for EDILIANS at the BATIMAT show, for SODIAAL at the SIA show and for HILDING ANDERS at the Esprit Meuble show.",
+  "specialties": [
+   "conception de stands d'exposition sur mesure",
+   "agencement intérieur",
+   "scénographie événementielle",
+   "PLV sur mesure"
+  ],
+  "zone_intervention": "France, Europe et international",
+  "seo_indexable": false
+ },
+ {
+  "slug": "audace",
+  "company_name": "Audace",
+  "category": "standiste",
+  "city": "Haute-Goulaine",
+  "description": "Audace conçoit et fabrique des stands d'exposition et des espaces de communication depuis son siège de Haute-Goulaine, près de Nantes. L'entreprise dispose de son propre atelier de production, ce qui lui permet de suivre en interne les étapes de conception, de fabrication et de montage de ses réalisations. Sa gamme couvre le stand traditionnel, le stand modulable, le stand Vision en tissu, l'aménagement d'espace et les solutions pliables, pour des salons professionnels partout en France. Audace dispose aussi d'une agence à Paris, ouverte en 2013 pour se rapprocher de sa clientèle d'Île-de-France. En 2022, l'entreprise a réalisé plus de 250 montages de stands.",
+  "description_en": "Audace designs and manufactures exhibition stands and communication spaces from its head office in Haute-Goulaine, near Nantes. The company has its own production workshop, which lets it manage the design, manufacturing and installation stages of its work in-house. Its range covers the traditional stand, the modular stand, the fabric-based Vision stand, space fitting and folding solutions, for trade shows across France. Audace also has an agency in Paris, opened in 2013 to be closer to its Île-de-France clients. In 2022, the company carried out more than 250 stand installations.",
+  "specialties": [
+   "stand traditionnel",
+   "stand modulable",
+   "stand Vision 100% tissu",
+   "aménagement d'espace",
+   "solutions pliables"
+  ],
+  "zone_intervention": "France",
+  "seo_indexable": false
+ },
+ {
+  "slug": "aukare",
+  "company_name": "AUKARÉ",
+  "category": "standiste",
+  "city": "Décines-Charpieu",
+  "description": "AUKARÉ est une agence de création de stands d'exposition sur mesure et modulaires, basée à Décines-Charpieu, près de Lyon. Elle assure la conception, la fabrication et la logistique de stands pour des salons professionnels en France et en Europe. Son offre couvre le conseil stratégique, l'étude technique, la fabrication et la logistique de bout en bout d'un projet de stand. Parmi ses réalisations figurent des stands pour Paprec au salon Pollutec, Corum au salon Patrimonia et April au salon JDC Courtage.",
+  "description_en": "AUKARÉ is an agency that creates bespoke and modular exhibition stands, based in Décines-Charpieu, near Lyon. It handles the design, manufacturing and logistics of stands for trade shows in France and Europe. Its offer covers strategic consulting, technical study, manufacturing and end-to-end logistics for a stand project. Its work includes stands for Paprec at the Pollutec show, Corum at the Patrimonia show and April at the JDC Courtage show.",
+  "specialties": [
+   "stand sur mesure",
+   "stand modulaire",
+   "conseil stratégique",
+   "étude technique",
+   "logistique"
+  ],
+  "zone_intervention": "France et Europe",
+  "seo_indexable": true
+ },
+ {
+  "slug": "axial-design",
+  "company_name": "axial design",
+  "category": "standiste",
+  "city": "Limonest",
+  "description": "axial design est une agence d'architecture d'intérieur basée à Limonest, près de Lyon. Elle conçoit des stands sur mesure, des identités de marque et des aménagements d'espaces professionnels (accueil, bureaux, showrooms) pour les entreprises. L'agence est certifiée RSE ISO 20121. En 2004, un stand éco-conçu réalisé pour le Grand Lyon lui vaut une récompense au Salon Pollutec. Elle est présente à Lyon, à Paris et à Shanghai. Parmi ses réalisations figurent des aménagements pour Hermès, Bobst et Solvay.",
+  "description_en": "axial design is an interior architecture agency based in Limonest, near Lyon. It designs bespoke stands, brand identities and professional space fit-outs (reception areas, offices, showrooms) for companies. The agency holds ISO 20121 CSR certification. In 2004, an eco-designed stand created for Grand Lyon won it an award at the Pollutec show. It has a presence in Lyon, Paris and Shanghai. Its work includes fit-outs for Hermès, Bobst and Solvay.",
+  "specialties": [
+   "architecture intérieure",
+   "stand sur mesure",
+   "identité de marque",
+   "agencement d'espaces de travail"
+  ],
+  "zone_intervention": null,
+  "seo_indexable": true
+ },
+ {
+  "slug": "big-bang",
+  "company_name": "BIG BANG",
+  "category": "av_technique",
+  "city": "Bondoufle",
+  "description": "BIG BANG est un prestataire technique audiovisuel basé à Bondoufle, aux portes de Paris. Depuis 1989, l'entreprise intervient en France et en Europe sur les métiers de l'évènementiel, du stand d'exposition et de la muséographie, avec des compétences en structure et levage, éclairage, vidéo, sonorisation et distribution électrique. Elle dispose d'un stock de 5000 m² dédié à ces métiers et compte 25 collaborateurs permanents pour plus de 1000 prestations techniques par an. Parmi ses réalisations figurent des prestations pour Roland Garros, Jean Paul Gaultier et la Fondation Cartier pour l'Art Contemporain.",
+  "description_en": "BIG BANG is a technical audiovisual provider based in Bondoufle, on the outskirts of Paris. Since 1989, the company has worked in France and Europe on events, exhibition stands and museography, with expertise in structure and rigging, lighting, video, sound and electrical distribution. It has a 5000 m² stock dedicated to these trades and has 25 permanent staff for more than 1000 technical services a year. Its work includes services for Roland Garros, Jean Paul Gaultier and the Fondation Cartier pour l'Art Contemporain.",
+  "specialties": [
+   "structure et levage",
+   "éclairage",
+   "vidéo",
+   "sonorisation",
+   "distribution électrique"
+  ],
+  "zone_intervention": "France et Europe",
+  "seo_indexable": false
+ },
+ {
+  "slug": "c2j-standexpo",
+  "company_name": "C2J Standexpo",
+  "category": "standiste",
+  "city": "Seynod",
+  "description": "C2J Standexpo est une agence de conception de stands d'exposition et d'aménagement d'espaces intérieurs, basée à Seynod, près d'Annecy. Créée en 1988 par Dominique Pierlet, l'entreprise dispose de son propre atelier de fabrication et conçoit des stands professionnels en France et à l'international. Sa gamme couvre le stand sur mesure, le stand modulable et le stand collectif, ainsi que des aménagements de showroom et d'espace d'accueil pour les entreprises. Parmi ses réalisations figurent des aménagements pour Somfy et Pfeiffer Vacuum, et un stand pour Qualiform.",
+  "description_en": "C2J Standexpo is an agency that designs exhibition stands and interior space fit-outs, based in Seynod, near Annecy. Founded in 1988 by Dominique Pierlet, the company has its own manufacturing workshop and designs professional stands in France and internationally. Its range covers the bespoke stand, the modular stand and the collective stand, as well as showroom and reception area fit-outs for companies. Its work includes fit-outs for Somfy and Pfeiffer Vacuum, and a stand for Qualiform.",
+  "specialties": [
+   "stand sur mesure",
+   "stand modulable",
+   "stand collectif",
+   "showroom",
+   "espace d'accueil"
+  ],
+  "zone_intervention": "France et international",
+  "seo_indexable": false
+ },
+ {
+  "slug": "cap-linea",
+  "company_name": "Cap Linea",
+  "category": "standiste",
+  "city": "Paris",
+  "description": "Cap Linea est une agence parisienne de conception de stands d'exposition, basée rue de Lourmel, à Paris. Fondée en 2007, elle conçoit et réalise des stands sur mesure, modulables, traditionnels et collectifs pour des salons professionnels en France et à l'international. L'agence ne dispose pas d'atelier interne, mais conserve un bureau d'études qui conçoit et chiffre chaque projet, en s'appuyant sur un réseau de partenaires (menuisiers, imprimeurs, tapissiers, logisticiens). Parmi ses réalisations figurent des stands pour IDEMIA au 3GSM World Congress, Nikka à Whisky Live Paris et Pierre Martinet au SIAL Paris.",
+  "description_en": "Cap Linea is a Parisian agency that designs exhibition stands, based on rue de Lourmel, in Paris. Founded in 2007, it designs and builds bespoke, modular, traditional and collective stands for trade shows in France and internationally. The agency has no in-house workshop, but keeps a design office that designs and costs each project, drawing on a network of partners (joiners, printers, upholsterers, logistics providers). Its work includes stands for IDEMIA at the 3GSM World Congress, Nikka at Whisky Live Paris and Pierre Martinet at SIAL Paris.",
+  "specialties": [
+   "stands sur mesure",
+   "stands modulables",
+   "stands traditionnels",
+   "stands collectifs",
+   "conseil en stratégie événementielle"
+  ],
+  "zone_intervention": "France et international",
+  "seo_indexable": true
+ },
+ {
+  "slug": "capsule-concept",
+  "company_name": "Capsule Concept",
+  "category": "standiste",
+  "city": "Saint-Quentin-Fallavier",
+  "description": "Capsule Concept est un standiste installé à Saint-Quentin-Fallavier, à proximité de Lyon. Depuis 18 ans, l'agence conçoit et fabrique des stands sur mesure pour les salons professionnels. Elle dispose d'une menuiserie intégrée qui lui permet de maîtriser la conception, la fabrication et le montage des stands. Elle conçoit et aménage également des magasins. Capsule Concept propose des stands sur mesure et des stands modulaires, et intervient en France et en Europe. Parmi ses réalisations publiées figurent des stands pour Pfleiderer sur Eurobois et pour Crédit Mutuel sur Tech&Fest.",
+  "description_en": "Capsule Concept is an exhibition stand contractor based in Saint-Quentin-Fallavier, near Lyon. For 18 years, the agency has designed and built bespoke stands for trade shows. It has its own in-house joinery, allowing it to oversee stand design, manufacturing and installation. It also designs and fits out shops. Capsule Concept offers bespoke and modular stands, and works across France and Europe. Its published projects include stands for Pfleiderer at Eurobois and for Crédit Mutuel at Tech&Fest.",
+  "specialties": [
+   "stands sur mesure",
+   "stands modulaires",
+   "agencement de magasins"
+  ],
+  "zone_intervention": "France et Europe",
+  "seo_indexable": false
+ },
+ {
+  "slug": "clamens-design",
+  "company_name": "Clamens Design",
+  "category": "standiste",
+  "city": "Montreuil",
+  "description": "Clamens Design est une agence de design d'espace basée à Montreuil, en région parisienne, active depuis plus de 50 ans. Elle conçoit et réalise des stands d'exposition sur mesure, modulaires ou à deux étages, ainsi que des projets de scénographie événementielle. L'agence intervient en France, à Paris et à Lyon, ainsi qu'en Europe et à l'international grâce à un réseau de partenaires. Parmi ses réalisations récentes figurent un stand pour le CGOS et un stand pour Eurial sur le salon Sandwich & Snack Show.",
+  "description_en": "Clamens Design is a space design agency based in Montreuil, in the Paris region, active for more than 50 years. It designs and builds bespoke, modular and two-storey exhibition stands, as well as event scenography projects. The agency works across France, in Paris and Lyon, as well as in Europe and internationally through a network of partners. Its recent projects include a stand for the CGOS and a stand for Eurial at the Sandwich & Snack Show.",
+  "specialties": [
+   "stands sur mesure",
+   "stands modulaires",
+   "stand à deux étages",
+   "scénographie événementielle"
+  ],
+  "zone_intervention": "France, Europe et international (agences à Paris et Lyon)",
+  "seo_indexable": false
+ },
+ {
+  "slug": "co-nect",
+  "company_name": "CO-NECT",
+  "category": "standiste",
+  "city": "Peujard",
+  "description": "CO-NECT est un groupe qui conçoit et met en œuvre des projets événementiels, entre conseil, design et technique, pour des organisateurs de salons comme pour des marques. Fondé en 1989 et basé à Peujard, il dispose d'agences à Paris, Lyon et Bordeaux et intervient sur tout le territoire. Le groupe réalise des stands sur mesure et éco-modulables, ainsi que des projets de muséographie et d'aménagement extérieur. Il est certifié depuis 2018 selon la norme ISO 20121 de management responsable de l'événementiel. Parmi ses réalisations publiées figurent des projets pour Bénéteau, Lancôme et la Maison des Aventuriers.",
+  "description_en": "CO-NECT is a group that designs and delivers event projects, spanning consultancy, design and technical execution, for both trade show organisers and brands. Founded in 1989 and based in Peujard, it has agencies in Paris, Lyon and Bordeaux and works across the country. The group produces bespoke and eco-modular stands, as well as museography and outdoor fit-out projects. It has been certified to the ISO 20121 standard for responsible event management since 2018. Its published projects include work for Bénéteau, Lancôme and the Maison des Aventuriers.",
+  "specialties": [
+   "stand sur-mesure",
+   "stand éco-modulable",
+   "muséographie",
+   "aménagement extérieur"
+  ],
+  "zone_intervention": "Paris, Lyon et Bordeaux, sur tout le territoire",
+  "seo_indexable": false
+ },
+ {
+  "slug": "db-schenker-paris",
+  "company_name": "DB Schenker France",
+  "category": "transport",
+  "city": "Paris",
+  "description": "Logistique événementielle internationale. Transport, stockage et manutention de matériel d'exposition.",
+  "description_en": "International event logistics. Transport, storage and handling of exhibition materials.",
+  "specialties": [],
+  "zone_intervention": null,
+  "seo_indexable": false
+ },
+ {
+  "slug": "des-pas-en-avant",
+  "company_name": "Des Pas En Avant",
+  "category": "standiste",
+  "city": "Souhey",
+  "description": "Des Pas En Avant est un standiste basé à Souhey, en Bourgogne, fondé en 2015. L'agence conçoit et fabrique des stands sur mesure, ainsi que des showrooms et des pop-up stores, avec un bureau d'études directement connecté à sa propre menuiserie en Bourgogne. Elle est certifiée depuis 2023 selon la norme ISO 20121 de gestion responsable de l'activité événementielle. Des Pas En Avant accompagne ses clients en France et en Europe, et assure le suivi de projets en Asie. Parmi ses réalisations publiées figurent un stand pour Standard Textile sur le salon Equip'Hotel à Paris et un stand pour Valeo sur le salon Power2drive.",
+  "description_en": "Des Pas En Avant is an exhibition stand contractor based in Souhey, in Burgundy, founded in 2015. The agency designs and builds bespoke stands, as well as showrooms and pop-up stores, with a design office directly connected to its own joinery workshop in Burgundy. It has been certified to the ISO 20121 standard for responsible management of event activity since 2023. Des Pas En Avant supports its clients in France and Europe, and follows projects in Asia. Its published projects include a stand for Standard Textile at the Equip'Hotel show in Paris and a stand for Valeo at the Power2drive show.",
+  "specialties": [
+   "stands sur mesure",
+   "showrooms",
+   "pop-up stores",
+   "menuiserie intégrée"
+  ],
+  "zone_intervention": "France, Europe et suivi de projets en Asie",
+  "seo_indexable": false
+ },
+ {
+  "slug": "design-location",
+  "company_name": "Design Location",
+  "category": "location_mobilier",
+  "city": "Goussainville",
+  "description": "Design Location est une entreprise de location de mobilier basée à Goussainville, fondée en 2005. Depuis plus de 20 ans, l'entreprise équipe en mobilier les projets des bureaux d'études, des organisateurs de salons et de congrès, des agences d'événements et des productions audiovisuelles. Elle propose du mobilier pour l'aménagement d'espaces éphémères ainsi que du matériel de bar, à partir de son entrepôt de plus de 500 références situé à Goussainville. Design Location affiche le badge Committed EcoVadis.",
+  "description_en": "Design Location is a furniture rental company based in Goussainville, founded in 2005. For more than 20 years, the company has supplied furniture for projects by design offices, trade show and conference organisers, event agencies and audiovisual productions. It offers furniture for fitting out temporary spaces as well as bar equipment, from its warehouse of more than 500 items in Goussainville. Design Location displays the Committed EcoVadis badge.",
+  "specialties": [
+   "location de mobilier",
+   "location de matériel bar",
+   "aménagement d'espaces éphémères"
+  ],
+  "zone_intervention": "Paris et Province",
+  "seo_indexable": true
+ },
+ {
+  "slug": "dushow",
+  "company_name": "Dushow",
+  "category": "av_technique",
+  "city": "Roissy-en-France",
+  "description": "Dushow est un prestataire technique événementiel dont le siège est situé à Roissy-en-France. L'entreprise conçoit des solutions de son, de lumière, de vidéo, de structures scéniques et de distribution électrique pour le spectacle vivant, l'événementiel et la télévision, avec un bureau d'études intégré pour les plans, les notes de calcul et les simulations 3D. Elle exploite aussi un studio de répétition de 1000 m² dans ses locaux d'Île-de-France. Le groupe compte une filiale vidéo, Alabama Média, et une activité télévision, DUSHOWTV, créée en 2019. Dushow s'est engagée, aux côtés du groupe Novelty, dans la norme ISO 20121.",
+  "description_en": "Dushow is an event technical services provider headquartered in Roissy-en-France. The company designs sound, lighting, video, staging structure and power distribution solutions for live performance, events and television, with an in-house design office for plans, calculation notes and 3D simulations. It also operates a 1000 m² rehearsal studio at its Île-de-France premises. The group includes a video subsidiary, Alabama Média, and a television activity, DUSHOWTV, created in 2019. Dushow has committed, alongside the Novelty group, to the ISO 20121 standard.",
+  "specialties": [
+   "régie son",
+   "régie lumière",
+   "régie vidéo",
+   "structures scéniques",
+   "distribution électrique"
+  ],
+  "zone_intervention": null,
+  "seo_indexable": true
+ },
+ {
+  "slug": "eclairis",
+  "company_name": "Éclairis",
+  "category": "av_technique",
+  "city": "Bobigny",
+  "description": "Éclairis est un prestataire d'éclairage événementiel dont le siège est basé à Bobigny. L'entreprise conçoit et installe des dispositifs lumineux pour les salons, séminaires, concerts, expositions, lancements de produits et opérations de communication, avec une offre incluant ballons éclairants, mobilier lumineux, décoration LED, signalétique et structures gonflables. Son intervention couvre l'étude du projet, la conception du plan lumière, le choix du matériel et l'installation sur site, partout en France. Éclairis conçoit des installations lumineuses événementielles depuis plus de 20 ans. Parmi ses réalisations figurent des dispositifs pour les salons VivaTechnology, Cosmetic 360 et Spring.",
+  "description_en": "Éclairis is an event lighting provider based in Bobigny. The company designs and installs lighting fixtures for trade shows, seminars, concerts, exhibitions, product launches and communication events, with an offering that includes lighting balloons, illuminated furniture, LED decoration, signage and inflatable structures. Its work covers project assessment, lighting plan design, equipment selection and on-site installation, throughout France. Éclairis has been designing event lighting installations for more than 20 years. Its work includes installations for the VivaTechnology, Cosmetic 360 and Spring trade shows.",
+  "specialties": [
+   "ballons éclairants",
+   "mobilier lumineux",
+   "décoration led",
+   "structures gonflables",
+   "publicité et signalétique"
+  ],
+  "zone_intervention": "partout en France",
+  "seo_indexable": false
+ },
+ {
+  "slug": "equateur-expo",
+  "company_name": "Équateur Expo",
+  "category": "standiste",
+  "city": "Paris",
+  "description": "Équateur Expo est une agence de conception de stands, dont les bureaux parisiens se situent au 15 rue Hégésippe Moreau, dans le 18e arrondissement. L'agence conçoit, fabrique et installe des stands sur mesure, modulables et hybrides pour les salons professionnels, en s'appuyant sur un bureau d'études intégré réunissant architectes, designers et chefs de projet. Elle propose aussi des aménagements d'espaces professionnels : bureaux, retail, showrooms et restaurants. Son activité s'étend sur plus de trois décennies dans l'événementiel, en France comme à l'international. Équateur Expo est médaillée EcoVadis Gold et adhère à l'UNIMEV, l'Union Française des Métiers de l'Événement.",
+  "description_en": "Équateur Expo is a stand design agency, with Parisian offices located at 15 rue Hégésippe Moreau, in the 18th arrondissement. The agency designs, manufactures and installs bespoke, modular and hybrid stands for trade shows, drawing on an in-house design office bringing together architects, designers and project managers. It also offers fit-outs for professional spaces: offices, retail, showrooms and restaurants. Its activity spans more than three decades in events, in France and internationally. Équateur Expo holds an EcoVadis Gold medal and is a member of UNIMEV, the Union Française des Métiers de l'Événement.",
+  "specialties": [
+   "stands sur mesure",
+   "stands modulables",
+   "stands hybrides",
+   "aménagement d'espaces professionnels",
+   "bureau d'études intégré"
+  ],
+  "zone_intervention": "partout en France et à l'international",
+  "seo_indexable": true
+ },
+ {
+  "slug": "esi",
+  "company_name": "ESI",
+  "category": "transport",
+  "city": "Louvres",
+  "description": "Group ESI est un prestataire de transport et de logistique événementielle, avec une agence à Louvres. L'entreprise structure son activité autour de trois marques : ESI Fine Art pour le transport d'œuvres d'art, ESI Expo pour les foires, salons et congrès, et ESI Mobility pour les déménagements et transferts d'entreprise. Ses métiers couvrent la manutention, l'emballage et la caisserie, le montage et l'installation, le transport et les formalités douanières, en France comme à l'international. Group ESI a obtenu la certification ISO 20121, la norme de référence pour le management responsable des événements. Parmi ses références figurent le Salon International de l'Aéronautique, la Fondation Carmignac et la cathédrale de Chartres.",
+  "description_en": "Group ESI is an event transport and logistics provider, with an agency in Louvres. The company organises its activity around three brands: ESI Fine Art for the transport of artworks, ESI Expo for trade fairs, exhibitions and congresses, and ESI Mobility for removals and corporate relocations. Its services cover handling, packing and crating, assembly and installation, transport and customs formalities, in France and internationally. Group ESI has obtained ISO 20121 certification, the reference standard for responsible event management. Its references include the Salon International de l'Aéronautique, the Fondation Carmignac and the cathédrale de Chartres.",
+  "specialties": [
+   "transport d'œuvres d'art",
+   "manutention",
+   "emballage et caisserie",
+   "montage et installation",
+   "transport France et international",
+   "formalités douanières"
+  ],
+  "zone_intervention": "en France comme à l'international",
+  "seo_indexable": false
+ },
+ {
+  "slug": "euro-design",
+  "company_name": "Euro Design",
+  "category": "standiste",
+  "city": "Trappes",
+  "description": "Euro Design est un fabricant de stands d'exposition dont le siège est situé à Trappes. Fondée en 1998, l'entreprise conçoit et produit des stands traditionnels et modulables pour les salons professionnels, avec un bureau de conception interne et une fabrication assurée sur le territoire français. Elle dispose d'un entrepôt de stockage sécurisé en région parisienne pour la réutilisation des stands entre deux événements. Son activité couvre la France et l'Europe. Parmi ses clients figurent Philips, Baxter et Johnson & Johnson.",
+  "description_en": "Euro Design is an exhibition stand manufacturer headquartered in Trappes. Founded in 1998, the company designs and produces traditional and modular stands for trade shows, with an in-house design office and manufacturing carried out in France. It has a secure storage warehouse in the Paris region for the reuse of stands between events. Its activity covers France and Europe. Its clients include Philips, Baxter and Johnson & Johnson.",
+  "specialties": [
+   "stand traditionnel",
+   "stand modulable",
+   "conception",
+   "production",
+   "stockage"
+  ],
+  "zone_intervention": "France et Europe",
+  "seo_indexable": false
+ },
+ {
+  "slug": "evolu-stand",
+  "company_name": "Evolu Stand",
+  "category": "standiste",
+  "city": "St Thibault des Vignes",
+  "description": "EVOLU STAND est éditée par Galis, agence de design de stand, et spécialisée dans la conception et l'installation de stands modulables. L'entreprise a son siège à Saint-Thibault-des-Vignes et dispose aussi de bureaux à Bordeaux, Lyon et Strasbourg. Elle propose plusieurs gammes de stands modulaires, dont MODULO, une structure tubulaire en aluminium à support textile démontable, IMAGO, un système à supports textiles tendus sur structure aluminium, et SOLUTIO, à structure et finition aluminium laqué. EVOLU STAND couvre le territoire national et intervient aussi à l'international. Parmi ses clients figurent Engie, Fujifilm et Cegid.",
+  "description_en": "EVOLU STAND is published by Galis, a stand design agency, and specialises in the design and installation of modular stands. The company is headquartered in Saint-Thibault-des-Vignes and also has offices in Bordeaux, Lyon and Strasbourg. It offers several ranges of modular stands, including MODULO, a tubular aluminium structure with a removable textile support, IMAGO, a system with tensioned textile supports on an aluminium structure, and SOLUTIO, with an aluminium structure and lacquered finish. EVOLU STAND covers the national territory and also operates internationally. Its clients include Engie, Fujifilm and Cegid.",
+  "specialties": [
+   "stands modulables",
+   "modulo",
+   "imago",
+   "solutio"
+  ],
+  "zone_intervention": "le territoire national et à l'international",
+  "seo_indexable": false
+ },
+ {
+  "slug": "ex-nihilo",
+  "company_name": "EX NIHILO",
+  "category": "standiste",
+  "city": "Les Ulis",
+  "description": "Ex Nihilo est une agence de design de stands basée aux Ulis, en Essonne. Fondée en 2002, elle conçoit des stands traditionnels sur mesure ainsi que des architectures commerciales pour magasins, show-rooms et bureaux, avec une modélisation 3D du projet avant fabrication. L'entreprise dispose de son propre atelier de menuiserie, un espace de 750 m² équipé de machines outils, complété par un espace de stockage de 500 m² et une imprimerie numérique grand format de 200 m² pour la signalétique. Ex Nihilo installe ses réalisations en région parisienne, en France et en Europe, pour des salons professionnels et des projets d'aménagement commercial.",
+  "description_en": "Ex Nihilo is a stand design agency based in Les Ulis, in the Essonne department. Founded in 2002, it designs bespoke traditional stands as well as commercial architecture for shops, showrooms and offices, with 3D modelling of the project before manufacture. The company has its own joinery workshop, a 750 m² space equipped with machine tools, complemented by a 500 m² storage area and a 200 m² large-format digital print shop for signage. Ex Nihilo installs its work in the Paris region, across France and in Europe, for trade shows and commercial fit-out projects.",
+  "specialties": [
+   "stands traditionnels sur mesure",
+   "architecture commerciale",
+   "agencements sur mesure"
+  ],
+  "zone_intervention": "France et Europe",
+  "seo_indexable": false
+ },
+ {
+  "slug": "expace",
+  "company_name": "Expace",
+  "category": "standiste",
+  "city": "Juziers",
+  "description": "Expace est une agence de design d'espaces avec une implantation à Juziers, dans les Yvelines. L'agence conçoit des stands sur mesure et modulables pour les salons professionnels, ainsi que des concept stores et des showrooms. Elle intervient aussi sur l'agencement d'espaces de travail : bureaux, espaces de coworking et zones de pause. Expace a réalisé environ 12 000 stands en 30 ans d'activité, pour des secteurs allant de la santé à l'industrie en passant par le luxe.",
+  "description_en": "Expace is a space design agency with a site in Juziers, in the Yvelines department. The agency designs bespoke and modular stands for trade shows, as well as concept stores and showrooms. It also works on fitting out workspaces: offices, coworking spaces and break areas. Expace has completed around 12,000 stands in 30 years of activity, for sectors ranging from healthcare to industry to luxury.",
+  "specialties": [
+   "stands sur mesure",
+   "showroom",
+   "concept store",
+   "agencement de bureaux"
+  ],
+  "zone_intervention": null,
+  "seo_indexable": false
+ },
+ {
+  "slug": "expo-4",
+  "company_name": "EXPO 4",
+  "category": "standiste",
+  "city": "Neuilly-sur Marne",
+  "description": "Expo 4 est un fabricant de stands basé à Neuilly-sur-Marne, en Seine-Saint-Denis, fondé en 1995. L'entreprise conçoit des stands sur mesure ainsi que des stands modulaires de 6 à 18 m², vendus ou proposés à la location. Elle fabrique aussi des stands portables : stand parapluie, totem, kakémono et présentoir, pour les salons nécessitant une installation rapide. En dehors des salons, Expo 4 réalise l'agencement de magasins, boulangeries et restaurants. L'entreprise intervient partout en France et aussi en Europe.",
+  "description_en": "Expo 4 is a stand manufacturer based in Neuilly-sur-Marne, in Seine-Saint-Denis, founded in 1995. The company designs bespoke stands as well as modular stands from 6 to 18 m², sold or available for hire. It also manufactures portable stands: pop-up stands, totems, roll-up banners and display stands, for trade shows requiring quick installation. Beyond trade shows, Expo 4 fits out shops, bakeries and restaurants. The company operates throughout France as well as in Europe.",
+  "specialties": [
+   "stands sur mesure",
+   "stands modulaires",
+   "stands portables",
+   "agencement de magasins"
+  ],
+  "zone_intervention": "France et Europe",
+  "seo_indexable": false
+ },
+ {
+  "slug": "expo-even",
+  "company_name": "EXPO'EVEN",
+  "category": "standiste",
+  "city": "Labège",
+  "description": "EXPO'EVEN est une agence de conception et de réalisation de stands basée à Labège, en Haute-Garonne, active depuis 2003. Elle aménage des stands de toutes surfaces, du stand traditionnel en menuiserie au stand modulaire, à structure en aluminium, bois, mélaminés, tissus ou plexiglas. Son bureau d'études, formé de concepteurs-décorateurs, conçoit le stand et son atelier technique établit le plan de fabrication ; l'entreprise construit ensuite le stand et coordonne les corps de métier jusqu'à la mise en place. Ses techniciens assurent le montage, le démontage et le stockage. L'agence réalise aussi des aménagements pour des lancements de produit, des conventions d'entreprise et des forums, et assure la régie et la coordination d'évènements. Elle dispose d'un site entrepôt et atelier à Labège et intervient partout en France et à l'étranger.",
+  "description_en": "EXPO'EVEN is a stand design and build agency based in Labège, in the Haute-Garonne department, active since 2003. It fits out exhibition stands of any size, from traditional joinery stands to modular stands built from aluminium, wood, melamine, fabric or plexiglass. Its design office, made up of designer-decorators, designs the stand and its technical workshop draws up the construction plan; the company then builds the stand and coordinates the trades through to final installation. Its technicians handle assembly, dismantling and storage. The agency also fits out spaces for product launches, corporate conventions and forums, and provides production management and overall coordination of events. It has a warehouse and workshop site in Labège and works throughout France and abroad.",
+  "specialties": [
+   "stands traditionnels",
+   "stands modulaires",
+   "design d'espace",
+   "régie et coordination d'évènements"
+  ],
+  "zone_intervention": "France et à l'étranger",
+  "seo_indexable": false
+ },
+ {
+  "slug": "expocom",
+  "company_name": "Expocom",
+  "category": "autre",
+  "city": "Metz",
+  "description": "Expocom est une entreprise basée à Metz, en Moselle, spécialiste dans la fabrication de signalétique, d'enseignes et la réalisation de décor depuis 2001. Elle propose aussi des solutions d'exposition comme les stands parapluie et les kits d'exposition, ainsi que des prestations de décor adhésif et de covering. Son studio réalise également des projets de muséographie et de scénographie, notamment la signalétique de l'exposition Astérix, l'Européen au château de Malbrouck pour le département de la Moselle. Expocom est certifiée par le label Imprim Vert et intervient sur le territoire national ainsi que dans les pays limitrophes.",
+  "description_en": "Expocom is a company based in Metz, in the Moselle department, specialising in the manufacture of signage and shop signs and in decor production since 2001. It also offers exhibition solutions such as pop-up stands and exhibition kits, as well as adhesive decor and vehicle covering services. Its studio also carries out museography and scenography projects, including the signage for the Astérix, l'Européen exhibition at the Château de Malbrouck for the Moselle department. Expocom is certified with the Imprim Vert label and operates across the national territory as well as in neighbouring countries.",
+  "specialties": [
+   "signalétique et enseigne",
+   "décor adhésif et covering",
+   "solutions d'exposition",
+   "muséographie et scénographie"
+  ],
+  "zone_intervention": "territoire national et pays limitrophes",
+  "seo_indexable": true
+ },
+ {
+  "slug": "fg-design",
+  "company_name": "FG DESIGN",
+  "category": "standiste",
+  "city": "Boulogne Billancourt",
+  "description": "FG Design est une agence de design de stands basée à Boulogne-Billancourt, dans les Hauts-de-Seine, active depuis 1977. Le groupe conçoit des stands sur mesure, des stands modulaires réutilisables ainsi que des pavillons et des chalets pour les salons professionnels. Il réalise aussi l'agencement d'espaces de vente et de showrooms. FG Design est certifiée ISO 20121 pour la gestion durable de ses événements. Parmi ses réalisations récentes, le groupe a conçu le stand de PROTAC, fabricant français de solutions bois, présenté au Carrefour International du Bois 2026 à Nantes.",
+  "description_en": "FG Design is a stand design agency based in Boulogne-Billancourt, in the Hauts-de-Seine department, active since 1977. The group designs bespoke stands, reusable modular stands as well as pavilions and chalets for trade shows. It also fits out retail spaces and showrooms. FG Design is certified ISO 20121 for the sustainable management of its events. Among its recent projects, the group designed the stand for PROTAC, a French manufacturer of timber solutions, presented at the Carrefour International du Bois 2026 in Nantes.",
+  "specialties": [
+   "stands sur mesure",
+   "stands modulaires réutilisables",
+   "pavillons et chalets",
+   "agencement retail et showroom"
+  ],
+  "zone_intervention": "France, Europe et international",
+  "seo_indexable": false
+ },
+ {
+  "slug": "galis",
+  "company_name": "Galis",
+  "category": "standiste",
+  "city": "Saint-Thibault-des-Vignes",
+  "description": "Galis est une agence de design de stands et d'événements basée à Saint-Thibault-des-Vignes, en Seine-et-Marne. Fondée en 1973, l'entreprise a été reprise en 1994 par Nathalie et Fabrice Laborde, co-présidents du groupe. Elle conçoit des stands sur mesure, modulables et hybrides pour les salons et les congrès, ainsi que des événements et des espaces retail : kiosques, pop-up stores et espaces éphémères. Sa filiale Galis Factory prend en charge la production, la logistique et l'installation des stands traditionnels, dans un atelier francilien (menuiserie, peinture, graphisme, électricité). Galis dispose aussi d'agences à Floirac près de Bordeaux, à Dardilly près de Lyon, à Nice, à Lille, à Strasbourg et à Grenoble. L'agence est certifiée ISO 20121 depuis 2016 et a obtenu le Label Engagé RSE de l'AFNOR, niveau Confirmé, en 2023.",
+  "description_en": "Galis is a stand and event design agency based in Saint-Thibault-des-Vignes, in Seine-et-Marne. Founded in 1973, the company was taken over in 1994 by Nathalie and Fabrice Laborde, co-chairs of the group. It designs bespoke, modular and hybrid stands for trade shows and conferences, as well as events and retail spaces: kiosks, pop-up stores and temporary spaces. Its subsidiary Galis Factory handles production, logistics and installation of traditional stands, in a workshop in the Île-de-France region (joinery, painting, graphics, electrical work). Galis also has agencies in Floirac near Bordeaux, Dardilly near Lyon, Nice, Lille, Strasbourg and Grenoble. The agency has been certified ISO 20121 since 2016 and obtained the AFNOR Label Engagé RSE, Confirmé level, in 2023.",
+  "specialties": [
+   "stands sur mesure",
+   "stands modulables",
+   "stands hybrides",
+   "fabrication en atelier intégré",
+   "événementiel",
+   "design retail"
+  ],
+  "zone_intervention": "France et dans le monde",
+  "seo_indexable": false
+ },
+ {
+  "slug": "gl-events-venues-lyon",
+  "company_name": "GL Events Venues",
+  "category": "autre",
+  "city": "Lyon",
+  "description": "GL Events Venues est la structure du groupe GL events consacrée à la gestion d'un réseau international de sites événementiels. Le site du groupe la présente comme l'un des trois pôles complémentaires du groupe, aux côtés de Live et Exhibitions. L'entité juridique GL Events Venues a été créée en 2007 et son siège est basé à Lyon, comme celui du groupe.",
+  "description_en": "GL Events Venues is the arm of the GL events group dedicated to managing an international network of event venues. The group's website presents it as one of the group's three complementary divisions, alongside Live and Exhibitions. The legal entity GL Events Venues was created in 2007 and its head office is based in Lyon, like the group's.",
+  "specialties": [
+   "gestion de sites événementiels"
+  ],
+  "zone_intervention": null,
+  "seo_indexable": false
+ },
+ {
+  "slug": "go4expo",
+  "company_name": "Go4expo",
+  "category": "standiste",
+  "city": "Lansargues",
+  "description": "Go4expo est un standiste basé à Lunel-Viel, dans l'Hérault, fondé en 2021. L'entreprise conçoit et fabrique des stands modulaires, des stands portatifs et des kits d'exposition, pensés pour être réutilisés d'un salon à l'autre. Ses ateliers et entrepôts sont répartis en Europe (Villeneuve-les-Maguelone, Paris, Dusseldorf) et en Amérique du Nord (Las Vegas, New York, Montréal). Go4expo accompagne des entreprises en France, en Europe et à l'international, du conseil de conception à la logistique de montage et de démontage.",
+  "description_en": "Go4expo is a stand-building company based in Lunel-Viel, in the Hérault, founded in 2021. The company designs and manufactures modular stands, portable stands and exhibition kits, built to be reused from one trade show to the next. Its workshops and warehouses are spread across Europe (Villeneuve-les-Maguelone, Paris, Dusseldorf) and North America (Las Vegas, New York, Montreal). Go4expo supports companies in France, Europe and internationally, from design consultancy through to build and dismantling logistics.",
+  "specialties": [
+   "stands modulaires",
+   "stands portatifs",
+   "kits d'exposition",
+   "stands éco-responsables et réutilisables"
+  ],
+  "zone_intervention": "France, Europe, monde",
+  "seo_indexable": false
+ },
+ {
+  "slug": "hopen-design-stand",
+  "company_name": "Hopen Design+Stand",
+  "category": "standiste",
+  "city": "Gellainville",
+  "description": "Hopen Design+Stand est une agence de conception et de fabrication de stands basée à Gellainville, près de Chartres, fondée en 1991 par Alain Demaria, dont le fils Brice a pris le relais. Ses locaux de 4 000 m² réunissent bureau d'études, atelier de fabrication et stockage. L'agence réalise des stands traditionnels sur mesure, pour une opération unique ou pour être réutilisés, et des stands modulaires en aluminium et tissu imprimé, à l'achat ou à la location. Ses équipes assurent le transport, le montage, le démontage et le stockage, et peuvent gérer les démarches administratives auprès des organisateurs. Hopen installe ses stands en France, en Europe et dans le monde, et aménage aussi des showrooms, des bureaux et des corners de vente.",
+  "description_en": "Hopen Design+Stand is a stand design and manufacturing agency based in Gellainville, near Chartres, founded in 1991 by Alain Demaria, whose son Brice took over. Its 4,000 m² premises house the design office, the manufacturing workshop and storage. The agency builds bespoke traditional stands, for a single event or designed for reuse, and modular stands in aluminium and printed fabric, to buy or to rent. Its teams handle transport, build-up, dismantling and storage, and can manage the administrative formalities with organisers. Hopen installs its stands in France, in Europe and around the world, and also fits out showrooms, offices and retail corners.",
+  "specialties": [
+   "stands sur mesure",
+   "stands réutilisables",
+   "stands modulaires",
+   "retail et agencement d'espaces"
+  ],
+  "zone_intervention": "France, Europe et le monde",
+  "seo_indexable": false
+ },
+ {
+  "slug": "iboo-studio",
+  "company_name": "Iboo Studio",
+  "category": "standiste",
+  "city": "Auray",
+  "description": "Iboo Studio est une agence de design de stands basée à Auray (Morbihan), créée en 2002 par Emmanuelle et Hervé Bossard, architectes d'intérieur. Elle conçoit des stands traditionnels menuisés sur mesure, des stands éco-modulables réutilisables d'un salon à l'autre et des pavillons collectifs pour les regroupements d'entreprises, et prend en charge la production, le transport, le montage, le démontage et le stockage. Elle propose aussi des services sur le salon (hôtesses, catering, gardiennage) et des dispositifs digitaux (stand virtuel ou hybride, réalité augmentée). L'agence fait état de plus de 150 projets réalisés à l'export, dans 25 pays. Ses réalisations publiées comptent le stand de Zodiac Aerospace au salon aéronautique du Bourget de 2005 à 2017, sept salons Batimat pour Mantion et des pavillons collectifs pour le Gican.",
+  "description_en": "Iboo Studio is a stand design agency based in Auray (Morbihan), founded in 2002 by Emmanuelle and Hervé Bossard, both interior architects. It designs traditional bespoke joinery stands, eco-modular stands that can be reused from one trade show to the next, and collective pavilions for groups of companies, and handles production, transport, build, dismantling and storage. It also offers on-site services (hosts and hostesses, catering, security) and digital solutions (virtual or hybrid stand, augmented reality). The agency reports more than 150 export projects, in 25 countries. Its published projects include Zodiac Aerospace's stand at the Le Bourget air show from 2005 to 2017, seven Batimat shows for Mantion and collective pavilions for Gican.",
+  "specialties": [
+   "stand sur mesure",
+   "stand éco-modulable",
+   "pavillon collectif",
+   "dispositifs digitaux"
+  ],
+  "zone_intervention": "France, Europe et le monde",
+  "seo_indexable": false
+ },
+ {
+  "slug": "id2stand",
+  "company_name": "ID2Stand",
+  "category": "standiste",
+  "city": "Lésigny",
+  "description": "ID2Stand est une agence de conception et de fabrication de stands d'exposition basée à Lésigny, en Seine-et-Marne, créée en 2011 et présidée par Sandrine Discour. Elle réalise des stands sur mesure fabriqués en France et des stands modulables en panneaux d'aluminium, vendus ou loués et remontables d'un salon à l'autre. Son bureau d'études, qui réunit designers, architectes et chefs de projet, conçoit aussi des showrooms, des corners, des bureaux et des salles de réunion. L'agence suit chaque projet de l'analyse du besoin aux plans 3D, puis prend en charge le transport, le montage, le démontage et le stockage du stand. Elle a travaillé pour des entreprises de la santé, de la technologie, de la mode, de l'automobile et de l'alimentation, et intervient en France, en Europe et à l'international.",
+  "description_en": "ID2Stand is an exhibition stand design and manufacturing agency based in Lésigny, in Seine-et-Marne, founded in 2011 and chaired by Sandrine Discour. It builds bespoke stands manufactured in France and modular stands made of aluminium panels, available to buy or to rent and reusable from one trade show to the next. Its design office, bringing together designers, architects and project managers, also designs showrooms, corners, offices and meeting rooms. The agency follows each project from needs analysis to 3D plans, then handles transport, assembly, dismantling and storage of the stand. It has worked for companies in healthcare, technology, fashion, automotive and food, and operates in France, in Europe and internationally.",
+  "specialties": [
+   "stand sur mesure",
+   "stand modulable",
+   "agencement d'espaces",
+   "conception 3D",
+   "stockage de stands"
+  ],
+  "zone_intervention": "France, Europe et international",
+  "seo_indexable": false
+ },
+ {
+  "slug": "idee-fixe",
+  "company_name": "Idée Fixe",
+  "category": "standiste",
+  "city": "Saint-Pair-sur-Mer",
+  "description": "Idée Fixe conçoit et fabrique des stands et des agencements d'espaces depuis 1990, avec des équipes à Paris, à Granville et à Nantes. La fabrication est internalisée dans les ateliers de l'agence en Normandie. Elle conçoit aussi bien des projets d'architecture éphémère, comme des stands sur mesure et des pop-up stores, que des projets d'architecture durable pour des bureaux, des commerces, des hôtels et des restaurants. L'agence est intervenue dans des univers comme le luxe, l'agroalimentaire, l'industrie ou la santé, et accompagne ses clients en France, en Europe et à l'international. Elle est certifiée ISO 20121.",
+  "description_en": "Idée Fixe has designed and manufactured stands and space fit-outs since 1990, with teams in Paris, Granville and Nantes. Manufacturing is carried out in-house, in the agency's workshops in Normandie. It designs both ephemeral architecture projects, such as bespoke stands and pop-up stores, and sustainable architecture projects for offices, shops, hotels and restaurants. The agency has worked across fields such as luxury, agri-food, industry and healthcare, and supports its clients in France, Europe and internationally. It is certified ISO 20121.",
+  "specialties": [
+   "stands sur mesure",
+   "agencement d'espaces durables",
+   "pop-up stores",
+   "agencement d'établissements de santé"
+  ],
+  "zone_intervention": "France, Europe et international",
+  "seo_indexable": true
+ },
+ {
+  "slug": "keops-expositions",
+  "company_name": "KEOPS EXPOSITIONS",
+  "category": "standiste",
+  "city": "Paris",
+  "description": "Keops Expositions, qui exerce sous le nom de Keops Event, est une agence de conception de stands basée rue Royale à Paris, avec des bureaux à Bordeaux et à Hong Kong. Créée en 2000, elle conçoit des stands sur mesure pour l'automobile, la cosmétique, les vins et spiritueux, la pharmacie, la défense, l'innovation technologique et l'aéronautique, ainsi que des stands modulaires démontables, des pop-up stores et des showrooms. L'agence est organisée en équipes par secteur, dont une équipe dédiée aux vins et spiritueux, et elle est partenaire agréé Vinexpo depuis 2022. Elle accompagne ses clients en France et à l'étranger. Ses réalisations publiées comptent des stands pour Givaudan à Beautyworld Middle East, Mercedes-Benz à Solutrans et Château Lafite Rothschild à ProWein. Keops est certifiée ISO 20121.",
+  "description_en": "Keops Expositions, which trades as Keops Event, is a stand design agency based on rue Royale in Paris, with offices in Bordeaux and Hong Kong. Founded in 2000, it designs bespoke stands for the automotive, cosmetics, wines and spirits, pharmaceutical, defence, technology innovation and aeronautics sectors, as well as demountable modular stands, pop-up stores and showrooms. The agency is organised into sector teams, including one dedicated to wines and spirits, and has been an accredited Vinexpo partner since 2022. It supports its clients in France and abroad. Its published projects include stands for Givaudan at Beautyworld Middle East, Mercedes-Benz at Solutrans and Château Lafite Rothschild at ProWein. Keops is certified ISO 20121.",
+  "specialties": [
+   "stands sur mesure",
+   "stands modulaires",
+   "pop-up store",
+   "showroom",
+   "stands vins et spiritueux"
+  ],
+  "zone_intervention": "France et international",
+  "seo_indexable": false
+ },
+ {
+  "slug": "l-architecture-communicante",
+  "company_name": "L'Architecture Communicante",
+  "category": "standiste",
+  "city": "Le Perreux sur Marne",
+  "description": "L'Architecture Communicante conçoit des stands sur mesure, des pop-up stores, des espaces événementiels et des agencements d'intérieur, avec son agence au Perreux-sur-Marne. Elle a été créée en 1996 par Jean Louis Lureau, diplômé de l'atelier d'Agencement de l'École Boulle. Thibaut Vitasse l'a rejointe en 2004 et la dirige aujourd'hui avec Odile Vitasse. En 2019, l'agence a intégré BrainTrust Exhibitions, spécialiste de la conception et de la réalisation de stands en cadres aluminium à travers l'Europe. Elle est adhérente de l'Unimev depuis 2016, intervient en France et en Europe pour des secteurs comme la mode, l'automobile, le sport ou l'agroalimentaire, et a mené plus de 3 000 études et stands depuis sa création.",
+  "description_en": "L'Architecture Communicante designs bespoke stands, pop-up stores, event spaces and interior fit-outs, from its agency in Le Perreux-sur-Marne. It was founded in 1996 by Jean Louis Lureau, a graduate of the Agencement workshop at the École Boulle. Thibaut Vitasse joined the agency in 2004 and now runs it with Odile Vitasse. In 2019, the agency brought BrainTrust Exhibitions on board, a specialist in designing and building aluminium frame stands across Europe. It has been a member of Unimev since 2016, works in France and Europe across sectors such as fashion, automotive, sport and agri-food, and has carried out more than 3,000 studies and stands since it was founded.",
+  "specialties": [
+   "stands sur mesure",
+   "pop-up stores",
+   "espaces événementiels et VIP",
+   "agencement d'intérieur"
+  ],
+  "zone_intervention": "France et Europe",
+  "seo_indexable": false
+ },
+ {
+  "slug": "l-as-decors",
+  "company_name": "L'AS Décors",
+  "category": "standiste",
+  "city": "Méru",
+  "description": "L'AS Décors est une agence de design de stand et d'agencement, avec son siège à Méru dans l'Oise et une agence à Paris. Elle conçoit des stands traditionnels sur mesure, des stands éco-modulables et des stands nomades, ainsi que du mobilier d'agencement retail fabriqué dans son propre atelier de menuiserie. L'agence réunit près de 50 collaborateurs et intervient partout en France et à l'international. Créée en 1976 par François L'Anthoen et Eric Sauzet, dont le nom reprend les initiales des deux fondateurs, elle est aujourd'hui dirigée par Stella Cure, qui a succédé à son père. L'agence est certifiée ISO 20121.",
+  "description_en": "L'AS Décors is a stand design and fit-out agency, with its head office in Méru in the Oise and an agency in Paris. It designs bespoke traditional stands, eco-modular stands and portable stands, as well as retail fit-out furniture made in its own joinery workshop. The agency brings together nearly 50 staff and works all over France and internationally. Founded in 1976 by François L'Anthoen and Eric Sauzet, whose name comes from the founders' initials, it is now run by Stella Cure, who succeeded her father. The agency is certified ISO 20121.",
+  "specialties": [
+   "stands premium",
+   "stands éco-modulables",
+   "stands nomades",
+   "agencement retail sur mesure",
+   "atelier de menuiserie intégré"
+  ],
+  "zone_intervention": "France et international",
+  "seo_indexable": false
+ },
+ {
+  "slug": "la-p-tite-histoire",
+  "company_name": "La P'tite Histoire",
+  "category": "standiste",
+  "city": "Paris",
+  "description": "La P'tite Histoire est une agence d'architecture événementielle et commerciale basée à Paris. Elle est née au début des années 2000 d'une envie commune à Dominique Velasco et Miguel Leguillon de penser autrement ces espaces, avec l'idée de créer des volumes de caractère jouant sur l'émotion. Geoffrey Moitrier s'est ensuite associé à cette aventure, puis Marjorie Munoz est venue compléter l'équipe. L'agence intervient sur des événements, des forums, des salons, ainsi que sur la conception de stands et d'agencements, en accompagnant ses projets de la genèse à leur aboutissement.",
+  "description_en": "La P'tite Histoire is an events and commercial architecture agency based in Paris. It was born in the early 2000s from a shared wish of Dominique Velasco and Miguel Leguillon to think about these spaces differently, with the idea of creating spaces of character that play on emotion. Geoffrey Moitrier then joined this venture, and Marjorie Munoz later came to complete the team. The agency works on events, forums and trade shows, as well as the design of stands and fit-outs, supporting its projects from inception to completion.",
+  "specialties": [
+   "architecture événementielle et commerciale",
+   "stands et agencement",
+   "salons et forums"
+  ],
+  "zone_intervention": null,
+  "seo_indexable": true
+ },
+ {
+  "slug": "laps-concept",
+  "company_name": "Laps Concept",
+  "category": "standiste",
+  "city": "Genas",
+  "description": "Laps Concept est une agence d'agencement et de conception de stands, basée à Genas dans le Rhône, à deux pas d'Eurexpo Lyon. Sous la marque Laps Agencement, elle indique réaliser depuis vingt ans l'aménagement de bureaux, de magasins et de showrooms, avec un savoir-faire interne en ébénisterie, menuiserie et métallerie assuré par des compagnons qualifiés en fabrication et en pose. Sous la marque Laps Événements, elle conçoit des stands et propose aussi une marque de stands modulaires, Easy Expo. Elle a notamment réalisé des stands pour Total au salon EVS32 à Lyon et pour Hankook au Solutrans.",
+  "description_en": "Laps Concept is a stand design and fit-out agency, based in Genas in the Rhône, a stone's throw from Eurexpo Lyon. Under the Laps Agencement brand, it states that it has been fitting out offices, shops and showrooms for twenty years, with in-house expertise in cabinetmaking, joinery and metalwork carried out by qualified craftsmen in manufacturing and installation. Under the Laps Événements brand, it designs stands and also offers a modular stand brand, Easy Expo. It has notably built stands for Total at the EVS32 trade show in Lyon and for Hankook at Solutrans.",
+  "specialties": [
+   "agencement de bureaux, magasins et showrooms",
+   "stands modulaires",
+   "ébénisterie, menuiserie et métallerie"
+  ],
+  "zone_intervention": null,
+  "seo_indexable": true
+ },
+ {
+  "slug": "lenotre-paris",
+  "company_name": "Lenôtre",
+  "category": "traiteur",
+  "city": "Paris",
+  "description": "Lenôtre est une maison de traiteur et de gastronomie française basée à Paris, dont le site officiel indique une activité depuis 1957. L'entreprise propose des prestations de réception pour les événements d'entreprise : réunions, repas d'affaires, séminaires et conventions, avec des formules avec ou sans personnel. Son offre Espace Entreprise comprend aussi des cadeaux d'affaires personnalisés, dont des coffrets dédiés aux CSE et collectivités. Lenôtre met par ailleurs ses connaissances et son expertise à disposition sous forme de consulting, et propose des sessions de team building en cuisine au sein de son école, héritée de Gaston Lenôtre, à Rungis. La maison exploite aussi deux restaurants, dont Le Pré Catelan, récompensé de trois étoiles au guide Michelin.",
+  "description_en": "Lenôtre is a French catering and gastronomy house based in Paris, whose official website states an activity dating back to 1957. The company offers reception services for corporate events: meetings, business lunches, seminars and conventions, with formulas with or without staff. Its Espace Entreprise offer also includes personalised business gifts, including gift boxes dedicated to CSE and local authorities. Lenôtre also makes its knowledge and expertise available in the form of consulting, and offers team building sessions in the kitchen at its school, inherited from Gaston Lenôtre, in Rungis. The house also runs two restaurants, including Le Pré Catelan, awarded three stars in the Michelin Guide.",
+  "specialties": [
+   "traiteur salé",
+   "réceptions et grands événements",
+   "cadeaux d'affaires",
+   "consulting",
+   "team building"
+  ],
+  "zone_intervention": null,
+  "seo_indexable": true
+ },
+ {
+  "slug": "live-co",
+  "company_name": "Live & co",
+  "category": "standiste",
+  "city": "Puteaux",
+  "description": "Live & co est une agence de conception et de fabrication de stands sur mesure pour les salons professionnels, basée à Rennes et à Paris. Elle conçoit, fabrique en atelier et installe des stands sur mesure : les éléments de décor sont fabriqués puis retravaillés dans son propre atelier de menuiserie. L'agence propose aussi de l'architecture de stand, de l'agencement de showroom et de la communication événementielle. Live & co pratique la réinstallation de ses stands d'une édition à l'autre, via le stockage et le réemploi des éléments. Elle indique intervenir en France et à l'international, et a réalisé des stands notamment pour SYENSQO, PNY et SPHEREA. L'agence est membre actif du LEADS, groupement d'agences du secteur du design et du stand.",
+  "description_en": "Live & co is a design and manufacturing agency for bespoke stands for trade shows, based in Rennes and Paris. It designs, manufactures in-house and installs bespoke stands: decor elements are made and then reworked in its own joinery workshop. The agency also offers stand architecture, showroom design and event communication. Live & co practises the reinstallation of its stands from one edition to the next, through the storage and reuse of elements. It states that it operates in France and internationally, and has built stands notably for SYENSQO, PNY and SPHEREA. The agency is an active member of LEADS, a group of agencies in the design and stand sector.",
+  "specialties": [
+   "conception de stands sur-mesure",
+   "fabrication de stand",
+   "architecture de stand",
+   "agencement showroom",
+   "communication événementielle"
+  ],
+  "zone_intervention": "France et international",
+  "seo_indexable": false
+ },
+ {
+  "slug": "magnum",
+  "company_name": "Magnum",
+  "category": "av_technique",
+  "city": "Gonesse",
+  "description": "Magnum est un prestataire technique audiovisuel basé à Gonesse, actif depuis 1986 selon son site officiel. L'entreprise couvre le son, la vidéo, la lumière, l'énergie, la structure, les scènes, les réseaux, l'intégration LED et le digital, pour des événements corporate, institutionnels, grand public, B2B et B2C, sportifs ou de spectacle vivant. Elle propose la location de matériel technique, avec plus de 5000 références, la vente et l'intégration de produits audiovisuels, ainsi que la gestion technique de lieux événementiels : elle est partenaire technique de 30 lieux en régie en Île-de-France. Magnum fait partie du Groupe Novelty et détient le Label Prestadd depuis 2011 ; son site de Gonesse est certifié ISO 20121 depuis 2024.",
+  "description_en": "Magnum is an audiovisual technical provider based in Gonesse, active since 1986 according to its official website. The company covers sound, video, lighting, power, structure, staging, networks, LED integration and digital, for corporate, institutional, public, B2B and B2C events, as well as sporting and live performance events. It offers the rental of technical equipment, with more than 5000 references, the sale and integration of audiovisual products, and the technical management of event venues: it is a technical partner for 30 venues under management in Île-de-France. Magnum is part of Groupe Novelty and has held the Prestadd Label since 2011; its Gonesse site has been ISO 20121 certified since 2024.",
+  "specialties": [
+   "sonorisation",
+   "lumière",
+   "vidéo",
+   "structure",
+   "intégration led"
+  ],
+  "zone_intervention": "Île-de-France",
+  "seo_indexable": true
+ },
+ {
+  "slug": "maison-poirier",
+  "company_name": "Maison Poirier",
+  "category": "traiteur",
+  "city": "Bezons",
+  "description": "Maison Poirier est un traiteur événementiel basé à Bezons, actif depuis 1977 selon son site officiel, qui se positionne comme traiteur événementiel en Île-de-France. L'entreprise assure des cocktails dînatoires et déjeunatoires, des déjeuners d'affaires, des soirées d'entreprise, ainsi que des prestations sur salons professionnels et congrès, avec la location de matériel professionnel et de mobilier événementiel. Elle indique réaliser plus de 5000 événements chaque année en Île-de-France et en province. Maison Poirier est certifiée ISO 20121, norme internationale de l'événementiel durable. Elle appartient au Groupe TOSEVENTS, qui réunit aussi des maisons de traiteur à Lyon, Grenoble, Marseille et Cannes, et a par exemple accompagné l'ONERA pour un cocktail corporate en 2026.",
+  "description_en": "Maison Poirier is an events caterer based in Bezons, active since 1977 according to its official website, which positions itself as an events caterer in Île-de-France. The company handles dinner and lunch cocktail receptions, business lunches, corporate evenings, as well as services at trade shows and congresses, with the rental of professional equipment and event furniture. It states that it carries out more than 5000 events each year in Île-de-France and the provinces. Maison Poirier is ISO 20121 certified, an international standard for sustainable events. It belongs to Groupe TOSEVENTS, which also brings together catering houses in Lyon, Grenoble, Marseille and Cannes, and has for example supported ONERA for a corporate cocktail reception in 2026.",
+  "specialties": [
+   "salons & expos",
+   "événements d'entreprise",
+   "animations culinaires",
+   "location de matériel",
+   "restauration en entreprise"
+  ],
+  "zone_intervention": "Île-de-France",
+  "seo_indexable": false
+ },
+ {
+  "slug": "mci-france-paris",
+  "company_name": "MCI France",
+  "category": "autre",
+  "city": "Paris",
+  "description": "MCI France est l'entité française du groupe international mci group, agence de communication et d'événementiel. Le site officiel du groupe indique une histoire de plus de 35 ans, née d'une activité suisse de logistique de réunions, avec un siège mondial à Genève (Suisse). Le groupe indique une présence dans 34 pays, avec 64 bureaux, dont une présence en France au sein de son réseau européen.",
+  "description_en": "MCI France is the French entity of the international mci group, a communications and events agency. The group's official website states a history of more than 35 years, born from a Swiss meeting-logistics activity, with a global headquarters in Geneva (Switzerland). The group states a presence in 34 countries, with 64 offices, including a presence in France within its European network.",
+  "specialties": [],
+  "zone_intervention": null,
+  "seo_indexable": false
+ },
+ {
+  "slug": "media-product",
+  "company_name": "Media Product",
+  "category": "standiste",
+  "city": "Saint-Bonnet-de-Mure",
+  "description": "Media Product est une agence de standiste basée à Saint-Bonnet-de-Mure, près de Lyon, active depuis 1988. Elle conçoit et fabrique des stands sur mesure pour les salons professionnels, ainsi que des solutions modulaires et des displays, et couvre l'ensemble de la chaîne : conseil et analyse, design, technique et production, montage et démontage, avec une chaîne de production intégrée et un réseau de production majoritairement français. L'entreprise organise aussi des événements professionnels sur mesure : séminaires, conventions, soirées d'entreprise, journées incentive, roadshows et team building. Elle indique intervenir dans toute la France (Lyon, Paris, Bordeaux, Lille, Marseille, Nantes, Toulouse, Cannes, Rennes, Montpellier) ainsi qu'à l'international. Media Product est certifiée ISO 20121.",
+  "description_en": "Media Product is a stand-building agency based in Saint-Bonnet-de-Mure, near Lyon, active since 1988. It designs and manufactures bespoke stands for trade shows, as well as modular solutions and displays, and covers the whole chain: advice and analysis, design, technical work and production, assembly and dismantling, with an integrated production chain and a mostly French production network. The company also organises bespoke professional events: seminars, conventions, corporate evenings, incentive days, roadshows and team building. It states that it operates throughout France (Lyon, Paris, Bordeaux, Lille, Marseille, Nantes, Toulouse, Cannes, Rennes, Montpellier) as well as internationally. Media Product is ISO 20121 certified.",
+  "specialties": [
+   "conception de stands sur-mesure pour salons professionnels",
+   "stands modulaires & displays",
+   "évènements professionnels sur mesure",
+   "conseils et analyses",
+   "montage / démontage"
+  ],
+  "zone_intervention": "France entière et international",
+  "seo_indexable": true
+ },
+ {
+  "slug": "merci-gustave",
+  "company_name": "Merci Gustave",
+  "category": "autre",
+  "city": "Paris",
+  "description": "Merci Gustave conçoit et fabrique des stands d'exposition, avec des bureaux à Paris et à Montréal. L'agence propose quatre familles de produits présentées sur son site : le stand modulaire, le stand tubulaire, le stand nomade et une gamme d'accessoires. Son fondateur, David Lucion, a débuté dans le laminage sur bois en 1996 avant de rejoindre Duo Display, au Canada, en 2008, où il a participé au développement du stand modulaire et de l'impression numérique sur textile. En 2019, il crée sa propre structure pour accompagner les exposants français vers le marché nord-américain, qui devient Merci Gustave après le regroupement de deux marques, The Booth Company et The Portable Company. Le nom de l'agence est un clin d'œil à Gustave Eiffel. L'entreprise déclare intervenir en France, en Europe et en Amérique du Nord.",
+  "description_en": "Merci Gustave designs and manufactures exhibition stands, with offices in Paris and Montreal. The agency offers four product ranges presented on its website: the modular stand, the tubular stand, the portable stand and a range of accessories. Its founder, David Lucion, started out in wood laminating in 1996 before joining Duo Display, in Canada, in 2008, where he took part in developing the modular stand and digital textile printing. In 2019, he set up his own company to help French exhibitors move into the North American market, which became Merci Gustave after the merger of two brands, The Booth Company and The Portable Company. The agency's name is a nod to Gustave Eiffel. The company states that it operates in France, Europe and North America.",
+  "specialties": [
+   "stand modulaire",
+   "stand tubulaire",
+   "stand nomade",
+   "accessoires de stand"
+  ],
+  "zone_intervention": "France, Europe et Amérique du Nord",
+  "seo_indexable": false
+ },
+ {
+  "slug": "novelty-paris",
+  "company_name": "Novelty",
+  "category": "av_technique",
+  "city": "Paris",
+  "description": "Novelty est un prestataire technique audiovisuel basé à Paris, présenté sur son site comme expert des métiers de l'image, du son, de la lumière, de la structure scénique, de la distribution électrique et du management technique pour l'événementiel. L'entreprise couvre plusieurs domaines : vidéo (vidéoprojection, écrans LED, régies), sonorisation, éclairage, structure (scènes et podiums) et énergie (câblages et groupes électrogènes). Elle s'appuie sur un réseau d'agences régionales, notamment à Paris, en Azur, en Occitanie, en Nouvelle-Aquitaine, en Auvergne-Rhône-Alpes, dans le Grand Ouest, en Normandie et dans le Grand Est, ainsi que des agences à l'international, entre autres à Barcelone, Doha, Dammam, Dubaï, Madrid, Milan, Bruxelles, Lisbonne, Londres et Monaco. Novelty a été fondée en 1973 à Paris.",
+  "description_en": "Novelty is an audiovisual technical provider based in Paris, presented on its website as an expert in image, sound, lighting, stage structure, power distribution and technical management for events. The company covers several areas: video (video projection, LED screens, control rooms), sound, lighting, structure (stages and podiums) and power (cabling and generators). It relies on a network of regional agencies, notably in Paris, Azur, Occitanie, Nouvelle-Aquitaine, Auvergne-Rhône-Alpes, Grand Ouest, Normandie and Grand Est, as well as agencies abroad, including in Barcelona, Doha, Dammam, Dubai, Madrid, Milan, Brussels, Lisbon, London and Monaco. Novelty was founded in 1973 in Paris.",
+  "specialties": [
+   "vidéo",
+   "sonorisation",
+   "éclairage",
+   "structure scénique",
+   "énergie et distribution électrique"
+  ],
+  "zone_intervention": null,
+  "seo_indexable": true
+ },
+ {
+  "slug": "pech-up",
+  "company_name": "Pech'Up",
+  "category": "standiste",
+  "city": "Millery",
+  "description": "Pech'Up est un standiste dont le siège est à Millery (Rhône), avec une adresse de contact affichée à Beauvallon. Créée en 2020 par Lydie et François, menuisier de métier, l'entreprise conçoit des stands modulaires, réutilisables d'un salon à l'autre, et des stands hybrides qui associent une structure modulaire à des éléments sur mesure fabriqués dans son atelier de menuiserie intégré. Les stands, de 9 à 300 m², sont proposés à la vente ou à la location, avec stockage entre deux salons. Pech'Up réalise aussi des aménagements de showrooms, corners et halls d'accueil, et intervient dans toute la France. Ses réalisations publiées comptent des stands pour Rehau à Artibat 2025, Würth Elektronik à Global Industrie 2025 et la Fédération française de la moto au Salon du 2 Roues 2026.",
+  "description_en": "Pech'Up is an exhibition stand company headquartered in Millery (Rhône), with a contact address shown in Beauvallon. Founded in 2020 by Lydie and François, a joiner by trade, the company designs modular stands that can be reused from one trade show to the next, and hybrid stands that combine a modular structure with bespoke elements made in its in-house joinery workshop. Stands from 9 to 300 m² are available to buy or to rent, with storage between shows. Pech'Up also fits out showrooms, corners and reception areas, and works throughout France. Its published projects include stands for Rehau at Artibat 2025, Würth Elektronik at Global Industrie 2025 and the Fédération française de la moto at the Salon du 2 Roues 2026.",
+  "specialties": [
+   "stand modulaire",
+   "stand hybride",
+   "aménagement d'espace",
+   "location de stand",
+   "écoresponsabilité"
+  ],
+  "zone_intervention": "France",
+  "seo_indexable": false
+ },
+ {
+  "slug": "pico-international-paris",
+  "company_name": "Pico International France",
+  "category": "autre",
+  "city": "Paris",
+  "description": "Groupe international spécialisé dans la conception de stands et d'environnements de marque. Présence dans 40 pays.",
+  "description_en": "International group specialising in stand design and brand environments. Present in 40 countries.",
+  "specialties": [],
+  "zone_intervention": null,
+  "seo_indexable": false
+ },
+ {
+  "slug": "pierre-et-gilles",
+  "company_name": "PIERRE ET GILLES",
+  "category": "photographe",
+  "city": "Montrouge",
+  "description": "Pierre et Gilles est une agence de photographie enregistrée à Montrouge, au 79 avenue Pierre Brossolette. Sur son site, elle présente une activité de reportage photo et vidéo centrée sur l'architecture, la décoration d'intérieur, l'évènementiel ainsi que les salons et congrès professionnels. Sa galerie classe les travaux par domaine : stand, évènementiel, immobilier et architecture, retail. L'agence figure dans l'annuaire du réseau Prestalians, qui rassemble des prestataires de salons professionnels. Elle est enregistrée sous le nom Pierre et Gilles Associés depuis 2014.",
+  "description_en": "Pierre et Gilles is a photography agency registered in Montrouge, at 79 avenue Pierre Brossolette. On its website, it presents a photo and video reportage business focused on architecture, interior design, events, and trade shows and conferences. Its gallery sorts work by field: stand, events, property and architecture, retail. The agency is listed in the directory of the Prestalians network, which brings together providers for trade shows. It has been registered under the name Pierre et Gilles Associés since 2014.",
+  "specialties": [
+   "photographie de stand",
+   "reportage évènementiel",
+   "photographie immobilier et architecture",
+   "photographie retail"
+  ],
+  "zone_intervention": null,
+  "seo_indexable": false
+ },
+ {
+  "slug": "potel-et-chabot-paris",
+  "company_name": "Potel et Chabot",
+  "category": "traiteur",
+  "city": "Paris",
+  "description": "Potel et Chabot est une maison de traiteur fondée à Paris en 1820 par Jean-François Potel, rôtisseur-pâtissier, et Étienne Chabot, maître de bouche du duc d'Orléans. Elle fait aujourd'hui partie du Groupe Potel et Chabot, qui réunit aussi les maisons Saintclair (fondée en 1982, rejointe par le Groupe en 1988) et Dalloyau (fondée en 1682, rejointe en 2024). Depuis 2023, Accor détient 100 % du capital du Groupe, après une première prise de participation en 2017. Le Groupe propose notamment des cocktails d'entreprise, des conventions et congrès, des repas assis et des réceptions privées, et gère dix lieux parisiens. Il est certifié ISO 20121, la norme internationale de management responsable de l'activité événementielle. Le siège de Potel et Chabot se trouve au 3 rue de Chaillot, à Paris.",
+  "description_en": "Potel et Chabot is a catering house founded in Paris in 1820 by Jean-François Potel, rôtisseur-pâtissier, and Étienne Chabot, maître de bouche to the Duke of Orléans. It is now part of the Groupe Potel et Chabot, which also brings together the houses Saintclair (founded in 1982, joined the Group in 1988) and Dalloyau (founded in 1682, joined in 2024). Since 2023, Accor has held 100% of the Group's capital, following an initial stake taken in 2017. The Group offers, among other things, corporate cocktails, conventions and conferences, sit down meals and private receptions, and runs ten venues in Paris. It is certified to ISO 20121, the international standard for responsible management of event activity. The registered office of Potel et Chabot is at 3 rue de Chaillot, in Paris.",
+  "specialties": [
+   "cocktail d'entreprise",
+   "convention et congrès",
+   "repas assis",
+   "réception privée"
+  ],
+  "zone_intervention": null,
+  "seo_indexable": true
+ },
+ {
+  "slug": "r2-stand-et-event",
+  "company_name": "R2 STAND ET EVENT",
+  "category": "standiste",
+  "city": "Paris",
+  "description": "Basée à Paris, avec une agence à Lyon, R2 Stand et Event conçoit et fabrique des stands sur mesure, des stands modulaires et des pavillons ou chalets pour les salons professionnels, foires et expositions. L'entreprise prend en charge la conception graphique et technique, la fabrication, le montage, la logistique et le stockage des projets. Elle propose également de l'agencement retail, pour mettre en valeur les produits et services de ses clients, ainsi que l'organisation de salons professionnels et grand public. R2 Stand et Event intervient partout en France et à l'international.",
+  "description_en": "Based in Paris, with an office in Lyon, R2 Stand et Event designs and manufactures custom-made stands, modular stands, and pavilions or chalets for trade shows, fairs and exhibitions. The company handles graphic and technical design, manufacturing, assembly, logistics and storage for each project. It also offers retail fit-out services, to showcase clients' products and services, as well as the organisation of trade shows for professionals and the general public. R2 Stand et Event operates throughout France and internationally.",
+  "specialties": [
+   "stands sur-mesure",
+   "stands modulaires",
+   "pavillons / chalets",
+   "organisation de salons",
+   "agencement retail"
+  ],
+  "zone_intervention": "France et international",
+  "seo_indexable": true
+ },
+ {
+  "slug": "square-meters-paris",
+  "company_name": "Square Meters Paris",
+  "category": "standiste",
+  "city": "Paris",
+  "description": "Square Meters Paris est une agence de design et d'aménagement d'espaces commerciaux basée à Paris. Fondée en 2014, elle conçoit, produit et installe des stands d'exposition, des pop-up stores et boutiques, des showrooms, des lounges réceptifs, ainsi que des aménagements de bureaux. L'agence accompagne aussi ses projets à l'international. Elle applique les normes RSE et ISO 20121 mises en place pour les métiers de l'évènementiel, et privilégie le recours à des artisans français pour la réalisation de ses projets. Parmi ses réalisations figurent des projets pour CGI Finance (aménagement de bureaux), Kuehne+Nagel (stand d'exposition) et le ministère de la Défense (stand d'exposition).",
+  "description_en": "Square Meters Paris is a design and commercial space fit-out agency based in Paris. Founded in 2014, it designs, produces and installs exhibition stands, pop-up stores and boutiques, showrooms, reception lounges, as well as office fit-outs. The agency also supports projects internationally. It applies the RSE and ISO 20121 standards for the events industry, and favours French craftsmen for its projects. Its work includes projects for CGI Finance (office fit-out), Kuehne+Nagel (exhibition stand) and the French Ministry of Defence (exhibition stand).",
+  "specialties": [
+   "stands d'exposition",
+   "pop-up stores et boutiques",
+   "showrooms et expositions",
+   "lounges réceptifs",
+   "aménagement de bureaux"
+  ],
+  "zone_intervention": "France et à l'international",
+  "seo_indexable": true
+ },
+ {
+  "slug": "stand-by-me",
+  "company_name": "Stand By Me",
+  "category": "standiste",
+  "city": "Le Thor",
+  "description": "Stand By Me conçoit des stands sur mesure pour les salons professionnels, avec des locaux à Paris et au Thor. Au service de projets depuis 2008, l'entreprise prend en charge la conception et la modélisation, la production et la construction en atelier, ainsi que la logistique et l'installation sur site, du transport au démontage. Elle propose aussi des services événementiels complémentaires : personnel d'accueil, régie technique, captation photo et vidéo. Stand By Me accompagne ses clients en France et à l'international, et a engagé un processus de labellisation ISO 20121. Parmi ses réalisations figurent des stands pour Saint Gobain (SIAE), Databricks (NRF Europe) et Yoplait (Japan Expo).",
+  "description_en": "Stand By Me designs custom-made stands for trade shows, with premises in Paris and in Le Thor. Serving projects since 2008, the company handles design and modelling, in-house production and construction, as well as logistics and on-site installation, from transport through to dismantling. It also offers complementary event services: hospitality staff, technical management, photo and video coverage. Stand By Me works with clients in France and internationally, and has started an ISO 20121 labelling process. Its work includes stands for Saint Gobain (SIAE), Databricks (NRF Europe) and Yoplait (Japan Expo).",
+  "specialties": [
+   "conception & modélisation",
+   "production & construction",
+   "logistique & installation",
+   "services événementiels"
+  ],
+  "zone_intervention": "France et international",
+  "seo_indexable": true
+ },
+ {
+  "slug": "stand-op",
+  "company_name": "Stand Op",
+  "category": "standiste",
+  "city": "Chauray",
+  "description": "Stand Op est une entreprise de conception et de fabrication de stands basée à Chauray. Elle est l'évolution de Volume Action, reprise en 2011 par Philippe Trouvé pour devenir Stand*Op en 2012. L'atelier s'est agrandi en 2017, avec une menuiserie à commande numérique, une cabine de peinture et des zones de préparation, de montage à blanc et d'expédition. L'équipe compte un noyau de 7 personnes mobilisées sur chaque projet, complété selon les besoins par un réseau de prestataires (tapissiers, décorateurs, techniciens son et lumière). L'entreprise conçoit des espaces pour différents secteurs : mutuelles, parfumerie, outillage, nautisme, distribution. Parmi ses réalisations : le Département des Deux-Sèvres (Salon de l'Agriculture, Paris), Denantes (Salon EquipHotel, Paris) et la Macif (Village départ Vendée Globe, Les Sables-d'Olonne).",
+  "description_en": "Stand Op is a stand design and manufacturing company based in Chauray. It is the continuation of Volume Action, taken over in 2011 by Philippe Trouvé to become Stand*Op in 2012. The workshop was expanded in 2017, with computer-controlled joinery, a paint booth and preparation, mock-assembly and shipping areas. The team has a core of 7 people assigned to each project, complemented as needed by a network of contractors (upholsterers, decorators, sound and lighting technicians). The company designs spaces for various sectors: mutual insurers, perfumery, tools, boating, distribution. Its work includes: the Deux-Sèvres department council (Salon de l'Agriculture, Paris), Denantes (Salon EquipHotel, Paris) and Macif (Vendée Globe departure village, Les Sables-d'Olonne).",
+  "specialties": [
+   "stands sur-mesure",
+   "menuiserie à commande numérique",
+   "agencement d'espaces événementiels"
+  ],
+  "zone_intervention": null,
+  "seo_indexable": false
+ },
+ {
+  "slug": "standpub",
+  "company_name": "STANDPUB",
+  "category": "standiste",
+  "city": "Saint Martin d'Heres",
+  "description": "STANDPUB conçoit et fabrique des stands d'exposition depuis un atelier de production à Grenoble (Saint Martin d'Hères), avec une agence commerciale à Lyon. Entreprise familiale créée en 1983, elle propose des stands sur mesure, des stands modulables et des stands publicitaires, ainsi que de l'agencement intérieur (bureaux, boutiques, showrooms). L'atelier de Grenoble occupe 4000m² et la fabrication est 100% française grâce à la menuiserie interne. STANDPUB intervient de Paris à Lyon, de Grenoble à Marseille, sur les salons professionnels en France et en Europe. L'entreprise est certifiée selon la norme ISO 20121. Le choix entre stand sur mesure, modulaire, parapluie ou événementiel dépend du projet, chacun étant une création adaptée à l'image et aux objectifs du client.",
+  "description_en": "STANDPUB designs and manufactures exhibition stands from a production workshop in Grenoble (Saint Martin d'Hères), with a sales office in Lyon. A family business founded in 1983, it offers custom-made stands, modular stands and promotional stands, as well as interior fit-out (offices, shops, showrooms). The Grenoble workshop covers 4000m² and manufacturing is 100% French thanks to the in-house joinery. STANDPUB works from Paris to Lyon, from Grenoble to Marseille, on trade shows across France and Europe. The company is certified to the ISO 20121 standard. The choice between a custom-made, modular, pop-up or event stand depends on the project, each one being tailored to the client's image and objectives.",
+  "specialties": [
+   "stand sur-mesure",
+   "stand modulable",
+   "agencement intérieur",
+   "espaces modulaires"
+  ],
+  "zone_intervention": "France et Europe",
+  "seo_indexable": false
+ },
+ {
+  "slug": "stik-co",
+  "company_name": "STIK&CO",
+  "category": "standiste",
+  "city": "Courbevoie",
+  "description": "STIK&CO est une agence de design et d'architecture événementielle basée à Courbevoie, avec des bureaux à Paris et Toulouse. Elle conçoit et installe des stands sur mesure, des stands modulaires réutilisables, des showrooms, des pop-up stores, des corners, des chalets et des espaces de réception, ainsi que de l'agencement d'espaces commerciaux. STIK&CO intervient partout en France ainsi qu'à l'international : ses équipes se sont notamment déplacées au Bourget, à Dubaï, à Farnborough, à Singapour et au Caire. Dans la conception de ses stands modulaires, l'agence privilégie la réutilisation plutôt que la recréation d'un stand pour chaque événement, avec des matériaux responsables et une logistique optimisée. Parmi ses réalisations figurent des projets pour Thales (Milipol Paris), Safran (Farnborough) et La Poste (Paris Retail Week).",
+  "description_en": "STIK&CO is an event design and architecture agency based in Courbevoie, with offices in Paris and Toulouse. It designs and installs custom-made stands, reusable modular stands, showrooms, pop-up stores, corners, chalets and reception spaces, as well as commercial space fit-outs. STIK&CO works throughout France as well as internationally: its teams have notably travelled to Le Bourget, Dubai, Farnborough, Singapore and Cairo. In designing its modular stands, the agency favours reuse over recreating a stand for each event, with responsible materials and optimised logistics. Its work includes projects for Thales (Milipol Paris), Safran (Farnborough) and La Poste (Paris Retail Week).",
+  "specialties": [
+   "stand sur mesure",
+   "stand modulaire",
+   "showroom / pop-up store",
+   "agencement d'espace",
+   "marketing expérientiel"
+  ],
+  "zone_intervention": "France et international",
+  "seo_indexable": false
+ },
+ {
+  "slug": "studecors",
+  "company_name": "STUDECORS",
+  "category": "standiste",
+  "city": "Ozoir la Ferriere",
+  "description": "STUDECORS est une agence spécialisée dans le stand traditionnel et l'événementiel, basée à Ozoir-la-Ferrière, en Seine-et-Marne. Elle a été créée en 2004 par Nathalie et Michel, à la suite de l'ancienne société Studecors-Paris. En 2017, elle a participé pour la première fois au salon Euroshop.",
+  "description_en": "STUDECORS is an agency specialising in traditional stands and events, based in Ozoir-la-Ferrière, in Seine-et-Marne. It was founded in 2004 by Nathalie and Michel, following on from the former company Studecors-Paris. In 2017, it took part in the Euroshop trade fair for the first time.",
+  "specialties": [
+   "stand traditionnel",
+   "événementiel",
+   "rédaction et créativité"
+  ],
+  "zone_intervention": null,
+  "seo_indexable": false
+ },
+ {
+  "slug": "tas-exposition",
+  "company_name": "Tas Exposition",
+  "category": "standiste",
+  "city": "Houilles",
+  "description": "TAS Exposition est une agence d'agencement événementiel spécialisée dans la conception de stands, basée à Houilles, dans les Yvelines. Depuis plus de 25 ans, elle accompagne ses clients sur des projets d'agencement événementiel et les conseille sur leur visibilité lors de salons professionnels ou grand public. Son bureau d'études propose une projection de l'espace d'exposition avant réalisation, à partir de l'analyse des besoins du client. L'agence conçoit aussi bien des stands traditionnels que des stands éco-modulables, et assure la logistique : stockage, transport, montage et démontage, en France et à l'international. Elle a notamment réalisé des stands pour Solvay, Saint-Gobain et Air Liquide Healthcare.",
+  "description_en": "TAS Exposition is an event design agency specialising in stand design, based in Houilles, in the Yvelines. For more than 25 years, it has supported its clients on event design projects and advised them on their visibility at trade and public exhibitions. Its design office produces a projection of the exhibition space before it is built, based on an analysis of the client's needs. The agency designs both traditional stands and eco-modular stands, and handles logistics: storage, transport, set-up and dismantling, in France and internationally. It has notably built stands for Solvay, Saint-Gobain and Air Liquide Healthcare.",
+  "specialties": [
+   "stand eco-modulable",
+   "stand traditionnel",
+   "bureau d'études intégré",
+   "logistique globale"
+  ],
+  "zone_intervention": "France et international",
+  "seo_indexable": false
+ },
+ {
+  "slug": "technistand",
+  "company_name": "Technistand",
+  "category": "standiste",
+  "city": "Gagny",
+  "description": "Technistand est un standiste basé à Gagny, en Seine-Saint-Denis, créé en 2012 et dirigé par Philippe Noirbent. L'entreprise livre des stands clés en main, de la conception au stockage en passant par la fabrication, le montage et le démontage. Elle réalise des stands sur mesure à usage unique, surtout en menuiserie, des stands réutilisables et des stands modulaires. Pour les stands conformes à la charte d'une marque, son bureau d'études crée le projet, fabriqué ensuite par les menuisiers, imprimeurs et électriciens qui l'entourent. Elle réalise aussi des stands dessinés par d'autres agences ou par les designers de l'exposant. Elle gère la validation des plans avec l'organisateur, le formulaire de sécurité et les précommandes techniques, et un chef de projet suit tout le montage. Elle agence aussi des showrooms.",
+  "description_en": "Technistand is a stand builder based in Gagny, in Seine-Saint-Denis, set up in 2012 and run by Philippe Noirbent. The company delivers turnkey stands, from design to storage, including manufacturing, build-up and dismantling. It builds bespoke single-use stands, mostly in joinery, reusable stands and modular stands. For stands that follow a brand's design guidelines, its design office creates the project, which is then made by the joiners, printers and electricians it works with. It also builds stands designed by other agencies or by the exhibitor's own designers. It handles plan approval with the organiser, the safety form and advance technical orders, and a project manager oversees the whole build-up. It also fits out showrooms.",
+  "specialties": [
+   "stands sur mesure",
+   "stands réutilisables",
+   "stands modulaires",
+   "agencement de showrooms",
+   "décors événementiels"
+  ],
+  "zone_intervention": null,
+  "seo_indexable": false
+ },
+ {
+  "slug": "technistyle",
+  "company_name": "TECHNISTYLE",
+  "category": "standiste",
+  "city": "Saint-Cloud",
+  "description": "TECHNISTYLE est une agence de design d'espaces basée à Saint-Cloud, dans les Hauts-de-Seine. Fondée en 1959, elle est d'abord un pôle de compétences dédié à la publicité et au stand d'exposition, avant de recentrer son activité, dès 1980, sur la communication volume : stand sur mesure, agencement et scénographie. Son équipe rassemble architectes d'intérieur, infographistes et designers, qui mettent en image et en volume les objectifs de communication des clients, en France comme à l'étranger. L'agence est signataire de la Charte Relations fournisseur responsables, labellisée PRESTADD depuis 2017 et certifiée ISO 20121 depuis juin 2022.",
+  "description_en": "TECHNISTYLE is a space design agency based in Saint-Cloud, in the Hauts-de-Seine. Founded in 1959, it was originally a centre of expertise dedicated to advertising and exhibition stands, before refocusing its activity, from 1980, on three-dimensional communication: bespoke stands, fit-out and scenography. Its team brings together interior architects, graphic designers and designers, who give shape and volume to clients' communication objectives, in France and abroad. The agency is a signatory of the Charte Relations fournisseur responsables, PRESTADD-labelled since 2017 and ISO 20121 certified since June 2022.",
+  "specialties": [
+   "stand sur mesure",
+   "agencement de bureaux et boutiques",
+   "création graphique",
+   "scénographie événementielle"
+  ],
+  "zone_intervention": "France et l'étranger",
+  "seo_indexable": false
+ },
+ {
+  "slug": "thems-concept",
+  "company_name": "Thems Concept",
+  "category": "standiste",
+  "city": "Saint-Médard-en-Jalles",
+  "description": "Thems Concept est une agence de design d'espaces professionnels basée à Saint-Médard-en-Jalles, près de Bordeaux, avec une seconde agence à Lagarrigue, près de Toulouse. Elle conçoit des stands d'exposition sur mesure, des solutions de merchandising et d'aménagement, ainsi que des projets de scénographie événementielle et d'aménagement de showroom. Une équipe pluridisciplinaire de designers, menuisiers et experts en signalétique intervient sur chaque projet, avec des technologies interactives et des options éco-responsables comme les stands réutilisables. L'agence intervient en France, en Europe et à l'international, et a notamment réalisé des stands pour Victoria's Secret, Glaukos et Baron Philippe de Rothschild.",
+  "description_en": "Thems Concept is a professional space design agency based in Saint-Médard-en-Jalles, near Bordeaux, with a second agency in Lagarrigue, near Toulouse. It designs bespoke exhibition stands, merchandising and fit-out solutions, as well as event scenography and showroom fit-out projects. A multidisciplinary team of designers, joiners and signage experts works on each project, with interactive technologies and eco-responsible options such as reusable stands. The agency operates in France, in Europe and internationally, and has notably built stands for Victoria's Secret, Glaukos and Baron Philippe de Rothschild.",
+  "specialties": [
+   "stands d'exposition sur mesure",
+   "merchandising et aménagement",
+   "scénographie événementielle",
+   "aménagement de showroom"
+  ],
+  "zone_intervention": "France, Europe et international",
+  "seo_indexable": false
+ },
+ {
+  "slug": "trajectoire-expositions",
+  "company_name": "Trajectoire Expositions",
+  "category": "standiste",
+  "city": "Gentilly",
+  "description": "Trajectoire Expositions conçoit des stands d'exposition sur mesure et des projets d'aménagement d'espaces, depuis son siège à Gentilly, dans le Val-de-Marne. Fondée en 1993 par Christian et Dominique Géri, l'agence associe architecture, graphisme et scénographie pour la réalisation de ses projets. Elle propose aussi des stands hybrides, combinant les avantages du sur-mesure et du modulable, ainsi que des projets de PLV, d'espaces retail et de stands réceptifs, pour des manifestations aussi bien en France qu'à l'étranger. Chaque réalisation est coordonnée par un même interlocuteur, de la prise de brief à la livraison.",
+  "description_en": "Trajectoire Expositions designs bespoke exhibition stands and space fit-out projects, from its head office in Gentilly, in the Val-de-Marne. Founded in 1993 by Christian and Dominique Géri, the agency combines architecture, graphic design and scenography in delivering its projects. It also offers hybrid stands, combining the advantages of bespoke and modular design, as well as point-of-sale display, retail space and reception stand projects, for events in France and abroad. Each project is coordinated by a single point of contact, from initial brief to delivery.",
+  "specialties": [
+   "stands sur mesure",
+   "stands hybrides",
+   "PLV, event et retail",
+   "stands réceptifs"
+  ],
+  "zone_intervention": "France et étranger",
+  "seo_indexable": false
+ },
+ {
+  "slug": "triangle-expositions",
+  "company_name": "Triangle Expositions",
+  "category": "standiste",
+  "city": "Arnouville-lès-Mantes",
+  "description": "Triangle Expositions est une agence basée à Louveciennes, dans les Yvelines, qui conçoit et réalise des stands pour les salons professionnels. Fondée en 1994, elle est reprise en 2008 par Didier Hocquaux, qui transforme le bureau d'études en agence intégrant le télétravail et les outils numériques. L'agence conçoit des stands traditionnels et des stands à étage, ainsi que de l'agencement de plateaux et des points de vente pour les expositions. Elle s'appuie sur un réseau de plus de 150 professionnels, concepteurs, menuisiers et poseurs, pour la réalisation de ses projets, partout en France et souvent à l'étranger.",
+  "description_en": "Triangle Expositions is an agency based in Louveciennes, in the Yvelines, that designs and builds stands for trade shows. Founded in 1994, it was taken over in 2008 by Didier Hocquaux, who transformed the design office into an agency incorporating remote working and digital tools. The agency designs traditional stands and double-decker stands, as well as set layouts and points of sale for exhibitions. It relies on a network of more than 150 professionals, designers, carpenters and fitters, to carry out its projects, throughout France and often abroad.",
+  "specialties": [
+   "stands traditionnels",
+   "stands à étage",
+   "agencement de plateau",
+   "point de vente"
+  ],
+  "zone_intervention": "partout en France et souvent à l'étranger",
+  "seo_indexable": false
+ },
+ {
+  "slug": "tungstene-creation",
+  "company_name": "Tungstene Creation",
+  "category": "standiste",
+  "city": "Saint-Cloud",
+  "description": "Basée à Paris, l'agence Tungstene Creation intervient dans la conception de stands et l'architecture d'intérieur. Elle voit le jour en 1997 et accompagne ses clients à chaque étape du processus de conception 3D de leurs projets, avec une offre de stands réutilisables. La structure est certifiée ISO 20121, dans une démarche d'amélioration continue engagée depuis 2018. Elle a notamment conçu un stand pour Safran au salon SIAE / EBACE, un stand pour Michelin au salon Solutrans et un stand pour Bouygues au Salon des Maires.",
+  "description_en": "Based in Paris, the agency Tungstene Creation works in stand design and interior architecture. It was established in 1997 and supports its clients at every stage of the 3D design process for their projects, with an offer of reusable stands. The company is certified ISO 20121, as part of a continuous improvement approach under way since 2018. It has notably designed a stand for Safran at the SIAE / EBACE show, a stand for Michelin at Solutrans and a stand for Bouygues at the Salon des Maires.",
+  "specialties": [
+   "design de stands",
+   "architecture d'intérieur",
+   "stands réutilisables",
+   "conception 3D"
+  ],
+  "zone_intervention": null,
+  "seo_indexable": false
+ },
+ {
+  "slug": "un-amour-de-bonbon",
+  "company_name": "Un Amour de Bonbon",
+  "category": "traiteur",
+  "city": "Saint Maurice",
+  "description": "Un Amour de Bonbon est un prestataire de restauration événementielle basé à Saint-Maurice, dans le Val-de-Marne. L'entreprise couvre les envies sucrées, bonbons, crêpes et gaufres, glaces et granités, churros, barbe à papa, et salées, foodtrucks, points de vente à emporter, café, ainsi qu'un service de catering pour cocktails et réceptions. Elle travaille comme partenaire des organisateurs de salons professionnels, de rencontres sportives, de courses hippiques et de festivals de musique. Fondée en 1992 par Farid Mekhtoub, la société dispose d'un laboratoire traiteur au cœur de Paris, dans le 16e arrondissement.",
+  "description_en": "Un Amour de Bonbon is an event catering provider based in Saint-Maurice, in the Val-de-Marne. The company caters for sweet cravings, sweets, crepes and waffles, ice cream and granitas, churros, candy floss, and savoury ones, food trucks, takeaway points of sale, coffee, as well as a catering service for cocktails and receptions. It works as a partner to organisers of trade shows, sporting events, horse races and music festivals. Founded in 1992 by Farid Mekhtoub, the company has a catering laboratory in the heart of Paris, in the 16th arrondissement.",
+  "specialties": [
+   "stands sucrés",
+   "stands salés",
+   "restauration événementielle",
+   "foodtrucks",
+   "catering événementiel"
+  ],
+  "zone_intervention": null,
+  "seo_indexable": false
+ },
+ {
+  "slug": "understand",
+  "company_name": "Understand",
+  "category": "standiste",
+  "city": "Collégien",
+  "description": "Understand est une agence de design d'espace basée à Collégien, en Seine-et-Marne. Elle pense, dessine et fabrique des stands sur mesure, stand traditionnel, stand éco-modulable et stand ultra portable, ainsi que des projets de design d'espace et de retail, pop-up stores, corners, showrooms. Depuis plus de 10 ans, Understand accompagne ses clients sur leurs événements. L'agence privilégie des matériaux durables, structures en aluminium et toiles tendues, recyclés et recyclables, et conçoit ses éléments, cadres, mobiliers, enseignes, pour être réemployés ou revalorisés sur de futurs événements.",
+  "description_en": "Understand is a space design agency based in Collégien, in Seine-et-Marne. It thinks, designs and manufactures bespoke stands, traditional stand, eco-modular stand and ultra-portable stand, as well as space design and retail projects, pop-up stores, corners, showrooms. For more than 10 years, Understand has supported its clients on their events. The agency favours sustainable materials, aluminium structures and stretched fabric, recycled and recyclable, and designs its elements, frames, furniture, signage, to be reused or repurposed for future events.",
+  "specialties": [
+   "stand traditionnel",
+   "stand éco-modulable",
+   "stand ultra portable",
+   "design d'espace",
+   "retail : pop-up store, corner, showroom"
+  ],
+  "zone_intervention": null,
+  "seo_indexable": false
+ },
+ {
+  "slug": "versant",
+  "company_name": "Versant",
+  "category": "av_technique",
+  "city": "Nanterre",
+  "description": "Versant est une entreprise de travaux en hauteur et en accès difficile basée à Nanterre, fondée en 1989. Son pôle Événementiel intervient sur les salons, conventions et expositions, de l'accrochage en hauteur à l'habillage de stands en passant par l'architecture lumière. Il prend en charge le levage, les structures et l'éclairage : structures lumière, levage de décors et d'enseignes, avec une étude préalable de faisabilité pour chaque projet. Son parc de matériel comprend des agrès de levage, du pré-rigg et des structures scéniques. Versant travaille aux côtés des organisateurs d'événements, des gestionnaires de sites, des bureaux d'études ou directement pour ses clients. Son pôle Communication grand format réalise aussi des habillages de stand, de la signalétique et des caissons lumineux.",
+  "description_en": "Versant is a working-at-height and difficult-access company based in Nanterre, founded in 1989. Its Events division works on trade shows, conventions and exhibitions, from overhead rigging to stand dressing and lighting architecture. It handles lifting, structures and lighting: lighting structures and the lifting of sets and signs, with a feasibility study carried out beforehand for each project. Its equipment pool includes lifting gear, pre-rig and stage structures. Versant works alongside event organisers, venue managers and design offices, or directly for its clients. Its Large Format Communication division also produces stand dressing, signage and light boxes.",
+  "specialties": [
+   "accrochage en hauteur",
+   "habillage de stands",
+   "architecture lumière",
+   "levage",
+   "structures scéniques"
+  ],
+  "zone_intervention": null,
+  "seo_indexable": false
+ },
+ {
+  "slug": "videlio",
+  "company_name": "Videlio",
+  "category": "av_technique",
+  "city": "Gennevilliers",
+  "description": "Videlio est un intégrateur-prestataire audiovisuel dont le siège social est situé à Gennevilliers, dans les Hauts-de-Seine. L'entreprise conçoit, installe et gère l'intégration de solutions audiovisuelles pour les entreprises. Son pôle Videlio-Events accompagne ses clients dans la conception et la réalisation technique de leurs événements, sur site, à distance et en hybride, avec de la location de matériel, tandis que son pôle Scénotechnique propose des écrans géants et de la scénographie des espaces. Videlio accompagne ses clients en France et à l'international. Le groupe s'est construit à partir de 1989 et compte parmi ses références l'UNESCO, la Mairie de Paris et le Parlement européen.",
+  "description_en": "Videlio is an audiovisual integrator and service provider whose registered office is located in Gennevilliers, in the Hauts-de-Seine. The company designs, installs and manages the integration of audiovisual solutions for businesses. Its Videlio-Events division supports its clients in the design and technical delivery of their events, on site, remotely and in hybrid format, with equipment hire, while its Scenotechnique division offers giant screens and space scenography. Videlio supports its clients in France and internationally. The group was built up from 1989 onwards and counts among its references UNESCO, the Mairie de Paris and the European Parliament.",
+  "specialties": [
+   "intégration audiovisuelle",
+   "prestataire événementiel",
+   "écrans géants in/outdoor",
+   "scénographie des espaces",
+   "location de matériel"
+  ],
+  "zone_intervention": "France et international",
+  "seo_indexable": true
+ },
+ {
+  "slug": "wel-group",
+  "company_name": "WEL Group",
+  "category": "transport",
+  "city": "Compans",
+  "description": "WEL Group est une entreprise de logistique événementielle et d'œuvres d'art basée à Compans, en Seine-et-Marne, à proximité de l'aéroport Roissy Charles de Gaulle et des principaux centres d'exposition parisiens. Créée en 2003, elle réunit les métiers de la logistique pour les professionnels du design d'intérieur, du marché de l'art et de l'événementiel : transport aérien, maritime et terrestre, formalités douanières, ainsi que stockage et gestion des stocks événementiels dans son entrepôt de 1600 m². WEL Group intervient en France, en Europe et à l'étranger, et s'appuie sur son adhésion à IELA (International Association of Logistics Associates) pour son réseau international d'agents locaux.",
+  "description_en": "WEL Group is an events and fine art logistics company based in Compans, in Seine-et-Marne, close to Roissy Charles de Gaulle airport and the main Paris exhibition centres. Founded in 2003, it brings together the logistics trades for design, art market and events professionals: air, sea and road transport, customs formalities, as well as storage and event stock management in its 1,600 sq m warehouse. WEL Group operates in France, Europe and abroad, and draws on its membership of IELA (International Association of Logistics Associates) for its international network of local agents.",
+  "specialties": [
+   "transport aérien, maritime et terrestre",
+   "stockage et entreposage événementiel",
+   "formalités douanières",
+   "gestion des stocks en ligne"
+  ],
+  "zone_intervention": "France, Europe et à l'étranger",
+  "seo_indexable": false
+ },
+ {
+  "slug": "wenes-stand",
+  "company_name": "WENES Stand",
+  "category": "standiste",
+  "city": "Alfortville",
+  "description": "WENES Stand est une agence de conception et de fabrication de stands d'exposition, avec son siège à Alfortville et des agences à Paris, Lyon et Nantes. L'entreprise accompagne ses clients sur les salons professionnels depuis 2007 et réalise des stands sur mesure ainsi que des stands modulaires, assemblables et reconfigurables d'un salon à l'autre. Les stands sont fabriqués en France, à partir de matériaux comme le bois certifié FSC ou PEFC. La démarche RSE de l'entreprise a été évaluée par EcoVadis, qui lui a attribué la médaille Bronze en mai 2026, avec un score de 70/100. WENES Stand intervient principalement en Île-de-France, en région Rhône Alpes et dans le Grand Ouest. L'agence a notamment réalisé des stands pour Microsoft, L'Oréal et Honda.",
+  "description_en": "WENES Stand is an exhibition stand design and manufacturing agency, with its head office in Alfortville and offices in Paris, Lyon and Nantes. The company has supported its clients at trade shows since 2007, producing bespoke stands as well as modular stands that can be assembled and reconfigured from one show to the next. The stands are manufactured in France, using materials such as FSC or PEFC certified wood. The company's CSR approach was assessed by EcoVadis, which awarded it the Bronze medal in May 2026, with a score of 70/100. WENES Stand operates mainly in Île-de-France, the Rhône Alpes region and the Grand Ouest. The agency has notably produced stands for Microsoft, L'Oréal and Honda.",
+  "specialties": [
+   "stands sur mesure",
+   "stands modulaires",
+   "rendu 3D de stand",
+   "matériaux certifiés FSC et PEFC",
+   "fabrication de stands en France"
+  ],
+  "zone_intervention": "Île-de-France, région Rhône Alpes et Grand Ouest",
+  "seo_indexable": false
+ },
+ {
+  "slug": "wmh-project",
+  "company_name": "WMH Project",
+  "category": "standiste",
+  "city": "Courbevoie",
+  "description": "WMH Project est une agence d'expérience de marque dont le siège est à la Tour Alto, à Courbevoie (Hauts-de-Seine), avec des équipes à Lyon, Marseille, Bordeaux et Toulouse ainsi qu'à l'étranger, notamment à Bruxelles, Milan et Dubaï. Son pôle Spatial Design conçoit des stands et pavillons, des pop-up stores, des scénographies et des showrooms, à côté de ses autres métiers : événementiel d'entreprise, expérience de marque, voyages incitatifs et contenu. L'agence travaille notamment pour la santé (congrès, salons), le luxe, la culture et les institutions. Ses réalisations publiées comptent un projet pour L'Oréal à VivaTech 2025 et un projet pour Renault au salon Rétromobile. Issue d'une première structure créée en 1995 par Marc Fischer et Franck Chaud, WMH Project est Entreprise à Mission depuis 2023 et certifiée ISO 20121.",
+  "description_en": "WMH Project is a brand experience agency headquartered at Tour Alto in Courbevoie (Hauts-de-Seine), with teams in Lyon, Marseille, Bordeaux and Toulouse as well as abroad, including Brussels, Milan and Dubai. Its Spatial Design division designs stands and pavilions, pop-up stores, set design and showrooms, alongside its other businesses: corporate events, brand experience, incentive travel and content. The agency works in particular for healthcare (congresses, trade shows), luxury, culture and public institutions. Its published projects include a project for L'Oréal at VivaTech 2025 and a project for Renault at the Rétromobile show. Built on a first company set up in 1995 by Marc Fischer and Franck Chaud, WMH Project has been an Entreprise à Mission since 2023 and is certified ISO 20121.",
+  "specialties": [
+   "stands et pavillons",
+   "pop-up store",
+   "scénographie",
+   "showroom",
+   "événementiel d'entreprise"
+  ],
+  "zone_intervention": "France et international",
+  "seo_indexable": false
+ }
+]
