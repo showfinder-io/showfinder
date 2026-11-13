@@ -70,11 +70,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     tCat(provider.category as Parameters<typeof tCat>[0], {}) ??
     PROVIDER_CATEGORY_LABELS[provider.category] ??
     provider.category;
-  // Phase 2 i18n : description traduite si dispo en EN, sinon FR.
+  // Meta description : seo_description(_en) de 150-160 caractères (migration 20261113000000),
+  // sinon la description complète comme avant (traduite si dispo en EN, sinon FR).
   const description =
-    (locale === "en" && provider.description_en
-      ? provider.description_en
-      : null) ?? provider.description;
+    (locale === "en" ? provider.seo_description_en : provider.seo_description) ??
+    (locale === "en" && provider.description_en ? provider.description_en : null) ??
+    provider.description;
   return {
     title: `${provider.company_name} - ${label}`,
     description: description || t("metaDescriptionFallback", { companyName: provider.company_name, label, siteName: siteConfig.name }),
@@ -124,7 +125,10 @@ export default async function ProviderPage({ params }: Props) {
   // Pas de bloc « salons où ce prestataire est référencé » : les prestataires ne sont plus
   // rattachés aux salons (décision Nicolas 2026-09-21), seul le maillage vers les hubs reste.
   const hubs = await getHubsForProvider(provider.category, provider.department ?? null);
-  const specialties = provider.specialties ?? [];
+  // Spécialités et zone en anglais sur /en quand elles existent, sinon version française
+  const specialties =
+    locale === "en" && (provider.specialties_en ?? []).length > 0 ? provider.specialties_en! : (provider.specialties ?? []);
+  const zone = (locale === "en" ? provider.zone_intervention_en : null) ?? provider.zone_intervention ?? null;
   const memberships = provider.memberships ?? [];
 
   // Phase 2 i18n : description traduite si dispo en EN, sinon FR.
@@ -165,7 +169,7 @@ export default async function ProviderPage({ params }: Props) {
   }
   if (provider.founded_year) providerJsonLd.foundingDate = String(provider.founded_year);
   if (specialties.length > 0) providerJsonLd.knowsAbout = specialties;
-  if (provider.zone_intervention) providerJsonLd.areaServed = provider.zone_intervention;
+  if (zone) providerJsonLd.areaServed = zone;
   if (provider.review_count > 0 && provider.avg_rating > 0) {
     providerJsonLd.aggregateRating = {
       "@type": "AggregateRating",
@@ -252,12 +256,12 @@ export default async function ProviderPage({ params }: Props) {
               </div>
             </div>
           )}
-          {provider.zone_intervention && (
+          {zone && (
             <div className="flex items-start gap-3">
               <MapIcon className="mt-0.5 h-4 w-4 text-muted" />
               <div>
                 <p className="text-sm font-medium">{t("fieldZone")}</p>
-                <p className="text-sm text-muted">{provider.zone_intervention}</p>
+                <p className="text-sm text-muted">{zone}</p>
               </div>
             </div>
           )}

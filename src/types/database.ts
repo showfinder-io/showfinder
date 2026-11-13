@@ -184,13 +184,17 @@ export type Database = {
           phone: string | null
           postal_code: string | null
           review_count: number
+          seo_description: string | null
+          seo_description_en: string | null
           seo_indexable: boolean
           slug: string
           specialties: string[]
+          specialties_en: string[]
           subscription_tier: Database["public"]["Enums"]["provider_tier"]
           updated_at: string
           website_url: string | null
           zone_intervention: string | null
+          zone_intervention_en: string | null
         }
         Insert: {
           avg_rating?: number
@@ -212,13 +216,17 @@ export type Database = {
           phone?: string | null
           postal_code?: string | null
           review_count?: number
+          seo_description?: string | null
+          seo_description_en?: string | null
           seo_indexable?: boolean
           slug: string
           specialties?: string[]
+          specialties_en?: string[]
           subscription_tier?: Database["public"]["Enums"]["provider_tier"]
           updated_at?: string
           website_url?: string | null
           zone_intervention?: string | null
+          zone_intervention_en?: string | null
         }
         Update: {
           avg_rating?: number
@@ -240,13 +248,17 @@ export type Database = {
           phone?: string | null
           postal_code?: string | null
           review_count?: number
+          seo_description?: string | null
+          seo_description_en?: string | null
           seo_indexable?: boolean
           slug?: string
           specialties?: string[]
+          specialties_en?: string[]
           subscription_tier?: Database["public"]["Enums"]["provider_tier"]
           updated_at?: string
           website_url?: string | null
           zone_intervention?: string | null
+          zone_intervention_en?: string | null
         }
         Relationships: []
       }
