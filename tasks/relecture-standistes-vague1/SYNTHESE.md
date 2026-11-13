@@ -23,6 +23,20 @@ Méthode : celle de `tasks/relecture-agent-prestataires-2026-11-12.md` (site off
 
 Bilan : 10 fiches ouvertes à l'indexation, 2 restent en noindex.
 
+## Seconde relecture indépendante (même jour)
+
+Rapports `<slug>.r2.md` (3 relecteurs Sonnet, contrôle de l'état en prod, sans lire la passe 1 avant leur propre vérification). 7 OK sans correction, 4 corrections appliquées par le même script (les blocs json de r2 s'ajoutent à ceux de r1) :
+- agence-procept : ligature « met en œuvre » ;
+- square-meters-paris : zone_intervention « International » remplacée par la formule du site « France et à l'international » ;
+- laps-concept : « depuis vingt ans » attribué au site (entité légale créée en 2016 au registre) ;
+- equateur-expo : téléphone 01 42 46 75 53 publié sur https://equateur-expo.fr/standiste-paris/ (lien tel:, vérifié par la session), manqué par la passe 1. La fiche a donc un contact et est ouverte (11e fiche).
+
+Bilan final : 11 fiches ouvertes, merci-gustave en noindex et sortie des hubs.
+
+Request Indexing GSC (Chrome) le 2026-11-13 : r2-stand-et-event soumise (« Indexing requested »), puis « Quota Exceeded » dès agence-procept. Reste à soumettre au prochain quota : agence-procept, arc-et-typ, cap-linea, idee-fixe, equateur-expo, la-p-tite-histoire, square-meters-paris, stand-by-me, media-product, laps-concept. IndexNow fait pour les 11 (FR et EN), fiches au sitemap.
+
+Remarques non bloquantes de la passe 2 : sur les pages EN, zone d'intervention et spécialités restent en français (r2-stand-et-event, cap-linea, agence-procept, et « Normandie » chez idee-fixe) ; stand-by-me annonce une certification ISO 20121 « d'ici 2025 », échéance dépassée, à revérifier ; la-p-tite-histoire reprend deux segments quasi verbatim du site.
+
 ## Effets de bord
 
 - Hubs : idee-fixe (50) et stand-by-me (84) sortent du hub standistes-paris par le filtre départemental (le hub compte les fiches par département).

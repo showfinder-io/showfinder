@@ -12,7 +12,7 @@
  *    déjà en base, vérifié), puis IndexNow. Les fiches NE PAS OUVRIR restent en noindex.
  * Usage : ./node_modules/.bin/tsx --env-file=.env.local scripts/diag-standistes-vague1-apply.ts [--apply|--open]
  */
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { createClient } from "@supabase/supabase-js";
 import { localizedUrls, submitIndexNow } from "../src/lib/indexnow";
 
@@ -22,31 +22,44 @@ const APPLY = process.argv.includes("--apply");
 const OPEN = process.argv.includes("--open");
 const SLUGS = "r2-stand-et-event merci-gustave agence-procept arc-et-typ cap-linea idee-fixe equateur-expo la-p-tite-histoire square-meters-paris stand-by-me media-product laps-concept".split(" ");
 const FIELDS = ["description", "description_en", "city", "postal_code", "department", "phone", "email", "founded_year", "specialties", "memberships", "category", "zone_intervention"];
-// Corrigées mais pas ouvertes : critère du groupe B (ni e-mail ni téléphone après relecture)
-const HOLD: Record<string, string> = {
-  "equateur-expo": "aucun contact publié par le site (formulaire seul), critère groupe B",
-};
+// Corrigées mais pas ouvertes (critère du groupe B : ni e-mail ni téléphone après relecture).
+// equateur-expo y figurait après la passe 1 ; la passe 2 a trouvé le téléphone publié sur
+// https://equateur-expo.fr/standiste-paris/ (vérifié), la fiche est donc ouvrable.
+const HOLD: Record<string, string> = {};
 const CATEGORIES = ["standiste", "traiteur", "av_technique", "photographe", "transport", "hebergement", "autre"];
 
 type Verdict = "OK" | "CORRECTIONS" | "NE PAS OUVRIR";
 
-function readReport(slug: string): { verdict: Verdict; set: Record<string, unknown> } {
-  const md = readFileSync(`${DIR}/${slug}.md`, "utf8");
+// Seconde passe (<slug>.r2.md, 2026-11-13) : son bloc json, s'il existe, s'ajoute à celui de
+// la première passe (les champs de la seconde l'emportent) ; un NE PAS OUVRIR en r2 l'emporte.
+function parseFile(slug: string, file: string, required: boolean): { verdict: Verdict; set: Record<string, unknown> } | null {
+  if (!existsSync(file)) return null;
+  const md = readFileSync(file, "utf8");
   const m = md.match(new RegExp(`^#+\\s*${slug}\\s*:\\s*(OK|CORRECTIONS|NE PAS OUVRIR)\\b`, "m"));
-  if (!m) throw new Error(`${slug} : verdict introuvable`);
+  if (!m) throw new Error(`${file} : verdict introuvable`);
   const verdict = m[1] as Verdict;
-  if (verdict !== "CORRECTIONS") return { verdict, set: {} };
-  const blocks = [...md.matchAll(/```json\s*\n([\s\S]*?)```/g)];
-  if (!blocks.length) throw new Error(`${slug} : CORRECTIONS sans bloc json`);
+  const blocks = [...md.matchAll(/```json[^\n]*\n([\s\S]*?)```/g)];
+  if (!blocks.length) {
+    if (required && verdict === "CORRECTIONS") throw new Error(`${file} : CORRECTIONS sans bloc json`);
+    return { verdict, set: {} };
+  }
   const obj = JSON.parse(blocks[blocks.length - 1][1]);
-  if (obj.slug !== slug) throw new Error(`${slug} : slug du bloc json = ${obj.slug}`);
-  for (const [k, v] of Object.entries(obj.set ?? {})) {
+  if (obj.slug !== slug) throw new Error(`${file} : slug du bloc json = ${obj.slug}`);
+  return { verdict, set: obj.set ?? {} };
+}
+
+function readReport(slug: string): { verdict: Verdict; set: Record<string, unknown> } {
+  const r1 = parseFile(slug, `${DIR}/${slug}.md`, true)!;
+  const r2 = parseFile(slug, `${DIR}/${slug}.r2.md`, false);
+  const set = { ...(r1.verdict === "CORRECTIONS" ? r1.set : {}), ...(r2?.set ?? {}) };
+  const verdict: Verdict = r1.verdict === "NE PAS OUVRIR" || r2?.verdict === "NE PAS OUVRIR" ? "NE PAS OUVRIR" : Object.keys(set).length ? "CORRECTIONS" : "OK";
+  for (const [k, v] of Object.entries(set)) {
     if (!FIELDS.includes(k)) throw new Error(`${slug} : champ ${k} non admis`);
     if (typeof v === "string" && v.includes("—")) throw new Error(`${slug}.${k} : tiret cadratin`);
     if ((k === "description" || k === "description_en") && (typeof v !== "string" || v.length < 200)) throw new Error(`${slug}.${k} : texte vide ou trop court`);
     if (k === "category" && !CATEGORIES.includes(v as string)) throw new Error(`${slug} : catégorie ${v}`);
   }
-  return { verdict, set: obj.set ?? {} };
+  return { verdict, set };
 }
 
 const show = (v: unknown) => (typeof v === "string" && v.length > 80 ? `${v.length} car.` : JSON.stringify(v));

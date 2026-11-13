@@ -40,7 +40,7 @@ Chaque fiche : writer Opus, pass-1 Sonnet avec correction, pass-2 Sonnet indépe
 
 ## Problèmes ouverts
 
-- Relecture de la vague 1 des standistes du groupe A (tasks/prestataires-g15-2026-11-12.md) : seulement sur go Julien.
+- Vague 1 des standistes FAITE le 2026-11-13 (go Julien) : 2 relectures, 11 fiches ouvertes, merci-gustave hors hubs (tasks/relecture-standistes-vague1/SYNTHESE.md). Request Indexing GSC : 1 soumise, quota dépassé, 10 à soumettre au prochain quota.
 - metal-expo-paris (go Julien du 2026-11-13) : pass-1 (2 MAJEUR, 6 MINEUR) et pass-2 + EN (0 MAJEUR, 6 MINEUR) faites, rapports dans handoff/edito-lot3-2026-11-12/review/ ; données de base appliquées (diag-roll-lot3 apply-data), textes, SEO, secteurs industrie + btp-construction et estimations inventées du seed remises à null par scripts/diag-metal-expo-publish-2026-11-13.ts --apply (draft). 301 vers batimat retiré de next.config.ts dans la même PR. Publication (--publish) après le déploiement, puis contrôle 200 FR et EN.
 - 301 EN /en/salons/solscope-lyon-2026 -> /en/salons/solscope ajouté dans next.config.ts (go Julien du 2026-11-13), actif après déploiement.
 - Paris Design Week : dates 2027 à lire par Julien (Incapsula).
