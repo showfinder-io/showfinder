@@ -1,0 +1,8 @@
+[
+  {"slug": "gl-events-venues-lyon", "set": {"phone": null, "email": null, "postal_code": "69002"}},
+  {"slug": "mci-france-paris", "set": {"phone": null, "email": null}},
+  {"slug": "pico-international-paris", "set": {"phone": null, "email": null}},
+  {"slug": "db-schenker-paris", "set": {"phone": null, "email": null, "website_url": "https://www.dsv.com/fr-fr/"}},
+  {"slug": "potel-et-chabot-paris", "set": {"website_url": "https://groupepoteletchabot.com/", "email": "contact@groupepoteletchabot.com", "postal_code": "75016"}},
+  {"slug": "novelty-paris", "set": {"phone": "01 64 54 26 28", "email": "contact@novelty.fr", "postal_code": "75007"}}
+]
