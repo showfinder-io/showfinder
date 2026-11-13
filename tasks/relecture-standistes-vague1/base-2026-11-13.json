@@ -1,0 +1,339 @@
+[
+  {
+    "slug": "agence-procept",
+    "company_name": "Agence Procept",
+    "category": "standiste",
+    "description": "Agence Procept est une agence d'architecture événementielle installée 114 rue de Grenelle à Paris (75007). Fondée en 2016 par Alexis Cassin, elle conçoit et met en oeuvre des projets d'architecture événementielle : agencement, installation générale et salons & stands sont les trois catégories de réalisations présentées sur son site. L'agence travaille pour des clients de secteurs variés : industrie, finance, art, sport, mode et luxe. Elle est certifiée ISO 20121, norme de management responsable des événements. Procept intervient en France et à l'international.",
+    "description_en": "Agence Procept is an event architecture agency based at 114 rue de Grenelle in Paris (75007). Founded in 2016 by Alexis Cassin, it designs and delivers event architecture projects: fit-out, general installation and trade shows and stands are the three categories of work presented on its website. The agency works for clients across a range of sectors: industry, finance, art, sport, fashion and luxury. It is certified to ISO 20121, the standard for sustainable event management. Procept operates in France and internationally.",
+    "city": "Paris",
+    "postal_code": "75007",
+    "department": "75",
+    "zone_intervention": "France et international",
+    "coverage_radius_km": null,
+    "website_url": "https://www.agence-procept.com/",
+    "phone": "+33 1 88 33 57 57",
+    "email": "contact@procept.co",
+    "specialties": [
+      "architecture événementielle",
+      "salons & stands",
+      "agencement",
+      "installation générale"
+    ],
+    "founded_year": 2016,
+    "memberships": [
+      "leads_france"
+    ],
+    "is_verified": false,
+    "seo_indexable": false,
+    "editorial_reviewed_at": "2026-09-21T09:06:59.93+00:00"
+  },
+  {
+    "slug": "arc-et-typ",
+    "company_name": "Arc et Typ",
+    "category": "standiste",
+    "description": "Arc et Typ est une agence d'architecture parisienne, spécialisée dans l'agencement d'intérieurs et la conception de stands, showrooms et espaces retail. Fondée en 2002, elle réunit une équipe pluridisciplinaire de profils marketing, communication, design et architectes, issus notamment de l'École Boulle et de l'ENSAAMA Olivier de Serres. L'agence réalise environ 300 projets par an en Europe, en Asie, au Moyen-Orient et sur le continent américain, ainsi que des agencements pérennes. Parmi ses réalisations publiées figurent un stand pour SNCF Top Resa, un agencement pour MINI et une réalisation pour AIXAM au Mondial de l'Auto. Le siège de l'agence est situé à Paris, avec une présence également à Bordeaux et Aix-en-Provence.",
+    "description_en": "Arc et Typ is a Paris-based architecture agency, specialising in interior fit-out and the design of stands, showrooms and retail spaces. Founded in 2002, it brings together a multidisciplinary team of marketing, communication and design profiles and architects, including graduates of the École Boulle and the ENSAAMA Olivier de Serres. The agency carries out around 300 projects a year across Europe, Asia, the Middle East and the Americas, as well as permanent fit-outs. Its published work includes a stand for SNCF Top Resa, a fit-out for MINI and a project for AIXAM at the Mondial de l'Auto. The agency's head office is in Paris, with a presence also in Bordeaux and Aix-en-Provence.",
+    "city": "Paris",
+    "postal_code": "75018",
+    "department": "75",
+    "zone_intervention": "Europe, Asie, Moyen-Orient et Amériques",
+    "coverage_radius_km": null,
+    "website_url": "http://www.arcettyp.com/",
+    "phone": "01 42 46 75 53",
+    "email": "contact@arcettyp.com",
+    "specialties": [
+      "conception de stands et agencements",
+      "showrooms",
+      "pop-up store",
+      "agencement d'espace de vente"
+    ],
+    "founded_year": 2002,
+    "memberships": [
+      "leads_france"
+    ],
+    "is_verified": false,
+    "seo_indexable": false,
+    "editorial_reviewed_at": "2026-09-21T09:07:00.788+00:00"
+  },
+  {
+    "slug": "cap-linea",
+    "company_name": "Cap Linea",
+    "category": "standiste",
+    "description": "Cap Linea est une agence parisienne de conception de stands d'exposition, basée rue de Lourmel, à Paris. Fondée en 2007, elle conçoit et réalise des stands sur mesure, modulables, traditionnels et collectifs pour des salons professionnels en France et à l'international. L'agence ne dispose pas d'atelier interne, mais conserve un bureau d'études qui conçoit et chiffre chaque projet, en s'appuyant sur un réseau de partenaires (menuisiers, imprimeurs, tapissiers, logisticiens). Parmi ses réalisations figurent des stands pour IDEMIA au 3GSM World Congress, Nikka à Whisky Live Paris et Pierre Martinet au SIAL Paris.",
+    "description_en": "Cap Linea is a Parisian agency that designs exhibition stands, based on rue de Lourmel, in Paris. Founded in 2007, it designs and builds bespoke, modular, traditional and collective stands for trade shows in France and internationally. The agency has no in-house workshop, but keeps a design office that designs and costs each project, drawing on a network of partners (joiners, printers, upholsterers, logistics providers). Its work includes stands for IDEMIA at the 3GSM World Congress, Nikka at Whisky Live Paris and Pierre Martinet at SIAL Paris.",
+    "city": "Paris",
+    "postal_code": "75015",
+    "department": "75",
+    "zone_intervention": "France et international",
+    "coverage_radius_km": null,
+    "website_url": "http://www.caplinea.fr/",
+    "phone": "01 42 71 20 05",
+    "email": "didier.schott@caplinea.fr",
+    "specialties": [
+      "stands sur mesure",
+      "stands modulables",
+      "stands traditionnels",
+      "stands collectifs",
+      "conseil en stratégie événementielle"
+    ],
+    "founded_year": 2007,
+    "memberships": [
+      "leads_france"
+    ],
+    "is_verified": false,
+    "seo_indexable": false,
+    "editorial_reviewed_at": "2026-09-21T09:07:01.469+00:00"
+  },
+  {
+    "slug": "equateur-expo",
+    "company_name": "Équateur Expo",
+    "category": "standiste",
+    "description": "Équateur Expo est une agence de conception de stands, dont les bureaux parisiens se situent au 15 rue Hégésippe Moreau, dans le 18e arrondissement. L'agence conçoit, fabrique et installe des stands sur mesure, modulables et hybrides pour les salons professionnels, en s'appuyant sur un bureau d'études intégré réunissant architectes, designers et chefs de projet. Elle propose aussi des aménagements d'espaces professionnels : bureaux, retail, showrooms et restaurants. Son activité s'étend sur plus de trois décennies dans l'événementiel, en France comme à l'international. Équateur Expo est médaillée EcoVadis Gold et adhère à l'UNIMEV, l'Union Française des Métiers de l'Événement.",
+    "description_en": "Équateur Expo is a stand design agency, with Parisian offices located at 15 rue Hégésippe Moreau, in the 18th arrondissement. The agency designs, manufactures and installs bespoke, modular and hybrid stands for trade shows, drawing on an in-house design office bringing together architects, designers and project managers. It also offers fit-outs for professional spaces: offices, retail, showrooms and restaurants. Its activity spans more than three decades in events, in France and internationally. Équateur Expo holds an EcoVadis Gold medal and is a member of UNIMEV, the Union Française des Métiers de l'Événement.",
+    "city": "Paris",
+    "postal_code": "75018",
+    "department": "75",
+    "zone_intervention": "partout en France et à l'international",
+    "coverage_radius_km": null,
+    "website_url": "http://www.equateur-expo.fr/",
+    "phone": "+33 1 49 30 76 76",
+    "email": "info@equateur-expo.fr",
+    "specialties": [
+      "stands sur mesure",
+      "stands modulables",
+      "stands hybrides",
+      "aménagement d'espaces professionnels",
+      "bureau d'études intégré"
+    ],
+    "founded_year": null,
+    "memberships": [
+      "leads_france"
+    ],
+    "is_verified": false,
+    "seo_indexable": false,
+    "editorial_reviewed_at": "2026-09-21T09:07:02.158+00:00"
+  },
+  {
+    "slug": "idee-fixe",
+    "company_name": "Idée Fixe",
+    "category": "standiste",
+    "description": "Idée Fixe conçoit et fabrique des stands et des agencements d'espaces depuis 1990, avec des équipes à Paris, à Granville et à Nantes. La fabrication est internalisée dans les ateliers de l'agence en Normandie. Elle conçoit aussi bien des projets d'architecture éphémère, comme des stands sur mesure et des pop-up stores, que des projets d'architecture durable pour des bureaux, des commerces, des hôtels et des restaurants. L'agence est intervenue dans des univers comme le luxe, l'agroalimentaire, l'industrie ou la santé, et accompagne ses clients en France, en Europe et à l'international. Elle est certifiée ISO 20121 et membre du réseau Leads.",
+    "description_en": "Idée Fixe has designed and manufactured stands and space fit-outs since 1990, with teams in Paris, Granville and Nantes. Manufacturing is carried out in-house, in the agency's workshops in Normandie. It designs both ephemeral architecture projects, such as bespoke stands and pop-up stores, and sustainable architecture projects for offices, shops, hotels and restaurants. The agency has worked across fields such as luxury, agri-food, industry and healthcare, and supports its clients in France, Europe and internationally. It is certified ISO 20121 and a member of the Leads network.",
+    "city": "Paris",
+    "postal_code": "75015",
+    "department": "75",
+    "zone_intervention": "France, Europe et international",
+    "coverage_radius_km": null,
+    "website_url": "https://www.ideefixe.fr/",
+    "phone": "02 33 49 38 04",
+    "email": "fpicot@ideefixe.fr",
+    "specialties": [
+      "stands sur mesure",
+      "agencement d'espaces durables",
+      "pop-up stores",
+      "agencement d'établissements de santé"
+    ],
+    "founded_year": 1990,
+    "memberships": [
+      "leads_france"
+    ],
+    "is_verified": false,
+    "seo_indexable": false,
+    "editorial_reviewed_at": "2026-09-21T09:07:03.292+00:00"
+  },
+  {
+    "slug": "la-p-tite-histoire",
+    "company_name": "La P'tite Histoire",
+    "category": "standiste",
+    "description": "La P'tite Histoire est une agence d'architecture événementielle et commerciale basée à Paris. Elle est née au début des années 2000 d'une envie commune à Dominique Velasco et Miguel Leguillon de penser autrement ces espaces, avec l'idée de créer des volumes de caractère jouant sur l'émotion. Geoffrey Moitrier s'est ensuite associé à cette aventure, puis Marjorie Munoz est venue compléter l'équipe. L'agence intervient sur des événements, des forums, des salons, ainsi que sur la conception de stands et d'agencements, en accompagnant ses projets de la genèse à leur aboutissement.",
+    "description_en": "La P'tite Histoire is an events and commercial architecture agency based in Paris. It was born in the early 2000s from a shared wish of Dominique Velasco and Miguel Leguillon to think about these spaces differently, with the idea of creating spaces of character that play on emotion. Geoffrey Moitrier then joined this venture, and Marjorie Munoz later came to complete the team. The agency works on events, forums and trade shows, as well as the design of stands and fit-outs, supporting its projects from inception to completion.",
+    "city": "Paris",
+    "postal_code": "75015",
+    "department": "75",
+    "zone_intervention": null,
+    "coverage_radius_km": null,
+    "website_url": "https://www.laptitehistoire.com/",
+    "phone": "09 51 68 63 53",
+    "email": null,
+    "specialties": [
+      "architecture événementielle et commerciale",
+      "stands et agencement",
+      "salons et forums"
+    ],
+    "founded_year": 2006,
+    "memberships": [
+      "leads_france"
+    ],
+    "is_verified": false,
+    "seo_indexable": false,
+    "editorial_reviewed_at": "2026-09-21T09:07:03.524+00:00"
+  },
+  {
+    "slug": "laps-concept",
+    "company_name": "Laps Concept",
+    "category": "standiste",
+    "description": "Laps Concept est une agence d'agencement et de conception de stands, basée à Genas dans le Rhône, à deux pas d'Eurexpo Lyon. Sous la marque Laps Agencement, elle réalise depuis vingt ans l'aménagement de bureaux, de magasins et de showrooms, avec un savoir-faire interne en ébénisterie, menuiserie et métallerie assuré par des compagnons qualifiés en fabrication et en pose. Sous la marque Laps Événements, elle conçoit des stands et propose aussi une marque de stands modulaires, Easy Expo. Elle a notamment réalisé des stands pour Total au salon EVS32 à Lyon et pour Hankook au Solutrans.",
+    "description_en": "Laps Concept is a stand design and fit-out agency, based in Genas in the Rhône, a stone's throw from Eurexpo Lyon. Under the Laps Agencement brand, it has been fitting out offices, shops and showrooms for twenty years, with in-house expertise in cabinetmaking, joinery and metalwork carried out by qualified craftsmen in manufacturing and installation. Under the Laps Événements brand, it designs stands and also offers a modular stand brand, Easy Expo. It has notably built stands for Total at the EVS32 trade show in Lyon and for Hankook at Solutrans.",
+    "city": "Genas",
+    "postal_code": "69740",
+    "department": "69",
+    "zone_intervention": null,
+    "coverage_radius_km": null,
+    "website_url": "https://www.laps-concept.fr/",
+    "phone": "04 26 00 91 38",
+    "email": "contact@laps-concept.fr",
+    "specialties": [
+      "agencement de bureaux, magasins et showrooms",
+      "stands modulaires",
+      "ébénisterie, menuiserie et métallerie"
+    ],
+    "founded_year": null,
+    "memberships": [
+      "leads_france"
+    ],
+    "is_verified": false,
+    "seo_indexable": false,
+    "editorial_reviewed_at": "2026-09-21T09:07:03.587+00:00"
+  },
+  {
+    "slug": "media-product",
+    "company_name": "Media Product",
+    "category": "standiste",
+    "description": "Media Product est une agence de standiste basée à Saint-Bonnet-de-Mure, près de Lyon, active depuis 1988. Elle conçoit et fabrique des stands sur mesure pour les salons professionnels, ainsi que des solutions modulaires et des displays, et couvre l'ensemble de la chaîne : conseil et analyse, design, technique et production, montage et démontage, avec une chaîne de production intégrée et un réseau de production majoritairement français. L'entreprise organise aussi des événements professionnels sur mesure : séminaires, conventions, soirées d'entreprise, journées incentive, roadshows et team building. Elle indique intervenir dans toute la France (Lyon, Paris, Bordeaux, Lille, Marseille, Nantes, Toulouse, Cannes, Rennes, Montpellier) ainsi qu'à l'international. Media Product est certifiée ISO 20121.",
+    "description_en": "Media Product is a stand-building agency based in Saint-Bonnet-de-Mure, near Lyon, active since 1988. It designs and manufactures bespoke stands for trade shows, as well as modular solutions and displays, and covers the whole chain: advice and analysis, design, technical work and production, assembly and dismantling, with an integrated production chain and a mostly French production network. The company also organises bespoke professional events: seminars, conventions, corporate evenings, incentive days, roadshows and team building. It states that it operates throughout France (Lyon, Paris, Bordeaux, Lille, Marseille, Nantes, Toulouse, Cannes, Rennes, Montpellier) as well as internationally. Media Product is ISO 20121 certified.",
+    "city": "St Bonnet de Mure",
+    "postal_code": "69720",
+    "department": "69",
+    "zone_intervention": "France entière et international",
+    "coverage_radius_km": null,
+    "website_url": "https://mediaproduct.fr/",
+    "phone": "04 72 79 48 93",
+    "email": "mediaproduct@mediaproduct.fr",
+    "specialties": [
+      "conception de stands sur-mesure pour salons professionnels",
+      "stands modulaires & displays",
+      "évènements professionnels sur mesure",
+      "conseils et analyses",
+      "montage / démontage"
+    ],
+    "founded_year": 1988,
+    "memberships": [
+      "leads_france"
+    ],
+    "is_verified": false,
+    "seo_indexable": false,
+    "editorial_reviewed_at": "2026-09-21T09:07:04.077+00:00"
+  },
+  {
+    "slug": "merci-gustave",
+    "company_name": "Merci Gustave",
+    "category": "standiste",
+    "description": "Merci Gustave conçoit et fabrique des stands d'exposition, avec des bureaux à Paris et à Montréal. L'agence propose quatre familles de produits présentées sur son site : le stand modulaire, le stand tubulaire, le stand nomade et une gamme d'accessoires. Son fondateur, David Lucion, a débuté dans le laminage sur bois en 1996 avant de rejoindre Duo Display, au Canada, en 2008, où il a participé au développement du stand modulaire et de l'impression numérique sur textile. En 2019, il crée sa propre structure pour accompagner les exposants français vers le marché nord-américain, qui devient Merci Gustave après le regroupement de deux marques, The Booth Company et The Portable Company. Le nom de l'agence est un clin d'œil à Gustave Eiffel. L'entreprise déclare intervenir en France, en Europe et en Amérique du Nord.",
+    "description_en": "Merci Gustave designs and manufactures exhibition stands, with offices in Paris and Montreal. The agency offers four product ranges presented on its website: the modular stand, the tubular stand, the portable stand and a range of accessories. Its founder, David Lucion, started out in wood laminating in 1996 before joining Duo Display, in Canada, in 2008, where he took part in developing the modular stand and digital textile printing. In 2019, he set up his own company to help French exhibitors move into the North American market, which became Merci Gustave after the merger of two brands, The Booth Company and The Portable Company. The agency's name is a nod to Gustave Eiffel. The company states that it operates in France, Europe and North America.",
+    "city": "Paris",
+    "postal_code": null,
+    "department": "75",
+    "zone_intervention": "France, Europe et Amérique du Nord",
+    "coverage_radius_km": null,
+    "website_url": "https://mercigustave.co",
+    "phone": "06 85 85 14 19",
+    "email": "gustave@mercigustave.co",
+    "specialties": [
+      "stand modulaire",
+      "stand tubulaire",
+      "stand nomade",
+      "accessoires de stand"
+    ],
+    "founded_year": 2019,
+    "memberships": [],
+    "is_verified": false,
+    "seo_indexable": false,
+    "editorial_reviewed_at": "2026-09-21T09:07:04.224+00:00"
+  },
+  {
+    "slug": "r2-stand-et-event",
+    "company_name": "R2 STAND ET EVENT",
+    "category": "standiste",
+    "description": "Basée à Paris, avec une agence à Lyon, R2 Stand et Event conçoit et fabrique des stands sur mesure, des stands modulaires et des pavillons ou chalets pour les salons professionnels, foires et expositions. L'entreprise prend en charge la conception graphique et technique, la fabrication, le montage, la logistique et le stockage des projets. Elle propose également de l'agencement retail, pour mettre en valeur les produits et services de ses clients, ainsi que l'organisation de salons et d'événements B2B. R2 Stand et Event intervient partout en France et à l'international.",
+    "description_en": "Based in Paris, with an office in Lyon, R2 Stand et Event designs and manufactures custom-made stands, modular stands, and pavilions or chalets for trade shows, fairs and exhibitions. The company handles graphic and technical design, manufacturing, assembly, logistics and storage for each project. It also offers retail fit-out services, to showcase clients' products and services, as well as the organisation of trade shows and B2B events. R2 Stand et Event operates throughout France and internationally.",
+    "city": "Paris",
+    "postal_code": "75011",
+    "department": "75",
+    "zone_intervention": "France et international",
+    "coverage_radius_km": null,
+    "website_url": "https://www.r2-stand.com/",
+    "phone": "01 46 99 92 60",
+    "email": "hello@r2stand-event.com",
+    "specialties": [
+      "stands sur-mesure",
+      "stands modulaires",
+      "pavillons / chalets",
+      "organisation de salons",
+      "agencement retail"
+    ],
+    "founded_year": null,
+    "memberships": [
+      "leads_france"
+    ],
+    "is_verified": false,
+    "seo_indexable": false,
+    "editorial_reviewed_at": "2026-09-21T09:07:04.595+00:00"
+  },
+  {
+    "slug": "square-meters-paris",
+    "company_name": "Square Meters Paris",
+    "category": "standiste",
+    "description": "Square Meters Paris est une agence de design et d'aménagement d'espaces commerciaux basée à Paris. Fondée en 2014, elle conçoit, produit et installe des stands d'exposition, des pop-up stores et boutiques, des showrooms, des lounges réceptifs, ainsi que des aménagements de bureaux. L'agence accompagne aussi ses projets à l'international. Elle applique les normes RSE et ISO 20121 mises en place pour les métiers de l'évènementiel, et privilégie le recours à des artisans français pour la réalisation de ses projets. Parmi ses réalisations figurent des projets pour CGI Finance (aménagement de bureaux), Kuehne+Nagel (stand d'exposition) et le ministère de la Défense (stand d'exposition).",
+    "description_en": "Square Meters Paris is a design and commercial space fit-out agency based in Paris. Founded in 2014, it designs, produces and installs exhibition stands, pop-up stores and boutiques, showrooms, reception lounges, as well as office fit-outs. The agency also supports projects internationally. It applies the RSE and ISO 20121 standards for the events industry, and favours French craftsmen for its projects. Its work includes projects for CGI Finance (office fit-out), Kuehne+Nagel (exhibition stand) and the French Ministry of Defence (exhibition stand).",
+    "city": "Paris",
+    "postal_code": "75009",
+    "department": "75",
+    "zone_intervention": "International",
+    "coverage_radius_km": null,
+    "website_url": "https://www.squaremetersparis.com/",
+    "phone": "06 61 72 61 09",
+    "email": "bmzahner@squaremetersparis.com",
+    "specialties": [
+      "stands d'exposition",
+      "pop-up stores et boutiques",
+      "showrooms et expositions",
+      "lounges réceptifs",
+      "aménagement de bureaux"
+    ],
+    "founded_year": 2014,
+    "memberships": [
+      "leads_france"
+    ],
+    "is_verified": false,
+    "seo_indexable": false,
+    "editorial_reviewed_at": "2026-09-21T09:07:04.751+00:00"
+  },
+  {
+    "slug": "stand-by-me",
+    "company_name": "Stand By Me",
+    "category": "standiste",
+    "description": "Stand By Me conçoit des stands sur mesure pour les salons professionnels, avec des locaux à Paris et au Thor. Au service de projets depuis 2008, l'entreprise prend en charge la conception et la modélisation, la production et la construction en atelier, ainsi que la logistique et l'installation sur site, du transport au démontage. Elle propose aussi des services événementiels complémentaires : personnel d'accueil, régie technique, captation photo et vidéo. Stand By Me accompagne ses clients en France et à l'international, et a engagé un processus de labellisation ISO 20121. Parmi ses réalisations figurent des stands pour Saint Gobain (SIAE), Databricks (NRF Europe) et Yoplait (Japan Expo).",
+    "description_en": "Stand By Me designs custom-made stands for trade shows, with premises in Paris and in Le Thor. Serving projects since 2008, the company handles design and modelling, in-house production and construction, as well as logistics and on-site installation, from transport through to dismantling. It also offers complementary event services: hospitality staff, technical management, photo and video coverage. Stand By Me works with clients in France and internationally, and has started an ISO 20121 labelling process. Its work includes stands for Saint Gobain (SIAE), Databricks (NRF Europe) and Yoplait (Japan Expo).",
+    "city": "Paris",
+    "postal_code": null,
+    "department": "75",
+    "zone_intervention": "France et international",
+    "coverage_radius_km": null,
+    "website_url": "http://standbyme.fr/",
+    "phone": "06 11 27 16 90",
+    "email": "jb.balaresque@standbyme.fr",
+    "specialties": [
+      "conception & modélisation",
+      "production & construction",
+      "logistique & installation",
+      "services événementiels"
+    ],
+    "founded_year": 2008,
+    "memberships": [
+      "leads_france"
+    ],
+    "is_verified": false,
+    "seo_indexable": false,
+    "editorial_reviewed_at": "2026-09-21T09:07:04.808+00:00"
+  }
+]
