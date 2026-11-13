@@ -622,6 +622,11 @@ export type ProviderRow = {
   zone_intervention?: string | null;
   memberships?: string[];
   seo_indexable?: boolean;
+  // Migration 20261113000000 : meta description dédiée et versions EN des spécialités / zone
+  seo_description?: string | null;
+  seo_description_en?: string | null;
+  specialties_en?: string[];
+  zone_intervention_en?: string | null;
 };
 
 export const PROVIDER_CATEGORY_LABELS: Record<string, string> = {

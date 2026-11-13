@@ -457,6 +457,29 @@ const nextConfig: NextConfig = {
         destination: "/en/prestataires/expocom",
         permanent: true,
       },
+      // 2026-11-13, même relecture (point 7 dushow, cohérence) : Dushow est à Roissy-en-France (95),
+      // Videlio à Gennevilliers (92). Slugs DB renommés par
+      // scripts/diag-providers-rename-2026-11-13.ts une fois ces 301 actives en prod.
+      {
+        source: "/prestataires/dushow-paris",
+        destination: "/prestataires/dushow",
+        permanent: true,
+      },
+      {
+        source: "/en/prestataires/dushow-paris",
+        destination: "/en/prestataires/dushow",
+        permanent: true,
+      },
+      {
+        source: "/prestataires/videlio-paris",
+        destination: "/prestataires/videlio",
+        permanent: true,
+      },
+      {
+        source: "/en/prestataires/videlio-paris",
+        destination: "/en/prestataires/videlio",
+        permanent: true,
+      },
       // 12 guides éditoriaux Nicolas (2026-07-23) : preparer-stand-salon-professionnel.mdx
       // remplacé + budget-salon-professionnel.mdx renommé/étoffé en budget-stand-salon-professionnel.mdx
       {
