@@ -28,6 +28,7 @@ Chaque fiche : writer Opus, pass-1 Sonnet avec correction, pass-2 Sonnet indépe
 - 2026-11-13 : 16/16 insérées en draft (contrôle base : champs identiques aux handoffs, lieux et secteurs présents, aucun tiret cadratin), puis publiées ; IndexNow 32 URLs (HTTP 200) ; 32/32 URLs FR et EN en 200 en prod (index, follow). 4 lieux créés : station-f, palais-des-sports-robert-charpentier-issy, artois-expo, port-la-napoule (aucun doublon en base avant création).
 - 2026-11-13 : liens croisés RR37 appliqués par scripts/diag-crosslinks-apply.ts (handoff/cohorte-trafic/crosslinks-sl7/, second dry-run à 0) : ipem-wealth et ipem-global (À retenir + Communauté, FR et EN), ibs-paris et techsolutions (paragraphe « mêmes dates, même site », sans association affirmée). Visibles en prod à la revalidation ISR (1 h) ou au déploiement suivant.
 - 2026-11-13 : prestataires, 308 magnum-lyon et expocom-paris actives FR et EN ; scripts/diag-prestataires-relecture-2026-11-12-apply.ts --apply : 49 champs écrits, second dry-run à 0.
+- 2026-11-13 : PR showfinder-io/showfinder#190 squash-mergée (CI verte), déploiement Vercel du commit e36408f en succès. Contrôle post-déploiement : /prestataires/magnum et /prestataires/expocom en 200 FR et EN (le 404 FR de cache ISR a disparu) ; liens croisés présents dans le HTML de prod FR et EN (ipem-wealth et ipem-global : 2 liens chacune, ibs-paris et techsolutions : 1 lien chacune ; en EN les liens sont rendus en /salons/..., comme les liens MDX existants).
 
 ## Décisions et points de vigilance
 
@@ -39,7 +40,6 @@ Chaque fiche : writer Opus, pass-1 Sonnet avec correction, pass-2 Sonnet indépe
 
 ## Problèmes ouverts
 
-- /prestataires/magnum et /prestataires/expocom (FR) : 404 servi par le cache ISR au 2026-11-13 07:12 UTC juste après le renommage, l'EN répond 200. Revérifier après le déploiement suivant.
 - Relecture de la vague 1 des standistes du groupe A (tasks/prestataires-g15-2026-11-12.md) : seulement sur go Julien.
 - metal-expo-paris : brouillon réécrit (handoff/edito-lot3-2026-11-12/writer/), à relire puis publier en retirant le 301 /salons/metal-expo-paris -> /salons/batimat de next.config.ts. Proposé à Julien le 2026-11-13, pas fait.
 - 301 EN manquant : /en/salons/solscope-lyon-2026 -> /en/salons/solscope. Proposé à Julien le 2026-11-13, pas fait.
@@ -48,4 +48,4 @@ Chaque fiche : writer Opus, pass-1 Sonnet avec correction, pass-2 Sonnet indépe
 
 ## Prochaine action
 
-Revérifier /prestataires/magnum et /prestataires/expocom (FR) en 200 après le déploiement du merge de la PR shortlist 7.
+Shortlist 7 terminée. Prochaine action, sur décision de Julien : Request Indexing GSC des 16 fiches (paquets de 10), puis les points ouverts ci-dessus.
