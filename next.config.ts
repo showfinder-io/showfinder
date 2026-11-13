@@ -154,12 +154,9 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       // Cohorte 9 (2026-06-13) : doublons / marques absorbées détectés
-      {
-        // Metal Expo n'est autonome qu'à partir de 2027 : composante d'EquipBaie Metalexpo en 2026
-        source: "/salons/metal-expo-paris",
-        destination: "/salons/batimat",
-        permanent: true,
-      },
+      // (/salons/metal-expo-paris -> /salons/batimat retiré le 2026-11-13 : Métal Expo
+      // redevient un salon indépendant en 2027, fiche publiée,
+      // scripts/diag-metal-expo-publish-2026-11-13.ts.)
       {
         // Salon de la Maroquinerie absorbé par Première Vision en 2014 (Leather Hub)
         source: "/salons/maroquinerie-paris",
@@ -244,6 +241,12 @@ const nextConfig: NextConfig = {
       {
         source: "/salons/solscope-lyon-2026",
         destination: "/salons/solscope",
+        permanent: true,
+      },
+      {
+        // Pendant EN (2026-11-13) : /en/salons/solscope-lyon-2026 répondait 404
+        source: "/en/salons/solscope-lyon-2026",
+        destination: "/en/salons/solscope",
         permanent: true,
       },
       {
