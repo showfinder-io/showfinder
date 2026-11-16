@@ -1,0 +1,19 @@
+{
+  "slug": "sommet-elevage-clermont",
+  "name": "Sommet de l'Elevage",
+  "status": "non-annoncee",
+  "checked_at": "2026-11-16",
+  "current": {
+    "start_date": "2026-10-06",
+    "end_date": "2026-10-09",
+    "edition_year": 2026,
+    "city": "Clermont-Ferrand",
+    "venue": "Grande Halle d'Auvergne"
+  },
+  "next": null,
+  "source_url": "https://www.sommet-elevage.fr",
+  "quote": "Sommet de l'élevage. Le mondial de l'élevage durable. Du 6 au 9 octobre 2026 | Clermont-Ferrand - France",
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "Le site n'affiche que l'édition 2026, déjà celle en base. Aucune date 2027 annoncée pour l'instant."
+}

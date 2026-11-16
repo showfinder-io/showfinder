@@ -2,6 +2,19 @@
 
 Rapport alimenté chaque lundi par la routine cloud agoris-roll-2027-watch (détection des fiches publiées à édition passée, vérification des dates de la prochaine édition sur les sites officiels, handoffs dans handoffs/). Depuis le 2026-09-21 : la routine merge sa PR elle-même, puis .github/workflows/roll-apply.yml applique en base les roll-pret qui passent les garde-fous (scripts/roll-guards.ts). Résultats et rejets dans journal.json, refresh éditorial des fiches roulées via scripts/roll-apply-handoffs.ts --queue.
 
+## Lot du 2026-11-16
+
+| Slug | Ancienneté | Statut | Prochaine édition / raison | Source |
+|------|-----------:|--------|------------------------------|--------|
+| salon-energie-habitat-colmar | 238 jours | non-annoncee | Deuxième revérification consécutive : site toujours figé sur l'édition 2026 déjà tenue, aucune date 2027 annoncée | https://www.energiehabitat-colmar.com |
+| franchise-expo-lyon | 39 jours | non-annoncee | Site n'affiche que l'édition du 8 octobre 2026 (déjà passée), informations à venir mais aucune date 2027 publiée | https://www.lyon-franchise.com |
+| cphi-worldwide | 39 jours | a-arbitrer | Portail Informa Markets listant plusieurs évènements CPHI ; seule date 2027 trouvée concerne CPHI Frankfurt (9-11 novembre 2027), ville différente de Milan en base | https://www.cphi.com |
+| industrie-grand-ouest | 39 jours | a-arbitrer | Seule l'année 2028 est annoncée (cohérent avec le rythme bisannuel), aucun jour ni mois précisé | https://www.industrie-nantes.com/ |
+| air-drone-bordeaux | 38 jours | a-arbitrer | 5 au 7 octobre 2027 annoncé à Bordeaux, mais lieu nommé "Palais 2 l'Atlantique" contre "Parc des Expositions de Bordeaux" en base : impossible de confirmer que c'est le même site depuis la source officielle | https://www.uavshow.com |
+| sommet-elevage-clermont | 38 jours | non-annoncee | Site n'affiche que l'édition 2026 déjà tenue, aucune date 2027 annoncée | https://www.sommet-elevage.fr |
+
+Reste à traiter : 33 fiches périmées
+
 ## Lot du 2026-11-09
 
 | Slug | Ancienneté | Statut | Prochaine édition / raison | Source |

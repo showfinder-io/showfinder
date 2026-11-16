@@ -2,7 +2,7 @@
   "slug": "salon-energie-habitat-colmar",
   "name": "Salon Énergie Habitat",
   "status": "non-annoncee",
-  "checked_at": "2026-10-12",
+  "checked_at": "2026-11-16",
   "current": {
     "start_date": "2026-03-20",
     "end_date": "2026-03-23",
@@ -12,8 +12,8 @@
   },
   "next": null,
   "source_url": "https://www.energiehabitat-colmar.com",
-  "quote": "45ème SALON ÉNERGIE HABITAT : 20 au 23 Mars 2026 / Retrouvez les experts de l'habitat de votre région à Colmar du 20 au 23 mars 2026.",
+  "quote": "45ème SALON ÉNERGIE HABITAT : 20 au 23 Mars 2026. LE rendez-vous de l'habitat du Grand Est ! Du 20 au 23 mars 2026, Vivez à l'heure de l'habitat et de votre confort !",
   "venue_changed": false,
   "city_changed": false,
-  "notes": "Revérification (le handoff précédent du 2026-09-11 dépassait 28 jours). Le site n'annonce toujours que l'édition 2026, déjà celle en base ; aucune date 2027 publiée. Note technique : curl échoue sur ce domaine (TLS reset via le proxy agent), lecture faite via navigateur."
+  "notes": "Deuxième revérification consécutive (handoff du 2026-10-12 dépassait 28 jours). Le site n'affiche toujours que l'édition 2026, déjà celle en base. Aucune date 2027 publiée."
 }

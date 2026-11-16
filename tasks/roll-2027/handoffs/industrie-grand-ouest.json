@@ -1,0 +1,25 @@
+{
+  "slug": "industrie-grand-ouest",
+  "name": "Industrie Grand Ouest",
+  "status": "a-arbitrer",
+  "checked_at": "2026-11-16",
+  "current": {
+    "start_date": "2026-10-06",
+    "end_date": "2026-10-08",
+    "edition_year": 2026,
+    "city": "Nantes",
+    "venue": "Parc des Expositions de Nantes (La Beaujoire)"
+  },
+  "next": {
+    "start_date": null,
+    "end_date": null,
+    "edition_year": 2028,
+    "city": "Nantes",
+    "venue": "Parc des Expositions - Nantes"
+  },
+  "source_url": "https://www.industrie-nantes.com/",
+  "quote": "L'industrie de demain s'invente aujourd'hui. Rendez-vous en 2028 ! Parc des Expositions - NANTES",
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "Le site annonce seulement l'année 2028 (cohérent avec frequency=bisannuel), sans jour ni mois pour aucune des deux bornes. Faute de dates précises, la fiche reste à arbitrer en attendant une annonce plus complète."
+}

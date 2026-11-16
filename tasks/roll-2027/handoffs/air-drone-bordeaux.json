@@ -1,0 +1,25 @@
+{
+  "slug": "air-drone-bordeaux",
+  "name": "UAV Show",
+  "status": "a-arbitrer",
+  "checked_at": "2026-11-16",
+  "current": {
+    "start_date": "2026-10-07",
+    "end_date": "2026-10-09",
+    "edition_year": 2026,
+    "city": "Bordeaux",
+    "venue": "Parc des Expositions de Bordeaux"
+  },
+  "next": {
+    "start_date": "2027-10-05",
+    "end_date": "2027-10-07",
+    "edition_year": 2027,
+    "city": "Bordeaux",
+    "venue": "Palais 2 l'Atlantique"
+  },
+  "source_url": "https://www.uavshow.com",
+  "quote": "October 5, 6 and 7, 2027 Palais 2 l'Atlantique in Bordeaux. [...] See you on October 5, 6 and 7, 2027 for an even more ambitious edition, which will expand into the maritime and land sectors.",
+  "venue_changed": true,
+  "city_changed": false,
+  "notes": "Même ville (Bordeaux), mais le site nomme le lieu 'Palais 2 l'Atlantique' alors que la fiche indique 'Parc des Expositions de Bordeaux'. Impossible de confirmer depuis la seule source officielle s'il s'agit du même site ou d'un hall distinct : marqué venue_changed=true par prudence, à arbitrer."
+}
