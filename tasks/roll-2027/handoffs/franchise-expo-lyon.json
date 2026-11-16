@@ -1,0 +1,19 @@
+{
+  "slug": "franchise-expo-lyon",
+  "name": "Forum Franchise Lyon",
+  "status": "non-annoncee",
+  "checked_at": "2026-11-16",
+  "current": {
+    "start_date": "2026-10-08",
+    "end_date": "2026-10-08",
+    "edition_year": 2026,
+    "city": "Lyon",
+    "venue": "LDLC Arena"
+  },
+  "next": null,
+  "source_url": "https://www.lyon-franchise.com",
+  "quote": "La 18ème édition est en cours d'organisation ! Rendez-vous le jeudi 8 octobre 2026 à la LDLC Arena et prochainement ici pour plus d'informations sur cette nouvelle édition.",
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "Le site n'affiche que l'édition du 8 octobre 2026, déjà celle en base et déjà passée. La page annonce seulement que des informations suivront pour la prochaine édition, sans date 2027."
+}

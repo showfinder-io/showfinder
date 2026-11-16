@@ -1,0 +1,25 @@
+{
+  "slug": "cphi-worldwide",
+  "name": "CPhI Worldwide",
+  "status": "a-arbitrer",
+  "checked_at": "2026-11-16",
+  "current": {
+    "start_date": "2026-10-06",
+    "end_date": "2026-10-08",
+    "edition_year": 2026,
+    "city": "Milan",
+    "venue": "Fiera Milano"
+  },
+  "next": {
+    "start_date": "2027-11-09",
+    "end_date": "2027-11-11",
+    "edition_year": 2027,
+    "city": "Frankfurt",
+    "venue": "Messe Frankfurt"
+  },
+  "source_url": "https://www.cphi.com",
+  "quote": "CPHI Frankfurt 9-11 November 2027 Messe, Frankfurt | Germany",
+  "venue_changed": true,
+  "city_changed": true,
+  "notes": "cphi.com est un portail Informa Markets qui liste plusieurs évènements de la marque CPHI (Frankfurt, PMEC Shenzhen, etc.), pas une page dédiée à 'CPHI Worldwide'. La seule date 2027 trouvée concerne CPHI Frankfurt (Messe, Francfort), ville différente de Milan en base. À arbitrer : confirmer si l'édition 2027 de CPhI Worldwide est bien celle de Francfort."
+}
