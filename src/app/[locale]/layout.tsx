@@ -15,9 +15,11 @@ type Props = {
 // app-internes ont leur propre layout racine (src/app/(internal)/layout.tsx).
 export const metadata = rootMetadata;
 
-// Rendu statique, régénéré au plus toutes les heures : les écritures en base
-// (admin, roll-apply) apparaissent sans redéploiement.
-export const revalidate = 3600;
+// Rendu statique, régénéré au plus une fois par jour : les écritures en base
+// (admin, roll-apply) apparaissent sans redéploiement, sous 24 h au plus.
+// Était 3600 : chaque passage de robot après une heure régénérait la page,
+// soit 1,75 M d'ISR Writes et 7 $ sur le cycle Vercel du 3 au 16 nov. 2026.
+export const revalidate = 86400;
 
 // SSG : pre-rendre les deux locales.
 export function generateStaticParams() {
