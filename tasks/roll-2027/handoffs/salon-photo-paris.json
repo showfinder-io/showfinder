@@ -1,0 +1,25 @@
+{
+  "slug": "salon-photo-paris",
+  "name": "Salon Photo & Vidéo",
+  "status": "roll-pret",
+  "checked_at": "2026-11-23",
+  "current": {
+    "start_date": "2026-10-08",
+    "end_date": "2026-10-11",
+    "edition_year": 2026,
+    "city": "Paris",
+    "venue": "Grande Halle de la Villette"
+  },
+  "next": {
+    "start_date": "2027-10-07",
+    "end_date": "2027-10-10",
+    "edition_year": 2027,
+    "city": "Paris",
+    "venue": "Grande Halle de la Villette"
+  },
+  "source_url": "https://www.lesalondelaphoto.com",
+  "quote": "7-10 OCTOBRE 2027 - Grande Halle de la Villette",
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "En-tête du site et bloc de présentation confirment les dates et le lieu de l'édition 2027, identiques à l'édition actuelle. Écart cohérent avec la fréquence annuelle."
+}

@@ -1,8 +1,8 @@
 {
   "slug": "comic-con-france",
   "name": "Comic Con France",
-  "status": "non-annoncee",
-  "checked_at": "2026-10-19",
+  "status": "roll-pret",
+  "checked_at": "2026-11-23",
   "current": {
     "start_date": "2026-04-18",
     "end_date": "2026-04-19",
@@ -10,10 +10,16 @@
     "city": "Paris",
     "venue": "Paris Nord Villepinte"
   },
-  "next": null,
+  "next": {
+    "start_date": "2027-04-10",
+    "end_date": "2027-04-11",
+    "edition_year": 2027,
+    "city": "Paris",
+    "venue": "Paris Nord Villepinte"
+  },
   "source_url": "https://comiccon.fr/",
-  "quote": "Samedi 18 Avril 2026 / Dimanche 19 Avril 2026, Paris-nord, Villepinte Exhibition Center",
+  "quote": "10-11 Avril 2027 / Paris-nord, Villepinte Exhibition Center",
   "venue_changed": false,
   "city_changed": false,
-  "notes": "Revérification du 2026-10-19 (handoff précédent du 2026-09-14 avait plus de 28 jours). Site vivant mais toujours figé sur l'édition 2026 déjà passée, aucune mention de 2027 sur la page d'accueil ni dans la section Programme (qui ne parle que de Comic Con Holland 2023). Website_url déjà corrigé en base vers comiccon.fr."
+  "notes": "Revérification du 2026-11-23 (handoff non-annoncee du 2026-10-19 avait plus de 28 jours). Le site publie maintenant les dates et le lieu de l'édition 2027, identiques à l'édition actuelle (Villepinte Exhibition Center). Écart avec la fin de l'édition 2026 cohérent avec la fréquence annuelle."
 }
