@@ -688,5 +688,46 @@
     "reasons": [
       "arbitrage en session (tasks/roll-2027/arbitrages-2026-11-11.md) : relecture mécanique : 'Grimaldi Forum | 4-6 oct. 2027', 'En 2027, LUXE PACK Monaco devient LUXE PACK WORLD' ; lieu inchangé, nom changé, slug conservé"
     ]
+  },
+  "comic-con-france": {
+    "outcome": "applied",
+    "at": "2026-11-23",
+    "from": {
+      "start_date": "2026-04-18",
+      "end_date": "2026-04-19"
+    },
+    "to": {
+      "start_date": "2027-04-10",
+      "end_date": "2027-04-11",
+      "edition_year": 2027
+    },
+    "source_url": "https://comiccon.fr/",
+    "reasons": []
+  },
+  "les-assises-de-la-securite-monaco": {
+    "outcome": "rejected",
+    "at": "2026-11-23",
+    "from": {
+      "start_date": "2026-10-07",
+      "end_date": "2026-10-10"
+    },
+    "to": null,
+    "source_url": "https://www.lesassisesdelacybersecurite.com/fr-FR/infos-pratiques/comment-venir",
+    "reasons": [
+      "source_url injoignable à la relecture"
+    ]
+  },
+  "salon-photo-paris": {
+    "outcome": "rejected",
+    "at": "2026-11-23",
+    "from": {
+      "start_date": "2026-10-08",
+      "end_date": "2026-10-11"
+    },
+    "to": null,
+    "source_url": "https://www.lesalondelaphoto.com",
+    "reasons": [
+      "source_url injoignable à la relecture"
+    ]
   }
 }
