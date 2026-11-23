@@ -2,6 +2,19 @@
 
 Rapport alimenté chaque lundi par la routine cloud agoris-roll-2027-watch (détection des fiches publiées à édition passée, vérification des dates de la prochaine édition sur les sites officiels, handoffs dans handoffs/). Depuis le 2026-09-21 : la routine merge sa PR elle-même, puis .github/workflows/roll-apply.yml applique en base les roll-pret qui passent les garde-fous (scripts/roll-guards.ts). Résultats et rejets dans journal.json, refresh éditorial des fiches roulées via scripts/roll-apply-handoffs.ts --queue.
 
+## Lot du 2026-11-23
+
+| Slug | Ancienneté | Statut | Prochaine édition / raison | Source |
+|------|-----------:|--------|------------------------------|--------|
+| comic-con-france | 218 jours | roll-pret | 10 au 11 avril 2027, Paris Nord Villepinte (ville et lieu inchangés) | https://comiccon.fr/ |
+| salon-agriculture-nouvelle-aquitaine | 176 jours | non-annoncee | Revérification : site toujours centré sur l'édition 2026 déjà passée, aucune date 2027 publiée | https://www.foiredebordeaux.com/salon-agriculture |
+| terres-de-jim | 71 jours | non-annoncee | Revérification : site toujours centré sur l'édition 2026 déjà passée, aucune date 2027 ou 2028 publiée | https://www.lesterresdejim.com/ |
+| les-assises-de-la-securite-monaco | 44 jours | roll-pret | 13 au 16 octobre 2027, Grimaldi Forum, Monaco (ville et lieu inchangés) | https://www.lesassisesdelacybersecurite.com |
+| jfr-paris | 43 jours | a-arbitrer | Édition 2027 annoncée (7 et 8 octobre) sur le vrai site organisateur (jfr.plus, différent du website_url en base), mais dates complètes et lieu non confirmés explicitement | https://www.jfr.plus/jfr-2027 |
+| salon-photo-paris | 43 jours | roll-pret | 7 au 10 octobre 2027, Grande Halle de la Villette, Paris (ville et lieu inchangés) | https://www.lesalondelaphoto.com |
+
+Reste à traiter : 62 fiches périmées
+
 ## Lot du 2026-11-16
 
 | Slug | Ancienneté | Statut | Prochaine édition / raison | Source |

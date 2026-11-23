@@ -1,0 +1,25 @@
+{
+  "slug": "les-assises-de-la-securite-monaco",
+  "name": "Les Assises de la cybersécurité",
+  "status": "roll-pret",
+  "checked_at": "2026-11-23",
+  "current": {
+    "start_date": "2026-10-07",
+    "end_date": "2026-10-10",
+    "edition_year": 2026,
+    "city": "Monaco",
+    "venue": "Grimaldi Forum"
+  },
+  "next": {
+    "start_date": "2027-10-13",
+    "end_date": "2027-10-16",
+    "edition_year": 2027,
+    "city": "Monaco",
+    "venue": "Grimaldi Forum"
+  },
+  "source_url": "https://www.lesassisesdelacybersecurite.com/fr-FR/infos-pratiques/comment-venir",
+  "quote": "13 - 16 octobre 2027 - MONACO / Grimaldi Forum",
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "En-tête du site (toutes pages) : « 13 - 16 octobre 2027 - MONACO ». La page « Comment venir » confirme que le lieu reste le Grimaldi Forum (adresse d'accès détaillée). Ville et lieu inchangés, écart cohérent avec la fréquence annuelle."
+}

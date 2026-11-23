@@ -1,0 +1,25 @@
+{
+  "slug": "jfr-paris",
+  "name": "JFR - Journées Francophones de Radiologie",
+  "status": "a-arbitrer",
+  "checked_at": "2026-11-23",
+  "current": {
+    "start_date": "2026-10-08",
+    "end_date": "2026-10-11",
+    "edition_year": 2026,
+    "city": "Paris",
+    "venue": "Palais des Congrès de Paris"
+  },
+  "next": {
+    "start_date": "2027-10-07",
+    "end_date": null,
+    "edition_year": 2027,
+    "city": null,
+    "venue": null
+  },
+  "source_url": "https://www.jfr.plus/jfr-2027",
+  "quote": "Jeudi 7 octobre 2027 (La Grande Conférence et La Séance Inaugurale, Amphi Bordeaux) / Vendredi 8 octobre 2027 (La Conférence Plénière, Amphi Bleu)",
+  "venue_changed": false,
+  "city_changed": false,
+  "notes": "website_url en base (jfrexpo.com) ne mentionne que l'édition 2026 passée ; le vrai site organisateur est jfr.plus, qui annonce une édition 2027 avec deux jours de programme (7 et 8 octobre) mais sans dates de début/fin complètes du salon ni lieu explicite. Les noms de salle (Amphi Bordeaux, Amphi Bleu) et le partenaire Viparis évoquent fortement le Palais des Congrès de Paris (lieu actuel), mais aucune page ne le nomme explicitement pour 2027 : à arbitrer avant tout roll."
+}
